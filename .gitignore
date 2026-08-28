@@ -1,3 +1,4 @@
 .DS_Store
 /erratum
 __pycache__/
+/go.sum

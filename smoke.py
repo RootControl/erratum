@@ -1,6 +1,18 @@
 #!/usr/bin/env python3
-"""Drives the TUI through a pty, answering the terminal capability queries
-Bubble Tea blocks on, so the slice can be smoke-tested headlessly in CI."""
+"""Drives the *TUI* through a pty, answering the terminal capability queries
+Bubble Tea blocks on.
+
+The output is every frame Bubble Tea painted, concatenated. A non-alt-screen
+TUI repaints its whole viewport on each keystroke, so lines repeat and `tail`
+shows you an earlier frame rather than the final state — which reads exactly
+like commands being swallowed and is not. Use this only to check that the TUI
+itself renders and does not crash.
+
+For anything scripted, use plain mode instead, which has no repaints:
+
+    go build -o erratum .
+    printf 'x board\nx board\nfile A1\n' | ERRATUM_PLAIN=1 ./erratum
+"""
 import os, pty, time, select, re, fcntl, termios, struct, sys
 
 # The binary is expected next to this script; override with ERRATUM_BIN.

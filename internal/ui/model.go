@@ -42,13 +42,19 @@ func New(st *game.State) Model {
 	// terminal never reports its size.
 	m := Model{st: st, in: ti, w: 80, h: 24, ready: true}
 	m.vp = viewport.New(80, 20)
-	m.push(head.Render(st.Room.Title))
+	m.push(st.Room.Title)
 	m.push(st.Room.Intro)
 	m.render()
 	return m
 }
 
 func (m *Model) push(s string) {
+	// The engine emits a scene title as ordinary text when the player travels,
+	// so that anything driving the engine gets it. Styling it is this layer's
+	// job, and it has to happen wherever the title arrives from.
+	if s == m.st.Room.Title {
+		s = head.Render(s)
+	}
 	for _, l := range strings.Split(s, "\n") {
 		m.lines = append(m.lines, l)
 	}
@@ -87,11 +93,12 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			m.in.Reset()
 			m.push(prompt.Render("> " + raw))
 
-			out, timed := m.st.Do(raw)
+			out, ticks := m.st.Do(raw)
 			for _, o := range out {
 				m.push(o)
 			}
-			if timed {
+			// Some things cost more than one action. The lift is one of them.
+			for i := 0; i < ticks; i++ {
 				for _, ev := range m.st.Tick() {
 					m.push(ev)
 				}
@@ -143,11 +150,4 @@ func bodyLine(s *game.State) string {
 		return "body present"
 	}
 	return "body removed"
-}
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
 }

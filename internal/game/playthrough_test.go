@@ -7,25 +7,64 @@ import (
 	"github.com/RootControl/erratum/internal/content"
 )
 
+func loadGame(t *testing.T) (*content.Game, error) {
+	t.Helper()
+	return content.Load()
+}
+
+// play drops the player into the chambers at the top of 1.3, with the flag its
+// entry gate assumes. The guarantees below are about 1.3-1.5, and re-playing
+// the elevation in front of every one of them would only make them harder to
+// read. Scene 1.2 has its own tests.
 func play(t *testing.T, cmds ...string) (*State, string) {
 	t.Helper()
-	r, err := content.Load()
+	return playFrom(t, "vosk_chambers", []string{"ROSETTE_TAKEN"}, cmds...)
+}
+
+// playAct1 starts where the game starts: 1.1, in the doorway, with nothing.
+func playAct1(t *testing.T, cmds ...string) (*State, string) {
+	t.Helper()
+	return playFrom(t, "", nil, cmds...)
+}
+
+// playRosette drops the player into 1.2 with the elevation about to happen.
+func playRosette(t *testing.T, cmds ...string) (*State, string) {
+	t.Helper()
+	return playFrom(t, "antechamber", []string{"ACT1_OPEN"}, cmds...)
+}
+
+func playFrom(t *testing.T, scene string, flags []string, cmds ...string) (*State, string) {
+	t.Helper()
+	g, err := loadGame(t)
 	if err != nil {
 		t.Fatal(err)
 	}
-	s := New(r)
+	s := New(g)
+	for _, f := range flags {
+		s.Set(f)
+	}
+	if scene != "" && !s.Move(scene) {
+		t.Fatalf("no scene %q", scene)
+	}
 	var log strings.Builder
 	for _, c := range cmds {
-		out, timed := s.Do(c)
+		out, ticks := s.Do(c)
 		log.WriteString("> " + c + "\n")
 		for _, o := range out {
 			log.WriteString(o + "\n")
 		}
-		if timed {
+		for i := 0; i < ticks; i++ {
 			for _, e := range s.Tick() {
 				log.WriteString(e + "\n")
 			}
 		}
+	}
+	// A key that is not in a scene's table renders its own name and keeps
+	// going, which is how LOOK and the body's removal both shipped broken.
+	// Every playthrough in this package guards against it.
+	if out := log.String(); strings.Contains(out, "[missing string:") {
+		i := strings.Index(out, "[missing string:")
+		t.Fatalf("unresolved authored string: %s", out[i:min(i+48, len(out))])
 	}
 	return s, log.String()
 }
@@ -88,7 +127,8 @@ func TestTrustingPlaythrough(t *testing.T) {
 	if s.Has("A21_HELD") {
 		t.Fatal("player filed everything; they must NOT be able to prove the edit")
 	}
-	if s.Ints["CRASE_STANDING"] != 1 {
+	// Standing opens at +1 per the bible; the requisition rescue is the second.
+	if s.Ints["CRASE_STANDING"] != 2 {
 		t.Fatalf("Crase should have saved them once: %d", s.Ints["CRASE_STANDING"])
 	}
 	if !strings.Contains(log, "SANITATION REQUISITION LEDGERS") {

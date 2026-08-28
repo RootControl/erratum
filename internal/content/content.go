@@ -10,8 +10,32 @@ import (
 	"strings"
 )
 
+//go:embed strings.json
+var sharedStringsJSON []byte
+
+//go:embed arrival.json
+var arrivalJSON []byte
+
+//go:embed antechamber.json
+var antechamberJSON []byte
+
 //go:embed room.json
 var roomJSON []byte
+
+//go:embed vaux_study.json
+var vauxStudyJSON []byte
+
+//go:embed medicae.json
+var medicaeJSON []byte
+
+//go:embed adjutant.json
+var adjutantJSON []byte
+
+//go:embed arch.json
+var archJSON []byte
+
+//go:embed choir.json
+var choirJSON []byte
 
 // Store says which evidence store a clue may live in.
 //
@@ -42,66 +66,370 @@ type Object struct {
 }
 
 // Clue is a piece of evidence. Sign marks the five signs Vosk arranged.
+//
+// Names exist because not every clue announces an ID. A thing overheard in a
+// conversation has to be writable down by the name the player would use for
+// it, or the player who noticed cannot act on having noticed.
 type Clue struct {
-	ID       string `json:"id"`
-	Label    string `json:"label"`
-	Store    Store  `json:"store"`
-	Sign     bool   `json:"sign"`
-	FileText string `json:"file_text"`
-	NoteText string `json:"note_text"`
-	Refusal  string `json:"refusal"`
+	ID       string   `json:"id"`
+	Names    []string `json:"names"`
+	Label    string   `json:"label"`
+	Store    Store    `json:"store"`
+	Sign     bool     `json:"sign"`
+	FileText string   `json:"file_text"`
+	// Reconciliation is what filing this costs in exposure. Zero means the
+	// default of one; A8 costs two, because A8 is the thing worth reading.
+	Reconciliation int    `json:"reconciliation"`
+	NoteText       string `json:"note_text"`
+	Refusal        string `json:"refusal"`
+	// Sets are flags that become true the moment this clue is in hand,
+	// whichever way the player came by it. The dispatch number opens the Vault
+	// whether it was read off a jacket or off an archivist's index.
+	Sets []string `json:"sets"`
 }
 
 // Room is the authored content for a location.
 type Room struct {
-	ID          string            `json:"id"`
-	Title       string            `json:"title"`
-	Intro       string            `json:"intro"`
-	Look        string            `json:"look"`
-	LookNoBody  string            `json:"look_no_body"`
-	BodyRemoved string            `json:"body_removed"`
-	Objects     []Object          `json:"objects"`
-	Clues       map[string]*Clue  `json:"clues"`
-	Strings     map[string]string `json:"strings"`
+	ID    string `json:"id"`
+	Title string `json:"title"`
+	Intro string `json:"intro"`
+	// Revisit replaces Intro on every entry after the first. An intro carries
+	// the beats of arriving somewhere — Fenn standing up to congratulate you,
+	// Ostro reading out the autopsy — and those happen once. Empty falls back
+	// to Look.
+	Revisit     string `json:"revisit"`
+	Look        string `json:"look"`
+	LookNoBody  string `json:"look_no_body"`
+	BodyRemoved string `json:"body_removed"`
+	// ClockAt is the hive time this scene opens at, "06h12". The clock runs
+	// forward through a scene and jumps on entering the next one, because the
+	// act documents place the scenes hours apart and the player does not play
+	// the hours in between.
+	ClockAt string `json:"clock_at"`
+	// Body marks the scene the eight-minute timer belongs to. It starts when
+	// the player first arrives and does not stop when they leave.
+	Body bool `json:"body"`
+	// Terminal marks a scene with a cogitator in it. There is exactly one in
+	// the slice, and Vaux's study is pointedly not it.
+	Terminal bool `json:"terminal"`
+	// Sets are the flags arriving in this scene writes, once.
+	Sets []string `json:"sets"`
+	// Grants are the clues arriving in this scene puts in the player's hands,
+	// once and unasked. The autopsy floor is the act's guaranteed minimum and
+	// a player cannot stand on the medicae deck and fail to be told it.
+	Grants []string `json:"grants"`
+
+	// While are flags that are true only while the player is standing in this
+	// scene. Relay shielding is a property of a place, not an event.
+	While []string `json:"while"`
+
+	Objects []Object `json:"objects"`
+	NPCs    []NPC    `json:"npcs"`
+	// NPCRefs name people defined in another scene who are also here. Fenn
+	// follows you to the gallery arch and does not become a different man on
+	// the way, so both scenes have to reach the same person and the same
+	// conversation.
+	NPCRefs []string `json:"npc_refs"`
+	people  []*NPC
+
+	Exits   []Exit            `json:"exits"`
+	Clues   map[string]*Clue  `json:"clues"`
+	Strings map[string]string `json:"strings"`
 }
 
-// Load returns the embedded Act I room.
-func Load() (*Room, error) {
-	var r Room
-	if err := json.Unmarshal(roomJSON, &r); err != nil {
-		return nil, fmt.Errorf("content: %w", err)
+// Game is every scene the slice has, plus one index across all of them.
+//
+// Clues are indexed game-wide on purpose: the player carries A3 out of the
+// chambers and into Vaux's study, and the engine has to know what it is when
+// they put it on his desk.
+type Game struct {
+	Scenes map[string]*Room
+	Order  []string
+	Start  string
+	// BodyScene is where Vosk is, for as long as he is anywhere.
+	BodyScene string
+	Clues     map[string]*Clue
+	byUpper   map[string]*Clue
+	npcs      map[string][]*NPC
+}
+
+// Seconds parses "06h12" into seconds since midnight. Zero for an unset field.
+func (r *Room) Seconds() int {
+	s, _ := r.seconds()
+	return s
+}
+
+func (r *Room) seconds() (int, error) {
+	if r.ClockAt == "" {
+		return 0, nil
 	}
-	return &r, nil
+	var h, m int
+	if _, err := fmt.Sscanf(r.ClockAt, "%dh%d", &h, &m); err != nil {
+		return 0, fmt.Errorf("clock_at %q: %w", r.ClockAt, err)
+	}
+	if h < 0 || h > 23 || m < 0 || m > 59 {
+		return 0, fmt.Errorf("clock_at %q is not a time", r.ClockAt)
+	}
+	return h*3600 + m*60, nil
+}
+
+// People are everyone in the scene: those authored here, and those who
+// followed you in.
+func (r *Room) People() []*NPC { return r.people }
+
+// Scene returns a scene by ID, or nil.
+func (g *Game) Scene(id string) *Room { return g.Scenes[id] }
+
+// Clue returns a clue from anywhere in the game. Lookup is case-insensitive
+// because one clue in Act I is called A1-lead in the act document and the
+// document wins.
+func (g *Game) Clue(id string) *Clue {
+	if c, ok := g.Clues[id]; ok {
+		return c
+	}
+	return g.byUpper[strings.ToUpper(id)]
+}
+
+// FindClue resolves a player-typed clue reference — an ID, or the name a
+// player would actually use for the thing.
+func (g *Game) FindClue(word string) *Clue {
+	var best *Clue
+	bestScore := 0
+	for _, id := range g.Order {
+		sc := g.Scenes[id]
+		for _, c := range sc.Clues {
+			if s := match(word, c.ID, c.Names); s > bestScore {
+				best, bestScore = c, s
+			}
+		}
+	}
+	return best
+}
+
+// Load returns every embedded scene.
+//
+// Scenes after the first inherit any strings they do not define, so a new
+// scene only has to author the lines that are actually different. The room is
+// first because the room is where the game starts.
+func Load() (*Game, error) {
+	var shared map[string]string
+	if err := json.Unmarshal(sharedStringsJSON, &shared); err != nil {
+		return nil, fmt.Errorf("content: strings: %w", err)
+	}
+	sources := []struct {
+		id  string
+		raw []byte
+	}{
+		{"antechamber_arrival", arrivalJSON},
+		{"antechamber", antechamberJSON},
+		{"chambers", roomJSON},
+		{"vaux_study", vauxStudyJSON},
+		{"medicae", medicaeJSON},
+		{"adjutant", adjutantJSON},
+		{"gallery_arch", archJSON},
+		{"choir", choirJSON},
+	}
+	g := &Game{Scenes: map[string]*Room{}, Clues: map[string]*Clue{},
+		byUpper: map[string]*Clue{}, npcs: map[string][]*NPC{}}
+	for _, src := range sources {
+		var r Room
+		if err := json.Unmarshal(src.raw, &r); err != nil {
+			return nil, fmt.Errorf("content: %s: %w", src.id, err)
+		}
+		if r.ID == "" {
+			r.ID = src.id
+		}
+		if r.Strings == nil {
+			r.Strings = map[string]string{}
+		}
+		if g.Start == "" {
+			g.Start = r.ID
+		}
+		if r.Body {
+			g.BodyScene = r.ID
+		}
+		for k, v := range shared {
+			if _, ok := r.Strings[k]; !ok {
+				r.Strings[k] = v
+			}
+		}
+		for id, c := range r.Clues {
+			if c.ID == "" {
+				c.ID = id
+			}
+			if _, dup := g.Clues[id]; dup {
+				return nil, fmt.Errorf("content: clue %s defined twice", id)
+			}
+			g.Clues[id] = c
+			g.byUpper[strings.ToUpper(id)] = c
+		}
+		for i := range r.NPCs {
+			n := &r.NPCs[i]
+			n.key = r.ID + "/" + n.ID
+			g.npcs[n.ID] = append(g.npcs[n.ID], n)
+			r.people = append(r.people, n)
+		}
+		g.Scenes[r.ID] = &r
+		g.Order = append(g.Order, r.ID)
+	}
+	// Resolved after every scene is loaded, so a scene may reference somebody
+	// authored later in the list.
+	for _, id := range g.Order {
+		r := g.Scenes[id]
+		for _, ref := range r.NPCRefs {
+			switch found := g.npcs[ref]; len(found) {
+			case 0:
+				return nil, fmt.Errorf("content: %s: no person named %q to follow you here", id, ref)
+			case 1:
+				r.people = append(r.people, found[0])
+			default:
+				return nil, fmt.Errorf("content: %s: %q is authored in more than one scene, so a reference to it is ambiguous", id, ref)
+			}
+		}
+	}
+	if g.BodyScene == "" {
+		return nil, fmt.Errorf("content: no scene claims the body")
+	}
+	if err := g.validate(); err != nil {
+		return nil, err
+	}
+	return g, nil
+}
+
+// validate refuses to ship content that will fail quietly at play time. Every
+// mistake it catches has already happened once in this repo: a clue reference
+// that resolves to nothing, an exit to a scene that is not there, prose
+// authored under a key nothing reads. None of them raise an error at runtime —
+// they just make a line of the game not happen.
+func (g *Game) validate() error {
+	fail := func(f string, a ...any) error { return fmt.Errorf("content: "+f, a...) }
+	for _, id := range g.Order {
+		r := g.Scenes[id]
+		if _, err := r.seconds(); err != nil {
+			return fail("%s: %w", id, err)
+		}
+		for _, e := range r.Exits {
+			if g.Scenes[e.To] == nil {
+				return fail("%s: exit %q leads to unknown scene %q", id, e.ID, e.To)
+			}
+		}
+		for _, c := range r.Clues {
+			switch c.Store {
+			case StoreEither, StoreCogitator, StoreNotebook:
+			default:
+				return fail("%s: clue %s has store %q", id, c.ID, c.Store)
+			}
+		}
+		for i := range r.Objects {
+			if o := &r.Objects[i]; o.Clue != "" && g.Clue(o.Clue) == nil {
+				return fail("%s: object %s grants unknown clue %q", id, o.ID, o.Clue)
+			}
+		}
+		for _, c := range r.Grants {
+			if g.Clue(c) == nil {
+				return fail("%s: scene grants unknown clue %q", id, c)
+			}
+		}
+		for _, n := range r.people {
+			if err := g.validateNPC(id, n, fail); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+func checkCounters(scene, npc, what string, c Counters, fail func(string, ...any) error) error {
+	for k := range c {
+		if !KnownCounters[k] {
+			return fail("%s/%s: %s moves unknown counter %q", scene, npc, what, k)
+		}
+	}
+	return nil
+}
+
+func (g *Game) validateNPC(scene string, n *NPC, fail func(string, ...any) error) error {
+	seen := map[string]bool{}
+	grants := func(kind, id string, clues []string) error {
+		if key := kind + "/" + id; seen[key] {
+			return fail("%s/%s: duplicate %s id %q", scene, n.ID, kind, id)
+		} else {
+			seen[key] = true
+		}
+		for _, c := range clues {
+			if g.Clue(c) == nil {
+				return fail("%s/%s: %s %q grants unknown clue %q", scene, n.ID, kind, id, c)
+			}
+		}
+		return nil
+	}
+	for _, t := range n.Topics {
+		if err := grants("topic", t.ID, t.Grants); err != nil {
+			return err
+		}
+		for _, c := range append(append([]string{}, t.Has...), t.Holds...) {
+			if g.Clue(c) == nil {
+				return fail("%s/%s: topic %q gates on unknown clue %q", scene, n.ID, t.ID, c)
+			}
+		}
+	}
+	for _, a := range n.Acts {
+		if err := grants("act", a.ID, a.Grants); err != nil {
+			return err
+		}
+	}
+	for _, b := range n.Beats {
+		if err := grants("beat", b.ID, b.Grants); err != nil {
+			return err
+		}
+	}
+	for _, sh := range n.Shows {
+		if g.Clue(sh.Clue) == nil {
+			return fail("%s/%s: show reacts to unknown clue %q", scene, n.ID, sh.Clue)
+		}
+	}
+	for _, t := range n.Topics {
+		if err := checkCounters(scene, n.ID, "topic "+t.ID, t.Counters, fail); err != nil {
+			return err
+		}
+		if err := checkCounters(scene, n.ID, "topic "+t.ID, t.ClosedCounters, fail); err != nil {
+			return err
+		}
+	}
+	for _, a := range n.Acts {
+		if err := checkCounters(scene, n.ID, "act "+a.ID, a.Counters, fail); err != nil {
+			return err
+		}
+	}
+	for _, sh := range n.Shows {
+		if err := checkCounters(scene, n.ID, "show "+sh.Clue, sh.Counters, fail); err != nil {
+			return err
+		}
+	}
+	if d := n.Disposition; d != nil && d.Default != "" {
+		found := false
+		for _, f := range d.Flags {
+			found = found || f == d.Default
+		}
+		if !found {
+			return fail("%s/%s: disposition default %q is not one of its flags", scene, n.ID, d.Default)
+		}
+	}
+	return nil
 }
 
 // Find resolves a player-typed noun to an object. Matching is loose on
 // purpose: the player should never lose a clue to vocabulary.
 func (r *Room) Find(word string) *Object {
-	word = strings.ToLower(strings.TrimSpace(word))
-	if word == "" {
-		return nil
-	}
+	var best *Object
+	bestScore := 0
 	for i := range r.Objects {
 		o := &r.Objects[i]
-		if o.ID == word {
-			return o
-		}
-		for _, n := range o.Names {
-			if n == word {
-				return o
-			}
+		if s := match(word, o.ID, o.Names); s > bestScore {
+			best, bestScore = o, s
 		}
 	}
-	// Fall back to prefix matching so "regi" finds the regicide board.
-	for i := range r.Objects {
-		o := &r.Objects[i]
-		for _, n := range append([]string{o.ID}, o.Names...) {
-			if strings.HasPrefix(n, word) && len(word) >= 3 {
-				return o
-			}
-		}
-	}
-	return nil
+	return best
 }
 
 // S returns an authored string by key, loudly if it is missing.

@@ -1,0 +1,518 @@
+{
+ "id": "choir",
+ "title": "THE CHOIR SPIRE — TRANSIT GALLERY 9, CELL FOUR",
+ "clock_at": "07h40",
+ "revisit": "Ozone and blood-smell and the grinding of the lathes. Dross at his index, Ilaria in the cell doorway, the wax stacked to the ceiling on both sides.",
+ "intro": "The Choir Spire smells of blood and ozone and hot wax, in that order, and\nunderneath all three is a sound: eleven hundred redundancy lathes cutting\nwax at once, which is not loud and does not stop.\n\nTransit Gallery 9. Racks to the ceiling on both sides, six hundred years of\ncylinders in paper jackets, none of them indexed by anything but a man.\n\nChoir-Archivist Hemmel Dross is that man. He is fifty, damp, and has arranged\nhis entire professional existence around never being the person who signed\nfor something.\n\nAnd in the doorway of cell four, waiting, with her hands already held out in\nfront of her in the position they teach you for the cuffs, is Vesse Ilaria\nTalm, astropath, blind, forty-one, who transcribed something at the twelfth\nhour yesterday and does not know what.\n\nShe has been standing like that for some time.",
+ "look": "Racks of wax to the ceiling, jacketed, dated, indexed nowhere but in Dross.\n\nThe LATHES beyond the mesh, cutting, eleven hundred of them.\nArchivist DROSS at his INDEX, a ledger he will not let go of.\nCell FOUR, and in its doorway, Vesse ILARIA TALM.\n\nHer duty LOG is on the hook by the door where the Choir requires it to hang.",
+ "objects": [
+  {
+   "id": "lathes",
+   "names": [
+    "lathe",
+    "machines",
+    "mesh",
+    "wax",
+    "cutters",
+    "redundancy"
+   ],
+   "careless": "Eleven hundred redundancy lathes behind mesh, each cutting a wax cylinder in real time as a vessel transcribes. Six hundred years of practice. Nobody has ever改 improved it because nobody has ever needed to.",
+   "careful": "The lathe does not know what it is cutting. It is a needle and a drum and a governor, and it has no index, no address, no reference number and no connection to anything.\n\nA cogitator cannot amend a groove in wax. There is no field, no template, no classification and no countersignature. To change what is on one of these you would have to come up here, in person, find it among six hundred years of them, and physically destroy it.\n\nYou have been an Inquisitor for three hours and this is the first object you have seen that the archive cannot reach."
+  },
+  {
+   "id": "index",
+   "names": [
+    "ledger",
+    "dross's index",
+    "book",
+    "catalogue",
+    "records"
+   ],
+   "careless": "Dross's index. A ledger in his own hand, and the only way anybody finds anything in this gallery.",
+   "careful": "Cylinder, cell, vessel, hour, and a jacket number. That is all it holds. No content — the Choir does not transcribe its own redundancies, which is the entire point of a redundancy.\n\nThere is a column at the right he does not fill in, headed DISPATCH, because filling it in would require reading the traffic, and reading the traffic is a thing Hemmel Dross has spent twenty years arranging never to be accused of.\n\nExcept on the jacket for cylinder six of yesterday, where somebody — not Dross, a different hand, the vessel's own — has written a dispatch number.",
+   "clue": "A18"
+  },
+  {
+   "id": "log",
+   "names": [
+    "duty log",
+    "her log",
+    "the hook",
+    "cell log",
+    "duty-log"
+   ],
+   "careless": "The cell-four duty log, on its hook by the door, where the Choir requires it to hang. Ilaria's hand throughout — a stylus and a guide-rule; she has written like this for twenty years.",
+   "careful": "The twelfth hour, eleven minutes past. Forty-one seconds.\n\n*ROUTINE / TITHE VARIANCE ADVISORY. NO ACTION. NO REPLY REQUIRED.*\n\nCountersigned by the duty vessel, which is her, and by the gallery warden, who signed it at the end of the shift the way he signs forty of them.\n\nIt is complete, correct, in her own hand, and it describes a message she has no memory of receiving, in words she has no memory of writing, in a summary that is not what is on the wax.",
+   "clue": "A19"
+  },
+  {
+   "id": "ilaria",
+   "names": [
+    "vesse",
+    "talm",
+    "astropath",
+    "her",
+    "vessel"
+   ],
+   "careless": "Vesse Ilaria Talm. Forty-one, blind since sanctioning, twenty years a transit vessel on this Spire. Standing in the doorway of her own cell with her hands out.",
+   "careful": "The hands are not shaking. They have been held out at that height for long enough that they should be, and they are not, and that is a thing she is doing on purpose.\n\nShe is turned very slightly away from you, which is not avoidance — it is that she is listening to the room and you are the loudest thing in it.\n\nShe has not asked what you want. She has not asked who you are. She heard the rosette on your coat from the end of the gallery, and she has decided what this is, and she has been ready for it since the second hour."
+  },
+  {
+   "id": "dross",
+   "names": [
+    "hemmel",
+    "archivist",
+    "choir-archivist",
+    "him"
+   ],
+   "careless": "Choir-Archivist Hemmel Dross, fifty, damp, holding his index against his chest like a man in a crowd holding a purse.",
+   "careful": "Twenty years in this gallery and not one adverse finding against him, which he has achieved by never once being the person whose signature is on the form.\n\nHe is not corrupt. He is not obstructing you out of loyalty to anybody. He is a load-bearing piece of bureaucracy who has correctly worked out that the only career-ending act available to a Choir-Archivist is to release something and be wrong about it.\n\nHe will give you anything at all, provided you ask for a thing small enough that granting it cannot be described afterwards as a decision."
+  },
+  {
+   "id": "cell",
+   "names": [
+    "four",
+    "cell four",
+    "doorway",
+    "her cell"
+   ],
+   "careless": "Transit cell four. Two metres by three, a chair, a hood-rest, a stylus and a guide-rule, and a shuttered window.",
+   "careful": "The window is shuttered and has been for twenty years, because she is blind and does not need it and the shutter keeps the ozone in.\n\nIt faces the Adamant Crown across the Crown gap.\n\nAt the twelfth hour, from a window on tier nine that a man opened four degrees and fixed with a folded requisition slip, this shutter is the only thing in the frame."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "dross",
+   "names": [
+    "hemmel",
+    "archivist",
+    "choir-archivist"
+   ],
+   "title": "Choir-Archivist Hemmel Dross",
+   "lists_topics": false,
+   "topic_refusal": "\"I'd rather you asked me things one at a time,\" Dross says, \"so I can be sure what I've answered.\"",
+   "portrait": "Choir-Archivist Hemmel Dross. Fifty, damp, twenty years in this gallery and not one adverse finding, achieved by never being the person whose signature is on the form.",
+   "greeting": "Dross has the index against his chest before you have finished crossing the gallery.\n\n\"Inquisitor. Yes. I heard.\" He does not ask about whom. \"Whatever you need, of course, absolutely — through the usual channel, which is a written requisition to the Choir-Prefect, countersigned, and I'd expect a determination inside eleven days. Nine, if it's marked.\"\n\nHe says *eleven days* the way a man closes a door with his shoulder while smiling.",
+   "reprise": "He waits, holding the index, hoping this will be over shortly and without a form.",
+   "unknown": "\"That's not something I hold,\" Dross says, with enormous relief.",
+   "deflect": [
+    "\"I couldn't say without a determination.\"",
+    "\"That would be a decision, Inquisitor, and I'm not the officer who takes decisions.\""
+   ],
+   "topics": [
+    {
+     "id": "cylinders",
+     "names": [
+      "wax",
+      "redundancies",
+      "what are they",
+      "the lathes",
+      "recordings",
+      "archive"
+     ],
+     "text": "\"Redundancy cut. Every transcription, every vessel, every hour, since the Spire was raised.\" Dross relaxes fractionally; this is description, and description is safe. \"If a vessel dies mid-message — and they do — the wax has what she had.\n\n\"Six hundred years of it. Nobody reads them. There'd be no purpose; the transcript is the record, the wax is the redundancy, and a redundancy that gets read is just a second record with no countersignature on it.\"\n\n\"And they're not in the Vault.\"\n\n\"They're not in *anything*,\" Dross says, faintly scandalised. \"They're wax. They're Choir property, they've never been off this Spire, and the Lexicanum has no more index of them than it has of my boots.\"",
+     "sets": [
+      "DROSS_EXPLAINED_WAX"
+     ]
+    },
+    {
+     "id": "access_narrow",
+     "names": [
+      "access",
+      "hear it",
+      "play it",
+      "requisition",
+      "the request",
+      "cylinder",
+      "cylinder six",
+      "yesterday"
+     ],
+     "has": [
+      "A2"
+     ],
+     "text": "You do not ask for the shift. You ask for the twelfth hour, cell four, a forty-minute window.\n\nDross stops.\n\n\"That's — \" He looks at the index, and then at you, and something in him comes off its guard, because you have just described a request that is small enough to grant. \"That's nine cylinders. That's an hour's work.\"\n\n\"Then it's an hour.\"\n\n\"Yes.\" He is already moving. \"Yes, I can do that. A specific instrument in a specific window on a specific vessel is a *retrieval*, Inquisitor, it isn't a release — I don't need a determination for a retrieval, I need a line in the day-book and your name on it, which you have and I have a pen.\"\n\nHe is enormously relieved. He has spent twenty years being asked for things he cannot survive granting, and you have asked him for one he can.\n\n\"Cell four, twelfth hour. Give me the hour.\"\n\n[ CHOIR_ACCESS — nine cylinders, one hour ]",
+     "sets": [
+      "CHOIR_ACCESS"
+     ],
+     "counters": {
+      "ILARIA_TRUST": 0
+     }
+    },
+    {
+     "id": "access_broad",
+     "names": [
+      "access",
+      "hear it",
+      "play it",
+      "requisition",
+      "the request",
+      "cylinder",
+      "cylinder six",
+      "yesterday"
+     ],
+     "text": "You ask for yesterday's traffic.\n\nDross's face does something complicated and finishes as a wall.\n\n\"Yesterday's — the whole shift? That's four hundred cylinders, Inquisitor, across nine cells and three watches.\" He is not being obstructive; he is genuinely costing it. \"Retrieval, jacket check, index reconciliation and a physical audit before and after, because if one of them goes missing on my gallery it is my gallery it went missing from.\n\n\"Eleven days. Nine if the Choir-Prefect marks it, and he will not mark it, because marking it would be a decision.\"\n\n\"I don't have eleven days.\"\n\n\"No,\" Dross agrees, unhappily, and means it. \"If you could tell me a *cell*, or an *hour* — if you could tell me a window — that would be something else entirely. That would be a retrieval and I could do a retrieval this morning.\"\n\nHe waits, hopefully. You have nothing to narrow it with.",
+     "counters": {}
+    },
+    {
+     "id": "forms",
+     "names": [
+      "determination",
+      "the form",
+      "channel",
+      "why not",
+      "your job",
+      "signature",
+      "afraid"
+     ],
+     "text": "\"Because it would be a release,\" Dross says, \"and a release is a decision, and I am not the officer who takes decisions.\"\n\n\"You're the archivist.\"\n\n\"I am the *custodian*. There is a difference and it is the whole of my position.\" He shifts the index. \"Twenty years, Inquisitor, and not one adverse finding, and I have managed that by never once being the name at the bottom of a thing that turned out to be wrong.\n\n\"You may find that contemptible. Most people who come up here do.\" He does not appear to mind. \"It is also why nothing has ever gone missing from Gallery 9, which you may care about a great deal more in about a fortnight than you do standing there now.\"\n\nHe is right, and he does not know why he is right, and neither do you yet.",
+     "pressure": 1
+    },
+    {
+     "id": "her",
+     "names": [
+      "ilaria",
+      "talm",
+      "the vessel",
+      "your astropath",
+      "about her"
+     ],
+     "text": "\"Twenty years on this Spire, no findings, no incidents, no sanction beyond the usual.\" Dross says it quickly, which for him is warmth. \"Vessels burn out, Inquisitor. Some of them go strange. She hasn't.\n\n\"She's been standing in that doorway since the second hour. I told her to sit down. She said she'd rather be found standing.\"\n\nHe looks at the index rather than at her.\n\n\"She hasn't done anything. I'd sign that. I'd actually sign that.\"\n\nIt is the largest thing Hemmel Dross has offered to put his name to in twenty years, and he does not appear to have noticed himself say it."
+    },
+    {
+     "id": "vermilion",
+     "names": [
+      "priority",
+      "channel",
+      "scrub",
+      "routing",
+      "class",
+      "vermilion"
+     ],
+     "requires": [
+      "A17_HEARD"
+     ],
+     "text": "\"Vermilion,\" Dross says, reading it off the jacket. \"Concordance priority, scrub-on-carry.\"\n\n\"Meaning?\"\n\n\"Meaning the channel wipes the vessel of what it carried, on carriage, as a property of the routing.\" He shrugs, an archivist's shrug. \"It's ordinary. It's sanctioned. It's what you use when the content is above the transcriber, which is most traffic above a certain grade. She won't remember it because she is *not permitted* to remember it, and that is a feature of the instrument and not a fault in her.\n\n\"I'd have thought somebody would have told her that by now,\" he adds, and then, after a moment, understands what he has just worked out, and looks at the doorway of cell four for the first time since you arrived.",
+     "closed": "\"Routing class?\" Dross says. \"On what? Give me a cylinder and I'll read you its jacket.\""
+    }
+   ],
+   "beats": [],
+   "shows": [
+    {
+     "clue": "A2",
+     "requires": [
+      "CHOIR_ACCESS"
+     ],
+     "text": "You tell him about the shutter: four degrees, fixed with a folded requisition slip, and what stands in the frame at the twelfth hour.\n\nDross works it out about a second after you finish, and goes a colour.\n\n\"That's cell four's window,\" he says. \"From tier nine. He'd have been — he was *looking* at her cell.\"\n\n\"At the twelfth hour.\"\n\n\"There is nothing to see, Inquisitor. It's shuttered. It has been shuttered for twenty years, she's blind, the shutter keeps the ozone in.\" He is holding the index very hard. \"He wasn't looking at anything. He was looking at *which cell*.\""
+    }
+   ],
+   "acts": []
+  },
+  {
+   "id": "ilaria",
+   "names": [
+    "vesse",
+    "talm",
+    "astropath",
+    "vessel"
+   ],
+   "title": "Vesse Ilaria Talm, transit astropath",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask me in whatever order you like,\" Ilaria says. \"I have been going through it in every order since the second hour.\"",
+   "portrait": "Vesse Ilaria Talm. Forty-one, blind since sanctioning, twenty years a transit vessel on Gallery 9.\n\nStanding in her own cell doorway with her hands held out in front of her at cuff height, and they are not shaking, and that is deliberate.",
+   "greeting": "She speaks before you do.\n\n\"I'm ready, sir. I'd like it noted that I came out of the cell myself and that nobody had to fetch me.\"\n\nThe hands are still out. She has heard the rosette, or the boots, or the four hours of silence in the gallery behind you, and she has decided what this is.\n\n\"I transcribed at the twelfth hour yesterday and I have no record of what. Not *no memory* — I want to be accurate, because it will matter. I have a *duty log in my own hand* saying what it was, and I have no memory of the forty-one seconds it says I spent doing it, and the Inquisitor I was carrying for is dead this morning.\"\n\nShe waits.\n\n\"You'll want to detain me. I'd rather we did it now than after four hours of you being kind about it.\"\n\nNobody in this gallery is looking at anything else.",
+   "reprise": "She waits, in the doorway, with her hands out. She has not moved them.",
+   "unknown": "\"I don't know,\" Ilaria says. \"I have been very careful for six hours about the difference between that and *I don't remember*.\"",
+   "disposition": {
+    "flags": [
+     "ILARIA_DETAINED",
+     "ILARIA_CLEARED"
+    ],
+    "default": ""
+   },
+   "deflect": [
+    "She tilts her head very slightly and does not answer.",
+    "\"I'd have to guess at that, sir, and I've decided not to guess at anything today.\""
+   ],
+   "topics": [
+    {
+     "id": "guilt",
+     "names": [
+      "your theory",
+      "did you",
+      "you killed him",
+      "what you think",
+      "confession",
+      "the weapon"
+     ],
+     "text": "\"I killed him,\" Ilaria says.\n\nFlatly. Not a confession — a finding, arrived at over six hours by somebody methodical.\n\n\"I don't know how. I have no memory of doing it and no mechanism to offer you and I am aware that this is the least useful confession anybody has ever made. But a man is dead who was on my carriage list, and I transcribed something at the twelfth hour that I cannot account for, and I am the only instrument in this hive that has been inside both.\n\n\"If a weapon does not remember being fired, sir, it is still the weapon.\"\n\nShe has wanted this to be true for six hours, and the wanting is audible, and it takes you a moment to work out why somebody would want that.\n\nShe wants it because the alternative is the thing she has not said.",
+     "counters": {}
+    },
+    {
+     "id": "transcription",
+     "names": [
+      "how it works",
+      "mechanics",
+      "your work",
+      "vessel",
+      "carrying",
+      "transcribe"
+     ],
+     "text": "She is precise about it, and grateful to be asked something she can answer.\n\n\"Carriage isn't hearing, sir, whatever the schola tells children. It's more like — being written on. The content passes through the vessel to the stylus. I am not a reader; I am a conduit with a hand on it.\n\n\"I know what I've carried because I've written it down, the same as you would. Twenty years of duty logs, all in my hand, all countersigned. That is my memory of my work, sir, and it is not a metaphor. It is where my work is kept.\"\n\nShe says the last part without any weight on it at all.\n\nYou will think about that sentence a great deal in the next fortnight."
+    },
+    {
+     "id": "that_day",
+     "names": [
+      "twelfth hour",
+      "yesterday",
+      "the message",
+      "forty-one seconds",
+      "what happened"
+     ],
+     "text": "\"Eleven minutes past the twelfth. Forty-one seconds.\" She recites it. \"The log says routine, tithe variance advisory, no action, no reply required. Countersigned by me and by the gallery warden.\n\n\"I remember the eleventh hour. I remember the thirteenth — a grain shipment out of the Reach, four minutes, dull. Between them there is a duty log in my own handwriting and nothing else.\"\n\n\"Nothing?\"\n\n\"Not darkness, sir. Not a gap I can feel the edges of.\" She is choosing every word. \"It is exactly like being told what you did on an ordinary afternoon nine years ago. It has the *texture* of a thing that happened and was not worth keeping.\"\n\nShe stops.\n\n\"I have got quite good at describing this,\" she says, and does not explain why she would have needed to get good at it."
+    },
+    {
+     "id": "gaps",
+     "names": [
+      "the gaps",
+      "your memory",
+      "how often",
+      "before",
+      "has this happened",
+      "roster"
+     ],
+     "never": true,
+     "closed": "You name it. The gaps. Whether there have been others.\n\nEverything about her closes at once — not dramatically, she is far too controlled for that, but the head straightens and the hands come down to her sides and something that had been open for six hours is shut.\n\n\"I don't know what you're asking me, sir.\"\n\n\"I think you do.\"\n\n\"Then you'll have it in the report.\" Perfectly level. \"The treatment for a vessel whose recall is failing is not a treatment, Inquisitor, it is a form, and the form goes to the Choir-Prefect, and there is one outcome and it takes about nine days.\"\n\nShe holds her hands back out at cuff height.\n\n\"Shall we get on.\"\n\n[ ILARIA_TRUST -2 ]",
+     "pressure": 1,
+     "closed_counters": {
+      "ILARIA_TRUST": -2
+     }
+    },
+    {
+     "id": "vosk",
+     "names": [
+      "hadrian",
+      "the inquisitor",
+      "him",
+      "carriage list",
+      "your master"
+     ],
+     "text": "\"Nine years on his carriage list,\" Ilaria says. \"Not often. Four or five a year, and never anything I'd have called interesting.\n\n\"He came up here twice. Once about eleven years ago, before your time on this world, and once in the spring.\" She considers. \"He asked me both times how many seconds a Vermilion carriage takes. Not what it carried. How many seconds.\n\n\"I told him it varies and averages about forty.\"\n\nShe turns her head slightly.\n\n\"Was that a thing I should have reported, sir? I have been trying to decide since the second hour whether that was a thing I should have reported."
+    }
+   ],
+   "beats": [
+    {
+     "id": "the_roster",
+     "after_topics": 3,
+     "requires": [
+      "A17_HEARD"
+     ],
+     "text": "\"Sir — before you go.\" Casually, as though it had just occurred. \"Would you read me my duty roster? It's on the hook, the long one. Just the dates.\"\n\nYou take it down. Two years of shifts, dates only, four hundred lines.\n\nYou read them.\n\nIlaria listens with her head at a slight angle, entirely still, for the whole eleven minutes, and does not interrupt, and does not ask you to go back.\n\n\"Thank you, sir,\" she says, when you have finished.\n\nThat is all she says. She does not tell you what she heard.\n\nShe has been counting. She has been counting for three years, in her head, against a list she cannot read and has to ask people to read to her, one person at a time, never the same person twice."
+    }
+   ],
+   "shows": [
+    {
+     "clue": "A19",
+     "requires": [
+      "A17_HEARD"
+     ],
+     "text": "You read her own log back to her: routine, tithe variance advisory, no action.\n\n\"Yes,\" Ilaria says. \"That's mine. That's my hand, that's my guide-rule spacing, that's where I put the countersign.\"\n\n\"It doesn't describe what's on the wax.\"\n\n\"No.\"\n\nThe gallery grinds on around the two of you.\n\n\"I would like to say something and have it written down in the order I say it,\" she says. \"One: that is my handwriting. Two: I do not remember writing it. Three: I would have countersigned it, because I countersign what is in my own hand, because until this morning that was the same thing as knowing it was true.\"\n\nShe stops.\n\n\"I don't have a four, sir.\""
+    }
+   ],
+   "acts": [
+    {
+     "id": "play",
+     "names": [
+      "play cylinder",
+      "play six",
+      "listen",
+      "play the wax",
+      "run it",
+      "cylinder six"
+     ],
+     "requires": [
+      "CHOIR_ACCESS"
+     ],
+     "blocks": [
+      "A17_HEARD"
+     ],
+     "refused": "There are four hundred cylinders on this gallery and nobody has told you which one.",
+     "sets": [
+      "A17_HEARD"
+     ],
+     "grants": [
+      "A17",
+      "A18"
+     ],
+     "cost": 2,
+     "text": "Nine cylinders, and the sixth is the twelfth hour and eleven minutes.\n\nDross reads the jacket aloud before he hands it over, because reading the jacket is not reading the traffic: *CELL 4 / VESSEL TALM V.I. / 0997.4.211 / 12h11 / 41 SEC*, and then, in a different hand — hers — a dispatch number.\n\n**0997.4-1188.**\n\nThe servitor lowers the needle and your astropath's voice comes out of a lathe.\n\nIt is her. It is entirely, insultingly her — the flat Vardan vowels, the little catch before a sibilant. It is her voice saying something with no vowels you recognise, forty-one seconds of it, in a rhythm like someone counting down a stair.\n\nIlaria stands the whole time with her hands at her sides.\n\nWhen it stops she says, \"That is my voice,\" and then, after a while, \"I would like you to write down that I said that first.\"\n\nShe does not sit down afterwards. Dross offers her the chair twice.\n\n[ A17 HELD — forty-one seconds of wax ]\n[ A18 HELD — dispatch 0997.4-1188 ]"
+    },
+    {
+     "id": "take",
+     "names": [
+      "take cylinder",
+      "take the wax",
+      "confiscate",
+      "take six",
+      "impound"
+     ],
+     "requires": [
+      "A17_HEARD"
+     ],
+     "blocks": [
+      "HAS_CYLINDER_6"
+     ],
+     "refused": "There is nothing to take yet.",
+     "sets": [
+      "HAS_CYLINDER_6"
+     ],
+     "counters": {
+      "ILARIA_TRUST": -1
+     },
+     "text": "You take it. It goes in your coat, jacket and all, and it is heavier than a thing that size should be.\n\nDross writes the line in the day-book and you sign it and he is fine about it, genuinely, because a signed impoundment is the most survivable transaction available to him.\n\nIlaria says nothing at all.\n\nThen, after a moment: \"That's the only one, sir. There isn't a copy. That's what a redundancy is.\"\n\n\"I know.\"\n\n\"Yes,\" she says. \"I only wanted it said out loud.\"\n\nIt is procedurally correct. It is the only object in this investigation that no cogitator can amend, and in about eleven days it will be the only thing in the sector that disagrees with the record, and you will be right to have taken it.\n\nShe will not forget that you did.\n\n[ HAS_CYLINDER_6 — ILARIA_TRUST -1 ]"
+    },
+    {
+     "id": "leave",
+     "names": [
+      "leave it",
+      "let her keep it",
+      "leave the cylinder",
+      "her keep",
+      "leave the wax"
+     ],
+     "requires": [
+      "A17_HEARD"
+     ],
+     "blocks": [
+      "HAS_CYLINDER_6",
+      "ILARIA_KEPT_WAX"
+     ],
+     "refused": "There is nothing to leave yet.",
+     "sets": [
+      "ILARIA_KEPT_WAX"
+     ],
+     "counters": {
+      "ILARIA_TRUST": 1
+     },
+     "text": "You tell Dross to put it back on the rack.\n\nHe is briefly, visibly unhappy about that, because a cylinder that has been played and not impounded is a cylinder that is now interesting and still his problem, and then he writes the line and puts it back.\n\n\"Sir,\" Ilaria says. \"That's evidence.\"\n\n\"It's forty-one seconds of your voice.\"\n\n\"It's evidence,\" she repeats, and then stops, because she has just heard the other half of what you said, and nobody in this gallery is going to say the other half out loud.\n\nIt stays on the rack, in Gallery 9, in a building the Lexicanum Vault has no index of.\n\nYou will be glad of that, and you will also, in eleven days, want it very badly and not be able to get up here.\n\n[ ILARIA_TRUST +1 ]"
+    },
+    {
+     "id": "arrest",
+     "names": [
+      "arrest",
+      "detain",
+      "detain her",
+      "arrest her",
+      "custody",
+      "take her"
+     ],
+     "blocks": [
+      "ILARIA_CLEARED"
+     ],
+     "sets": [
+      "ILARIA_DETAINED"
+     ],
+     "counters": {
+      "ILARIA_TRUST": -3,
+      "CRASE_STANDING": 1
+     },
+     "cost": 2,
+     "text": "You detain her, as offered.\n\nShe does not react at all. She puts her wrists together at the height she has been holding them at for six hours and thanks the gallery warden by name when he takes her arm, and asks Dross, over her shoulder, to make sure her cell's shutter stays closed because of the ozone.\n\nThe Crown will be pleased. The case has a shape now: a vessel, a channel, a dead Inquisitor and a suspect in custody within four hours of the elevation, and Crase will say something warm and mean it.\n\nThe paperwork will be perfect.\n\nSomewhere behind you as they take her down the gallery, Hemmel Dross — who has not put his name to anything in twenty years — says, to nobody, \"She hasn't done anything.\"\n\n[ ILARIA_DETAINED — CRASE_STANDING +1 ]"
+    },
+    {
+     "id": "decline",
+     "names": [
+      "decline",
+      "no arrest",
+      "not arresting",
+      "refuse",
+      "let her go",
+      "clear her"
+     ],
+     "blocks": [
+      "ILARIA_DETAINED"
+     ],
+     "sets": [
+      "ILARIA_CLEARED"
+     ],
+     "counters": {
+      "ILARIA_TRUST": 2
+     },
+     "text": "You tell her to put her hands down.\n\n\"Sir—\"\n\n\"You've been standing like that for six hours and I'm not going to be the reason for the seventh.\"\n\nShe does not move.\n\n\"I would like a reason,\" Ilaria says, \"that I can repeat to the Choir-Prefect, because he will ask me, and *the Inquisitor declined* is not a reason, it is a delay.\"\n\nSo you give her one, out loud, in a gallery with an archivist in it: that a weapon that does not remember being fired is not a weapon, it is a *route*; that you do not yet know what came down it; and that arresting the route is a thing you do when you have decided not to find out.\n\nThe hands come down.\n\nShe is not grateful. She is something much more useful than grateful, which is bewildered, and a person who is bewildered has stopped being certain, and a person who has stopped being certain will eventually tell you the thing they have not said.\n\n[ ILARIA_TRUST +2 ]"
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "crown",
+   "names": [
+    "back",
+    "crown",
+    "adamant crown",
+    "chambers",
+    "return",
+    "down",
+    "tier nine"
+   ],
+   "to": "vosk_chambers",
+   "cost": 3,
+   "text": "Down the Spire and back across the gap to the Adamant Crown, with the wax-noise still in your ears a hundred metres after you stop being able to hear it."
+  }
+ ],
+ "clues": {
+  "A17": {
+   "id": "A17",
+   "names": [
+    "cylinder",
+    "the wax",
+    "cylinder six",
+    "forty-one seconds",
+    "41 seconds",
+    "her voice",
+    "recording"
+   ],
+   "label": "Cylinder six — forty-one seconds of Ilaria Talm's voice in a language she does not know",
+   "store": "either",
+   "file_text": "FILED. CLASS: PHYSICAL EVIDENCE / THIRD PARTY CUSTODY. INDEXED.\n\nENTRY READS: WAX REDUNDANCY CYLINDER, CHOIR OF CANTOR, GALLERY 9, CELL 4.\n             CONTENT: VOCAL, VESSEL TALM V.I., 41 SEC, LANGUAGE UNIDENTIFIED.\n             HELD: CHOIR OF CANTOR. NOT IN LEXICANUM CUSTODY.\n\nThe entry is accurate. It describes, correctly and in full, an object the archive does not have and cannot reach.\n\nFor eleven days that will look like a filing detail.",
+   "note_text": "You write down what forty-one seconds of it sounded like, which is not a thing that can be written down, and you do it anyway: her vowels, the catch before a sibilant, and a rhythm like somebody counting down a stair.\n\nIt is the worst piece of evidence you have ever recorded. It is also in ink, in a coat, and the wax it describes is in a building nothing indexes."
+  },
+  "A18": {
+   "id": "A18",
+   "names": [
+    "dispatch",
+    "1188",
+    "the number",
+    "dispatch number",
+    "jacket"
+   ],
+   "label": "Dispatch 0997.4-1188 — the number on cylinder six's jacket, in the vessel's own hand",
+   "store": "either",
+   "file_text": "FILED. CLASS: DISPATCH REFERENCE. INDEXED. REQUISITION-ELIGIBLE.\n\nA dispatch number is an address. The Vault will take it.\n\nQUERY 0997.4-1188.",
+   "note_text": "You write the number down: 0997.4-1188. Four digits and a cycle.\n\nIt is the shortest thing in your notebook and it is the only thing in it that the Lexicanum Vault will answer to.",
+   "sets": [
+    "DISPATCH_ID_KNOWN"
+   ]
+  },
+  "A19": {
+   "id": "A19",
+   "names": [
+    "her log",
+    "the duty log",
+    "the summary",
+    "tithe variance",
+    "what she wrote"
+   ],
+   "label": "Her own duty log describes forty-one seconds she has no memory of writing, and it is not what is on the wax",
+   "store": "either",
+   "file_text": "FILED. CLASS: WITNESS RECORD / DUTY LOG DISCREPANCY. INDEXED. ATTRIBUTED: TALM, V. I., VESSE.\n\nThe cogitator files a discrepancy between a countersigned Choir duty log and an unindexed wax cylinder it has no record of, and resolves it, as it must, in favour of the countersigned document.\n\nENTRY READS: NO DISCREPANCY. LOG COMPLETE AND COUNTERSIGNED.",
+   "note_text": "You copy the log entry out word for word — *routine, tithe variance advisory, no action* — and under it what is actually on the wax, which is forty-one seconds of a language nobody in this gallery can name.\n\nTwo records of one event, in one woman's hand and one woman's voice, and they do not agree, and she wrote and spoke both of them."
+  }
+ },
+ "strings": {
+  "no_such_thing": "Nothing here by that name, and this gallery is mostly wax.",
+  "already_read": "You have looked twice. There is a woman standing in a doorway with her hands out.",
+  "no_such_exit": "One way off this gallery and it goes back down the Spire.",
+  "no_terminal": "There is no cogitator on Gallery 9. Dross keeps his index in a ledger, in his own hand, against his chest.\n\nThat is not an oversight and you are about to be very glad of it.",
+  "read_room_locked": "This is a gallery in somebody else's building. There is nothing arranged here for you to read."
+ }
+}
