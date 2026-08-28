@@ -14,13 +14,15 @@ type Archive struct {
 }
 
 const (
-	CodeLive    = "C9-F4-D2" // Choir of Cantor hardcopy dispatch manifests
-	CodeForward = "D2-F4-C9" // Munitorum drainage requisition ledgers
+	CodeLive     = "C9-F4-D2"    // Choir of Cantor hardcopy dispatch manifests
+	CodeForward  = "D2-F4-C9"    // Munitorum drainage requisition ledgers
+	CodeDispatch = "0997.4-1188" // the dispatch itself, if you came back from the Choir with its number
 )
 
 func NewArchive() *Archive {
 	a := &Archive{records: map[string]string{}}
 	a.records[CodeLive] = dispatchRecord
+	a.records[CodeDispatch] = dispatchRecord
 	a.records[CodeForward] = drainageRecord
 	return a
 }
@@ -53,7 +55,9 @@ func (a *Archive) Correct() {
 	}
 	a.corrected = true
 
+	// Both ways in. The record is gone, not merely unindexed by one address.
 	delete(a.records, CodeLive)
+	delete(a.records, CodeDispatch)
 
 	for i, line := range a.caseNotes {
 		if len(line) > 7 && line[:7] == "REQ 001" {

@@ -1,0 +1,427 @@
+{
+ "id": "antechamber",
+ "clock_at": "04h42",
+ "title": "THE ANTECHAMBER — ADAMANT CROWN, TIER NINE",
+ "intro": "The witnesses are assembled, which is the first thing you notice, and the\nsecond thing you notice is that assembling them took somebody half an hour.\n\nTwo recording adepts with their styluses already moving. The Crown\nProvost-Adjunct, who has signed something today and would rather you did not\nask what. Sergeant Oduya on the doorframe with her shoulder still not right\nfrom the door. Vaux at the back, late, hands folded.\n\nAnd through the inner door, eleven metres away, a shape on the floor with a\npistol in its hand that nobody in this room has looked at for four hours.\n\nInquisitor Yolanda Crase has something wrapped in cloth.",
+ "look": "A wide cold room built for waiting in. Everybody in it is being written down.\n\nCrase, in front of you, holding a bundle of cloth in both hands.\nThe two adepts, styluses going, recording this.\nThe Provost-Adjunct, at a distance he has chosen carefully.\nBez on the doorframe, pretending to be fine.\nVaux at the back, watching the adepts.\n\nThe inner door is open four inches and nobody is going through it.",
+ "objects": [
+  {
+   "id": "crase",
+   "names": [
+    "yolanda",
+    "lord-inquisitor",
+    "inquisitor crase",
+    "her"
+   ],
+   "careless": "Yolanda Crase, forty-four, Lord-Inquisitor of this world for six years. She has been awake since the twenty-third hour and it does not show, because she has decided it will not.",
+   "careful": "She has been crying at some point in the last four hours and has done nothing to conceal it, which is not the same as having wanted you to see.\n\nThe cloth in her hands is a personal handkerchief, not Ordo issue. Whatever is in it has been against her ribs long enough to have taken her heat.\n\nShe was Vosk's friend for thirty years. Nobody in this room has said that out loud and everybody in this room is thinking about it, and she is going to conduct the next forty seconds without letting a single one of them see her do it."
+  },
+  {
+   "id": "vaux",
+   "names": [
+    "dmetri",
+    "interrogator",
+    "the back"
+   ],
+   "careless": "Interrogator Dmetri Vaux, at the back, hands folded. Forty years Vosk's apprentice. He arrived late and he arrived anyway.",
+   "careful": "He is not looking at you.\n\nHe is looking at the two adepts — specifically at their hands, at the styluses, at the point where a thing becomes a record. He watches them the whole time, the way a man watches the only part of a room that is going to matter later.\n\nYou have known Dmetri Vaux for eleven years and you have never once seen him watch a person when there was a document available."
+  },
+  {
+   "id": "bez",
+   "names": [
+    "oduya",
+    "sergeant",
+    "beskra",
+    "doorframe",
+    "sergeant oduya"
+   ],
+   "careless": "Sergeant Beskra Oduya, twenty-six years Militarum, eleven of them standing outside doors for Hadrian Vosk. She is at parade rest against the doorframe, which is not a thing parade rest permits.",
+   "careful": "She broke that door with her shoulder four hours ago and the shoulder has not been looked at, and she is holding her weight off it in a way she believes is invisible.\n\nShe has not cried and is not going to. She has, however, positioned herself so that she is between the inner door and everybody in this room, and she has been standing there for four hours, guarding a man who does not need it any more from people who were not going to touch him.\n\nNobody has told her to stop. Nobody is going to."
+  },
+  {
+   "id": "adepts",
+   "names": [
+    "adept",
+    "recording adepts",
+    "styluses",
+    "stylus",
+    "scribes"
+   ],
+   "careless": "Two recording adepts, seated, writing. Everything said in this room is being written down as it is said. That is the point of this room.",
+   "careful": "They are writing in Administratum shorthand, at speed, and one of them is a quarter-second ahead of the other because she has learned the shape of a ceremony and is anticipating it.\n\nWhat they produce will be countersigned, indexed, filed to the Lexicanum Vault within the hour, and it will be, from then on, what happened here.\n\nIt occurs to you that you have spent eleven years believing that to be a comfort."
+  },
+  {
+   "id": "provost",
+   "names": [
+    "provost-adjunct",
+    "adjunct",
+    "crown provost",
+    "the crown"
+   ],
+   "careless": "The Crown Provost-Adjunct, present because the elevation of an Inquisitor on this world requires a Crown witness, standing at a distance he has chosen carefully.",
+   "careful": "He countersigned the verdict this morning. He has not mentioned it, you have not mentioned it, and he is standing far enough away that mentioning it would require raising your voice in front of two recording adepts.\n\nThat distance is the most carefully considered thing in this room."
+  },
+  {
+   "id": "rosette",
+   "names": [
+    "cloth",
+    "handkerchief",
+    "bundle",
+    "the rosette",
+    "sigil"
+   ],
+   "careless": "A bundle of cloth in her hands. You know exactly what is in it. Everybody in this room knows exactly what is in it.",
+   "careful": "Not a case. A case is what the Ordo issues, lined, sealed, with a form inside it.\n\nThis is a personal handkerchief with an Inquisitorial rosette folded into it, and she has been carrying it against her ribs since midnight, because just after midnight she took it off a dead man's coat with her own hands and there was nowhere to put it."
+  },
+  {
+   "id": "door",
+   "names": [
+    "inner door",
+    "chambers",
+    "the room",
+    "threshold"
+   ],
+   "careless": "The inner door, four inches open. Beyond it, at eleven metres, a shape on the floor. From here you cannot see which foot.",
+   "careful": "Four inches, and the frame is split where Bez put her shoulder through it, and the splinters point inward, which is what splinters do when a door was sealed from the other side.\n\nYou can see one hand and the pistol in it. You cannot see his face and you are aware that you are grateful for that and that being grateful for it is going to cost you something later.\n\nYou have been in that room a hundred times. You cannot, standing here, remember what colour the floor is."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "crase",
+   "names": [
+    "yolanda",
+    "lord-inquisitor",
+    "her",
+    "she"
+   ],
+   "title": "Inquisitor Yolanda Crase, Lord-Inquisitor of Vardan Prime",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask me anything,\" Crase says. \"I mean that, and I am aware of how long it will be before anyone says it to you again.\"",
+   "portrait": "Yolanda Crase, forty-four, six years Lord-Inquisitor. Awake since the twenty-third hour and refusing to show it.\n\nShe was Hadrian Vosk's friend for thirty years, and in about a minute she is going to hand you his rosette in front of witnesses and apologise for it.",
+   "greeting": "\"There's a form,\" Crase says. \"There's always a form. I've signed the part that matters.\"\n\nShe unfolds the cloth. The rosette is warmer than it should be — she has had it against her ribs since midnight — and she holds it the way you would hand somebody a bird.\n\n\"I'm sorry about the hour,\" she says. \"And the audience. The audience is deliberate and I'd rather you knew that than worked it out.\"\n\nBehind her the adepts are writing. Everything in this room is being written.",
+   "reprise": "She waits, with the rosette in the cloth in both hands, for exactly as long as you need.",
+   "unknown": "\"I don't know,\" Crase says. \"I'd rather say that than the other thing.\"",
+   "deflect": [
+    "\"Not here,\" she says, and her eyes go, very briefly, to the two adepts.",
+    "\"Ask me that again in a week,\" she says, \"and I'll answer it in a room without stenographers.\"",
+    "She shakes her head, once, and does not pretend it is anything other than a refusal."
+   ],
+   "disposition": {
+    "flags": [
+     "KESH_WARNED_OFF",
+     "KESH_DEFIED"
+    ],
+    "default": ""
+   },
+   "topics": [
+    {
+     "id": "mood",
+     "names": [
+      "his mood",
+      "how he seemed",
+      "tired",
+      "state of mind",
+      "depressed"
+     ],
+     "text": "\"Tired,\" Crase says. \"Which is what everybody is going to say, and it is going to go in the file, and it is going to be true.\"\n\nShe is not comfortable with that and does not hide it.\n\n\"He was two hundred and eighty-seven years old. He had been tired for a century. If tiredness were sufficient this Ordo would be a great deal smaller than it is.\"\n\nNobody writes that part down. You watch to see whether they will."
+    },
+    {
+     "id": "debts",
+     "names": [
+      "debt",
+      "money",
+      "finances",
+      "administratum debts",
+      "creditors"
+     ],
+     "text": "\"Three, all Administratum, all boring.\" She counts them off without notes. \"A tithe-office assessment he disputed for nine years out of pure temper. An unpaid levy on a hab he sold in 'nineteen. And four hundred and twelve crowns to the Munitorum for a shipment of lifter-fuel that was destroyed in transit in 'seven and which they have billed him for annually ever since.\"\n\n\"Four hundred and twelve crowns.\"\n\n\"He found it funny,\" Crase says. \"He had it framed. It's in there, on the wall, behind the door.\"\n\nShe stops, briefly, having said *it's in there* about a room with him in it."
+    },
+    {
+     "id": "enemies",
+     "names": [
+      "enemy",
+      "who hated him",
+      "rivals",
+      "four enemies"
+     ],
+     "text": "\"Four worth the word. Two are dead.\" She says the two dead ones' names and they mean nothing to you. \"One is a Cardinal on Sarrow's Reach who has spent eleven years writing letters about him to people who do not read letters. And one is the Munitorum liaison who bills him for the lifter-fuel, and I include her for completeness and not because I think she came up here with a garrotte.\"\n\n\"That's four people in two hundred and eighty-seven years.\"\n\n\"Yes,\" Crase says. \"It is a remarkably small number and I have been thinking about it since the third hour.\"\n\nYou look at her. She looks back, and does not add anything, and lets you have the thought yourself."
+    },
+    {
+     "id": "work",
+     "names": [
+      "last cycle",
+      "his work",
+      "caseload",
+      "cases",
+      "what he was working on",
+      "investigation"
+     ],
+     "text": "\"Nothing,\" Crase says.\n\n\"Nothing?\"\n\n\"He'd stopped taking cases. About a year ago — fourteen months. It's in the docket, you can pull it, there's nothing in it.\" She says this easily and completely. \"He was two hundred and eighty-seven. Nobody thought it was strange. I didn't think it was strange.\"\n\nThere is no evasion in it anywhere. She is not choosing her words; there are no other words available to her.\n\nYou will think about this conversation a great deal, later, and one of the things you will not be able to decide is at what point in it she stopped knowing what she knew.",
+     "sets": [
+      "CRASE_SAYS_NO_CASES"
+     ]
+    },
+    {
+     "id": "why_not_vaux",
+     "names": [
+      "vaux",
+      "dmetri",
+      "why not vaux",
+      "why not him",
+      "seniority",
+      "passed over"
+     ],
+     "text": "\"Because he'd have been very good at it,\" Crase says.\n\nIt is not the answer you expected and she gives it immediately, in her ordinary voice, in front of two recording adepts and the man himself.\n\n\"Dmetri Vaux has forty years, two hundred and six closed cases and a better procedural mind than mine. He would have run this investigation correctly and he would have finished it in nine days.\" She adjusts the cloth in her hands. \"I did not want it finished in nine days. I wanted it looked at by somebody Hadrian liked.\"\n\nAt the back of the room, Vaux does not move at all.\n\n[ ASKED_WHY_NOT_VAUX — CRASE_STANDING +1 ]",
+     "sets": [
+      "ASKED_WHY_NOT_VAUX"
+     ],
+     "counters": {
+      "CRASE_STANDING": 1
+     }
+    },
+    {
+     "id": "me",
+     "names": [
+      "why me",
+      "myself",
+      "my rank",
+      "eleven years",
+      "records-adept"
+     ],
+     "text": "\"You were his Interrogator for eleven years and you are the only person on this world he ever brought a problem to twice.\" Crase says it flatly, as a finding. \"That is the whole of my reasoning and I am aware of how thin it will look in a conclave.\"\n\n\"It looks thin from here.\"\n\n\"Yes.\" She almost smiles. \"The alternative was a Crown appointee, or Dmetri, or me. You will work out for yourself, in about a week, why none of those was going to happen, and when you do I would take it as a kindness if you came and told me, because I would like to know whether I got there first."
+    },
+    {
+     "id": "vosk",
+     "names": [
+      "hadrian",
+      "him",
+      "the man",
+      "your friend",
+      "thirty years"
+     ],
+     "text": "\"Thirty-one years,\" Crase says. \"He was at my elevation. He stood about where Dmetri is standing and he was late to that as well.\"\n\nShe stops. The adepts keep writing, because they write what is said and there is nothing being said.\n\n\"I am not going to do this here,\" she says at last, entirely without apology. \"Not because I can't. Because there are two stenographers in this room and whatever I say about Hadrian Vosk in the next minute becomes a document, and I have decided that he is not going to be a document today.\"\n\nIt is the only time all morning she looks at the inner door."
+    },
+    {
+     "id": "retinue",
+     "names": [
+      "staff",
+      "his people",
+      "the four",
+      "who do i get",
+      "team"
+     ],
+     "text": "\"Four. All his, none of them yours yet, and I want you to hear the difference in that.\"\n\nShe gives you them in the order she thinks about them, which is not rank order.\n\n\"Sergeant Oduya, twenty-six years, on that doorframe. Savant Fenn, who remembers everything and understands about half of it. Vesse Talm, your astropath, who has been sitting in a Choir cell since the second hour waiting for somebody to come and arrest her. And Dmetri, who is not yours, who will never be yours, and who you will need.\"\n\n\"That's three and a problem.\"\n\n\"That's four people who have just lost the only person on this world who knew how to use them,\" Crase says."
+    },
+    {
+     "id": "kesh",
+     "names": [
+      "lord-prefect",
+      "countersignature",
+      "countersign",
+      "chain",
+      "personnel file",
+      "her warning",
+      "warning"
+     ],
+     "requires": [
+      "ROSETTE_TAKEN"
+     ],
+     "text": "\"Kesh,\" Crase says, \"is a Lord-Prefect of the Administratum with two hundred years of countersignature on every tithe instrument on this world, and she is not a person you requisition. She is a person you are introduced to.\"\n\n\"And Vosk's personnel file?\"\n\n\"Same answer, worse. Pull an Inquisitor's personnel file in your first week and the file that gets opened is yours.\" She is entirely level about it. \"I am not telling you these things are closed to you. I am telling you they are closed to you *this week*, by me, and that I will open both of them myself if you ask me to in a month.\"\n\nGood advice, cleanly given, by somebody who has no reason to lie to you.\n\nIt is also, precisely, the two doors somebody would need shut.\n\n[ say so: PROMISE, or DEFY ]",
+     "repeat": "\"I've said my piece about Kesh,\" she says. \"You'll do what you do.\""
+    },
+    {
+     "id": "choir",
+     "names": [
+      "cylinders",
+      "wax",
+      "wax cylinders",
+      "redundancies",
+      "recordings",
+      "spire",
+      "lathes",
+      "the lead"
+     ],
+     "requires": [
+      "CRASE_LEAD_CHOIR"
+     ],
+     "text": "\"The lathes cut wax while the transcription is happening — it's a redundancy against a vessel dying mid-message, which happens.\" Crase shrugs. \"They're stacked in a gallery on the Spire. Nobody indexes them, nobody reads them, and the Choir won't let them off the Spire because they're Choir property and Hemmel Dross would rather die than sign a release form.\"\n\n\"They're not in the Vault.\"\n\n\"They're not in anything,\" she says. \"They're wax. It's a filing system from before the Crown was built and it survives because nobody has ever thought it was worth replacing.\"\n\nShe says all of this as an apology for its uselessness, and moves on, and you are going to remember the exact tone she used for the rest of your life.",
+     "repeat": "\"The cylinders,\" she says. \"Yes. For what they're worth to you, which I suspect is nothing.\""
+    },
+    {
+     "id": "timestamp_again",
+     "names": [
+      "verdict",
+      "the writ",
+      "two hours",
+      "the form",
+      "discovery",
+      "a0"
+     ],
+     "requires": [
+      "TIMESTAMP_NOTICED"
+     ],
+     "text": "\"The form,\" Crase says, before you have finished. \"Yes. You asked me at the fourth hour and I told you, and I have since sent a third letter about it.\"\n\nAt his careful distance the Crown Provost-Adjunct examines the middle distance.\n\n\"You were right to ask it then and you are right to ask it again in front of stenographers,\" she says, \"and I would like the record to show that I said so.\"\n\nOne of the adepts writes that down. It is the first thing anybody has put in your file."
+    },
+    {
+     "id": "timestamp",
+     "names": [
+      "verdict",
+      "the writ",
+      "two hours",
+      "the form",
+      "discovery",
+      "a0"
+     ],
+     "has": [
+      "A0"
+     ],
+     "text": "You put it to her: the verdict is timed two hours before the body was found.\n\n\"Yes,\" Crase says, without a flicker. \"It's a pre-generated form. The Crown runs them off in blocks at the start of a watch with the watch-time already struck on them, and the Provost's office fills in the rest when there's a body. It is a disgraceful piece of clerical practice and I have written to them about it twice.\"\n\nAt his careful distance, the Crown Provost-Adjunct has gone a colour.\n\n\"You were right to ask,\" she says. \"You will be right to ask about four hundred things in the next month and wrong about most of them, and I would rather have that than the other kind.\"\n\n[ CRASE_STANDING +1 — and your first suspicion of the record was wrong, which is a thing worth remembering about yourself ]",
+     "closed": "\"The verdict,\" Crase says, and waits, and when you do not put anything specific to her she does not help you.\n\n\"It's written. It's countersigned. If you want to take it apart, take it apart — you'll have the authority in about a minute — but take it apart with something in your hand.\"",
+     "counters": {
+      "CRASE_STANDING": 1
+     }
+    }
+   ],
+   "beats": [
+    {
+     "id": "no_refusing",
+     "after_topics": 3,
+     "blocks": [
+      "ROSETTE_TAKEN"
+     ],
+     "text": "One of the adepts has stopped writing and is waiting, stylus up, for the thing she was assembled to record.\n\nCrase notices you notice.\n\n\"There isn't a version of this where you say no,\" she says, not unkindly. \"I've thought about it. There's a version where you say no and it takes four hours and then you say yes, and I didn't think you'd want that in front of the Crown.\"\n\nShe is still holding it out."
+    },
+    {
+     "id": "choir_lead",
+     "requires": [
+      "ROSETTE_TAKEN"
+     ],
+     "blocks": [
+      "CRASE_LEAD_CHOIR"
+     ],
+     "sets": [
+      "CRASE_LEAD_CHOIR"
+     ],
+     "grants": [
+      "A1-lead"
+     ],
+     "text": "Then, in the flat voice of somebody clearing an administrative item, and while the adepts are still writing:\n\n\"One thing that might be useful and probably isn't. The Choir of Cantor cuts wax-cylinder redundancy recordings of every transcription their vessels make — physical, un-networked, on the Spire. They've done it for six hundred years. They're not in the Vault and they're not in anything. I mention it because it's the only part of this hive I know of that isn't.\"\n\nShe says it as a courtesy to a junior. She cannot imagine you getting anywhere with it."
+    }
+   ],
+   "shows": [],
+   "acts": [
+    {
+     "id": "accept",
+     "names": [
+      "take",
+      "take rosette",
+      "kneel",
+      "swear",
+      "accept rosette",
+      "yes"
+     ],
+     "blocks": [
+      "ROSETTE_TAKEN"
+     ],
+     "cost": 2,
+     "sets": [
+      "ROSETTE_TAKEN"
+     ],
+     "text": "It takes forty seconds.\n\nShe speaks it plainly, without ceremony, and the adepts write it down as it happens so that by the time she has finished saying the thing it has already become a record of the thing. There is no oath. There is nobody to swear to. There is a woman with a handkerchief telling four witnesses what you now are, and then you are it.\n\nThe rosette is still warm.\n\n\"Three things change hands,\" Crase says. \"This. His cogitator authority-key, which the Crown has already re-registered to you, which means his terminal is your terminal as of the fourth hour. And four people who worked for him yesterday.\"\n\nShe puts the key in your other hand.\n\n\"And I'm sorry about all three.\"\n\n\"And a warning, which I'd like you to hear as a warning and not as an order, because it isn't one yet. Do not requisition Lord-Prefect Kesh's countersignature chain, and do not pull Hadrian's personnel file. Not this week. Let me ask her — she'll answer me, and she'll bury you.\"\n\nBehind her the styluses stop.\n\nVaux is already at the door. He turns with his hand on it and says, in a voice pitched precisely for two recording adepts,\n\n\"Congratulations, Interrogator.\"\n\nAnd goes.\n\nTwo of the four people present notice the rank he used, and one of them is you.\n\n[ ROSETTE_TAKEN — CRASE_LEAD_CHOIR ]"
+    },
+    {
+     "id": "promise",
+     "names": [
+      "agree",
+      "comply",
+      "consent",
+      "accept warning",
+      "promise her"
+     ],
+     "requires": [
+      "ROSETTE_TAKEN"
+     ],
+     "blocks": [
+      "KESH_DEFIED"
+     ],
+     "refused": "There is nothing yet to give her your word about.",
+     "sets": [
+      "KESH_WARNED_OFF"
+     ],
+     "text": "You tell her you'll leave Kesh alone. You say it out loud, in front of the adepts, which is the only way anything gets said in this room.\n\nCrase's shoulders come down about a centimetre. You had not noticed they were up.\n\n\"Thank you,\" she says. \"That was not a small thing to ask and I'm aware I asked it four seconds after handing you a rosette.\"\n\nShe means it, and she is relieved, and both of those are true and neither of them is the reason the door is now shut.\n\n[ KESH_WARNED_OFF ]"
+    },
+    {
+     "id": "defy",
+     "names": [
+      "refuse",
+      "decline",
+      "disobey",
+      "reject",
+      "no"
+     ],
+     "requires": [
+      "ROSETTE_TAKEN"
+     ],
+     "blocks": [
+      "KESH_WARNED_OFF"
+     ],
+     "refused": "There is nothing yet to refuse.",
+     "sets": [
+      "KESH_DEFIED"
+     ],
+     "text": "You tell her you'll requisition whatever the investigation requires, including Kesh, including the personnel file, and you say it in front of the adepts because there is no other way to say anything here.\n\nCrase takes it without a flicker.\n\n\"Understood,\" she says. \"That's your authority now and you're entitled to it.\"\n\nShe hands you nothing else, says nothing else, and is entirely pleasant for the remaining ninety seconds of the ceremony.\n\nSomewhere in the next three weeks a file will be opened on your judgement, and it will be opened by somebody who likes you, and it will be scrupulously fair, and it will exist.\n\n[ KESH_DEFIED — CRASE_STANDING -1 ]",
+     "counters": {
+      "CRASE_STANDING": -1
+     }
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "chambers",
+   "names": [
+    "room",
+    "inner door",
+    "in",
+    "vosk's chambers",
+    "through",
+    "body",
+    "door"
+   ],
+   "to": "vosk_chambers",
+   "cost": 1,
+   "requires": [
+    "ROSETTE_TAKEN"
+   ],
+   "blocked": "Bez is on that doorframe and the Provost-Adjunct is four metres away with a countersigned verdict in his coat, and you are, for another forty seconds, a records-adept with eleven years in.\n\nYou cannot go in there until you are somebody who can go in there.",
+   "text": "Crase asks the Crown for the chambers, alone, for you.\n\nThe Provost-Adjunct opens his mouth. She does not look at him and he closes it again, and that is the first thing your rosette does and you did not even do it.\n\nIt takes an hour and a half to arrange, because everything in the Adamant Crown takes an hour and a half to arrange. The wardens are stood down. The Provost's people are found and sent away. The medicae are told to hold on the tier, and are not pleased, and hold.\n\nAt twelve past the sixth hour Bez stands off the doorframe to let you past, and does not follow.\n\n\"Take as long as you need,\" Crase says, which is kind, and untrue, and she does not know it is untrue."
+  }
+ ],
+ "clues": {
+  "A1-lead": {
+   "id": "A1-lead",
+   "names": [
+    "cylinders",
+    "wax",
+    "wax cylinders",
+    "redundancies",
+    "the lead",
+    "choir lead",
+    "recordings",
+    "lathes"
+   ],
+   "label": "The Choir of Cantor cuts wax-cylinder redundancies of every transcription — physical, un-networked, never in the Vault",
+   "store": "either",
+   "file_text": "FILED. CLASS: INVESTIGATIVE LEAD / THIRD PARTY / VERBAL. INDEXED. ATTRIBUTED: CRASE, Y., INQUISITOR.\n\nTranscribed, timestamped and indexed inside four seconds. The one thing anyone has told you today that exists outside the archive is now inside it.\n\nNobody is going to mind. It is a note about some wax.",
+   "note_text": "You write it in your own hand while she is still talking, which she notices, and does not remark on.\n\nA spoken sentence about a filing system nobody has ever bothered to index, now sitting in a book nobody has ever bothered to index either.\n\nIt is not evidence of anything. It is the only thing you own."
+  }
+ },
+ "strings": {
+  "no_such_thing": "There is nothing here by that name, and there are only seven things here.",
+  "already_read": "You have looked at that twice already and there are two stenographers watching you do it.",
+  "no_such_exit": "There is one door out of this room and one door into it, and you came in through one of them.",
+  "no_terminal": "Not here, not in front of two recording adepts, and not on a Crown terminal in a public antechamber.\n\nHis is upstairs and it is yours now."
+ },
+ "look_no_body": "A wide cold room built for waiting in. Everybody in it is being written down.\n\nThe inner door stands open. There is nobody through it now but furniture."
+}

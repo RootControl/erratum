@@ -1,0 +1,385 @@
+{
+ "id": "vaux_study",
+ "title": "TIER FOUR — THE STUDY OF INTERROGATOR DMETRI VAUX",
+ "intro": "Forty years of casework, floor to ceiling, in paper.\n\nThere is no cogitator in this room. There is no socket for one. The man has\nspent four decades building a private archive that nothing can index and\nnobody can amend, out of what everyone in the Crown agrees is pure\nobstructive spite.\n\nHe was right. He does not know he was right.\n\nHe does not stand up.",
+ "look": "Case folders to the ceiling on three walls, hand-numbered, hand-indexed.\nA desk with a pen on it. A chair he is not getting out of.\n\nVaux waits with his hands folded, giving you exactly as long as you need,\nwhich is his way of telling you how long that is.",
+ "objects": [
+  {
+   "id": "files",
+   "names": [
+    "file",
+    "case-files",
+    "casefiles",
+    "casework",
+    "folders",
+    "paper",
+    "shelves",
+    "archive",
+    "walls"
+   ],
+   "careless": "Forty years of case folders, hand-numbered, in a room with no machine to read them. The Crown has been trying to get these onto a cogitator since before you enlisted.",
+   "careful": "Three indices, all in the same hand, all cross-referenced: by subject, by year, and by a third scheme you cannot immediately parse and which is almost certainly by person. No duplicates. Not one of these files exists anywhere else in the hive.\n\nWhich means nothing here can be requisitioned, amended, corrected or lost, and it means that if Dmetri Vaux dies, forty years of the Ordo's work on this world dies in the afternoon.\n\nYou have been in the habit, all morning, of thinking of this room as a monument to a man's grudge."
+  },
+  {
+   "id": "socket",
+   "names": [
+    "cogitator",
+    "terminal",
+    "desk",
+    "wall",
+    "plug",
+    "port"
+   ],
+   "careless": "No terminal. You had noticed. Everyone notices.",
+   "careful": "There was one once. The wall socket is capped, and the cap is painted over, and the paint is older than your service.\n\nHe did not refuse a cogitator. He had one and had it taken out, at some point in the last forty years, and then let the paint go on over it so that nobody would ever ask him about it again."
+  },
+  {
+   "id": "pen",
+   "names": [
+    "stylus",
+    "ink",
+    "his pen"
+   ],
+   "careless": "A pen. He has it out before you have finished your first sentence.",
+   "careful": "He has it out because he intends to sign something. He has decided, before you arrived, what he is going to concede and in what order, and having decided it he is not going to waste your time or his by making you extract it.\n\nIt is the most infuriating courtesy you have ever been shown."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "vaux",
+   "names": [
+    "dmetri",
+    "interrogator",
+    "him",
+    "he"
+   ],
+   "title": "Interrogator Dmetri Vaux",
+   "lists_topics": false,
+   "topic_refusal": "\"You may ask me things,\" Vaux says. \"I am not going to tell you which things.\"",
+   "portrait": "Sixty-one, dry, immaculate. Vosk's senior apprentice for forty years and passed over this morning for a records-adept with eleven years in.\n\nHe is using every correct form of address, perfectly, with the emphasis very slightly on *correct*.",
+   "greeting": "\"Inquisitor,\" Vaux says, and gets the rank right, and puts a very small amount of work into getting it right.\n\nHe does not stand. He gestures at the chair opposite with two fingers, the way a man offers a chair in his own house, and takes a pen out of the desk before you have asked him anything at all.",
+   "reprise": "He waits. He has all day. He has made a point of having all day.",
+   "unknown": "\"I have nothing on that,\" Vaux says, and it is true, and he is pleased that it is true.",
+   "deflect": [
+    "\"No,\" he says, pleasantly.",
+    "He looks at you for slightly too long and does not answer.",
+    "\"Ask me a question I am obliged to answer, Inquisitor, and I will answer it. Correctly.\""
+   ],
+   "disposition": {
+    "flags": [
+     "VAUX_DETAINED",
+     "VAUX_SHOWN_ROOM",
+     "VAUX_UNCHALLENGED"
+    ],
+    "default": "VAUX_UNCHALLENGED"
+   },
+   "topics": [
+    {
+     "id": "seal",
+     "names": [
+      "corridor",
+      "warden",
+      "warden's seal",
+      "aperture",
+      "aperture log",
+      "register",
+      "eighth hour",
+      "door"
+     ],
+     "text": "You put the seal-integrity register to him before he can put it to you: a warden's seal broken and re-set at the eighth hour, forty minutes before Bez forced the door, and the register does not log who.\n\nThe pause is short and it is real.\n\n\"The integrity register,\" Vaux says. \"Not the aperture log. Most people read the aperture log and stop.\"\n\nHe writes one line and turns the page round so you can read it upside down, which you can.\n\n\"I broke it. At the eighth hour. I came to see the body and found the room sealed, so I broke a warden's seal and re-set it, which is an offence under Crown statute, and which I will sign for now if it moves us along. I took nothing. You may search this room.\"\n\nHe is telling the truth, all of it, and the interesting part is that he is disappointed in you for a reason you cannot yet locate.\n\n[ A7 — corroborated. VAUX_RESPECT ]",
+     "sets": [
+      "VAUX_RESPECT"
+     ],
+     "grants": [
+      "A7"
+     ],
+     "repeat": "\"I have signed for the seal,\" he says. \"Twice, now.\"",
+     "has": [
+      "A7"
+     ]
+    },
+    {
+     "id": "seal_cold",
+     "names": [
+      "seal",
+      "corridor",
+      "warden",
+      "warden's seal",
+      "aperture",
+      "aperture log",
+      "register",
+      "eighth hour",
+      "door"
+     ],
+     "text": "\"You will want to establish that I was in the corridor,\" Vaux says. \"I was in the corridor. I broke a warden's seal at the eighth hour and re-set it, which is an offence under Crown statute, and which I will sign for now if it moves us along.\"\n\nHe has the pen out before you answer. That is the thing about him. He is never the one wasting your time.\n\n\"I came to see the body. I found the room sealed. I resealed what I had broken and I took nothing, and you would have had all of that from the integrity register in nine seconds if you had thought to pull it.\"\n\n[ A7 HELD — a warden's seal broken and re-set 40 minutes before the door was forced ]",
+     "grants": [
+      "A7"
+     ],
+     "repeat": "\"I have signed for the seal,\" he says. \"Twice, now.\""
+    },
+    {
+     "id": "procedure",
+     "names": [
+      "protocol",
+      "process",
+      "statute",
+      "form",
+      "forms",
+      "correct procedure"
+     ],
+     "text": "This he will talk about for as long as you let him, and it is not a stall.\n\nScene protocol, seal statute, the order in which a death in the Crown is supposed to be registered and by whom, the four separate offices that must sign before a body is moved and the one that never does. He is precise, unhurried, and completely without vanity about it. It is the only subject on which he treats you as a colleague.\n\nSomewhere in the middle of it you notice that he has not once used the word *suicide*, and that he has not avoided it either. It has simply not come up, the way a word does not come up when a man has already put it away."
+    },
+    {
+     "id": "caseload",
+     "names": [
+      "cases",
+      "work",
+      "last cycle",
+      "declining",
+      "his caseload",
+      "vosk's work"
+     ],
+     "requires": [
+      "VAUX_RESPECT"
+     ],
+     "text": "\"He stopped taking cases,\" Vaux says. \"Everyone will tell you that. The Lord-Inquisitor will tell you that.\"\n\nHe turns a folder round. Fourteen months of Vosk's docket, in Vaux's hand, because Vaux kept his own copy of his master's caseload for forty years like a man keeping a diary of someone else's life.\n\n\"He did not stop working. He stopped *filing*. There is a difference of about eleven cases and I am the only person on this world who can see it, because I am the only person who wrote it down twice.\"\n\nHe closes the folder before you can read the last column, and it is not concealment. It is that he has just heard himself, and is deciding, in real time, how much he has decided to give you.",
+     "closed": "\"His caseload,\" Vaux repeats. \"You may pull his caseload. It is in the Vault, it is indexed, and it will tell you that he stopped taking cases.\"\n\nHe waits for you to ask him whether he believes it.\n\nYou do not ask.",
+     "pressure": 1
+    },
+    {
+     "id": "seniority",
+     "names": [
+      "rank",
+      "service",
+      "forty years",
+      "his seniority",
+      "apprentice"
+     ],
+     "text": "\"Forty-one years in the eighth month,\" he says. \"Nineteen as his interrogator. I have closed two hundred and six cases and lost eleven, and of the eleven, four were lost on appeal by an office that has since been dissolved.\"\n\nNo bitterness in it at all. He is giving you a citation. It is the only way he knows to say the thing he is saying.\n\n\"I am telling you this because you are going to have to decide whether I am useful, and you have eleven years of service and no idea how to decide that. So: those are the numbers. Check them."
+    },
+    {
+     "id": "crase",
+     "names": [
+      "lord-inquisitor",
+      "isolde",
+      "her"
+     ],
+     "text": "He puts the pen down. That is the first thing.\n\n\"She had him killed,\" Vaux says.\n\nHe says it in the same voice he used for the seal statute, which is the appalling part — no relish, no heat, a man reading a finding into a record.\n\n\"I do not expect you to believe me. I expect you to write it down and take it to her, because she gave you a rosette this morning and there is nothing in your service history that suggests you would do anything else. That is what you are for. She has not made an investigator; she has made an instrument, and she has made it out of the one person in this hive that Hadrian Vosk was fond of.\"\n\nHe picks the pen back up.\n\n\"I have been wrong about many things in forty years, Inquisitor. Ask me in a week.\"\n\n[ A10 HELD — Vaux believes the Lord-Inquisitor is responsible ]",
+     "grants": [
+      "A10"
+     ]
+    },
+    {
+     "id": "evidence",
+     "names": [
+      "proof",
+      "basis",
+      "grounds",
+      "crase evidence",
+      "her evidence"
+     ],
+     "closed": "\"No,\" Vaux says.\n\nThe pleasantness is entirely gone and what is underneath it is not anger. It is a man who has calculated the price of a sentence and found that he cannot pay it yet.\n\n\"You are asking me to put the Lord-Inquisitor's name in the same sentence as the word *evidence*, in a room, to a woman she elevated two hours ago. Ask me again when one of us has less to lose.\"\n\nHe is not going to be moved on this. He is also, you notice, sweating very slightly at the temple, which he has not done once while discussing his own criminal breach of a warden's seal.",
+     "pressure": 1,
+     "never": true
+    },
+    {
+     "id": "investigation",
+     "names": [
+      "your investigation",
+      "off-book",
+      "two years",
+      "what you've been doing",
+      "yourself"
+     ],
+     "closed": "\"I have been doing my work,\" Vaux says.\n\n\"For two years you have been doing something that is not on any docket in this Crown.\"\n\n\"I have been doing my work.\"\n\nThird time, and the rhythm of it has changed very slightly — the same six words at a fractionally different tempo, the way a man repeats a phrase he has decided in advance to repeat, so that he will not have to think while he says it.\n\nHe has thought about being asked this. He has rehearsed being asked this. That is not innocence and it is not guilt; it is preparation, and preparation is a thing you can push.",
+     "pressure": 1,
+     "never": true
+    },
+    {
+     "id": "passed_over",
+     "names": [
+      "passed over",
+      "elevation",
+      "rosette",
+      "me",
+      "my rank",
+      "why me",
+      "resentment"
+     ],
+     "closed": "\"You want me to be angry,\" Vaux says.\n\n\"I want to know if you are.\"\n\n\"Then you have wasted a question, because of course I am, and it is the least interesting true thing in this room.\" A pause of exactly the right length, this time. \"I was passed over. I will be passed over again. I have been an interrogator for nineteen years and I will die one, and my objection is not that you were chosen. My objection is to being *managed* about it by a woman who has not yet learned to sign her own name to the rank.\"\n\nHe stops. He breathes out through his nose, once, and puts a hand flat on the desk to stop it doing anything else.\n\nYou have got further with that than with anything else you have said, and you did it by accident, and both of you know it.",
+     "pressure": 2,
+     "never": true
+    },
+    {
+     "id": "how",
+     "names": [
+      "how he died",
+      "death",
+      "cause",
+      "the pistol",
+      "manner"
+     ],
+     "text": "\"How he died,\" Vaux repeats. \"The autopsy will say how he died.\"\n\n\"I am asking you.\"\n\nHe looks at the folded hands on his desk for a moment, as if the answer were a form he had not been given.\n\n\"His own pistol, in his own hand, in a sealed room.\" A pause of exactly the wrong length. \"Who signed the verdict?\"\n\nIt is the second time he has asked you that.\n\nIt occurs to you, standing in a room made entirely of paper, that in forty minutes of conversation Interrogator Dmetri Vaux has not once asked you *how his master died*. He has asked twice who wrote it down."
+    },
+    {
+     "id": "verdict",
+     "names": [
+      "who signed",
+      "the verdict",
+      "signature",
+      "signed"
+     ],
+     "text": "\"Who signed the verdict,\" he says again. \"It is not a difficult question and it is the only one I have asked you.\"\n\nYou tell him: the medicae adept of record, countersigned by the Crown Provost-Adjunct, at the eleventh hour.\n\n\"Countersigned,\" Vaux says. \"By whom, at the eleventh hour, in a Crown where the Provost-Adjunct does not work past the ninth.\"\n\nHe writes it down. In his own room, in his own hand, in his own index, where it will sit for forty years being true."
+    },
+    {
+     "id": "vosk",
+     "names": [
+      "hadrian",
+      "the man",
+      "his master",
+      "master",
+      "him as a person"
+     ],
+     "text": "\"He was the most careful man I have ever met,\" Vaux says. \"Not cautious. Careful. There is a difference and he was the difference.\"\n\nHe does not elaborate and does not appear to feel he needs to.\n\n\"He arranged things. He arranged furniture, arguments, people. If you sat in a room he had been in for long enough, you would eventually find that you had been told something.\"\n\nHe says this as a complaint about a dead man's habits, and he says it while sitting behind a desk with a pen already out, and you are certain — you will be certain for years — that he has no idea he has just handed you the entire method."
+    },
+    {
+     "id": "why_not_vaux",
+     "names": [
+      "why not you",
+      "why not vaux",
+      "her reason",
+      "asked crase"
+     ],
+     "requires": [
+      "ASKED_WHY_NOT_VAUX"
+     ],
+     "text": "\"You asked her,\" Vaux says. It is not a question. \"This morning, in front of two recording adepts. Why not Vaux.\"\n\nYou did.\n\n\"And she said?\"\n\n\"That you would have been very good at it.\"\n\nHe is quiet for long enough that you can hear the paper in this room.\n\n\"He talked about you,\" Vaux says at last. \"Not often. Not much. But he did, and he never talked about me.\"\n\nThen he squares the folder in front of him, and the forty seconds it took to say that never happened, and he does not look at you again for the rest of the interview.",
+     "closed": "\"Why was I not given it,\" Vaux says. \"You have not asked her that, or you would have led with her answer instead of my opinion.\"\n\nHe is right, and being right about it costs him nothing, and he moves on."
+    }
+   ],
+   "beats": [
+    {
+     "id": "your_statement",
+     "after_topics": 1,
+     "requires": [
+      "SAID_TIRED"
+     ],
+     "text": "Vaux turns a single sheet round on the desk without being asked. It is a copy\nof a statement, in a Crown hand, taken at the fourth hour.\n\n\"You told the Lord-Inquisitor that he seemed tired,\" he says.\n\n\"He was two hundred and eighty-seven years old.\"\n\n\"He was. And you were his Interrogator for eleven years, and you are the only\nperson on this world whose characterisation of his state of mind carries any\nweight at all, and at the fourth hour this morning you gave one, in ink, to the\nofficer who countersigned the finding.\"\n\nHe does not say it as an accusation. That is the difficulty with him.\n\n\"I am not suggesting you were wrong. I am telling you that it is in the file,\nthat it is the strongest single line in the file, and that you put it there.\""
+    },
+    {
+     "id": "verdict_plant",
+     "after_topics": 3,
+     "text": "Vaux lets the silence sit, and then says, apropos of nothing you have raised:\n\n\"Who signed the verdict?\"\n\nYou tell him you will look into it. He nods, once, as though you have confirmed something, and goes back to the folder."
+    },
+    {
+     "id": "mnemonic",
+     "after_pressure": 2,
+     "grants": [
+      "A9"
+     ],
+     "text": "He stops.\n\nNot a pause — a stop, mid-word, with his jaw still set for the rest of the sentence. His eyes go somewhere over your left shoulder and stay there for about a second and a half.\n\n\"Ves-tar-ro. Kan. Il-lum,\" Vaux says.\n\nSix syllables in a fixed rhythm, three and one and two, flat as a man counting stock. It is not Gothic. It is not any of the four cants you were made to learn. It has the shape of something recited rather than said, the way children recite the ordinal saints without being told what a saint is.\n\nThen he picks up exactly where he stopped, in the middle of the same sentence, and it is entirely clear that he does not know he said it.\n\nYou have your notebook in your coat. He would see you take it out."
+    }
+   ],
+   "shows": [
+    {
+     "clue": "A3",
+     "sets": [
+      "VAUX_SHOWN_ROOM"
+     ],
+     "text": "You tell him about the boots.\n\nNot the classification. The thing: laced evenly, tension matched, tongues straight, the bootjack used and returned to the wall in the wrong orientation for a right-handed man in a hurry. A man who sat down and took his time and did this last.\n\nVaux does not say anything for a while.\n\n\"On the wrong feet,\" he says.\n\n\"On the wrong feet.\"\n\n\"And you have not filed that.\"\n\n\"No.\"\n\nHe puts the pen down, and this time he does stand up, and it takes him a moment because he is sixty-one and has been sitting since the eighth hour.\n\n\"I would like to see the room,\" Vaux says. \"Before the Crown reclaims it. I am aware that I am asking, and I am aware of what I am asking, and I am asking.\"\n\n[ VAUX_SHOWN_ROOM ]"
+    },
+    {
+     "clue": "A8",
+     "sets": [
+      "VAUX_SHOWN_ROOM"
+     ],
+     "text": "You tell him what the room is.\n\nNot the shelf-code. The shape of it: five objects, arranged, in an order, by a man who knew the hour of his own death four minutes before it and spent those four minutes on furniture.\n\nVaux listens the way he presumably listened for forty years, which is to say without once making a noise, and at the end of it he is a different colour.\n\n\"He staged it,\" he says. \"For a reader.\"\n\n\"For a specific reader.\"\n\n\"Yes,\" Vaux says. \"I had gathered that part.\" He looks at the pen and does not pick it up. \"I would like to see the room. Before the Crown reclaims it.\"\n\n[ VAUX_SHOWN_ROOM ]"
+    },
+    {
+     "clue": "A7",
+     "text": "You put the register in front of him. He reads it, upside down, faster than you read it the right way up, and signs the line at the bottom without being asked.\n\n\"Eighth hour,\" he says. \"You may keep that.\"\n\nIt costs him nothing, which is how you know it is not the thing he is protecting."
+    },
+    {
+     "clue": "A5",
+     "text": "The circled date means nothing to him, and he says so, and then does not stop looking at it.\n\n\"Every eighty-four days,\" Vaux says slowly, \"for as long as the pad goes back.\"\n\n\"Yes.\"\n\n\"I have kept his docket for nineteen years.\" He puts the sheet down. \"There is nothing on it. There has never been anything on it. I would have noticed a standing appointment, Inquisitor, because noticing that is my entire function and I have been doing it since before you could read.\"\n\nHe is not defensive. He is unsettled, which on this man looks like extreme politeness."
+    }
+   ],
+   "acts": [
+    {
+     "id": "detain",
+     "names": [
+      "arrest",
+      "hold",
+      "charge",
+      "detain vaux",
+      "custody"
+     ],
+     "cost": 6,
+     "sets": [
+      "VAUX_DETAINED"
+     ],
+     "text": "You detain him for the seal.\n\nHe is not surprised, does not resist, and signs the custody form himself because the warden on duty has never filled one out for an Interrogator and gets the section wrong twice.\n\nFour hours in a holding room on tier two. He answers every question put to him, correctly, at length, and volunteers nothing whatsoever, and at the end of it you have exactly what you had at the start plus a signed admission to an offence you already had a signed admission to.\n\nCrase hears about it before you have left the tier. She does not say anything to you about it. That is worse, and it is meant to be.\n\n[ VAUX_DETAINED — CRASE_STANDING -1 ]",
+     "counters": {
+      "CRASE_STANDING": -1
+     }
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "chambers",
+   "names": [
+    "back",
+    "room",
+    "vosk's chambers",
+    "up",
+    "return",
+    "tier nine"
+   ],
+   "to": "vosk_chambers",
+   "cost": 3,
+   "text": "You go back up. The lift is slow and full of adepts and nobody looks at your collar for very long."
+  }
+ ],
+ "clues": {
+  "A9": {
+   "id": "A9",
+   "names": [
+    "mnemonic",
+    "phrase",
+    "syllables",
+    "six syllables",
+    "rhythm",
+    "nonsense",
+    "vestarro",
+    "what he said"
+   ],
+   "label": "Six syllables in a fixed rhythm, recited by rote, said without knowing it — Vestarro. Kan. Illum.",
+   "store": "notebook",
+   "refusal": "The cogitator offers you a field for a *statement* and a field for a *transcript*, both of which require an utterance to have been made in a language, on a record, by a person who intended to make it.\n\nThere is no field for a sound a man produced without knowing he had produced it. You could put it in the statement field. Then it would be a statement, indexed and attributed, and Interrogator Dmetri Vaux would have said a thing on the record that he did not say.\n\nYou close the template.",
+   "note_text": "You write it down phonetically, in your own hand, three syllables and one and two, with the stresses marked the way you were taught to mark plainsong at the schola.\n\nHe does not see you do it. He has gone back to being immaculate.\n\n[ A9_HELD ]"
+  },
+  "A10": {
+   "id": "A10",
+   "names": [
+    "theory",
+    "accusation",
+    "his theory",
+    "vaux's theory",
+    "crase theory"
+   ],
+   "label": "Vaux believes the Lord-Inquisitor had Vosk killed, and believes you are her instrument",
+   "store": "either",
+   "file_text": "FILED. CLASS: STATEMENT / THIRD PARTY / UNSUBSTANTIATED. INDEXED. ATTRIBUTED: VAUX, D., INTERROGATOR.\n\nIt is a true and accurate record of a thing he said. It is also now a document in which a serving Interrogator accuses the Lord-Inquisitor of murder, in the archive, with his name on it, filed by you.\n\nHe was right that you would write it down.",
+   "note_text": "You write it in your own hand, unattributed, in a book that is not a document.\n\nIf it turns out to be nothing, it was never said. He does not know you have done him that courtesy and you are not going to tell him."
+  }
+ },
+ "strings": {
+  "no_such_thing": "There is nothing in this room by that name, and everything in this room is labelled.",
+  "already_read": "You have read it. Reading it a third time is how you look like an adept.",
+  "no_terminal": "There is no cogitator in this room. There is no socket for one; the cap is painted over and the paint is older than your service.\n\nVaux watches you look for one and does not help."
+ },
+ "look_no_body": "Case folders to the ceiling on three walls. A desk with a pen on it. A chair he is not getting out of.",
+ "revisit": "Vaux does not stand.\n\nForty years of casework in paper, a desk, a pen already out, and a chair opposite that he gestures at with two fingers."
+}

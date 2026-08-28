@@ -1,0 +1,494 @@
+{
+ "id": "medicae",
+ "title": "MEDICAE DECK — TIER ONE, THE ADAMANT CROWN",
+ "intro": "Tier one smells of counterseptic and hot ceramite. Four hundred Crown\nautopsies a year come through this room and most of them are lifter accidents.\n\nMedicae-Adept Suryn Ostro is sixty, bored, and does not look up when an\nInquisitor comes in, which after the last two hours is restful.\n\nHe has already finished. He has been finished for twenty minutes.\n\n\"Right,\" Ostro says, to the sheet rather than to you. \"You'll want this fast\nand I'm not going to dress it up.\n\n\"No toxin. Nothing in the blood, nothing in the gut, nothing under the nails.\nNo coercion residue — I ran it twice because of who he was. No psychic trace,\nand before you ask, that's not my instrument saying so, that's the Choir's own\nauspex, which I had brought down here and which I do not like having in my\nroom.\n\n\"No wound on him but the one. Heart's better than mine. Better than yours.\nThree hundred years old and in the condition of a man of ninety who has looked\nafter himself. Nothing wrong with it at all.\"\n\nHe peels the sheet back with the boredom of a man doing inventory.\n\n\"It stopped. Then eleven minutes later somebody pulled a trigger with his hand.\n\n\"He died and then he shot himself. In that order. I've written self-termination\nbecause there is no other box.\"\n\nSergeant Oduya is standing against the wall by the door, where she has been\nsince they brought him down, and has not once looked at the slab.",
+ "look": "A cold room with good drainage and a bad smell.\n\nThe SLAB, and Vosk on it under a sheet. The PISTOL in a tray, tagged. Ostro's\nREPORT on a lectern, four hundred words, already countersigned.\n\nMedicae-Adept OSTRO, sixty, waiting for you to ask him something he has not\nalready told you.\n\nSergeant ODUYA against the wall by the door, upright, with her KIT at her feet.",
+ "sets": [
+  "AUTOPSY_DONE"
+ ],
+ "grants": [
+  "A11",
+  "A12"
+ ],
+ "objects": [
+  {
+   "id": "slab",
+   "names": [
+    "body",
+    "vosk",
+    "hadrian",
+    "sheet",
+    "him",
+    "the slab"
+   ],
+   "careless": "He is under a sheet on a cold slab on tier one and there is nothing left on him to read. You have had your eight minutes.",
+   "careful": "Both boots are off and bagged and tagged, and the tag says LEFT and RIGHT because a medicae orderly put them in the bags the way they came off the feet, which is to say the wrong way round, and wrote what he saw.\n\nSomewhere in an evidence store on this tier there is a bag marked LEFT with a right boot in it, and it will be there for as long as the Crown keeps physical effects, and nobody will ever look at it again.\n\nIt is the only honest record in this building and it was made by accident."
+  },
+  {
+   "id": "pistol",
+   "names": [
+    "autopistol",
+    "gun",
+    "tray",
+    "weapon"
+   ],
+   "careless": "His own autopistol, tagged, in a tray. Two hundred years of service issue, cleaned within the week.",
+   "careful": "Cleaned within the week, and by him — the oil is the one he used, the one he complained about the price of.\n\nOne round discharged. The grip has his prints on it in the arrangement of a hand that gripped it, not a hand that was folded round it afterwards, which Ostro checked, because Ostro has done four hundred of these and knows which question the Crown will ask.\n\nHe fired it. He was eleven minutes dead when he did."
+  },
+  {
+   "id": "report",
+   "names": [
+    "autopsy",
+    "findings",
+    "lectern",
+    "the report",
+    "paperwork"
+   ],
+   "careless": "Four hundred words, already countersigned, already indexed. Ostro writes clearly and at length and does not speculate.",
+   "careful": "Four hundred words is a great deal for a Crown autopsy. He has written every negative out in full — *no toxin, no coercion residue, and no psychic trace were detected* — where the form invites him to write *unremarkable*.\n\nHe has done that because he is honest and because he is annoyed, and the effect is a document that describes, precisely and at length, all the things that did not happen.\n\nIt is the most complete record anybody will make of this death. You should read it now."
+  },
+  {
+   "id": "kit",
+   "names": [
+    "kitbag",
+    "bag",
+    "her kit",
+    "pack"
+   ],
+   "careless": "Sergeant Oduya's kit, at her feet, where a soldier's kit goes. Webbing, a canteen, a folded shelter-half, and an envelope tucked in the strap.",
+   "careful": "The envelope is Inquisitorial stationery with a wax seal on it, and the seal is intact, and the hand on the front is Hadrian Vosk's.\n\nIt has been in that strap since the second hour. She has carried it up and down nine tiers and put it beside her while she stood against this wall for two hours not looking at a slab.\n\nShe has not opened it.\n\nShe calls it paperwork, when she calls it anything. *Paperwork, sir. I'll get to it.*"
+  },
+  {
+   "id": "bez",
+   "names": [
+    "oduya",
+    "sergeant",
+    "beskra",
+    "wall",
+    "sergeant oduya"
+   ],
+   "careless": "Sergeant Beskra Oduya, against the wall by the door, upright, hands at her sides. She has not looked at the slab once in two hours and she is not going to.",
+   "careful": "The shoulder is worse than it was at the fourth hour and she is standing squarely on it anyway, in a room with a medicae in it, because to say anything now would be to make this about her.\n\nShe coughs, twice, into the room.\n\nThen a third time, and this one she turns away for, and coughs into her hand, and puts the hand in her pocket, and brings it out again empty and flat and does not look at it.\n\nTwenty-six years. She is very good at this."
+  },
+  {
+   "id": "ostro",
+   "names": [
+    "medicae",
+    "adept",
+    "suryn",
+    "medicae-adept"
+   ],
+   "careless": "Medicae-Adept Suryn Ostro, sixty, four hundred Crown autopsies, entirely uninterested in your rosette.",
+   "careful": "He has not stopped moving since you came in and he has not once shortened an answer.\n\nThere is nothing evasive in him at all, which is going to matter later, because in about three weeks you are going to go back through everybody who spoke to you today and ask which of them was managing you, and the answer for this man is going to be nobody, ever, about anything.\n\nHe is also, you notice, angry. Not at you. At a form with no box on it."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "ostro",
+   "names": [
+    "medicae",
+    "adept",
+    "suryn",
+    "medicae-adept"
+   ],
+   "title": "Medicae-Adept Suryn Ostro",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask me anything you like,\" Ostro says. \"I've already told you the difficult part.\"",
+   "portrait": "Medicae-Adept Suryn Ostro. Sixty, bored, honest. Four hundred Crown autopsies and never one like this, and it is the *never one like this* that has put him in the mood he is in.",
+   "greeting": "\"You've had the summary,\" Ostro says. \"Ask.\"",
+   "reprise": "He waits, with his hands in a basin, entirely willing to go round again.",
+   "unknown": "\"Not my discipline,\" Ostro says. \"I'd be guessing, and you'd write it down.\"",
+   "deflect": [
+    "\"I've told you what I found. I'm not going to tell you what it means; that's your job and it pays better.\"",
+    "He shrugs. \"Above me.\""
+   ],
+   "topics": [
+    {
+     "id": "heart",
+     "names": [
+      "cardiac",
+      "arrest",
+      "cause",
+      "why did it stop",
+      "the heart",
+      "condition"
+     ],
+     "text": "\"It stopped,\" Ostro says. \"That's the finding. I know how that sounds.\"\n\n\"Three hundred years old.\"\n\n\"Two hundred and eighty-seven, and I have opened up men of ninety who should have been dead at sixty and I have opened up this man who should have been good for another century. Rejuvenat maintained, no scarring, no infarct, no embolus, no arrhythmic damage, no toxin, no shock.\" He counts them on wet fingers. \"I looked for all of them. I looked for them twice.\n\n\"A heart in that condition does not stop. This one did. I have written *cardiac arrest, cause undetermined* and I have written it in a hand the Crown can read, and I would like somebody to argue with me about it, and nobody has."
+    },
+    {
+     "id": "pistol",
+     "names": [
+      "eleven minutes",
+      "the shot",
+      "gun",
+      "timing",
+      "post-mortem",
+      "discharge",
+      "wound"
+     ],
+     "text": "\"Eleven minutes,\" Ostro says. \"Give or take ninety seconds, and the give-or-take is the only part I'd let you push me on.\"\n\n\"How do you know?\"\n\n\"Because a heart that has stopped stops pushing, and a wound made after that doesn't bleed the way a wound made before it does, and there was almost no blood in that room and it was in the wrong shape.\" He wipes his hands. \"I have four hundred of these. I know what a man who shot himself looks like. That is a man who was shot eleven minutes after he died, by a hand that was his own, holding a weapon he had cleaned that week.\"\n\n\"That isn't possible.\"\n\n\"No,\" Ostro agrees, pleasantly. \"It isn't. I've written it down anyway. That's the job."
+    },
+    {
+     "id": "psychic",
+     "names": [
+      "trace",
+      "warp",
+      "auspex",
+      "choir",
+      "witch",
+      "sorcery",
+      "psyker"
+     ],
+     "text": "\"Nothing,\" Ostro says, and this is the only subject on which he is short with you.\n\n\"You're certain.\"\n\n\"I am not certain, because I am a medicae-adept on tier one and detecting a psychic trace is not a thing I am equipped or sanctioned to be certain about.\" He puts a tray down harder than he needs to. \"So I had the Choir send down their own auspex and their own vessel to run it, in my room, on my slab, over my subject, and *they* are certain, and I have their attestation on the lectern with a Choir seal on it.\n\n\"I want it on the record that I did not want that instrument in this room and that I asked for it anyway. Write that down if you're writing things down.\"\n\nYou will think about this three times in the next eleven days, and each time it will have got worse.",
+     "sets": [
+      "OSTRO_CALLED_CHOIR"
+     ]
+    },
+    {
+     "id": "toxin",
+     "names": [
+      "poison",
+      "blood",
+      "drugs",
+      "coercion",
+      "residue",
+      "chemical"
+     ],
+     "text": "\"Nothing, nothing, and nothing,\" Ostro says. \"Blood, gut, nails, hair, the lot. I ran the coercion panel twice because of who he was, and the second time I ran it against a control from a lifter fitter who came in this morning, because a panel that says *no* to everything is a panel I don't trust.\n\n\"The control came back positive for four things, which is what a man who works in a lifter bay comes back positive for. His came back clean.\n\n\"He had eaten. Six hours before, and lightly, and it agreed with him.\""
+    },
+    {
+     "id": "box",
+     "names": [
+      "verdict",
+      "self-termination",
+      "the form",
+      "finding",
+      "what you wrote",
+      "why"
+     ],
+     "text": "\"There is no box,\" Ostro says.\n\nHe takes the report off the lectern and shows you the field, which has four options on it, and none of them is *the deceased's heart stopped for no reason and eleven minutes later his own hand shot him*.\n\n\"Accident. Misadventure. Unlawful killing. Self-termination. I have to strike one. If I strike *unlawful killing* the Provost's office opens a murder file and comes and asks me who, and I have no who, and no mechanism, and no wound but the one he made himself after he was dead.\n\n\"So I've struck self-termination, and I've written four hundred words underneath it explaining that self-termination is not what happened, and the four hundred words will be filed and the struck box will be indexed.\"\n\nHe puts the report back.\n\n\"You know what will be true in a year, Inquisitor? The box. Only the box.\""
+    },
+    {
+     "id": "experience",
+     "names": [
+      "four hundred",
+      "your work",
+      "seen this before",
+      "ever",
+      "career"
+     ],
+     "text": "\"Four hundred and eleven,\" Ostro says. \"Thirty-one years on this tier. Falls, crush, burns, lung, three poisonings, one genuinely astonishing industrial accident that I will tell you about if we are ever drinking.\n\n\"Never this. Not once, not close, not a version of it.\"\n\nHe says it without any drama at all, which is what makes it land, and then he goes back to washing his hands."
+    },
+    {
+     "id": "bez_health",
+     "names": [
+      "the sergeant",
+      "her cough",
+      "oduya",
+      "lung",
+      "examine her"
+     ],
+     "requires": [
+      "BEZ_COUGHED"
+     ],
+     "text": "You keep your voice down. Ostro does not.\n\n\"I've been listening to it for two hours,\" he says. \"So has everybody on this tier.\"\n\n\"And?\"\n\n\"And she is a serving Militarum sergeant who has not presented, and I am not permitted to examine a soldier who has not presented, and she knows that, which is why she has stood against that wall for two hours instead of sitting down.\" He dries his hands. \"If an Inquisitor orders it, I can. That is the whole of the mechanism and I am not going to pretend otherwise to make it easier for you.\n\n\"I'd want a sample. It would take four minutes. I could tell you today.\"",
+     "closed": "\"Which sergeant,\" Ostro says, without looking up, and goes on with what he is doing."
+    }
+   ],
+   "beats": [],
+   "shows": [
+    {
+     "clue": "A3",
+     "text": "You tell him about the boots.\n\nOstro listens, and does not interrupt, and at the end of it he says: \"On the wrong feet. Yes. My orderly bagged them. He wrote LEFT on the bag with the right one in it, because that is what came off that foot.\"\n\n\"Does it mean anything to you?\"\n\n\"It means a man put his boots on the wrong feet.\" He is not being obtuse; he is being exact, which is his entire character. \"I can tell you that they were laced evenly and that nothing about the ankle suggests haste. What that *means* is not a medicae finding and I am not going to put it in a medicae report and neither should you, in those words, to the Provost.\n\n\"Whatever it is you have just decided, Inquisitor — I would keep it out of the file until you can spell it."
+    }
+   ],
+   "acts": []
+  },
+  {
+   "id": "bez",
+   "names": [
+    "oduya",
+    "sergeant",
+    "beskra",
+    "sergeant oduya"
+   ],
+   "title": "Sergeant Beskra Oduya",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask me the questions, sir,\" Bez says. \"I'll answer them in the order you ask them.\"",
+   "portrait": "Sergeant Beskra Oduya. Twenty-six years Militarum, eleven of them outside Hadrian Vosk's doors.\n\nAgainst the wall by the door, upright, on a shoulder she put through a door six hours ago. She has not looked at the slab once.",
+   "greeting": "\"Sir,\" Bez says.\n\nShe comes off the wall properly, which costs her something, and stands the way she has stood for twenty-six years.\n\n\"I've given a statement to the Lord-Inquisitor and one to the Provost's man and one to the warden captain. I'll give you a fourth and I'll give you a tenth. I'd rather be doing this than the other thing.\"\n\nThe other thing is standing against a wall in a room with him in it, which is what she has been doing for two hours.",
+   "reprise": "She waits. She is extremely good at waiting; it has been most of her career.",
+   "unknown": "\"Couldn't say, sir.\" And she couldn't.",
+   "deflect": [
+    "\"Not for me to say, sir.\"",
+    "She looks at a point four inches above your shoulder, which is where she looks when she is not going to answer."
+   ],
+   "topics": [
+    {
+     "id": "door",
+     "names": [
+      "the door",
+      "eleven hours",
+      "outside",
+      "your post",
+      "watch",
+      "knock"
+     ],
+     "text": "\"Eleven hours on that door,\" Bez says. \"Twelfth hour to the twenty-third.\"\n\n\"You knocked.\"\n\n\"Once. At the sixth. No answer.\" She says it flatly and it does not come out flat. \"I'd have gone in at the sixth. That's the job — no answer, you go in. I didn't go in.\n\n\"He said leave it. That morning. He said, Sergeant, whatever you hear, leave it until the eleventh hour, and I said yes sir, and I left it until the eleventh hour.\"\n\nShe has told this to four people today. It is not getting smoother.\n\n\"I waited five more hours because he told me to that morning.\"\n\n[ A13 HELD — Vosk ordered his bodyguard away from the door that morning ]",
+     "grants": [
+      "A13"
+     ]
+    },
+    {
+     "id": "theory",
+     "names": [
+      "what happened",
+      "your theory",
+      "how",
+      "who",
+      "route",
+      "someone got in"
+     ],
+     "text": "\"Somebody got past me,\" Bez says.\n\nIt is not a suggestion. It is a thing she has decided, and she has spent six hours deciding it, and she is going to spend the rest of her life on it if nobody stops her.\n\n\"I've walked it four times. Vents are ninety mil, I've measured them. Service shaft comes out two floors down behind a grille that hasn't been off its bolts since the Crown was built, I checked the paint. Ceiling void is solid rockcrete. There is no route.\n\n\"There's a route, sir. There's always a route. I just haven't found it.\"\n\nYou could tell her what the alternative is. The alternative is that Hadrian Vosk arranged, that morning, to be alone for eleven hours, and used the most loyal person on this world to arrange it.\n\nShe has not got there yet. She is going to."
+    },
+    {
+     "id": "habits",
+     "names": [
+      "what he was like",
+      "routine",
+      "his habits",
+      "normal",
+      "that day",
+      "morning"
+     ],
+     "text": "\"Same as any day, sir, until it wasn't.\" She is better on this; it is inventory, and she is good at inventory.\n\n\"Up at the fourth. Walked the tier. Took his own caf, never let the servitor do it. Went in at the sixth minute past the twelfth and I shut the door behind him.\n\n\"He wasn't quiet. People keep asking me if he was quiet. He wasn't. He talked to me about the lifter-fuel bill on the way up, the four hundred and twelve crowns, the one he thinks is funny. He was doing the voice he does.\"\n\nShe stops.\n\n\"Did,\" she says. \"The voice he did.\""
+    },
+    {
+     "id": "food",
+     "names": [
+      "ate",
+      "what he ate",
+      "caf",
+      "meal",
+      "breakfast"
+     ],
+     "text": "\"Caf and a heel of black bread at the fourth. Nothing after. He never ate at midday, said it made him stupid in the afternoon.\"\n\nShe says this precisely and without hesitation, because she has been asked it three times today and because knowing what he ate was part of her job for eleven years.\n\n\"The medicae says it agreed with him,\" she adds, and something goes across her face. \"I'd have liked to hear he had a bad lunch. That would have been something."
+    },
+    {
+     "id": "health",
+     "names": [
+      "your cough",
+      "you're ill",
+      "are you well",
+      "lung",
+      "the shoulder",
+      "yourself"
+     ],
+     "never": true,
+     "closed": "\"Sir?\"\n\n\"Your cough.\"\n\n\"Dust, sir.\" She says it about a second and a half too quickly. \"Tier nine's filthy. Half the watch has it.\"\n\nYou have known this woman for eleven years and you have never once seen her lie, and you have just watched her decide to do it — the small pause, the choice, the flat delivery she has been practising on other people.\n\n\"And the shoulder's fine,\" she adds, unprompted, which is how you know she knows you saw.\n\nPressing this would be the easiest thing in the world and it would be the last useful conversation you ever had with her.",
+     "pressure": 1
+    },
+    {
+     "id": "him",
+     "names": [
+      "hadrian",
+      "vosk",
+      "eleven years",
+      "the man",
+      "what he meant"
+     ],
+     "text": "\"He gave me a job when the Militarum was done with me,\" Bez says. \"Twenty-six years in, one bad lung — one *knee*,\" she corrects, without a flicker, \"and they'd have had me on a gate on Sarrow's Reach counting grain lifters.\n\n\"He read my file and he came and found me. He never said why. I asked him once, about nine years in, and he said *because your file was very boring, Sergeant, and mine wasn't*, and that was all I ever got.\"\n\nShe looks at the wall opposite, which is the direction that does not have a slab in it.\n\n\"Eleven years. He never once asked me to do anything I had to think about afterwards. Do you know how rare that is, sir, in this line?\""
+    }
+   ],
+   "beats": [
+    {
+     "id": "roster",
+     "after_topics": 2,
+     "sets": [
+      "BEZ_OFFERED_ROSTER"
+     ],
+     "text": "She takes a folded sheet out of her tunic. The duty-roster for the watch, warden copy, four names and eleven hours.\n\n\"Sir — would you read me the times off this? Light's bad down here.\"\n\nThe light on tier one is surgical. It is the best light in the Adamant Crown, because they cut people open in it.\n\nShe holds the sheet out and looks at a point four inches above your shoulder.\n\n[ READ it to her, or NAME what you have just seen ]"
+    },
+    {
+     "id": "cough",
+     "after_topics": 4,
+     "sets": [
+      "BEZ_COUGHED"
+     ],
+     "grants": [
+      "A14"
+     ],
+     "text": "She coughs. Twice, into the room, the way anybody coughs.\n\nThe third time she turns away from you, and coughs into her hand, and puts the hand in her pocket, and brings it out again empty and flat, and goes back to standing.\n\nNobody in the room says anything. Ostro, six feet away, does not look up, and the not-looking-up is a whole sentence.\n\nAt her feet, in the strap of her kit, there is an envelope on Inquisitorial stationery with an intact wax seal and Hadrian Vosk's handwriting on the front. It has been there since the second hour.\n\nShe has not opened it.\n\n\"Paperwork, sir,\" she says, when she sees where you are looking. \"I'll get to it.\""
+    }
+   ],
+   "shows": [
+    {
+     "clue": "A3",
+     "text": "You tell her about the boots. Not what they mean — just the fact of them, laced evenly, on the wrong feet, and the bootjack put back wrong.\n\nBez is quiet for a moment.\n\n\"He did that once,\" she says. \"On the ship. Coming back from Sarrow's Reach, the year you came on. Came out of his cabin with his boots swapped and stood there looking at me until I said something about it, and I said *sir, your boots*, and he said *so they are, Sergeant*, and put them right.\"\n\nShe frowns at the middle distance.\n\n\"I thought he was tired. I've thought he was tired about that for eleven years.\"\n\nShe has just confirmed A3 without any idea what she has confirmed, and she is never going to know, and it is the single most useful thing anybody says to you today.\n\n[ BEZ_TRUST +1 ]",
+     "counters": {
+      "BEZ_TRUST": 1
+     }
+    }
+   ],
+   "acts": [
+    {
+     "id": "read",
+     "names": [
+      "read roster",
+      "read it",
+      "read aloud",
+      "aloud",
+      "roster",
+      "times"
+     ],
+     "requires": [
+      "BEZ_OFFERED_ROSTER"
+     ],
+     "blocks": [
+      "BEZ_ILLITERACY_KNOWN"
+     ],
+     "refused": "She has not asked you to read her anything.",
+     "sets": [
+      "BEZ_ILLITERACY_KNOWN"
+     ],
+     "text": "You take the sheet and read her the times.\n\nYou read all four names too, and the watch-captain's countersign at the bottom, and the amendment struck through in the third line, in the order they appear on the page, in an ordinary voice, at an ordinary speed, as though the light were bad.\n\n\"Twelfth to the twenty-third,\" Bez says, when you have finished. \"That's what I had.\"\n\n\"That's what it says.\"\n\n\"Right.\" She folds it and puts it back inside her tunic. \"Thank you, sir.\"\n\nTwenty-six years of service, and a career arranged very carefully downstream of one thing, and four people in the Imperium know and none of them were told.\n\nYou are the fifth. Nobody says anything about it, then or ever.",
+     "counters": {
+      "BEZ_TRUST": 2
+     }
+    },
+    {
+     "id": "name",
+     "names": [
+      "name it",
+      "say it",
+      "confront",
+      "you can't read",
+      "illiterate",
+      "call it out"
+     ],
+     "requires": [
+      "BEZ_OFFERED_ROSTER"
+     ],
+     "blocks": [
+      "BEZ_ILLITERACY_KNOWN"
+     ],
+     "refused": "There is nothing in your hands to say anything about.",
+     "sets": [
+      "BEZ_ILLITERACY_KNOWN"
+     ],
+     "text": "You say it. Not unkindly — you are careful about that, and being careful about it makes it worse.\n\nBez takes it perfectly.\n\n\"Sir,\" she says. \"Yes, sir. Twenty-six years. It's not on the file and it's not going on the file, and I've never once been late to a post over it.\"\n\n\"Sergeant—\"\n\n\"Would you read me the times, sir.\"\n\nYou read her the times. She folds the sheet and puts it away and thanks you, correctly, and stands against the wall, correctly, and answers every question you put to her for the rest of the day, correctly.\n\nShe is never easy with you again. Not hostile. Correct.\n\n[ BEZ_TRUST -2 ]",
+     "counters": {
+      "BEZ_TRUST": -2
+     }
+    },
+    {
+     "id": "exam",
+     "names": [
+      "order exam",
+      "examine bez",
+      "medicae exam",
+      "order medicae",
+      "have her seen",
+      "sample"
+     ],
+     "requires": [
+      "BEZ_COUGHED"
+     ],
+     "blocks": [
+      "BEZ_KNOWS_DIAGNOSIS"
+     ],
+     "refused": "There is nothing to order an examination of that you have any business ordering.",
+     "sets": [
+      "BEZ_KNOWS_DIAGNOSIS"
+     ],
+     "cost": 2,
+     "text": "You order it. Ostro does not make you say it twice.\n\nBez is furious. It is the only time in eleven years you have seen it, and it lasts about four seconds and is entirely silent, and then she gives Ostro the sample because an Inquisitor has ordered it and she is a serving sergeant.\n\nIt takes him four minutes.\n\n\"Bilateral,\" Ostro says, to her, not to you, which is correct. \"Advanced. It's the tier-nine rot and you've had it a while and not presented. There's no course of treatment at this stage that's worth the name.\"\n\n\"How long.\"\n\n\"Fourteen months. Perhaps sixteen. It won't be pleasant at the end and I'm not going to tell you it will.\"\n\n\"Right,\" Bez says.\n\nShe thanks him. She thanks *him*. Then she goes back to the wall by the door and stands there, and does not look at you, and about a minute later says, to the room:\n\n\"Doesn't change the watch, sir.\"\n\n[ BEZ_KNOWS_DIAGNOSIS ]"
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "chambers",
+   "names": [
+    "up",
+    "back",
+    "tier nine",
+    "vosk's chambers",
+    "the room",
+    "return"
+   ],
+   "to": "vosk_chambers",
+   "cost": 3,
+   "text": "You go back up. The Crown has the chambers for another few hours and then it takes them back."
+  }
+ ],
+ "clues": {
+  "A11": {
+   "id": "A11",
+   "names": [
+    "eleven minutes",
+    "the pistol",
+    "post-mortem",
+    "discharge",
+    "the shot",
+    "timing"
+   ],
+   "label": "The pistol was discharged eleven minutes after cardiac arrest, by his own hand",
+   "store": "either",
+   "file_text": "FILED. CLASS: AUTOPSY FINDING / MECHANISM. INDEXED. REQUISITION-ELIGIBLE.\n\nThe cogitator takes it and cross-references it against the struck box on Ostro's report, and notes, helpfully, that the finding of record is self-termination.\n\nIt does not resolve the contradiction. It files both and indexes both and is entirely content.",
+   "note_text": "You write down the number eleven and what it is eleven of.\n\nIt is the first thing in this investigation that is not a matter of interpretation. A heart stopped, and eleven minutes later a hand that could not have moved moved."
+  },
+  "A12": {
+   "id": "A12",
+   "names": [
+    "no toxin",
+    "no trace",
+    "the heart",
+    "negatives",
+    "clean",
+    "nothing"
+   ],
+   "label": "No toxin, no coercion residue, no psychic trace — a healthy heart that simply stopped",
+   "store": "either",
+   "file_text": "FILED. CLASS: AUTOPSY FINDING / NEGATIVE. INDEXED.\n\nThe cogitator files a list of things that did not happen. It has fields for all of them, which is the useful part, and it will keep them for as long as it keeps anything.\n\nAsk it in eleven days how long that is.",
+   "note_text": "You write out the negatives in full, the way Ostro wrote them: no toxin, no coercion residue, no psychic trace. Three things, named, in your hand.\n\nA list of absences is a strange thing to carry in a coat. You carry it anyway."
+  },
+  "A13": {
+   "id": "A13",
+   "names": [
+    "the order",
+    "leave it",
+    "he sent her away",
+    "eleventh hour",
+    "his instruction"
+   ],
+   "label": "Vosk ordered his bodyguard to ignore the door until the eleventh hour — that morning",
+   "store": "either",
+   "file_text": "FILED. CLASS: WITNESS STATEMENT / DECEASED'S INSTRUCTION. INDEXED. ATTRIBUTED: ODUYA, B., SERGEANT.\n\nIt is a true and accurate record of what she told you.\n\nIt is also, now, an indexed document in which the deceased's own bodyguard states that he arranged in advance to be alone, which is the single strongest piece of evidence for self-termination that anybody has produced today, and you put it there.",
+   "note_text": "You write down the instruction and the hour he gave it, in your own hand.\n\nWith the quill-log it is a schedule. Without it, it is a man who wanted an afternoon to himself, and that is what it will look like to anybody who reads it before you can put the two together."
+  },
+  "A14": {
+   "id": "A14",
+   "names": [
+    "the envelope",
+    "bequest",
+    "she cannot read",
+    "illiteracy",
+    "the seal",
+    "paperwork"
+   ],
+   "label": "Bez cannot read, and a sealed bequest in Vosk's hand has been in her kit since the second hour",
+   "store": "notebook",
+   "refusal": "The cogitator has a field for this.\n\nIt has exactly the right field. LITERACY, with three options, and one of them is the true one; and a linked amendment to a Militarum service record, pre-filled, requiring a countersignature it already knows you can give. It would take nine seconds. It has helpfully brought forward her service number.\n\nNothing in this room would stop you. She would not know for four months, and when she found out she would be correct about it, and would say *sir*, and would stand somewhere else.\n\nThis is the first thing you have declined to file for a reason that is not tactical.\n\nYou close the template.",
+   "note_text": "You write it in the coat, in your own hand, where it is not a document and cannot be indexed and will never be countersigned by anybody.\n\nA sealed envelope in a kitbag, and the reason it is still sealed.\n\nIt is not evidence. It was never going to be evidence. You have written it down because you do not want to be a person who forgets it."
+  }
+ },
+ "strings": {
+  "no_such_thing": "Nothing here by that name. It is a small room and most of it is drainage.",
+  "already_read": "You have looked twice. There is a man on the slab and Ostro is waiting.",
+  "no_such_exit": "One door, and it goes up.",
+  "no_terminal": "There is a terminal on this tier and it belongs to the medicae, and requisitioning the Lexicanum Vault from a mortuary cogitator is a thing you could do and would regret.\n\nHis is upstairs."
+ },
+ "revisit": "Counterseptic and hot ceramite. Ostro is washing his hands again; he has washed them four times since you came in.\n\nThe slab, the tray, the report on its lectern. Sergeant Oduya against the wall by the door, where she has not moved from."
+}

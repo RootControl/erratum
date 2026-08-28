@@ -4,7 +4,7 @@
  "intro": "Six hours ago a servant of the Adamant Crown found the door to these chambers sealed from the inside and Hadrian Vosk on the floor behind it.\n\nYou were his Interrogator for eleven years. Ninety minutes ago you were handed his rosette in front of witnesses. Inquisitor Crase was kind about it. The verdict was written before the body cooled.\n\nThe medicae are outside with a gurney and a schedule. They will give you eight minutes.\n\nType HELP if you need the verb list. Nothing in this room will highlight itself for you.",
  "look": "His chambers. You have stood here a thousand times and it has never been this quiet.\n\nThe BODY is on the floor between the desk and the side table, the autopistol still in the right hand. The DESK is clear except for a blotter, an ink-stained PAGE, a desk CALENDAR and his NOTEBOOK. On the side table, a regicide BOARD, mid-game. The SHUTTER on the west window is open — which it never is. By the door, the seal-integrity REGISTER blinks its little green rune at nobody.",
  "look_no_body": "His chambers, emptier by one man.\n\nThe DESK: blotter, ink-stained PAGE, desk CALENDAR, his NOTEBOOK. On the side table, the regicide BOARD, mid-game, exactly as it was. The SHUTTER stands open four degrees. By the door, the seal-integrity REGISTER.\n\nThe outline they chalked is procedural and means nothing. You keep looking at it anyway.",
- "body_removed": "The medicae come in at the eighth minute, apologise, and take him.\n\nThey are not unkind and they are not going to argue with a rosette that is ninety minutes old. The senior one says \"Throne keep him, sir,\" and means it, and then the door closes and the room is just furniture.\n\nWhatever you did not read off him, you will not be reading.",
+ "body_removed": "The medicae come in at the eighth minute, apologise, and take him.\n\nThey are not unkind and they are not going to argue with a rosette that is ninety minutes old. The senior one says \"Throne keep him, sir,\" and means it, and then the door closes and the room is just furniture.\n\nWhatever you did not read off him, you will not be reading.\n\nThey are taking him down to the medicae deck on tier one. Ostro will have him open inside the hour, and Sergeant Oduya will go with him, because nobody has told her not to.",
  "objects": [
   {
    "id": "body",
@@ -139,7 +139,15 @@
    "sign": true,
    "file_text": "FILED. CLASS: SCENE DETAIL / RECREATIONAL EFFECTS. INDEXED. REQUISITION-ELIGIBLE.",
    "note_text": "",
-   "refusal": "You write the code in your notebook and the terminal, quite reasonably, will not let you requisition against a shelf-address you have only told your coat about. The Vault indexes filings. To pull the shelf you must first hand the shelf to the archive.\n\nYou notice the shape of that and file it anyway."
+   "refusal": "You write the code in your notebook and the terminal, quite reasonably, will not let you requisition against a shelf-address you have only told your coat about. The Vault indexes filings. To pull the shelf you must first hand the shelf to the archive.\n\nYou notice the shape of that and file it anyway.",
+   "names": [
+    "board",
+    "regicide board",
+    "pieces",
+    "shelf-address",
+    "address",
+    "code"
+   ]
   },
   "A2": {
    "id": "A2",
@@ -147,7 +155,14 @@
    "store": "either",
    "sign": true,
    "file_text": "FILED. CLASS: SCENE DETAIL / VENTILATION ANOMALY. INDEXED.",
-   "note_text": "Written down. Twelfth hour. Cell four. Third drawer emptied on purpose."
+   "note_text": "Written down. Twelfth hour. Cell four. Third drawer emptied on purpose.",
+   "names": [
+    "shutter",
+    "window",
+    "four degrees",
+    "twelfth hour",
+    "cell four"
+   ]
   },
   "A3": {
    "id": "A3",
@@ -156,7 +171,14 @@
    "sign": true,
    "file_text": "",
    "note_text": "You write it down in your own hand: BOOTS — SARROW'S REACH — HE MEANS REVERSE IT.\n\nIt takes eleven words and it is the most important thing in your coat.",
-   "refusal": "The filing template opens. It offers three classifications for the condition of a body's footwear.\n\n    [1] DISTRESS\n    [2] DISORDER\n    [3] SELF-NEGLECT\n\nThere is no fourth option. There is no free-text field. There is nowhere on this form to say that a dead man is speaking to you in a private language from a rest-halt on Sarrow's Reach eleven years ago.\n\nYou close the template. Some things only fit in a notebook."
+   "refusal": "The filing template opens. It offers three classifications for the condition of a body's footwear.\n\n    [1] DISTRESS\n    [2] DISORDER\n    [3] SELF-NEGLECT\n\nThere is no fourth option. There is no free-text field. There is nowhere on this form to say that a dead man is speaking to you in a private language from a rest-halt on Sarrow's Reach eleven years ago.\n\nYou close the template. Some things only fit in a notebook.",
+   "names": [
+    "boots",
+    "the boots",
+    "boot",
+    "sarrow",
+    "sarrow's reach"
+   ]
   },
   "A4": {
    "id": "A4",
@@ -164,7 +186,14 @@
    "store": "either",
    "sign": true,
    "file_text": "FILED. CLASS: SCENE DETAIL / DESTROYED DOCUMENT.\nDRUM TENSION LOG EXTRACTED — STOP-TIME 0997.4.211 / SIXTEENTH HOUR, 22 MIN.\nINDEXED.",
-   "note_text": "Written down — but the drum log will not read itself onto paper. Without filing the unit you have his handwriting and not his clock."
+   "note_text": "Written down — but the drum log will not read itself onto paper. Without filing the unit you have his handwriting and not his clock.",
+   "names": [
+    "quill",
+    "auto-quill",
+    "drum log",
+    "platen",
+    "burned page"
+   ]
   },
   "A5": {
    "id": "A5",
@@ -172,7 +201,14 @@
    "store": "either",
    "sign": true,
    "file_text": "FILED. CLASS: SCENE DETAIL / PERSONAL EFFECTS.\nPICT-CAPTURE ATTACHED. INDEXED.",
-   "note_text": "You copy the ghost circles out by hand, weekday by weekday, back as far as the pad goes. It takes four minutes and it is in ink and it is yours."
+   "note_text": "You copy the ghost circles out by hand, weekday by weekday, back as far as the pad goes. It takes four minutes and it is in ink and it is yours.",
+   "names": [
+    "calendar",
+    "six days",
+    "circled date",
+    "ghost circles",
+    "date"
+   ]
   },
   "A6": {
    "id": "A6",
@@ -181,7 +217,12 @@
    "sign": false,
    "file_text": "",
    "note_text": "Noted. He did not trust the machine. You are currently standing in front of the machine.",
-   "refusal": "You could file an observation about a man's stationery preferences. You find you would rather not."
+   "refusal": "You could file an observation about a man's stationery preferences. You find you would rather not.",
+   "names": [
+    "his notebook",
+    "vosk's notebook",
+    "longhand"
+   ]
   },
   "A7": {
    "id": "A7",
@@ -189,7 +230,14 @@
    "store": "either",
    "sign": false,
    "file_text": "FILED. CLASS: SCENE SECURITY / SEAL EVENT. INDEXED.",
-   "note_text": "Written down. Somebody was in here with a key."
+   "note_text": "Written down. Somebody was in here with a key.",
+   "names": [
+    "register",
+    "seal",
+    "seal register",
+    "integrity register",
+    "the seal"
+   ]
   },
   "A20": {
    "id": "A20",
@@ -197,17 +245,122 @@
    "store": "either",
    "sign": false,
    "file_text": "FILED TO CASE-NOTES.",
-   "note_text": "You copy it out by hand. The ID. The transit authority. The forty-one seconds. The name in the duty-archivist field.\n\nFour separate things, four separate lines, and nothing on the screen suggested you do any of it."
+   "note_text": "You copy it out by hand. The ID. The transit authority. The forty-one seconds. The name in the duty-archivist field.\n\nFour separate things, four separate lines, and nothing on the screen suggested you do any of it.",
+   "names": [
+    "dispatch",
+    "manifest",
+    "1188",
+    "forty-one seconds"
+   ]
+  },
+  "A8": {
+   "id": "A8",
+   "names": [
+    "reading",
+    "the reading",
+    "synthesis",
+    "arrangement",
+    "staging"
+   ],
+   "label": "The room was staged in advance, in an order, for one specific reader",
+   "store": "either",
+   "sign": false,
+   "reconciliation": 2,
+   "file_text": "FILED. CLASS: SCENE ASSESSMENT / INVESTIGATOR FINDING. INDEXED. REQUISITION-ELIGIBLE.\n\nIt is the most useful thing you have. Crase can act on it. Clerks who were sullen this morning will fetch things for you this afternoon, because a filed finding is a finding the Crown has heard of.\n\nIt is also, now, a document stating that the deceased anticipated his own death and left instructions, held in an archive, in a hive where somebody arranged for him to die.",
+   "note_text": "You keep it in your coat, which means it is not a finding. It is a feeling you happen to have written down, and no clerk in this Crown will fetch you so much as a chair on the strength of it."
   }
  },
  "strings": {
-  "help": "VERBS\n\n  LOOK                      the room\n  EXAMINE <thing>  (X)      look at it. Looking twice is not the same as looking once.\n  TAKE <thing>              some things can be carried\n  FILE <clue>               file to the cogitator. Indexed, actionable, and reachable.\n  NOTE <clue>               write it in your own notebook. Inert, useless, and yours.\n  CLUES                     what you hold, and where you are holding it\n  READ ROOM                 when you have enough of it\n  QUERY <code>              Lexicanum Vault, by shelf-address\n  NOTES                     your case-notes, as the cogitator has them\n  NOTEBOOK                  your notebook, as you wrote it\n  WAIT                      time passes either way\n  QUIT\n\nClue IDs look like A1, A3. FILE A1. NOTE A3.",
-  "no_such_thing": "There is nothing here by that name, and you have looked.",
   "body_gone": "They took him at the eighth minute. Whatever was on him is a medicae photograph now.",
-  "already_read": "You have read it. Reading it a third time is not investigation, it is standing in a dead man's room refusing to leave.",
   "read_room_locked": "The verb is there. It has been there since you walked in, greyed and unremarked, and it will not do anything yet.\n\nThree of the signs. You have fewer than three.",
   "read_room_prompt": "You stop moving and let the room assemble itself.\n\nREAD ROOM FORWARD  — take the signs in the order he set them down\nREAD ROOM BACKWARD — take them the other way",
   "crase_rescue": "The terminal accepts D2-F4-C9 and begins composing a formal Inquisitorial requisition — seal, priority, the full apparatus — against two centuries of Munitorum drainage ledgers, addressed to the office of the Lord-Prefect.\n\nA hand comes over the back of your chair and one finger rests on the arrest-key.\n\n\"Not into Kesh's clerks, love. They'll frame it.\"\n\nCrase does not laugh at you. She fixes it herself, quietly, reverses the pairs like it is a typo anyone might make, and never mentions it again.\n\nIt is the warmest thing anyone does for you today.",
-  "vault_none": "LEXICANUM VAULT :: NO SUCH SHELF-ADDRESS IN THIS BLOCK.\nCHECK QUERY."
- }
+  "vault_none": "LEXICANUM VAULT :: NO SUCH SHELF-ADDRESS IN THIS BLOCK.\nCHECK QUERY.",
+  "no_one_here": "There is nobody here to ask. This is the one room in the Crown with nobody in it, which was your request, and which was granted instantly, which was a kindness.",
+  "body_removed_elsewhere": "Somewhere above you, at the eighth minute, the medicae take him.\n\nYou are not there. Nobody sends word, because nobody has been told to, and the first you will know of it is the empty floor.\n\nHe will be on tier one within the hour."
+ },
+ "exits": [
+  {
+   "id": "study",
+   "names": [
+    "vaux",
+    "vaux's study",
+    "tier four",
+    "tier 4",
+    "dmetri",
+    "interrogator",
+    "study"
+   ],
+   "to": "vaux_study",
+   "cost": 3,
+   "requires": [
+    "ROSETTE_TAKEN"
+   ],
+   "text": "You take the lift down to tier four.\n\nBehind you the medicae are still waiting with their gurney and their schedule, and they will not wait for you, and both of you know it."
+  },
+  {
+   "id": "medicae",
+   "names": [
+    "down",
+    "tier one",
+    "tier 1",
+    "deck",
+    "autopsy",
+    "ostro",
+    "bez",
+    "sergeant",
+    "mortuary",
+    "medicae deck"
+   ],
+   "to": "medicae",
+   "cost": 3,
+   "requires": [
+    "BODY_REMOVED"
+   ],
+   "blocked": "He is still on the floor of this room and the medicae are still outside with a gurney and a schedule.\n\nThere is nothing on tier one to look at yet, and Sergeant Oduya is not going anywhere while he is in here.",
+   "text": "Bez takes you out through the door on the way down, and does it physically, because she has been waiting six hours for somebody to let her.\n\nHere is where she stood. Here is the strike-plate. Here is where the splinters went, and they went inward, and she puts your hand on the frame so that you can feel that they did.\n\n\"Eleven hours,\" she says. \"Twelfth to the twenty-third.\"\n\nThen the lift, nine tiers down, in silence, with her shoulder against the wall."
+  },
+  {
+   "id": "adjutant",
+   "names": [
+    "fenn",
+    "savant",
+    "office",
+    "tier eight",
+    "tier 8",
+    "adjutant's office",
+    "aleth"
+   ],
+   "to": "adjutant",
+   "cost": 1,
+   "text": "One floor down, to the office of a man who has been cross-checking a tithe variance since the fourth hour and is not, by any measure available to him, having a bad day."
+  },
+  {
+   "id": "choir",
+   "names": [
+    "spire",
+    "choir spire",
+    "gallery",
+    "ilaria",
+    "talm",
+    "astropath",
+    "cell four",
+    "the choir"
+   ],
+   "to": "choir",
+   "cost": 3,
+   "has_any": [
+    "A2"
+   ],
+   "requires_any": [
+    "CRASE_LEAD_CHOIR"
+   ],
+   "blocked": "The Choir Spire is across the Crown gap and holds four hundred vessels in nine galleries, and you have no idea which of them you would be walking up there to ask about.\n\nYou need a cell, or an hour, or a reason. You have none of the three.",
+   "text": "Across the Crown gap by transit bridge, and up.\n\nThe Choir Spire is the only structure on this world taller than the Adamant Crown and it is the only one nobody looks at, because looking at it means thinking about what is in it."
+  }
+ ],
+ "clock_at": "06h12",
+ "body": true,
+ "terminal": true,
+ "revisit": "His chambers. The Crown has them for another few hours and then it takes them back."
 }
