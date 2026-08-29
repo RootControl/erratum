@@ -73,6 +73,59 @@
    ],
    "topics": [
     {
+     "id": "long_cost",
+     "names": [
+      "the cost",
+      "what it costs",
+      "the price",
+      "forty hours",
+      "what happens to you",
+      "unshielded"
+     ],
+     "requires": [
+      "ILARIA_OFFERED"
+     ],
+     "blocks": [
+      "CIPHER_COMPLETE"
+     ],
+     "text": "\"Forty hours of raw cylinder,\" she says. \"Inside the Choir, on the Spire, with the relay live, because the reproducer is bolted to a bench eleven flights down and it is not coming up here for me.\n\n\"Unshielded. There's no shroud for it and there's no shift pattern for it and there is no version of it where I do six hours and stop, because the rote only comes up out of the noise when you've had enough of the noise to stop hearing it.\"\n\nShe is very calm and she has clearly worked all of this out before she opened her mouth.\n\n\"After it I'll be able to carry grain and tithe. I'll not be able to carry anything that matters, ever again, and the Choir-Prefect will put that on a form as *reduced sensitivity following extended exposure*, which is a true sentence.\n\n\"I'd like you to have me say it plainly, so that neither of us can be vague about it later. It ends the part of me you have any use for.\""
+    },
+    {
+     "id": "long_fortyone",
+     "names": [
+      "forty-one seconds",
+      "her voice",
+      "the recording again",
+      "eight hundred",
+      "hearing it again"
+     ],
+     "requires": [
+      "ILARIA_OFFERED"
+     ],
+     "blocks": [
+      "CIPHER_COMPLETE"
+     ],
+     "text": "\"Forty-one seconds,\" Ilaria says. \"I've been afraid of forty-one seconds for eleven weeks. Forty hours is the same thing eight hundred times. That's arithmetic.\"\n\nIt is not arithmetic and you both know it.\n\nHer own cylinder is in that vault. It is in the 0997 drawer, second quarter, filed by year and by nothing else, and to find the rote in nineteen years of a dead man's dictation she will have to go past it — not once, and not carefully.\n\n\"You'll want to be somewhere else,\" she says. \"Not out of kindness. If you're in the room I'll perform, and performing takes longer.\"\n\nShe puts her hand back on the frame.\n\n\"Send me down, sir. I'd rather be sent than volunteer. It's the last bit of it that's mine.\""
+    },
+    {
+     "id": "long_alternative",
+     "names": [
+      "another way",
+      "any other way",
+      "alternative",
+      "is there another",
+      "instead",
+      "somebody else"
+     ],
+     "requires": [
+      "ILARIA_OFFERED"
+     ],
+     "blocks": [
+      "CIPHER_COMPLETE"
+     ],
+     "text": "\"No, sir.\"\n\nShe does not soften it and she does not take any time over it, which tells you she has already been round it.\n\n\"There's the wax and there's the traffic. The wax is me. The traffic is your savant, and I'd rather you asked me than him, and I'd rather say that out loud than have you think I was being noble about it.\n\n\"There's no third one. There's no clever one. You've been looking for a clever one for about four minutes and I've been watching you do it.\""
+    },
+    {
      "id": "shadow",
      "names": [
       "the room",
@@ -112,9 +165,64 @@
      "text": "\"I've thought about very little else,\" Ilaria says.\n\n\"And?\"\n\n\"And I've decided I don't want to hear it again, which I'd like on the record as my own decision and not something anybody spared me.\" Her hand is still flat on the frame. \"It's my voice. It's my mouth. Whatever came through me came through me in the ordinary way, at the ordinary time, on an ordinary channel, and I countersigned a summary of it afterwards that was wrong.\n\n\"That's not a psyker going bad, sir. A psyker going bad is loud. This was *tidy*.\""
     }
    ],
-   "beats": [],
-   "shows": [],
-   "acts": []
+   "beats": [
+    {
+     "id": "long_way",
+     "requires": [
+      "CIPHER_HALF_ROOM",
+      "CIPHER_HALF_LOST"
+     ],
+     "blocks": [
+      "CIPHER_COMPLETE"
+     ],
+     "sets": [
+      "ILARIA_OFFERED"
+     ],
+     "text": "\"You've got half of it,\" Ilaria says, from the landing. \"The room half. And the man who had the other half is dead.\"\n\nIt is not a question and you do not answer it.\n\n\"He never wrote it down, sir. That's the thing nobody's said out loud yet. A key that's written down is a key somebody can take, so he didn't write it down — he *used* it. Nineteen years of dictation in it, out of his own mouth, to a Choir.\"\n\nHer hand comes off the door frame for the first time since you have known her.\n\n\"Every dispatch out of this building goes through the Spire and every dispatch through the Spire gets cut into wax, because a rescript from 604 says it must. Nineteen years of a man speaking a cipher out loud, in the same rote, in the same mouth-shapes, over and over, and all of it is sitting in a drawer eleven flights under the cells with no index on it below the year.\n\n\"It isn't written down anywhere. It's *said* down. And I'm the only person you have who can hear it.\""
+    }
+   ],
+   "shows": [
+    {
+     "clue": "B19",
+     "sets": [
+      "TESTIMONY_SHARED"
+     ],
+     "counters": {
+      "ILARIA_TRUST": 1
+     },
+     "text": "You read it to them. All of it, out of the notebook, standing up, in the room\nit was written in.\n\nIlaria does not move from the landing and does not interrupt, and when you\nhave finished she says, \"Nine hundred million,\" and then nothing for a while.\n\n\"He knew. All the years I was carrying for him, he knew that.\"\n\n\"He signed it.\"\n\n\"Yes, sir. And then he spent eighty-one years being the man who signed it,\nwhich is a longer sentence than they'd have given him.\"\n\nSergeant Oduya has been in the doorway for the last third of it with a mug\ngoing cold in her hand.\n\n\"What's a tithe dispute,\" she says.\n\nIt is not a question about vocabulary. You start to answer it twice and stop\nboth times, and in the end you tell her the truth, which is that it is an\nargument about a number between two offices, and that it went the way\narguments about numbers go, and that four hundred million of the nine were\nchildren.\n\nBez puts the mug down on the crate very carefully, the way you put a thing\ndown when your hands have stopped being reliable.\n\n\"Right,\" she says. \"Tell me what we're doing, sir, and I'll go and get my\ncoat.\"\n\n[ ILARIA_TRUST +1 ]"
+    }
+   ],
+   "acts": [
+    {
+     "id": "spend_ilaria",
+     "names": [
+      "let her",
+      "let her do it",
+      "send her",
+      "send her down",
+      "spend her"
+     ],
+     "requires": [
+      "ILARIA_OFFERED",
+      "ILARIA_ALIVE"
+     ],
+     "blocks": [
+      "CIPHER_COMPLETE",
+      "ILARIA_BURNED"
+     ],
+     "sets": [
+      "CIPHER_COMPLETE",
+      "ILARIA_BURNED",
+      "LONG_WAY_TAKEN"
+     ],
+     "grants": [
+      "B17"
+     ],
+     "cost": 6,
+     "text": "You ask her.\n\n\"Thank you,\" Ilaria says, which is not what you were braced for, and goes down the eleven flights on her own without waiting to be escorted.\n\nIt takes six days. She works in four-hour blocks because the Prefect's warden will not sign anything longer, and then in six-hour blocks because the warden stops coming, and by the fourth day she has stopped going up to the cells to sleep and is sleeping on a drawer-step in her coat.\n\nYou are not in the room. She asked you not to be, and you find on the third day that you had been going to be anyway, and that the reason was not kindness.\n\nOn the sixth day she comes up with forty pages of phonemes in a transcriptionist's hand — not her own; she borrowed a Spire clerk on the second day and dictated it — and the rote is in it, all of it, nineteen years of a dead man's mouth reduced to about two hundred sounds.\n\nShe hands it over standing up.\n\n\"That's the whole of it, sir. It's a good set. I checked it against the ordinary traffic and it holds.\"\n\nThen, because you have asked her something with your face and not with your mouth:\n\n\"It went how we said it would go. I'm still here and I'd like to go on working and I'd like it if you didn't ask me about it again.\"\n\nShe goes back to the landing and puts her hand flat on the frame, which she does not need to do any more, and which she is going to go on doing for the rest of her life.\n\n[ B17 HELD ]"
+    }
+   ]
   }
  ],
  "exits": [
@@ -257,6 +365,25 @@
    ],
    "blocked": "There is nobody in the Ferrum Gallery you have any way of reaching.",
    "text": "Four people who do not exist move you through a Gallery that has never once checked a face against a card.\n\nNo assault, no enforcers, and nobody at all who is going to be standing on the wet side of a coolant door at the eighth minute."
+  },
+  {
+   "id": "spire",
+   "names": [
+    "vaux",
+    "dmetri",
+    "interrogator",
+    "the spire",
+    "choir spire",
+    "wax",
+    "redundancy"
+   ],
+   "to": "cylinder_vault",
+   "cost": 3,
+   "requires": [
+    "TWO_THREADS"
+   ],
+   "blocked": "Interrogator Dmetri Vaux has been on the Spire since the day of the funeral and has not answered anything anybody has sent him.\n\nYou have nothing yet that would make him answer you.",
+   "text": "Vaux names the room himself: the wax-cylinder redundancy vault, eleven flights under the astropath cells, at an hour with no shift on the Spire.\n\nIt takes most of an evening to get up there and the last eleven flights are on foot, because the Choir does not run a lift to a floor nobody visits."
   }
  ],
  "clues": {
@@ -274,12 +401,70 @@
    "reconciliation": 1,
    "file_text": "FILED. CLASS: DECEASED'S OPEN MATTERS / INVESTIGATIVE LEAD. INDEXED. REQUISITION-ELIGIBLE.\n\nThe cogitator indexes four file names and offers, helpfully, to reopen all four under your authority, which would make them your open matters and searchable as such.\n\nYou have just told the archive which four things Hadrian Vosk was looking at.",
    "note_text": "You write the four names out by hand: FENN/CUSTODY, SUMP-VARIANCE, ECCL/ALMS, GALLERY-9.\n\nFour words in a book in your coat. Nobody can search it, including you, which is going to be irritating for eleven weeks and then once, exactly once, it is going to be the only reason you are still alive."
+  },
+  "B17": {
+   "id": "B17",
+   "names": [
+    "rote-sound",
+    "the phonemes",
+    "phoneme set",
+    "the rote",
+    "two hundred sounds",
+    "the wax key"
+   ],
+   "label": "Vosk's rote — two hundred mouth-shapes, lifted out of nineteen years of wax by somebody who had to hear her own voice to do it",
+   "store": "either",
+   "reconciliation": 2,
+   "file_text": "FILED. CLASS: CRYPTOGRAPHIC MATERIAL / PARTIAL KEY, RECONSTRUCTED. INDEXED. SOURCE: ASTROPATHIC REDUNDANCY ARCHIVE, CHOIR SPIRE.\n\nThe template has a field for the source and the source is a place, so the cogitator files it against the Spire and against the rescript of 604, correctly, in about nine seconds.\n\nThere is no field on the form for what it cost, because what it cost was a person, and a person is not a source.",
+   "note_text": "Forty pages in a Spire clerk's hand, dictated over six days by a woman who went past her own cylinder eight hundred times to get them.\n\nAbout two hundred sounds. It is a good set; she checked it against the ordinary traffic and it holds.\n\nYou write the two hundred into your own coat in your own hand and it takes you four hours and you do not resent one minute of it."
+  },
+  "B19": {
+   "id": "B19",
+   "names": [
+    "the testimony",
+    "vosk's testimony",
+    "the decoded sentence",
+    "his last filing",
+    "what he wrote",
+    "the confession of vosk"
+   ],
+   "label": "Vosk's testimony, read out of nine objects: he signed Kadmon Veil, the index is the crime, and the ninth object is the weapon",
+   "store": "notebook",
+   "sets": [
+    "TESTIMONY_READ"
+   ],
+   "refusal": "FILING TEMPLATE :: CLASS — RECOVERED TESTIMONY / DECEASED OFFICER\n\nThe template opens. It is a good template. There is a field for the deceased,\na field for the medium, a field for the recovering officer and eleven hundred\ncharacters for the substance, which is more than enough.\n\nYou get as far as the third field.\n\n*I could not write this, speak this, carry this, or tell any living soul.*\n\nHe had eighty-one years of the Concordance and six days of knowing, and every\ninstrument you are holding he had four of, and he went and made himself into a\nchair and a shutter and a pair of boots rather than put one word of it on a\nform.\n\nYou close the template.\n\nThe notebook is in your coat. It has always been in your coat.",
+   "note_text": "Longhand, in your coat, four hundred words, and it takes you the better part\nof an hour because you keep stopping.\n\nNine hundred million four hundred and twelve thousand, struck over a tithe\ndispute, and they are still down there paying.\n\nThe index is the crime.\n\nIt is the single most dangerous object in the Adamant Crown and it is a\nnotebook, and there is precisely one copy, and it cannot be searched, indexed,\namended or found — which is the entire lesson of the last eleven weeks and\nwhich you have learned it from a wax vault, a sump, four hundred mouths and a\ndead man's furniture."
+  },
+  "B20": {
+   "id": "B20",
+   "names": [
+    "cantica-null",
+    "the routing address",
+    "priority black",
+    "the address",
+    "cantica",
+    "where it keeps its books"
+   ],
+   "label": "CANTICA-NULL, priority black — in orbit of a world the index says was never settled",
+   "store": "either",
+   "reconciliation": 2,
+   "sets": [
+    "KADMON_ADDRESS"
+   ],
+   "file_text": "FILED. CLASS: ROUTING / UNRESOLVED ADDRESS. INDEXED.\n\nThe cogitator files a routing address the routing index does not have, which\nis an ordinary data-quality condition, and appends a note to that effect.\n\nIt takes nine seconds. It is the correct handling. There is a queue two tiers\nup that it goes into afterwards, the way everything does.",
+   "note_text": "CANTICA-NULL. Priority black. In orbit of a world the index says was never\nsettled.\n\nWritten in your own hand, on the page after the testimony, with the date, the\nway you were taught to write down an address you intend to go to."
   }
  },
  "strings": {
   "no_such_thing": "Nothing here by that name. Most of what was here is in a crate on Stack Theta.",
   "already_read": "You have looked twice. It is eight days cold.",
-  "no_such_exit": "You have four names and no map. Whatever you do next you will do because you decided to, and nothing in this room is going to suggest it."
+  "no_such_exit": "You have four names and no map. Whatever you do next you will do because you decided to, and nothing in this room is going to suggest it.",
+  "sentence_true": "You do it on the crate they left the desk standing on, because the desk is\nnot where it was and never will be again.\n\nEight objects, read in reverse order, and the ninth in your hand.\n\nThe boots are the eighth and the boots are said backwards, and it takes you\nfour hours and you do not once look up.\n\n  THE OBJECTS IN THIS ROOM ARE MY LAST FILING AND I HAVE MADE THEM\n  CAREFULLY. I HELD THE INQUISITION'S SEAT ON THE CONCORDANCE EIGHTY-ONE\n  YEARS AND SOMEBODY IS SITTING IN IT NOW. I SIGNED KADMON VEIL — NINE\n  HUNDRED MILLION FOUR HUNDRED AND TWELVE THOUSAND, STRUCK OVER A TITHE\n  DISPUTE, AND THEY ARE STILL DOWN THERE PAYING. WHAT KILLED ME IS NOT A MAN\n  AND CANNOT BE ARRESTED. IT IS AN ENGINE AND IT KEEPS ITS BOOKS AT ROUTING\n  CANTICA-NULL, PRIORITY BLACK, IN ORBIT OF A WORLD THE INDEX SAYS WAS NEVER\n  SETTLED. THE INDEX IS THE CRIME. I COULD NOT WRITE THIS, SPEAK THIS, CARRY\n  THIS, OR TELL ANY LIVING SOUL, SO I DID THE ONLY THING LEFT AND MADE MYSELF\n  THE DOCUMENT. THE NINTH OBJECT IS THE WEAPON. IT IS IN THE ASH. DO NOT READ\n  IT. DO NOT LET ANYONE READ IT. I AM SORRY ABOUT THE ROOM, AND ABOUT THE\n  ELEVEN YEARS, AND ABOUT WHAT I AM MAKING YOU. — H.V.\n\nYou read it four times.\n\nThe fourth time you notice the tense — *making*, not *made* — and that he did\nit on purpose, because Hadrian Vosk never once in his life left a tense loose.\n\nHe is not apologising for what he did. He is apologising for what you are\ngoing to do, which he worked out in advance and was patient enough to be\nsorry about ahead of time.\n\n[ B19 HELD ]\n[ B20 HELD ]",
+  "sentence_false": "It comes out clean, which you were not expecting, and it comes out fast.\n\n  THE OBJECTS IN THIS ROOM ARE MY LAST FILING. I HELD THE INQUISITION'S SEAT\n  ON THE CONCORDANCE EIGHTY-ONE YEARS. THE ALMS OF THE UNBLINKING EYE HAVE\n  BEEN A LEDGER FOR NAMES SINCE 811 AND CARDINAL AUGUSTIN VHAIL HAS KEPT IT\n  IN HIS OWN HAND. HE SOLD FOUR HUNDRED YEARS OF THIS HIVE TO CLERKS WITH A\n  WARRANT AND A DISCOUNT, AND I WENT TO HIM, AND HE UNDERSTOOD WHAT I WAS\n  ASKING, AND THAT IS WHY I AM DEAD. FINISH IT. — H.V.\n\nEvery clause in it is a thing you proved yourself.\n\nThe alms account is real. The 811 date is real. Vhail's hand on the ledger is\nreal and you have it in your coat, and the man is loathsome, and he has been\nselling this hive by the name for forty years, and you got all of it without\nbeing given any of it.\n\nIt is the best evidence in the case.\n\nYou sit with it for a long time and then you go and find somebody to tell.",
+  "sentence_count": "It is the count that does it, four days later, and it is not cleverness — it\nis the habit of counting things, which is the only qualification you have ever\nreally had.\n\nYou go back to the plate to check a group boundary, and while you are there\nyou count the tokens.\n\nEight.\n\nThere are nine objects.\n\nYou sit very still for about a minute, and then you go through it again from\nthe first group, and the eighth token is doing the work of two, and the two it\nis doing the work of do not agree with each other.\n\nIt is not a mistake. A mistake in a cipher produces noise. This produced a\nsentence, in his register, naming the man you already wanted, and it was\nhanded to you by somebody standing in a wax vault with a leather case at his\nfeet and no reason on this world to be generous.\n\nIt takes a second session and most of a week to unpick, and you do it alone,\nand what comes out the other side of it is this:\n\n  THE OBJECTS IN THIS ROOM ARE MY LAST FILING AND I HAVE MADE THEM\n  CAREFULLY. I HELD THE INQUISITION'S SEAT ON THE CONCORDANCE EIGHTY-ONE\n  YEARS AND SOMEBODY IS SITTING IN IT NOW. I SIGNED KADMON VEIL — NINE\n  HUNDRED MILLION FOUR HUNDRED AND TWELVE THOUSAND, STRUCK OVER A TITHE\n  DISPUTE, AND THEY ARE STILL DOWN THERE PAYING. WHAT KILLED ME IS NOT A MAN\n  AND CANNOT BE ARRESTED. IT IS AN ENGINE AND IT KEEPS ITS BOOKS AT ROUTING\n  CANTICA-NULL, PRIORITY BLACK, IN ORBIT OF A WORLD THE INDEX SAYS WAS NEVER\n  SETTLED. THE INDEX IS THE CRIME. I COULD NOT WRITE THIS, SPEAK THIS, CARRY\n  THIS, OR TELL ANY LIVING SOUL, SO I DID THE ONLY THING LEFT AND MADE MYSELF\n  THE DOCUMENT. THE NINTH OBJECT IS THE WEAPON. IT IS IN THE ASH. DO NOT READ\n  IT. DO NOT LET ANYONE READ IT. I AM SORRY ABOUT THE ROOM, AND ABOUT THE\n  ELEVEN YEARS, AND ABOUT WHAT I AM MAKING YOU. — H.V.\n\nYou read it four times.\n\nThe fourth time you notice the tense — *making*, not *made* — and that he did\nit on purpose, because Hadrian Vosk never once in his life left a tense loose.\n\nHe is not apologising for what he did. He is apologising for what you are\ngoing to do.\n\n[ B19 HELD ]\n[ B20 HELD ]",
+  "sentence_again": "You have read it. Reading it again is a thing you are going to do for the\nrest of your life and it is not going to cost you an afternoon each time."
  },
- "terminal": true
+ "terminal": true,
+ "cipher": true
 }

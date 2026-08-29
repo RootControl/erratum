@@ -207,6 +207,51 @@
      },
      "cost": 2,
      "text": "\"Outgoing traffic, Inquisitor Vosk, last eleven weeks.\" Fenn closes his eyes, which he does not usually need to do. \"Nineteen dispatches. I have the headers; I never had the content, nobody had the content, he wrote them by hand and carried them to the Spire himself.\n\n\"Routing classes: fourteen ordinary, four Vermilion, and one that I can't place at all and which I am going to describe to you rather than name, because I would like you to write down that I described it rather than named it.\"\n\nHe describes it. A routing class of a form he has read exactly once, in a Choir index, eleven weeks ago.\n\n\"Eleven of the nineteen went to addresses that resolve to nothing. Not *failed* — resolved, accepted, delivered, and the address is not a place. A dispatch that fails comes back, Inquisitor. None of these came back.\"\n\nThe repeater clicks. Fenn opens his eyes and says, in exactly the same cheerful voice, \"Nineteen dispatches, fourteen ordinary and five Vermilion, all to Crown addresses. Shall I go through them?\"\n\nYou already have the first version. In ink.\n\n[ B18 HELD ]"
+    },
+    {
+     "id": "long_corpus",
+     "names": [
+      "the cipher",
+      "the other half",
+      "the key",
+      "vosk's cipher",
+      "rebuild it",
+      "the corpus",
+      "brute force"
+     ],
+     "requires": [
+      "CIPHER_HALF_ROOM",
+      "CIPHER_HALF_LOST",
+      "IN_STACK_DELTA"
+     ],
+     "blocks": [
+      "CIPHER_COMPLETE"
+     ],
+     "has": [
+      "B18"
+     ],
+     "sets": [
+      "FENN_OFFERED"
+     ],
+     "text": "\"Oh, that's tractable,\" Fenn says immediately, and you watch him decide it is tractable before he has finished hearing the problem, which is the thing about him.\n\n\"Nineteen dispatch headers, all his, all in the same hand, all in the same key. A header is a constrained form — routing class, priority, date, seat. I know what nine of those nineteen *said*, because four of them are ordinary Vermilion and I have read four hundred ordinary Vermilion.\n\n\"So I have nineteen ciphertexts and nine known plaintexts and I only need the header corpus to go far enough to fix the group boundaries. The Vault has the corpus. The whole corpus, back to 811, on the live index.\"\n\n\"On the live index.\"\n\n\"Yes.\" He is delighted. \"I'd have to be at a terminal for it. A real one, with the relay up, for as long as it takes — I couldn't do it out of memory, there are eleven million headers and I'm a savant, not a miracle.\"\n\nHe says the next part in exactly the same cheerful voice.\n\n\"That's the thing that's been happening to me, isn't it. I've worked that out. Sergeant Oduya has a way of not looking at me.\""
+    },
+    {
+     "id": "long_cost_fenn",
+     "names": [
+      "the cost",
+      "what it costs",
+      "the price",
+      "what happens to you",
+      "what it does to him",
+      "afterwards"
+     ],
+     "requires": [
+      "FENN_OFFERED"
+     ],
+     "blocks": [
+      "CIPHER_COMPLETE"
+     ],
+     "text": "\"All of it,\" Fenn says. \"I should think all of it.\n\n\"I've been keeping a count, which I didn't tell you about because I didn't want to be handled. Vardan went in the first week. Nine thousand tonnes went about ten days ago and I argued with you about it, and I was wrong and certain, and I have thought about that a great deal.\n\n\"Sustained exposure at a live terminal is not eleven sub-queries, it's eleven hours, and I would be doing it deliberately and with my attention on it, which I suspect is worse. I would not expect to come off the terminal as the man who sat down at it.\"\n\nHe squares the folding table, which does not need squaring.\n\n\"I'd like to say yes now, before we talk about it any more, because I can feel myself getting frightened and I'd rather the yes came from the part of me that's still doing arithmetic.\n\n\"Only — would you tell me what I ought to try to remember? Afterwards. If I'm to lose the general run of it I'd like to have picked something, rather than find out later what happened to be left.\"\n\nThere is no answer to that. You do not give him one and he does not seem to expect one, and after a moment he starts, very quietly, on the second-act lament from *Ossuar's Daughter*, and stops, and apologises for it."
     }
    ],
    "beats": [
@@ -314,6 +359,46 @@
       "FENN_BROUGHT"
      ],
      "text": "You tell him he is coming.\n\nFenn is delighted, and packs the satchel he will not open, and asks four questions about the coolant programme on the way to the lift that you cannot answer and that he can.\n\nHe is the best map in the sector. He has the Gallery's plant schedules from 781, the flood intervals, the sub-gallery runs and the four amendments that were never made, and he will recite any of it on request, instantly, in four degrees of wet.\n\nEvery officer would bring him. It is the correct decision.\n\n[ FENN_BROUGHT ]"
+    },
+    {
+     "id": "spend_fenn",
+     "names": [
+      "let him",
+      "send him",
+      "let him do it",
+      "put him on the terminal",
+      "spend him",
+      "burn him"
+     ],
+     "requires": [
+      "FENN_OFFERED",
+      "IN_STACK_DELTA",
+      "FENN_INTACT",
+      "FENN_ALIVE"
+     ],
+     "blocks": [
+      "CIPHER_COMPLETE"
+     ],
+     "has": [
+      "B18"
+     ],
+     "clears": [
+      "FENN_INTACT",
+      "FENN_SHIELDED"
+     ],
+     "counters": {
+      "FENN_DRIFT": 6
+     },
+     "sets": [
+      "CIPHER_COMPLETE",
+      "FENN_SPENT",
+      "LONG_WAY_TAKEN"
+     ],
+     "grants": [
+      "B18b"
+     ],
+     "cost": 6,
+     "text": "He sits down at the aisle terminal in Stack Delta and asks the Lexicanum for the header corpus, back to 811, and Habrach signs the requisition without reading it because Habrach has stopped reading your requisitions.\n\nIt takes eleven hours.\n\nFor the first four he talks. He narrates the group boundaries as they come out and he is very good company, and twice he laughs at something in the corpus that you cannot see the joke in and he explains it twice, patiently, and it is genuinely funny both times.\n\nIn the sixth hour he stops narrating.\n\nIn the eighth he asks you, politely, whether you would mind confirming the year.\n\nIn the eleventh he gives you the key. All of it, group by group, correct, checked against four of the nineteen headers in front of you, and he does not make a single error in the whole of it, and that is the last thing Savant Aleth Fenn does well.\n\nThen he sits back and says that he thinks that has done it, and asks whether he might have some water, and asks a second time about ninety seconds later.\n\nHe is entirely cheerful. He is going to be entirely cheerful about it for the rest of his life. The Ordo will keep him, because the Ordo keeps its instruments, and he will be moved to a quiet office on tier one where he will be very well liked.\n\nYou go back four days later with a list of the things he told you he wanted to remember, and he thanks you for it warmly, and asks who wrote it.\n\n[ B18b HELD ]"
     }
    ]
   }

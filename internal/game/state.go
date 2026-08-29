@@ -30,13 +30,15 @@ func (s Store) String() string {
 }
 
 const (
-	secondsPerAction = 40
-	bodyLimit        = 8 * 60 // eight minutes, and they mean it
-	correctionDelay  = 5      // actions after the requisition before the archive reconciles
-	fallbackDelay    = 9      // if the player never looks again, Crase delivers it
-	precisDelay      = 14     // and then the Crown wants the day signed off
-	precisFloor      = 50     // a player who never requisitions still reaches the end of the day
-	lyleConfirmDelay = 6      // and then the Vault confirms a null result you never asked it to
+	secondsPerAction    = 40
+	bodyLimit           = 8 * 60 // eight minutes, and they mean it
+	correctionDelay     = 5      // actions after the requisition before the archive reconciles
+	fallbackDelay       = 9      // if the player never looks again, Crase delivers it
+	precisDelay         = 14     // and then the Crown wants the day signed off
+	precisFloor         = 50     // a player who never requisitions still reaches the end of the day
+	lyleConfirmDelay    = 6      // and then the Vault confirms a null result you never asked it to
+	canticaConfirmDelay = 1      // forty seconds, and the second one is not yours
+	tassDelay           = 12     // and if you never went to the Magos, his apprentice comes to you
 )
 
 // State is everything the game knows. Flags are strings by design: the act
@@ -91,6 +93,11 @@ type State struct {
 	// The Lyle query gets an answer nobody asked for, forty minutes later.
 	lyleQueried   int
 	lyleConfirmed bool
+
+	canticaQueried   int
+	canticaConfirmed bool
+
+	tassWaited int
 
 	requisitioned  bool
 	sinceReq       int
@@ -249,7 +256,15 @@ func (s *State) SetOne(group []string, flag string) {
 // away.
 func (s *State) Reconciliation() int { return s.Ints["RECONCILIATION"] }
 
-func (s *State) Set(f string)      { s.Flags[f] = true }
+// Set writes a flag. Two of them have a number attached and the number has to
+// move with them, because the flag is the event and the counter is only how
+// the event is displayed.
+func (s *State) Set(f string) {
+	s.Flags[f] = true
+	if f == "ILARIA_BURNED" && s.Ints["ILARIA_TRUST"] > ilariaBurnedCap {
+		s.Ints["ILARIA_TRUST"] = ilariaBurnedCap
+	}
+}
 func (s *State) Has(f string) bool { return s.Flags[f] }
 
 // key scopes a per-object counter to the scene it was seen in.
@@ -257,12 +272,21 @@ func (s *State) key(id string) string { return s.Room.ID + "/" + id }
 
 // bounds are the ranges the bible gives these counters. A counter with no
 // entry here is unbounded on purpose.
+// ilariaBurnedCap is what is left of her after forty hours of raw cylinder:
+// enough to carry grain and tithe, and not enough to carry anything that
+// matters. The regard is not what she spent.
+const ilariaBurnedCap = 2
+
 var bounds = map[string][2]int{
 	"CRASE_STANDING": {-5, 5},
 	"BEZ_TRUST":      {0, 5},
 	"ILARIA_TRUST":   {0, 5},
 	"FENN_DRIFT":     {0, 6},
 	"RECONCILIATION": {0, 100},
+	// Vaux arrives at 0 or 2 depending on how he was asked for, and comes
+	// back from three weeks off-world at 3 whatever he left at, which is why
+	// the ceiling does the arithmetic instead of the content.
+	"VAUX_SUSPICION": {0, 3},
 }
 
 // Add moves a counter, held inside its range.
@@ -275,6 +299,12 @@ func (s *State) Add(k string, n int) {
 	// ever ask for down there costs twice, for the rest of the act.
 	if k == "MOTT_FAVOURS" && n > 0 && s.Has("CHOIR_HOSTILE") {
 		n *= 2
+	}
+	// Forty hours of raw cylinder does not cost her the player's regard. It
+	// costs her the thing the regard was for, and the number stops at the
+	// point where she can still carry grain and tithe.
+	if k == "ILARIA_TRUST" && n > 0 && s.Has("ILARIA_BURNED") && s.Ints[k] >= ilariaBurnedCap {
+		return
 	}
 	if k == "FENN_DRIFT" && n > 0 && s.Has("FENN_SHIELDED") {
 		s.driftPartial += n
@@ -344,6 +374,35 @@ func (s *State) Tick() []string {
 			s.Grant("B5")
 			out = append(out, s.S("lyle_confirmation"))
 		}
+	}
+	// Forty seconds after the Vault says there is no such routing address, the
+	// Vault says it again without being asked. Nothing in the game explains
+	// which of the two answers was the query.
+	// The plate is unmissable. A player who never took the ash to the workshop
+	// gets it anyway, brought by an apprentice who was told to, and loses only
+	// the Magos's signature on the recovery.
+	if s.Has("CIPHER_COMPLETE") && !s.Has("ERRATUM_OBTAINED") {
+		s.tassWaited++
+		if s.tassWaited == tassDelay {
+			s.Grant("B21")
+			s.Set("ERRATUM_OBTAINED")
+			s.Set("ERRATUM_UNUSED")
+			s.Set("TASS_BROUGHT_IT")
+			out = append(out, s.S("tass_delivery"))
+		}
+	}
+	if s.Has("CANTICA_QUERIED") && !s.canticaConfirmed {
+		s.canticaQueried++
+		if s.canticaQueried == canticaConfirmDelay {
+			s.canticaConfirmed = true
+			out = append(out, s.S("cantica_confirm"))
+			if s.Has("FENN_INTACT") && s.Has("FENN_ALIVE") {
+				out = append(out, s.S("cantica_fenn"))
+			}
+		}
+	}
+	if !s.Has("TWO_THREADS") && s.threadsTouched() >= 2 {
+		s.Set("TWO_THREADS")
 	}
 	if !s.Has("CRASE_ASKED_FOR_YOU") && s.threadsTouched() >= 2 {
 		s.Set("CRASE_ASKED_FOR_YOU")

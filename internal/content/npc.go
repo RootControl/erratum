@@ -118,6 +118,7 @@ type Counters map[string]int
 var KnownCounters = map[string]bool{
 	"VERITY": true, "CRASE_STANDING": true, "RECONCILIATION": true,
 	"BEZ_TRUST": true, "ILARIA_TRUST": true, "FENN_DRIFT": true, "MOTT_FAVOURS": true, "QUERY_TIER": true,
+	"VAUX_SUSPICION": true,
 }
 
 // Act is a verb the player uses on a person rather than a thing: detain,
@@ -148,6 +149,11 @@ type Beat struct {
 	Sets          []string `json:"sets"`
 	Clears        []string `json:"clears"`
 	Grants        []string `json:"grants"`
+	// Counters is how a beat charges for something the player did before the
+	// conversation started. Vaux is already two points suspicious of anybody
+	// who asked to see him through the Crown's own message system, and the
+	// beat that says so is the only place that fact exists.
+	Counters Counters `json:"counters"`
 }
 
 // Disposition is a one-of-N flag group. The act documents write these as an
