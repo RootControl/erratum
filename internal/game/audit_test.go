@@ -135,9 +135,11 @@ func TestEveryGatedFlagHasAWriter(t *testing.T) {
 		// The plate is unmissable: Cael's imaging act writes these, and so does
 		// the fallback in Tick where Tass brings it up four tiers unbidden.
 		"ERRATUM_OBTAINED": true, "ERRATUM_UNUSED": true,
-		// DECODE, in the chambers, with both halves and the plate. CIPHER_COMPLETE
-		// and KADMON_ADDRESS are not here: 2.10 writes the first and B20 writes
-		// the second, and both are content.
+		// CIPHER_COMPLETE is derived in Set from holding both halves, so it has
+		// no content writer by design. KADMON_ADDRESS is not here: B20's own
+		// sets write it.
+		"CIPHER_COMPLETE": true,
+		// DECODE, in the chambers, with both halves and the plate.
 		"ACT2_COMPLETE": true, "FALSE_SENTENCE_SEEN": true, "SENTENCE_REPAIRED": true,
 		"CANTICA_QUERIED": true, "TASS_BROUGHT_IT": true,
 		// The effects manifest, requisitioned from the Vault by a player who

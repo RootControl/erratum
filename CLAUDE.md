@@ -364,14 +364,22 @@ them, one test per guarantee, and those assertions are meant to be permanent.
   cost is the person"* — the shape is the two acts having identical structure
   and identical refusals to let the player dodge, and the person is wherever
   the person already stands. Adding a room would have made the choice a place.
-- **Nothing completes the cipher for free.** `TestNoFreeWayToCompleteTheCipher`
-  walks all the content and fails any topic, act, beat, show, exit, clue or
-  scene that sets `CIPHER_COMPLETE` without also setting one of
-  `ILARIA_BURNED`, `FENN_SPENT` or `NAMEBANK_DEBT`, and asserts there are
-  exactly three ways through. It iterates by `NPC.Key()` because Mott is
-  referenced from three scenes and is one woman. 2.11 sets `CIPHER_COMPLETE`
-  on the Vaux path, where the price was paid in 2.9; every other route pays
-  here.
+- **`CIPHER_COMPLETE` is derived, not written.** `State.Set` turns it on the
+  moment `CIPHER_HALF_ROOM` and one of `CIPHER_HALF_VAUX` / `CIPHER_HALF_REBUILT`
+  are both true, in either order — 2.0b supplies the room half four days late,
+  so the order really does vary. It was a flag 2.10's three acts remembered to
+  write, which meant the two doors in 2.9 that hand the second half straight
+  over left the player holding all of it and unable to read a word. No content
+  writes it; do not add a writer.
+- **Nothing supplies the second half for free.** `TestNoFreeWayToCompleteTheCipher`
+  walks the content and fails any route that writes `CIPHER_HALF_VAUX` or
+  `CIPHER_HALF_REBUILT` — counting the `sets` of any clue it grants, which is
+  how B16 arrives — without also writing one of `ILARIA_BURNED`, `FENN_SPENT`,
+  `NAMEBANK_DEBT`, `VAUX_ALLIED` or `VAUX_COERCED`. It names the six routes
+  rather than counting them: the earlier version asserted "exactly three", and
+  that count was the soft-lock written down as a requirement.
+  `TestEveryDoorFinishesTheAct` walks all three of 2.9's doors through to
+  `ACT2_COMPLETE`, which is the test that would have caught it.
 - **A counter that is only a display moves with the flag, not with `Add`.**
   `ILARIA_BURNED` clamps `ILARIA_TRUST` to 2 in `State.Set`, and `Add` then
   refuses to let it climb back. She does not lose the player's regard — she
@@ -429,11 +437,25 @@ them, one test per guarantee, and those assertions are meant to be permanent.
 - **One door in the game is `hidden`.** `Exit.Hidden` keeps Stack Theta out of
   the list a bare `GO` prints; it still opens to its own name. 2.0b is
   documented as never signposted to anyone, and a door that offers itself is a
-  signpost. Its other gate is `THETA_KNOWN`, written by requisitioning the
+  signpost. Its only other gate is `THETA_KNOWN`, written by requisitioning the
   effects manifest from the Vault — the discovery is a query, which is the verb
   the game has spent two acts training the player on, and nothing anywhere
   points at it. Do not add a second hidden exit without the same kind of
   reason.
+- **2.0b is open to a player who read nothing, and the act document has been
+  amended to say so.** Its entry gate was `ROOM_READ_PARTIAL`, which assumed
+  the room always gets read. It does not: `READ ROOM` counts signs actually
+  *recorded*, so a player who examines everything and files nothing reaches Act
+  II with no half, and the Case Précis ends Act I on a timer anyway. That
+  player could not finish the act and could not see the scene that gives the
+  room back. The gate is now the absence of `ROOM_READ_FULL`. Do not put
+  `ROOM_READ_PARTIAL` back.
+- **Ilaria's `crates` beat is the one signpost 2.0b has, and it is aimed at one
+  player.** It `blocks` on `CIPHER_HALF_ROOM` and `THETA_KNOWN`, so it fires
+  only for somebody holding no half who has not already found Theta. She says
+  the Provost crated the effects and the Vault has them, as small talk, and
+  does not say to go. Anybody who read the room never hears it —
+  `TestTheCratesAreNotMentionedToEverybody` asserts that.
 - **Objects gate, and a closed object is absent.** `Object` embeds `Gate` like
   everything else; `examine` and `take` treat a gate-failing object as though
   it were not in the room, because a refusal would tell the player there is

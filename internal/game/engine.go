@@ -665,7 +665,10 @@ func (s *State) query(code string) ([]string, int) {
 	}
 	if strings.Contains(code, "THETA") || strings.Contains(code, "EFFECTS") ||
 		strings.Contains(code, "CRATES") || strings.Contains(code, "HOLDING") {
-		if !s.Has("ROOM_READ_PARTIAL") || s.Has("ROOM_READ_FULL") {
+		// Not gated on having read the room. A player who never read it has no
+		// cipher half, no late window and no way to finish the act, and the
+		// cage is the only thing in the game that can give it back to them.
+		if s.Has("ROOM_READ_FULL") {
 			return []string{s.S("vault_none")}, 1
 		}
 		s.Set("THETA_KNOWN")

@@ -256,15 +256,33 @@ func (s *State) SetOne(group []string, flag string) {
 // away.
 func (s *State) Reconciliation() int { return s.Ints["RECONCILIATION"] }
 
-// Set writes a flag. Two of them have a number attached and the number has to
-// move with them, because the flag is the event and the counter is only how
-// the event is displayed.
+// Set writes a flag. A few of them have something attached that has to move
+// with them, because the flag is the event and the rest is bookkeeping.
 func (s *State) Set(f string) {
 	s.Flags[f] = true
 	if f == "ILARIA_BURNED" && s.Ints["ILARIA_TRUST"] > ilariaBurnedCap {
 		s.Ints["ILARIA_TRUST"] = ilariaBurnedCap
 	}
+	// Having both halves is what a complete cipher is. It used to be a flag
+	// three acts in 2.10 remembered to write, which meant the two doors in 2.9
+	// that hand the second half over — alliance and coercion — left the player
+	// holding all of it and unable to read a word.
+	if cipherHalves[f] && !s.Flags["CIPHER_COMPLETE"] &&
+		s.Flags["CIPHER_HALF_ROOM"] &&
+		(s.Flags["CIPHER_HALF_VAUX"] || s.Flags["CIPHER_HALF_REBUILT"]) {
+		s.Flags["CIPHER_COMPLETE"] = true
+	}
 }
+
+// cipherHalves are the flags that can complete the cipher by arriving. The
+// room half comes off Vosk's furniture, in Act I or four days late in Theta;
+// the other half is Vaux's, or is rebuilt in 2.10 at the cost of a person.
+var cipherHalves = map[string]bool{
+	"CIPHER_HALF_ROOM":    true,
+	"CIPHER_HALF_VAUX":    true,
+	"CIPHER_HALF_REBUILT": true,
+}
+
 func (s *State) Has(f string) bool { return s.Flags[f] }
 
 // key scopes a per-object counter to the scene it was seen in.
