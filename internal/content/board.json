@@ -384,6 +384,29 @@
    ],
    "blocked": "Interrogator Dmetri Vaux has been on the Spire since the day of the funeral and has not answered anything anybody has sent him.\n\nYou have nothing yet that would make him answer you.",
    "text": "Vaux names the room himself: the wax-cylinder redundancy vault, eleven flights under the astropath cells, at an hour with no shift on the Spire.\n\nIt takes most of an evening to get up there and the last eleven flights are on foot, because the Choir does not run a lift to a floor nobody visits."
+  },
+  {
+   "id": "theta",
+   "names": [
+    "theta",
+    "stack theta",
+    "effects",
+    "the crates",
+    "his effects",
+    "holding",
+    "effects holding"
+   ],
+   "to": "theta",
+   "cost": 3,
+   "hidden": true,
+   "requires": [
+    "ROOM_READ_PARTIAL",
+    "THETA_KNOWN"
+   ],
+   "blocks": [
+    "ROOM_READ_FULL"
+   ],
+   "text": "Down past Delta, four tiers, to the coldest posting in the Lexicanum."
   }
  ],
  "clues": {

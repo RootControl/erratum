@@ -103,7 +103,10 @@
    "take_text": "You put it in your coat. It is heavier than it looks, and it is the only object in this room the archive has never touched.",
    "careless": "His notebook. Eleven years of longhand, in a room with a cogitator that would have been four times faster.",
    "careful": "Eleven years. Every case, every name, every sum, in ink, by hand, in a room containing a Cael-pattern cogitator he was issued free and maintained beautifully and appears never to have trusted with a single sentence that mattered.\n\nThe last page is a shopping list. Lamp oil. Wax. A tin of the black tea he liked and pretended not to.\n\nThat is the tell. The last thing Hadrian Vosk wrote by hand was nothing at all, on the day he wrote nine hundred glyphs into a machine and burned them.",
-   "clue": "A6"
+   "clue": "A6",
+   "take_sets": [
+    "HAS_VOSK_NOTEBOOK"
+   ]
   },
   {
    "id": "register",

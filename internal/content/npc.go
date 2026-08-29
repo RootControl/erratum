@@ -185,6 +185,11 @@ type Exit struct {
 	Text        string   `json:"text"`
 	Blocked     string   `json:"blocked"`
 	Cost        int      `json:"cost"`
+	// Hidden keeps a door out of the list a bare GO prints. It is still there
+	// and it still opens to its own name; it is simply not offered. Exactly
+	// one door in the game is like this and it is the one nothing anywhere
+	// points at.
+	Hidden bool `json:"hidden"`
 }
 
 // match is the game's one matching rule, used by everything the player can

@@ -1,0 +1,337 @@
+{
+ "id": "theta",
+ "title": "LEXICANUM VAULT — STACK THETA, EFFECTS HOLDING",
+ "date": "0997.4.221",
+ "clock_at": "13h20",
+ "intro": "Stack Theta is four degrees colder than Delta and has no shelving in it at\nall. It is a floor, a wire CAGE the size of a chapel, and the effects of\neverybody who has died in the Adamant Crown's service since 934 and not been\nclaimed by a family.\n\nUnder-Clerk Habrach meets you at the gate with a slate and no enthusiasm, and\nreads the requisition twice, and finds it entirely in order, which visibly\ndisappoints him.\n\n\"Vosk, H. Nine — sorry. Seven crates.\"\n\nHe unlocks the outer gate. Inside the cage, stencilled in somebody's careful\nhand on plain grey board, with his name on every one of them:\n\nNine crates.",
+ "revisit": "Four degrees, a wire cage the size of a chapel, and nine crates with a dead man's name stencilled on them.",
+ "look": "A wire CAGE, a concrete floor, and no shelving. Everything in Stack Theta is\nin a box and none of the boxes are interesting to anybody.\n\nNine CRATES, stencilled VOSK H. The MANIFEST on Habrach's slate, which says\nseven.\n\nUnder-Clerk HABRACH, waiting to be finished with.",
+ "objects": [
+  {
+   "id": "manifest",
+   "names": [
+    "the manifest",
+    "the list",
+    "slate",
+    "the inventory",
+    "seven",
+    "the return"
+   ],
+   "careless": "Effects manifest, VOSK H., raised at the close of the case by the Provost's office and countersigned by the Lexicanum on receipt. Seven crates.",
+   "careful": "You read it properly, which takes four minutes, because a manifest is a boring document and boring documents are read by nobody.\n\nSeven crates. Contents by crate, itemised, in the flat vocabulary of a stock return.\n\nCrate three: *gaming set, incomplete.*\n\nHe had a regicide board with three illegal pieces on it, arranged into a Vault shelf-address, and the return calls it a gaming set and calls it incomplete, and *incomplete* is not a word a stock clerk uses about a board with all its pieces on it.\n\nThere is no line for footwear.\n\nNot *footwear, one pair, unremarkable*. Not a line at all. Two crates and a pair of boots have been taken off a stock return for a dead Inquisitor's effects, and the return was countersigned on receipt by a Lexicanum clerk who counted what was in front of him."
+  },
+  {
+   "id": "crates",
+   "names": [
+    "the crates",
+    "boxes",
+    "nine",
+    "his effects",
+    "the effects",
+    "count"
+   ],
+   "careless": "Nine crates, plain grey board, VOSK H. stencilled on each of them in the same careful hand.",
+   "careful": "Seven crates, says the manifest.\n\nYou count nine.\n\nYou count them again, because the number is not interesting enough to be wrong. Nine crates, seven listed, and the two that do not exist are sitting in the cage in front of you with his name stencilled on them in somebody's careful hand.\n\nWhatever has been editing this hive can reach the paper.\n\nIt cannot reach the boots.\n\nYou stand in the cold of Stack Theta for a while, holding that, turning it over, and find it a very great deal more frightening than the alternative."
+  },
+  {
+   "id": "cage",
+   "names": [
+    "the cage",
+    "the wire",
+    "the gate",
+    "the lock",
+    "inner gate"
+   ],
+   "careless": "A wire cage the size of a chapel, with an inner gate that is locked and a padlock the size of a fist.",
+   "careful": "The inner gate takes a countersign, which is ordinary: effects are property, property has a claimant, and the Crown does not let an officer open a dead colleague's crates on his own signature.\n\nThe countersigning seat for Ordo effects on this world is the Administratum's Vardan reconciliation office.\n\nIt is signed A. KESH, and it is signed in advance, on a standing instrument, for anything of Vosk's that anybody ever asks for.\n\nHabrach has no idea why you have gone quiet."
+  },
+  {
+   "id": "board",
+   "names": [
+    "the board",
+    "regicide",
+    "pieces",
+    "gaming set",
+    "chess",
+    "crate three"
+   ],
+   "requires": [
+    "CAGE_OPEN"
+   ],
+   "clue": "A1",
+   "sets": [
+    "A1_SALVAGED"
+   ],
+   "careless": "The regicide board, folded, and the pieces loose in a cloth bag beside it, because whoever packed it did what anybody would do with a board and some pieces.",
+   "careful": "The positions are gone. They were gone eight days after he died, when two Provost men who had never played regicide in their lives folded the board and put the pieces in a bag.\n\nSo you do it the long way, with the Provost's own pict-captures out of your case-file on the floor beside you and the pieces in your hand, one at a time, for most of an afternoon.\n\nThree of them are on squares no legal game reaches.\n\nD2. F4. C9. A Vault shelf-address in furniture, four days late and four degrees cold, and it is the same address it was on the morning he died."
+  },
+  {
+   "id": "captures",
+   "names": [
+    "pict-captures",
+    "the captures",
+    "picts",
+    "my case-file",
+    "the photographs",
+    "the scene captures"
+   ],
+   "requires": [
+    "CAGE_OPEN"
+   ],
+   "clue": "A2",
+   "sets": [
+    "A2_SALVAGED"
+   ],
+   "careless": "The Provost's scene captures, eleven of them, pulled out of your own case-file. Standard procedure, taken before anything was moved.",
+   "careful": "The window is in four of the eleven, because the Provost's man stood where you would have stood.\n\nThe west shutter is not shut and is not open. It is at four degrees, which is a setting nobody has ever chosen for a shutter, and it is at four degrees in all four captures.\n\nFour degrees is the twelfth hour, and the twelfth hour is cell four, and cell four is a number he could not write down.\n\nIt has been in your case-file since the fourth hour of the first morning and it was in front of you the whole time and you were looking at the body."
+  },
+  {
+   "id": "quill",
+   "names": [
+    "auto-quill",
+    "the quill",
+    "blotter",
+    "the censer",
+    "ink",
+    "crate five"
+   ],
+   "requires": [
+    "CAGE_OPEN"
+   ],
+   "clue": "A4",
+   "sets": [
+    "A4_SALVAGED"
+   ],
+   "careless": "The auto-quill and its blotter, packed together, and a brass censer wrapped in cloth by somebody who thought it was a censer.",
+   "careful": "The blotter took the reverse of everything the quill wrote for the last four days of his life, and the Provost's men packed it flat and face-down and it has not been touched since.\n\nNine hundred glyphs and more, in a hand that runs right to left, written in one sitting and burned four minutes later.\n\nThe quill's own counter agrees: one entry, that length, at the twenty-third hour and fifty-one.\n\nHe wrote it, and he burned it, and then he sat down at the board."
+  },
+  {
+   "id": "pad",
+   "names": [
+    "desk pad",
+    "the pad",
+    "calendar",
+    "diary",
+    "the dates",
+    "crate one"
+   ],
+   "requires": [
+    "CAGE_OPEN"
+   ],
+   "clue": "A5",
+   "sets": [
+    "A5_SALVAGED"
+   ],
+   "careless": "The desk pad, curled at one corner from eight days in a crate, with a year of a dead man's appointments on it.",
+   "careful": "Six days circled twice, in the last fortnight, and nothing written against any of them.\n\nYou go back through the pad and then through the four before it, which are in the same crate, because he kept them.\n\nThe circles go back eighty-one years at eighty-four-day intervals and they are in four different inks and one of them is not his hand.\n\nThere is no entry against a single one of them. In eighty-one years of a man who wrote everything down, six days a year have nothing at all written against them, and there is no record anywhere in this hive of what any of them were for."
+  },
+  {
+   "id": "boots",
+   "names": [
+    "the boots",
+    "boot",
+    "footwear",
+    "shoes",
+    "his boots"
+   ],
+   "requires": [
+    "CAGE_OPEN"
+   ],
+   "clue": "A3",
+   "takeable": true,
+   "sets": [
+    "A3_SALVAGED"
+   ],
+   "take_text": "You take them.\n\nThere is no line on the manifest to strike and no crate to sign out and no clerk who will ever be asked about it, because as far as the Lexicanum Vault is concerned you have removed nothing from Stack Theta at all.\n\nYou carry a dead man's boots out of the Adamant Crown under your coat like a thief, and it is the safest thing you have done in eleven weeks.\n\n[ VOSK_BOOTS ]",
+   "careful": "They are the wrong boots.\n\nNot worn wrong, not laced wrong — *the wrong boots*, his left on the right and his right on the left, and a man does not do that to himself at the end of a long night by accident.\n\nSarrow's Reach. A rest-halt, a corporal with sixteen years, and a way of telling the man behind you to read the ground backwards without saying anything a listener could report.\n\nYou learned it when you were twenty-six and too frightened to eat.\n\nHe is not on the manifest. He was never on the manifest. Whatever went through this record and took two crates out of a stock return went past a pair of boots on a mortuary shelf and could not see them, because there has never been a form in the Imperium with a field for what a man's feet are saying.",
+   "take_sets": [
+    "VOSK_BOOTS"
+   ]
+  }
+ ],
+ "npcs": [
+  {
+   "id": "habrach2",
+   "names": [
+    "habrach",
+    "under-clerk",
+    "clerk",
+    "him"
+   ],
+   "title": "Under-Clerk Habrach",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask,\" Habrach says. \"I'll tell you if it's on the slate.\"",
+   "portrait": "Under-Clerk Habrach, in a coat and fingerless gloves, holding a slate and waiting to be finished with. Stack Theta is the coldest posting in the Vault and he has had it for nine years.",
+   "greeting": "\"Vosk, H.,\" Habrach says. \"Effects holding, closed matter, reopened. It's all in order and I've read it twice and I'd rather you were quick, because the heaters in Theta went in 'ninety-one and nobody's raised a docket.\"\n\nHe does not ask what you want with them. Nobody in this building has asked you anything for a fortnight.",
+   "reprise": "He waits by the gate with the slate, entirely unbothered, extremely cold.",
+   "unknown": "\"Not on the slate,\" Habrach says.",
+   "deflect": [
+    "Habrach breathes on his hands.",
+    "\"Anything else,\" he says, in the voice of a man who does not mean it as a question."
+   ],
+   "topics": [
+    {
+     "id": "count",
+     "names": [
+      "the count",
+      "seven",
+      "nine",
+      "the discrepancy",
+      "the numbers",
+      "how many"
+     ],
+     "text": "\"Seven,\" Habrach says, from the slate, without looking up.\n\n\"There are nine.\"\n\nHe looks up. He goes into the cage and counts them, touching each one, the way a man counts when he already knows the answer and is being made to prove it.\n\n\"Nine,\" he agrees.\n\nHe stands there for a moment with his hand on the ninth crate.\n\n\"That's a receipting error, that is. I'll raise it.\" He is already writing. \"Nine in, seven on the return, countersigned by me on the day, which means either I counted seven crates that were nine or somebody's had two out and put them back.\"\n\n\"Which do you think it is?\"\n\n\"I counted nine, sir.\" Flatly. \"I count things. It's the job. I've been doing it nine years in a room with no heating and the one thing I do not get wrong is a number in front of my face.\"\n\nHe finishes writing and looks at what he has written and does not raise it.\n\n\"I'll leave that,\" he says, after a while, and rubs it out with his thumb."
+    },
+    {
+     "id": "vosk",
+     "names": [
+      "vosk",
+      "the inquisitor",
+      "him",
+      "the deceased",
+      "hadrian"
+     ],
+     "text": "\"Didn't know him. Saw him four times.\"\n\nHabrach considers whether that is the end of the answer and decides it is not.\n\n\"He came down here himself, which they don't. Twice about a clerk's effects — Ordinate's widow, nothing in it, no claim — and once about a man off the Choir whose family couldn't be found, and he sat on a crate in this cold for an hour reading what was in it so that he could write to somebody who might have known him.\"\n\n\"And the fourth?\"\n\n\"Fourth was eleven weeks ago and he asked me how the manifests are amended.\" Habrach shrugs. \"Told him: they aren't. You raise a new one. He said *thank you*, like I'd given him something, and went away up the stairs.\""
+    },
+    {
+     "id": "amend",
+     "names": [
+      "amend",
+      "amendments",
+      "how manifests change",
+      "corrections",
+      "the return",
+      "who can change it"
+     ],
+     "text": "\"They aren't amended,\" Habrach says. \"That's the whole point of them. A manifest is what was counted on the day by the man who counted it, and if the count's wrong you raise a *new* one, and the old one stays, because otherwise what have you got.\"\n\n\"And if the old one changed anyway.\"\n\n\"Then it isn't a manifest. It's just a piece of paper with numbers on it.\"\n\nHe says it as a joke about procedure, which is what it is, and blows on his hands, and does not notice that you have stopped."
+    }
+   ],
+   "shows": [],
+   "beats": [],
+   "acts": [
+    {
+     "id": "open_cage",
+     "names": [
+      "open the cage",
+      "open it",
+      "countersign",
+      "unlock it",
+      "the countersign",
+      "open the crates"
+     ],
+     "blocks": [
+      "CAGE_OPEN"
+     ],
+     "sets": [
+      "CAGE_OPEN"
+     ],
+     "counters": {
+      "RECONCILIATION": 8
+     },
+     "cost": 6,
+     "text": "\"Countersign,\" Habrach says, and goes to a drawer, and is back in ninety seconds.\n\nIt is not a difficulty. It is not even a delay. The Administratum's Vardan reconciliation office holds a standing instrument covering the effects of Ordo officers deceased in service on this world, signed once, in advance, renewed every four years since 963, and it covers this and it covers everything.\n\nA. KESH.\n\nHabrach reads the name off it without any interest at all, because it is the name that is on everything, and opens the inner gate.\n\nIt takes four days to get the crates out and laid out on the floor, because you do it yourself and you do it one at a time.\n\nSomewhere in the third of those days a query goes up from Stack Theta to a reconciliation office, on a standing instrument, as it does every time, and is not read by anybody, and is filed.\n\n[ CAGE_OPEN ]"
+    },
+    {
+     "id": "reconstruct",
+     "names": [
+      "reconstruct",
+      "read the room",
+      "put it back",
+      "the arrangement",
+      "reconstruct it",
+      "lay it out"
+     ],
+     "requires": [
+      "CAGE_OPEN",
+      "A1_HELD",
+      "A2_HELD",
+      "A3_HELD",
+      "A4_HELD",
+      "A5_HELD"
+     ],
+     "blocks": [
+      "ROOM_READ_FULL"
+     ],
+     "below": {
+      "RECONCILIATION": 55
+     },
+     "sets": [
+      "ROOM_READ_FULL",
+      "CIPHER_HALF_ROOM"
+     ],
+     "counters": {
+      "CRASE_STANDING": -1
+     },
+     "cost": 6,
+     "text": "You lay the room out on the floor of Stack Theta.\n\nNot the objects — the *order*. Nine positions, taken off eleven pict-captures and a stock return and a board with three pieces on the wrong squares, chalked onto concrete in a cage at four degrees, with a clerk watching you do it and saying nothing.\n\nAnd then you read it backwards, because that is what the boots said, and because the boots are in your coat and were never on any list.\n\nIt is all there. Four days late, one remove from the room, reassembled out of paper and a pair of boots — but it is all there, and it holds, and the address is the address and the hour is the hour and the six days are the six days.\n\nHabrach helps you carry the crates back at the end of it and does not ask a single question, and at the gate he says, \"You'll want the manifest number for your file,\" and gives it to you, and it is the number of a document that says seven.\n\nCrase hears about it inside the week. She does not raise it and she is entirely warm about it when you raise it yourself, and what she says is that she is glad you had the time.\n\n[ ROOM_READ_FULL — CIPHER_HALF_ROOM ]"
+    },
+    {
+     "id": "reconstruct_short",
+     "names": [
+      "reconstruct",
+      "read the room",
+      "put it back",
+      "the arrangement",
+      "reconstruct it",
+      "lay it out"
+     ],
+     "requires": [
+      "CAGE_OPEN"
+     ],
+     "blocks": [
+      "ROOM_READ_FULL"
+     ],
+     "at_least": {
+      "RECONCILIATION": 55
+     },
+     "cost": 2,
+     "text": "You send up for the Act I file, because the positions are in the pict-captures and the pict-captures are in the file.\n\nIt comes back in an hour, which is fast, and it is thin, which is not.\n\nThe scene captures are there — four of them, where you are fairly sure there were eleven, and the four are the four of the body. The autopsy entry is a hundred and ninety words and you would have said it was longer. Where you remember *no toxin, no coercion residue, and no psychic trace were detected* it says *no residue was detected*, which is a shorter sentence that means a different thing.\n\nNothing has been struck. There is no gap, no annotation, no amendment mark and no line about a revision, because a document that has been revised says so and this one has nothing to say.\n\nYou sit on a crate in the cold for a while with a file in your hands that does not agree with you about what is in it.\n\nThen you go up and get on with the day, because there is no office in the Imperium you could take this to that would not conclude, correctly and on the evidence, that you had misremembered."
+    },
+    {
+     "id": "reconstruct_incomplete",
+     "names": [
+      "reconstruct",
+      "read the room",
+      "put it back",
+      "the arrangement",
+      "reconstruct it",
+      "lay it out"
+     ],
+     "requires": [
+      "CAGE_OPEN"
+     ],
+     "blocks": [
+      "ROOM_READ_FULL"
+     ],
+     "cost": 1,
+     "text": "You chalk out what you have on the concrete and stand over it.\n\nIt does not close. There is a shape here and it is nearly a sentence and it is not one, and standing in the cold looking at it you understand something you would rather not have: he did not leave a message that could be partly read.\n\nHe left one that worked or did not.\n\nWhat is on the floor is worth exactly as much as an eleven-week-old rumour, and you rub it out with your boot, and go back to the crates."
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "up",
+   "names": [
+    "out",
+    "back",
+    "board",
+    "chambers",
+    "return",
+    "crown",
+    "the stairs"
+   ],
+   "to": "standing_board",
+   "cost": 3,
+   "text": "Up out of Theta, four degrees warmer at every landing."
+  }
+ ],
+ "clues": {},
+ "strings": {
+  "no_such_thing": "A cage, a floor, and nine boxes. There is nothing else down here and there never has been.",
+  "already_read": "You have looked twice. Habrach is cold and you are on his time.",
+  "no_terminal": "There is no cogitator in Theta. There is no heating in Theta.",
+  "read_room_locked": "Not here. The room is four tiers up and eight days gone.",
+  "no_one_here": "Only Habrach, and the crates."
+ }
+}

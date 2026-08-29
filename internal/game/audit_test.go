@@ -140,6 +140,9 @@ func TestEveryGatedFlagHasAWriter(t *testing.T) {
 		// the second, and both are content.
 		"ACT2_COMPLETE": true, "FALSE_SENTENCE_SEEN": true, "SENTENCE_REPAIRED": true,
 		"CANTICA_QUERIED": true, "TASS_BROUGHT_IT": true,
+		// The effects manifest, requisitioned from the Vault by a player who
+		// thought to ask where a dead man's crates went.
+		"THETA_KNOWN": true,
 	}
 	written := map[string]bool{}
 	note := func(fs []string) {
