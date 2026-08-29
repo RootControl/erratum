@@ -390,7 +390,7 @@
       "FENN_DRIFT": 6
      },
      "sets": [
-      "CIPHER_COMPLETE",
+      "CIPHER_HALF_REBUILT",
       "FENN_SPENT",
       "LONG_WAY_TAKEN"
      ],

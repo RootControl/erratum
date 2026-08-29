@@ -237,3 +237,58 @@ func TestVaultRefusesEverywhere(t *testing.T) {
 		}
 	}
 }
+
+// The cage is the only thing in the game that can give back a room the player
+// never read. A first playthrough that examines everything and files nothing
+// reaches Act II with no cipher half at all, and used to be unable to finish
+// the act or even to see Stack Theta.
+func TestThetaRecoversAPlayerWithNothing(t *testing.T) {
+	s, log := playFrom(t, "standing_board", []string{"ACT2_OPEN"}, "talk to ilaria")
+	if s.Has("CIPHER_HALF_ROOM") || s.Has("ROOM_READ_PARTIAL") {
+		t.Fatal("setup: this player read nothing")
+	}
+	if !strings.Contains(log, "Effects holding") {
+		t.Fatalf("somebody has to say the crates exist:\n%s", log)
+	}
+
+	out, _ := s.Do("query EFFECTS")
+	if !s.Has("THETA_KNOWN") {
+		t.Fatalf("the manifest is an ordinary requisition: %s", strings.Join(out, "\n"))
+	}
+	if _, ticks := s.Do("go theta"); ticks == 0 || s.Room.ID != "theta" {
+		t.Fatalf("the door should open; still in %s", s.Room.ID)
+	}
+
+	run(s, "open the cage",
+		"x board", "x board", "file A1",
+		"x captures", "x captures", "file A2",
+		"x quill", "x quill", "file A4",
+		"x pad", "x pad", "file A5",
+		"x boots", "x boots", "note A3",
+		"reconstruct")
+	if !s.Has("ROOM_READ_FULL") || !s.Has("CIPHER_HALF_ROOM") {
+		t.Fatal("five signs off the originals is still five signs")
+	}
+
+	// And that is enough to finish the act: the room half is what was missing.
+	s.Set("CIPHER_HALF_VAUX")
+	if !s.Has("CIPHER_COMPLETE") {
+		t.Fatal("the cipher completes")
+	}
+	if !s.Move("standing_board") {
+		t.Fatal("cannot get back")
+	}
+	s.Grant("B21")
+	s.Do("decode")
+	if !s.Has("ACT2_COMPLETE") {
+		t.Fatal("a player who read nothing in Act I can still reach the act turn")
+	}
+}
+
+// She only mentions the crates to somebody who needs to hear it.
+func TestTheCratesAreNotMentionedToEverybody(t *testing.T) {
+	_, log := playFrom(t, "standing_board", []string{"ACT2_OPEN", "CIPHER_HALF_ROOM"}, "talk to ilaria")
+	if strings.Contains(log, "Effects holding") {
+		t.Fatalf("a player who read the room is not told where the crates went:\n%s", log)
+	}
+}

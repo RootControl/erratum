@@ -445,7 +445,7 @@
       "RECONCILIATION": 15
      },
      "sets": [
-      "CIPHER_COMPLETE",
+      "CIPHER_HALF_REBUILT",
       "NAMEBANK_DEBT",
       "LONG_WAY_TAKEN"
      ],

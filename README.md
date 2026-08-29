@@ -109,7 +109,7 @@ drives it headlessly.
 go test ./internal/game/
 ```
 
-A hundred and thirty-nine tests, one per design guarantee:
+A hundred and forty-three tests, one per design guarantee:
 
 | Test | Asserts |
 |---|---|
@@ -221,7 +221,6 @@ A hundred and thirty-nine tests, one per design guarantee:
 | `TestSpendingFennEndsHim` | eleven hours, six of drift, and a readout that goes to 0/6 without naming itself |
 | `TestTheShroudDoesNotSoftenIt` | Cael's gift thirds what happens by accident and nothing that happens on purpose |
 | `TestTheThirdRouteWaitsForBothToBeGone` | Mott's elder exists to prevent a soft-lock, not to be a third choice |
-| `TestNoFreeWayToCompleteTheCipher` | every route to the whole cipher spends a named person, asserted against the content |
 | `TestCaelNeverAsksWhatItIs` | one of the murderers hands over the murder weapon and says to mind the edges |
 | `TestTheAshIsNeverActuallyMissed` | Bez collected it on the first morning, because Vosk taught her to |
 | `TestTassBringsItUnbidden` | the plate is unmissable; the signature on the recovery is not |
@@ -238,6 +237,11 @@ A hundred and thirty-nine tests, one per design guarantee:
 | `TestFourSignsIsNotFive` | he did not leave a message that could be partly read |
 | `TestTheCaseFileComesBackShort` | the file is thin, nothing has been struck, and Ending E closes in silence |
 | `TestVaultRefusesEverywhere` | the Vault's null answer was authored in one scene and rendered a marker in the rest |
+| `TestEveryDoorFinishesTheAct` | all three of 2.9's doors reach the act turn; two of them used to dead-end |
+| `TestOneHalfIsNeverComplete` | a cipher is both halves, in either order, and nothing else |
+| `TestNoFreeWayToCompleteTheCipher` | every route to the second half spends somebody, named route by named route |
+| `TestThetaRecoversAPlayerWithNothing` | a player who read nothing in Act I can still reach the act turn |
+| `TestTheCratesAreNotMentionedToEverybody` | the one signpost 2.0b has is aimed at the one player who needs it |
 
 `TestTrustingPlaythrough` also asserts the archive never prints the words
 `DELETED` or `ERROR`. That assertion is the thesis of the whole game and it

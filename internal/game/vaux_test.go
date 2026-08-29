@@ -300,3 +300,82 @@ func TestVaultRendersEverything(t *testing.T) {
 		t.Fatal("expected a refusal, not silence")
 	}
 }
+
+// Every door in 2.9 has to reach the act turn. Two of them hand the second
+// half of the cipher straight over and used to leave the player holding all of
+// it with no way to read a word, because CIPHER_COMPLETE was a flag only 2.10
+// remembered to write.
+func TestEveryDoorFinishesTheAct(t *testing.T) {
+	doors := []struct {
+		name  string
+		flags []string
+		cmds  []string
+		after []string // what it takes to get the half after 2.9
+	}{
+		{
+			name:  "alliance",
+			flags: []string{"VAUX_RUNNER_SENT", "STORE_HABIT_LEDGER"},
+			cmds:  append(append([]string{}, toTheDoors...), "ask vaux about my answer", "ally"),
+		},
+		{
+			name:  "blackmail",
+			flags: nil,
+			cmds:  append(append([]string{}, toTheDoors...), "blackmail"),
+		},
+		{
+			name:  "execution",
+			flags: nil,
+			cmds:  append(append([]string{}, toTheDoors...), "execute"),
+			after: []string{"talk to ilaria", "send her down"},
+		},
+	}
+
+	for _, d := range doors {
+		t.Run(d.name, func(t *testing.T) {
+			s, _ := playFrom(t, "cylinder_vault",
+				append([]string{"ACT2_OPEN", "TWO_THREADS", "VAUX_ALIVE", "CIPHER_HALF_ROOM"}, d.flags...),
+				d.cmds...)
+			if !s.Has("VAUX_RESOLVED") {
+				t.Fatalf("%s did not resolve him", d.name)
+			}
+			if !s.Move("standing_board") {
+				t.Fatal("cannot reach the chambers")
+			}
+			run(s, d.after...)
+			if !s.Has("CIPHER_COMPLETE") {
+				t.Fatalf("%s: holding both halves and the cipher is not complete", d.name)
+			}
+			s.Grant("B21")
+			// The coerced half decrypts to something fluent and wrong first.
+			s.Do("decode")
+			s.Do("decode")
+			if !s.Has("ACT2_COMPLETE") || !s.Has("KADMON_ADDRESS") {
+				t.Fatalf("%s cannot reach the act turn", d.name)
+			}
+		})
+	}
+}
+
+// The room half on its own is not a cipher, whichever way it arrived.
+func TestOneHalfIsNeverComplete(t *testing.T) {
+	s, _ := playFrom(t, "standing_board", []string{"ACT2_OPEN"}, "look")
+	s.Set("CIPHER_HALF_ROOM")
+	if s.Has("CIPHER_COMPLETE") {
+		t.Fatal("the room is half of it")
+	}
+	s.Set("CIPHER_HALF_VAUX")
+	if !s.Has("CIPHER_COMPLETE") {
+		t.Fatal("both halves is what complete means")
+	}
+
+	// And the order they arrive in does not matter.
+	other, _ := playFrom(t, "standing_board", []string{"ACT2_OPEN"}, "look")
+	other.Set("CIPHER_HALF_REBUILT")
+	if other.Has("CIPHER_COMPLETE") {
+		t.Fatal("a rebuilt half is still a half")
+	}
+	other.Set("CIPHER_HALF_ROOM")
+	if !other.Has("CIPHER_COMPLETE") {
+		t.Fatal("2.0b's late reconstruction has to complete it too")
+	}
+}

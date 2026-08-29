@@ -169,43 +169,72 @@ func TestTheThirdRouteWaitsForBothToBeGone(t *testing.T) {
 	}
 }
 
-// The one invariant the scene is for: there is no way to complete the cipher
-// that does not spend a named person. Assert it against the content, so a
-// later scene cannot quietly add a free one.
+// The one invariant 2.10 exists for: there is no way to come by the second
+// half of the cipher that does not spend somebody.
+//
+// This used to assert that exactly three things set CIPHER_COMPLETE, which
+// pinned the count at the three routes in this scene and so quietly ratified a
+// soft-lock — the two doors in 2.9 that hand the half over set nothing, and a
+// player who allied with Vaux held all of it and could not read a word. The
+// property is about the half arriving, not about the flag being written, and
+// it is checked against what each route writes *including the clues it grants*.
 func TestNoFreeWayToCompleteTheCipher(t *testing.T) {
 	g, err := loadGame(t)
 	if err != nil {
 		t.Fatal(err)
 	}
-	prices := map[string]bool{"ILARIA_BURNED": true, "FENN_SPENT": true, "NAMEBANK_DEBT": true}
-	paid := func(sets []string) bool {
-		for _, f := range sets {
-			if prices[f] {
-				return true
+	half := map[string]bool{"CIPHER_HALF_VAUX": true, "CIPHER_HALF_REBUILT": true}
+	price := map[string]bool{
+		// 2.10 pays with a member of the retinue or a debt to the name-bank.
+		"ILARIA_BURNED": true, "FENN_SPENT": true, "NAMEBANK_DEBT": true,
+		// 2.9 was paid for before the half changed hands, by how he was asked.
+		"VAUX_ALLIED": true, "VAUX_COERCED": true,
+	}
+	// Every route that supplies the half, by name. Naming them rather than
+	// counting them is deliberate: a sixth route should fail this loudly.
+	want := map[string]bool{
+		"standing_board/ilaria/act spend_ilaria": true,
+		"safehouse/fenn2/act spend_fenn":         true,
+		"rust_choir/mott/act namebank_route":     true,
+		"cylinder_vault/vaux2/act ally":          true,
+		"cylinder_vault/vaux2/act ally_runner":   true,
+		"cylinder_vault/vaux2/act blackmail":     true,
+	}
+
+	got := map[string]bool{}
+	check := func(where string, sets, grants []string) {
+		writes := append([]string{}, sets...)
+		for _, id := range grants {
+			if c := g.Clue(id); c != nil {
+				writes = append(writes, c.Sets...)
 			}
 		}
-		return false
-	}
-	// A person authored once and referenced from three scenes is one person.
-	seen := map[string]bool{}
-	found := 0
-	check := func(where string, sets []string) {
-		if !contains(sets, "CIPHER_COMPLETE") {
+		supplies := false
+		for _, f := range writes {
+			supplies = supplies || half[f]
+		}
+		if !supplies {
 			return
 		}
-		found++
-		if !paid(sets) {
-			t.Errorf("%s completes the cipher and spends nobody", where)
+		got[where] = true
+		paid := false
+		for _, f := range writes {
+			paid = paid || price[f]
+		}
+		if !paid {
+			t.Errorf("%s supplies the second half and spends nobody", where)
 		}
 	}
+
+	seen := map[string]bool{}
 	for _, sid := range g.Order {
 		r := g.Scene(sid)
-		check(sid+"/scene", r.Sets)
+		check(sid+"/scene", r.Sets, r.Grants)
 		for _, e := range r.Exits {
-			check(sid+"/exit "+e.ID, e.Sets)
+			check(sid+"/exit "+e.ID, e.Sets, nil)
 		}
-		for _, c := range r.Clues {
-			check(sid+"/clue "+c.ID, c.Sets)
+		for _, o := range r.Objects {
+			check(sid+"/object "+o.ID, o.Sets, []string{o.Clue})
 		}
 		for _, n := range r.People() {
 			if seen[n.Key()] {
@@ -213,20 +242,27 @@ func TestNoFreeWayToCompleteTheCipher(t *testing.T) {
 			}
 			seen[n.Key()] = true
 			for _, x := range n.Topics {
-				check(n.Key()+"/topic "+x.ID, x.Sets)
+				check(n.Key()+"/topic "+x.ID, x.Sets, x.Grants)
 			}
 			for _, x := range n.Acts {
-				check(n.Key()+"/act "+x.ID, x.Sets)
+				check(n.Key()+"/act "+x.ID, x.Sets, x.Grants)
 			}
 			for _, x := range n.Beats {
-				check(n.Key()+"/beat "+x.ID, x.Sets)
+				check(n.Key()+"/beat "+x.ID, x.Sets, x.Grants)
 			}
 			for _, x := range n.Shows {
-				check(n.Key()+"/show "+x.Clue, x.Sets)
+				check(n.Key()+"/show "+x.Clue, x.Sets, x.Grants)
 			}
 		}
 	}
-	if found != 3 {
-		t.Fatalf("expected exactly three ways through, found %d", found)
+	for where := range want {
+		if !got[where] {
+			t.Errorf("%s no longer supplies the second half", where)
+		}
+	}
+	for where := range got {
+		if !want[where] {
+			t.Errorf("%s is a new way to the second half; is it paid for?", where)
+		}
 	}
 }

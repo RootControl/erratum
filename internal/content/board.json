@@ -167,6 +167,17 @@
    ],
    "beats": [
     {
+     "id": "crates",
+     "requires": [
+      "ACT2_OPEN"
+     ],
+     "blocks": [
+      "CIPHER_HALF_ROOM",
+      "THETA_KNOWN"
+     ],
+     "text": "\"Can I ask you something, sir, and you can tell me it's not my business.\"\n\nShe is still on the landing.\n\n\"When they cleared this room — did you get what you wanted out of it first? Only they were quick. Provost's men were in here on the ninth morning with crates and a stencil, and it took them a day and a half, and I stood on this landing and watched them do it.\"\n\n\"Where did it go?\"\n\n\"Vault. Effects holding, wherever they put that. It's all still somewhere, sir; they don't throw an Inquisitor's things away, they just stop being able to find them.\"\n\nShe says it as small talk, because it is small talk, and goes back to waiting on the landing."
+    },
+    {
      "id": "long_way",
      "requires": [
       "CIPHER_HALF_ROOM",
@@ -212,7 +223,7 @@
       "ILARIA_BURNED"
      ],
      "sets": [
-      "CIPHER_COMPLETE",
+      "CIPHER_HALF_REBUILT",
       "ILARIA_BURNED",
       "LONG_WAY_TAKEN"
      ],
@@ -400,7 +411,6 @@
    "cost": 3,
    "hidden": true,
    "requires": [
-    "ROOM_READ_PARTIAL",
     "THETA_KNOWN"
    ],
    "blocks": [
