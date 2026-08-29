@@ -6,8 +6,9 @@ THE ERRATUM — a playable vertical slice of a terminal investigation game
 
 The repo is half design document, half prototype. `STORY_BIBLE.md` and
 `ACT_I.md` / `ACT_II.md` / `ACT_III.md` are the source of truth for content and
-vocabulary; `main.go` + `internal/` implement only scenes 1.3, 1.4, 1.9 and
-1.10 of Act I. When the code and the act documents disagree about a name, a
+vocabulary; `main.go` + `internal/` implement all of Act I (scenes 1.1–1.10)
+and Act II scenes 2.0–2.8. Act II 2.0b and 2.9–2.11 are not built, and Act III
+is not started. When the code and the act documents disagree about a name, a
 flag or a fact, the documents win — and `STORY_BIBLE.md` §12 CANON LOCKS wins
 over the rest of the bible.
 
@@ -42,12 +43,16 @@ first command is eaten was a misreading of the same artefact.
 
 ## Layout
 
-- `internal/content/` — `arrival.json`, `antechamber.json`, `room.json`,
-  `vaux_study.json`, `medicae.json`, `adjutant.json`, `arch.json` and
-  `choir.json` (embedded, and loaded in that order) plus `strings.json` for the
-  defaults every scene inherits, and the loader; `npc.go` holds the dialogue
-  types. All authored prose is meant to be
-  data, dialogue included.
+- `internal/content/` — one JSON file per scene, embedded and loaded in
+  chronological order, which is what a scene with no `date` inherits from:
+  - Act I: `arrival`, `antechamber`, `room`, `vaux_study`, `medicae`,
+    `adjutant`, `arch`, `choir`
+  - Act II: `board`, `safehouse`, `workshop`, `delta`, `choir_settlement`,
+    `annexe`, `rows`, `cathedral`, `confessional`, `crase_office`, `ferrum`
+
+  Plus `strings.json` for the defaults every scene inherits, `content.go` (the
+  loader and its validator) and `npc.go` (the dialogue types). All authored
+  prose is data, dialogue included.
 - `internal/game/` — `state.go` (state, clock, flags, scenes), `engine.go` (the
   verb parser and every command), `dialogue.go` (ask / show / acts / beats),
   `archive.go` (the Vault and the case-notes).
@@ -55,7 +60,8 @@ first command is eaten was a misreading of the same artefact.
 
 Some long prose still lives as Go constants (`readingFull`, `readingPartial`,
 `craseFallback`, `contradiction()`, the Vault records). That is drift, not a
-pattern — new authored text belongs in `room.json`.
+pattern — new authored text belongs in the scene's JSON, or in `strings.json`
+if more than one scene needs it.
 
 ## Design invariants
 
@@ -100,15 +106,16 @@ them, one test per guarantee, and those assertions are meant to be permanent.
     only place in the game where the archive looks wrong and is not, and it is
     there so the player learns to distrust their own paranoia before they learn
     to trust it. Do not add a second tell to it.
-11. **Four clues the record fails, four different ways.** A3 (the boots) — the
+11. **Five clues the record fails, five different ways.** A3 (the boots) — the
     form has no field for the truth. A9 (the mnemonic) — the utterance was
     never made by anybody who knew they made it. A14 (Bez's illiteracy and the
-    sealed bequest) — the form has *exactly* the right field, pre-filled, nine
-    seconds' work, and filing it would end her career, so the refusal is the
-    player's and the text has to admit the machine would have taken it. A16
-    (Fenn at the threshold) — the record accepts it, keeps it, and quietly
-    holds *savant fatigue, recommend rest cycle* instead. Nothing announces
-    that substitution; a player who only filed it simply has nothing.
+    sealed bequest) — the form has *exactly* the right field, pre-filled, and
+    filing it would end her career, so the refusal is the player's. A16 (Fenn
+    at the threshold) — the record accepts it, keeps it, and quietly holds
+    *savant fatigue, recommend rest cycle*. B6 (the oral census) — `store:
+    "neither"`: it cannot be recorded in any medium at all, because the medium
+    is four hundred mouths and writing it down stops them. FILE and NOTE give
+    the same refusal, and that is the point.
 12. **Crase is not lying in 1.2.** *"He'd stopped taking cases"* is false and
     she believes it, and the scene renders it as a plain answer with nothing
     marking it — no bracket, no tell, no hedge in the prose.
@@ -121,11 +128,13 @@ them, one test per guarantee, and those assertions are meant to be permanent.
   the act documents (`ROOM_READ_FULL`, `A1_FILED`, `CIPHER_HALF_ROOM`). Filing
   sets `<ID>_FILED`; noting sets `<ID>_PHYSICAL`. There is no enum and no
   translation layer — keep it that way.
-- Counters live in `State.Ints`: `VERITY` (independent proof), `RECONCILIATION`
-  (corruption / exposure to the archive), `CRASE_STANDING`.
+- Counters live in `State.Ints` and are declared in `content.KnownCounters`:
+  `VERITY` (independent proof), `RECONCILIATION` (exposure to the archive),
+  `CRASE_STANDING`, `BEZ_TRUST`, `ILARIA_TRUST`, `FENN_DRIFT`, `MOTT_FAVOURS`,
+  `QUERY_TIER`. `State.bounds` holds each to the range the bible gives it.
 - **The loader refuses content that would fail quietly.** `Game.validate()`
   rejects a clue reference that resolves to nothing, an exit to a scene that
-  is not there, a `store` that is not one of the three, a `clock_at` that is
+  is not there, a `store` that is not one of the four, a `clock_at` that is
   not a time, a disposition default outside its own group, and duplicate
   topic / act / beat ids. Every one of those has already shipped broken in this
   repo at least once, and none of them raise anything at runtime — they just
@@ -232,6 +241,80 @@ them, one test per guarantee, and those assertions are meant to be permanent.
   clock jump past it takes him — so crossing to the Choir Spire, which opens at
   `07h40`, means the medicae have already been. Checked on arrival as well as
   on tick, so travel narrates it.
+- **The Case Précis is Act I's terminator and Act II's door.** It fires on its
+  own (`precisDelay` actions after the requisition, or `precisFloor` actions
+  regardless), intercepts every command except reading your own coat, and has
+  three answers — one of which, ANNOTATE, is unavailable to a player whose
+  notebook is empty. Resolving it sets `ACT1_COMPLETE` and moves the player to
+  `standing_board`.
+- **One `Gate` type, embedded everywhere.** Topics, acts, shows, beats and
+  exits all gate on `requires` / `blocks` / `has` / `at_least` / `below` —
+  counters included, because a savant three points into drift is a different
+  man and the content has to be able to say so. Exits add `requires_any` /
+  `has_any` for the one disjunction the act documents ask for. Add a condition
+  once, in `content.Gate`.
+- **The Cathedral is a whole thread the player did not need.** Everything Vhail
+  gives up under forty-five minutes of interrogation is readable off
+  `QUERY CATHEDRAL ALMS` — unmarked, ungated, available from the first hour of
+  Act II, and pointed at by nothing. The scene must stay worth playing anyway,
+  and the slip must never be signposted. That is UI-lie #4 in the act notes and
+  the whole answer to *who can rewrite the record* is that it was never Vhail.
+- **The death in 2.8 is a deterministic cascade, in this order, so it can be
+  tested**: Fenn if brought, else Bez, else Vaux if allied, else Ilaria. It is
+  five acts sharing one name — `pickAct` takes the first whose gates pass, the
+  same rule topics use — so the outcome is authored, ordered and readable in
+  the content rather than hidden in Go. `clears` on a line of dialogue is how a
+  death takes `FENN_INTACT` and `_ALIVE` with it.
+- **No two clues may answer to the same name.** `TestNoTwoCluesShareAName`
+  enforces it, because the finder cannot see the difference and will silently
+  record the wrong thing. `MatchClues` returns every match and the caller picks
+  one the player is actually holding, which is a second line of defence, not
+  a licence to collide.
+- **Every flag the content gates on must be written by something.**
+  `TestEveryGatedFlagHasAWriter` enforces it. A gate on a flag nothing sets is
+  a line of the game that silently never happens, which is exactly what
+  `PURGE_ORDER_SEEN` was for two scenes. Flags written by the engine rather
+  than by content are listed in that test; add to the list only when the
+  engine really is the writer.
+- **Crase asks at two threads.** `State.threadsTouched()` counts a held clue
+  from each of Vosk's four open files; the second one summons the player by
+  runner. Refusing the Gallery brief is the only route that keeps Ending E
+  open, costs two points of standing, starts the surveillance, and seeds
+  `SUBLEVEL_NINE_SEEDED` for the Reconciliation-40 symptom. No dialogue is
+  attached to the refusal and she stays warm throughout.
+- **2.5 attaches nothing, and that is load-bearing.** The Rows have no clue,
+  no unlock, no stat and no asset. `CHOIR_FED` and `CHOIR_DEFERRED` are read
+  once each, as one sentence each, in the Act III epilogue. Every way to help
+  costs something real — standing, a Cathedral lever, Vosk's account, a week of
+  Bez's lung — and buys the player nothing. Bolt a reward on and the act loses
+  its spine.
+- **`MOTT_FAVOURS` moves one way and doubles when hostile.** Coin needs a
+  ledger; favours do not. Forcing the Rust Choir's gate with the rosette sets
+  `CHOIR_HOSTILE` and everything costs twice for the rest of the act, and
+  nothing ever tells the player that is why. Handled in `State.Add`, beside the
+  drift rule.
+- **Dates are a floor, not a fact about where you are.** A scene's `date` is
+  the earliest it can happen on: later advances the calendar and resets the
+  time of day, earlier or equal only runs the clock forward. `TimeString` reads
+  `State.date`, never `Room.Date`, or walking back to the hub rewinds the act.
+  Dates compare as strings, which holds only because days are written three
+  digits wide — keep them that way.
+- **`FENN_DRIFT` has two rules attached, both in `State.Add`.** Under Cael's
+  shroud it accrues at a third the rate (`driftPartial` carries the
+  remainder). At 3 it sets `FENN_BURNED_PARTIAL`; at 5 it clears
+  `FENN_INTACT` and forecloses Ending E. Neither threshold announces itself,
+  and the only thing the player ever sees is the readout going down.
+- **Reconciliation removes; it does not close.** A topic with `hidden_above`
+  set stops *matching* past that threshold, so the person answers as though
+  they had never heard of the subject and there is no gap to notice. Never
+  render a removed option as unavailable, greyed, or numbered around.
+- `FENN_DRIFT` is displayed only as `CONCORDANCE OF RECORD: n/6` in `status`,
+  which is equipment-condition framing applied to a man. **Never relabel it**,
+  and never show the counter's own name.
+- A person authored in two scenes is two conversations (`NPC.Key()`), so
+  `npc_refs` must be scoped as `"scene/id"` once a name exists twice — Fenn is
+  authored in `adjutant` and again in `safehouse`, and the loader rejects an
+  ambiguous bare reference with the fix in the message.
 - 1.9 has two doors, per its entry gate: `A1_FILED`, or `DISPATCH_ID_KNOWN` and
   `QUERY 0997.4-1188`. `Archive.Correct()` deletes the record under both
   addresses, because the record is gone and not merely unindexed by one of

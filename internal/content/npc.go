@@ -46,32 +46,50 @@ type NPC struct {
 // keeps one key and one conversation.
 func (n *NPC) Key() string { return n.key }
 
+// Gate is every condition the content can put on a line of dialogue. It is
+// embedded in topics, acts, shows and beats, so all four gate the same way and
+// there is one place to add a condition.
+type Gate struct {
+	Requires []string `json:"requires"`
+	Blocks   []string `json:"blocks"`
+	// Has gates on a clue being in the player's hands at all.
+	Has []string `json:"has"`
+	// AtLeast and Below gate on counters — a savant three points into drift is
+	// a different man, and the content should be able to say so.
+	AtLeast Counters `json:"at_least"`
+	Below   Counters `json:"below"`
+}
+
 // Topic is one thing an NPC can be asked about.
 //
 // Requires/Blocks read flags; Holds reads the player's evidence. A topic whose
 // gates are unmet is not hidden and does not error — it produces Closed, which
 // is a real line of dialogue and usually costs the NPC something to say.
 type Topic struct {
-	ID       string   `json:"id"`
-	Names    []string `json:"names"`
-	Requires []string `json:"requires"`
-	Blocks   []string `json:"blocks"`
-	// Has gates on a clue being in the player's hands at all; Holds gates on
-	// its being recorded somewhere. Citing a register you read is knowledge.
-	// Producing one is a document. They are not the same move.
-	Has   []string `json:"has"`
+	Gate
+	ID    string   `json:"id"`
+	Names []string `json:"names"`
+	// Holds gates on a clue being recorded somewhere, where Has only asks
+	// whether it is in hand. Citing a register you read is knowledge;
+	// producing one is a document. They are not the same move.
 	Holds []string `json:"holds"`
 	// Never marks a subject a person will not be moved on at all. It is not a
 	// gate the player can pick; it is a door, and pushing on it is the point.
-	Never  bool   `json:"never"`
-	Text   string `json:"text"`
-	Closed string `json:"closed"`
+	Never bool `json:"never"`
+	// HiddenAbove is a Reconciliation threshold past which this topic does not
+	// exist. Not closed — absent: the name stops matching at all, so the
+	// person answers as though they had never heard of it and there is no gap
+	// to notice. Zero means never hidden.
+	HiddenAbove int    `json:"hidden_above"`
+	Text        string `json:"text"`
+	Closed      string `json:"closed"`
 	// ClosedCounters is what the refusal costs, kept separate from Counters
 	// because a topic usually rewards being answered and charges for being
 	// pushed on, and those are not the same number.
 	ClosedCounters Counters `json:"closed_counters"`
 	Repeat         string   `json:"repeat"`
 	Sets           []string `json:"sets"`
+	Clears         []string `json:"clears"`
 	Grants         []string `json:"grants"`
 	Pressure       int      `json:"pressure"`
 	Counters       Counters `json:"counters"`
@@ -79,13 +97,12 @@ type Topic struct {
 
 // Show is what an NPC does when the player puts a held clue in front of him.
 type Show struct {
+	Gate
 	Clue     string   `json:"clue"`
-	Requires []string `json:"requires"`
-	Blocks   []string `json:"blocks"`
-	Has      []string `json:"has"`
 	Refused  string   `json:"refused"` // what they say when they have already had this
 	Text     string   `json:"text"`
 	Sets     []string `json:"sets"`
+	Clears   []string `json:"clears"`
 	Grants   []string `json:"grants"`
 	Pressure int      `json:"pressure"`
 	Counters Counters `json:"counters"`
@@ -100,20 +117,19 @@ type Counters map[string]int
 // never lands.
 var KnownCounters = map[string]bool{
 	"VERITY": true, "CRASE_STANDING": true, "RECONCILIATION": true,
-	"BEZ_TRUST": true, "ILARIA_TRUST": true,
+	"BEZ_TRUST": true, "ILARIA_TRUST": true, "FENN_DRIFT": true, "MOTT_FAVOURS": true, "QUERY_TIER": true,
 }
 
 // Act is a verb the player uses on a person rather than a thing: detain,
 // dismiss, threaten. Acts are one-way. There is no undo and no confirmation.
 type Act struct {
+	Gate
 	ID       string   `json:"id"`
 	Names    []string `json:"names"`
-	Requires []string `json:"requires"`
-	Blocks   []string `json:"blocks"`
-	Has      []string `json:"has"`     // clues that must be in hand
 	Refused  string   `json:"refused"` // what they say when it is not yours to do yet
 	Text     string   `json:"text"`
 	Sets     []string `json:"sets"`
+	Clears   []string `json:"clears"`
 	Grants   []string `json:"grants"`
 	Pressure int      `json:"pressure"`
 	Counters Counters `json:"counters"`
@@ -124,14 +140,13 @@ type Act struct {
 // plants are beats: the player never asks for them, and cannot miss them by
 // asking about the wrong thing. Whether they write them down is another matter.
 type Beat struct {
+	Gate
 	ID            string   `json:"id"`
 	AfterTopics   int      `json:"after_topics"`
 	AfterPressure int      `json:"after_pressure"`
-	Requires      []string `json:"requires"`
-	Blocks        []string `json:"blocks"`
-	Has           []string `json:"has"`
 	Text          string   `json:"text"`
 	Sets          []string `json:"sets"`
+	Clears        []string `json:"clears"`
 	Grants        []string `json:"grants"`
 }
 
@@ -149,10 +164,13 @@ type Disposition struct {
 // Exit is somewhere else. Cost is in timed actions: the clock does not stop
 // because you are in a lift.
 type Exit struct {
-	ID       string   `json:"id"`
-	Names    []string `json:"names"`
-	To       string   `json:"to"`
-	Requires []string `json:"requires"`
+	Gate
+	ID    string   `json:"id"`
+	Names []string `json:"names"`
+	To    string   `json:"to"`
+	// Sets are flags taking this door writes. Which door you go down into the
+	// coolant galleries by decides who does not come back up.
+	Sets []string `json:"sets"`
 	// RequiresAny and HasAny are one disjunction between them: when either is
 	// non-empty, the exit needs at least one item across both. The Choir Spire
 	// opens on A2 or on Crase's lead, and either is enough.
@@ -245,16 +263,28 @@ func (n *NPC) MatchTopics(word string) []*Topic {
 	return out
 }
 
-// FindAct resolves DETAIN and its neighbours.
-func (n *NPC) FindAct(word string) *Act {
-	var best *Act
-	bestScore := 0
+// MatchActs resolves a player-typed act to every act that answers to it, best
+// match first and otherwise in authored order — the same rule topics use.
+// Several acts may share a name on purpose: the death in the coolant galleries
+// is one verb with four outcomes, and which one happens depends on who the
+// player brought.
+func (n *NPC) MatchActs(word string) []*Act {
+	type hit struct {
+		a *Act
+		s int
+	}
+	var hits []hit
 	for i := range n.Acts {
-		if s := match(word, n.Acts[i].ID, n.Acts[i].Names); s > bestScore {
-			best, bestScore = &n.Acts[i], s
+		if s := match(word, n.Acts[i].ID, n.Acts[i].Names); s > 0 {
+			hits = append(hits, hit{&n.Acts[i], s})
 		}
 	}
-	return best
+	sort.SliceStable(hits, func(a, b int) bool { return hits[a].s > hits[b].s })
+	out := make([]*Act, 0, len(hits))
+	for _, h := range hits {
+		out = append(out, h.a)
+	}
+	return out
 }
 
 // ShowFor returns what he does with a particular clue, if anything.

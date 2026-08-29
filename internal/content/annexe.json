@@ -1,0 +1,70 @@
+{
+ "id": "annexe",
+ "title": "THE DRY ANNEXE",
+ "date": "0997.4.224",
+ "npc_refs": [
+  "rust_choir/mott"
+ ],
+ "revisit": "The dry annexe. A crate, a lamp, and a man who is owed something.",
+ "intro": "A maintenance void off the cistern, two metres by three, and dry, which down\nhere is the whole of what a room can be.\n\nA crate to sit on. A lamp. Nothing on the walls, because a thing on a wall is\na thing that can be described afterwards.\n\nMott takes off his coat, which he has not done in front of you before, and\ntakes something out of the lining.",
+ "look": "A dry void, a crate, a lamp, and a coat with a lining. Mott, and whatever he has decided you have earned.",
+ "objects": [
+  {
+   "id": "vellum",
+   "names": [
+    "order",
+    "purge order",
+    "the document",
+    "paper",
+    "sheet"
+   ],
+   "careless": "A sheet of vellum, nineteen years old, folded three times and carried in a coat lining for most of that. Administratum instrument, grade four, Sump District Nine.",
+   "careful": "**REMOVAL OF RECORD — SUMP DISTRICT NINE**\n\nIt is one paragraph and it is beautifully drafted.\n\nIt does not authorise the removal of anybody. It authorises the removal of the *record* of Sump District Nine from the district register, the tithe aggregate, the census, the ration allocation, the sanitation schedule and eleven other instruments, listed, each with its own reference.\n\nThere is no provision for the people, because the people are not the subject of the document. Forty thousand of them were left precisely where they were.\n\nSigned, front: **ORDINATE CASMIR LYLE**, seat 411, Administratum Vardan, serial given in full.\n\nOn the back, third from the bottom, in a different and much smaller hand: an intake clerk's mark. Three letters.",
+   "clue": "B4"
+  },
+  {
+   "id": "flush",
+   "names": [
+    "second",
+    "flush order",
+    "the other one",
+    "day 40",
+    "schedule"
+   ],
+   "careless": "A second sheet, much newer, folded once. Mott puts it on the crate without comment and lets you pick it up yourself.",
+   "careful": "**OUTFLOW MAINTENANCE FLUSH — SUMP DISTRICT NINE**\n\nA scheduled works order. Routine. Correct. Countersigned.\n\nIt is forward-dated to day forty of the current cycle, which is sixteen days from now, and it schedules a pressure flush of the drainage terrace below this cistern, which has nine hundred people living on it.\n\n*NO OCCUPANCY OF RECORD. NO NOTIFICATION REQUIRED.*\n\nThe second line is true.\n\nSame seat. Four-one-one. Nineteen years later, and the same hand.",
+   "clue": "B4b"
+  },
+  {
+   "id": "elder",
+   "names": [
+    "the elder",
+    "old woman",
+    "name-bank elder",
+    "her"
+   ],
+   "careless": "The name-bank elder sits at the back of the annexe with her eyes shut, and does not acknowledge you, and is not being rude.",
+   "careful": "Three hundred and forty-one living people and the dead men whose cards they are currently holding, and which of the dead have relatives still down here who would object, and which cards are getting old enough to attract an audit.\n\nAll of it in her head. She is sixty-one.\n\nMott says, quietly, that they have tried twice to get somebody to learn it off her, and both times the second person's version started to drift within a month, because a copy of a memory is a memory of a memory.\n\nShe opens her eyes once, while you are looking at her, and says a name you do not know, and closes them again. It was not for you. She was checking."
+  }
+ ],
+ "exits": [
+  {
+   "id": "cistern",
+   "names": [
+    "out",
+    "back",
+    "cistern",
+    "choir"
+   ],
+   "to": "rust_choir",
+   "cost": 1,
+   "text": "Back out into the wet part."
+  }
+ ],
+ "strings": {
+  "no_such_thing": "Two metres by three, a crate and a lamp.",
+  "already_read": "You have read it twice. Mott is waiting to have it back.",
+  "no_terminal": "No. Not from down here.",
+  "no_one_here": "Mott is here. The elder is here and is not talking to you."
+ }
+}

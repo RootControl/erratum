@@ -93,6 +93,16 @@ func (s *State) ask(arg string) ([]string, int) {
 	out = append(out, s.meet(n)...)
 
 	matches := n.MatchTopics(subject)
+	// Reconciliation does not close subjects, it removes them. A topic past
+	// its threshold stops matching at all, so what comes back is the ordinary
+	// "I have nothing on that" and there is no gap to notice.
+	kept := matches[:0]
+	for _, t := range matches {
+		if t.HiddenAbove == 0 || s.Reconciliation() < t.HiddenAbove {
+			kept = append(kept, t)
+		}
+	}
+	matches = kept
 	if len(matches) == 0 {
 		if n.Unknown != "" {
 			return append(out, n.Unknown), 1
@@ -151,25 +161,34 @@ func (s *State) ask(arg string) ([]string, int) {
 	out = append(out, chosen.Text)
 	// Pressure is what pushing on a closed door costs a person. An answered
 	// question costs them nothing, however pointed it was.
-	out = append(out, s.apply(n, chosen.Sets, chosen.Grants, chosen.Counters, 0)...)
+	out = append(out, s.apply(n, chosen.Sets, chosen.Clears, chosen.Grants, chosen.Counters, 0)...)
 	return append(out, s.beats(n)...), 1
 }
 
-// gatesMet is every gate in the dialogue system: flags that must be set, flags
-// that must not be, and clues that must be in hand.
-func (s *State) gatesMet(requires, blocks, has []string) bool {
-	for _, f := range requires {
+// gatesMet reads every condition the content can put on a line of dialogue.
+func (s *State) gatesMet(g content.Gate) bool {
+	for _, f := range g.Requires {
 		if !s.Has(f) {
 			return false
 		}
 	}
-	for _, f := range blocks {
+	for _, f := range g.Blocks {
 		if s.Has(f) {
 			return false
 		}
 	}
-	for _, id := range has {
+	for _, id := range g.Has {
 		if _, held := s.Held[id]; !held {
+			return false
+		}
+	}
+	for k, v := range g.AtLeast {
+		if s.Ints[k] < v {
+			return false
+		}
+	}
+	for k, v := range g.Below {
+		if s.Ints[k] >= v {
 			return false
 		}
 	}
@@ -181,7 +200,7 @@ func (s *State) topicOpen(t *content.Topic) bool {
 	if t.Never {
 		return false
 	}
-	if !s.gatesMet(t.Requires, t.Blocks, t.Has) {
+	if !s.gatesMet(t.Gate) {
 		return false
 	}
 	for _, id := range t.Holds {
@@ -206,11 +225,14 @@ func (s *State) show(arg string) ([]string, int) {
 	if n == nil {
 		return []string{s.whyNot(who)}, 0
 	}
-	c := s.Game.FindClue(strings.TrimSpace(what))
-	if c == nil {
-		return []string{"You hold no such clue."}, 0
+	var c *content.Clue
+	for _, m := range s.Game.MatchClues(strings.TrimSpace(what)) {
+		if _, held := s.Held[m.ID]; held {
+			c = m
+			break
+		}
 	}
-	if _, held := s.Held[c.ID]; !held {
+	if c == nil {
 		return []string{"You hold no such clue."}, 0
 	}
 
@@ -219,7 +241,7 @@ func (s *State) show(arg string) ([]string, int) {
 	if sh == nil {
 		return append(out, "You put it in front of them. They look at it, and it is not the thing they are afraid of."), 1
 	}
-	if !s.gatesMet(sh.Requires, sh.Blocks, sh.Has) {
+	if !s.gatesMet(sh.Gate) {
 		if sh.Refused != "" {
 			return append(out, sh.Refused), 0
 		}
@@ -230,7 +252,7 @@ func (s *State) show(arg string) ([]string, int) {
 	}
 	s.Fired[n.Key()+"/show/"+c.ID] = true
 	out = append(out, sh.Text)
-	out = append(out, s.apply(n, sh.Sets, sh.Grants, sh.Counters, sh.Pressure)...)
+	out = append(out, s.apply(n, sh.Sets, sh.Clears, sh.Grants, sh.Counters, sh.Pressure)...)
 	return append(out, s.beats(n)...), 1
 }
 
@@ -246,16 +268,15 @@ func (s *State) act(verb, arg string) ([]string, int, bool) {
 	}
 	full := strings.TrimSpace(verb + " " + arg)
 	if n := s.npcIn(arg); n != nil {
-		if a := n.FindAct(full); a != nil {
-			return s.doAct(n, a)
-		}
-		if a := n.FindAct(verb); a != nil {
-			return s.doAct(n, a)
+		for _, word := range []string{full, verb} {
+			if a := s.pickAct(n, word); a != nil {
+				return s.doAct(n, a)
+			}
 		}
 	}
 	for _, word := range []string{full, verb} {
 		for _, n := range s.Room.People() {
-			if a := n.FindAct(word); a != nil {
+			if a := s.pickAct(n, word); a != nil {
 				return s.doAct(n, a)
 			}
 		}
@@ -263,8 +284,28 @@ func (s *State) act(verb, arg string) ([]string, int, bool) {
 	return nil, 0, false
 }
 
+// pickAct takes the first act answering to the word whose gates the player has
+// met, falling back to the best match so that a refusal still has a voice.
+func (s *State) pickAct(n *content.NPC, word string) *content.Act {
+	matches := n.MatchActs(word)
+	if len(matches) == 0 {
+		return nil
+	}
+	for _, a := range matches {
+		if s.gatesMet(a.Gate) {
+			return a
+		}
+	}
+	for _, a := range matches {
+		if a.Refused != "" {
+			return a
+		}
+	}
+	return matches[0]
+}
+
 func (s *State) doAct(n *content.NPC, a *content.Act) ([]string, int, bool) {
-	if !s.gatesMet(a.Requires, a.Blocks, a.Has) {
+	if !s.gatesMet(a.Gate) {
 		if a.Refused != "" {
 			return []string{a.Refused}, 0, true
 		}
@@ -276,7 +317,7 @@ func (s *State) doAct(n *content.NPC, a *content.Act) ([]string, int, bool) {
 	s.Fired[n.Key()+"/act/"+a.ID] = true
 	out := s.meet(n)
 	out = append(out, a.Text)
-	out = append(out, s.apply(n, a.Sets, a.Grants, a.Counters, a.Pressure)...)
+	out = append(out, s.apply(n, a.Sets, a.Clears, a.Grants, a.Counters, a.Pressure)...)
 	cost := a.Cost
 	if cost < 1 {
 		cost = 1
@@ -287,13 +328,17 @@ func (s *State) doAct(n *content.NPC, a *content.Act) ([]string, int, bool) {
 // apply writes the consequences of a line of dialogue. Flags belonging to a
 // person's disposition group displace their siblings; everything else is an
 // ordinary flag.
-func (s *State) apply(n *content.NPC, sets []string, grants []string, counters content.Counters, pressure int) []string {
+func (s *State) apply(n *content.NPC, sets, clears, grants []string, counters content.Counters, pressure int) []string {
 	for _, f := range sets {
 		if n.Disposition != nil && contains(n.Disposition.Flags, f) {
 			s.SetOne(n.Disposition.Flags, f)
 			continue
 		}
 		s.Set(f)
+	}
+	// A line of dialogue that ends a man has to be able to say so.
+	for _, f := range clears {
+		delete(s.Flags, f)
 	}
 	for k, v := range counters {
 		s.Add(k, v)
@@ -327,13 +372,16 @@ func (s *State) beats(n *content.NPC) []string {
 		if b.AfterTopics == 0 && b.AfterPressure == 0 && len(b.Requires) > 0 {
 			ready = true
 		}
-		if !ready || !s.gatesMet(b.Requires, b.Blocks, b.Has) {
+		if !ready || !s.gatesMet(b.Gate) {
 			continue
 		}
 		s.Fired[n.Key()+"/beat/"+b.ID] = true
 		out = append(out, b.Text)
 		for _, f := range b.Sets {
 			s.Set(f)
+		}
+		for _, f := range b.Clears {
+			delete(s.Flags, f)
 		}
 		// Granted silently. A clue the player did not ask for does not get a
 		// bracket announcing that it matters; that is the entire test.

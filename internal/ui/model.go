@@ -137,15 +137,21 @@ func (m Model) View() string {
 	if !m.ready {
 		return "…"
 	}
-	status := faint.Render(strings.Join([]string{
-		m.st.TimeString(),
-		bodyLine(m.st),
-		"HELP for verbs",
-	}, "   ·   "))
+	parts := []string{m.st.TimeString()}
+	if b := bodyLine(m.st); b != "" {
+		parts = append(parts, b)
+	}
+	parts = append(parts, "HELP for verbs")
+	status := faint.Render(strings.Join(parts, "   ·   "))
 	return m.vp.View() + "\n" + status + "\n" + m.in.View()
 }
 
+// bodyLine reports the eight minutes while they are the thing that matters,
+// and stops once the act that owned them is over.
 func bodyLine(s *game.State) string {
+	if s.Has("ACT1_COMPLETE") {
+		return ""
+	}
 	if s.BodyPresent {
 		return "body present"
 	}

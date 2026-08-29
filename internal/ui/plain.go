@@ -52,7 +52,11 @@ func Plain(st *game.State, in io.Reader, out io.Writer) error {
 				emit(ev)
 			}
 		}
-		fmt.Fprintf(w, "[ %s · %s ]\n\n", st.TimeString(), bodyLine(st))
+		if b := bodyLine(st); b != "" {
+			fmt.Fprintf(w, "[ %s · %s ]\n\n", st.TimeString(), b)
+		} else {
+			fmt.Fprintf(w, "[ %s ]\n\n", st.TimeString())
+		}
 		if st.Done {
 			break
 		}

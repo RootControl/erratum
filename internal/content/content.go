@@ -7,6 +7,7 @@ import (
 	_ "embed"
 	"encoding/json"
 	"fmt"
+	"sort"
 	"strings"
 )
 
@@ -37,6 +38,39 @@ var archJSON []byte
 //go:embed choir.json
 var choirJSON []byte
 
+//go:embed board.json
+var boardJSON []byte
+
+//go:embed safehouse.json
+var safehouseJSON []byte
+
+//go:embed workshop.json
+var workshopJSON []byte
+
+//go:embed delta.json
+var deltaJSON []byte
+
+//go:embed choir_settlement.json
+var rustChoirJSON []byte
+
+//go:embed annexe.json
+var annexeJSON []byte
+
+//go:embed rows.json
+var rowsJSON []byte
+
+//go:embed cathedral.json
+var cathedralJSON []byte
+
+//go:embed confessional.json
+var confessionalJSON []byte
+
+//go:embed crase_office.json
+var craseOfficeJSON []byte
+
+//go:embed ferrum.json
+var ferrumJSON []byte
+
 // Store says which evidence store a clue may live in.
 //
 // This is the game's central mechanic, so it is a first-class field on every
@@ -51,6 +85,10 @@ const (
 	StoreEither    Store = "either"
 	StoreCogitator Store = "cogitator"
 	StoreNotebook  Store = "notebook"
+	// StoreNeither is a clue that cannot be recorded at all, in any medium,
+	// because the medium is four hundred people saying names out loud and
+	// writing it down stops them. Both FILE and NOTE refuse.
+	StoreNeither Store = "neither"
 )
 
 // Object is a thing in a room that can be named at the terminal.
@@ -106,6 +144,9 @@ type Room struct {
 	// act documents place the scenes hours apart and the player does not play
 	// the hours in between.
 	ClockAt string `json:"clock_at"`
+	// Date is the hive date this scene happens on. Act II runs over weeks.
+	// Empty inherits the previous scene's date.
+	Date string `json:"date"`
 	// Body marks the scene the eight-minute timer belongs to. It starts when
 	// the player first arrives and does not stop when they leave.
 	Body bool `json:"body"`
@@ -151,6 +192,7 @@ type Game struct {
 	Clues     map[string]*Clue
 	byUpper   map[string]*Clue
 	npcs      map[string][]*NPC
+	byKey     map[string]*NPC
 }
 
 // Seconds parses "06h12" into seconds since midnight. Zero for an unset field.
@@ -190,20 +232,29 @@ func (g *Game) Clue(id string) *Clue {
 	return g.byUpper[strings.ToUpper(id)]
 }
 
-// FindClue resolves a player-typed clue reference — an ID, or the name a
-// player would actually use for the thing.
-func (g *Game) FindClue(word string) *Clue {
-	var best *Clue
-	bestScore := 0
+// MatchClues resolves a player-typed reference to every clue that answers to
+// it, best match first. Aliases legitimately overlap across an act — two
+// different things are both "the pattern" — so the caller decides which one
+// the player meant, usually by asking which one they are holding.
+func (g *Game) MatchClues(word string) []*Clue {
+	type hit struct {
+		c *Clue
+		s int
+	}
+	var hits []hit
 	for _, id := range g.Order {
-		sc := g.Scenes[id]
-		for _, c := range sc.Clues {
-			if s := match(word, c.ID, c.Names); s > bestScore {
-				best, bestScore = c, s
+		for _, c := range g.Scenes[id].Clues {
+			if s := match(word, c.ID, c.Names); s > 0 {
+				hits = append(hits, hit{c, s})
 			}
 		}
 	}
-	return best
+	sort.SliceStable(hits, func(a, b int) bool { return hits[a].s > hits[b].s })
+	out := make([]*Clue, 0, len(hits))
+	for _, h := range hits {
+		out = append(out, h.c)
+	}
+	return out
 }
 
 // Load returns every embedded scene.
@@ -228,9 +279,21 @@ func Load() (*Game, error) {
 		{"adjutant", adjutantJSON},
 		{"gallery_arch", archJSON},
 		{"choir", choirJSON},
+		{"standing_board", boardJSON},
+		{"safehouse", safehouseJSON},
+		{"workshop", workshopJSON},
+		{"delta", deltaJSON},
+		{"rust_choir", rustChoirJSON},
+		{"annexe", annexeJSON},
+		{"the_rows", rowsJSON},
+		{"cathedral", cathedralJSON},
+		{"confessional", confessionalJSON},
+		{"crase_office", craseOfficeJSON},
+		{"ferrum", ferrumJSON},
 	}
 	g := &Game{Scenes: map[string]*Room{}, Clues: map[string]*Clue{},
-		byUpper: map[string]*Clue{}, npcs: map[string][]*NPC{}}
+		byUpper: map[string]*Clue{}, npcs: map[string][]*NPC{}, byKey: map[string]*NPC{}}
+	lastDate := "0997.4.211"
 	for _, src := range sources {
 		var r Room
 		if err := json.Unmarshal(src.raw, &r); err != nil {
@@ -248,6 +311,12 @@ func Load() (*Game, error) {
 		if r.Body {
 			g.BodyScene = r.ID
 		}
+		if r.Date == "" {
+			// Scenes are authored in chronological order; one that does not
+			// name a date is on the same day as the one before it.
+			r.Date = lastDate
+		}
+		lastDate = r.Date
 		for k, v := range shared {
 			if _, ok := r.Strings[k]; !ok {
 				r.Strings[k] = v
@@ -267,6 +336,7 @@ func Load() (*Game, error) {
 			n := &r.NPCs[i]
 			n.key = r.ID + "/" + n.ID
 			g.npcs[n.ID] = append(g.npcs[n.ID], n)
+			g.byKey[n.key] = n
 			r.people = append(r.people, n)
 		}
 		g.Scenes[r.ID] = &r
@@ -277,13 +347,21 @@ func Load() (*Game, error) {
 	for _, id := range g.Order {
 		r := g.Scenes[id]
 		for _, ref := range r.NPCRefs {
+			if scene, who, scoped := strings.Cut(ref, "/"); scoped {
+				n := g.byKey[scene+"/"+who]
+				if n == nil {
+					return nil, fmt.Errorf("content: %s: no person %q in scene %q", id, who, scene)
+				}
+				r.people = append(r.people, n)
+				continue
+			}
 			switch found := g.npcs[ref]; len(found) {
 			case 0:
 				return nil, fmt.Errorf("content: %s: no person named %q to follow you here", id, ref)
 			case 1:
 				r.people = append(r.people, found[0])
 			default:
-				return nil, fmt.Errorf("content: %s: %q is authored in more than one scene, so a reference to it is ambiguous", id, ref)
+				return nil, fmt.Errorf("content: %s: %q is authored in more than one scene — reference it as \"scene/%s\"", id, ref, ref)
 			}
 		}
 	}
@@ -315,7 +393,7 @@ func (g *Game) validate() error {
 		}
 		for _, c := range r.Clues {
 			switch c.Store {
-			case StoreEither, StoreCogitator, StoreNotebook:
+			case StoreEither, StoreCogitator, StoreNotebook, StoreNeither:
 			default:
 				return fail("%s: clue %s has store %q", id, c.ID, c.Store)
 			}
@@ -337,6 +415,15 @@ func (g *Game) validate() error {
 		}
 	}
 	return nil
+}
+
+// checkGate catches a counter threshold naming a counter that does not exist,
+// which would otherwise be a gate that silently never opens.
+func checkGate(scene, npc, what string, g Gate, fail func(string, ...any) error) error {
+	if err := checkCounters(scene, npc, what+" at_least", g.AtLeast, fail); err != nil {
+		return err
+	}
+	return checkCounters(scene, npc, what+" below", g.Below, fail)
 }
 
 func checkCounters(scene, npc, what string, c Counters, fail func(string, ...any) error) error {
@@ -395,9 +482,15 @@ func (g *Game) validateNPC(scene string, n *NPC, fail func(string, ...any) error
 		if err := checkCounters(scene, n.ID, "topic "+t.ID, t.ClosedCounters, fail); err != nil {
 			return err
 		}
+		if err := checkGate(scene, n.ID, "topic "+t.ID, t.Gate, fail); err != nil {
+			return err
+		}
 	}
 	for _, a := range n.Acts {
 		if err := checkCounters(scene, n.ID, "act "+a.ID, a.Counters, fail); err != nil {
+			return err
+		}
+		if err := checkGate(scene, n.ID, "act "+a.ID, a.Gate, fail); err != nil {
 			return err
 		}
 	}

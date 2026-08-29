@@ -34,6 +34,9 @@ const (
 	bodyLimit        = 8 * 60 // eight minutes, and they mean it
 	correctionDelay  = 5      // actions after the requisition before the archive reconciles
 	fallbackDelay    = 9      // if the player never looks again, Crase delivers it
+	precisDelay      = 14     // and then the Crown wants the day signed off
+	precisFloor      = 50     // a player who never requisitions still reaches the end of the day
+	lyleConfirmDelay = 6      // and then the Vault confirms a null result you never asked it to
 )
 
 // State is everything the game knows. Flags are strings by design: the act
@@ -54,6 +57,8 @@ type State struct {
 	BodyPresent  bool
 	bodyDeadline int
 	Visited      map[string]bool
+	date         string   // the date the clock is currently running on
+	driftPartial int      // drift accrued under the shroud but not yet whole
 	arrived      []string // what the scene handed you on the way in
 
 	Held     map[string]Store
@@ -74,6 +79,18 @@ type State struct {
 	Pressure map[string]int
 	Fired    map[string]bool
 	deflects map[string]int
+
+	// The Case Précis is the hard floor of Act I: unskippable, undismissable,
+	// and four paragraphs of true sentences describing a day that did not
+	// happen. While it is pending the player may read their own coat and
+	// nothing else.
+	PrecisPending bool
+	precisDone    bool
+	actions       int
+
+	// The Lyle query gets an answer nobody asked for, forty minutes later.
+	lyleQueried   int
+	lyleConfirmed bool
 
 	requisitioned  bool
 	sinceReq       int
@@ -103,6 +120,7 @@ func New(g *content.Game) *State {
 		Fired:    map[string]bool{},
 		deflects: map[string]int{},
 	}
+	s.date = s.Room.Date
 	s.arrived = s.arrive()
 	return s
 }
@@ -115,7 +133,17 @@ func (s *State) arrive() []string {
 	var out []string
 	if !s.Visited[s.Room.ID] {
 		s.Visited[s.Room.ID] = true
-		if at := s.Room.Seconds(); at > s.Clock {
+		// A scene's date is the earliest it can happen on, not a fact about
+		// where the player is. Later advances the calendar and resets the time
+		// of day; earlier or equal only ever runs the clock forward.
+		// (Dates compare as strings, which holds because days are written
+		// three digits wide. Keep them that way.)
+		if s.Room.Date > s.date {
+			s.date = s.Room.Date
+			if at := s.Room.Seconds(); at > 0 {
+				s.Clock = at
+			}
+		} else if at := s.Room.Seconds(); at > s.Clock {
 			s.Clock = at
 		}
 		for _, f := range s.Room.Sets {
@@ -216,6 +244,11 @@ func (s *State) SetOne(group []string, flag string) {
 	s.Set(flag)
 }
 
+// Reconciliation reports the player's exposure to the archive. Nothing in the
+// game displays it and nothing ever names it; it is read only to take things
+// away.
+func (s *State) Reconciliation() int { return s.Ints["RECONCILIATION"] }
+
 func (s *State) Set(f string)      { s.Flags[f] = true }
 func (s *State) Has(f string) bool { return s.Flags[f] }
 
@@ -228,11 +261,43 @@ var bounds = map[string][2]int{
 	"CRASE_STANDING": {-5, 5},
 	"BEZ_TRUST":      {0, 5},
 	"ILARIA_TRUST":   {0, 5},
+	"FENN_DRIFT":     {0, 6},
 	"RECONCILIATION": {0, 100},
 }
 
 // Add moves a counter, held inside its range.
+//
+// FENN_DRIFT is the one counter with a rule attached: under Cael's shroud it
+// accrues at a third the rate, which is a real gift, freely given, by a man
+// who built it three weeks before anybody asked him to.
 func (s *State) Add(k string, n int) {
+	// Force your way into the Rust Choir with a rosette and everything you
+	// ever ask for down there costs twice, for the rest of the act.
+	if k == "MOTT_FAVOURS" && n > 0 && s.Has("CHOIR_HOSTILE") {
+		n *= 2
+	}
+	if k == "FENN_DRIFT" && n > 0 && s.Has("FENN_SHIELDED") {
+		s.driftPartial += n
+		n = s.driftPartial / 3
+		s.driftPartial -= n * 3
+		if n == 0 {
+			return
+		}
+	}
+	s.add(k, n)
+	if k == "FENN_DRIFT" {
+		// Three sub-queries burn him partially; past four there is nothing
+		// left to protect. Nothing announces either threshold.
+		if s.Ints[k] >= 3 {
+			s.Set("FENN_BURNED_PARTIAL")
+		}
+		if s.Ints[k] >= 5 {
+			delete(s.Flags, "FENN_INTACT")
+		}
+	}
+}
+
+func (s *State) add(k string, n int) {
 	s.Ints[k] += n
 	if b, ok := bounds[k]; ok {
 		if s.Ints[k] < b[0] {
@@ -244,9 +309,14 @@ func (s *State) Add(k string, n int) {
 	}
 }
 
-// TimeString renders the clock the way a cogitator would.
+// TimeString renders the clock the way a cogitator would. Act II runs over
+// weeks, so the date belongs to the scene.
 func (s *State) TimeString() string {
-	return fmt.Sprintf("0997.4.211 / %02dh%02d", s.Clock/3600, (s.Clock%3600)/60)
+	d := s.date
+	if d == "" {
+		d = "0997.4.211"
+	}
+	return fmt.Sprintf("%s / %02dh%02d", d, s.Clock/3600, (s.Clock%3600)/60)
 }
 
 // Tick advances the scene clock and returns any events that fired.
@@ -267,6 +337,28 @@ func (s *State) Tick() []string {
 			out = append(out, craseFallback)
 		}
 	}
+	if s.Has("LYLE_QUERIED") && !s.lyleConfirmed {
+		s.lyleQueried++
+		if s.lyleQueried == lyleConfirmDelay {
+			s.lyleConfirmed = true
+			s.Grant("B5")
+			out = append(out, s.S("lyle_confirmation"))
+		}
+	}
+	if !s.Has("CRASE_ASKED_FOR_YOU") && s.threadsTouched() >= 2 {
+		s.Set("CRASE_ASKED_FOR_YOU")
+		out = append(out, s.S("crase_summons"))
+	}
+	s.actions++
+	if !s.precisDone && !s.PrecisPending {
+		due := s.actions >= precisFloor
+		if s.requisitioned && s.sinceReq >= precisDelay {
+			due = true
+		}
+		if due {
+			out = append(out, s.openPrecis()...)
+		}
+	}
 	return out
 }
 
@@ -279,6 +371,37 @@ Vaux is behind her in the corridor. He does not look up. He writes something dow
 You know you did not pull two hundred years of drainage ledgers. You know it the way
 you know your own name, which is to say: you know it, and there is no longer a single
 object in this hive that agrees with you.`
+
+// threadsTouched counts how many of Vosk's four open files the player has put
+// a hand on. Crase asks for them at two, which is the point at which an
+// investigation stops looking like grief and starts looking like a direction.
+func (s *State) threadsTouched() int {
+	threads := [][]string{
+		{"B1", "B2"},                // FENN/CUSTODY
+		{"B4", "B4b", "B6"},         // SUMP-VARIANCE
+		{"B8", "B11", "B10"},        // ECCL/ALMS
+		{"B23", "B7", "B6a", "B18"}, // the Vault run
+	}
+	n := 0
+	for _, t := range threads {
+		for _, id := range t {
+			if _, held := s.Held[id]; held {
+				n++
+				break
+			}
+		}
+	}
+	return n
+}
+
+// openPrecis composes the Crown's account of the player's day and asks them to
+// countersign it. Every sentence in it is true according to the archive.
+func (s *State) openPrecis() []string {
+	s.PrecisPending = true
+	s.Set("ACT1_TURN_SEEN")
+	s.Grant("A22")
+	return []string{s.S("precis"), s.S("precis_prompt")}
+}
 
 // Signs returns the held signs of the scene the player is standing in, in
 // canonical order. A sign is a fact about one room; carrying it into another

@@ -1,0 +1,285 @@
+{
+ "id": "standing_board",
+ "title": "THE STANDING BOARD — VOSK'S CHAMBERS, UNSEALED",
+ "date": "0997.4.219",
+ "clock_at": "05h40",
+ "sets": [
+  "ACT2_OPEN",
+  "BEZ_ALIVE",
+  "FENN_ALIVE",
+  "ILARIA_ALIVE",
+  "VAUX_ALIVE"
+ ],
+ "grants": [
+  "B0"
+ ],
+ "revisit": "The chambers. Four case-files open on the cogitator, a ledger you may or may not be keeping, and four places in this hive that a dead man was looking at.",
+ "intro": "Eight days.\n\nThe Crown reclaimed the chambers at the close of the case and crated the\neffects, and then somebody in the Provost's office worked out that the\ninvestigating officer of a closed matter has no standing to be given a room\nand the officer of an *open* one does, and so the case was reopened, on a\nform, by you, and the room came back.\n\nIt is the same room and it is not. The furniture has been packed and\nunpacked by people who did not know the arrangement mattered.\n\nThe cogitator boots the way it has booted every morning for three years, and\nfour of Hadrian Vosk's case-files come up open.\n\n  FENN/CUSTODY\n  SUMP-VARIANCE\n  ECCL/ALMS\n  GALLERY-9\n\nHe never left a file open. He closed them the way other men lock doors, at\nthe end of a shift, finished or not, because an open file is a thing somebody\nelse can read.\n\nThese have been open eleven weeks. Long enough that the cogitator has stopped\nasking whether you want to save them.\n\nHe was pointing, for eleven weeks, and nobody in this hive was looking at his\ndesk.",
+ "look": "His chambers, reopened on a form, with your name on the form.\n\nThe COGITATOR, and four dormant CASE-FILES open on it: Fenn's custody, a sump\nvariance, an Ecclesiarchy alms account, and Gallery 9.\nThe DESK, repacked and unpacked by strangers.\nYour LEDGER, if you are keeping one, and your notebook, which you are.\n\nSergeant Oduya on the landing. Savant Fenn wherever you have put him.\nVesse Talm on the threshold, and not across it.",
+ "objects": [
+  {
+   "id": "files",
+   "names": [
+    "case-files",
+    "the four",
+    "four files",
+    "open files",
+    "dockets"
+   ],
+   "careless": "Four case-files, open, dormant, eleven weeks old. FENN/CUSTODY. SUMP-VARIANCE. ECCL/ALMS. GALLERY-9.",
+   "careful": "None of them is a case. That is the first thing.\n\nA case-file has a complainant, an assessment and a disposition. These have a *name* and a *query string* and nothing else — they are the shape a file makes when somebody opens it to have somewhere to put a thought, and then does not put the thought in it.\n\nFENN/CUSTODY is his own savant. SUMP-VARIANCE is eleven crowns in a district assessment. ECCL/ALMS is a Cathedral disbursement account. GALLERY-9 is a manufactorum.\n\nFour things that have nothing to do with each other, in a hive of nine million things, held open for eleven weeks by a man who closed files the way other men lock doors."
+  },
+  {
+   "id": "cogitator",
+   "names": [
+    "terminal",
+    "machine",
+    "his cogitator",
+    "screen"
+   ],
+   "careless": "Cael-pattern, three years old, beautifully maintained. His authority key opens it and the key is yours.",
+   "careful": "It has two places to put a thing, and it has always had two, and until this week you had only ever used one.\n\nThe CASE-FILE is indexed, searchable, cross-referenced, requisition-eligible and readable by anything with standing to read it. Everything you have ever filed is in there and everything in there is a thing somebody can act on.\n\nThe other is a blank field labelled LEDGER, which does nothing at all: no index, no search, no cross-reference, no requisition. It is a place to write by hand and it is functionally a drawer.\n\nHadrian Vosk kept eleven years of casework in longhand in a room with this machine in it, and you have spent eight days deciding that was vanity."
+  },
+  {
+   "id": "desk",
+   "names": [
+    "furniture",
+    "the room",
+    "crates",
+    "arrangement"
+   ],
+   "careless": "The desk, the side table, the shutter, the chair. All of it back. None of it where it was.",
+   "careful": "The board is on the side table because somebody put it back on the side table, and the pieces are in the box because somebody put them in the box, and the shutter is closed because a warden closed it.\n\nWhatever was arranged in this room was arranged eight days ago and unarranged four days ago by two Crown porters with a manifest, working carefully, in good faith, at speed.\n\nIt is the second time this week you have watched something true be destroyed by people doing their jobs correctly."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "ilaria",
+   "names": [
+    "vesse",
+    "talm",
+    "astropath",
+    "her"
+   ],
+   "title": "Vesse Ilaria Talm",
+   "lists_topics": false,
+   "topic_refusal": "\"From out here,\" Ilaria says. \"I'll answer anything from out here.\"",
+   "portrait": "Vesse Ilaria Talm, on the landing side of the threshold, one hand flat on the frame, not coming in.",
+   "greeting": "She stops at the threshold and does not cross it.\n\n\"I'll wait here, sir, if that's all the same.\"\n\n\"It's a room, Vesse.\"\n\n\"It isn't.\" She has her hand flat on the door frame and her head slightly turned. \"Rooms have a shadow. Every room in this hive has a little wash off the vox-plate and the relay, and you don't hear it, and I do, and I have for twenty years the way you don't hear your own blood.\n\n\"This one has none. It's not quiet, sir. It's *absent*. He took the plate out.\"\n\nShe is not being poetic. She is describing an instrument reading.\n\n\"I'd rather stand on the landing. I can hear you perfectly well from the landing.\"",
+   "reprise": "She waits on the landing with a hand on the frame.",
+   "unknown": "\"I don't know,\" Ilaria says, from the landing.",
+   "deflect": [
+    "\"Not from out here, sir.\""
+   ],
+   "topics": [
+    {
+     "id": "shadow",
+     "names": [
+      "the room",
+      "vox",
+      "plate",
+      "absent",
+      "why not",
+      "shielding",
+      "the air"
+     ],
+     "text": "\"Every room has one,\" Ilaria says. \"The plate hums, the relay bleeds, there's a — I've never had to describe it. It's a floor. You stand on it.\n\n\"He took the plate out of this room. Not disabled — *out*, and the socket capped. I've asked the warden and it's on the maintenance ledger, four years ago, at his own request, at his own cost, because the Crown wouldn't pay to remove a working instrument.\"\n\n\"Four years ago.\"\n\n\"Four years and two months.\" A pause. \"There isn't another room in the Adamant Crown like it, sir. I've been in most of them. He made one place in this building that nothing can hear, and then he sat in it for four years, and then he arranged his own furniture and died in it.\"\n\n[ B0 corroborated — he built the room before he used it ]",
+     "sets": [
+      "VOSK_STRIPPED_ROOM"
+     ]
+    },
+    {
+     "id": "her_state",
+     "names": [
+      "how are you",
+      "yourself",
+      "the choir",
+      "since",
+      "detention",
+      "you"
+     ],
+     "text": "\"I'm on light carriage, sir. The Choir-Prefect's put me on grain and tithe until there's a finding.\" She says it evenly. \"I'd rather be working.\"\n\n\"You are working.\"\n\n\"I'm standing on a landing.\" Something that is almost a smile. \"You've had me up here four times in eight days to be an instrument, sir, and I'm not complaining, I'd rather be an instrument than a suspect. But I would like to know which one I am on the form, when there's a form.\""
+    },
+    {
+     "id": "the_wax",
+     "names": [
+      "cylinder",
+      "the recording",
+      "forty-one seconds",
+      "what we heard",
+      "six"
+     ],
+     "text": "\"I've thought about very little else,\" Ilaria says.\n\n\"And?\"\n\n\"And I've decided I don't want to hear it again, which I'd like on the record as my own decision and not something anybody spared me.\" Her hand is still flat on the frame. \"It's my voice. It's my mouth. Whatever came through me came through me in the ordinary way, at the ordinary time, on an ordinary channel, and I countersigned a summary of it afterwards that was wrong.\n\n\"That's not a psyker going bad, sir. A psyker going bad is loud. This was *tidy*.\""
+    }
+   ],
+   "beats": [],
+   "shows": [],
+   "acts": []
+  }
+ ],
+ "exits": [
+  {
+   "id": "safehouse",
+   "names": [
+    "fenn",
+    "savant",
+    "sub-level four",
+    "sublevel",
+    "down",
+    "aleth",
+    "safe house"
+   ],
+   "to": "safehouse",
+   "cost": 2,
+   "text": "Down four sub-levels to two metres of rockcrete and no vox-plate, which Vosk chose, and which you have only this week understood him to have chosen."
+  },
+  {
+   "id": "workshop",
+   "names": [
+    "cael",
+    "magos",
+    "the workshop",
+    "yttrix",
+    "mechanicus",
+    "shroud"
+   ],
+   "to": "workshop",
+   "cost": 2,
+   "blocked": "There is a Magos two tiers down who maintains every cogitator in this building, and nothing you currently know is worth taking to him.",
+   "text": "Two tiers down, to the one room in the Adamant Crown that smells of tea.",
+   "has": [
+    "B1"
+   ]
+  },
+  {
+   "id": "delta",
+   "names": [
+    "vault",
+    "stack delta",
+    "lexicanum",
+    "the stack",
+    "habrach",
+    "shelf"
+   ],
+   "to": "delta",
+   "cost": 3,
+   "blocked": "The Lexicanum will give you four kilometres of shelving and no reason to walk down any particular metre of it.\n\nYou need a shelf, and a second copy of what is on it.",
+   "text": "Across to the Lexicanum, and down into Stack Delta, with a savant walking beside you talking about lifter-fuel.",
+   "has": [
+    "A1",
+    "B1"
+   ]
+  },
+  {
+   "id": "sump",
+   "names": [
+    "rust choir",
+    "the choir",
+    "sump",
+    "district nine",
+    "mott",
+    "down the pipe",
+    "the sump"
+   ],
+   "to": "rust_choir",
+   "cost": 4,
+   "has": [
+    "B0"
+   ],
+   "text": "SUMP-VARIANCE is eleven crowns in a district assessment for a district that is not in the district register.\n\nIt takes most of a day to get down there and the last two hundred metres are a condemned outflow pipe."
+  },
+  {
+   "id": "cathedral",
+   "names": [
+    "the cathedral",
+    "unblinking eye",
+    "eye",
+    "ecclesiarchy",
+    "alms",
+    "vhail",
+    "eccl"
+   ],
+   "to": "cathedral",
+   "cost": 3,
+   "has": [
+    "B0"
+   ],
+   "text": "ECCL/ALMS is a disbursement account at the Cathedral of the Unblinking Eye, which is the fourth-largest structure on this world and takes nine thousand confessions a day."
+  },
+  {
+   "id": "crase",
+   "names": [
+    "crase",
+    "her office",
+    "lord-inquisitor",
+    "the office",
+    "yolanda"
+   ],
+   "to": "crase_office",
+   "cost": 1,
+   "requires": [
+    "CRASE_ASKED_FOR_YOU"
+   ],
+   "blocked": "Crase is where Crase always is and has not asked for you.",
+   "text": "Up one tier, to an office with two chairs and no ornaments in it."
+  },
+  {
+   "id": "gallery",
+   "names": [
+    "ferrum",
+    "the gallery",
+    "shift nine",
+    "descent",
+    "ferrum gallery",
+    "gallery-9"
+   ],
+   "to": "ferrum",
+   "cost": 4,
+   "requires": [
+    "DECOY_PURSUED"
+   ],
+   "blocked": "GALLERY-9 is a manufactorum with eleven thousand people in it and you have no standing to walk into Shift Nine and no reason anybody would accept.",
+   "text": "Fourteen days: three interrogations, a coolant map, and a shift roster read four different ways until it stopped agreeing with itself."
+  },
+  {
+   "id": "smuggled",
+   "names": [
+    "the meeting",
+    "smuggled",
+    "sarn",
+    "the foreman",
+    "shift nine"
+   ],
+   "to": "ferrum",
+   "cost": 4,
+   "requires": [
+    "SARN_MEETING_BOUGHT"
+   ],
+   "blocked": "There is nobody in the Ferrum Gallery you have any way of reaching.",
+   "text": "Four people who do not exist move you through a Gallery that has never once checked a face against a card.\n\nNo assault, no enforcers, and nobody at all who is going to be standing on the wet side of a coolant door at the eighth minute."
+  }
+ ],
+ "clues": {
+  "B0": {
+   "id": "B0",
+   "names": [
+    "the files",
+    "four files",
+    "case-files",
+    "his dockets",
+    "the four"
+   ],
+   "label": "Four of Vosk's case-files left open for eleven weeks: Fenn's custody, a sump variance, a Cathedral alms account, Gallery 9",
+   "store": "either",
+   "reconciliation": 1,
+   "file_text": "FILED. CLASS: DECEASED'S OPEN MATTERS / INVESTIGATIVE LEAD. INDEXED. REQUISITION-ELIGIBLE.\n\nThe cogitator indexes four file names and offers, helpfully, to reopen all four under your authority, which would make them your open matters and searchable as such.\n\nYou have just told the archive which four things Hadrian Vosk was looking at.",
+   "note_text": "You write the four names out by hand: FENN/CUSTODY, SUMP-VARIANCE, ECCL/ALMS, GALLERY-9.\n\nFour words in a book in your coat. Nobody can search it, including you, which is going to be irritating for eleven weeks and then once, exactly once, it is going to be the only reason you are still alive."
+  }
+ },
+ "strings": {
+  "no_such_thing": "Nothing here by that name. Most of what was here is in a crate on Stack Theta.",
+  "already_read": "You have looked twice. It is eight days cold.",
+  "no_such_exit": "You have four names and no map. Whatever you do next you will do because you decided to, and nothing in this room is going to suggest it."
+ },
+ "terminal": true
+}

@@ -17,6 +17,7 @@ const (
 	CodeLive     = "C9-F4-D2"    // Choir of Cantor hardcopy dispatch manifests
 	CodeForward  = "D2-F4-C9"    // Munitorum drainage requisition ledgers
 	CodeDispatch = "0997.4-1188" // the dispatch itself, if you came back from the Choir with its number
+	CodeLyle     = "CASMIR LYLE" // the ordinate whose signature is on a purge order
 )
 
 func NewArchive() *Archive {

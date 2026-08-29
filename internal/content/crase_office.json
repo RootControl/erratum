@@ -1,0 +1,197 @@
+{
+ "id": "crase_office",
+ "title": "THE LORD-INQUISITOR'S OFFICE",
+ "date": "0997.4.228",
+ "clock_at": "08h00",
+ "terminal": true,
+ "revisit": "Her office. A dossier on the desk, and a woman who has been useful to you for a fortnight.",
+ "intro": "She has been useful for a fortnight.\n\nA transport writ fixed in an afternoon when the Munitorum said nine days. An\ninformant flagged as unreliable before you wasted a week on him. A note asking\nafter Bez's cough, in her own hand, which she did not have to send.\n\nAnd on the eleventh night, at the third hour, an Arbites hold on tier two that\nyou were pulled out of by a Lord-Inquisitor who had been woken up and did not\nmention it afterwards.\n\nThere is a dossier on the desk when you come in. She does not push it across.\n\n\"Sit down,\" Crase says. \"I want to ask you for something and I want to do it\nproperly, which means you get to say no.\"",
+ "look": "An office with two chairs and no ornaments in it.\n\nThe DOSSIER on the desk, not pushed across.\nInquisitor CRASE, who has been useful for a fortnight.",
+ "objects": [
+  {
+   "id": "dossier",
+   "names": [
+    "the dossier",
+    "file",
+    "gallery",
+    "evidence",
+    "brief",
+    "ferrum"
+   ],
+   "careless": "A dossier on the Ferrum Gallery. Thick. Somebody has worked on this for months and it was not started this week.",
+   "careful": "It is good work. That is the first thing and it does not stop being the thing.\n\nFourth-generation genestealer infestation in Shift Nine of the Ferrum Gallery. Into three shift-councils and the coolant guild. Birth-defect returns bent four ways across nineteen years; medicae records that stop being medicae records in 'ninety-two; a shift foreman whose personnel file has been amended eleven times by four different offices.\n\nThe evidence is real, it is thorough, and it is correct. There is a cult in the Ferrum Gallery and it has been there for four generations and somebody is going to have to go down there.\n\nNone of that is in question. What is in question is why this dossier is on this desk in this fortnight.",
+   "clue": "B13a"
+  }
+ ],
+ "npcs": [
+  {
+   "id": "crase2",
+   "names": [
+    "yolanda",
+    "lord-inquisitor",
+    "her",
+    "crase"
+   ],
+   "title": "Inquisitor Yolanda Crase",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask,\" Crase says. \"I've asked you for something; you're owed a few.\"",
+   "portrait": "Inquisitor Yolanda Crase. Six years Lord-Inquisitor, a fortnight of small kindnesses, and a dossier she has not pushed across the desk.",
+   "greeting": "\"I'm not going to dress this up and I'm not going to order you,\" Crase says. \"I could. I'm not going to.\n\n\"There is a genestealer cult in the Ferrum Gallery. Fourth generation, into three shift-councils and the coolant guild, and it has been there since before either of us held a rosette. It is real, the evidence is in that folder, and it is the largest single thing on this world that anybody can actually do something about.\n\n\"It will take you three weeks and it will probably work.\"\n\nShe folds her hands.\n\n\"Hadrian's business is eleven weeks old and cold and it has got you nowhere in a fortnight. I am asking you to put it down and go and do this one.\"",
+   "reprise": "She waits. She is not going to ask twice and she is not going to sulk.",
+   "unknown": "\"I don't know,\" Crase says. \"I'd find out, if it mattered.\"",
+   "deflect": [
+    "\"Not today,\" she says, and means it kindly."
+   ],
+   "disposition": {
+    "flags": [
+     "DECOY_PURSUED",
+     "DECOY_REFUSED"
+    ],
+    "default": ""
+   },
+   "topics": [
+    {
+     "id": "why_now",
+     "names": [
+      "why now",
+      "why me",
+      "the timing",
+      "this fortnight",
+      "why this"
+     ],
+     "text": "\"Because it's ready and you're the officer with the time.\"\n\nIt is a completely adequate answer. It is the answer she would have given at any point in the last six years about anything, and it is true.\n\n\"And Hadrian?\"\n\n\"Hadrian is dead, and I have read your file notes, and there is nothing in them.\" She says it gently and it lands like a slap because it is accurate. \"You have a savant who contradicts himself, a purge order from before you were born, and a Cardinal who has been selling confession for forty years — which is real, and which you should file, and which has nothing whatever to do with a man shooting himself in a sealed room.\n\n\"I am not managing you. I am telling you what your fortnight looks like from this desk.\""
+    },
+    {
+     "id": "evidence",
+     "names": [
+      "is it real",
+      "the cult",
+      "shift nine",
+      "genestealer",
+      "the evidence"
+     ],
+     "text": "\"It is real,\" Crase says, \"and I want you to satisfy yourself of that rather than take it from me.\"\n\nSo you do. It takes ninety minutes and she does not interrupt once.\n\nThe returns are bent. The medicae records stop. The foreman's file has been amended eleven times by four offices and two of the offices no longer exist. There is a fourth-generation infestation in Shift Nine of the Ferrum Gallery and it has been there for eighty years and it is going to have to be dealt with by somebody.\n\nEverything in the folder is true.\n\nThat is not the same as it being the reason it is on the desk, and you are going to spend a long time not being able to separate those two things.",
+     "sets": [
+      "GALLERY_VERIFIED"
+     ]
+    },
+    {
+     "id": "tail",
+     "names": [
+      "the tail",
+      "surveillance",
+      "followed",
+      "lift log",
+      "sub-level nine",
+      "watching me"
+     ],
+     "requires": [
+      "CRASE_SURVEILLED"
+     ],
+     "text": "You put the lift log in front of her.\n\nCrase reads it, and does not pretend to be surprised, and does not stop doing it either.\n\n\"Yes,\" she says. \"Since the fourteenth. Two of my people, in rotation, and a third on the Spire when you go up.\"\n\n\"You didn't tell me.\"\n\n\"No.\" She sets the log down. \"You are an Inquisitor of one fortnight's standing who has been in an Arbites hold at the third hour, in a condemned outflow pipe in a district that does not exist, and in a Cardinal's private confessional alone. I have lost one Inquisitor this month.\n\n\"I am not sorry and I am not going to stop.\"\n\nShe looks at you with an expression you have seen once before, in a doorway, at the fourth hour.\n\n\"You'd do the same,\" she says. \"You will do the same.\""
+    },
+    {
+     "id": "bez",
+     "names": [
+      "the sergeant",
+      "oduya",
+      "her cough",
+      "the note",
+      "bez"
+     ],
+     "text": "\"I had a note from the medicae deck,\" Crase says. \"Not about you — about the Sergeant. Ostro is not supposed to send those and sends them anyway, which is why I like him.\n\n\"Fourteen months.\"\n\nShe does not make a speech about it.\n\n\"She won't take a discharge and I won't offer her one, because offering it is the same as saying it out loud in front of her, and she has arranged twenty-six years around not having that conversation.\n\n\"Use her. She'd rather be used than looked after. But do not let her carry anything up a stair for you and then tell yourself she volunteered.\""
+    }
+   ],
+   "beats": [],
+   "shows": [],
+   "acts": [
+    {
+     "id": "accept",
+     "names": [
+      "accept",
+      "take it",
+      "agree",
+      "yes",
+      "the gallery",
+      "take the brief"
+     ],
+     "blocks": [
+      "DECOY_PURSUED",
+      "DECOY_REFUSED"
+     ],
+     "sets": [
+      "DECOY_PURSUED"
+     ],
+     "counters": {
+      "CRASE_STANDING": 3
+     },
+     "cost": 4,
+     "text": "You take it.\n\nFourteen days. It is real work and it is good work and you are good at it, and there is a genuine fourth-generation infestation in Shift Nine and by the end of it there is not.\n\nCrase is delighted with you in a way she has not been since the antechamber, and says so, and means it.\n\nWhen you come back up, Hadrian Vosk has been dead for five weeks and the flush order for the Rows is dated day forty and day forty was eleven days ago.\n\n[ DECOY_PURSUED — CRASE_STANDING +3 ]"
+    },
+    {
+     "id": "refuse",
+     "names": [
+      "refuse",
+      "decline",
+      "no",
+      "say no",
+      "keep going",
+      "stay on it"
+     ],
+     "blocks": [
+      "DECOY_PURSUED",
+      "DECOY_REFUSED"
+     ],
+     "sets": [
+      "DECOY_REFUSED",
+      "CRASE_SURVEILLED",
+      "SUBLEVEL_NINE_SEEDED"
+     ],
+     "counters": {
+      "CRASE_STANDING": -2
+     },
+     "text": "You say no.\n\nCrase nods once, takes the dossier back, and says \"right\" in a completely ordinary voice, and then asks whether you have eaten.\n\nThat is the entire conversation. There is no speech and no reproach and nothing further is said about it, that day or any other.\n\nWhat happens instead, over the following week:\n\nYour requisitions come back about forty per cent slower. Two of Vosk's old contacts stop answering. A note arrives asking after the Sergeant's cough, in Crase's own hand, warm and unforced.\n\nAnd the Crown lift log records your rosette at sub-level nine at 04:12.\n\nYou were asleep at 04:12, in a chair, in a room with the door bolted, and you know that because you woke with the bolt still across.\n\nThere is no sub-level nine in the Adamant Crown. There are eight. You have counted them. You count them again on the way down and there are eight.\n\n[ DECOY_REFUSED ]"
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "board",
+   "names": [
+    "back",
+    "out",
+    "chambers",
+    "board",
+    "return",
+    "up"
+   ],
+   "to": "standing_board",
+   "cost": 1,
+   "text": "Out, and down one tier, to a room with no shadow in it."
+  }
+ ],
+ "clues": {
+  "B13a": {
+   "id": "B13a",
+   "names": [
+    "dossier",
+    "the gallery",
+    "gallery dossier",
+    "shift nine",
+    "the brief",
+    "cult"
+   ],
+   "label": "Crase's Ferrum Gallery dossier — a real fourth-generation infestation, thoroughly evidenced, offered this fortnight",
+   "store": "either",
+   "reconciliation": 1,
+   "file_text": "FILED. CLASS: XENOS / CULT — ACTIVE. INDEXED. REQUISITION-ELIGIBLE.\n\nThe cogitator indexes it in four seconds and offers to open it as your principal matter, which would supersede the Vosk file, which is dormant.\n\nIt phrases this as a convenience.",
+   "note_text": "You write down what is in it and, underneath, the date it was compiled, and underneath that the date it was put on the desk.\n\nThe first two are eleven months apart. The second and third are a fortnight.\n\nEverything in the folder is true. That is not the same as being the reason it is on the desk, and you are not going to be able to separate those two things for a long time."
+  }
+ },
+ "strings": {
+  "no_such_thing": "An office with two chairs and no ornaments in it.",
+  "already_read": "You have read it twice. She is waiting.",
+  "no_terminal": "Her terminal, not yours. She would let you. That is not the point."
+ }
+}
