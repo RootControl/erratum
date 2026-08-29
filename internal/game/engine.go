@@ -149,7 +149,13 @@ func (s *State) travel(arg string) ([]string, int) {
 		}
 		var names []string
 		for _, e := range s.Room.Exits {
+			if e.Hidden {
+				continue
+			}
 			names = append(names, strings.ToUpper(e.ID))
+		}
+		if len(names) == 0 {
+			return []string{s.S("no_such_exit")}, 0
 		}
 		return []string{"GO where? " + strings.Join(names, ", ") + "."}, 0
 	}
@@ -318,6 +324,9 @@ func (s *State) examine(arg string) ([]string, int) {
 		return []string{"Examine what?"}, 0
 	}
 	o := s.Room.Find(arg)
+	if o != nil && !s.gatesMet(o.Gate) {
+		o = nil
+	}
 	if o == nil {
 		// People are things you can look at, and looking at one costs what
 		// looking at anything else costs — once.
@@ -343,6 +352,9 @@ func (s *State) examine(arg string) ([]string, int) {
 	case 2:
 		var out []string
 		out = append(out, o.Careful)
+		for _, f := range o.Sets {
+			s.Set(f)
+		}
 		if o.Clue != "" {
 			s.Grant(o.Clue)
 			c := s.Clue(o.Clue)
@@ -356,6 +368,9 @@ func (s *State) examine(arg string) ([]string, int) {
 
 func (s *State) take(arg string) ([]string, int) {
 	o := s.Room.Find(arg)
+	if o != nil && !s.gatesMet(o.Gate) {
+		o = nil
+	}
 	if o == nil {
 		return []string{s.S("no_such_thing")}, 0
 	}
@@ -366,7 +381,9 @@ func (s *State) take(arg string) ([]string, int) {
 		return []string{"You already have it."}, 0
 	}
 	s.Carried[o.ID] = true
-	s.Set("HAS_VOSK_NOTEBOOK")
+	for _, f := range append(append([]string{}, o.Sets...), o.TakeSets...) {
+		s.Set(f)
+	}
 	return []string{o.TakeText}, 1
 }
 
@@ -421,7 +438,9 @@ func (s *State) note(arg string) ([]string, int) {
 	s.storeClue(id, StoreBook)
 	s.Set(id + "_PHYSICAL")
 	s.Set(id + "_HELD")
-	s.Add("VERITY", 1)
+	if !s.Has(id + "_SALVAGED") {
+		s.Add("VERITY", 1)
+	}
 	s.storeHabit("STORE_HABIT_LEDGER")
 	s.Notebook = append(s.Notebook, c.Label)
 	if c.NoteText != "" {
@@ -643,6 +662,14 @@ func (s *State) query(code string) ([]string, int) {
 		}
 		s.Grant("B10")
 		return []string{s.S("alms_routing")}, 1
+	}
+	if strings.Contains(code, "THETA") || strings.Contains(code, "EFFECTS") ||
+		strings.Contains(code, "CRATES") || strings.Contains(code, "HOLDING") {
+		if !s.Has("ROOM_READ_PARTIAL") || s.Has("ROOM_READ_FULL") {
+			return []string{s.S("vault_none")}, 1
+		}
+		s.Set("THETA_KNOWN")
+		return []string{s.S("theta_manifest")}, 1
 	}
 	if strings.Contains(code, "CANTICA") || strings.Contains(code, "PRIORITY-BLACK") ||
 		strings.Contains(code, "KADMON") {

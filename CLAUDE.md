@@ -7,8 +7,7 @@ THE ERRATUM — a playable vertical slice of a terminal investigation game
 The repo is half design document, half prototype. `STORY_BIBLE.md` and
 `ACT_I.md` / `ACT_II.md` / `ACT_III.md` are the source of truth for content and
 vocabulary; `main.go` + `internal/` implement all of Act I (scenes 1.1–1.10)
-and every scene of Act II except 2.0b, which is optional. Act III is not
-started. When the code and the act documents disagree about a name, a
+and every scene of Act II. Act III is not started. When the code and the act documents disagree about a name, a
 flag or a fact, the documents win — and `STORY_BIBLE.md` §12 CANON LOCKS wins
 over the rest of the bible.
 
@@ -47,9 +46,9 @@ first command is eaten was a misreading of the same artefact.
   chronological order, which is what a scene with no `date` inherits from:
   - Act I: `arrival`, `antechamber`, `room`, `vaux_study`, `medicae`,
     `adjutant`, `arch`, `choir`
-  - Act II: `board`, `safehouse`, `workshop`, `delta`, `choir_settlement`,
-    `annexe`, `rows`, `cathedral`, `confessional`, `crase_office`, `ferrum`,
-    `cylinder_vault`
+  - Act II: `board`, `safehouse`, `workshop`, `delta`, `theta`,
+    `choir_settlement`, `annexe`, `rows`, `cathedral`, `confessional`,
+    `crase_office`, `ferrum`, `cylinder_vault`
 
   Plus `strings.json` for the defaults every scene inherits, `content.go` (the
   loader and its validator) and `npc.go` (the dialogue types). All authored
@@ -427,5 +426,35 @@ them, one test per guarantee, and those assertions are meant to be permanent.
   to that test's `engine` map only when the engine really is the writer —
   `CIPHER_COMPLETE` and `KADMON_ADDRESS` are deliberately not in it, because
   2.10's acts and B20's own `sets` write them.
+- **One door in the game is `hidden`.** `Exit.Hidden` keeps Stack Theta out of
+  the list a bare `GO` prints; it still opens to its own name. 2.0b is
+  documented as never signposted to anyone, and a door that offers itself is a
+  signpost. Its other gate is `THETA_KNOWN`, written by requisitioning the
+  effects manifest from the Vault — the discovery is a query, which is the verb
+  the game has spent two acts training the player on, and nothing anywhere
+  points at it. Do not add a second hidden exit without the same kind of
+  reason.
+- **Objects gate, and a closed object is absent.** `Object` embeds `Gate` like
+  everything else; `examine` and `take` treat a gate-failing object as though
+  it were not in the room, because a refusal would tell the player there is
+  something in the crate. `Object.Sets` fires on the careful look and
+  `Object.TakeSets` on the taking — reading a dead man's longhand off his desk
+  is not the same as walking out with it, and `HAS_VOSK_NOTEBOOK` used to be a
+  line in `take()` that named one object.
+- **A clue salvaged in Theta is worth one `VERITY` less.** The cage objects set
+  `<ID>_SALVAGED` and `note()` skips the award for those. Four days late and
+  one remove from the room is not the same as reading it off the floor with the
+  body still in it, and nothing on screen says so.
+- **The Reconciliation-55 symptom lands in 2.0b, where it costs something.**
+  `reconstruct` needs the five signs recorded *and* `below RECONCILIATION 55`;
+  past that, `reconstruct_short` fires instead and the Act I file comes back
+  thin — four scene captures where there were eleven, the autopsy entry at 190
+  words, *no residue was detected* where it said *no toxin, no coercion residue
+  and no psychic trace*. Nothing has been struck, there is no amendment mark,
+  and Ending E closes without a line of text saying it did.
+- **`vault_none` lives in `strings.json` now.** It was authored in the chambers
+  only, so every Act II query for a code the Vault does not know rendered
+  `[missing string: vault_none]` at the standing board. Shared refusals belong
+  in the shared table; a scene overrides only when the refusal is a beat.
 - Prose style: second person, short sentences under pressure, Imperial
   vocabulary used casually and never explained. See `STORY_BIBLE.md` §9.

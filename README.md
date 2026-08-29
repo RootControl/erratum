@@ -109,7 +109,7 @@ drives it headlessly.
 go test ./internal/game/
 ```
 
-A hundred and twenty-seven tests, one per design guarantee:
+A hundred and thirty-nine tests, one per design guarantee:
 
 | Test | Asserts |
 |---|---|
@@ -231,6 +231,13 @@ A hundred and twenty-seven tests, one per design guarantee:
 | `TestTheTestimonyCannotBeFiled` | the template is correct, the field is right, and the player closes it |
 | `TestTheVaultConfirmsWhatNobodyAsked` | nobody confirms a nil return, and something in the hive does it twice |
 | `TestTheErratumIsOneUse` | spending it on a person is silent, and nothing says what it just cost |
+| `TestThetaIsNeverOffered` | the one hidden door in the game; a bare `GO` does not list it, for anybody |
+| `TestTheArchiveCanReachThePaperAndNotTheBoots` | seven crates on the return, nine in the cage, and no line for footwear |
+| `TestClosedCratesReadAsAbsent` | a sealed crate is not in the room; a refusal would say there was something in it |
+| `TestSalvagedCluesAreWorthLess` | four days late is not the same as reading it off the floor, and nothing says so |
+| `TestFourSignsIsNotFive` | he did not leave a message that could be partly read |
+| `TestTheCaseFileComesBackShort` | the file is thin, nothing has been struck, and Ending E closes in silence |
+| `TestVaultRefusesEverywhere` | the Vault's null answer was authored in one scene and rendered a marker in the rest |
 
 `TestTrustingPlaythrough` also asserts the archive never prints the words
 `DELETED` or `ERROR`. That assertion is the thesis of the whole game and it
@@ -242,8 +249,8 @@ should stay in the suite forever.
 internal/content/   arrival, antechamber, room, vaux_study, medicae,
                     adjutant, arch, choir (Act I); board, safehouse, workshop,
                     delta, choir_settlement, annexe, rows, cathedral,
-                    confessional, crase_office, ferrum, cylinder_vault
-                    (Act II); plus
+                    theta, confessional, crase_office, ferrum,
+                    cylinder_vault (Act II); plus
                     strings.json for shared defaults, and the loader — all
                     authored prose is data, dialogue included
 internal/game/      state, flags, scenes, command engine, dialogue, archive
@@ -253,9 +260,7 @@ internal/ui/        the cogitator. Deliberately has no vocabulary for
 
 ## What is not built yet
 
-**Act II scene 2.0b**, the holding cage — optional by design, and the only
-late route to `ROOM_READ_FULL`, since decrypting Vosk's testimony deliberately
-does not grant it. Most of the systems those scenes need are in — scene dates,
+**Act III**, and nothing else. Every scene of Acts I and II is playable. Most of the systems those scenes need are in — scene dates,
 counter gates, drift as equipment condition with its own accrual rules,
 Reconciliation removing options rather than closing them, per-scene
 conversations for a person who appears in both acts, and the store habit the

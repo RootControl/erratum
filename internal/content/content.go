@@ -50,6 +50,9 @@ var workshopJSON []byte
 //go:embed delta.json
 var deltaJSON []byte
 
+//go:embed theta.json
+var thetaJSON []byte
+
 //go:embed choir_settlement.json
 var rustChoirJSON []byte
 
@@ -95,7 +98,12 @@ const (
 )
 
 // Object is a thing in a room that can be named at the terminal.
+//
+// Objects gate like everything else. A crate that has not been unsealed is not
+// a thing the player can look at, and a closed object reads as absent rather
+// than as refused, because a refusal is a signpost.
 type Object struct {
+	Gate
 	ID       string   `json:"id"`
 	Names    []string `json:"names"`
 	Careless string   `json:"careless"`
@@ -104,6 +112,13 @@ type Object struct {
 	BodyOnly bool     `json:"body_only"`
 	Takeable bool     `json:"takeable"`
 	TakeText string   `json:"take_text"`
+	// Sets are flags that become true on the careful look, when the player has
+	// actually handled the thing. TakeSets are the ones that need it in their
+	// coat: reading a dead man's longhand off his desk is not the same as
+	// walking out of his chambers with it, and the engine used to know the
+	// difference for exactly one object, by name.
+	Sets     []string `json:"sets"`
+	TakeSets []string `json:"take_sets"`
 }
 
 // Clue is a piece of evidence. Sign marks the five signs Vosk arranged.
@@ -290,6 +305,7 @@ func Load() (*Game, error) {
 		{"safehouse", safehouseJSON},
 		{"workshop", workshopJSON},
 		{"delta", deltaJSON},
+		{"theta", thetaJSON},
 		{"rust_choir", rustChoirJSON},
 		{"annexe", annexeJSON},
 		{"the_rows", rowsJSON},
@@ -407,8 +423,22 @@ func (g *Game) validate() error {
 			}
 		}
 		for i := range r.Objects {
-			if o := &r.Objects[i]; o.Clue != "" && g.Clue(o.Clue) == nil {
+			o := &r.Objects[i]
+			if o.Clue != "" && g.Clue(o.Clue) == nil {
 				return fail("%s: object %s grants unknown clue %q", id, o.ID, o.Clue)
+			}
+			for _, c := range o.Has {
+				if g.Clue(c) == nil {
+					return fail("%s: object %s gates on unknown clue %q", id, o.ID, c)
+				}
+			}
+			if err := checkGate(id, "", "object "+o.ID, o.Gate, fail); err != nil {
+				return err
+			}
+		}
+		for _, e := range r.Exits {
+			if err := checkGate(id, "", "exit "+e.ID, e.Gate, fail); err != nil {
+				return err
 			}
 		}
 		for _, c := range r.Grants {
