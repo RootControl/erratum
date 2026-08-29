@@ -1,0 +1,237 @@
+{
+ "id": "delta",
+ "title": "LEXICANUM VAULT — STACK DELTA",
+ "date": "0997.4.221",
+ "clock_at": "11h20",
+ "npc_refs": [
+  "safehouse/fenn2"
+ ],
+ "revisit": "Stack Delta. Repeaters every eighty metres, clicking twice, as they have for two hundred years. Habrach at the aisle head. Fenn beside you.",
+ "intro": "Stack Delta is four kilometres of shelving on nine levels and there is a\nsignal repeater every eighty metres, because the Lexicanum was built to be\nqueried from anywhere in it.\n\nThere is no vox-shadow in this building. Not a corner of it. It is the most\ncomprehensively covered structure on Vardan Prime and it was designed that way\nby people who were proud of it.\n\nYou have brought Aleth Fenn into it, on purpose, because the Vault's copy of a\nthing and Fenn's copy of a thing are the only two copies you can put side by\nside, and one of them is four kilometres of paper that somebody else maintains.\n\nClerk-Ordinate Selm Habrach meets you at the aisle head, thirty years in this\nstack, alarmed to see a rosette and quite unable to stop talking.\n\nAbove the aisle, the repeater clicks twice.\n\nIt has done that every eighty seconds for two hundred years.",
+ "look": "Four kilometres of shelving on nine levels, and a repeater every eighty\nmetres.\n\nThe SHELF at C9-F4-D2, which is where a dead man's furniture pointed.\nThe REPEATER above the aisle, clicking twice.\nClerk-Ordinate HABRACH, alarmed, talkative.\nSavant FENN, beside you, delighted to be useful, entirely uncovered.",
+ "objects": [
+  {
+   "id": "repeater",
+   "names": [
+    "the repeater",
+    "click",
+    "relay",
+    "coverage",
+    "signal"
+   ],
+   "careless": "A signal repeater, mounted above the aisle, one of about fifty on this level. It clicks twice, every eighty seconds, and has since the Vault was built.",
+   "careful": "Two hundred years of clicking, and a maintenance plate, and a Mechanicus stamp, and nobody in this building has heard it since their first week.\n\nYou stand under it with a savant who has been correcting himself for two days and you count the interval, which is eighty seconds, and you look up the aisle at the next one, eighty metres away.\n\nThere is no point in this stack more than forty metres from a repeater. That was the design. The men who built it were proud of it and wrote so, on the plate."
+  },
+  {
+   "id": "shelf",
+   "names": [
+    "c9-f4-d2",
+    "the shelf",
+    "manifests",
+    "dispatch manifests",
+    "block c"
+   ],
+   "careless": "Block C, Level 9, Aisle F4, Shelf D2. The Choir of Cantor hardcopy dispatch manifests, current cycle. A dead man's furniture pointed here.",
+   "careful": "The manifests are in order, complete, countersigned, and correct.\n\nThe cycle 0997.4 volume is present and undamaged. It contains every dispatch the Choir received in the cycle, in sequence, by number.\n\n1186. 1187. 1189. 1190.\n\nThere is no gap. The numbers do not skip; they simply run, and 1188 is not a number that has been removed from between two others, it is a number the sequence never had.\n\nThis is not a hole. Somebody would have had to make a hole. This is a page that has only ever had what is on it."
+  },
+  {
+   "id": "habrach",
+   "names": [
+    "clerk",
+    "selm",
+    "ordinate",
+    "clerk-ordinate"
+   ],
+   "careless": "Clerk-Ordinate Selm Habrach. Thirty years in Stack Delta, alarmed by the rosette, quite unable to stop talking.",
+   "careful": "He is frightened of you and it is making him indiscreet rather than careful, which is not the usual direction.\n\nThirty years of shelving, and a man who has arranged his understanding of thirty years around one sentence which he says the way other men say a prayer, and which he is going to say to you within about four minutes."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "habrach",
+   "names": [
+    "clerk",
+    "selm",
+    "ordinate",
+    "clerk-ordinate"
+   ],
+   "title": "Clerk-Ordinate Selm Habrach",
+   "lists_topics": false,
+   "topic_refusal": "\"You may ask, sir, you may certainly ask, I'm only a clerk-ordinate—\"",
+   "portrait": "Clerk-Ordinate Selm Habrach. Thirty years in Stack Delta. Frightened of the rosette, and frightened in the direction of talking rather than the direction of not.",
+   "greeting": "\"Inquisitor — sir — Clerk-Ordinate Habrach, thirty years, Delta, I have your tier here, second tier, that's aisle-level returns, that's — yes.\"\n\nHe has a slate and is holding it like a shield.\n\n\"You'll be wanting the manifests. Everyone's been wanting the manifests. I'll say now that they're complete, sir, they're complete and they're countersigned and I've walked them myself twice this month, which I mention because the last officer who came down here implied otherwise and I've thought about it since.\"\n\nHe has not been asked a question yet.",
+   "reprise": "He hovers at the aisle head, holding the slate, hoping to be useful and dreading being asked to decide something.",
+   "unknown": "\"I couldn't say, sir. That's not Delta.\"",
+   "deflect": [
+    "\"That'd be a determination, sir, and I'm a clerk-ordinate.\""
+   ],
+   "topics": [
+    {
+     "id": "reconciled",
+     "names": [
+      "withheld",
+      "the lord-prefect",
+      "kesh",
+      "missing",
+      "gaps",
+      "1188",
+      "the number"
+     ],
+     "text": "\"Nothing is withheld, sir.\" Habrach says it immediately and with enormous relief, the way a man produces the one sentence he has ready. \"The Lord-Prefect doesn't withhold. Nothing is withheld. Things are *reconciled*.\"\n\n\"Reconciled.\"\n\n\"When two records disagree.\" He is nodding. \"You can't have two. A shelf can't hold two of a thing, sir, that's not an archive, that's a — that's two archives. So they're reconciled, and what's left is the one that's right, and that's the whole of it, and it's been the whole of it for thirty years.\"\n\nHe says it as a comfort. He is comforting *himself*; he has been saying it to himself for three decades and it has worked every time.\n\n\"There isn't a 1188, sir. It isn't gone. It was never in the sequence. I've walked it twice.\"",
+     "sets": [
+      "HABRACH_RECONCILED"
+     ]
+    },
+    {
+     "id": "memo",
+     "names": [
+      "variance",
+      "reduction",
+      "the memo",
+      "instructions",
+      "her office",
+      "circular",
+      "prefect's memo"
+     ],
+     "requires": [
+      "HABRACH_RECONCILED"
+     ],
+     "blocks": [
+      "VHAIL_BROKEN"
+     ],
+     "grants": [
+      "B23"
+     ],
+     "counters": {
+      "FENN_DRIFT": 0
+     },
+     "text": "\"Who reconciles, Clerk-Ordinate?\"\n\n\"Oh — the office does, sir, it's an office function.\" He is already reaching for the slate, because a procedural question is a question he can answer, and answering it will make you go away. \"There's a standing instruction. Variance reduction. It's the Lord-Prefect's own circular, 'nineteen, and it's not — sir, it isn't secret, it's *filed*, it's the most filed thing in this building—\"\n\nHe shows you.\n\n**VARIANCE REDUCTION IN THE SECTOR RECORD — A NOTE ON PRACTICE**\n*A. KESH, LORD-PREFECT. 0979.*\n\nEleven pages. Dry, careful, entirely reasonable, and about how a sector archive should behave when two of its records disagree: which is retained, which is struck, who countersigns, and — page nine, the one you read four times — the observation that a record which disagrees with *no other record* is not a variance and cannot be reduced.\n\nWhich means that if you want to remove something without leaving a variance, you must remove every record that would have disagreed with its absence.\n\nIt is a memo about filing practice. It is also, read once and never again, a complete and honest description of method, published in 979, by a woman who is still alive and still holds the office.\n\n[ B23 HELD — KESH_IDENTIFIED ]",
+     "sets": [
+      "KESH_IDENTIFIED"
+     ],
+     "repeat": "\"It's the circular, sir. Nineteen. It's filed.\""
+    },
+    {
+     "id": "sterile",
+     "names": [
+      "variance",
+      "reduction",
+      "the memo",
+      "instructions",
+      "her office",
+      "circular",
+      "prefect's memo"
+     ],
+     "requires": [
+      "VHAIL_BROKEN"
+     ],
+     "text": "\"Certainly, sir. The variance reduction circular.\"\n\nHabrach is courteous, prompt and entirely useless. He produces a requisition slip, fills it out correctly, tells you it will be with you inside four hours, and offers to walk you to the aisle head.\n\nHe has not looked at the slate once. He is not frightened of you any more. Somewhere in the last forty hours the Lord-Prefect's office has been briefed on an Inquisitor asking questions in Stack Delta, and everybody in this building has been told, courteously, to be helpful.\n\nEvery requisition you place here from now on will be honoured, on time, and clean."
+    },
+    {
+     "id": "himself",
+     "names": [
+      "thirty years",
+      "your work",
+      "the stack",
+      "you",
+      "walked it"
+     ],
+     "text": "\"Thirty years in Delta, sir. Nine levels, four kilometres, and I've walked all of it, most of it more than once.\"\n\n\"Do you read them?\"\n\n\"No, sir.\" He is faintly shocked. \"You don't read them. You *shelve* them. Reading them would be — that's not a clerk-ordinate function, sir, a clerk-ordinate who reads is a clerk-ordinate with an opinion about the shelf.\"\n\nHe straightens the slate.\n\n\"I'll tell you what I do do, though, and I don't mind saying it. I know the *weight*. Level nine, aisle F, I could tell you within four volumes what should be on any metre of it, because I have carried all of it. That's thirty years. That's not nothing.\"\n\nIt is not nothing. It is, in fact, the only index in this building that nobody has been able to edit, and it is standing in front of you being embarrassed about itself.",
+     "sets": [
+      "HABRACH_WEIGHT"
+     ]
+    }
+   ],
+   "beats": [],
+   "shows": [],
+   "acts": []
+  }
+ ],
+ "exits": [
+  {
+   "id": "chambers",
+   "names": [
+    "back",
+    "board",
+    "chambers",
+    "return",
+    "standing board",
+    "out",
+    "up"
+   ],
+   "to": "standing_board",
+   "cost": 3,
+   "text": "Out of the stack, past fifty repeaters, into a lift."
+  }
+ ],
+ "clues": {
+  "B23": {
+   "id": "B23",
+   "names": [
+    "the circular",
+    "variance reduction",
+    "kesh's memo",
+    "the note on practice",
+    "979"
+   ],
+   "label": "Kesh's variance-reduction circular, 0979 — to remove a thing without leaving a variance, remove everything that would have disagreed with its absence",
+   "store": "either",
+   "reconciliation": 2,
+   "file_text": "FILED. CLASS: ADMINISTRATUM PRACTICE / STANDING INSTRUCTION. INDEXED.\n\nThe cogitator notes, helpfully, that the document is already held, has been held since 0979, is unrestricted, and has been requisitioned four times in forty-seven years.\n\nIt records that you are the fifth.",
+   "note_text": "You copy out page nine by hand, which takes a while, because it is the driest page of the eleven and you want the exact words.\n\n*A record which disagrees with no other record is not a variance and cannot be reduced.*\n\nIt is a memo about filing. It is also a method, published, unrestricted, forty-seven years old, and read four times."
+  },
+  "B7": {
+   "id": "B7",
+   "names": [
+    "alms",
+    "cathedral dates",
+    "disbursement",
+    "true dates",
+    "811"
+   ],
+   "label": "The true Cathedral alms disbursement dates — nine thousand tonnes unaccounted in 811",
+   "store": "either",
+   "reconciliation": 1,
+   "file_text": "FILED. CLASS: ECCLESIARCHY / DISBURSEMENT VARIANCE. INDEXED. ATTRIBUTED: FENN, A., SAVANT.\n\nThe cogitator cross-references the savant's figures against the Cathedral's returns and reports NO VARIANCE, which is correct, because the Cathedral's returns are what it has.",
+   "note_text": "Nine thousand tonnes, 811, and the seven years either side of it, in your hand, off a savant, in a building with a repeater every eighty metres.\n\nYou have written down a number that a man said out loud under coverage. You are going to find out what that is worth."
+  },
+  "B6a": {
+   "id": "B6a",
+   "names": [
+    "sump",
+    "population variance",
+    "nineteen years",
+    "the district",
+    "sump-variance"
+   ],
+   "label": "Nineteen years of sump district population variance — the district is smaller than its own tithe",
+   "store": "either",
+   "reconciliation": 1,
+   "file_text": "FILED. CLASS: MUNITORUM LIAISON / ASSESSMENT VARIANCE. INDEXED.\n\nIndexed against the sump district assessment, which has been amended twice this year for clerical accuracy, most recently eleven days ago.",
+   "note_text": "Nineteen years of a district paying tithe on more people than live in it, in a hand nobody can search.\n\nEleven crowns of variance, which is what Vosk had a file open on, and which is the smallest true thing in this investigation."
+  },
+  "B18": {
+   "id": "B18",
+   "names": [
+    "headers",
+    "outgoing",
+    "his dispatches",
+    "what he sent",
+    "vosk's traffic"
+   ],
+   "label": "Vosk's outgoing dispatch headers — eleven weeks of them, all to addresses that return nothing",
+   "store": "either",
+   "reconciliation": 2,
+   "file_text": "FILED. CLASS: DECEASED'S TRAFFIC / ROUTING. INDEXED. REQUISITION-ELIGIBLE.\n\nThe cogitator resolves each address in turn and reports, for every one of them, NO SUCH ROUTE, and files that as a completed lookup.\n\nIt has not failed. It has answered.",
+   "note_text": "Eleven weeks of headers in your own hand: routing classes, cycle numbers, and eleven addresses that resolve to nothing at all.\n\nHe was writing to somewhere. Somewhere took delivery, because a dispatch that fails comes back, and none of these came back."
+  }
+ },
+ "strings": {
+  "no_such_thing": "Nothing here by that name, and there are four kilometres of here.",
+  "already_read": "You have looked twice. There is a savant beside you under a repeater.",
+  "no_terminal": "There are terminals every forty metres and every one of them is the Lexicanum's own.\n\nWhatever you want to ask, ask it upstairs."
+ },
+ "while": [
+  "IN_STACK_DELTA"
+ ]
+}

@@ -1,0 +1,523 @@
+{
+ "id": "rust_choir",
+ "title": "THE RUST CHOIR — CONDEMNED OUTFLOW, SUMP DISTRICT NINE",
+ "date": "0997.4.224",
+ "clock_at": "16h30",
+ "revisit": "The pipe, the cistern, the smell of spoiled protein and standing water. Four hundred people who are not on any list.",
+ "intro": "Sump District Nine does not appear in the district register, which is the\nfirst thing about it, and the second is that eleven thousand people live in it.\n\nThe way in is a condemned outflow pipe two metres across, and at the end of it\na gate-warden named Sesh who is nineteen and has a length of rebar and a\ncompletely level stare.\n\nBehind her, the recitation cistern: forty metres of dry municipal water tank\nwith four hundred people in it and a smell you will not describe to anybody\nafterwards.\n\nNobody down here has an entitlement. No entitlement means no ration allocation,\nbecause a ration allocation is issued against a name, so the Rust Choir eats\n**spill** — condemned bulk from the Gallery commissaries and Cathedral alms\nsurplus, which must physically be written off *somewhere*, and which is written\noff here.\n\nThey are fed by the paperwork of their own non-existence.\n\nSesh looks at the rosette on your coat for about four seconds, and then at\nyour sidearm, and waits.",
+ "look": "A condemned outflow pipe, a gate, and forty metres of dry cistern.\n\nGate-warden SESH, nineteen, with a length of rebar.\nFour hundred people in the CISTERN, waiting for shift-end.\nThe dry ANNEXE beyond, where MOTT does business.\nThe SPILL, stacked: condemned bulk, alms surplus, written off somewhere.",
+ "objects": [
+  {
+   "id": "spill",
+   "names": [
+    "food",
+    "bulk",
+    "protein",
+    "surplus",
+    "stores",
+    "condemned"
+   ],
+   "careless": "Stacked crates of condemned bulk and alms surplus, sorted by hand. It is the settlement's entire food supply and none of it was given to anybody.",
+   "careful": "Every crate has a write-off docket stapled to it and every docket is correct.\n\nThe Gallery commissaries condemn bulk on a schedule and the Cathedral disburses alms surplus on a schedule, and both have to be able to show that the tonnage went *somewhere*, and a condemned-bulk consignment that arrives nowhere is a variance, and a variance is a thing somebody has to reduce.\n\nSo it comes down the pipe. Eleven thousand people are alive because two accounting systems require a destination, and the destination does not have to exist to be written on a docket.\n\nThey are fed by the paperwork of their own non-existence and they know it, and they have a word for the food, and the word is *spill*."
+  },
+  {
+   "id": "cistern",
+   "names": [
+    "tank",
+    "the choir",
+    "people",
+    "recitation",
+    "forty metres"
+   ],
+   "careless": "Forty metres of dry municipal water tank, and four hundred people in it, sitting, waiting for shift-end.",
+   "careful": "It is a tank because a tank has good acoustics and no doors and one entrance you can watch.\n\nThey come at shift-end. Not all eleven thousand — four hundred, on a rota, which means every person here does this about once a fortnight, which means the whole settlement carries it.\n\nWhat they carry is a census. It is stored in mouths.\n\nWhen you ask why, the woman nearest you looks at you as though you have asked why anybody breathes, and says: *because they can't get at a mouth.*"
+  },
+  {
+   "id": "sesh",
+   "names": [
+    "warden",
+    "gate",
+    "girl",
+    "rebar",
+    "gate-warden"
+   ],
+   "careless": "Gate-warden Sesh, nineteen, a length of rebar, and a completely level stare. She has been looking at your sidearm since you came round the bend in the pipe.",
+   "careful": "She is not afraid of you and she is not posturing. She has done the arithmetic that everybody down here does on everybody who comes down the pipe, which is: what does this one cost us if it goes wrong, and what does it cost us to refuse it.\n\nShe has decided you are probably survivable. That is the highest opinion anybody in this settlement is going to form of you today and it is not an insult.\n\nThe rebar is not for you. The rebar is for the two men who came down last month with a length of pipe and no records."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "mott",
+   "names": [
+    "nine-fingers",
+    "the fixer",
+    "him",
+    "informant"
+   ],
+   "title": "Mott Nine-Fingers",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask,\" Mott says. \"Asking's free. It's the only thing down here that is.\"",
+   "portrait": "Mott Nine-Fingers. No record, no name in any file, and therefore not prosecutable, not surveillable, not conscriptable and not protectable. Cheerful about all four.",
+   "greeting": "Mott takes the rosette off your coat.\n\nHe does it before you have finished walking up, without hurry and without asking, and he turns it over twice in the light and hands it back.\n\n\"Beautiful bit of work,\" he says. \"Means nothing here. I'm telling you that as a courtesy, not a threat — you'll spend the whole visit waiting for it to work otherwise, and you'll be annoyed, and annoyed people make bad trades.\n\n\"You can't prosecute me. Nothing to charge. You can't have me followed, there's nothing to follow. You can't conscript me and you can't protect me and you can't put me on a list, because the list would need a name.\n\n\"What you *can* do is owe me.\"\n\nHe grins. He has nine fingers.\n\n\"Favours. Not coin — coin needs a ledger and a ledger needs a name. Favours are the only currency in the sector that doesn't leave a mark, which is why I'm rich.\"",
+   "reprise": "Mott waits, entirely comfortable, in a dry annexe off a condemned pipe.",
+   "unknown": "\"Don't know. Wouldn't guess for free.\"",
+   "deflect": [
+    "\"Costs a favour, that one.\"",
+    "\"Ask me when you owe me more.\""
+   ],
+   "disposition": {
+    "flags": [
+     "CHOIR_TRUSTED",
+     "CHOIR_HOSTILE"
+    ],
+    "default": ""
+   },
+   "topics": [
+    {
+     "id": "namebank",
+     "names": [
+      "name-bank",
+      "namebank",
+      "the bank",
+      "dead",
+      "cards",
+      "ration cards",
+      "the elder"
+     ],
+     "text": "\"The most valuable thing down here is a corpse with a live ration card,\" Mott says.\n\nHe is entirely matter-of-fact. \"Fellow dies, he's still on file — file doesn't know. So somebody goes on being him. Draws the ration, answers the census, keeps the card warm. Some of these cards have had four men in them.\n\n\"There's an elder up the annexe whose whole office is remembering which dead man each living man currently is. Three hundred and some, in her head, and she's the only reason any of it works, and when she goes it'll take a fortnight to sort out and some people will just stop eating.\"\n\n\"That's fraud, Mott.\"\n\n\"That's *filing*,\" he says, delighted. \"Same as yours. Difference is ours keeps people alive and yours doesn't, and mine's in a woman's head where nobody can get at it.\"\n\nHe watches you take that in.\n\n\"You've been down here nine minutes and you've had the whole of it. Bodies kept breathing on paper for decades, because paper is where breathing is decided.\"",
+     "sets": [
+      "NAMEBANK_SEEN"
+     ]
+    },
+    {
+     "id": "himself",
+     "names": [
+      "what were you",
+      "who are you",
+      "before",
+      "adept",
+      "your name",
+      "struck"
+     ],
+     "text": "\"Adept third class, Vault intake, nineteen years.\"\n\nFlat. One line, no colour on it at all, and then he stops and looks at you to see whether you are going to be the sort who asks again.\n\nYou do not ask again.\n\n\"Good,\" Mott says, and something in him settles about a degree. \"The ones who push get the long version, and the long version's a performance, and I hate doing it.\"",
+     "sets": [
+      "MOTT_WAS_ADEPT"
+     ]
+    },
+    {
+     "id": "himself_more",
+     "names": [
+      "what were you",
+      "who are you",
+      "before",
+      "adept",
+      "your name",
+      "struck",
+      "nineteen years"
+     ],
+     "requires": [
+      "MOTT_WAS_ADEPT"
+     ],
+     "at_least": {
+      "MOTT_FAVOURS": 2
+     },
+     "text": "He looks at what you owe him, and decides.\n\n\"Vault intake, Stack Delta, nineteen years. I logged things in. That's it, that's the job — a thing arrives, you check it against the manifest, you mark it, it goes up the stack.\n\n\"Nineteen years and I was good at it, and I'll tell you what good is: good is knowing the *weight*. You can feel a wrong consignment in your arms before you've read a word of it.\"\n\nHe flexes the hand with the missing finger, absently.\n\n\"One came in nineteen years ago that was the wrong weight. So I read it. Which is not a thing an intake clerk does, and I did it anyway, and then instead of marking it in I put it inside my coat.\n\n\"Two days later there's no district nine, no Ordinate Lyle to complain to, and no Mott. I'd been struck in the same instrument as forty thousand other people and I'm the only one who noticed, because I'm the only one who was standing in the room where it happened."
+    },
+    {
+     "id": "order",
+     "names": [
+      "the order",
+      "purge order",
+      "vellum",
+      "the paper",
+      "what you took",
+      "document"
+     ],
+     "requires": [
+      "MOTT_WAS_ADEPT"
+     ],
+     "text": "\"It's the only paper in the sector with my name on it,\" Mott says.\n\n\"Show me.\"\n\n\"In a minute. You'll want to know what you're looking at first.\" He is not stalling; he is doing this properly, which is how he does everything. \"It's a purge order. Vellum, because vellum was what intake used for anything above grade four in 'seven. Nineteen years old.\n\n\"And it doesn't order a purge. Everybody hears *purge order* and thinks bodies. It authorises the removal of *record* for Sump District Nine. That's all it says and it says it very carefully.\n\n\"Nobody was killed, Inquisitor. Nobody was moved. Forty thousand people were left exactly where they were, and the paperwork that said they were there was taken away, and that turned out to be sufficient.\"\n\nHe taps the table.\n\n\"My name's on the back. Not the front — the back. Intake clerk's mark, third from the bottom. That's the whole of me now: three letters on the back of the thing that killed me.\"",
+     "sets": [
+      "MOTT_DESCRIBED_ORDER"
+     ]
+    },
+    {
+     "id": "favours",
+     "names": [
+      "favour",
+      "what do you want",
+      "price",
+      "owe",
+      "currency",
+      "trade"
+     ],
+     "text": "\"You'll owe me,\" Mott says. \"That's the whole system. Not coin — I've said. Favours.\n\n\"And before you ask: no, I won't tell you what for. I don't decide what a favour is until I need it. That's not me being clever, that's the *point* — a favour with a price on it is a contract, and a contract is a record, and I have gone to some trouble.\"\n\n\"When do you collect?\"\n\n\"When I need it.\" Entirely cheerful. \"Might be never. Might be a Tuesday. You'll know, because I'll be standing in front of you asking, and you'll pay, because the day you don't is the day I stop being useful to you and start being a man with nothing to lose who knows where you sleep.\"\n\nHe says the last part in exactly the same friendly voice as the rest, which is the only reason it lands.\n\n[ OWE him, if you want anything down here ]",
+     "sets": [
+      "MOTT_TERMS"
+     ]
+    },
+    {
+     "id": "lyle",
+     "names": [
+      "casmir lyle",
+      "lyle",
+      "who signed",
+      "ordinate",
+      "the signature"
+     ],
+     "requires": [
+      "PURGE_ORDER_SEEN"
+     ],
+     "text": "\"Ordinate Casmir Lyle,\" Mott says. \"Seat four-one-one, Administratum Vardan, serial on the front, all of it in order.\n\n\"I've never met him. Nobody's met him. I checked, nineteen years ago, when I still had the standing to check, and I've never been able to check since.\"\n\nHe watches you decide to look it up.\n\n\"Go on then,\" he says. \"You've got a rosette and a second-tier query. I'd genuinely like to know.\"\n\nHe is not being sardonic. He has wanted somebody with clearance to ask this question for nineteen years, and he has been unable to be that person, because the asking requires a name."
+    }
+   ],
+   "beats": [
+    {
+     "id": "the_choir",
+     "after_topics": 2,
+     "sets": [
+      "B6_HEARD"
+     ],
+     "grants": [
+      "B6"
+     ],
+     "text": "Shift-end.\n\nFour hundred people in a cistern, and not one of them singing a hymn.\n\n\"Ovric Hald, struck 807. Marra Hald, struck 807. Boy Hald, no given name, struck 807.\" A pause the width of a breath, and four hundred voices take the next one.\n\nIt runs forty minutes.\n\nYou do the arithmetic without meaning to: at four seconds a name, this is a settlement that spends most of an hour a day being its own archive.\n\nThree thousand one hundred and fourteen names. Somebody tells you the number afterwards, unprompted, the way you would tell a visitor the height of a building.\n\nThere is no copy. There has never been a copy. It is stored in four hundred mouths, in rota, and it is refreshed every fortnight by the only medium in the Thessaline sector that nothing has ever been able to reach."
+    },
+    {
+     "id": "stupid",
+     "after_topics": 1,
+     "requires": [
+      "IN_THE_ROWS",
+      "CHOIR_FED"
+     ],
+     "blocks": [
+      "MOTT_SAID_STUPID"
+     ],
+     "sets": [
+      "MOTT_SAID_STUPID"
+     ],
+     "text": "Mott watches the last of it go down the terrace.\n\n\"That was stupid,\" he says.\n\nHe lets it sit for about four seconds.\n\n\"Do it again in forty days, will you.\"\n\nHe does not thank you. Nobody down here thanks anybody, because gratitude is a record of a transaction and they do not keep those."
+    }
+   ],
+   "shows": [],
+   "acts": [
+    {
+     "id": "surrender",
+     "names": [
+      "surrender",
+      "give up sidearm",
+      "hand over",
+      "disarm",
+      "surrender sidearm",
+      "give her"
+     ],
+     "blocks": [
+      "CHOIR_TRUSTED",
+      "CHOIR_HOSTILE"
+     ],
+     "sets": [
+      "CHOIR_TRUSTED"
+     ],
+     "counters": {
+      "ILARIA_TRUST": 1
+     },
+     "text": "You hand Sesh your sidearm.\n\nShe takes it, checks the chamber the way somebody taught her properly, and puts it in a crate with four others and a rag over the top, and gives you a chit with a mark on it that means nothing to anybody but her.\n\n\"Back on the way out,\" she says.\n\nThat is the whole of it. Nobody remarks on it and nobody thanks you, and by the time you reach the cistern the story has arrived ahead of you, because a settlement of eleven thousand people who cannot be written down is a settlement that talks very fast.\n\nBehind you, on the way in, Vesse Talm — who has been silent since the pipe — says: \"That was well done, sir.\"\n\nShe does not say anything else for an hour.\n\n[ CHOIR_TRUSTED — ILARIA_TRUST +1 ]"
+    },
+    {
+     "id": "force",
+     "names": [
+      "force",
+      "push past",
+      "rosette",
+      "show the rosette",
+      "compel",
+      "order her"
+     ],
+     "blocks": [
+      "CHOIR_TRUSTED",
+      "CHOIR_HOSTILE"
+     ],
+     "sets": [
+      "CHOIR_HOSTILE"
+     ],
+     "text": "You show Sesh the rosette and tell her to stand aside.\n\nShe stands aside.\n\nShe does it immediately and completely, without a flicker, because she is nineteen and has done the arithmetic and the answer is that a dead Inquisitor in a condemned pipe costs the Rust Choir eleven thousand people. She will not forget having done it and neither will anybody watching, which is everybody.\n\nYou get in. You get full access to the cistern, the annexe and the spill, and nobody obstructs you at any point.\n\nEverything you ask for down here, for the rest of this act, is going to cost twice what it would have cost, and nobody is ever going to tell you that is why.\n\n[ CHOIR_HOSTILE ]"
+    },
+    {
+     "id": "earn",
+     "names": [
+      "owe",
+      "owe him",
+      "a favour",
+      "take a favour",
+      "borrow",
+      "accept terms"
+     ],
+     "requires": [
+      "MOTT_TERMS"
+     ],
+     "counters": {
+      "MOTT_FAVOURS": 1
+     },
+     "text": "\"Right,\" Mott says. \"One.\"\n\nHe does not write it down. Nobody writes anything down. He looks at you for about a second and a half and files it wherever he files things, and you are quite certain that in nineteen years he has never once been wrong about what he is owed.\n\n[ you owe Mott ]"
+    },
+    {
+     "id": "defer",
+     "names": [
+      "defer",
+      "defer the flush",
+      "delay",
+      "stop the flush",
+      "postpone",
+      "ask crase"
+     ],
+     "requires": [
+      "IN_THE_ROWS",
+      "CLOCK_DAY40_ARMED"
+     ],
+     "blocks": [
+      "CHOIR_DEFERRED"
+     ],
+     "refused": "There is nothing scheduled that you know about.",
+     "sets": [
+      "CHOIR_DEFERRED"
+     ],
+     "counters": {
+      "CRASE_STANDING": -2
+     },
+     "cost": 3,
+     "text": "You ask Crase to have the flush deferred.\n\nShe does it inside forty minutes and does not ask you why. That is the part you will think about. She does not ask a single question — not what the district is, not who is on it, not why an Inquisitor eight days into her first case is spending standing on a sanitation schedule. She says \"of course\" and it is done and she asks after your sleep.\n\nSixty days. Not cancelled; deferred, on a form, by a Lord-Inquisitor, with her name on it.\n\nIt feels wonderful for about a week.\n\nIn Act III somebody is going to lay that form on a table in front of you, and it is going to have her signature on it, and it is going to be a receipt."
+    },
+    {
+     "id": "alms",
+     "names": [
+      "alms",
+      "divert",
+      "divert alms",
+      "surplus",
+      "cathedral surplus",
+      "feed them"
+     ],
+     "requires": [
+      "IN_THE_ROWS"
+     ],
+     "has": [
+      "B7"
+     ],
+     "blocks": [
+      "CHOIR_FED",
+      "ALMS_SPENT"
+     ],
+     "refused": "You have nothing on the Cathedral worth leaning on.",
+     "sets": [
+      "CHOIR_FED",
+      "ALMS_SPENT"
+     ],
+     "cost": 3,
+     "text": "You use what you have on the Cathedral to move alms surplus down the pipe. Not a great deal of pressure is required; a disbursement office that is nine thousand tonnes light in 811 is an office that would rather not discuss 811.\n\nThe surplus comes. It will keep coming for as long as the lever holds.\n\nThat lever is now spent. It was the thing you were going to put in front of Cardinal Ostrem Vhail, and it is instead four months of protein for a drainage terrace, and you will not get it back.\n\nNobody in this hive will ever know you did this, including the people you did it to."
+    },
+    {
+     "id": "account",
+     "names": [
+      "account",
+      "discretionary",
+      "empty the account",
+      "vosk's account",
+      "money",
+      "pay"
+     ],
+     "requires": [
+      "IN_THE_ROWS"
+     ],
+     "blocks": [
+      "CHOIR_FED",
+      "TRANSPORT_DEBT"
+     ],
+     "sets": [
+      "CHOIR_FED",
+      "TRANSPORT_DEBT"
+     ],
+     "cost": 3,
+     "text": "You empty Vosk's discretionary account.\n\nEleven thousand crowns, accumulated over two hundred and eighty-seven years by a man who did not spend money, and which passed to you with the rosette and the retinue and the room.\n\nIt buys bulk. Real bulk, not spill — food that was grown to be eaten by somebody, delivered by a haulier who takes the fee and asks nothing, because a haulier who is paid in advance does not need a manifest.\n\nThe account is now empty.\n\nIn about four months you are going to need to move four people off this world at short notice, and you are going to have to do it on credit, and the credit is going to have a name on it."
+    },
+    {
+     "id": "cards",
+     "names": [
+      "cards",
+      "death-cards",
+      "forge",
+      "forge cards",
+      "children",
+      "the bank"
+     ],
+     "requires": [
+      "IN_THE_ROWS",
+      "NAMEBANK_SEEN"
+     ],
+     "blocks": [
+      "CHOIR_FED"
+     ],
+     "refused": "You do not know how anybody down here eats.",
+     "sets": [
+      "CHOIR_FED",
+      "CARDS_FORGED"
+     ],
+     "counters": {
+      "MOTT_FAVOURS": 3
+     },
+     "cost": 4,
+     "text": "Two hundred children go into the name-bank.\n\nThe elder does the matching, which takes her two days and which she does not complain about once. Two hundred dead men with warm cards, and two hundred children who are now, on paper, forty-one-year-old sanitation labourers with nineteen years of service, and who will therefore be evacuated ahead of a scheduled flush, because a scheduled flush notifies occupants of record.\n\nGetting them past the district checkpoint takes a serving Militarum sergeant with a clean record and a rosette behind her.\n\nBez does it in one night, on foot, four trips.\n\nShe does not mention the shoulder and she does not mention the lung, and afterwards she stands on a landing for eleven minutes getting her breath and tells you she is fine, and Ostro told you fourteen months and this was a week of it.\n\n[ you owe Mott three ]"
+    },
+    {
+     "id": "buy_meeting",
+     "names": [
+      "buy a meeting",
+      "the foreman",
+      "buy meeting",
+      "smuggle me in",
+      "sarn"
+     ],
+     "requires": [
+      "DECOY_REFUSED",
+      "MOTT_TERMS"
+     ],
+     "blocks": [
+      "SARN_MEETING_BOUGHT"
+     ],
+     "refused": "There is nobody in the Ferrum Gallery you have any reason to want to meet.",
+     "sets": [
+      "SARN_MEETING_BOUGHT"
+     ],
+     "counters": {
+      "MOTT_FAVOURS": 2
+     },
+     "cost": 2,
+     "text": "\"A foreman on Shift Nine,\" Mott says. \"Forty-one years on the line. Yes. That's two.\"\n\nHe does not ask why, and he does not ask what she is, and you are fairly sure he already knows both.\n\nIt takes him nine days and it is arranged the way everything down here is arranged, which is that four people who do not exist move you through a Gallery that has never once checked a face against a card.\n\nYou get forty minutes in a chapel at four degrees with no enforcers, no assault, and nobody who is going to die at the eighth minute.\n\n[ you owe Mott two ]"
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "annexe",
+   "names": [
+    "dry annexe",
+    "the annexe",
+    "back room",
+    "in",
+    "office"
+   ],
+   "to": "annexe",
+   "cost": 1,
+   "at_least": {
+    "MOTT_FAVOURS": 1
+   },
+   "blocked": "The dry annexe is where Mott does business and you have not done any business.\n\nHe is perfectly friendly about it. He simply does not move.",
+   "text": "Up the annexe, which is dry, which down here is the whole of what a room can be."
+  },
+  {
+   "id": "rows",
+   "names": [
+    "the rows",
+    "terrace",
+    "drainage terrace",
+    "down",
+    "nine hundred"
+   ],
+   "to": "the_rows",
+   "cost": 1,
+   "has": [
+    "B4"
+   ],
+   "blocked": "There is a drainage terrace below the cistern with nine hundred people living on it. There is no reason to go down there and nothing to ask them.",
+   "text": "Down the terrace steps, which are not steps, into the Rows."
+  },
+  {
+   "id": "crown",
+   "names": [
+    "back",
+    "out",
+    "up",
+    "crown",
+    "chambers",
+    "board",
+    "the pipe"
+   ],
+   "to": "standing_board",
+   "cost": 3,
+   "text": "Back up the pipe, and the smell comes with you for two days."
+  }
+ ],
+ "clues": {
+  "B6": {
+   "id": "B6",
+   "names": [
+    "census",
+    "the choir",
+    "3114",
+    "the names",
+    "oral census",
+    "recitation"
+   ],
+   "label": "The oral census — three thousand one hundred and fourteen struck names, held in four hundred mouths",
+   "store": "neither",
+   "refusal": "You take the notebook out.\n\nThe nearest voices falter — not all at once, in a spreading ring, the way water goes still.\n\nInside about nine seconds four hundred people have stopped, and the cistern is forty metres of silence with you standing in the middle of it holding a pencil, and nobody is angry and nobody says anything and every one of them is looking at you.\n\nSesh takes the notebook out of your hand, not roughly, and gives it back closed.\n\n\"It's in mouths,\" she says, \"because they can't get at a mouth.\"\n\nThere is no version of this you may have. Not filed, not written, not copied, not remembered on paper by an Inquisitor with a good memory and good intentions. The instant it exists anywhere else it stops being the thing that has kept it alive for nineteen years.\n\nYou put the pencil away. It takes about a minute before anybody starts again."
+  },
+  "B4": {
+   "id": "B4",
+   "names": [
+    "purge order",
+    "the order",
+    "vellum",
+    "the document",
+    "district nine order"
+   ],
+   "label": "A purge order, vellum, 0978 — authorising removal of record for Sump District Nine, signed Ordinate Casmir Lyle",
+   "store": "either",
+   "reconciliation": 2,
+   "file_text": "FILED. CLASS: ADMINISTRATUM INSTRUMENT / HISTORIC. INDEXED. REQUISITION-ELIGIBLE.\n\nThe cogitator images the vellum, indexes the body text, and files it complete.\n\nIt is a true and faithful record of the document. It is searchable now, by anybody with standing, which is a great many people.",
+   "note_text": "You copy it out by hand, all of it, including the marks on the back, including the three letters third from the bottom.\n\nVellum does not amend. That is the entire reason it was used for anything above grade four in 'seven, and it is the reason this exists, and it is the reason a man with no name has kept it inside his coat for nineteen years.",
+   "sets": [
+    "PURGE_ORDER_SEEN"
+   ]
+  },
+  "B4b": {
+   "id": "B4b",
+   "names": [
+    "flush order",
+    "day 40",
+    "the rows order",
+    "forward-dated",
+    "the flush"
+   ],
+   "label": "A flush order for the Rows, forward-dated to day 40 — same seat, same hand",
+   "store": "either",
+   "reconciliation": 1,
+   "sets": [
+    "CLOCK_DAY40_ARMED"
+   ],
+   "file_text": "FILED. CLASS: MUNITORUM SANITATION / SCHEDULED WORKS. INDEXED.\n\nENTRY READS: OUTFLOW MAINTENANCE FLUSH, SUMP DISTRICT NINE, SCHEDULED.\n             NO OCCUPANCY OF RECORD. NO NOTIFICATION REQUIRED.\n\nThe second line is true. There is no occupancy of record.",
+   "note_text": "Day forty. Same seat, same hand, nineteen years apart, forward-dated.\n\nYou write the date down and then you sit with it for a while, because the man who signed this does not exist, and the flush is going to happen anyway, on time, by a maintenance crew who will be doing their jobs correctly."
+  },
+  "B5": {
+   "id": "B5",
+   "names": [
+    "the confirmation",
+    "courtesy note",
+    "null result",
+    "unrequested",
+    "the answer"
+   ],
+   "label": "A courtesy note confirming a null result you never asked to have confirmed — from a clerk who does not exist either",
+   "store": "either",
+   "reconciliation": 1,
+   "file_text": "FILED. CLASS: VAULT CORRESPONDENCE / COURTESY. INDEXED.\n\nThe cogitator files an unsolicited confirmation of a nil return, cross-references it to your query of forty minutes ago, and marks the matter closed and consistent.\n\nIt is consistent. That is what is wrong with it.",
+   "note_text": "You write down the exact wording, the timestamp, and the fact that you did not ask.\n\nA nil return is a nil return. Nobody confirms one. There is no procedure for confirming one and no office that does it and no form it comes on, and one arrived, forty minutes later, courteously, signed by a clerk-ordinate whose seat you have also now looked up.\n\nSomething in this hive answered a question you did not repeat."
+  }
+ },
+ "strings": {
+  "no_such_thing": "Nothing here by that name, and there is not much here at all.",
+  "already_read": "You have looked twice. Nobody down here is going to hurry you and nobody is going to help you.",
+  "no_terminal": "There is no cogitator in Sump District Nine, because there is no Sump District Nine.\n\nWhatever you want to ask the Vault, ask it from somewhere that exists.",
+  "read_room_locked": "Nothing here was arranged. Everything here is where it fell."
+ }
+}

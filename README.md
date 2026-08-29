@@ -1,8 +1,9 @@
 # THE ERRATUM — vertical slice
 
-**All of Act I is playable**, 1.1 through 1.10: six hours, the rosette, the
+**All of Act I is playable**, 1.1 through 1.10 — six hours, the rosette, the
 locked room, the synthesis, the Vaux interview, the door and the body, nothing
-to requisition, forty-one seconds, the Vault requisition and the Act I turn.
+to requisition, forty-one seconds, the Vault requisition and the Act I turn —
+and it closes on the Case Précis and opens into **Act II 2.0 through 2.8**.
 Go + Bubble Tea.
 
 It exists to prove eleven things are buildable before Act II is written:
@@ -107,7 +108,7 @@ drives it headlessly.
 go test ./internal/game/
 ```
 
-Fifty-one tests, one per design guarantee:
+Ninety-four tests, one per design guarantee:
 
 | Test | Asserts |
 |---|---|
@@ -129,6 +130,49 @@ Fifty-one tests, one per design guarantee:
 | `TestBezSaysItTwice` | she puts the sentence in the room twice and is still not "met" |
 | `TestActOneOpensInOrder` | 1.1 → 1.2 → 1.3 at 04h08, 04h42, 06h12, with the body untouched |
 | `TestVauxHasReadYourStatement` | the easy true thing said in 1.1 is the strongest line in the file in 1.5 |
+| `TestThePrecisCannotBePutDown` | four true paragraphs describing a day that did not happen, and no way to defer it |
+| `TestThePrecisHasThreeAnswers` | sign, annotate, refuse — and annotate needs a notebook you kept |
+| `TestActTwoOpensOnTheFarSide` | eight days later, same room, four files still open |
+| `TestIlariaWillNotComeIn` | the room has no shadow; she is describing an instrument reading |
+| `TestTheKadmonRecitation` | nine hundred million four hundred and twelve thousand, and then no such world |
+| `TestItIsNotTheRoom` | he does it again inside two metres of rockcrete, so it is not the shielding |
+| `TestDriftIsEquipmentCondition` | `CONCORDANCE OF RECORD: n/6`, never relabelled |
+| `TestIsolationIsATrade` | preserve the instrument by making it almost useless |
+| `TestTheAccusationVanishesAtTwentyFive` | past the threshold the option does not exist, and there is no gap |
+| `TestTheSmuggledVisitorHasNoForce` | no cordon, no writ, and the game says where the decision was made |
+| `TestThePurgeOrderOpensLyle` | the vellum is what makes a man who does not exist askable |
+| `TestNoTwoCluesShareAName` | the finder cannot see a collision, so there must not be one |
+| `TestEveryGatedFlagHasAWriter` | a gate on a flag nothing sets is a line that silently never happens |
+| `TestSarnHasTwoSubjectsAndAThird` | she will not discuss the brood, and has wanted to say the third thing for twenty years |
+| `TestThePurgesAreBookkeeping` | eleven years, following tithe reconciliation, not discovery |
+| `TestTheDeathCascadeIsDeterministic` | Fenn if brought, else Bez, else Vaux, else Ilaria |
+| `TestBezIsCalmAboutItIfSheKnows` | and the calm is worse, because you told her the number |
+| `TestWithdrawalIsAlwaysAvailable` | nobody dies, the cult expands, and no clue was behind the assault |
+| `TestTheRefuserCanBuyTheMeeting` | two favours, and no one on the wet side of a coolant door |
+| `TestTheVictoryBecomesARecordsPurge` | forty thousand relocated, and every part of it correct |
+| `TestTheWallsAreTheWrongThickness` | 400mm where the 641 plan says 210, and nobody measures a wall |
+| `TestRuseSaysItThreeTimes` | *"It's the fire main"*, twice, and then *"What do I do"* |
+| `TestIvritSellsCheaply` | he picks you because you are the first person he can safely be useful to |
+| `TestVhailJustifiesWithoutAdmitting` | denial straight to justification, with no admission in between |
+| `TestTheConfessionalIsTheTrap` | taken inside the instrument, and nothing happens, because he is not the author |
+| `TestTheQuerySlipMakesHimRedundant` | the whole thread is readable off an unmarked requisition in twenty minutes |
+| `TestTheTrunkKeepsRunning` | denounce, hold or kill — it runs that evening either way |
+| `TestTheGalleryBriefIsRealAndTimed` | the dossier is true, and that is not why it is on the desk |
+| `TestFedByTheirOwnNonExistence` | eleven thousand people eat what two accounting systems must write off somewhere |
+| `TestTheGateIsATrade` | surrender the sidearm, or force it and pay double for the rest of the act |
+| `TestTheCensusCannotBeRecorded` | `store: "neither"` — four hundred mouths, and writing it down stops them |
+| `TestThePurgeOrderRemovesRecordOnly` | nobody was killed, nobody was moved, and that was sufficient |
+| `TestTheAnnexeCostsAFavour` | he is perfectly friendly about it and does not move |
+| `TestTheArchiveAnswersAQuestionNobodyRepeated` | a nil return, confirmed, unasked, by a clerk who does not exist |
+| `TestHelpingBuysNothing` | four ways to help, all costly, and not one attaches a clue or a stat |
+| `TestTheCalendarOnlyMovesForward` | a scene's date is the earliest it can happen on |
+| `TestCaelBuiltItFirst` | the docket is three weeks old and the request field is empty |
+| `TestTheShroudIsAGiftWithALine` | drift at a third the rate, and position every eleven hours to a bench |
+| `TestThePlayerCanAffordTwo` | three sub-queries offered, two affordable, nothing counting them down |
+| `TestPastFourThereIsNothingLeft` | `FENN_INTACT` goes, and the game never says what that cost |
+| `TestHabrachHandsOverTheMethod` | the method is published, unrestricted, and has been read four times |
+| `TestTheSequenceNeverHadIt` | 1186, 1187, 1189, 1190 — not a hole; somebody would have had to make a hole |
+| `TestReconciliationRemovesRatherThanCloses` | past its threshold a subject is absent, not refused |
 | `TestTheSpireOpensTwoWays` | A2 or Crase's lead, and with neither there is nothing to go and ask |
 | `TestDrossGrantsWhatHeCanSurvive` | a release is a decision; a retrieval is a line in the day-book |
 | `TestFortyOneSeconds` | her own voice, off the lathe, in a language she does not know |
@@ -169,18 +213,28 @@ should stay in the suite forever.
 ## Layout
 
 ```
-internal/content/   arrival.json, antechamber.json, room.json,
-                    vaux_study.json, medicae.json, adjutant.json, arch.json,
-                    choir.json, plus strings.json for shared defaults, and
-                    the loader — all authored prose is data, dialogue included
+internal/content/   arrival, antechamber, room, vaux_study, medicae,
+                    adjutant, arch, choir (Act I); board, safehouse, workshop,
+                    delta, choir_settlement, annexe, rows, cathedral,
+                    confessional, crase_office, ferrum (Act II); plus
+                    strings.json for shared defaults, and the loader — all
+                    authored prose is data, dialogue included
 internal/game/      state, flags, scenes, command engine, dialogue, archive
 internal/ui/        the cogitator. Deliberately has no vocabulary for
                     "something is wrong": no glitch effects, no colour shifts.
 ```
 
-## What the slice deliberately does not have
+## What is not built yet
 
-Save/load, the player backgrounds (Lexmechanic / Provost / Penitent), the
+**Act II scenes 2.0b and 2.9–2.11**: the holding cage, Three Doors, the long
+way round, and the act turn. Most of the systems those scenes need are in — scene
+dates, counter gates, drift as equipment condition with its own accrual rules,
+Reconciliation removing options rather than closing them, per-scene
+conversations for a person who appears in both acts. Still to build: the
+Erratum as a one-use item, `MOTT_FAVOURS`, and the four remaining
+Reconciliation symptoms.
+
+Also: save/load, the player backgrounds (Lexmechanic / Provost / Penitent), the
 Reconciliation symptom system, and any content past the Act I turn. The clock
 is 40 seconds per timed action; the body leaves eight minutes after you first
 reach it and does not negotiate.

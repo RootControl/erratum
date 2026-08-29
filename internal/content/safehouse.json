@@ -1,0 +1,375 @@
+{
+ "id": "safehouse",
+ "title": "THE SAFEHOUSE — ADAMANT CROWN, SUB-LEVEL FOUR",
+ "date": "0997.4.219",
+ "sets": [
+  "FENN_INTACT"
+ ],
+ "revisit": "Two metres of rockcrete, no vox-plate, and a savant with a satchel of ledgers he does not need.",
+ "intro": "Two metres of rockcrete on every side and no vox-plate anywhere in it.\n\nIt is on no billet list. Vosk held it for nineteen years on a maintenance\nrequisition for a room that does not exist, which cost eleven crowns a year\nand required nobody's countersignature, and which is the single most\nprofessional thing you have ever seen anybody do.\n\nSavant Aleth Fenn has been in it for two days and has organised the shelving.\n\n\"Inquisitor. I've been thinking about the eighty-four days.\" He says it the\nway another man would say *good morning*. \"I haven't got anywhere. I'd like\nto be asked something I can get somewhere with.\"\n\nSergeant Oduya is on the door, out of the room, in the corridor.\n\nHer vox-bead is live. It is live because it is always live, because she is a\nserving sergeant on a protection detail and a bead that is off is a bead that\nis off when it matters, and nobody in this room has any reason at all to\nthink about it.",
+ "look": "A room with no windows, no plate, no socket and no shadow.\n\nSavant FENN at a folding table with a satchel of LEDGERS he does not need.\nA BEAD on Sergeant Oduya's collar, out in the corridor, live.\nTwo metres of rockcrete.",
+ "objects": [
+  {
+   "id": "bead",
+   "names": [
+    "vox-bead",
+    "vox",
+    "her bead",
+    "collar",
+    "oduya",
+    "bez",
+    "sergeant"
+   ],
+   "careless": "Sergeant Oduya's vox-bead, on her collar, in the corridor outside. Live, as it always is, as protection detail doctrine requires.",
+   "careful": "Standard Militarum pattern, short range, keyed to the Crown's relay net.\n\nThe safehouse is two metres of rockcrete with no plate in it. The corridor outside is not. A live bead four metres from an open door does not make this room networked, and it does not make it un-networked either; it makes it a room with a thread of coverage lying across the threshold like a draught under a door.\n\nYou have been in here twice this week with a savant and a live bead and it has not once occurred to you to think about it.\n\nIt has not occurred to Bez either, and she would be the first person in this hive to tell you if it had."
+  },
+  {
+   "id": "ledgers",
+   "names": [
+    "satchel",
+    "books",
+    "his ledgers",
+    "paper"
+   ],
+   "careless": "A satchel of ledgers Fenn brought with him and has not opened. He has them because an adjutant carries ledgers.",
+   "careful": "He has not opened one in two days. He will not. Everything in that satchel is a copy of something behind his eyes and the copies are worse.\n\nHe brought them because leaving them would have felt like leaving without his coat.\n\nIt is the only sentimental thing about Aleth Fenn and he would be baffled to hear it described that way."
+  },
+  {
+   "id": "fenn",
+   "names": [
+    "aleth",
+    "savant",
+    "him",
+    "implant"
+   ],
+   "careless": "Fenn at a folding table, cheerful, waiting to be asked something he can get somewhere with.",
+   "careful": "Two days in a room with no windows and he is entirely well. He sleeps, eats, and has organised the shelving of a safehouse that had no shelving.\n\nHe is the last complete copy of two decades of Thessaline that nothing in this sector can reach, and he is sitting in the one room in the Adamant Crown that nothing can hear, and he does not know either of those things about himself.\n\nYou have been treating him as a resource for eight days. He has been enjoying it enormously."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "fenn2",
+   "names": [
+    "fenn",
+    "aleth",
+    "savant",
+    "him"
+   ],
+   "title": "Savant Aleth Fenn",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask me anything. I mean that literally; I'm describing the arrangement, not being modest.\"",
+   "portrait": "Savant Aleth Fenn, two days in a windowless room, entirely well, organising shelving that did not previously exist.\n\nCONCORDANCE OF RECORD: 6/6.",
+   "greeting": "\"Right,\" Fenn says, and squares the folding table. \"What are we doing?\"\n\nHe has a stylus he will not use and a satchel he will not open, and he is happier than anybody else in this investigation.",
+   "reprise": "He waits, delighted, at a folding table.",
+   "unknown": "\"I don't have that,\" Fenn says, and looks briefly stricken.",
+   "deflect": [
+    "\"That's an opinion, Inquisitor. I don't do those.\""
+   ],
+   "topics": [
+    {
+     "id": "vardan",
+     "names": [
+      "subsector",
+      "vardan",
+      "worlds",
+      "coreward",
+      "the chain",
+      "neighbours"
+     ],
+     "text": "\"Vardan subsector. Four worlds.\" Fenn does not pause. \"Vardan Prime, which is us. Sarrow's Reach. Threnody. Ossuar's Gate.\n\n\"Four. Tithe grades Exactis Prima, Solutio Tertius, Solutio Tertius and Decuma Particular respectively, and I can give you two centuries of receipts on any of them if you have somewhere to be for an hour.\"\n\nHe is entirely certain. He is also, you notice afterwards, slightly quick — the way a man is quick when he has answered a question he was expecting.\n\nYou had not told him what you were going to ask.",
+     "sets": [
+      "FENN_NAMED_FOUR"
+     ]
+    },
+    {
+     "id": "kadmon",
+     "names": [
+      "kadmon veil",
+      "kadmon",
+      "the fifth",
+      "nine hundred million",
+      "coreward chain"
+     ],
+     "grants": [
+      "B1"
+     ],
+     "sets": [
+      "KADMON_HEARD"
+     ],
+     "cost": 2,
+     "text": "You ask him about Kadmon Veil.\n\n\"Kadmon Veil. Vardan subsector, coreward chain. Tithe grade Exactis Prima, assessed nine hundred million four hundred and twelve thousand souls, tithe paid in full 731, paid in full 732, paid in full 733, paid in full 73—\"\n\nHe says the number the way a man reads a shipping manifest. Too exact to be an estimate. Too calm to be a lie.\n\nThen his jaw does something. Nothing, really — a hitch you would miss if you were not watching his mouth.\n\n\"—there is no Kadmon Veil.\" Same breath. Same cheerfulness. \"The Vardan subsector holds four worlds and I have named all four. I'm sorry. Nine hundred and eleven million is a population figure but it isn't attached to anything. Sometimes a number gets loose.\n\n\"Shall I go again from the top?\"\n\nYou would not.\n\nYou write the number down. Paper, not the cogitator. Your hand is not steady and it does not matter, because handwriting is the only script in this hive that nothing else can read."
+    },
+    {
+     "id": "record",
+     "names": [
+      "735",
+      "terminates",
+      "the last entry",
+      "when",
+      "records end",
+      "ninety-one years"
+     ],
+     "requires": [
+      "KADMON_HEARD"
+     ],
+     "text": "\"You asked me for tithe receipts and I gave you three,\" Fenn says slowly. \"731, 732, 733. And then I stopped, and I said there was no such world.\n\n\"I should like to know what I was going to say next.\"\n\nHe works it out in front of you, out loud, with his hands flat on the folding table, and it takes him about forty seconds.\n\n\"There is a shape in the Vardan tithe aggregate,\" he says. \"The subsector total is four worlds' worth of receipts and it has been four worlds' worth since 735. Before 735 the aggregate is larger than the four worlds account for, by — \" a pause, not a hesitation, an arithmetic — \"by a consistent margin, for eighty-one years back, and the margin is Exactis Prima on a population of about nine hundred million.\n\n\"The aggregate does not have a fifth world in it, Inquisitor. It has a fifth world's *hole* in it, and the hole has an edge, and the edge is at 735.\n\n\"That's ninety-one years ago.\" He looks up. \"Is that useful? I can't tell whether that's useful.\""
+    },
+    {
+     "id": "again",
+     "names": [
+      "again",
+      "repeat",
+      "say it again",
+      "once more",
+      "go again"
+     ],
+     "requires": [
+      "KADMON_HEARD"
+     ],
+     "text": "You ask him to do it again.\n\n\"Certainly. Kadmon Veil. Vardan subsector, coreward chain, tithe grade Exactis Prima, assessed nine hundred million four hundred and twelve thousand souls—\"\n\nHe stops in exactly the same place.\n\n\"—there is no Kadmon Veil. The Vardan subsector holds four worlds. I'm sorry, Inquisitor, I've done that twice now, haven't I. That's careless.\"\n\nHe is not distressed. He believes he has made an error, and he cannot be shown otherwise, and you try for about a minute and then stop trying because watching it is worse than not knowing.\n\nTwice, in a room with two metres of rockcrete on every side.\n\nThe first time you were certain it was the room. It is not the room.\n\n[ B2 HELD ]",
+     "grants": [
+      "B2"
+     ]
+    },
+    {
+     "id": "himself",
+     "names": [
+      "your memory",
+      "how do you feel",
+      "are you well",
+      "the implant",
+      "you"
+     ],
+     "text": "\"Extremely well, thank you.\" He means it. \"Two days, no interruptions, a room nobody can get a vox into. I've been through the sump assessments back to 'ninety and found four errors, none of them mine.\n\n\"I should say I'm aware you're worried about me. Sergeant Oduya has asked me twice whether I'm sleeping, which for the Sergeant is practically an aria.\"\n\nHe smiles.\n\n\"Whatever it is, Inquisitor, it isn't happening to me from the inside. I'd know. It's the one thing I would know.\""
+    },
+    {
+     "id": "alms",
+     "names": [
+      "alms",
+      "cathedral",
+      "disbursement",
+      "811",
+      "ecclesiarchy",
+      "the alms account"
+     ],
+     "requires": [
+      "IN_STACK_DELTA"
+     ],
+     "grants": [
+      "B7"
+     ],
+     "counters": {
+      "FENN_DRIFT": 1
+     },
+     "cost": 2,
+     "text": "\"Alms disbursement, Cathedral of the Unblinking Eye, year 811,\" Fenn says, and stops, and looks at the ceiling like a man checking for rain.\n\nThe repeater above the aisle clicks twice.\n\n\"Year 811,\" he says again, warmly. \"A good year. Nothing unusual in it.\"\n\nThere were nine thousand tonnes unaccounted in 811. You know because he told you forty seconds ago, in a room with no vox in it, and you wrote it down.\n\nYou put the notebook in front of him. He reads his own figure in your handwriting, agrees that it is a very precise number, and cannot tell you where it came from.\n\nThen he gives you the seven years either side, complete, correct, and unaffected, because whatever this is does not take everything — it takes the thing you asked for.\n\n[ B7 HELD ]"
+    },
+    {
+     "id": "sump",
+     "names": [
+      "sump",
+      "variance",
+      "the district",
+      "population",
+      "eleven crowns",
+      "sump-variance"
+     ],
+     "requires": [
+      "IN_STACK_DELTA"
+     ],
+     "grants": [
+      "B6a"
+     ],
+     "counters": {
+      "FENN_DRIFT": 1
+     },
+     "cost": 2,
+     "text": "\"Sump district, nineteen years of assessment.\" Fenn is enjoying this one; it is arithmetic. \"Tithe paid on a hundred and forty thousand. Population returns for the same district, same years — a hundred and twenty-six thousand, hundred and twenty-four, hundred and twenty-one, and down.\n\n\"The district has been paying tithe on fourteen thousand people who are not in it, and the gap widens by about six hundred a year, and it has done for nineteen years.\"\n\nHe looks up, pleased.\n\n\"That's the eleven crowns, Inquisitor. That's the variance he had a file open on. It isn't eleven crowns of arithmetic error, it's eleven crowns of *the district being smaller than its own paperwork*.\"\n\nAbove the aisle the repeater clicks twice, and he does not stop, and you watch him not stop with more attention than the answer deserves.\n\n[ B6a HELD ]"
+    },
+    {
+     "id": "outgoing",
+     "names": [
+      "outgoing",
+      "his dispatches",
+      "what he sent",
+      "headers",
+      "traffic",
+      "gallery-9"
+     ],
+     "requires": [
+      "IN_STACK_DELTA"
+     ],
+     "grants": [
+      "B18"
+     ],
+     "counters": {
+      "FENN_DRIFT": 1
+     },
+     "cost": 2,
+     "text": "\"Outgoing traffic, Inquisitor Vosk, last eleven weeks.\" Fenn closes his eyes, which he does not usually need to do. \"Nineteen dispatches. I have the headers; I never had the content, nobody had the content, he wrote them by hand and carried them to the Spire himself.\n\n\"Routing classes: fourteen ordinary, four Vermilion, and one that I can't place at all and which I am going to describe to you rather than name, because I would like you to write down that I described it rather than named it.\"\n\nHe describes it. A routing class of a form he has read exactly once, in a Choir index, eleven weeks ago.\n\n\"Eleven of the nineteen went to addresses that resolve to nothing. Not *failed* — resolved, accepted, delivered, and the address is not a place. A dispatch that fails comes back, Inquisitor. None of these came back.\"\n\nThe repeater clicks. Fenn opens his eyes and says, in exactly the same cheerful voice, \"Nineteen dispatches, fourteen ordinary and five Vermilion, all to Crown addresses. Shall I go through them?\"\n\nYou already have the first version. In ink.\n\n[ B18 HELD ]"
+    }
+   ],
+   "beats": [
+    {
+     "id": "drift3",
+     "after_topics": 1,
+     "at_least": {
+      "FENN_DRIFT": 3
+     },
+     "blocks": [
+      "FENN_DRIFT_3_SEEN"
+     ],
+     "sets": [
+      "FENN_DRIFT_3_SEEN"
+     ],
+     "text": "\"—no, sorry, that isn't right,\" Fenn says.\n\nYou had not said anything he could disagree with. You had recited back to him, from your own notebook, a figure he gave you forty minutes ago, in order to check it.\n\n\"You've got nine thousand tonnes. It's nine hundred.\" He is entirely pleasant about it. \"It's an easy slip, they're the same digits. Would you like me to go through it again?\"\n\nYour notebook says nine thousand. Your notebook says it in your own hand, and you remember writing it, and you remember why.\n\nHe has begun correcting you."
+    },
+    {
+     "id": "drift5",
+     "after_topics": 1,
+     "at_least": {
+      "FENN_DRIFT": 5
+     },
+     "blocks": [
+      "FENN_DRIFT_5_SEEN"
+     ],
+     "sets": [
+      "FENN_DRIFT_5_SEEN"
+     ],
+     "text": "\"I think you may have that written down wrong, Inquisitor,\" Fenn says, \"and I don't say that to be difficult.\"\n\nHe says it kindly. He has started saying everything kindly, which is new, and which you would have called an improvement in anybody else.\n\n\"You've been working very hard and you haven't been sleeping and I've watched three officers do exactly this in the ledger office and every one of them was mortified afterwards. Shall we go through it together? I'd rather we did it now than in front of the Lord-Inquisitor.\"\n\nHe is being gentle with you.\n\nHe is being gentle with you about a number he gave you himself, on paper, in a room with no vox in it, four days ago."
+    },
+    {
+     "id": "drift6",
+     "after_topics": 1,
+     "at_least": {
+      "FENN_DRIFT": 6
+     },
+     "blocks": [
+      "FENN_DRIFT_6_SEEN"
+     ],
+     "sets": [
+      "FENN_DRIFT_6_SEEN"
+     ],
+     "text": "\"Do you know,\" Fenn says, \"I saw the Cantor company do *Ossuar's Daughter* eleven times. Eleven. The 'sixteen revival was the one — they cut the second-act lament, which everybody hated, and they were right to.\n\n\"I can give you the whole of it if you'd like. Not the music, I'm no good at music. The libretto.\"\n\nHe can. He does, a little of it, and it is note-perfect and he is happy.\n\nAsk him about the Vardan subsector and he will tell you it holds four worlds. Ask him about nine thousand tonnes and he will say that's a lot of tonnes. Ask him about eighty-four days and he will ask you, warmly and without any distress at all, eighty-four days of what.\n\nHe is a pleasant man with a good memory for opera.\n\nThere is nothing wrong with him that anybody will ever be able to point at, and he will be pleasant for the rest of his life."
+    }
+   ],
+   "shows": [],
+   "acts": [
+    {
+     "id": "kill_vox",
+     "names": [
+      "kill vox",
+      "kill the bead",
+      "bead off",
+      "silence the vox",
+      "no vox",
+      "isolate"
+     ],
+     "blocks": [
+      "FENN_ISOLATED"
+     ],
+     "sets": [
+      "FENN_ISOLATED"
+     ],
+     "text": "You have the bead killed. Bez's, the corridor plate, the lift panel on this sub-level, all of it, by written order, in a building where a written order to disable a protection detail's vox has to go past three people who each think you are wrong.\n\nBez says \"Sir\" in the voice she uses for orders she is going to obey and log.\n\nFenn is unaffected and uninterested.\n\nWhat you have made is a room that is genuinely dark, containing the last complete copy of two decades of Thessaline, which can now only be consulted by walking down four sub-levels and asking it questions in person, slowly, one at a time.\n\nYou have preserved the instrument by making it almost useless.\n\n[ FENN_ISOLATED ]"
+    },
+    {
+     "id": "forbid",
+     "names": [
+      "forbid",
+      "don't say",
+      "suppress",
+      "forbid kadmon",
+      "stop saying"
+     ],
+     "requires": [
+      "KADMON_HEARD"
+     ],
+     "blocks": [
+      "FENN_SUPPRESSED"
+     ],
+     "sets": [
+      "FENN_SUPPRESSED"
+     ],
+     "text": "You tell him not to say the word again. Not to anybody, not in any room, until you tell him otherwise.\n\n\"Of course, Inquisitor.\" He is entirely compliant and mildly interested. \"May I ask which word?\"\n\n\"Kadmon.\"\n\n\"Certainly.\" He writes it down, which is the first thing he has written down in two days, and puts the paper in the satchel he does not open. \"Kadmon. Not to be said. Understood.\"\n\nEleven minutes later he asks you, cheerfully and from a standing start, whether you would like the Kadmon Veil tithe receipts again, because he has thought of a way to cross-check them.\n\nHe has no memory whatever of being told.\n\nHe is very sorry about the ledger error, which is what he thinks you are annoyed about.",
+     "counters": {
+      "FENN_DRIFT": 1
+     }
+    },
+    {
+     "id": "bring",
+     "names": [
+      "bring him",
+      "take him",
+      "bring fenn",
+      "with me",
+      "field him"
+     ],
+     "blocks": [
+      "FENN_ISOLATED",
+      "FENN_BROUGHT"
+     ],
+     "refused": "He is not going anywhere. You gave that order yourself, in writing, past three people who thought you were wrong.",
+     "sets": [
+      "FENN_BROUGHT"
+     ],
+     "text": "You tell him he is coming.\n\nFenn is delighted, and packs the satchel he will not open, and asks four questions about the coolant programme on the way to the lift that you cannot answer and that he can.\n\nHe is the best map in the sector. He has the Gallery's plant schedules from 781, the flood intervals, the sub-gallery runs and the four amendments that were never made, and he will recite any of it on request, instantly, in four degrees of wet.\n\nEvery officer would bring him. It is the correct decision.\n\n[ FENN_BROUGHT ]"
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "chambers",
+   "names": [
+    "up",
+    "back",
+    "board",
+    "chambers",
+    "return",
+    "standing board"
+   ],
+   "to": "standing_board",
+   "cost": 2,
+   "text": "Four sub-levels up, and the shadow of the hive comes back under the lift door about halfway."
+  }
+ ],
+ "clues": {
+  "B1": {
+   "id": "B1",
+   "names": [
+    "kadmon",
+    "the recitation",
+    "the retraction",
+    "nine hundred million",
+    "kadmon veil"
+   ],
+   "label": "Kadmon Veil — nine hundred million four hundred and twelve thousand souls, recited and retracted in one breath",
+   "store": "either",
+   "reconciliation": 2,
+   "file_text": "DICTATED. CLASS: SAVANT RECITATION / SECTOR RECORD. INDEXED. ATTRIBUTED: FENN, A., SAVANT.\n\nENTRY READS: SAVANT CONFIRMS VARDAN SUBSECTOR COMPRISES FOUR WORLDS.\n             SUPPLEMENTARY: SAVANT NOTED AN UNATTACHED POPULATION FIGURE\n             AND WITHDREW IT.\n\nThe entry is accurate and complete and you dictated every word of it.",
+   "note_text": "You write it in the coat, by hand, in a room with no plate in it: the name, the subsector, the tithe grade, and nine hundred million four hundred and twelve thousand.\n\nThe last of those is the one that matters and you do not know why yet.\n\nYour hand is not steady. It does not matter. Handwriting is the only script in this hive that nothing else can read."
+  },
+  "B2": {
+   "id": "B2",
+   "names": [
+    "drift",
+    "the correlation",
+    "coverage",
+    "twice",
+    "the second time"
+   ],
+   "label": "He corrects himself in a room with no vox in it — so it is not the room",
+   "store": "either",
+   "reconciliation": 1,
+   "file_text": "FILED. CLASS: RETINUE / PERSONNEL WELFARE.\n\nENTRY READS: SAVANT FENN, A. — MNEMONIC INCONSISTENCY, REPEATED.\n             ASSESSMENT: SAVANT FATIGUE. RECOMMEND REST CYCLE.\n             NO FURTHER ACTION REQUIRED.\n\nIndexed. Countersignature not required.",
+   "note_text": "Two corrections, in two rooms, four sub-levels and one brass strip apart, in the same words at the same syllable.\n\nAt the arch you thought it was the shielding. In a room with two metres of rockcrete and no plate, it happened anyway.\n\nSo it is not where he is standing. It is something that has already happened to him, and is still happening, and the shielding only ever changed how fast."
+  }
+ },
+ "strings": {
+  "no_such_thing": "Nothing here by that name. It is a box with a savant in it.",
+  "already_read": "You have looked twice. Fenn is waiting to be asked something.",
+  "no_terminal": "No plate, no socket, no cogitator, and that is the entire reason Vosk paid eleven crowns a year for nineteen years to keep a room that does not exist.",
+  "read_room_locked": "Nothing was arranged in here. Somebody merely chose it, nineteen years ago, and was right."
+ }
+}

@@ -1,0 +1,126 @@
+{
+ "id": "the_rows",
+ "title": "THE ROWS",
+ "date": "0997.4.224",
+ "npc_refs": [
+  "rust_choir/mott"
+ ],
+ "revisit": "The Rows. Nine hundred people on a drainage terrace, sixteen days out.",
+ "intro": "Nine hundred people live on a drainage terrace three metres wide and four\nhundred long, in structures made of the crates the spill comes in.\n\nThey are not the poorest people in the Rust Choir. That is the thing that\ntakes a moment. They are the ones with a *pitch* — a fixed place, which is\nworth having, which people trade for.\n\nEverybody here already knows about day forty.\n\nNobody disbelieves it and nobody is arguing about it, because they watched it\nhappen three sumps over in 'ninety-four and they know exactly what a pressure\nflush does to a terrace. There is no panic. There is a great deal of quiet,\nextremely practical sorting: what can be carried, what cannot, who has family\non a level that is not scheduled.\n\nA girl of about nine is sorting spoiled protein by smell, at speed, with her\nsleeves rolled.\n\nShe looks up at you for exactly as long as it takes to decide you are not\ncarrying anything, and goes back to it.",
+ "look": "Four hundred metres of drainage terrace, three metres wide, nine hundred\npeople, and sixteen days.\n\nWICK, nine, sorting spoiled protein by smell, on shift.\nMOTT, at the top of the steps, not coming down.\nThe CRATES the Rows are built out of, which are the crates the spill came in.",
+ "objects": [
+  {
+   "id": "crates",
+   "names": [
+    "structures",
+    "homes",
+    "the rows",
+    "shelters",
+    "terrace"
+   ],
+   "careless": "Structures made of spill crates, lashed and stacked, three and four high. Somebody has painted a door on one of them.",
+   "careful": "Every crate is stencilled with a write-off docket number.\n\nThe Rows are physically built out of the paperwork of their own non-existence: condemned-bulk consignments, alms surplus, each one a piece of evidence that two accounting systems required a destination.\n\nA man on the second level has arranged his in numerical order. When you ask him why, he says it makes it easier to find things, and it does, and he has been doing it for eleven years."
+  },
+  {
+   "id": "wick",
+   "names": [
+    "girl",
+    "the child",
+    "nine",
+    "her"
+   ],
+   "careless": "A girl of about nine, sorting spoiled protein by smell, at speed. She is on shift. She is on time for it.",
+   "careful": "She has never had a name in any file, which means she has never had a name that was taken away, which down here is a distinction people make out loud.\n\nShe is very good at the sorting. It is a real skill and it takes about two years to learn and she has been doing it since she was seven.\n\nShe is aware of day forty in the way that everybody here is aware of it, which is completely, and without any expectation that it can be argued with."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "wick",
+   "names": [
+    "girl",
+    "the child",
+    "her"
+   ],
+   "title": "Wick",
+   "lists_topics": false,
+   "topic_refusal": "She keeps sorting. \"Ask, then.\"",
+   "portrait": "Wick. About nine. Never had a name in any file, which is a distinction people make out loud down here. Sorting spoiled protein by smell, on shift, on time.",
+   "greeting": "\"What's your name,\" she says.\n\nNot a question — the flat delivery of somebody taking down a shipping mark.\n\nYou tell her. She says it back, wrong the first time, right the second, then a third time with her eyes shut, and you understand that you have just been filed.\n\n\"You're in the Choir now. That's forever. That's the good one.\"\n\nThen she goes back to sorting spoiled protein by smell, because that's her shift, and she's nine, and she's on time for it.",
+   "reprise": "She sorts. She will talk while she sorts; she will not stop sorting.",
+   "unknown": "\"Don't know that one.\"",
+   "deflect": [
+    "She shrugs, and keeps sorting."
+   ],
+   "topics": [
+    {
+     "id": "day40",
+     "names": [
+      "the flush",
+      "day 40",
+      "forty",
+      "what happens",
+      "are you leaving",
+      "afraid"
+     ],
+     "sets": [
+      "WICK_KNOWN"
+     ],
+     "text": "\"Day forty,\" Wick says, without looking up. \"Pressure flush. It's on the schedule.\"\n\n\"You know about it.\"\n\n\"Everyone knows about it. Bel's got family on level six and level six isn't scheduled, so that's eleven of them sorted. My gran can't do the steps.\" She turns a block over, sniffs it, puts it left. \"So.\"\n\nShe says *so* the way an adult says a thing they have already finished thinking about.\n\n\"Are you frightened?\"\n\nShe considers this properly, which is worse than if she had not.\n\n\"It's sixteen days,\" she says. \"Being frightened for sixteen days is a lot of days.\""
+    },
+    {
+     "id": "choir",
+     "names": [
+      "the choir",
+      "names",
+      "recitation",
+      "filed",
+      "forever",
+      "in the choir"
+     ],
+     "sets": [
+      "WICK_FILED_YOU"
+     ],
+     "text": "\"You say them at shift-end. Four hundred at a time, on the rota. You get about a fortnight between.\"\n\n\"And you learn them.\"\n\n\"You learn your bit. Nobody's got all of it, that's the point — you spread it, so it can't all fall over at once.\" She sniffs a block, puts it right. \"Gran's got two hundred and ten. She's had some of them thirty years.\"\n\n\"And you've put my name in it.\"\n\n\"Yes.\" She sounds mildly surprised you are still on this. \"That's what it's for. It's the one that doesn't come off.\""
+    },
+    {
+     "id": "name",
+     "names": [
+      "your name",
+      "who are you",
+      "wick",
+      "yourself"
+     ],
+     "text": "\"Wick.\"\n\n\"Is that a name or a job?\"\n\n\"Both.\" She is not offended. \"Never had one on a card. Never had one taken off one either, so.\" She shrugs with one shoulder, still sorting. \"That's better, mostly. Gran says it's better.\"\n\nShe stops for a moment.\n\n\"I'll be in the Choir when I go, though. Gran's put me in already. So it's the same in the end, isn't it.\""
+    }
+   ],
+   "beats": [],
+   "shows": [],
+   "acts": []
+  }
+ ],
+ "exits": [
+  {
+   "id": "cistern",
+   "names": [
+    "up",
+    "back",
+    "out",
+    "cistern",
+    "choir",
+    "steps"
+   ],
+   "to": "rust_choir",
+   "cost": 1,
+   "text": "Back up the steps that are not steps."
+  }
+ ],
+ "strings": {
+  "no_such_thing": "Nothing here by that name. There is a terrace, and crates, and nine hundred people.",
+  "already_read": "You have looked twice. She is still sorting.",
+  "no_terminal": "No.",
+  "read_room_locked": "Nothing here was arranged for you to read."
+ },
+ "while": [
+  "IN_THE_ROWS"
+ ]
+}

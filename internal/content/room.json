@@ -249,8 +249,7 @@
    "names": [
     "dispatch",
     "manifest",
-    "1188",
-    "forty-one seconds"
+    "1188"
    ]
   },
   "A8": {
@@ -268,6 +267,19 @@
    "reconciliation": 2,
    "file_text": "FILED. CLASS: SCENE ASSESSMENT / INVESTIGATOR FINDING. INDEXED. REQUISITION-ELIGIBLE.\n\nIt is the most useful thing you have. Crase can act on it. Clerks who were sullen this morning will fetch things for you this afternoon, because a filed finding is a finding the Crown has heard of.\n\nIt is also, now, a document stating that the deceased anticipated his own death and left instructions, held in an archive, in a hive where somebody arranged for him to die.",
    "note_text": "You keep it in your coat, which means it is not a finding. It is a feeling you happen to have written down, and no clerk in this Crown will fetch you so much as a chair on the strength of it."
+  },
+  "A22": {
+   "id": "A22",
+   "names": [
+    "precis",
+    "the precis",
+    "case précis",
+    "four paragraphs"
+   ],
+   "label": "The Case Précis — the record's own account of your day, in four true sentences",
+   "store": "either",
+   "file_text": "FILED. CLASS: CASE PRÉCIS / COUNTERSIGNED. INDEXED.\n\nIt was already there. Filing it files a copy of the thing you were shown, into the place it came from, which the cogitator accepts without remark because a document being filed twice is not an error.\n\nYou now hold, in the archive, the archive's account of your day. That is what everybody else will read.",
+   "note_text": "You copy the four paragraphs out by hand, in full, before you do anything else with them.\n\nIt takes twenty minutes and your hand aches at the end of it and it is the single most useful twenty minutes of the entire act, because in eleven days this document will say something else and you will be the only person in the sector who can prove it used to say this."
   }
  },
  "strings": {

@@ -479,11 +479,10 @@
   "A18": {
    "id": "A18",
    "names": [
-    "dispatch",
-    "1188",
+    "the jacket",
+    "jacket number",
     "the number",
-    "dispatch number",
-    "jacket"
+    "dispatch number"
    ],
    "label": "Dispatch 0997.4-1188 — the number on cylinder six's jacket, in the vessel's own hand",
    "store": "either",

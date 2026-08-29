@@ -22,6 +22,12 @@ func (s *State) Do(raw string) (out []string, ticks int) {
 	verb := fields[0]
 	arg := strings.Join(fields[1:], " ")
 
+	if s.PrecisPending {
+		if out, ticks, handled := s.precis(verb); handled {
+			return out, ticks
+		}
+	}
+
 	switch verb {
 	case "help", "?", "verbs":
 		return []string{s.S("help")}, 0
@@ -39,6 +45,11 @@ func (s *State) Do(raw string) (out []string, ticks int) {
 			return []string{s.Room.LookNoBody}, 0
 		}
 		return []string{s.Room.Look}, 0
+
+	case "out", "in", "back", "up", "down", "enter":
+		// Bare directions are how people actually talk about doors, and they
+		// are already exit names.
+		return s.travel(verb)
 
 	case "go", "leave", "visit":
 		// LEAVE IT is something you do with a cylinder. A person's act wins
@@ -113,8 +124,7 @@ func (s *State) Do(raw string) (out []string, ticks int) {
 		return []string{"Time passes. It is the one thing in this hive nobody has to requisition."}, 1
 
 	case "status":
-		return []string{fmt.Sprintf("VERITY %d   CRASE_STANDING %+d   RECONCILIATION %d   %s",
-			s.Ints["VERITY"], s.Ints["CRASE_STANDING"], s.Ints["RECONCILIATION"], s.TimeString())}, 0
+		return s.statusDump(), 0
 	}
 
 	// Acts are verbs a person defines, not the parser: DETAIN belongs to Vaux,
@@ -158,6 +168,9 @@ func (s *State) travel(arg string) ([]string, int) {
 	if e.Text != "" {
 		out = append(out, e.Text)
 	}
+	for _, f := range e.Sets {
+		s.Set(f)
+	}
 	first := !s.Visited[e.To]
 	if !s.Move(e.To) {
 		return []string{s.S("no_such_exit")}, 0
@@ -167,14 +180,58 @@ func (s *State) travel(arg string) ([]string, int) {
 	return out, cost
 }
 
+// precis intercepts everything while the Case Précis is on the terminal. The
+// player may read their own coat, and may sign, annotate or refuse. There is
+// no fourth option and no way to put it down.
+func (s *State) precis(verb string) ([]string, int, bool) {
+	switch verb {
+	case "notebook", "coat", "clues", "evidence", "notes", "casenotes", "case-notes",
+		"status", "help", "?", "verbs", "quit", "exit":
+		return nil, 0, false // free, and the whole point
+
+	case "precis", "read", "x", "examine", "look", "l":
+		return []string{s.S("precis"), s.S("precis_prompt")}, 0, true
+
+	case "sign", "countersign", "accept":
+		return s.closePrecis("PRECIS_SIGNED", "precis_signed",
+			content.Counters{"RECONCILIATION": 3}), 1, true
+
+	case "annotate", "amend", "correct", "append":
+		if len(s.Notebook) == 0 {
+			return []string{s.S("precis_nothing_to_add")}, 0, true
+		}
+		return s.closePrecis("PRECIS_ANNOTATED", "precis_annotated",
+			content.Counters{"VERITY": 1, "CRASE_STANDING": -1}), 1, true
+
+	case "refuse", "decline", "reject", "no":
+		return s.closePrecis("PRECIS_REFUSED", "precis_refused",
+			content.Counters{"VERITY": 1, "CRASE_STANDING": -2}), 1, true
+	}
+	return []string{s.S("precis_waiting")}, 0, true
+}
+
+func (s *State) closePrecis(flag, key string, counters content.Counters) []string {
+	s.PrecisPending = false
+	s.precisDone = true
+	s.Set(flag)
+	s.Set("ACT1_COMPLETE")
+	for k, v := range counters {
+		s.Add(k, v)
+	}
+	out := []string{s.S(key)}
+	if s.Move("standing_board") {
+		out = append(out, s.Room.Title, s.Room.Intro)
+		out = append(out, s.arrived...)
+	}
+	return out
+}
+
 // exitOpen reads an exit's gates. Requires is a conjunction; RequiresAny and
 // HasAny are one disjunction between them, because the Choir Spire opens on
 // the shutter or on Crase's lead and the act document says "or".
 func (s *State) exitOpen(e *content.Exit) bool {
-	for _, f := range e.Requires {
-		if !s.Has(f) {
-			return false
-		}
+	if !s.gatesMet(e.Gate) {
+		return false
 	}
 	if len(e.RequiresAny) == 0 && len(e.HasAny) == 0 {
 		return true
@@ -228,6 +285,18 @@ func (s *State) topicList(arg string) ([]string, int) {
 		b.WriteString("  · " + strings.ReplaceAll(t.ID, "_", " ") + "\n")
 	}
 	return []string{b.String()}, 0
+}
+
+// statusDump is the terminal's own readout. Fenn appears in it as equipment
+// condition, because that is what the Crown's inventory system calls a savant
+// with a mnemonic augmetic, and nothing in the game ever relabels it.
+func (s *State) statusDump() []string {
+	out := []string{fmt.Sprintf("VERITY %d   CRASE_STANDING %+d   RECONCILIATION %d   %s",
+		s.Ints["VERITY"], s.Ints["CRASE_STANDING"], s.Ints["RECONCILIATION"], s.TimeString())}
+	if s.Has("KADMON_HEARD") {
+		out = append(out, fmt.Sprintf("CONCORDANCE OF RECORD: %d/6", 6-s.Ints["FENN_DRIFT"]))
+	}
+	return out
 }
 
 func (s *State) whoDump() []string {
@@ -306,7 +375,7 @@ func (s *State) file(arg string) ([]string, int) {
 		return []string{"You hold no such clue."}, 0
 	}
 	id := c.ID
-	if c.Store == content.StoreNotebook {
+	if c.Store == content.StoreNotebook || c.Store == content.StoreNeither {
 		return []string{c.Refusal}, 1
 	}
 	if s.Held[id] == StoreCog || s.Held[id] == StoreBoth {
@@ -334,6 +403,9 @@ func (s *State) note(arg string) ([]string, int) {
 		return []string{"You hold no such clue."}, 0
 	}
 	id := c.ID
+	if c.Store == content.StoreNeither {
+		return []string{c.Refusal}, 1
+	}
 	if c.Store == content.StoreCogitator {
 		s.storeClue(id, StoreBook)
 		s.Notebook = append(s.Notebook, c.Label)
@@ -367,14 +439,15 @@ func (s *State) namedClue(arg string) *content.Clue {
 		}
 		return nil
 	}
-	c := s.Game.FindClue(arg)
-	if c == nil {
-		return nil
+	// Aliases overlap: two clues in this act are both "the pattern". The one
+	// the player means is the one they are carrying.
+	matches := s.Game.MatchClues(arg)
+	for _, c := range matches {
+		if _, held := s.Held[c.ID]; held {
+			return c
+		}
 	}
-	if _, held := s.Held[c.ID]; !held {
-		return nil
-	}
-	return c
+	return nil
 }
 
 func (s *State) cluesDump() string {
@@ -495,6 +568,25 @@ func (s *State) query(code string) ([]string, int) {
 	code = strings.ReplaceAll(code, "/", "-")
 	code = strings.ReplaceAll(code, " ", "-")
 
+	// Unmarked, ungated, available from the first hour of Act II, and nothing
+	// anywhere points at it. A player who thinks to ask the Vault where the
+	// Cathedral's alms traffic is routed gets in twenty minutes what forty-five
+	// minutes of breaking a Cardinal produces.
+	if strings.Contains(code, "ALMS") || strings.Contains(code, "CATHEDRAL") ||
+		strings.Contains(code, "UNBLINKING") {
+		if _, had := s.Held["B10"]; had {
+			return []string{s.S("alms_routing")}, 1
+		}
+		s.Grant("B10")
+		return []string{s.S("alms_routing")}, 1
+	}
+	if strings.Contains(code, "LYLE") || strings.Contains(code, "CASMIR") {
+		if _, held := s.Held["B4"]; !held {
+			return []string{s.S("vault_none")}, 1
+		}
+		s.Set("LYLE_QUERIED")
+		return []string{s.S("lyle_null")}, 1
+	}
 	if code == CodeDispatch {
 		if !s.Has("DISPATCH_ID_KNOWN") {
 			return []string{s.S("vault_none")}, 1
