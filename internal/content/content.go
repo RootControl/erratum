@@ -71,6 +71,9 @@ var craseOfficeJSON []byte
 //go:embed ferrum.json
 var ferrumJSON []byte
 
+//go:embed cylinder_vault.json
+var cylinderVaultJSON []byte
+
 // Store says which evidence store a clue may live in.
 //
 // This is the game's central mechanic, so it is a first-class field on every
@@ -153,6 +156,10 @@ type Room struct {
 	// Terminal marks a scene with a cogitator in it. There is exactly one in
 	// the slice, and Vaux's study is pointedly not it.
 	Terminal bool `json:"terminal"`
+	// Cipher marks the room the objects were arranged in. DECODE needs the
+	// chambers the way QUERY needs a cogitator: the sentence is read out of
+	// furniture, and the furniture is in one place.
+	Cipher bool `json:"cipher"`
 	// Sets are the flags arriving in this scene writes, once.
 	Sets []string `json:"sets"`
 	// Grants are the clues arriving in this scene puts in the player's hands,
@@ -290,6 +297,7 @@ func Load() (*Game, error) {
 		{"confessional", confessionalJSON},
 		{"crase_office", craseOfficeJSON},
 		{"ferrum", ferrumJSON},
+		{"cylinder_vault", cylinderVaultJSON},
 	}
 	g := &Game{Scenes: map[string]*Room{}, Clues: map[string]*Clue{},
 		byUpper: map[string]*Clue{}, npcs: map[string][]*NPC{}, byKey: map[string]*NPC{}}
@@ -496,6 +504,17 @@ func (g *Game) validateNPC(scene string, n *NPC, fail func(string, ...any) error
 	}
 	for _, sh := range n.Shows {
 		if err := checkCounters(scene, n.ID, "show "+sh.Clue, sh.Counters, fail); err != nil {
+			return err
+		}
+		if err := checkGate(scene, n.ID, "show "+sh.Clue, sh.Gate, fail); err != nil {
+			return err
+		}
+	}
+	for _, b := range n.Beats {
+		if err := checkCounters(scene, n.ID, "beat "+b.ID, b.Counters, fail); err != nil {
+			return err
+		}
+		if err := checkGate(scene, n.ID, "beat "+b.ID, b.Gate, fail); err != nil {
 			return err
 		}
 	}

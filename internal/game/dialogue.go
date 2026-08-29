@@ -60,8 +60,13 @@ func (s *State) talk(arg string) ([]string, int) {
 	if n == nil {
 		return []string{s.whyNot(arg)}, 0
 	}
-	if out := s.meet(n); len(out) > 0 {
-		return out, 1
+	out := s.meet(n)
+	// A beat waiting on its gates rather than on the conversation fires the
+	// moment they open, and walking back up to somebody is one of the ways
+	// they open. Without this it can only land on a question the player has
+	// not already asked, which is not what "the moment" means.
+	if beats := s.beats(n); len(out) > 0 || len(beats) > 0 {
+		return append(out, beats...), 1
 	}
 	if n.Reprise != "" {
 		return []string{n.Reprise}, 0
@@ -377,6 +382,9 @@ func (s *State) beats(n *content.NPC) []string {
 		}
 		s.Fired[n.Key()+"/beat/"+b.ID] = true
 		out = append(out, b.Text)
+		for k, v := range b.Counters {
+			s.Add(k, v)
+		}
 		for _, f := range b.Sets {
 			s.Set(f)
 		}

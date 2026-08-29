@@ -3,7 +3,8 @@
 **All of Act I is playable**, 1.1 through 1.10 — six hours, the rosette, the
 locked room, the synthesis, the Vaux interview, the door and the body, nothing
 to requisition, forty-one seconds, the Vault requisition and the Act I turn —
-and it closes on the Case Précis and opens into **Act II 2.0 through 2.8**.
+and it closes on the Case Précis and runs **Act II 2.0 through 2.11** to the
+act turn.
 Go + Bubble Tea.
 
 It exists to prove eleven things are buildable before Act II is written:
@@ -108,7 +109,7 @@ drives it headlessly.
 go test ./internal/game/
 ```
 
-Ninety-four tests, one per design guarantee:
+A hundred and twenty-seven tests, one per design guarantee:
 
 | Test | Asserts |
 |---|---|
@@ -205,6 +206,31 @@ Ninety-four tests, one per design guarantee:
 | `TestCraseBelievesTheLie` | she is wrong, she is not lying, and no marker says so |
 | `TestWhyNotVauxCrossesScenes` | asked in 1.2, paid off in 1.5, one flag, no translation layer |
 | `TestClockJumpsAndTheBodyWaits` | scenes are hours apart; the eight minutes are the body's, not the clock's |
+| `TestApproachSetsSuspicionSilently` | how you asked to see Vaux is worth two points and the counter never names itself |
+| `TestLedgerAnswerIsTheHinge` | the only answer to his question is one a thorough player cannot give |
+| `TestAllianceNeedsMoreThanAsking` | he refuses the hand without saying what the missing thing was |
+| `TestArchiveApproachRaisesTheStandingBar` | playing the politics well is what closes the alliance, not suspicion |
+| `TestHighStandingDeletesPersuasion` | two ways to reach him are absent, not greyed, and a line is added to the indictment |
+| `TestBlackmailNeverAnnouncesTheCorruption` | the coerced cipher half reads exactly like the given one |
+| `TestRefusalReturnsHimAtThree` | three weeks in a transit hostel, one door left, and no gap where the others were |
+| `TestStoreHabitIsNeverChosen` | the habit is the first reach for FILE or NOTE, and nothing says it was recorded |
+| `TestLongWayOnlyOpensWhenTheHalfIsLost` | Ilaria does not offer the wax while there is still a short way round |
+| `TestIlariaPricesItHerself` | she states what it ends, and that there is no clever third option |
+| `TestSpendingIlariaCapsHerTrust` | what she spends is not the player's regard; the number follows the event |
+| `TestFennAsksWhatToRemember` | he says yes before he can be talked into it, and asks the unanswerable question |
+| `TestSpendingFennEndsHim` | eleven hours, six of drift, and a readout that goes to 0/6 without naming itself |
+| `TestTheShroudDoesNotSoftenIt` | Cael's gift thirds what happens by accident and nothing that happens on purpose |
+| `TestTheThirdRouteWaitsForBothToBeGone` | Mott's elder exists to prevent a soft-lock, not to be a third choice |
+| `TestNoFreeWayToCompleteTheCipher` | every route to the whole cipher spends a named person, asserted against the content |
+| `TestCaelNeverAsksWhatItIs` | one of the murderers hands over the murder weapon and says to mind the edges |
+| `TestTheAshIsNeverActuallyMissed` | Bez collected it on the first morning, because Vosk taught her to |
+| `TestTassBringsItUnbidden` | the plate is unmissable; the signature on the recovery is not |
+| `TestDecodeNeedsTheRoomAndBothHalves` | the sentence is read out of furniture, and half a key is a different object |
+| `TestTheSentence` | the tense is *making*, not *made*, and the method is not granted with the message |
+| `TestTheCorruptHalfNamesTheWrongMan` | the false reading carries no hedge; what breaks it is counting to nine |
+| `TestTheTestimonyCannotBeFiled` | the template is correct, the field is right, and the player closes it |
+| `TestTheVaultConfirmsWhatNobodyAsked` | nobody confirms a nil return, and something in the hive does it twice |
+| `TestTheErratumIsOneUse` | spending it on a person is silent, and nothing says what it just cost |
 
 `TestTrustingPlaythrough` also asserts the archive never prints the words
 `DELETED` or `ERROR`. That assertion is the thesis of the whole game and it
@@ -216,7 +242,8 @@ should stay in the suite forever.
 internal/content/   arrival, antechamber, room, vaux_study, medicae,
                     adjutant, arch, choir (Act I); board, safehouse, workshop,
                     delta, choir_settlement, annexe, rows, cathedral,
-                    confessional, crase_office, ferrum (Act II); plus
+                    confessional, crase_office, ferrum, cylinder_vault
+                    (Act II); plus
                     strings.json for shared defaults, and the loader — all
                     authored prose is data, dialogue included
 internal/game/      state, flags, scenes, command engine, dialogue, archive
@@ -226,13 +253,19 @@ internal/ui/        the cogitator. Deliberately has no vocabulary for
 
 ## What is not built yet
 
-**Act II scenes 2.0b and 2.9–2.11**: the holding cage, Three Doors, the long
-way round, and the act turn. Most of the systems those scenes need are in — scene
-dates, counter gates, drift as equipment condition with its own accrual rules,
+**Act II scene 2.0b**, the holding cage — optional by design, and the only
+late route to `ROOM_READ_FULL`, since decrypting Vosk's testimony deliberately
+does not grant it. Most of the systems those scenes need are in — scene dates,
+counter gates, drift as equipment condition with its own accrual rules,
 Reconciliation removing options rather than closing them, per-scene
-conversations for a person who appears in both acts. Still to build: the
-Erratum as a one-use item, `MOTT_FAVOURS`, and the four remaining
-Reconciliation symptoms.
+conversations for a person who appears in both acts, and the store habit the
+player is never asked to choose. Still to build: the Erratum as a one-use
+item, and the four remaining Reconciliation symptoms.
+
+Act II ends on `DECODE`, in the chambers, with both halves of the cipher and
+a plate the archive does not know exists. A player who blackmailed Vaux gets a
+fluent, plausible, entirely false sentence naming Cardinal Vhail — every clause
+of which they proved themselves — and it holds until they count the tokens.
 
 Also: save/load, the player backgrounds (Lexmechanic / Provost / Penitent), the
 Reconciliation symptom system, and any content past the Act I turn. The clock

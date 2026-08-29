@@ -114,6 +114,9 @@ func (s *State) Do(raw string) (out []string, ticks int) {
 	case "notebook", "coat":
 		return []string{s.NotebookDump()}, 0
 
+	case "decode", "decipher", "translate":
+		return s.decode()
+
 	case "query", "requisition", "req":
 		if !s.Room.Terminal {
 			return []string{s.S("no_terminal")}, 0
@@ -390,6 +393,7 @@ func (s *State) file(arg string) ([]string, int) {
 	}
 	s.Add("RECONCILIATION", cost)
 	s.Archive.File(fmt.Sprintf("%s — %s", id, c.Label))
+	s.storeHabit("STORE_HABIT_FILED")
 	out := []string{c.FileText}
 	if c.Store == content.StoreCogitator && c.Refusal != "" {
 		out = append([]string{c.Refusal}, out...)
@@ -418,11 +422,30 @@ func (s *State) note(arg string) ([]string, int) {
 	s.Set(id + "_PHYSICAL")
 	s.Set(id + "_HELD")
 	s.Add("VERITY", 1)
+	s.storeHabit("STORE_HABIT_LEDGER")
 	s.Notebook = append(s.Notebook, c.Label)
 	if c.NoteText != "" {
 		return []string{c.NoteText}, 1
 	}
 	return []string{"You write it down. It is now a thing in your coat and nothing else."}, 1
+}
+
+// storeHabit records which of the two stores the player reached for first in
+// Act II, and nothing anywhere says that it did.
+//
+// The habit is not a menu and there is no scene where it is chosen: it is
+// whichever of FILE and NOTE the player used on the first clue they handled
+// after the chambers reopened. Filing raises the query tier, because the Vault
+// is pleased with anybody who feeds it. Keeping a ledger is slower and buys
+// nothing here, and is the only answer Vaux accepts in the cylinder vault.
+func (s *State) storeHabit(flag string) {
+	if !s.Has("ACT2_OPEN") || s.Has("STORE_HABIT_FILED") || s.Has("STORE_HABIT_LEDGER") {
+		return
+	}
+	s.Set(flag)
+	if flag == "STORE_HABIT_FILED" {
+		s.Add("QUERY_TIER", 1)
+	}
 }
 
 // namedClue resolves what the player typed to a clue they actually hold. IDs
@@ -561,6 +584,47 @@ furniture in a thing that exists only between you and a dead man.
 [ ROOM_READ_FULL — CIPHER_HALF_ROOM ]
 [ the live shelf-code is C9-F4-D2 ]`
 
+// decode reads the room back out of the record, which is the only place the
+// room still exists: the Crown packed and unpacked the furniture eight days
+// after he died, by people who did not know the arrangement mattered.
+//
+// It needs the chambers, for the same reason QUERY needs a cogitator.
+func (s *State) decode() ([]string, int) {
+	if !s.Room.Cipher {
+		return []string{s.S("no_cipher")}, 0
+	}
+	if _, held := s.Held["B21"]; !held {
+		return []string{s.S("decode_nothing")}, 0
+	}
+	if !s.Has("CIPHER_COMPLETE") {
+		return []string{s.S("decode_half")}, 0
+	}
+	// A half taken under coercion is complete and in the wrong order, and it
+	// decrypts to something fluent. The player is not told; the count is.
+	if s.Has("CIPHER_HALF_VAUX_CORRUPT") && !s.Has("SENTENCE_REPAIRED") {
+		if !s.Has("FALSE_SENTENCE_SEEN") {
+			s.Set("FALSE_SENTENCE_SEEN")
+			return []string{s.S("sentence_false")}, 2
+		}
+		s.Set("SENTENCE_REPAIRED")
+		if s.Ints["VERITY"] > 0 {
+			s.Add("VERITY", -1)
+		}
+		return append([]string{s.S("sentence_count")}, s.sentence()...), 3
+	}
+	if s.Has("ACT2_COMPLETE") {
+		return []string{s.S("sentence_again")}, 0
+	}
+	return s.sentence(), 3
+}
+
+func (s *State) sentence() []string {
+	s.Grant("B19")
+	s.Grant("B20")
+	s.Set("ACT2_COMPLETE")
+	return []string{s.S("sentence_true")}
+}
+
 func (s *State) query(code string) ([]string, int) {
 	if code == "" {
 		return []string{"QUERY <shelf-address>. The Vault does not take guesses politely."}, 0
@@ -579,6 +643,14 @@ func (s *State) query(code string) ([]string, int) {
 		}
 		s.Grant("B10")
 		return []string{s.S("alms_routing")}, 1
+	}
+	if strings.Contains(code, "CANTICA") || strings.Contains(code, "PRIORITY-BLACK") ||
+		strings.Contains(code, "KADMON") {
+		if !s.Has("KADMON_ADDRESS") {
+			return []string{s.S("vault_none")}, 1
+		}
+		s.Set("CANTICA_QUERIED")
+		return []string{s.S("cantica_null")}, 1
 	}
 	if strings.Contains(code, "LYLE") || strings.Contains(code, "CASMIR") {
 		if _, held := s.Held["B4"]; !held {

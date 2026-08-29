@@ -7,8 +7,8 @@ THE ERRATUM — a playable vertical slice of a terminal investigation game
 The repo is half design document, half prototype. `STORY_BIBLE.md` and
 `ACT_I.md` / `ACT_II.md` / `ACT_III.md` are the source of truth for content and
 vocabulary; `main.go` + `internal/` implement all of Act I (scenes 1.1–1.10)
-and Act II scenes 2.0–2.8. Act II 2.0b and 2.9–2.11 are not built, and Act III
-is not started. When the code and the act documents disagree about a name, a
+and every scene of Act II except 2.0b, which is optional. Act III is not
+started. When the code and the act documents disagree about a name, a
 flag or a fact, the documents win — and `STORY_BIBLE.md` §12 CANON LOCKS wins
 over the rest of the bible.
 
@@ -48,7 +48,8 @@ first command is eaten was a misreading of the same artefact.
   - Act I: `arrival`, `antechamber`, `room`, `vaux_study`, `medicae`,
     `adjutant`, `arch`, `choir`
   - Act II: `board`, `safehouse`, `workshop`, `delta`, `choir_settlement`,
-    `annexe`, `rows`, `cathedral`, `confessional`, `crase_office`, `ferrum`
+    `annexe`, `rows`, `cathedral`, `confessional`, `crase_office`, `ferrum`,
+    `cylinder_vault`
 
   Plus `strings.json` for the defaults every scene inherits, `content.go` (the
   loader and its validator) and `npc.go` (the dialogue types). All authored
@@ -323,5 +324,108 @@ them, one test per guarantee, and those assertions are meant to be permanent.
   `requires` fires the moment its gates open, rather than waiting on the
   conversation. That is how the Choir lead is delivered by the ceremony in 1.2
   and skipped entirely for a player who was kind to Crase in 1.1.
+- **The store habit is behaviour, not a menu.** `STORE_HABIT_FILED` /
+  `STORE_HABIT_LEDGER` are written by `storeHabit()` in `engine.go` on
+  whichever of FILE and NOTE the player reached for first after `ACT2_OPEN`,
+  and there is no scene where either is chosen. Filing raises `QUERY_TIER`,
+  because the Vault is pleased with anybody who feeds it. Keeping a ledger buys
+  nothing anywhere in Act II except one thing: it is the only honest answer to
+  Vaux's question in 2.9, and a player who filed everything cannot give it —
+  not because a gate refuses, but because there is nothing in the coat to read
+  out. Neither flag is ever mentioned on screen.
+- **How Vaux was asked for is most of what happens in 2.9.** `VAUX_SUSPICION`
+  is a counter bounded 0–3. A request through the Crown's message office
+  arrives at 2 (the `approach_archive` beat); a Rust Choir runner, one favour
+  from Mott, arrives at 0. The alliance needs it at ≤1 *and* `VAUX_PERSUADED`,
+  which the ledger answer or a shown B4/B12 both set while taking a point off —
+  so the archive route can still ally. What it cannot do is ally at standing:
+  `below CRASE_STANDING 1` on the archive route against `below 3` with a
+  runner, which is I-4's actual teeth. Refusing all three doors and walking out
+  sets `VAUX_LEFT`; the `returned` beat then puts him at 3 (the ceiling does
+  the arithmetic) and sets `VAUX_FINISHED`, which blocks every persuasion and
+  both of the other two doors. None of this is announced.
+- **I-5 is authored as absence.** Each point of `CRASE_STANDING` over +2
+  removes a persuasion topic in 2.9 — `honest` at +3, `character` at +4, both
+  via `below` — and `indictment_promoted` adds a line to what Vaux says about
+  you. A removed topic answers with his ordinary "nothing on that". The player
+  is punished for playing the politics well and is never told that is what
+  happened.
+- **Beats carry `counters` and fire on approach.** A beat was the one
+  gate-bearing type with no way to move a number, which is wrong: "he is
+  already two points suspicious of you because of how you asked" is exactly a
+  beat. `talk` runs `beats()` too, so a beat waiting only on its gates fires
+  when the player walks back up to somebody — before that it could only land
+  on a question they had not already asked, which is not what "the moment its
+  gates open" means.
+- **2.10 has no scene file, on purpose.** The long way round is authored on
+  three people who were already somewhere: Ilaria at the standing board, Fenn
+  in Stack Delta (`IN_STACK_DELTA`, the same `while` idiom the Rows use), and
+  Mott in the sump. The act document's location line reads *"Choir Spire
+  cylinder vault (Ilaria) or Stack Delta (Fenn). Same shape either way; the
+  cost is the person"* — the shape is the two acts having identical structure
+  and identical refusals to let the player dodge, and the person is wherever
+  the person already stands. Adding a room would have made the choice a place.
+- **Nothing completes the cipher for free.** `TestNoFreeWayToCompleteTheCipher`
+  walks all the content and fails any topic, act, beat, show, exit, clue or
+  scene that sets `CIPHER_COMPLETE` without also setting one of
+  `ILARIA_BURNED`, `FENN_SPENT` or `NAMEBANK_DEBT`, and asserts there are
+  exactly three ways through. It iterates by `NPC.Key()` because Mott is
+  referenced from three scenes and is one woman. 2.11 sets `CIPHER_COMPLETE`
+  on the Vaux path, where the price was paid in 2.9; every other route pays
+  here.
+- **A counter that is only a display moves with the flag, not with `Add`.**
+  `ILARIA_BURNED` clamps `ILARIA_TRUST` to 2 in `State.Set`, and `Add` then
+  refuses to let it climb back. She does not lose the player's regard — she
+  loses the thing the regard was for, and the number has to follow the event
+  rather than be charged for it.
+- **Cael's shroud is not armour against a decision.** `spend_fenn` clears
+  `FENN_SHIELDED` in the same act that costs six of drift, and `apply` runs
+  `clears` before `counters`, so the exposure lands in full. The shroud thirds
+  what happens to a savant incidentally; it has nothing to say about eleven
+  deliberate hours at a live terminal, and the content says so by taking it
+  off him first.
+- **An act that cannot be undone must not answer to a noun.** Bare input falls
+  through to `act(verb, arg)`, so an act named `"the corpus"` fires from two
+  typed words — and `"the corpus"` is also the name of the topic where Fenn
+  explains what it would cost. One-way acts take gestures (`let him do it`,
+  `send her down`); the nouns stay on the topics and the exits. `ask` and
+  `take` are parser verbs, so an act named `"ask fenn"` is unreachable and an
+  in-voice line telling the player to *ask me for it* is a dead end — check the
+  prose against the vocabulary the act actually has.
+- **`DECODE` is place-scoped, like `QUERY`.** `Room.Cipher` marks the room the
+  objects were arranged in, and the standing board is Vosk's chambers
+  unsealed, so it is the only scene with the flag. The sentence is read out of
+  the *record* of the arrangement rather than out of the furniture — 2.0 says
+  in its own intro that the Crown packed and unpacked the room by people who
+  did not know the arrangement mattered — so what the decode actually spends is
+  the player's Act I notes. A3, the one clue the cogitator could never hold, is
+  the eighth object and is said backwards.
+- **Canon rule: decrypting the testimony grants nothing but the testimony.**
+  `TestTheSentence` asserts `ROOM_READ_FULL` is not set by `DECODE`. The
+  sentence is *what* Vosk wrote, not *how*, and Ending E needs the method. The
+  only late route to the method is 2.0b.
+- **The Erratum is `StoreNeither` and the testimony is `StoreNotebook`.** Both
+  refusals are the player's own and neither explains itself: B21 gets as far as
+  the correct field on the form and puts the pen down, and B19 opens a good
+  template, reaches the third field, and closes it. Nothing in the UI forbids
+  either — the game just declines, in the player's voice.
+- **The coerced cipher half lives exactly one scene.** With
+  `CIPHER_HALF_VAUX_CORRUPT`, the first `DECODE` returns a fluent, plausible
+  sentence naming Vhail, every clause of which the player proved themselves,
+  and `TestTheCorruptHalfNamesTheWrongMan` asserts the screen carries no hedge
+  at all. The second `DECODE` is the count — nine objects, eight tokens — and
+  costs a point of `VERITY` to unpick. The reveal is arithmetic, not suspicion,
+  which is the same trick the whole act runs on.
+- **The plate cannot be missed and the log can.** `Tick` gives the player B21
+  after `tassDelay` actions with `CIPHER_COMPLETE` and no plate, brought up
+  four tiers by an apprentice. What that route does not carry is B22, Cael's
+  signature on the recovery, because nobody asked him to do it — so the Act III
+  leverage is the price of never having gone to the workshop.
+- **`<ID>_HELD` / `_FILED` / `_PHYSICAL` are engine-written for every clue.**
+  `TestEveryGatedFlagHasAWriter` derives them from `Game.Clues` rather than
+  listing them, so gating a topic on `A4_HELD` needs no bookkeeping. Add a name
+  to that test's `engine` map only when the engine really is the writer —
+  `CIPHER_COMPLETE` and `KADMON_ADDRESS` are deliberately not in it, because
+  2.10's acts and B20's own `sets` write them.
 - Prose style: second person, short sentences under pressure, Imperial
   vocabulary used casually and never explained. See `STORY_BIBLE.md` §9.

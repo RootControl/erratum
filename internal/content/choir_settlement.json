@@ -392,6 +392,69 @@
      },
      "cost": 2,
      "text": "\"A foreman on Shift Nine,\" Mott says. \"Forty-one years on the line. Yes. That's two.\"\n\nHe does not ask why, and he does not ask what she is, and you are fairly sure he already knows both.\n\nIt takes him nine days and it is arranged the way everything down here is arranged, which is that four people who do not exist move you through a Gallery that has never once checked a face against a card.\n\nYou get forty minutes in a chapel at four degrees with no enforcers, no assault, and nobody who is going to die at the eighth minute.\n\n[ you owe Mott two ]"
+    },
+    {
+     "id": "runner",
+     "names": [
+      "runner",
+      "send a runner",
+      "a child",
+      "carry a message",
+      "unrecorded message",
+      "reach vaux",
+      "message"
+     ],
+     "requires": [
+      "MOTT_TERMS",
+      "TWO_THREADS"
+     ],
+     "blocks": [
+      "VAUX_RUNNER_SENT"
+     ],
+     "sets": [
+      "VAUX_RUNNER_SENT"
+     ],
+     "counters": {
+      "MOTT_FAVOURS": 1
+     },
+     "cost": 2,
+     "refused": "\"Not for coin and not for that face,\" Mott says. \"Come back when you've a name for me and something to owe.\"",
+     "text": "\"A message that isn't a message,\" Mott says. \"Spoken, carried, no card, no docket, no clerk. That's a child's work and I've got forty of them and every one of them wants a reason to climb the Spire.\"\n\nShe does not ask who. She waits until you have said the name and the floor and then repeats them back once, exactly, and does not write anything down, and you understand that this is the entire product.\n\n\"She'll take most of a day. She won't tell him who paid and she won't tell me what he said, and that second part is what you're actually buying, and it's the part nobody up your end of the hive believes is worth anything.\"\n\nOne favour. She does not say the word and does not need to; it goes on the same page in her head as the others.\n\n[ MOTT_FAVOURS +1 ]"
+    },
+    {
+     "id": "namebank_route",
+     "names": [
+      "the elder",
+      "cyra onn",
+      "buy the rote",
+      "name-bank elder",
+      "the transcriptionist"
+     ],
+     "requires": [
+      "CIPHER_HALF_ROOM",
+      "CIPHER_HALF_LOST",
+      "MOTT_TERMS",
+      "ILARIA_BURNED"
+     ],
+     "blocks": [
+      "CIPHER_COMPLETE",
+      "FENN_INTACT"
+     ],
+     "counters": {
+      "MOTT_FAVOURS": 4,
+      "RECONCILIATION": 15
+     },
+     "sets": [
+      "CIPHER_COMPLETE",
+      "NAMEBANK_DEBT",
+      "LONG_WAY_TAKEN"
+     ],
+     "grants": [
+      "B17"
+     ],
+     "cost": 6,
+     "refused": "\"I sell what I've got,\" Mott says. \"You've not told me anything I've got.\"",
+     "text": "\"Cyra Onn,\" Mott says. \"Ninety-one. Cut wax on the Spire for thirty-one years, second quarter shift, and she was retired out in 'sixty-six with a lung and no card and she has been down here ever since being somebody's grandmother.\n\n\"She knows the rote. Of course she knows the rote — she cut it. You don't sit at a bench for thirty-one years cutting one man's dictation and not learn the shape of his mouth. She'll give you the sounds in an afternoon.\"\n\nFour favours. She names the number without any pleasure in it, which is how you know it is the real number.\n\n\"And there's her price, which isn't mine and which I'll not argue with her about. She wants your name in the bank.\"\n\n\"My name.\"\n\n\"Yours. Said out loud, in the Rows, into four hundred mouths, and said back every evening for as long as there's a Choir to say it.\" Mott is watching you carefully now. \"You'll think that's sentiment. It isn't. That's how she gets a hold of you and she's ninety-one and she is not being coy about it.\n\n\"You'd be *in* something, Inquisitor. Down here we call that being looked after. Your end of the hive has a different word.\"\n\nCyra Onn gives you the sounds in an afternoon, in a shelter with a tin roof, and does not charge you for the tea.\n\nThat evening four hundred people say your name back, and the Rust Choir has a record of you that no office in the Adamant Crown can reach, amend or delete, and you go up the pipe understanding for the first time in your life that this is what a name in a book is supposed to feel like from the inside.\n\n[ B17 HELD ]"
     }
    ]
   }

@@ -125,11 +125,21 @@ func TestEveryGatedFlagHasAWriter(t *testing.T) {
 		"BODY_REMOVED": true, "LYLE_QUERIED": true, "CRASE_ASKED_FOR_YOU": true,
 		"DISPATCH_ID_KNOWN": true, "KESH_NAMED": true, "CRASE_SAVED_ME": true,
 		"ROOM_READ_FULL": true, "ROOM_READ_PARTIAL": true, "CIPHER_HALF_ROOM": true,
-		"A21_HELD": true, "PRECIS_SIGNED": true, "PRECIS_ANNOTATED": true,
+		"PRECIS_SIGNED": true, "PRECIS_ANNOTATED": true,
 		"PRECIS_REFUSED": true, "ACT2_OPEN": true, "FENN_BURNED_PARTIAL": true,
 		"HAS_VOSK_NOTEBOOK": true,
-		// Written in Act II scenes that are not built yet.
-		"ERRATUM_OBTAINED": true, "ERRATUM_UNUSED": true, "VAUX_ALLIED": true,
+		// TWO_THREADS is the same count that summons Crase; the store habit is
+		// whichever of FILE and NOTE the player reached for first in Act II,
+		// and there is no scene in which either is chosen.
+		"TWO_THREADS": true, "STORE_HABIT_FILED": true, "STORE_HABIT_LEDGER": true,
+		// The plate is unmissable: Cael's imaging act writes these, and so does
+		// the fallback in Tick where Tass brings it up four tiers unbidden.
+		"ERRATUM_OBTAINED": true, "ERRATUM_UNUSED": true,
+		// DECODE, in the chambers, with both halves and the plate. CIPHER_COMPLETE
+		// and KADMON_ADDRESS are not here: 2.10 writes the first and B20 writes
+		// the second, and both are content.
+		"ACT2_COMPLETE": true, "FALSE_SENTENCE_SEEN": true, "SENTENCE_REPAIRED": true,
+		"CANTICA_QUERIED": true, "TASS_BROUGHT_IT": true,
 	}
 	written := map[string]bool{}
 	note := func(fs []string) {
@@ -175,6 +185,14 @@ func TestEveryGatedFlagHasAWriter(t *testing.T) {
 			for _, sh := range n.Shows {
 				note(sh.Sets)
 			}
+		}
+	}
+	// FILE and NOTE write <ID>_HELD, _FILED and _PHYSICAL for every clue in
+	// the game, in the engine, so a gate on one of those is written by
+	// definition and does not need listing above.
+	for id := range g.Clues {
+		for _, suffix := range []string{"_HELD", "_FILED", "_PHYSICAL"} {
+			engine[strings.ToUpper(id)+suffix] = true
 		}
 	}
 	for _, x := range gates {
