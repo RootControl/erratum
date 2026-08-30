@@ -77,7 +77,9 @@ func join(parts ...[]string) []string {
 // the Case Précis annotated.
 func actOne() []string {
 	return []string{
-		"x writ", "x writ", "note A0", "go elevation",
+		"x writ", "x writ", "note A0",
+		// The two things Act I gives an attentive player standing for.
+		"ask about the form", "go elevation", "ask about why not vaux",
 		"take rosette", "go chambers",
 		"x boots", "x boots", "note A3",
 		"x board", "x board", "file A1",
@@ -85,7 +87,7 @@ func actOne() []string {
 		"x quill", "x quill", "note A4",
 		"x calendar", "x calendar", "note A5",
 		"read room backward", "note A8",
-		"query C9-F4-D2",
+		"query C9-F4-D2", "note A20",
 		"wait", "wait", "wait", "wait", "wait",
 		"query C9-F4-D2",
 		"wait", "wait", "wait", "wait", "wait",
@@ -172,6 +174,20 @@ func TestPlaythroughEndingE(t *testing.T) {
 	if !strings.Contains(flat(log), "It reads. It stops. The lights stay on.") {
 		t.Fatalf("expected the last line:\n%s", tail(log))
 	}
+	// The counters land where the documents say a careful player lands.
+	// STORY_BIBLE §12 and ACT_II: standing opens at +1 and Act I is built to
+	// push an attentive player to +2 or +3; VERITY is contradictions recorded
+	// outside the cogitator, not a tally of everything written down, and Act
+	// II's honest maximum is six.
+	if v := s.Ints["VERITY"]; v < 3 || v > 8 {
+		t.Errorf("VERITY %d is outside the range the documents describe", v)
+	}
+	if r := s.Ints["RECONCILIATION"]; r > 25 {
+		t.Errorf("a ledger-keeping player should finish quiet, got %d", r)
+	}
+	if s.Has("BEZ_REMEMBERS") {
+		t.Error("and should never see the forty-point symptom")
+	}
 	// All ten, reached by playing rather than by being handed them.
 	for _, f := range []string{
 		"VAUX_ALIVE", "VAUX_ALLIED", "FENN_INTACT", "ROOM_READ_FULL", "DECOY_REFUSED",
@@ -245,6 +261,9 @@ func TestPlaythroughEndingC(t *testing.T) {
 func TestPlaythroughEndingD(t *testing.T) {
 	s, log := walk(t, join(
 		actOne(), twoThreads(), vauxAllied(), actTwoTurn(),
+		// Filing is what the archive is for. A player who uses the case-file
+		// the way the Crown intends pays for it in exposure.
+		[]string{"file B0", "file B1", "file B15", "file B16", "file B18", "file B22"},
 		[]string{
 			"go skydock",
 			"talk to rill", "ask rill about the booking", "lean on him", "break the seal",
@@ -266,6 +285,13 @@ func TestPlaythroughEndingD(t *testing.T) {
 	if s.Ints["RECONCILIATION"] < 25 {
 		t.Fatalf("the currency is exposure, got %d", s.Ints["RECONCILIATION"])
 	}
+	// And the symptoms are not theoretical. A careless finish crosses forty,
+	// so the retinue remembers something the player has no record of, in a
+	// playthrough rather than in a test that set the counter by hand.
+	if s.Ints["RECONCILIATION"] < 40 || !s.Has("BEZ_REMEMBERS") {
+		t.Fatalf("expected the sub-level nine symptom in play: %d, fired=%v",
+			s.Ints["RECONCILIATION"], s.Has("BEZ_REMEMBERS"))
+	}
 	if !strings.Contains(flat(log), "there is no longer any word for the thing that sent it") {
 		t.Fatalf("expected the last line:\n%s", tail(log))
 	}
@@ -278,4 +304,29 @@ func tail(log string) string {
 		return "…" + log[len(log)-3000:]
 	}
 	return log
+}
+
+// Act I is built to push an attentive player to +2 or +3 with Crase, from an
+// opening +1, and to give them nought to four points of independent proof.
+// Both were true on paper and neither was checked, and the walks that check
+// everything else had been taking none of the standing on offer.
+func TestActOneLandsWhereTheDocumentsSayItDoes(t *testing.T) {
+	s, _ := walk(t, actOne()...)
+
+	if c := s.Ints["CRASE_STANDING"]; c < 2 || c > 3 {
+		t.Errorf("CRASE_STANDING %+d at the act turn; the documents say +2 or +3", c)
+	}
+	if v := s.Ints["VERITY"]; v < 1 || v > 4 {
+		t.Errorf("VERITY %d at the act turn; ACT_I gives the range 0–4", v)
+	}
+	if !s.Has("A21_HELD") {
+		t.Error("a player who transcribed the dispatch can prove the edit")
+	}
+	if !s.Has("ACT1_COMPLETE") {
+		t.Error("the Précis closes the act")
+	}
+	// The archive has touched a careful player barely at all by the turn.
+	if r := s.Ints["RECONCILIATION"]; r > 6 {
+		t.Errorf("RECONCILIATION %d after one filing and one requisition", r)
+	}
 }

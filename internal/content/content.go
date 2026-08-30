@@ -154,9 +154,14 @@ type Object struct {
 	Careless string   `json:"careless"`
 	Careful  string   `json:"careful"`
 	Clue     string   `json:"clue"`
-	BodyOnly bool     `json:"body_only"`
-	Takeable bool     `json:"takeable"`
-	TakeText string   `json:"take_text"`
+	// CarelessClue is what a trained eye takes off the first look. The
+	// backgrounds are the only things that use it: a Lexmechanic reads Cantor
+	// regicide notation as Vault shelf-addressing on sight, and Arbites
+	// death-scene protocol puts the seal register second on the list, always.
+	CarelessClue string `json:"careless_clue"`
+	BodyOnly     bool   `json:"body_only"`
+	Takeable     bool   `json:"takeable"`
+	TakeText     string `json:"take_text"`
 	// Sets are flags that become true on the careful look, when the player has
 	// actually handled the thing. TakeSets are the ones that need it in their
 	// coat: reading a dead man's longhand off his desk is not the same as
@@ -183,6 +188,12 @@ type Clue struct {
 	Reconciliation int    `json:"reconciliation"`
 	NoteText       string `json:"note_text"`
 	Refusal        string `json:"refusal"`
+	// Verity marks a clue whose case-file version the archive alters, so that
+	// holding it in the ledger is independent proof rather than a note. It is
+	// the only thing that moves VERITY on NOTE: the act documents give Act I
+	// four sources and Act II exactly six clues, and a blanket award per clue
+	// put a careful player at twenty-one against a documented ceiling of six.
+	Verity bool `json:"verity"`
 	// Sets are flags that become true the moment this clue is in hand,
 	// whichever way the player came by it. The dispatch number opens the Vault
 	// whether it was read off a jacket or off an archivist's index.

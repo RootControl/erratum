@@ -96,8 +96,13 @@ func TestCarefulPlaythrough(t *testing.T) {
 	if !s.Has("A21_HELD") {
 		t.Fatal("player transcribed the dispatch and should be able to prove the edit")
 	}
-	if s.Ints["VERITY"] < 4 {
-		t.Fatalf("VERITY too low on the careful path: %d", s.Ints["VERITY"])
+	// ACT_I gives VERITY four sources — A21, the Lexmechanic checksum, the
+	// Précis annotated or refused, and cylinder six surviving to act close.
+	// This run reaches only the first, and that is the whole of what a
+	// careful reader has by the end of 1.9: one contradiction, recorded
+	// outside the cogitator, in their own hand.
+	if s.Ints["VERITY"] != 1 {
+		t.Fatalf("expected the one contradiction, got %d", s.Ints["VERITY"])
 	}
 	if !strings.Contains(log, "1188") {
 		t.Fatal("dispatch never rendered")

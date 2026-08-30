@@ -256,6 +256,10 @@ func (s *State) precis(verb string) ([]string, int, bool) {
 }
 
 func (s *State) closePrecis(flag, key string, counters content.Counters) []string {
+	// ACT_I §VERITY: HAS_CYLINDER_6 surviving to act close, +1.
+	if s.Has("HAS_CYLINDER_6") {
+		s.Add("VERITY", 1)
+	}
 	s.PrecisPending = false
 	s.precisDone = true
 	s.Set(flag)
@@ -381,7 +385,14 @@ func (s *State) examine(arg string) ([]string, int) {
 	s.Examined[k]++
 	switch s.Examined[k] {
 	case 1:
-		return []string{o.Careless}, 1
+		out := []string{o.Careless}
+		if o.CarelessClue != "" {
+			s.Grant(o.CarelessClue)
+			c := s.Clue(o.CarelessClue)
+			out = append(out, fmt.Sprintf("[ %s HELD — %s ]\n[ FILE %s   or   NOTE %s ]",
+				o.CarelessClue, c.Label, o.CarelessClue, o.CarelessClue))
+		}
+		return out, 1
 	case 2:
 		var out []string
 		out = append(out, o.Careful)
@@ -487,7 +498,9 @@ func (s *State) note(arg string) ([]string, int) {
 	s.storeClue(id, StoreBook)
 	s.Set(id + "_PHYSICAL")
 	s.Set(id + "_HELD")
-	if !s.Has(id + "_SALVAGED") {
+	// Only the clues the archive goes on to alter are proof of anything. A
+	// note of something nobody ever edited is a note.
+	if c.Verity && !s.Has(id+"_SALVAGED") {
 		s.Add("VERITY", 1)
 	}
 	s.storeHabit("STORE_HABIT_LEDGER")
@@ -837,6 +850,15 @@ func (s *State) afterDispatch(rec string) []string {
 // contradiction is the only place the game acknowledges the edit, and it only
 // does so if the player earned the right by writing something down.
 func (s *State) contradiction() string {
+	if s.Has("BG_LEXMECHANIC") {
+		s.Add("VERITY", 2)
+		s.Set("VAULT_FORENSICS")
+		return s.S("checksum") + "\n\n" + s.contradictionPlain()
+	}
+	return s.contradictionPlain()
+}
+
+func (s *State) contradictionPlain() string {
 	if s.Held["A20"] == StoreBook || s.Held["A20"] == StoreBoth {
 		s.Add("VERITY", 1)
 		s.Set("A21_HELD")

@@ -28,6 +28,8 @@ needs anyway.
 
 `ERRATUM_NOALT=1` disables the alternate screen. `ERRATUM_SAVE` moves the
 session file, which otherwise lives at `./erratum.session`.
+`ERRATUM_BACKGROUND=lexmechanic|provost|penitent` picks an opening background;
+unset is the default and is not a lesser run.
 
 **`ERRATUM_PLAIN=1` is the harness for anything scripted.** It skips Bubble Tea
 and plays over stdin/stdout, one block of text per command:
@@ -771,5 +773,55 @@ them, one test per guarantee, and those assertions are meant to be permanent.
 - **`SAVE` and `LOAD` are free, like anything that only touches your own
   things.** They cost no actions, for the same reason reading your own coat
   does not, and the two lines they print say nothing about what was written.
+- **`VERITY` moves on `Clue.Verity`, not on every `NOTE`.** It is
+  contradictions the player has recorded *outside* the cogitator, and the
+  documents are specific: ACT_I gives four sources — A21, the Lexmechanic
+  checksum, the Précis annotated or refused, and cylinder six surviving to act
+  close — and ACT_II names exactly six clues whose case-file version the
+  archive goes on to alter (B1, B4, B12, B19, and one of B9/B23; B6 is on the
+  list and is `StoreNeither`, so it can never carry the mark). A blanket +1 per
+  note put a careful finish at twenty-one against a documented ceiling of six,
+  which made `VERITY ≥ 4` on Ending A's Cael route and *"below 3, no
+  rebuttals"* in 3.12 both no-ops. Marking a new clue `verity` means claiming
+  the archive alters it.
+- **The counters are asserted in the walks, in bands, from the documents.**
+  `TestActOneLandsWhereTheDocumentsSayItDoes` checks the act turn — standing
+  +2 or +3 from an opening +1, VERITY 0–4, exposure barely moved — and the
+  Ending E and D walks check the two ends: a ledger-keeping finish stays under
+  25 and never sees the forty-point symptom, a filing one crosses forty and
+  does. That is the difference between a symptom that works when a test sets
+  the flag and one a player will actually meet.
+- **A walk that never takes an award is not evidence about the economy.** The
+  playthroughs proved every path *reachable* and said nothing about where the
+  numbers landed, because `actOne()` had never challenged the timestamp or
+  asked why not Vaux — the two things Act I gives standing for. Measuring the
+  walks is how the `VERITY` inflation was found; keep the awards in them.
+- **A background is three flags and a variant object, not a system.**
+  `SetBackground` writes `BG_LEXMECHANIC` / `BG_PROVOST` / `BG_PENITENT` before
+  the first command and nothing mentions them again; content gates on them like
+  any other flag. Each buys something in Act I and charges for it somewhere
+  else, per `ACT_I.md` §PLAYER BACKGROUNDS, and the game never says which is
+  which.
+- **`Object.CarelessClue` is what a trained eye takes off the first look.** It
+  exists for exactly two things: a Lexmechanic reads Cantor regicide notation
+  as Vault shelf-addressing on sight, and Arbites death-scene protocol puts the
+  seal register second on the list, always. Both are stated rather than
+  deduced, and both leave something behind — the Lexmechanic still needs A3 for
+  the direction, and the Provost still pays for the cylinder in 1.8.
+- **A gated variant object must answer to the base object's own name.**
+  `findObject` takes the best-scoring open object, and `board` matches the
+  plain object's ID exactly while only prefixing `board_lex`, so the ungated
+  one won and the variant never fired. Put the base name in the variant's
+  `names`. This is the object-level version of the topic-shadowing rule.
+- **The Lexmechanic's cost is confidence, not information.** The boots variant
+  reads them as an ordinary distress classification on the first look — third
+  item on the standard inventory, correct, and the least interesting thing in
+  the room — so the player stops. A3 is still there on a second examination,
+  before the timer, and many Lexmechanics will not go back. Do not add a hint.
+- **Compulsion buys what was asked for and nothing else.** The Provost's
+  `compel` act opens Vaux completely and blocks the `mnemonic` beat, which
+  fires on pressure — and pressure is what pushing on a closed door costs a
+  person, so a man with nothing closed cannot be pushed on. Asking about Vosk
+  as a person clears `VAUX_COMPELLED`, which is the only way back.
 - Prose style: second person, short sentences under pressure, Imperial
   vocabulary used casually and never explained. See `STORY_BIBLE.md` §9.
