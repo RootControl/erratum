@@ -194,9 +194,6 @@
   "already_read": "You have looked twice. There are nine days of this.",
   "no_terminal": "There is no relay within nine days of this hull. That is the entire point of where you are.",
   "read_room_locked": "Nobody arranged a warp passage.",
-  "no_one_here": "Your own people, and none of them want a task.",
-  "symptom_note": "You open your notes to check something you wrote on the fourth day of all\nthis.\n\nThe sentence is there. It is one clause shorter than you remember, and you\ncannot swear to that, and there is nobody within nine days to ask.",
-  "symptom_option": "There was a thing you said to Crase once and have been meaning to say again.\n\nYou go looking for the words and they are not the words. Not forgotten — you\nhave the shape of them, the length of them, the moment. What you do not have\nis the sentence, and you have never in your life mislaid a sentence.",
-  "symptom_memory": "You look up something you requisitioned yourself, out of your own case-notes,\nbecause you want to check a date against the manifest.\n\nNO SUCH ENTRY.\n\nIt is the same three words the Vault uses for a shelf that was never filled,\nin the same spacing, and there is no relay within nine days of this hull and\nnothing aboard it has been edited by anybody."
+  "no_one_here": "Your own people, and none of them want a task."
  }
 }
