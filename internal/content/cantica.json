@@ -23,7 +23,7 @@
    ],
    "clue": "C15",
    "careless": "A brass berth placard on the stanchion, engraved with your name, your rank and your cabin.",
-   "careful": "Your name is spelled correctly.\n\nIncluding the diacritic. The Lexicanum Vault has had it wrong since you were nineteen and you have stopped correcting it, and four offices on Vardan Prime have it wrong, and the elevation instrument Crase signed has it wrong.\n\nUnder it, in smaller engraving: cabin preferences. Temperature. Light. Which side of the corridor. That you do not take the morning meal.\n\nThe brass has been polished around the letters and not in the grooves, which is what happens to a plate that has been cleaned regularly for a long time.\n\nIt is not new.\n\n[ C15 HELD ]"
+   "careful": "It is spelled correctly.\n\n{RECORD}. Not the Vault's version, which has been one vowel wrong since you were nineteen, and which is on the elevation instrument Crase signed, and on four offices' worth of paper on Vardan Prime, and on every requisition you have ever filed.\n\nUnder it, in smaller engraving: cabin preferences. Temperature. Light. Which side of the corridor. That you do not take the morning meal.\n\nThe brass has been polished around the letters and not in the grooves, which is what happens to a plate that has been cleaned regularly for a long time.\n\nIt is not new.\n\n[ C15 HELD ]"
   },
   {
    "id": "viewport",
@@ -394,15 +394,15 @@
    "names": [
     "the placard",
     "my berth placard",
-    "the diacritic",
+    "the spelling",
     "cabin preferences",
     "polished brass"
    ],
-   "label": "A berth placard with your name spelled correctly, your cabin preferences engraved, and the polish worn round the letters",
+   "label": "A berth placard with your name spelled the way nobody spells it, your cabin preferences engraved, and the polish worn round the letters",
    "store": "either",
    "reconciliation": 1,
-   "file_text": "FILED. CLASS: STATION / BERTHING, ASSIGNMENT. INDEXED.\n\nA berthing assignment is the least interesting document a station produces and\nthe template takes it in four seconds.\n\nIt cross-references your name against the personnel roll and returns a match,\nwhich is the first time in your career that a Vault query on your own name has\nreturned the version with the diacritic in it.",
-   "note_text": "Brass, engraved, with the diacritic in it, and the polish worn round the\nletters and not in the grooves.\n\nCabin preferences: temperature, light, which side of the corridor, no morning\nmeal. Three of those four are things I have never written on any form.\n\nIt is not new."
+   "file_text": "FILED. CLASS: STATION / BERTHING, ASSIGNMENT. INDEXED.\n\nA berthing assignment is the least interesting document a station produces and\nthe template takes it in four seconds.\n\nIt cross-references your name against the personnel roll and returns a match,\nwhich is the first time in your career that a Vault query on your own name has\ncome back as {RECORD}.",
+   "note_text": "Brass, engraved, {RECORD}, and the polish worn round the letters and not in\nthe grooves.\n\nCabin preferences: temperature, light, which side of the corridor, no morning\nmeal. Three of those four are things I have never written on any form.\n\nIt is not new."
   },
   "C16": {
    "id": "C16",

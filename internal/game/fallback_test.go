@@ -257,16 +257,25 @@ func TestTheRetinueFilesThin(t *testing.T) {
 func TestAtSeventyYouGo(t *testing.T) {
 	s, _ := playFrom(t, "standing_board", []string{"ACT2_OPEN"}, "look")
 	out, _ := s.Do("query ROSETTE")
-	if !strings.Contains(flat(strings.Join(out, "\n")), "The diacritic is wrong.") {
-		t.Fatalf("your name is on it:\n%s", strings.Join(out, "\n"))
+	full := strings.Join(out, "\n")
+	// The Vault has had one vowel of the family name wrong since the player
+	// was nineteen, and a correction was acknowledged, filed and ignored.
+	if !strings.Contains(full, "RAYL, AMMON") {
+		t.Fatalf("expected the Vault's version:\n%s", full)
+	}
+	if !strings.Contains(flat(full), "It is spelled wrong.") {
+		t.Fatalf("and the player knows it:\n%s", full)
 	}
 
 	gone, _ := playFrom(t, "standing_board", []string{"ACT2_OPEN"}, "look")
 	gone.Add("RECONCILIATION", 70)
 	out, _ = gone.Do("query ROSETTE")
 	joined := flat(strings.Join(out, "\n"))
-	if !strings.Contains(joined, "Where the given name was there is an initial.") {
+	if !strings.Contains(strings.Join(out, "\n"), "RAYL, A.") {
 		t.Fatalf("expected the initial:\n%s", joined)
+	}
+	if !strings.Contains(joined, "Where Ammon was there is an initial.") {
+		t.Fatalf("and the given name named as what is gone:\n%s", joined)
 	}
 	if !strings.Contains(joined, "It is the most ordinary thing in the world.") {
 		t.Fatalf("the record is ordinary about it:\n%s", joined)

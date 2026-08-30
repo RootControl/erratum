@@ -29,6 +29,9 @@ type snapshot struct {
 	Clock int    `json:"clock"`
 	Date  string `json:"date"`
 
+	Given  string `json:"given"`
+	Family string `json:"family"`
+
 	BodyPresent  bool `json:"body_present"`
 	BodyDeadline int  `json:"body_deadline"`
 	DriftPartial int  `json:"drift_partial"`
@@ -90,6 +93,9 @@ func (s *State) snapshot() snapshot {
 		Room:  s.Room.ID,
 		Clock: s.Clock,
 		Date:  s.date,
+
+		Given:  s.Given,
+		Family: s.Family,
 
 		BodyPresent:  s.BodyPresent,
 		BodyDeadline: s.bodyDeadline,
@@ -157,6 +163,9 @@ func restore(g *content.Game, snap snapshot) (*State, error) {
 
 	s.Clock = snap.Clock
 	s.date = snap.Date
+	if snap.Given != "" {
+		s.Given, s.Family = snap.Given, snap.Family
+	}
 
 	s.BodyPresent = snap.BodyPresent
 	s.bodyDeadline = snap.BodyDeadline
