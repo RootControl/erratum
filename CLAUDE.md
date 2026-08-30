@@ -21,8 +21,10 @@ go test ./internal/game/
 gofmt -l .           # should print nothing
 ```
 
-`internal/game` and `internal/content` have no third-party imports, so the test
-suite runs without `go mod tidy`. `internal/ui` and `main.go` do not.
+`internal/game` and `internal/content` have no third-party imports, so
+`go test ./internal/game/` runs without `go mod tidy`. `internal/ui` and
+`main.go` do not, so `go test ./...` needs the dependencies — which building
+needs anyway.
 
 `ERRATUM_NOALT=1` disables the alternate screen.
 
@@ -667,5 +669,16 @@ them, one test per guarantee, and those assertions are meant to be permanent.
   word, because `FindExit` is gate-blind and the second is then unreachable by
   it however the gates fall. `GO`, `READ`, `TAKE` and `PRESS` deliberately fall
   through to `act()` and are not listed.
+- **An ending holds the screen; quitting does not.** The renderer runs on the
+  alternate screen, so `tea.Quit` the instant `State.Done` went true restored
+  the terminal on top of a thousand words the player had not read — every one
+  of the five endings was destroyed at the moment it was printed, and nothing
+  caught it because the engine returned the text correctly and 208 tests
+  asserted on it. `State.Ending()` is the difference the renderer needs:
+  `Model.finished` blurs the prompt, drops the status line for
+  `ENTER to close the file`, and scrolls to `endedAt` so the ending starts at
+  the top of the viewport rather than the bottom. `internal/ui/model_test.go`
+  drives `Update` and `View` directly and fails if the model quits on top of
+  its own ending.
 - Prose style: second person, short sentences under pressure, Imperial
   vocabulary used casually and never explained. See `STORY_BIBLE.md` §9.
