@@ -109,7 +109,9 @@ drives it headlessly.
 go test ./internal/game/
 ```
 
-A hundred and ninety-seven tests, one per design guarantee:
+Two hundred and two tests. Five of them play the whole game from a cold start
+to five different endings on typed commands alone — the rest are one per design
+guarantee:
 
 | Test | Asserts |
 |---|---|
@@ -287,6 +289,7 @@ A hundred and ninety-seven tests, one per design guarantee:
 | `TestEndingEHasNoPartialCredit` | ten flags, no partial credit, and the refusal never names what is missing |
 | `TestKadmonEndingNeedsAWeightToSpend` | exposure is the currency; a player who stayed clean cannot pay |
 | `TestKeshsSentenceIsTheSolution` | a warning, an instruction, and the answer to a door she does not know exists |
+| `TestPlaythroughEndingA` … `E` | five walks from `New(g)` to five doors, on typed commands and nothing else |
 
 `TestTrustingPlaythrough` also asserts the archive never prints the words
 `DELETED` or `ERROR`. That assertion is the thesis of the whole game and it

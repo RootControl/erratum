@@ -616,5 +616,28 @@ them, one test per guarantee, and those assertions are meant to be permanent.
   acts sit ahead of the five endings and refuse, in fiction, until `tell_vaux`
   has fired. That is how an implication — *if you promised, you must tell him
   first* — is expressed with gates that have no implication operator.
+- **`walk_test.go` is the only thing in the suite that plays the game.**
+  Everything else teleports into a scene with the flags it needs, which is
+  right for testing one guarantee and says nothing about whether the scenes
+  join up. Five walks run from `New(g)` to five different doors on typed
+  commands alone, sharing prefixes through `actOne()`, `twoThreads()`,
+  `vauxAllied()`, `actTwoTurn()`, `stealAndSail()`, `kadmonTo()` and
+  `theReading()`. Both of this repo's soft-locks lived in exactly that gap —
+  every scene correct, no legal path between two of them — and breaking either
+  one fails all five walks.
+- **A script is only evidence if every line of it did something.** `walk()`
+  fails on `That is not a verb this terminal knows` and `You hold no such
+  clue`, so a mistyped command cannot sit in the scripts for years looking like
+  coverage. It also asserts, over a whole playthrough rather than one scene,
+  that the words `DELETED`, `ERROR`, `CORRUPTED` and `TAMPER` never reach the
+  screen. That is the thesis of the game and this is the widest place to
+  assert it.
+- **Strings read from `Tick` belong in `strings.json`, always.** The three
+  Cerement symptoms were authored in the scene that introduces them and fire
+  from `Tick` wherever the player happens to be standing, so walking down to
+  the cogitator well mid-passage printed `[missing string: symptom_note]`. The
+  first playthrough test found it on its first run. Anything emitted outside a
+  scene's own verbs — symptoms, delayed confirmations, the Tass delivery — has
+  to be in the shared table.
 - Prose style: second person, short sentences under pressure, Imperial
   vocabulary used casually and never explained. See `STORY_BIBLE.md` §9.

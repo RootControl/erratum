@@ -34,5 +34,8 @@
  "press_what": "PRESS what? Name the thing it said.",
  "press_nothing": "It has not said anything about that.",
  "press_empty": "\"There is no further layer.\"",
- "cite_amended": "You put it in front of it.\n\nIt reads the reference, confirms that the record is held, and restates it back to you, and what it restates is not what you remember writing.\n\nIt is not disagreeing with you. It has the document; you have a memory of the document; and the document is the authority, and you filed it yourself."
+ "cite_amended": "You put it in front of it.\n\nIt reads the reference, confirms that the record is held, and restates it back to you, and what it restates is not what you remember writing.\n\nIt is not disagreeing with you. It has the document; you have a memory of the document; and the document is the authority, and you filed it yourself.",
+ "symptom_note": "You open your notes to check something you wrote on the fourth day of all\nthis.\n\nThe sentence is there. It is one clause shorter than you remember, and you\ncannot swear to that, and there is nobody within nine days to ask.",
+ "symptom_option": "There was a thing you said to Crase once and have been meaning to say again.\n\nYou go looking for the words and they are not the words. Not forgotten — you\nhave the shape of them, the length of them, the moment. What you do not have\nis the sentence, and you have never in your life mislaid a sentence.",
+ "symptom_memory": "You look up something you requisitioned yourself, out of your own case-notes,\nbecause you want to check a date against the manifest.\n\nNO SUCH ENTRY.\n\nIt is the same three words the Vault uses for a shelf that was never filled,\nin the same spacing, and there is no relay within nine days of this hull and\nnothing aboard it has been edited by anybody."
 }
