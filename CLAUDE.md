@@ -44,8 +44,15 @@ printf 'x board\nx board\nfile A1\n' | ERRATUM_PLAIN=1 ./erratum
 that the TUI renders. Its output is every frame Bubble Tea painted,
 concatenated — a non-alt-screen TUI repaints the whole viewport per keystroke,
 so lines repeat and `tail` shows an earlier frame. That looks exactly like
-commands being swallowed and is not; the older note in this file claiming the
-first command is eaten was a misreading of the same artefact.
+commands being swallowed and is not.
+
+The first command *was* being eaten, though, for a second and unrelated
+reason, and that is fixed: Bubble Tea blocks at startup until its
+background-colour query is answered and then never consumes the answer, so the
+reply fell through to the text input and prefixed whatever was typed first.
+Both ST and BEL terminators leak identically. `smoke.py` now sends Ctrl-U to
+clear the input before the first real command; any other pty driver has to do
+the same.
 
 ## Layout
 

@@ -370,3 +370,32 @@ func TestNoDateAfterThePresent(t *testing.T) {
 		}
 	}
 }
+
+// TestCanonNamesAreConsistent guards a mistake a case-sensitive grep let
+// through: the Cardinal is Ostrem Vhail per STORY_BIBLE §3.3 and ACT_II 2.6,
+// and one "CARDINAL AUGUSTIN VHAIL" survived a rename because the false
+// sentence in 2.11 is set in capitals. Found by playing the game, not by a
+// test, which is why there is now a test.
+func TestCanonNamesAreConsistent(t *testing.T) {
+	// Names the documents settle, and the wrong versions that have appeared.
+	wrong := map[string]string{
+		"augustin": "Ostrem Vhail (STORY_BIBLE §3.3, ACT_II 2.6)",
+	}
+	files, err := filepath.Glob("../content/*.json")
+	if err != nil || len(files) == 0 {
+		t.Fatalf("no scene files to lint: %v", err)
+	}
+	for _, f := range files {
+		raw, err := os.ReadFile(f)
+		if err != nil {
+			t.Fatal(err)
+		}
+		lower := strings.ToLower(string(raw))
+		for bad, right := range wrong {
+			if strings.Contains(lower, bad) {
+				t.Errorf("%s: %q appears; the documents say %s",
+					filepath.Base(f), bad, right)
+			}
+		}
+	}
+}
