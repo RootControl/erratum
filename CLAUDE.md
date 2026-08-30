@@ -26,7 +26,8 @@ gofmt -l .           # should print nothing
 `main.go` do not, so `go test ./...` needs the dependencies — which building
 needs anyway.
 
-`ERRATUM_NOALT=1` disables the alternate screen.
+`ERRATUM_NOALT=1` disables the alternate screen. `ERRATUM_SAVE` moves the
+session file, which otherwise lives at `./erratum.session`.
 
 **`ERRATUM_PLAIN=1` is the harness for anything scripted.** It skips Bubble Tea
 and plays over stdin/stdout, one block of text per command:
@@ -753,5 +754,22 @@ them, one test per guarantee, and those assertions are meant to be permanent.
   friend of thirty years from the age of fourteen, so the older reading fixes
   an inconsistency that was already there. Check a name and an age against the
   bible before writing a new scene around them.
+- **A save that drops a field is the archive's own trick.** `State` carries
+  about twenty-five unexported counters that are pure timing — `bodyDeadline`,
+  `sinceReq`, `symptomsSeen`, `c17Waited`, `transitTicks`, `driftPartial`. A
+  snapshot that lost one would restore a session that is *almost* right: the
+  body still leaves, but not when it should. So `save.go` lists every field by
+  hand — no reflection, no struct tags deciding what survives — and
+  `TestSnapshotCarriesEveryField` fails the moment `State` grows one, so that
+  adding a field is a decision rather than an omission. Raise the count in that
+  test only after adding the field to `snapshot()` *and* `restore()`.
+- **The content is never saved; a session is only ever the player.** Scenes are
+  compiled in, so `restore` rebuilds against the loaded `Game` and refuses a
+  session whose `version` or scene it does not recognise, rather than
+  half-applying it. The archive travels exactly as it stands, corrections
+  included — a session that came back with clean case-notes would be a lie.
+- **`SAVE` and `LOAD` are free, like anything that only touches your own
+  things.** They cost no actions, for the same reason reading your own coat
+  does not, and the two lines they print say nothing about what was written.
 - Prose style: second person, short sentences under pressure, Imperial
   vocabulary used casually and never explained. See `STORY_BIBLE.md` §9.

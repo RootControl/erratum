@@ -143,6 +143,19 @@ func (s *State) Do(raw string) (out []string, ticks int) {
 		}
 		return s.query(strings.ToUpper(strings.TrimSpace(arg)))
 
+	case "save", "suspend":
+		// Free, like anything else that only touches your own things.
+		if err := s.Save(SavePath()); err != nil {
+			return []string{"The session will not write: " + err.Error()}, 0
+		}
+		return []string{s.S("session_saved")}, 0
+
+	case "load", "resume":
+		if err := s.Load(SavePath()); err != nil {
+			return []string{"There is no session to resume: " + err.Error()}, 0
+		}
+		return append([]string{s.S("session_resumed"), s.Room.Title}, s.Room.Look), 0
+
 	case "wait", "z":
 		return []string{"Time passes. It is the one thing in this hive nobody has to requisition."}, 1
 

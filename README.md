@@ -100,16 +100,26 @@ Or go and see Vaux, which costs you the boots if you have not read them yet:
 `ask about the caseload`, `ask about being passed over`, `note phrase`,
 `show the boots to vaux`.
 
+`SAVE` and `LOAD` suspend a session and take it back up. They cost no actions,
+for the same reason reading your own coat costs none, and the file lives at
+`./erratum.session` unless `ERRATUM_SAVE` says otherwise. The content is never
+written to it — a session is only ever the player, and it carries the archive
+exactly as it stands, corrections included.
+
 `ERRATUM_NOALT=1` disables the alternate screen, which is how `smoke.py`
 drives it headlessly.
 
 ## Test
 
 ```sh
-go test ./internal/game/
+go test ./...
 ```
 
-Two hundred and twenty-six tests — 223 in `internal/game`, three in `internal/ui`.
+`internal/game` and `internal/content` have no third-party imports, so
+`go test ./internal/game/` runs without `go mod tidy`. `internal/ui` needs the
+dependencies, which building needs anyway.
+
+Two hundred and thirty-one tests — 228 in `internal/game`, three in `internal/ui`.
 Five of them play the whole game from a cold start to five different endings on
 typed commands alone; the rest are one per design guarantee:
 
@@ -309,6 +319,9 @@ typed commands alone; the rest are one per design guarantee:
 | `TestIlariaFiresOneSidedAtKadmon` | skip her cell and she asks on a street, and does not accept the answer |
 | `TestVauxReconstructsItUncitably` | nine pages taken standing up in a corridor cannot force anything |
 | `TestNoDateAfterThePresent` | the present is 826.M41 and an impossible date reads as a clue, not a typo |
+| `TestSnapshotCarriesEveryField` | a save that quietly loses a timer is the archive's trick, done by the engine |
+| `TestASuspendedSessionFinishesTheSameWay` | put it down mid-Act-II, take it up, and still reach the hidden door |
+| `TestTheArchiveTravelsAsItStands` | a session that came back with clean case-notes would be a lie |
 
 `TestTrustingPlaythrough` also asserts the archive never prints the words
 `DELETED` or `ERROR`. That assertion is the thesis of the whole game and it
@@ -334,33 +347,24 @@ internal/ui/        the cogitator. Deliberately has no vocabulary for
 
 ## What is not built yet
 
-Nothing in the three act documents. The slice is content-complete: 1.1 through
-the fifth door, thirty-one scenes, all five endings reachable and gated as
-written.
+Nothing in the three act documents, and nothing in `STORY_BIBLE.md` §12. All
+thirty-one scenes, all five endings, every Reconciliation symptom and every
+applicable punishing default are in, and the suite plays the game from a cold
+start to five different doors.
 
-Still absent, and never in the documents: save/load, and the player backgrounds
-(Lexmechanic / Provost / Penitent). The clock is 40 seconds per timed action;
-the body leaves eight minutes after you first reach it and does not negotiate. Most of the systems those scenes need are in — scene dates,
-counter gates, drift as equipment condition with its own accrual rules,
-Reconciliation removing options rather than closing them, per-scene
-conversations for a person who appears in both acts, and the store habit the
-player is never asked to choose. Still to build: the Erratum as a one-use
-item, and the four remaining Reconciliation symptoms.
+Absent, and never specified anywhere: the **player backgrounds** (Lexmechanic /
+Provost / Penitent), which the bible offers as "mechanical flavour, same hook".
+The bible also says the player's name is player-set with a default of Ammon
+Reyl; the game is written in second person and never names them, which is a
+deliberate reading and not the bible's.
 
-Act II ends on `DECODE`, in the chambers, with both halves of the cipher and
-a plate the archive does not know exists. A player who blackmailed Vaux gets a
-fluent, plausible, entirely false sentence naming Cardinal Vhail — every clause
-of which they proved themselves — and it holds until they count the tokens.
+Nothing is stubbed. Every flag the content gates on is written by something —
+`TestEveryGatedFlagHasAWriter` enforces it — and the two engine-derived flags
+that used to be forgotten by content, `CIPHER_COMPLETE` and
+`VOSK_METHOD_UNDERSTOOD`, are computed rather than declared.
 
-Also: save/load, the player backgrounds (Lexmechanic / Provost / Penitent), the
-Reconciliation symptom system, and any content past the Act I turn. The clock
-is 40 seconds per timed action; the body leaves eight minutes after you first
-reach it and does not negotiate.
-
-Nothing is stubbed. Every flag Act I reads, Act I writes, and the handoff to
-Act II is complete: `ROSETTE_TAKEN` and `ACT1_TURN_SEEN` always true, all four
-retinue alive and met, A11 and A12 guaranteed, and `ROOM_READ_FULL` set or
-unset inside ninety minutes and never revisitable.
+The clock is 40 seconds per timed action; the body leaves eight minutes after
+you first reach it and does not negotiate.
 
 ## Note on `go.mod`
 
