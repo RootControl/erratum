@@ -8,6 +8,12 @@ shows you an earlier frame rather than the final state — which reads exactly
 like commands being swallowed and is not. Use this only to check that the TUI
 itself renders and does not crash.
 
+There is a second thing that used to look like a swallowed first command and
+was real: Bubble Tea requires an answer to its background-colour query and
+then does not consume it, so the reply landed in the text input and prefixed
+whatever was typed first. This script clears the input before sending
+anything. If you write your own driver, do the same.
+
 For anything scripted, use plain mode instead, which has no repaints:
 
     go build -o erratum .
@@ -66,6 +72,20 @@ def send(data):
     return True
 
 pump(3.0)
+
+# Bubble Tea blocks on the background-colour query at startup and will not
+# paint until it is answered — but it never consumes the answer, so those
+# bytes fall through to the text input and prefix whatever is typed first:
+#
+#     > ]11;rgb:1c1c/1a1a/1717\x writ
+#     That is not a verb this terminal knows.
+#
+# The reply is sent once and is required; both ST and BEL terminators leak
+# the same way. So clear the input widget before the first real command.
+# Ctrl-U is the whole-line kill and the input is empty afterwards.
+send(b"\x15")
+pump(0.4)
+
 for c in CMDS:
     if not send(c):
         break
