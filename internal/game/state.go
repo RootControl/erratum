@@ -119,6 +119,12 @@ type State struct {
 	c17Waited int
 	c17Gone   bool
 
+	// The bible sets the player's name and lets the player change it. The
+	// prose never says it out loud — the game is second person throughout —
+	// but the record does, and what the record does with it is the point.
+	Given  string
+	Family string
+
 	requisitioned  bool
 	sinceReq       int
 	fallbackFired  bool
@@ -149,8 +155,64 @@ func New(g *content.Game) *State {
 		deflects: map[string]int{},
 	}
 	s.date = s.Room.Date
+	s.SetName("")
 	s.arrived = s.arrive()
 	return s
+}
+
+// SetName takes "Ammon Reyl", or the given name alone, or nothing at all, in
+// which case the bible's default stands. STORY_BIBLE §5: name player-set,
+// default Inquisitor Ammon Reyl.
+func (s *State) SetName(full string) {
+	given, family := "Ammon", "Reyl"
+	if f := strings.Fields(full); len(f) > 0 {
+		given = f[0]
+		if len(f) > 1 {
+			family = f[len(f)-1]
+		}
+	}
+	s.Given, s.Family = given, family
+}
+
+// vaultFamily is the family name as the Lexicanum has always held it: one
+// vowel wrong, since the player was nineteen, and long since not worth
+// correcting. A clerk's error is more ordinary than a conspiracy and that is
+// exactly why it has survived four hundred requisitions.
+func (s *State) vaultFamily() string {
+	r := []rune(s.Family)
+	for i, c := range r {
+		switch c {
+		case 'e', 'i', 'o', 'u', 'y':
+			r[i] = 'a'
+			return string(r)
+		case 'a':
+			r[i] = 'e'
+			return string(r)
+		}
+	}
+	return s.Family + "e"
+}
+
+// expand fills the name tokens in authored prose. Every line the player reads
+// comes back through Do or Tick, so this is the only place it has to happen.
+func (s *State) expand(lines []string) []string {
+	for i, l := range lines {
+		if !strings.Contains(l, "{") {
+			continue
+		}
+		l = strings.ReplaceAll(l, "{GIVEN}", s.Given)
+		l = strings.ReplaceAll(l, "{FAMILY}", s.Family)
+		l = strings.ReplaceAll(l, "{FULL}", s.Given+" "+s.Family)
+		l = strings.ReplaceAll(l, "{RECORD}", strings.ToUpper(s.Family)+", "+strings.ToUpper(s.Given))
+		l = strings.ReplaceAll(l, "{VAULTRECORD}",
+			strings.ToUpper(s.vaultFamily())+", "+strings.ToUpper(s.Given))
+		// The record has always had the family name a vowel wrong. Past
+		// seventy it keeps that and loses the given name entirely.
+		l = strings.ReplaceAll(l, "{INITIAL}",
+			strings.ToUpper(s.vaultFamily())+", "+strings.ToUpper(s.Given[:1])+".")
+		lines[i] = l
+	}
+	return lines
 }
 
 // Backgrounds are the three openings the bible offers: same hook, different
@@ -505,7 +567,12 @@ func (s *State) TimeString() string {
 }
 
 // Tick advances the scene clock and returns any events that fired.
-func (s *State) Tick() []string {
+func (s *State) Tick() (out []string) {
+	defer func() { out = s.expand(out) }()
+	return s.tick()
+}
+
+func (s *State) tick() []string {
 	var out []string
 	s.Clock += secondsPerAction
 

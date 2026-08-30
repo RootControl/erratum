@@ -119,7 +119,7 @@ go test ./...
 `go test ./internal/game/` runs without `go mod tidy`. `internal/ui` needs the
 dependencies, which building needs anyway.
 
-Two hundred and forty tests — 237 in `internal/game`, three in `internal/ui`.
+Two hundred and forty-two tests — 239 in `internal/game`, three in `internal/ui`.
 Five of them play the whole game from a cold start to five different endings on
 typed commands alone; the rest are one per design guarantee:
 
@@ -329,6 +329,8 @@ typed commands alone; the rest are one per design guarantee:
 | `TestCompulsionCostsTheMnemonic` | a man with nothing closed cannot be pushed on, so A9 never comes |
 | `TestPenitentFeelsTheEdge` | the hole has an edge, and an edge is a made thing |
 | `TestIlariaKnowsEitherWay` | disclose and she will lie for you; be caught and something stops opening |
+| `TestTheRecordKnowsYourName` | the Vault has it a vowel wrong; only Cantica-Null has it right |
+| `TestTheNameSurvivesASession` | a session that came back under another name would be the game by accident |
 | `TestTheArchiveTravelsAsItStands` | a session that came back with clean case-notes would be a lie |
 
 `TestTrustingPlaythrough` also asserts the archive never prints the words
@@ -365,9 +367,12 @@ The three **player backgrounds** are in — `ERRATUM_BACKGROUND=lexmechanic`,
 buys something in Act I and charges for it somewhere else, and the game never
 says which is which.
 
-The bible says the player's name is player-set with a default of Ammon Reyl;
-the game is written in second person and never names them, which is a
-deliberate reading and not the bible's.
+The Inquisitor's **name** is `ERRATUM_NAME`, defaulting to the bible's Ammon
+Reyl. The prose is second person and never says it. The record does — and the
+Lexicanum has had one vowel of the family name wrong since the player was
+nineteen, on every requisition they have ever filed. Cantica-Null is the only
+place in the game that spells it correctly, and past `RECONCILIATION` 70 the
+record keeps its own spelling and loses the given name.
 
 Nothing is stubbed. Every flag the content gates on is written by something —
 `TestEveryGatedFlagHasAWriter` enforces it — and the two engine-derived flags
