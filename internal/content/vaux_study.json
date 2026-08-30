@@ -240,7 +240,10 @@
       "master",
       "him as a person"
      ],
-     "text": "\"He was the most careful man I have ever met,\" Vaux says. \"Not cautious. Careful. There is a difference and he was the difference.\"\n\nHe does not elaborate and does not appear to feel he needs to.\n\n\"He arranged things. He arranged furniture, arguments, people. If you sat in a room he had been in for long enough, you would eventually find that you had been told something.\"\n\nHe says this as a complaint about a dead man's habits, and he says it while sitting behind a desk with a pen already out, and you are certain — you will be certain for years — that he has no idea he has just handed you the entire method."
+     "text": "\"He was the most careful man I have ever met,\" Vaux says. \"Not cautious. Careful. There is a difference and he was the difference.\"\n\nHe does not elaborate and does not appear to feel he needs to.\n\n\"He arranged things. He arranged furniture, arguments, people. If you sat in a room he had been in for long enough, you would eventually find that you had been told something.\"\n\nHe says this as a complaint about a dead man's habits, and he says it while sitting behind a desk with a pen already out, and you are certain — you will be certain for years — that he has no idea he has just handed you the entire method.\n\nSomewhere in the middle of it you notice that you have stopped taking a statement, and that he has noticed too, and that neither of you is going to mention it.",
+     "clears": [
+      "VAUX_COMPELLED"
+     ]
     },
     {
      "id": "why_not_vaux",
@@ -277,7 +280,10 @@
      "grants": [
       "A9"
      ],
-     "text": "He stops.\n\nNot a pause — a stop, mid-word, with his jaw still set for the rest of the sentence. His eyes go somewhere over your left shoulder and stay there for about a second and a half.\n\n\"Ves-tar-ro. Kan. Il-lum,\" Vaux says.\n\nSix syllables in a fixed rhythm, three and one and two, flat as a man counting stock. It is not Gothic. It is not any of the four cants you were made to learn. It has the shape of something recited rather than said, the way children recite the ordinal saints without being told what a saint is.\n\nThen he picks up exactly where he stopped, in the middle of the same sentence, and it is entirely clear that he does not know he said it.\n\nYou have your notebook in your coat. He would see you take it out."
+     "text": "He stops.\n\nNot a pause — a stop, mid-word, with his jaw still set for the rest of the sentence. His eyes go somewhere over your left shoulder and stay there for about a second and a half.\n\n\"Ves-tar-ro. Kan. Il-lum,\" Vaux says.\n\nSix syllables in a fixed rhythm, three and one and two, flat as a man counting stock. It is not Gothic. It is not any of the four cants you were made to learn. It has the shape of something recited rather than said, the way children recite the ordinal saints without being told what a saint is.\n\nThen he picks up exactly where he stopped, in the middle of the same sentence, and it is entirely clear that he does not know he said it.\n\nYou have your notebook in your coat. He would see you take it out.",
+     "blocks": [
+      "VAUX_COMPELLED"
+     ]
     }
    ],
    "shows": [
@@ -322,6 +328,28 @@
      "counters": {
       "CRASE_STANDING": -1
      }
+    },
+    {
+     "id": "compel",
+     "names": [
+      "compel",
+      "compel him",
+      "procedure",
+      "under compulsion",
+      "formal caution",
+      "on the record"
+     ],
+     "requires": [
+      "BG_PROVOST"
+     ],
+     "blocks": [
+      "VAUX_COMPELLED"
+     ],
+     "sets": [
+      "VAUX_COMPELLED"
+     ],
+     "cost": 1,
+     "text": "You put him under procedural compulsion, in form, out loud, with the caution said properly.\n\nIt is not a threat and he does not take it as one. Interrogator Dmetri Vaux has served forty years in an Ordo that runs on exactly this and he knows the form better than you do; he corrects your recitation of it, once, on a point of order, and is right.\n\n\"Very well.\"\n\nAnd then he answers everything.\n\nEvery question, completely, accurately, without evasion and without one syllable more than was asked for. The seal. The register. The four hours. His own whereabouts, his own resentment, his own two years of unauthorised work, all of it, flat, correct, and volunteered in exactly nothing.\n\nYou get more out of him in eleven minutes than an hour of conversation would have produced.\n\nHe does not offer you a chair again.\n\n[ he answers what is asked ]"
     }
    ]
   }

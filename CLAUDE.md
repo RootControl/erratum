@@ -28,6 +28,8 @@ needs anyway.
 
 `ERRATUM_NOALT=1` disables the alternate screen. `ERRATUM_SAVE` moves the
 session file, which otherwise lives at `./erratum.session`.
+`ERRATUM_BACKGROUND=lexmechanic|provost|penitent` picks an opening background;
+unset is the default and is not a lesser run.
 
 **`ERRATUM_PLAIN=1` is the harness for anything scripted.** It skips Bubble Tea
 and plays over stdin/stdout, one block of text per command:
@@ -794,5 +796,32 @@ them, one test per guarantee, and those assertions are meant to be permanent.
   numbers landed, because `actOne()` had never challenged the timestamp or
   asked why not Vaux — the two things Act I gives standing for. Measuring the
   walks is how the `VERITY` inflation was found; keep the awards in them.
+- **A background is three flags and a variant object, not a system.**
+  `SetBackground` writes `BG_LEXMECHANIC` / `BG_PROVOST` / `BG_PENITENT` before
+  the first command and nothing mentions them again; content gates on them like
+  any other flag. Each buys something in Act I and charges for it somewhere
+  else, per `ACT_I.md` §PLAYER BACKGROUNDS, and the game never says which is
+  which.
+- **`Object.CarelessClue` is what a trained eye takes off the first look.** It
+  exists for exactly two things: a Lexmechanic reads Cantor regicide notation
+  as Vault shelf-addressing on sight, and Arbites death-scene protocol puts the
+  seal register second on the list, always. Both are stated rather than
+  deduced, and both leave something behind — the Lexmechanic still needs A3 for
+  the direction, and the Provost still pays for the cylinder in 1.8.
+- **A gated variant object must answer to the base object's own name.**
+  `findObject` takes the best-scoring open object, and `board` matches the
+  plain object's ID exactly while only prefixing `board_lex`, so the ungated
+  one won and the variant never fired. Put the base name in the variant's
+  `names`. This is the object-level version of the topic-shadowing rule.
+- **The Lexmechanic's cost is confidence, not information.** The boots variant
+  reads them as an ordinary distress classification on the first look — third
+  item on the standard inventory, correct, and the least interesting thing in
+  the room — so the player stops. A3 is still there on a second examination,
+  before the timer, and many Lexmechanics will not go back. Do not add a hint.
+- **Compulsion buys what was asked for and nothing else.** The Provost's
+  `compel` act opens Vaux completely and blocks the `mnemonic` beat, which
+  fires on pressure — and pressure is what pushing on a closed door costs a
+  person, so a man with nothing closed cannot be pushed on. Asking about Vosk
+  as a person clears `VAUX_COMPELLED`, which is the only way back.
 - Prose style: second person, short sentences under pressure, Imperial
   vocabulary used casually and never explained. See `STORY_BIBLE.md` §9.

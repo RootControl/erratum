@@ -7,6 +7,80 @@
  "body_removed": "The medicae come in at the eighth minute, apologise, and take him.\n\nThey are not unkind and they are not going to argue with a rosette that is ninety minutes old. The senior one says \"Throne keep him, sir,\" and means it, and then the door closes and the room is just furniture.\n\nWhatever you did not read off him, you will not be reading.\n\nThey are taking him down to the medicae deck on tier one. Ostro will have him open inside the hour, and Sergeant Oduya will go with him, because nobody has told her not to.",
  "objects": [
   {
+   "id": "board_lex",
+   "requires": [
+    "BG_LEXMECHANIC"
+   ],
+   "names": [
+    "board",
+    "the board",
+    "regicide",
+    "game",
+    "pieces",
+    "chess",
+    "table",
+    "side"
+   ],
+   "careless_clue": "A1",
+   "careless": "Three pieces on squares no legal game reaches, and you have the encoding before you have finished crossing the room, because it is not a game notation at all.\n\nIt is Vault shelf-addressing. Block, level, aisle, shelf. You have written four hundred requisitions in it and you read it the way you read your own hand.\n\nD2. F4. C9.\n\nWhat you do not have is the direction. A shelf-address read the wrong way round is a different shelf, and there is nothing on this board to tell you which way Hadrian Vosk meant it to be read.",
+   "careful": "Three pieces cannot legally stand where they stand.\n\nA second white Emperor on D2 — there is only ever one. A black Lexicanum on F4, a light square, and the Lexicanum is dark-bound. A white Sentinel on C9, the far rank, unpromoted, where promotion is compulsory.\n\nThree errors is not a bad player. Three errors is a man writing.\n\nCantor regicide notation and Lexicanum Vault shelf-addresses are the same alphabet — the same Administratum office codified both, a nine-by-nine grid over nine levels, and a Vault address is three file-rank pairs: block-and-level, aisle-run, shelf.\n\nIn piece-hierarchy order — Emperor, Lexicanum, Sentinel — the board reads D2-F4-C9.\n\nIt is an address written in furniture. No cogitator will ever index it."
+  },
+  {
+   "id": "boots_lex",
+   "requires": [
+    "BG_LEXMECHANIC"
+   ],
+   "body_only": true,
+   "names": [
+    "boots",
+    "the boots",
+    "boot",
+    "feet",
+    "shoes",
+    "footwear"
+   ],
+   "clue": "A3",
+   "careless": "Boots on the wrong feet.\n\nDisorder. It is the third item on the standard distress inventory and you have read it in ninety personnel files: a man who dressed himself badly on the last night of his life, which is the most ordinary thing in this room and the least worth writing down.\n\nYou classify it without stopping and move on, and you are entirely correct about the classification, and that is the whole of the problem.",
+   "careful": "Both boots laced evenly, tension matched, tongues straight. No sock displacement. The bootjack has been used and returned to the wall — in the wrong orientation for a right-handed man in a hurry.\n\nHe sat down. He took his time. He did this last.\n\nSarrow's Reach. Eleven years ago, your first field posting, still a records-adept, across a table from the Governor's people with a manifest in front of you that you both knew was forged and neither of you could say so. At the rest-halt he came back with his boots swapped and held your eye exactly as long as it took.\n\nRead it backwards.\n\nYou never discussed it. It has never been written down by anyone, which is precisely why it is the only language he had left."
+  },
+  {
+   "id": "register_prov",
+   "requires": [
+    "BG_PROVOST"
+   ],
+   "names": [
+    "register",
+    "the register",
+    "seal",
+    "door",
+    "aperture",
+    "aperture log",
+    "seal register",
+    "lock"
+   ],
+   "careless_clue": "A7",
+   "careless": "Seal-integrity register. Second item, always — the body is first and the seal is second, and it has been second since you were nineteen and it will be second at your funeral.\n\nBroken and re-set at the twenty-third hour and fifteen. Forty minutes before the door was forced.\n\nThe wardens' log has nothing against that forty minutes and the register does not care what the log says; a seal is a physical object and it either held or it did not, and this one did not.\n\nSomebody was in this room while it was sealed. You have known that for nine seconds and you have not put your coat down.",
+   "careful": "The aperture log shows one entry. The seal-integrity register is a different instrument and shows a second event.\n\nA warden's seal broken and re-set, cleanly, forty minutes before Bez put her shoulder through the door.\n\nSomebody with a warden's key stood in this room while he was on the floor, and left, and closed it behind them properly."
+  },
+  {
+   "id": "absence",
+   "requires": [
+    "BG_PENITENT"
+   ],
+   "names": [
+    "the absence",
+    "the hole",
+    "the room itself",
+    "the air",
+    "the quiet",
+    "what is missing"
+   ],
+   "clue": "A12b",
+   "careless_clue": "A12",
+   "careless": "There is a hole in this room.\n\nNot a silence and not a cold spot and none of the things the Ecclesiarchy trains people to report. A hole, shaped like an event, in the place where the event was — and you have been carrying an unsanctioned sensitivity since before the black ship and you know exactly what it is and exactly what saying so out loud would cost you.\n\nWhatever happened here left no psychic trace. Ostro will confirm that on tier one in about four hours, correctly, from a machine.\n\nYou are standing in the shape of it.",
+   "careful": "The hole has an edge.\n\nThat is the part you cannot make sense of and cannot stop turning over. A psychic event does not have an edge; it has a falling-off, a gradient, a place where it stops being true. This has a *boundary* — a clean one, in a shape, and the shape does not change when you move.\n\nIt is not a wound in the room. It is a *cut*.\n\nSomething with edges was applied here, once, precisely, and then taken away, and the room has been the shape of the missing thing ever since. You have felt four hauntings and two possessions and one thing in a hold off Sarrow's Reach that nobody ever named, and none of them had a straight line in it anywhere.\n\n[ A12b HELD ]"
+  },
+  {
    "id": "body",
    "names": [
     "vosk",
@@ -283,6 +357,21 @@
    "store": "either",
    "file_text": "FILED. CLASS: CASE PRÉCIS / COUNTERSIGNED. INDEXED.\n\nIt was already there. Filing it files a copy of the thing you were shown, into the place it came from, which the cogitator accepts without remark because a document being filed twice is not an error.\n\nYou now hold, in the archive, the archive's account of your day. That is what everybody else will read.",
    "note_text": "You copy the four paragraphs out by hand, in full, before you do anything else with them.\n\nIt takes twenty minutes and your hand aches at the end of it and it is the single most useful twenty minutes of the entire act, because in eleven days this document will say something else and you will be the only person in the sector who can prove it used to say this."
+  },
+  "A12b": {
+   "id": "A12b",
+   "names": [
+    "the edge",
+    "the shape",
+    "a12b",
+    "the cut",
+    "the boundary"
+   ],
+   "label": "The absence in the chambers has an edge, and a straight one — whatever was applied here had a shape",
+   "store": "notebook",
+   "reconciliation": 0,
+   "refusal": "FILING TEMPLATE :: CLASS — PSYKANA / PHENOMENON, REPORTED\n\nThe first field is the reporting officer's sanction status.\n\nYou close the template. There is a page in your coat and a pen in your hand\nand neither of them has a field for what you are.",
+   "note_text": "The hole has an edge and the edge is straight.\n\nNot a haunting. Not a possession. A cut, made once, precisely, by something\nwith a shape — and a shape is a made thing, and a made thing has an author,\nand an author is not a warp phenomenon.\n\nWritten in my own hand, in my own coat, where the question of my sanction\ndoes not arise."
   }
  },
  "strings": {

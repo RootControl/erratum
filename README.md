@@ -119,7 +119,7 @@ go test ./...
 `go test ./internal/game/` runs without `go mod tidy`. `internal/ui` needs the
 dependencies, which building needs anyway.
 
-Two hundred and thirty-three tests — 230 in `internal/game`, three in `internal/ui`.
+Two hundred and forty tests — 237 in `internal/game`, three in `internal/ui`.
 Five of them play the whole game from a cold start to five different endings on
 typed commands alone; the rest are one per design guarantee:
 
@@ -323,6 +323,12 @@ typed commands alone; the rest are one per design guarantee:
 | `TestASuspendedSessionFinishesTheSameWay` | put it down mid-Act-II, take it up, and still reach the hidden door |
 | `TestActOneLandsWhereTheDocumentsSayItDoes` | +2 or +3 with Crase, nought to four of proof, and the archive barely moved |
 | `TestOnlyTheAlteredCluesAreProof` | VERITY is the six clues the archive alters, not a tally of everything noted |
+| `TestLexmechanicReadsTheBoardAndMisreadsTheBoots` | the encoding on sight, and the boots classified correctly and fatally |
+| `TestLexmechanicProvesTheEdit` | two numbers on one screen; everybody else has a strong feeling |
+| `TestProvostGetsTheSealFree` | the seal register is second, always, and has been since he was nineteen |
+| `TestCompulsionCostsTheMnemonic` | a man with nothing closed cannot be pushed on, so A9 never comes |
+| `TestPenitentFeelsTheEdge` | the hole has an edge, and an edge is a made thing |
+| `TestIlariaKnowsEitherWay` | disclose and she will lie for you; be caught and something stops opening |
 | `TestTheArchiveTravelsAsItStands` | a session that came back with clean case-notes would be a lie |
 
 `TestTrustingPlaythrough` also asserts the archive never prints the words
@@ -354,10 +360,13 @@ thirty-one scenes, all five endings, every Reconciliation symptom and every
 applicable punishing default are in, and the suite plays the game from a cold
 start to five different doors.
 
-Absent, and never specified anywhere: the **player backgrounds** (Lexmechanic /
-Provost / Penitent), which the bible offers as "mechanical flavour, same hook".
-The bible also says the player's name is player-set with a default of Ammon
-Reyl; the game is written in second person and never names them, which is a
+The three **player backgrounds** are in — `ERRATUM_BACKGROUND=lexmechanic`,
+`provost` or `penitent`, unset being the default and not a lesser run. Each
+buys something in Act I and charges for it somewhere else, and the game never
+says which is which.
+
+The bible says the player's name is player-set with a default of Ammon Reyl;
+the game is written in second person and never names them, which is a
 deliberate reading and not the bible's.
 
 Nothing is stubbed. Every flag the content gates on is written by something —
