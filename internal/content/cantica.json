@@ -138,7 +138,7 @@
      "requires": [
       "VHAIL_BROKEN"
      ],
-     "text": "\"Pyne was seated in about forty minutes.\"\n\nKesh says it without emphasis and lets you get there yourself.\n\n\"He is competent, he is dull, he does not negotiate and he will not embarrass anybody. He is better at it than Augustin was and he will be here in twenty years, and Augustin will be a name in a disposition somewhere.\n\n\"You did us a service. I want you to sit with that for a moment, because you did not do it for us, and it was still a service, and the seat filled faster than any of us expected.\""
+     "text": "\"Pyne was seated in about forty minutes.\"\n\nKesh says it without emphasis and lets you get there yourself.\n\n\"He is competent, he is dull, he does not negotiate and he will not embarrass anybody. He is better at it than Ostrem was and he will be here in twenty years, and Ostrem will be a name in a disposition somewhere.\n\n\"You did us a service. I want you to sit with that for a moment, because you did not do it for us, and it was still a service, and the seat filled faster than any of us expected.\""
     },
     {
      "id": "herself",
@@ -150,7 +150,7 @@
       "how you started",
       "the work"
      ],
-     "text": "\"I have signed the standing countersign on Ordo effects in this sector since 963,\" Kesh says. \"You have seen it. Everybody has seen it; it is on everything, which is the point of a standing instrument.\"\n\n\"That is not what I asked.\"\n\n\"No.\" She refills the pot. \"I came in at twenty-six as a variance clerk. A variance is two records that disagree, and there is a rule for resolving one, and I was very good at applying the rule, and by forty I was writing the rules and by fifty I was the only person alive who understood the whole of the schedule.\n\n\"Nobody recruited me, Inquisitor. Nobody swore me to anything. I was promoted.\"",
+     "text": "\"I have signed the standing countersign on Ordo effects in this sector since 792,\" Kesh says. \"You have seen it. Everybody has seen it; it is on everything, which is the point of a standing instrument.\"\n\n\"That is not what I asked.\"\n\n\"No.\" She refills the pot. \"I came in at twenty-six as a variance clerk. A variance is two records that disagree, and there is a rule for resolving one, and I was very good at applying the rule, and by forty I was writing the rules and by fifty I was the only person alive who understood the whole of the schedule.\n\n\"Nobody recruited me, Inquisitor. Nobody swore me to anything. I was promoted.\"",
      "hidden_above": 70
     }
    ],
@@ -359,14 +359,14 @@
      "blocks": [
       "VHAIL_BROKEN"
      ],
-     "text": "Cardinal Augustin Vhail is over-dressed for a station and has been waiting by the door.\n\n\"Brother,\" he says, and takes your hand in both of his. \"Brother. I have prayed — you cannot know how I have prayed. There is so much here that has been done in ignorance and I have said so, I have said so *repeatedly*, and I want you to know that whatever you find I was the one who said so.\"\n\nHe offers you advance absolution for whatever you are about to do. He offers it twice.\n\nHe is grotesque, and he is frightened, and he is the least important person on this station."
+     "text": "Cardinal Ostrem Vhail is over-dressed for a station and has been waiting by the door.\n\n\"Brother,\" he says, and takes your hand in both of his. \"Brother. I have prayed — you cannot know how I have prayed. There is so much here that has been done in ignorance and I have said so, I have said so *repeatedly*, and I want you to know that whatever you find I was the one who said so.\"\n\nHe offers you advance absolution for whatever you are about to do. He offers it twice.\n\nHe is grotesque, and he is frightened, and he is the least important person on this station."
     },
     {
      "id": "broken",
      "requires": [
       "VHAIL_BROKEN"
      ],
-     "text": "The Ecclesiarchy seat is filled by Deacon Sural Pyne, who was seated about forty minutes after Augustin Vhail was taken into custody on Vardan Prime.\n\nHe rises when you come in, at exactly the correct moment, and gives you exactly the correct address for your rank.\n\nHe has a folder. He is going to be extremely helpful and there is nothing in him at all."
+     "text": "The Ecclesiarchy seat is filled by Deacon Sural Pyne, who was seated about forty minutes after Ostrem Vhail was taken into custody on Vardan Prime.\n\nHe rises when you come in, at exactly the correct moment, and gives you exactly the correct address for your rank.\n\nHe has a folder. He is going to be extremely helpful and there is nothing in him at all."
     }
    ],
    "acts": []

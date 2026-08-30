@@ -105,7 +105,7 @@
      "counters": {
       "FENN_DRIFT": 0
      },
-     "text": "\"Who reconciles, Clerk-Ordinate?\"\n\n\"Oh — the office does, sir, it's an office function.\" He is already reaching for the slate, because a procedural question is a question he can answer, and answering it will make you go away. \"There's a standing instruction. Variance reduction. It's the Lord-Prefect's own circular, 'nineteen, and it's not — sir, it isn't secret, it's *filed*, it's the most filed thing in this building—\"\n\nHe shows you.\n\n**VARIANCE REDUCTION IN THE SECTOR RECORD — A NOTE ON PRACTICE**\n*A. KESH, LORD-PREFECT. 0979.*\n\nEleven pages. Dry, careful, entirely reasonable, and about how a sector archive should behave when two of its records disagree: which is retained, which is struck, who countersigns, and — page nine, the one you read four times — the observation that a record which disagrees with *no other record* is not a variance and cannot be reduced.\n\nWhich means that if you want to remove something without leaving a variance, you must remove every record that would have disagreed with its absence.\n\nIt is a memo about filing practice. It is also, read once and never again, a complete and honest description of method, published in 979, by a woman who is still alive and still holds the office.\n\n[ B23 HELD — KESH_IDENTIFIED ]",
+     "text": "\"Who reconciles, Clerk-Ordinate?\"\n\n\"Oh — the office does, sir, it's an office function.\" He is already reaching for the slate, because a procedural question is a question he can answer, and answering it will make you go away. \"There's a standing instruction. Variance reduction. It's the Lord-Prefect's own circular, 'nineteen, and it's not — sir, it isn't secret, it's *filed*, it's the most filed thing in this building—\"\n\nHe shows you.\n\n**VARIANCE REDUCTION IN THE SECTOR RECORD — A NOTE ON PRACTICE**\n*A. KESH, LORD-PREFECT. 0799.*\n\nEleven pages. Dry, careful, entirely reasonable, and about how a sector archive should behave when two of its records disagree: which is retained, which is struck, who countersigns, and — page nine, the one you read four times — the observation that a record which disagrees with *no other record* is not a variance and cannot be reduced.\n\nWhich means that if you want to remove something without leaving a variance, you must remove every record that would have disagreed with its absence.\n\nIt is a memo about filing practice. It is also, read once and never again, a complete and honest description of method, published in 799, by a woman who is still alive and still holds the office.\n\n[ B23 HELD — KESH_IDENTIFIED ]",
      "sets": [
       "KESH_IDENTIFIED"
      ],
@@ -172,12 +172,12 @@
     "variance reduction",
     "kesh's memo",
     "the note on practice",
-    "979"
+    "799"
    ],
-   "label": "Kesh's variance-reduction circular, 0979 — to remove a thing without leaving a variance, remove everything that would have disagreed with its absence",
+   "label": "Kesh's variance-reduction circular, 0799 — to remove a thing without leaving a variance, remove everything that would have disagreed with its absence",
    "store": "either",
    "reconciliation": 2,
-   "file_text": "FILED. CLASS: ADMINISTRATUM PRACTICE / STANDING INSTRUCTION. INDEXED.\n\nThe cogitator notes, helpfully, that the document is already held, has been held since 0979, is unrestricted, and has been requisitioned four times in forty-seven years.\n\nIt records that you are the fifth.",
+   "file_text": "FILED. CLASS: ADMINISTRATUM PRACTICE / STANDING INSTRUCTION. INDEXED.\n\nThe cogitator notes, helpfully, that the document is already held, has been held since 0799, is unrestricted, and has been requisitioned four times in twenty-seven years.\n\nIt records that you are the fifth.",
    "note_text": "You copy out page nine by hand, which takes a while, because it is the driest page of the eleven and you want the exact words.\n\n*A record which disagrees with no other record is not a variance and cannot be reduced.*\n\nIt is a memo about filing. It is also a method, published, unrestricted, forty-seven years old, and read four times."
   },
   "B7": {
