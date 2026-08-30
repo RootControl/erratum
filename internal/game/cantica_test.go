@@ -14,8 +14,11 @@ func TestNobodyLooksUp(t *testing.T) {
 	if _, held := s.Held["C15"]; !held {
 		t.Fatalf("expected the placard:\n%s", log)
 	}
-	if !strings.Contains(flat(log), "Your name is spelled correctly.") {
-		t.Fatalf("including the diacritic:\n%s", log)
+	if !strings.Contains(flat(log), "It is spelled correctly.") {
+		t.Fatalf("the way nobody spells it:\n%s", log)
+	}
+	if !strings.Contains(log, "REYL, AMMON") {
+		t.Fatalf("the record renders the player's own name:\n%s", log)
 	}
 	if !strings.Contains(flat(log), "It is not new.") {
 		t.Fatalf("the polish is worn round the letters:\n%s", log)

@@ -14,6 +14,9 @@ import (
 // punished for checking what they have. Travel and custody cost more than one,
 // because they do.
 func (s *State) Do(raw string) (out []string, ticks int) {
+	// Every line the player reads leaves through here or through Tick, which
+	// is why the name tokens are filled in one place and not forty.
+	defer func() { out = s.expand(out) }()
 	line := strings.TrimSpace(raw)
 	if line == "" {
 		return nil, 0
