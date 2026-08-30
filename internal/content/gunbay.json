@@ -107,7 +107,22 @@
     }
    ],
    "shows": [],
-   "beats": [],
+   "beats": [
+    {
+     "id": "slate",
+     "requires": [
+      "IN_TRANSIT"
+     ],
+     "blocks": [
+      "SPIRIT_ORDERS_READ",
+      "C4_HELD"
+     ],
+     "grants": [
+      "C4"
+     ],
+     "text": "\"There's the other thing,\" Bez says, \"and I'd have mentioned it sooner if you'd been down the well.\"\n\nShe takes a voice slate out of the kit. Not from the bottom, where the packet is. From the top, where you put a thing you have been meaning to hand over.\n\n\"Off the hull. It was in with the orders and nobody's played it since he cut it, and I'd not play it on my own because it didn't feel like mine to.\"\n\nNineteen seconds. A throat cleared at the second.\n\n*\"If you are hearing this you have done the first difficult thing. Do not do the obvious second one.\"*\n\nCut.\n\nShe listens to it twice with her head on one side.\n\n\"Fourth second,\" she says. \"There. That's an intake. He's about to say something else and he stops himself, and then he cuts it there so you'd not hear him stop.\"\n\nShe hands it over.\n\n\"That's him about to say something else, sir. Whatever it was, he decided you were better off without it, and he was probably wrong, and there it is.\"\n\n[ C4 HELD ]"
+    }
+   ],
    "acts": [
     {
      "id": "read_true",

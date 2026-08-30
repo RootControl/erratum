@@ -325,5 +325,8 @@
   "no_terminal": "Every bench on this floor is a terminal. None of them is yours.",
   "read_room_locked": "It is arranged by category. Everything here is arranged by category.",
   "no_one_here": "Three thousand people, and a vox on a stand."
- }
+ },
+ "while": [
+  "ON_THE_FLOOR"
+ ]
 }

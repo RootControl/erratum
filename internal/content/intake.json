@@ -784,12 +784,12 @@
     {
      "id": "refuse_sazh",
      "names": [
-      "refuse her",
       "refuse sazh",
-      "no",
+      "refuse the claim",
       "deny the claim",
       "refuse the favour",
-      "she gets nothing"
+      "she gets nothing",
+      "refuse the debt"
      ],
      "requires": [
       "SAZH_CALLED"
@@ -931,5 +931,11 @@
   "press_nothing": "\"That has not been raised.\"",
   "press_empty": "\"There is no further layer.\"",
   "help": "VERBS\n\n  LOOK                      the room\n  EXAMINE <thing>  (X)      look at it. Looking twice is not the same as looking once.\n  TAKE <thing>              some things can be carried\n  FILE <clue>               file to the cogitator. Indexed, actionable, and reachable.\n  NOTE <clue>               write it in your own notebook. Inert, useless, and yours.\n  CLUES                     what you hold, and where you are holding it\n  READ ROOM                 when you have enough of it\n  DECODE                    when you have the key and the room it was cut for\n  QUERY <code>              Lexicanum Vault, by shelf-address\n  NOTES                     your case-notes, as the cogitator has them\n  NOTEBOOK                  your notebook, as you wrote it\n\n  GO <place>                elsewhere. The clock does not stop for the lift.\n  ASK <person> ABOUT <x>    nothing is listed. Name it.\n  PRESS <thing it said>     one further layer. It will say when there is none.\n  CITE <clue>               put a document in front of it. It holds the record.\n  SHOW <clue> TO <person>   put it in front of them and watch\n  DETAIN / PROMISE / DEFY   some verbs belong to the person, not the terminal\n\n  WAIT                      time passes either way\n  QUIT\n\nClue IDs look like A1, A3. FILE A1. NOTE A3. Most clues answer to a plain\nword as well."
- }
+ },
+ "while": [
+  "AT_THE_INTAKE"
+ ],
+ "npc_refs": [
+  "fifth_chair/crase4"
+ ]
 }

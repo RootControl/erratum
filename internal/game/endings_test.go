@@ -235,7 +235,7 @@ func TestKadmonEndingNeedsAWeightToSpend(t *testing.T) {
 // The one contract in the sector nobody can edit, called in front of witnesses.
 func TestSazhCallsItAtTheSlot(t *testing.T) {
 	s, log := playIntake(t, []string{"SAZH_DEBT"},
-		"talk to sazh", "ask sazh about the favour", "refuse her")
+		"talk to sazh", "ask sazh about the favour", "refuse sazh")
 	if !s.Has("SAZH_UNPAID") {
 		t.Fatalf("expected the refusal:\n%s", log)
 	}

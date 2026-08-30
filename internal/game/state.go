@@ -41,6 +41,9 @@ const (
 	tassDelay           = 12     // and if you never went to the Magos, his apprentice comes to you
 	symptomInterval     = 6      // thirty-six hours on the Cerement's edge
 	c17Delay            = 5      // an hour, and the intake protocols are not there any more
+	rhodDelay           = 4      // long enough for a nineteen-year-old to decide
+	slipsDelay          = 3      // and for the printer to catch up with you
+	inactionLimit       = 90     // past which you do not choose the chair
 )
 
 // State is everything the game knows. Flags are strings by design: the act
@@ -100,7 +103,9 @@ type State struct {
 	canticaQueried   int
 	canticaConfirmed bool
 
-	tassWaited int
+	tassWaited  int
+	rhodWaited  int
+	slipsWaited int
 
 	// Out of relay range the cogitator stops lying about the world and starts
 	// lying about the player. One symptom every thirty-six hours, in order.
@@ -520,6 +525,35 @@ func (s *State) Tick() []string {
 				out = append(out, line)
 			}
 		}
+	}
+	// KADMON_PROOF is always obtainable, says the act document, and a player
+	// who pitied the Marchioness could not reach the Reading Room at all. Rhod
+	// decides this on his own and is beaten for it off-screen.
+	if s.Has("VURR_ASKED") && !s.Has("KADMON_PROOF") && s.Ints["VURR_RESPECT"] < 1 {
+		s.rhodWaited++
+		if s.rhodWaited == rhodDelay {
+			s.Grant("C12")
+			s.Set("RHOD_SMUGGLED")
+			out = append(out, s.S("rhod_smuggles"))
+		}
+	}
+	// Walk out of the reading and it follows you, on printed slips, in order.
+	// Stopping it is a different thing and is not followed.
+	if s.Has("CONFESSION_HEARD") && !s.Has("FILE_HEARD") &&
+		!s.Has("READING_STOPPED") && !s.Has("ON_THE_FLOOR") {
+		s.slipsWaited++
+		if s.slipsWaited == slipsDelay {
+			s.Set("FILE_HEARD")
+			s.Grant("C19")
+			out = append(out, s.S("slips_follow"))
+		}
+	}
+	// Refusing to act indefinitely is not a refusal. You do not choose the
+	// chair; you find you have already sat down.
+	if s.Has("AT_THE_INTAKE") && s.Has("CHAIR_OFFERED") && s.Ending() == "" &&
+		s.Reconciliation() >= inactionLimit {
+		s.Set("ENDING_B")
+		out = append(out, s.S("ending_b_inaction"))
 	}
 	// The plate is unmissable. A player who never took the ash to the workshop
 	// gets it anyway, brought by an apprentice who was told to, and loses only
