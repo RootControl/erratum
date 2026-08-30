@@ -29,7 +29,8 @@ needs anyway.
 `ERRATUM_NOALT=1` disables the alternate screen. `ERRATUM_SAVE` moves the
 session file, which otherwise lives at `./erratum.session`.
 `ERRATUM_BACKGROUND=lexmechanic|provost|penitent` picks an opening background;
-unset is the default and is not a lesser run.
+unset is the default and is not a lesser run. `ERRATUM_NAME` sets the
+Inquisitor's name, defaulting to the bible's Ammon Reyl.
 
 **`ERRATUM_PLAIN=1` is the harness for anything scripted.** It skips Bubble Tea
 and plays over stdin/stdout, one block of text per command:
@@ -823,5 +824,22 @@ them, one test per guarantee, and those assertions are meant to be permanent.
   fires on pressure — and pressure is what pushing on a closed door costs a
   person, so a man with nothing closed cannot be pushed on. Asking about Vosk
   as a person clears `VAUX_COMPELLED`, which is the only way back.
+- **The prose never says the player's name; the record does.** `STORY_BIBLE.md`
+  §5 makes it player-set with a default of Ammon Reyl, and the whole game is
+  second person, so the name exists only where a document would print it — the
+  rosette record, the Cantica placard, the Ending B rewrite. `State.expand`
+  fills `{GIVEN}` `{FAMILY}` `{FULL}` `{RECORD}` `{VAULTRECORD}` `{INITIAL}` on
+  the way out of `Do` and `Tick`, which is the only place every authored line
+  passes through. Do not template anything the player says or thinks.
+- **The Lexicanum has had one vowel of it wrong since the player was
+  nineteen.** `vaultFamily()` derives the misspelling from whatever name is
+  set, so a player-chosen name still gets a record that is subtly not theirs.
+  Cantica-Null is the only place in the game that spells it correctly, and that
+  is the point of the placard. Past `RECONCILIATION` 70 the record keeps its
+  own spelling and loses the given name — `{INITIAL}` is built on the wrong
+  family name on purpose.
+- **A name has to survive a save**, and the snapshot guard is what caught that:
+  adding `Given` and `Family` to `State` failed `TestSnapshotCarriesEveryField`
+  before any test about names existed. That is the guard working.
 - Prose style: second person, short sentences under pressure, Imperial
   vocabulary used casually and never explained. See `STORY_BIBLE.md` §9.

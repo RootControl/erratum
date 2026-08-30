@@ -233,3 +233,63 @@ func TestNoBackgroundIsTheDefault(t *testing.T) {
 		}
 	}
 }
+
+// STORY_BIBLE §5: the name is player-set and defaults to Ammon Reyl. The
+// prose is second person throughout and never says it. The record does, and
+// what the record does with it is the point.
+func TestTheRecordKnowsYourName(t *testing.T) {
+	s, _ := playFrom(t, "standing_board", []string{"ACT2_OPEN"}, "look")
+
+	out, _ := s.Do("query ROSETTE")
+	full := strings.Join(out, "\n")
+	// The Vault has had one vowel of it wrong since the player was nineteen.
+	if !strings.Contains(full, "RAYL, AMMON") {
+		t.Fatalf("expected the Vault's version:\n%s", full)
+	}
+	if strings.Contains(full, "REYL, AMMON") {
+		t.Fatal("the Vault has never held it correctly")
+	}
+	// Cantica has it right, which is the only place that ever does.
+	c, clog := playFrom(t, "cantica", docked, "x placard", "x placard")
+	if !strings.Contains(clog, "REYL, AMMON") {
+		t.Fatalf("the placard is spelled correctly:\n%s", clog)
+	}
+	_ = c
+
+	// A player-set name propagates everywhere the tokens are.
+	named, _ := playFrom(t, "standing_board", []string{"ACT2_OPEN"}, "look")
+	named.SetName("Ottiline Vurr")
+	out, _ = named.Do("query ROSETTE")
+	full = strings.Join(out, "\n")
+	if !strings.Contains(full, "VARR, OTTILINE") {
+		t.Fatalf("the misspelling follows the name:\n%s", full)
+	}
+	// And past seventy the record keeps its own spelling and loses the rest.
+	named.Add("RECONCILIATION", 70)
+	out, _ = named.Do("query ROSETTE")
+	if !strings.Contains(strings.Join(out, "\n"), "VARR, O.") {
+		t.Fatalf("expected the initial:\n%s", strings.Join(out, "\n"))
+	}
+}
+
+// The name survives a suspended session, because a session that came back
+// under a different name would be the whole game happening by accident.
+func TestTheNameSurvivesASession(t *testing.T) {
+	g, err := loadGame(t)
+	if err != nil {
+		t.Fatal(err)
+	}
+	s := New(g)
+	s.SetName("Casmir Lyle")
+	path := t.TempDir() + "/s.json"
+	if err := s.Save(path); err != nil {
+		t.Fatal(err)
+	}
+	back := New(g)
+	if err := back.Load(path); err != nil {
+		t.Fatal(err)
+	}
+	if back.Given != "Casmir" || back.Family != "Lyle" {
+		t.Fatalf("came back as %s %s", back.Given, back.Family)
+	}
+}

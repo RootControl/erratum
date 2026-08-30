@@ -21,7 +21,7 @@ func TestSnapshotCarriesEveryField(t *testing.T) {
 	// Game is the compiled-in content and is never saved; a session is only
 	// ever the player. Room is saved by ID rather than by pointer.
 	const notSaved = 1 // Game
-	const known = 43   // fields in State when the snapshot was last reviewed
+	const known = 45   // fields in State when the snapshot was last reviewed
 
 	got := reflect.TypeOf(State{}).NumField()
 	if got != known {

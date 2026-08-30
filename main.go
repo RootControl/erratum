@@ -3,6 +3,7 @@
 // free-form dialogue, a flat flag engine, and an archive that edits the
 // player's own case-notes without ever saying so.
 //
+// ERRATUM_NAME sets the Inquisitor's name (default: Ammon Reyl).
 // ERRATUM_BACKGROUND=lexmechanic|provost|penitent picks an opening background.
 // ERRATUM_NOALT=1 disables the alternate screen. ERRATUM_PLAIN=1 skips the TUI
 // entirely and plays over stdin/stdout, which is what anything scripted should
@@ -31,6 +32,10 @@ func main() {
 	// lexmechanic, provost, penitent. Unset plays the whole game with none,
 	// which is the default and is not a lesser run.
 	st.SetBackground(strings.ToLower(os.Getenv("ERRATUM_BACKGROUND")))
+	// ERRATUM_NAME sets the Inquisitor's name. The bible makes it player-set
+	// and defaults it to Ammon Reyl; the prose is second person throughout and
+	// never says it, but the record does.
+	st.SetName(os.Getenv("ERRATUM_NAME"))
 	if os.Getenv("ERRATUM_PLAIN") != "" {
 		// Scripted play: no TUI, no repaints, one block of text per command.
 		if err := ui.Plain(st, os.Stdin, os.Stdout); err != nil {
