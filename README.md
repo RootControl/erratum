@@ -109,9 +109,9 @@ drives it headlessly.
 go test ./internal/game/
 ```
 
-Two hundred and eight tests. Five of them play the whole game from a cold start
-to five different endings on typed commands alone — the rest are one per design
-guarantee:
+Two hundred and eleven tests — 208 in `internal/game`, three in `internal/ui`.
+Five of them play the whole game from a cold start to five different endings on
+typed commands alone; the rest are one per design guarantee:
 
 | Test | Asserts |
 |---|---|
@@ -295,6 +295,8 @@ guarantee:
 | `TestNoTwoExitsShareAName` | `FindExit` is gate-blind, so a shared name makes the second door unreachable |
 | `TestTheChannelHasThreeSources` | Ending C's channel is a writ, a favour or a man, and spending the writ revokes it |
 | `TestCaelsFilingReachesTheCaseNotes` | he says he filed it, so it is in the case-notes, so the archive can take it back |
+| `TestAnEndingHoldsTheScreen` | the alternate screen used to restore itself on top of every ending |
+| `TestQuittingStillQuits` | leaving is a player leaving, and still closes at once |
 
 `TestTrustingPlaythrough` also asserts the archive never prints the words
 `DELETED` or `ERROR`. That assertion is the thesis of the whole game and it

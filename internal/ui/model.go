@@ -29,6 +29,11 @@ type Model struct {
 	lines []string
 	ready bool
 	w, h  int
+	// finished is set when the player has gone through a door. The game is
+	// over and the last thing on the screen is a thousand words they have
+	// not read yet, so nothing closes until they say so.
+	finished bool
+	endedAt  int
 }
 
 func New(st *game.State) Model {
@@ -85,13 +90,20 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		switch msg.Type {
 		case tea.KeyCtrlC:
 			return m, tea.Quit
-		case tea.KeyEnter:
+		case tea.KeyEnter, tea.KeyEsc:
+			if m.finished {
+				return m, tea.Quit
+			}
+			if msg.Type == tea.KeyEsc {
+				break
+			}
 			raw := strings.TrimSpace(m.in.Value())
 			if raw == "" {
 				break
 			}
 			m.in.Reset()
 			m.push(prompt.Render("> " + raw))
+			m.endedAt = len(m.lines)
 
 			out, ticks := m.st.Do(raw)
 			for _, o := range out {
@@ -104,16 +116,27 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				}
 			}
 			m.render()
-			m.vp.GotoBottom()
-			if m.st.Done {
+			if end := m.st.Ending(); end != "" {
+				// Put the top of the ending at the top of the screen rather
+				// than the bottom of it. It runs to about a page and a half
+				// and the player is going to want to scroll.
+				m.finished = true
+				m.in.Blur()
+				m.vp.SetYOffset(m.endedAt)
+			} else {
+				m.vp.GotoBottom()
+			}
+			if m.st.Done && !m.finished {
 				return m, tea.Quit
 			}
 		}
 	}
 
 	var cmd tea.Cmd
-	m.in, cmd = m.in.Update(msg)
-	cmds = append(cmds, cmd)
+	if !m.finished {
+		m.in, cmd = m.in.Update(msg)
+		cmds = append(cmds, cmd)
+	}
 	m.vp, cmd = m.vp.Update(msg)
 	cmds = append(cmds, cmd)
 	return m, tea.Batch(cmds...)
@@ -140,6 +163,12 @@ func (m Model) View() string {
 	parts := []string{m.st.TimeString()}
 	if b := bodyLine(m.st); b != "" {
 		parts = append(parts, b)
+	}
+	if m.finished {
+		// No clock, no body, no verbs. There is nothing left to do and the
+		// only thing the footer has to say is how to stop.
+		foot := faint.Render("↑ ↓ to read   ·   ENTER to close the file")
+		return m.vp.View() + "\n" + foot + "\n"
 	}
 	parts = append(parts, "HELP for verbs")
 	status := faint.Render(strings.Join(parts, "   ·   "))

@@ -1,8 +1,7 @@
-// Command erratum is a vertical slice of THE ERRATUM: Act I scenes 1.1-1.7,
-// the Vault requisition and the Act I turn. It exists to prove that
-// free-form examination, the two evidence stores, free-form dialogue, the flag
-// engine and an archive that edits the player's own case-notes without ever
-// saying so are all buildable together.
+// Command erratum is THE ERRATUM: all three acts, thirty-one scenes, and five
+// endings. Free-form examination, two evidence stores the game never explains,
+// free-form dialogue, a flat flag engine, and an archive that edits the
+// player's own case-notes without ever saying so.
 //
 // ERRATUM_NOALT=1 disables the alternate screen. ERRATUM_PLAIN=1 skips the TUI
 // entirely and plays over stdin/stdout, which is what anything scripted should

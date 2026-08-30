@@ -354,6 +354,19 @@ var cipherHalves = map[string]bool{
 
 func (s *State) Has(f string) bool { return s.Flags[f] }
 
+// Ending reports which door the player went through, or "" if the game is over
+// for some other reason. The renderer needs the difference: quitting is a
+// player leaving, and an ending is a thousand words they have to be able to
+// read before anything closes.
+func (s *State) Ending() string {
+	for _, e := range []string{"ENDING_A", "ENDING_B", "ENDING_C", "ENDING_D", "ENDING_E"} {
+		if s.Flags[e] {
+			return e
+		}
+	}
+	return ""
+}
+
 // storeFromFlag makes <ID>_FILED and <ID>_PHYSICAL mean the same thing however
 // they were written. FILE and NOTE store the clue before they set the flag, so
 // this only fires for content that declares the filing itself — Cael putting
