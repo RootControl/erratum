@@ -699,6 +699,34 @@ func (s *State) query(code string) ([]string, int) {
 		s.Grant("B10")
 		return []string{s.S("alms_routing")}, 1
 	}
+	// Reconciliation ≥ 40. The operation she remembers is not in the record,
+	// and the Vault says so in the words it uses for a thing that never was.
+	if strings.Contains(code, "SUBLEVEL") || strings.Contains(code, "SUB-LEVEL") ||
+		strings.Contains(code, "NINE-OP") {
+		if !s.Has("BEZ_REMEMBERS") {
+			return []string{s.S("vault_none")}, 1
+		}
+		s.Set("SUBLEVEL_QUERIED")
+		return []string{s.S("sublevel_null")}, 1
+	}
+	// Your own record, which you have never had a reason to pull before.
+	if strings.Contains(code, "ROSETTE") || strings.Contains(code, "4471") ||
+		strings.Contains(code, "MY RECORD") || strings.Contains(code, "MYSELF") {
+		s.Set("ROSETTE_QUERIED")
+		if s.Reconciliation() >= 70 {
+			return []string{s.S("rosette_thin")}, 1
+		}
+		return []string{s.S("rosette_record")}, 1
+	}
+	// The retinue's personnel files. Reconciliation ≥ 55 and they come back
+	// shorter, with every cross-reference still closing.
+	if who := retinueFile(code); who != "" {
+		s.Set("RETINUE_QUERIED")
+		if s.Reconciliation() >= 55 {
+			return []string{s.S("file_" + who + "_thin")}, 1
+		}
+		return []string{s.S("file_" + who)}, 1
+	}
 	if strings.Contains(code, "THETA") || strings.Contains(code, "EFFECTS") ||
 		strings.Contains(code, "CRATES") || strings.Contains(code, "HOLDING") {
 		// Not gated on having read the room. A player who never read it has no
@@ -762,6 +790,21 @@ func (s *State) query(code string) ([]string, int) {
 	}
 
 	return []string{s.S("vault_none")}, 1
+}
+
+// retinueFile maps a queried name to one of your own people. They are the four
+// records you have never thought to pull, because they are yours.
+func retinueFile(code string) string {
+	for _, m := range []struct{ key, who string }{
+		{"TALM", "ilaria"}, {"ILARIA", "ilaria"},
+		{"FENN", "fenn"}, {"ALETH", "fenn"},
+		{"ODUYA", "bez"}, {"BESKRA", "bez"},
+	} {
+		if strings.Contains(code, m.key) {
+			return m.who
+		}
+	}
+	return ""
 }
 
 func (s *State) afterDispatch(rec string) []string {

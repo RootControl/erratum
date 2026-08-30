@@ -44,6 +44,7 @@ const (
 	rhodDelay           = 4      // long enough for a nineteen-year-old to decide
 	slipsDelay          = 3      // and for the printer to catch up with you
 	inactionLimit       = 90     // past which you do not choose the chair
+	sublevelDelay       = 7      // and she says it in her own time, not yours
 )
 
 // State is everything the game knows. Flags are strings by design: the act
@@ -106,6 +107,7 @@ type State struct {
 	tassWaited  int
 	rhodWaited  int
 	slipsWaited int
+	bezWaited   int
 
 	// Out of relay range the cogitator stops lying about the world and starts
 	// lying about the player. One symptom every thirty-six hours, in order.
@@ -524,6 +526,17 @@ func (s *State) Tick() []string {
 			if line := s.symptom(); line != "" {
 				out = append(out, line)
 			}
+		}
+	}
+	// Reconciliation ≥ 40: the retinue remembers what you don't. She raises it
+	// unprompted, once, because that is what makes it unanswerable — there is
+	// no topic to have avoided and no question you failed to ask.
+	if s.Has("SUBLEVEL_NINE_SEEDED") && s.Has("BEZ_ALIVE") && !s.Has("BEZ_REMEMBERS") &&
+		s.Reconciliation() >= 40 {
+		s.bezWaited++
+		if s.bezWaited == sublevelDelay {
+			s.Set("BEZ_REMEMBERS")
+			out = append(out, s.S("bez_remembers"))
 		}
 	}
 	// KADMON_PROOF is always obtainable, says the act document, and a player

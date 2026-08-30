@@ -165,3 +165,140 @@ func TestTheLedgerIsReOffered(t *testing.T) {
 		t.Fatalf("not to somebody who has it:\n%s", hlog)
 	}
 }
+
+// The Reconciliation symptoms. Nothing below is ever announced, and none of
+// them is a message from the archive — they are all the record being ordinary
+// about something the player knows is not.
+
+// ≥ 40: the retinue remembers what you don't. She raises it unprompted, which
+// is what makes it unanswerable — there is no topic you failed to ask.
+func TestBezRemembersSubLevelNine(t *testing.T) {
+	s, _ := playFrom(t, "standing_board",
+		[]string{"ACT2_OPEN", "SUBLEVEL_NINE_SEEDED"}, "look")
+	s.Add("RECONCILIATION", 40)
+	var log []string
+	for i := 0; i < 10; i++ {
+		log = append(log, s.Tick()...)
+	}
+	joined := flat(strings.Join(log, "\n"))
+	if !s.Has("BEZ_REMEMBERS") {
+		t.Fatalf("she says it in her own time:\n%s", joined)
+	}
+	if !strings.Contains(joined, "don't tell me you didn't, I was awake for most of it") {
+		t.Fatalf("expected her line:\n%s", joined)
+	}
+	if !strings.Contains(joined, "You have never said that to her.") {
+		t.Fatalf("expected the turn:\n%s", joined)
+	}
+	// And the Vault answers about an operation that never was, in the words it
+	// uses for a shelf that was never filled.
+	out, _ := s.Do("query SUBLEVEL NINE")
+	answer := flat(strings.Join(out, "\n"))
+	if !strings.Contains(answer, "NO SUCH OPERATION.") {
+		t.Fatalf("expected the null: %s", answer)
+	}
+	if !strings.Contains(answer, "the same spacing it uses for a shelf somebody emptied") {
+		t.Fatalf("the spacing is the whole of it: %s", answer)
+	}
+
+	// Below forty it never happens, and a clean player is never told they were
+	// spared it.
+	clean, _ := playFrom(t, "standing_board",
+		[]string{"ACT2_OPEN", "SUBLEVEL_NINE_SEEDED"}, "look")
+	clean.Add("RECONCILIATION", 35)
+	for i := 0; i < 20; i++ {
+		clean.Tick()
+	}
+	if clean.Has("BEZ_REMEMBERS") {
+		t.Fatal("thirty-five is not forty")
+	}
+}
+
+// ≥ 55: the retinue's own files come back shorter, with every cross-reference
+// still closing and nothing struck.
+func TestTheRetinueFilesThin(t *testing.T) {
+	full, _ := playFrom(t, "standing_board", []string{"ACT2_OPEN"}, "look")
+	for _, want := range []struct{ q, phrase string }{
+		{"query TALM", "does not agree with the transmission"},
+		{"query FENN", "un-networked by design"},
+		{"query ODUYA", "Literacy: not assessed."},
+	} {
+		out, _ := full.Do(want.q)
+		if !strings.Contains(flat(strings.Join(out, "\n")), want.phrase) {
+			t.Errorf("%s is missing %q:\n%s", want.q, want.phrase, strings.Join(out, "\n"))
+		}
+	}
+
+	thin, _ := playFrom(t, "standing_board", []string{"ACT2_OPEN"}, "look")
+	thin.Add("RECONCILIATION", 55)
+	// The lines that go are the record's lines. What the player thinks about
+	// their absence is their own and stays on the screen.
+	for _, gone := range []struct{ q, phrase string }{
+		{"query TALM", "does not agree with the transmission"},
+		{"query FENN", "un-networked by design"},
+		{"query ODUYA", "Literacy: not assessed."},
+	} {
+		out, _ := thin.Do(gone.q)
+		joined := strings.Join(out, "\n")
+		if strings.Contains(joined, gone.phrase) {
+			t.Errorf("%s still carries %q", gone.q, gone.phrase)
+		}
+		// Nothing is struck, marked or amended. It is simply a clean file.
+		for _, bad := range []string{"DELETED", "STRUCK", "AMENDED", "REDACTED"} {
+			if strings.Contains(joined, bad) {
+				t.Errorf("%s announced itself: %s", gone.q, bad)
+			}
+		}
+	}
+}
+
+// ≥ 70: you go. The record is ordinary about it and there is nobody to raise
+// it with who would not ask you to spell the name you say is missing.
+func TestAtSeventyYouGo(t *testing.T) {
+	s, _ := playFrom(t, "standing_board", []string{"ACT2_OPEN"}, "look")
+	out, _ := s.Do("query ROSETTE")
+	if !strings.Contains(flat(strings.Join(out, "\n")), "The diacritic is wrong.") {
+		t.Fatalf("your name is on it:\n%s", strings.Join(out, "\n"))
+	}
+
+	gone, _ := playFrom(t, "standing_board", []string{"ACT2_OPEN"}, "look")
+	gone.Add("RECONCILIATION", 70)
+	out, _ = gone.Do("query ROSETTE")
+	joined := flat(strings.Join(out, "\n"))
+	if !strings.Contains(joined, "Where the given name was there is an initial.") {
+		t.Fatalf("expected the initial:\n%s", joined)
+	}
+	if !strings.Contains(joined, "It is the most ordinary thing in the world.") {
+		t.Fatalf("the record is ordinary about it:\n%s", joined)
+	}
+	if strings.Contains(joined, "DELETED") || strings.Contains(joined, "REDACTED") {
+		t.Fatal("nothing announces it")
+	}
+}
+
+// Options are removed, not closed. The person answers as though they had never
+// heard of the subject, and there is no gap where the option was.
+func TestAtSeventyOptionsAreAbsent(t *testing.T) {
+	open, log := playFrom(t, "fifth_chair", docked,
+		"talk to crase", "ask crase about muria", "ask crase about the case")
+	if !strings.Contains(flat(log), "It was Hadrian.") {
+		t.Fatalf("the reframe is there below seventy:\n%s", log)
+	}
+	_ = open
+
+	s, _ := playFrom(t, "fifth_chair", docked, "ask crase about muria")
+	s.Add("RECONCILIATION", 70)
+	out, _ := s.Do("ask crase about the case")
+	answer := strings.Join(out, "\n")
+	if strings.Contains(answer, "It was Hadrian.") {
+		t.Fatal("past seventy it is not a subject she has")
+	}
+	if !strings.Contains(answer, "I don't know that") && !strings.Contains(answer, "Ask me one I do") {
+		t.Fatalf("she answers as though she had never heard of it:\n%s", answer)
+	}
+	for _, bad := range []string{"unavailable", "no longer", "removed", "RECONCILIATION"} {
+		if strings.Contains(answer, bad) {
+			t.Fatalf("there is no gap to notice: %s", bad)
+		}
+	}
+}

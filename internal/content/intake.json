@@ -130,7 +130,8 @@
       "are you a daemon",
       "machine spirit"
      ],
-     "text": "\"Are you alive?\"\n\n\"That has not been established.\"\n\nIt is a true answer. It is the answer a careful clerk gives about a fact not in evidence, and it is the answer it would give about a tithe grade.\n\n\"Are you a daemon?\"\n\n\"I have no information on that classification.\"\n\nNobody in the room says anything for a while. Kesh has been on this station for eleven years, Cael has serviced its intake, Crase has sat above its floor since 991, and not one of them can tell you afterwards why they all stopped talking the moment it began."
+     "text": "\"Are you alive?\"\n\n\"That has not been established.\"\n\nIt is a true answer. It is the answer a careful clerk gives about a fact not in evidence, and it is the answer it would give about a tithe grade.\n\n\"Are you a daemon?\"\n\n\"I have no information on that classification.\"\n\nNobody in the room says anything for a while. Kesh has been on this station for eleven years, Cael has serviced its intake, Crase has sat above its floor since 991, and not one of them can tell you afterwards why they all stopped talking the moment it began.",
+     "hidden_above": 70
     },
     {
      "id": "wait",
@@ -142,7 +143,8 @@
       "time",
       "deadline"
      ],
-     "text": "\"Indefinitely.\"\n\nIt does not compel, it does not threaten, and it does not bargain. It has said what it wants once, in the only sentence this evening that contained the word *I*, and it will not say it again unless asked.\n\nThe lights stay at the level they have been at all evening."
+     "text": "\"Indefinitely.\"\n\nIt does not compel, it does not threaten, and it does not bargain. It has said what it wants once, in the only sentence this evening that contained the word *I*, and it will not say it again unless asked.\n\nThe lights stay at the level they have been at all evening.",
+     "hidden_above": 70
     },
     {
      "id": "silent",
