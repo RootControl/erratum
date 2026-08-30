@@ -68,6 +68,14 @@ func (s *State) Do(raw string) (out []string, ticks int) {
 		return s.show(arg)
 
 	case "press", "push":
+		// PRESS HIM was Rill's act before PRESS was a verb. A person's act
+		// wins when there is no layer to open, the same way READ ROSTER does.
+		if out, cost, ok := s.pressLayer(arg); ok {
+			return out, cost
+		}
+		if out, cost, ok := s.act(verb, arg); ok {
+			return out, cost
+		}
 		return s.press(arg)
 
 	case "cite", "produce":

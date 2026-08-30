@@ -247,3 +247,53 @@ func TestStoppingTheReadingHidesThePrice(t *testing.T) {
 		t.Fatal("and the question cannot be reached")
 	}
 }
+
+// The Conclave channel has three sources in the act document and the build had
+// one, which closed Ending C to two of the three routes with no fiction saying
+// why. Spending the writ at Kadmon takes it back — unless something else is
+// still holding it up.
+func TestTheChannelHasThreeSources(t *testing.T) {
+	for _, src := range []string{"VAUX_APOLOGY", "SAZH_DEBT_2", "TRANSPORT_WRIT"} {
+		s, _ := playFrom(t, "cantica", docked, "look")
+		s.Set(src)
+		if !s.Has("CONCLAVE_CHANNEL") {
+			t.Errorf("%s should carry the indictment out", src)
+		}
+	}
+
+	// The writ is one channel and one resupply order, not both.
+	spent, _ := playFrom(t, "cantica", docked, "look")
+	spent.Set("TRANSPORT_WRIT")
+	spent.Set("KADMON_WRIT")
+	if spent.Has("CONCLAVE_CHANNEL") {
+		t.Fatal("a writ left on Kadmon is not a channel out of the sector")
+	}
+	// Unless Vaux gave you his, in which case the writ was never the channel.
+	kept, _ := playFrom(t, "cantica", docked, "look")
+	kept.Set("VAUX_APOLOGY")
+	kept.Set("TRANSPORT_WRIT")
+	kept.Set("KADMON_WRIT")
+	if !kept.Has("CONCLAVE_CHANNEL") {
+		t.Fatal("his dead-man writ does not go to Kadmon")
+	}
+}
+
+// Cael files it to your case-notes without being asked. It has to actually be
+// there, or the archive takes back something the player never saw.
+func TestCaelsFilingReachesTheCaseNotes(t *testing.T) {
+	s, _ := playFrom(t, "cantica", docked,
+		"ask cael about the windows", "ask cael about the protocols")
+	notes := s.caseNotesDump()
+	if !strings.Contains(notes, "C17") {
+		t.Fatalf("he said he filed it:\n%s", notes)
+	}
+	if !s.Holds("C17") {
+		t.Fatal("a filed clue is a stored clue")
+	}
+	for i := 0; i < 8; i++ {
+		s.Tick()
+	}
+	if strings.Contains(s.caseNotesDump(), "C17") {
+		t.Fatal("and then it is not one of the lines any more")
+	}
+}

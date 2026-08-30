@@ -225,34 +225,48 @@ func (s *State) press(arg string) ([]string, int) {
 	if len(s.Room.People()) == 0 {
 		return []string{s.S("no_one_here")}, 0
 	}
+	if strings.TrimSpace(arg) == "" {
+		return []string{s.S("press_what")}, 0
+	}
+	if out, cost, ok := s.pressLayer(arg); ok {
+		return out, cost
+	}
+	return []string{s.S("press_nothing")}, 0
+}
+
+// pressLayer opens the next layer of something already said, by whoever said
+// it. It searches every person in the room rather than the first, because a
+// scene may hold three and only one of them has layers.
+func (s *State) pressLayer(arg string) ([]string, int, bool) {
 	who, subject := splitAsk(arg)
 	if who == "" {
 		subject = arg
 	}
-	var n *content.NPC
-	if who != "" {
-		n = s.npcIn(who)
-	}
-	if n == nil {
-		n = s.Room.People()[0]
-	}
 	subject = strings.TrimSpace(subject)
 	if subject == "" {
-		return []string{s.S("press_what")}, 0
+		return nil, 0, false
 	}
-	for _, t := range n.MatchTopics(subject) {
-		if !s.Topics[n.Key()+"/"+t.ID] || len(t.Layers) == 0 {
-			continue
+	people := s.Room.People()
+	if who != "" {
+		if n := s.npcIn(who); n != nil {
+			people = []*content.NPC{n}
 		}
-		k := n.Key() + "/layer/" + t.ID
-		if s.Layers[k] >= len(t.Layers) {
-			return []string{s.S("press_empty")}, 1
-		}
-		out := []string{t.Layers[s.Layers[k]]}
-		s.Layers[k]++
-		return append(out, s.beats(n)...), 1
 	}
-	return []string{s.S("press_nothing")}, 0
+	for _, n := range people {
+		for _, t := range n.MatchTopics(subject) {
+			if !s.Topics[n.Key()+"/"+t.ID] || len(t.Layers) == 0 {
+				continue
+			}
+			k := n.Key() + "/layer/" + t.ID
+			if s.Layers[k] >= len(t.Layers) {
+				return []string{s.S("press_empty")}, 1, true
+			}
+			out := []string{t.Layers[s.Layers[k]]}
+			s.Layers[k]++
+			return append(out, s.beats(n)...), 1, true
+		}
+	}
+	return nil, 0, false
 }
 
 // cite puts a document in front of it. It cannot contradict a record it holds,
@@ -268,12 +282,6 @@ func (s *State) cite(arg string) ([]string, int) {
 		what, who = arg[:i], arg[i+4:]
 	}
 	n := s.npcIn(strings.TrimSpace(who))
-	if n == nil {
-		if len(s.Room.People()) == 0 {
-			return []string{s.S("no_one_here")}, 0
-		}
-		n = s.Room.People()[0]
-	}
 	var c *content.Clue
 	for _, m := range s.Game.MatchClues(strings.TrimSpace(what)) {
 		if _, held := s.Held[m.ID]; held {
@@ -286,6 +294,19 @@ func (s *State) cite(arg string) ([]string, int) {
 	}
 	if st := s.Held[c.ID]; st != StoreBook && st != StoreBoth {
 		return []string{s.S("cite_amended")}, 1
+	}
+	if n == nil {
+		// Whoever in the room has something to say about it, not whoever
+		// happens to be first in the scene file.
+		for _, p := range s.Room.People() {
+			if p.ShowFor(c.ID) != nil {
+				n = p
+				break
+			}
+		}
+	}
+	if n == nil {
+		n = s.Room.People()[0]
 	}
 	return s.showTo(n, c)
 }

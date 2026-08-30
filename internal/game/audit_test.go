@@ -213,3 +213,112 @@ func TestEveryGatedFlagHasAWriter(t *testing.T) {
 		}
 	}
 }
+
+// parserVerbs are the words Do() handles itself. An act named with one of them
+// at the head is unreachable, because the verb is consumed before act() is
+// ever called — except for the few that deliberately fall through when their
+// argument names no door, object or layer.
+var parserVerbs = map[string]bool{
+	"help": true, "?": true, "verbs": true, "quit": true, "exit": true,
+	"look": true, "l": true, "out": true, "in": true, "back": true, "up": true,
+	"down": true, "enter": true, "ask": true, "interview": true, "question": true,
+	"show": true, "present": true, "talk": true, "greet": true, "approach": true,
+	"see": true, "topics": true, "subjects": true, "who": true, "examine": true,
+	"x": true, "inspect": true, "file": true, "note": true, "write": true,
+	"clues": true, "evidence": true, "notes": true, "casenotes": true,
+	"case-notes": true, "notebook": true, "coat": true, "query": true,
+	"requisition": true, "req": true, "wait": true, "z": true, "status": true,
+	"decode": true, "decipher": true, "translate": true, "cite": true,
+	"produce": true,
+}
+
+// TestNoActIsNamedForAParserVerb is a permanent guard on a mistake this repo
+// has made four times: an act named "ask fenn", "the corpus", "file a
+// correction" or "press him", which the parser eats before any person sees it.
+// GO, READ, TAKE and PRESS fall through on purpose and are not listed above.
+func TestNoActIsNamedForAParserVerb(t *testing.T) {
+	g, err := loadGame(t)
+	if err != nil {
+		t.Fatal(err)
+	}
+	seen := map[string]bool{}
+	for _, sid := range g.Order {
+		for _, n := range g.Scene(sid).People() {
+			if seen[n.Key()] {
+				continue
+			}
+			seen[n.Key()] = true
+			for _, a := range n.Acts {
+				for _, name := range a.Names {
+					head := strings.ToLower(strings.Fields(name)[0])
+					if parserVerbs[head] {
+						t.Errorf("%s/act %s: %q is unreachable — %q is a parser verb",
+							n.Key(), a.ID, name, head)
+					}
+				}
+			}
+		}
+	}
+}
+
+// TestNoTwoExitsShareAName guards the other half of the same class. FindExit
+// picks the best-scoring door regardless of gates, so two exits answering to
+// one word means the second is unreachable by that word however the gates fall.
+func TestNoTwoExitsShareAName(t *testing.T) {
+	g, err := loadGame(t)
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, sid := range g.Order {
+		owner := map[string]string{}
+		for _, e := range g.Scene(sid).Exits {
+			for _, name := range append([]string{e.ID}, e.Names...) {
+				name = strings.ToLower(name)
+				if prev, dup := owner[name]; dup && prev != e.ID {
+					t.Errorf("%s: %q names both %s and %s; the second is unreachable by it",
+						sid, name, prev, e.ID)
+				}
+				owner[name] = e.ID
+			}
+		}
+	}
+}
+
+// TestDelayedTextResolvesEverywhere is the guard for the bug class that has
+// now bitten four times: a string authored in the scene that introduces it and
+// emitted from Tick, which reads whichever scene the player happens to be
+// standing in. vault_none did it, the Cerement symptoms did it, and both were
+// found by hand. Arm every delayed emitter in the game, stand in every scene
+// in turn, and let the clock run.
+func TestDelayedTextResolvesEverywhere(t *testing.T) {
+	g, err := loadGame(t)
+	if err != nil {
+		t.Fatal(err)
+	}
+	arm := []string{
+		"LYLE_QUERIED",    // the Vault confirms a nil return nobody asked it to
+		"C17_FILED",       // and takes the intake protocols back within the hour
+		"IN_TRANSIT",      // the Cerement's symptoms, one every thirty-six hours
+		"CIPHER_COMPLETE", // Tass brings the plate up four tiers unbidden
+		"CANTICA_QUERIED", // and the routing index answers a second time
+		"FENN_INTACT", "FENN_ALIVE",
+	}
+	for _, sid := range g.Order {
+		s := New(g)
+		if !s.Move(sid) {
+			t.Fatalf("cannot enter %s", sid)
+		}
+		for _, f := range arm {
+			s.Set(f)
+		}
+		s.Add("RECONCILIATION", 60)
+		for i := 0; i < 60; i++ {
+			for _, line := range s.Tick() {
+				if strings.Contains(line, "[missing string:") {
+					j := strings.Index(line, "[missing string:")
+					t.Errorf("%s: %s", sid, line[j:min(j+40, len(line))])
+				}
+			}
+		}
+	}
+}

@@ -639,5 +639,33 @@ them, one test per guarantee, and those assertions are meant to be permanent.
   first playthrough test found it on its first run. Anything emitted outside a
   scene's own verbs — symptoms, delayed confirmations, the Tass delivery — has
   to be in the shared table.
+- **Anything emitted from `Tick` must live in `strings.json`.** `Tick` calls
+  `s.S(key)` against whichever scene the player is standing in, not the scene
+  that authored the line, so a delayed emitter authored locally prints a marker
+  the moment the player walks somewhere else. `vault_none` did it and the three
+  Cerement symptoms did it. `TestDelayedTextResolvesEverywhere` arms every
+  delayed emitter in the game, stands in all thirty-seven scenes in turn and
+  runs the clock, which is the guard both of those needed.
+- **`<ID>_FILED` and `<ID>_PHYSICAL` mean the same thing however they are
+  written.** `State.Set` intercepts both and calls `storeFromFlag`, so content
+  that declares a filing — Cael putting the intake protocols into your
+  case-notes without being asked — actually stores the clue and writes the
+  case-note line. Before that, C17 claimed to be filed, the flag agreed, and
+  the case-notes were empty, so the archive took back something the player had
+  never seen. `FILE` and `NOTE` store before they set, so the interception is a
+  no-op for them.
+- **`CONCLAVE_CHANNEL` has three sources and only one of them is a person.**
+  Vaux's dead-man writ, an unspent `TRANSPORT_WRIT`, or `SAZH_DEBT_2`, derived
+  in `State.Set`; spending the writ at Kadmon (`KADMON_WRIT`) revokes it unless
+  one of the other two is standing. The build had only Vaux's, which closed
+  Ending C to two of the three routes the act document gives, with no fiction
+  explaining why.
+- **Two permanent guards on parser collisions.**
+  `TestNoActIsNamedForAParserVerb` fails an act whose first word `Do()` eats —
+  `ask fenn`, `write it down`, `file a correction` — and
+  `TestNoTwoExitsShareAName` fails two doors in one scene answering to the same
+  word, because `FindExit` is gate-blind and the second is then unreachable by
+  it however the gates fall. `GO`, `READ`, `TAKE` and `PRESS` deliberately fall
+  through to `act()` and are not listed.
 - Prose style: second person, short sentences under pressure, Imperial
   vocabulary used casually and never explained. See `STORY_BIBLE.md` §9.
