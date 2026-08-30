@@ -153,6 +153,32 @@ func New(g *content.Game) *State {
 	return s
 }
 
+// Backgrounds are the three openings the bible offers: same hook, different
+// training. They are flags like everything else, chosen before the first
+// command and never mentioned again.
+var Backgrounds = map[string]string{
+	"lexmechanic": "BG_LEXMECHANIC",
+	"provost":     "BG_PROVOST",
+	"penitent":    "BG_PENITENT",
+}
+
+// SetBackground applies one before play starts. An unknown name is ignored,
+// because a player with no background is the default and plays the whole game.
+func (s *State) SetBackground(name string) {
+	flag, ok := Backgrounds[name]
+	if !ok {
+		return
+	}
+	s.Set(flag)
+	if flag == "BG_PENITENT" {
+		// The archive has been in you once already.
+		s.Add("RECONCILIATION", 5)
+	}
+	// A background changes what the first room offers, and the player has not
+	// looked at it yet.
+	s.arrived = s.arrive()
+}
+
 // arrive runs the bookkeeping of entering a scene: the clock jump the act
 // documents imply, the body timer starting the first time the player is close
 // enough to Vosk to read anything off him, and whatever the scene hands you

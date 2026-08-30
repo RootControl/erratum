@@ -149,6 +149,9 @@ func TestEveryGatedFlagHasAWriter(t *testing.T) {
 		// The effects manifest, requisitioned from the Vault by a player who
 		// thought to ask where a dead man's crates went.
 		"THETA_KNOWN": true,
+		// The three openings the bible offers, chosen before the first
+		// command by SetBackground and never mentioned again.
+		"BG_LEXMECHANIC": true, "BG_PROVOST": true, "BG_PENITENT": true,
 		// Derived in Set from the clues that make up the method, the way
 		// CIPHER_COMPLETE is derived from the two halves.
 		"VOSK_METHOD_PARTIAL": true, "VOSK_METHOD_UNDERSTOOD": true,

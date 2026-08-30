@@ -385,7 +385,14 @@ func (s *State) examine(arg string) ([]string, int) {
 	s.Examined[k]++
 	switch s.Examined[k] {
 	case 1:
-		return []string{o.Careless}, 1
+		out := []string{o.Careless}
+		if o.CarelessClue != "" {
+			s.Grant(o.CarelessClue)
+			c := s.Clue(o.CarelessClue)
+			out = append(out, fmt.Sprintf("[ %s HELD — %s ]\n[ FILE %s   or   NOTE %s ]",
+				o.CarelessClue, c.Label, o.CarelessClue, o.CarelessClue))
+		}
+		return out, 1
 	case 2:
 		var out []string
 		out = append(out, o.Careful)
@@ -843,6 +850,15 @@ func (s *State) afterDispatch(rec string) []string {
 // contradiction is the only place the game acknowledges the edit, and it only
 // does so if the player earned the right by writing something down.
 func (s *State) contradiction() string {
+	if s.Has("BG_LEXMECHANIC") {
+		s.Add("VERITY", 2)
+		s.Set("VAULT_FORENSICS")
+		return s.S("checksum") + "\n\n" + s.contradictionPlain()
+	}
+	return s.contradictionPlain()
+}
+
+func (s *State) contradictionPlain() string {
 	if s.Held["A20"] == StoreBook || s.Held["A20"] == StoreBoth {
 		s.Add("VERITY", 1)
 		s.Set("A21_HELD")

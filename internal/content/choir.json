@@ -307,6 +307,24 @@
       "A17_HEARD"
      ],
      "text": "\"Sir — before you go.\" Casually, as though it had just occurred. \"Would you read me my duty roster? It's on the hook, the long one. Just the dates.\"\n\nYou take it down. Two years of shifts, dates only, four hundred lines.\n\nYou read them.\n\nIlaria listens with her head at a slight angle, entirely still, for the whole eleven minutes, and does not interrupt, and does not ask you to go back.\n\n\"Thank you, sir,\" she says, when you have finished.\n\nThat is all she says. She does not tell you what she heard.\n\nShe has been counting. She has been counting for three years, in her head, against a list she cannot read and has to ask people to read to her, one person at a time, never the same person twice."
+    },
+    {
+     "id": "caught",
+     "requires": [
+      "BG_PENITENT",
+      "HAS_CYLINDER_6"
+     ],
+     "blocks": [
+      "PENITENT_DISCLOSED",
+      "PENITENT_CAUGHT"
+     ],
+     "sets": [
+      "PENITENT_CAUGHT"
+     ],
+     "counters": {
+      "ILARIA_TRUST": -1
+     },
+     "text": "Forty-one seconds of wax, and you flinch at the eleventh.\n\nNot visibly. Not in a way anybody in that gallery could report, and there are four people in it and three of them are looking at the machine.\n\nIlaria is blind.\n\n\"Sir,\" she says, afterwards, in the corridor, entirely level. \"That's twice now.\"\n\nShe does not ask and she does not tell anybody and she never raises it again, and something that had been opening between you since the landing stops opening.\n\n[ ILARIA_TRUST -1 ]"
     }
    ],
    "shows": [
@@ -345,6 +363,32 @@
      ],
      "cost": 2,
      "text": "Nine cylinders, and the sixth is the twelfth hour and eleven minutes.\n\nDross reads the jacket aloud before he hands it over, because reading the jacket is not reading the traffic: *CELL 4 / VESSEL TALM V.I. / 0997.4.211 / 12h11 / 41 SEC*, and then, in a different hand — hers — a dispatch number.\n\n**0997.4-1188.**\n\nThe servitor lowers the needle and your astropath's voice comes out of a lathe.\n\nIt is her. It is entirely, insultingly her — the flat Vardan vowels, the little catch before a sibilant. It is her voice saying something with no vowels you recognise, forty-one seconds of it, in a rhythm like someone counting down a stair.\n\nIlaria stands the whole time with her hands at her sides.\n\nWhen it stops she says, \"That is my voice,\" and then, after a while, \"I would like you to write down that I said that first.\"\n\nShe does not sit down afterwards. Dross offers her the chair twice.\n\n[ A17 HELD — forty-one seconds of wax ]\n[ A18 HELD — dispatch 0997.4-1188 ]"
+    },
+    {
+     "id": "take_prov",
+     "names": [
+      "take cylinder",
+      "take the wax",
+      "confiscate",
+      "take six",
+      "impound"
+     ],
+     "requires": [
+      "A17_HEARD",
+      "BG_PROVOST"
+     ],
+     "blocks": [
+      "HAS_CYLINDER_6"
+     ],
+     "refused": "There is nothing to take yet.",
+     "sets": [
+      "HAS_CYLINDER_6"
+     ],
+     "counters": {
+      "ILARIA_TRUST": -1,
+      "CRASE_STANDING": -1
+     },
+     "text": "Dross has been fighting Arbites requisitions for ten years and he has your\ngrade off your coat before you have finished the sentence.\n\n\"Not on a docket, sir.\"\n\nIt takes most of an hour, and in the end it does not take a warrant. It takes\nthe Lord-Inquisitor's office being telephoned, on your authority, about a wax\ncylinder, and Crase signing for it without asking why, and a note going into a\nday-book two tiers up that says a Provost pulled rank on the Choir Spire over\nan impoundment.\n\nShe does not mention it. It is the first thing this month she has not\nmentioned.\n\nYou take it. It goes in your coat, jacket and all, and it is heavier than a thing that size should be.\n\nDross writes the line in the day-book and you sign it and he is fine about it, genuinely, because a signed impoundment is the most survivable transaction available to him.\n\nIlaria says nothing at all.\n\nThen, after a moment: \"That's the only one, sir. There isn't a copy. That's what a redundancy is.\"\n\n\"I know.\"\n\n\"Yes,\" she says. \"I only wanted it said out loud.\"\n\nIt is procedurally correct. It is the only object in this investigation that no cogitator can amend, and in about eleven days it will be the only thing in the sector that disagrees with the record, and you will be right to have taken it.\n\nShe will not forget that you did.\n\n[ HAS_CYLINDER_6 — ILARIA_TRUST -1 ]\n\n[ CRASE_STANDING -1 ]"
     },
     {
      "id": "take",
@@ -438,6 +482,32 @@
       "ILARIA_TRUST": 2
      },
      "text": "You tell her to put her hands down.\n\n\"Sir—\"\n\n\"You've been standing like that for six hours and I'm not going to be the reason for the seventh.\"\n\nShe does not move.\n\n\"I would like a reason,\" Ilaria says, \"that I can repeat to the Choir-Prefect, because he will ask me, and *the Inquisitor declined* is not a reason, it is a delay.\"\n\nSo you give her one, out loud, in a gallery with an archivist in it: that a weapon that does not remember being fired is not a weapon, it is a *route*; that you do not yet know what came down it; and that arresting the route is a thing you do when you have decided not to find out.\n\nThe hands come down.\n\nShe is not grateful. She is something much more useful than grateful, which is bewildered, and a person who is bewildered has stopped being certain, and a person who has stopped being certain will eventually tell you the thing they have not said.\n\n[ ILARIA_TRUST +2 ]"
+    },
+    {
+     "id": "disclose",
+     "names": [
+      "disclose",
+      "tell her what i am",
+      "admit it",
+      "say it",
+      "declare",
+      "tell her"
+     ],
+     "requires": [
+      "BG_PENITENT"
+     ],
+     "blocks": [
+      "PENITENT_DISCLOSED",
+      "PENITENT_CAUGHT"
+     ],
+     "sets": [
+      "PENITENT_DISCLOSED"
+     ],
+     "counters": {
+      "ILARIA_TRUST": 2
+     },
+     "cost": 1,
+     "text": "You tell her.\n\nShe has known since the landing — ten seconds, she says later, and only that long because she was counting the wardens — and she has said nothing to anybody and was not going to.\n\n\"I'd worked out you'd either say it or you wouldn't, sir. Most don't.\"\n\n\"Most can't afford to.\"\n\n\"No.\" A pause. \"Nor can you. That's why I'd have kept it.\"\n\nShe is blind and sanctioned and bound to the Choir at nine, and you are none of those things and every one of them is a protection she has and you do not.\n\nFrom this afternoon she will lie for you. Not much and not often, and she will not tell you when she has, and it will be the only untruth in her file.\n\n[ ILARIA_TRUST +2 ]"
     }
    ]
   }
