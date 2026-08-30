@@ -109,7 +109,7 @@ drives it headlessly.
 go test ./internal/game/
 ```
 
-Two hundred and eleven tests — 208 in `internal/game`, three in `internal/ui`.
+Two hundred and seventeen tests — 214 in `internal/game`, three in `internal/ui`.
 Five of them play the whole game from a cold start to five different endings on
 typed commands alone; the rest are one per design guarantee:
 
@@ -297,6 +297,11 @@ typed commands alone; the rest are one per design guarantee:
 | `TestCaelsFilingReachesTheCaseNotes` | he says he filed it, so it is in the case-notes, so the archive can take it back |
 | `TestAnEndingHoldsTheScreen` | the alternate screen used to restore itself on top of every ending |
 | `TestQuittingStillQuits` | leaving is a player leaving, and still closes at once |
+| `TestRhodSmugglesTheProof` | a nineteen-year-old decides it himself, and is beaten for it off-screen |
+| `TestTheReadingFollowsYouOut` | walk out and it arrives under the cabin door, in order, numbered |
+| `TestInactionSitsYouDown` | you do not choose the chair; you find you have already sat down |
+| `TestTheHullsEvidenceSurfacesAnyway` | skip the cogitator well and Bez has the slate, the station has the plot |
+| `TestTheLedgerIsReOffered` | she will not argue about a number you have not seen |
 
 `TestTrustingPlaythrough` also asserts the archive never prints the words
 `DELETED` or `ERROR`. That assertion is the thesis of the whole game and it

@@ -153,7 +153,21 @@
     }
    ],
    "shows": [],
-   "beats": [],
+   "beats": [
+    {
+     "id": "cites_plot",
+     "requires": [
+      "EXPECTED"
+     ],
+     "blocks": [
+      "C2_HELD"
+     ],
+     "grants": [
+      "C2"
+     ],
+     "text": "\"Your hull's plot came through on the approach,\" Kesh says, pouring. \"They all do; a courier files a plot or it does not get a berth. I read it, because I read them.\"\n\nShe sets a copy beside the pot, right way up for you.\n\n\"Nineteen waypoints out. A return leg entered at 04h41 on the fourth of the second and struck at 06h02, by hand, field by field. Nineteen strikes.\"\n\n\"You worked out what that means.\"\n\n\"I worked out what it means in about a second and a half and I have been sitting with it for eleven days.\" She puts the pot down. \"He could have blanked it. A blank field is nothing. He took ninety seconds a field, nineteen times, so that there would be a strike there for somebody to find, and then he went and sat down at a board.\n\n\"I would like you to have it from me. I would like several things to have come from me.\"\n\n[ C2 HELD ]"
+    }
+   ],
    "acts": [
     {
      "id": "tea",

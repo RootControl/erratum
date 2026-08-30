@@ -135,6 +135,16 @@
    ],
    "beats": [
     {
+     "id": "ledger",
+     "requires": [
+      "EXPECTED"
+     ],
+     "blocks": [
+      "C16_HELD"
+     ],
+     "text": "\"Has Anneke given you the ledger?\"\n\nIt is the first thing she says, before any of it, and she asks it the way you would ask whether somebody had been offered a chair.\n\n\"No.\"\n\n\"Then go and get it before we do this.\" Crase does not move from the fifth chair. \"Four hundred and eleven million, by year and by category, hand-ruled on paper, and she has been waiting eleven years for somebody to give it to.\n\n\"I am not going to argue with you about a number you have not seen. I would win, and it would be worthless, and you would work that out on the way home.\""
+    },
+    {
      "id": "vaux_first",
      "requires": [
       "VAUX_APOLOGY",

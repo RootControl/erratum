@@ -680,5 +680,24 @@ them, one test per guarantee, and those assertions are meant to be permanent.
   the top of the viewport rather than the bottom. `internal/ui/model_test.go`
   drives `Update` and `View` directly and fails if the model quits on top of
   its own ending.
+- **A skipped scene has to cost something, not just not happen.** Act III's
+  **Failure handling** lines are punishing defaults, and six of them are built:
+  Rhod smuggling Report 415 in `Tick` because `KADMON_PROOF` is documented
+  always obtainable and was gated on `VURR_RESPECT ≥ 1`; the reading following
+  the player off the floor on printed slips; inaction at `RECONCILIATION ≥ 90`
+  sitting them in the fifth chair without a decision; Bez producing the voice
+  slate and Kesh citing the nav plot if the cogitator well was never entered;
+  Crase following to the intake; and the ledger re-offered in 3.10. The
+  guaranteed ones are in `Tick` rather than on a beat, because a beat needs
+  the player to walk back up to somebody and a guarantee cannot.
+- **`ON_THE_FLOOR` and `AT_THE_INTAKE` are `while` flags that scope `Tick`.**
+  The slips only follow a player who has left the Correctorum, and the
+  inaction ending only fires where the slot is. `Tick` runs everywhere, so
+  anything in it that belongs to one place needs a `while` flag to say so.
+- **Adding a person to a scene changes what the nouns in it mean.** Crase
+  follows the player to the intake, so `her` names her there, and Sazh's
+  `refuse her` started firing Crase's refusal instead. Renamed to
+  `refuse sazh`. Check the pronouns in an existing scene's act names before
+  putting somebody new in it.
 - Prose style: second person, short sentences under pressure, Imperial
   vocabulary used casually and never explained. See `STORY_BIBLE.md` §9.
