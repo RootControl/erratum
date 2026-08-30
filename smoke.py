@@ -1,6 +1,18 @@
 #!/usr/bin/env python3
-"""Drives the TUI through a pty, answering the terminal capability queries
-Bubble Tea blocks on, so the slice can be smoke-tested headlessly in CI."""
+"""Drives the *TUI* through a pty, answering the terminal capability queries
+Bubble Tea blocks on.
+
+The output is every frame Bubble Tea painted, concatenated. A non-alt-screen
+TUI repaints its whole viewport on each keystroke, so lines repeat and `tail`
+shows you an earlier frame rather than the final state — which reads exactly
+like commands being swallowed and is not. Use this only to check that the TUI
+itself renders and does not crash.
+
+For anything scripted, use plain mode instead, which has no repaints:
+
+    go build -o erratum .
+    printf 'x board\nx board\nfile A1\n' | ERRATUM_PLAIN=1 ./erratum
+"""
 import os, pty, time, select, re, fcntl, termios, struct, sys
 
 # The binary is expected next to this script; override with ERRATUM_BIN.
@@ -42,11 +54,23 @@ def pump(t):
         if b"\x1b]11;?" in d:
             os.write(fd, b"\x1b]11;rgb:1c1c/1a1a/1717\x1b\\")
 
+def send(data):
+    """Write to the pty, tolerating a program that has already exited.
+
+    QUIT and the five endings both close the program on their own, so the
+    trailing ctrl-C has nothing to go to and the pty raises EIO."""
+    try:
+        os.write(fd, data)
+    except OSError:
+        return False
+    return True
+
 pump(3.0)
 for c in CMDS:
-    os.write(fd, c)
+    if not send(c):
+        break
     pump(0.7)
-os.write(fd, b"\x03")
+send(b"\x03")
 pump(0.5)
 
 t = buf.decode("utf8", "replace")

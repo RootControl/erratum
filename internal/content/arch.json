@@ -1,0 +1,75 @@
+{
+ "id": "gallery_arch",
+ "title": "THE GALLERY ARCH — TIER EIGHT, WEST",
+ "while": [
+  "OUTSIDE_SHIELDING"
+ ],
+ "npc_refs": [
+  "fenn"
+ ],
+ "intro": "Twenty metres of corridor and a brass strip in the floor, and on the other\nside of it the Adamant Crown opens out into gallery and noise and eleven\nhundred metres of hive going down.\n\nFenn steps over the strip without looking at it and stands in the archway,\nstill talking, entirely at ease, four metres from where he was.\n\nThere is nothing here. That is the point of here. There is an arch, and a\nview, and a brass strip with a Mechanicus stamp on it every nine inches, and\npast the strip there is coverage all the way to the sump.\n\nAsk him again.",
+ "look": "The arch. A view down eleven hundred metres of gallery, lifters moving in it\nlike slow insects. Noise coming up.\n\nThe brass STRIP in the floor behind you, thumb-wide, stamped.\n\nSavant FENN in the archway, cheerful, waiting, entirely unaware that he has\nbeen brought here to be an instrument.",
+ "objects": [
+  {
+   "id": "strip",
+   "names": [
+    "brass",
+    "shielding",
+    "threshold",
+    "the line",
+    "stamp",
+    "boundary"
+   ],
+   "careless": "A brass strip let into the floor, thumb-wide, a Mechanicus stamp every nine inches. Four hundred years old. Nobody in this building looks at it.",
+   "careful": "You stand with one boot either side of it, which is an absurd thing for an Inquisitor of ninety minutes' standing to be doing in a public gallery, and which you do anyway.\n\nBehind the strip: eleven tiers of relay-shielded rock, four hundred years of Mechanicus courtesy, and a savant with three hundred and fifty-two dates in his head.\n\nIn front of it: the hive, and everything the hive can hear.\n\nThe strip does not do anything. It is not a machine. It is the edge of where a machine cannot reach, and you are about to find out that this matters more than anything else you learn today."
+  },
+  {
+   "id": "gallery",
+   "names": [
+    "view",
+    "hive",
+    "lifters",
+    "down",
+    "the drop",
+    "cantor"
+   ],
+   "careless": "Eleven hundred metres of gallery going down, lifters moving in it, the noise of forty million people at work coming up as one flat sound.",
+   "careful": "Somewhere down there is a Choir Spire with a woman in cell four who has been waiting six hours to be arrested, a sump district that owes eleven crowns, and a man with no name in any file at all.\n\nYou have been an Inquisitor for ninety minutes and you are standing at an arch making a savant repeat himself.\n\nIt is going to turn out to be the most useful ninety seconds of the entire investigation."
+  },
+  {
+   "id": "fenn",
+   "names": [
+    "aleth",
+    "savant",
+    "him",
+    "implant"
+   ],
+   "careless": "Fenn in the archway, cheerful, talking about a sump assessment, entirely at ease.",
+   "careful": "Exactly the same man. Same attention, same good humour, same total absence of guile, four metres and one brass strip from where he was.\n\nNothing about him has changed and nothing is going to. He is not ill, he is not tired, he is not being got at, and he will be able to tell you the tithe grade of every world in the subsector from this archway without a flicker.\n\nIt is going to be one specific thing, and he is not going to notice it, and he is going to apologise."
+  }
+ ],
+ "exits": [
+  {
+   "id": "office",
+   "names": [
+    "back",
+    "inside",
+    "east",
+    "in",
+    "adjutant",
+    "office"
+   ],
+   "to": "adjutant",
+   "cost": 1,
+   "text": "You walk him back inside. He steps over the brass strip without looking at it, still apologising about the ledger, and offers to go and check it again."
+  }
+ ],
+ "strings": {
+  "no_such_thing": "There is an arch, a brass strip, a savant and eleven hundred metres of drop.",
+  "already_read": "You have looked twice. The thing you came out here for is not something you look at.",
+  "no_one_here": "There is nobody out here but Fenn.",
+  "no_terminal": "You are standing in a public gallery on the shielded side of nothing at all.\n\nWhatever you were going to requisition, do it from his desk.",
+  "read_room_locked": "This is an archway. There is nothing here to read but a man."
+ },
+ "revisit": "The arch again. The brass strip behind you, the drop in front, the noise coming up.\n\nFenn waits in the archway, entirely at ease."
+}

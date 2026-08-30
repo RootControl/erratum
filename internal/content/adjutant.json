@@ -1,0 +1,403 @@
+{
+ "id": "adjutant",
+ "title": "THE ADJUTANT'S OFFICE — TIER EIGHT",
+ "sets": [
+  "FENN_INTACT"
+ ],
+ "intro": "One floor down, and a different weather entirely.\n\nLedgers to the ceiling, all of them open, none of them needed. A man at a\ndesk in the middle of it who has been cross-checking a tithe variance since\nthe fourth hour and is having, by any reasonable measure, an extremely good\nmorning.\n\nSavant Aleth Fenn has a mnemonic implant, two decades of sector record in his\nhead that exists nowhere on a cogitator, and no idea at all what has happened\nupstairs — or rather, he knows exactly what has happened upstairs, and does\nnot consider that it has happened.\n\n\"Inquisitor,\" he says, standing, pleased. \"Congratulations.\"\n\nThe elevation was ninety minutes ago and has not been filed. He heard it in a\ncorridor. Hearing is filing, to him.",
+ "look": "Ledgers, LEDGERS, in stacks and on shelves and open on every flat surface.\nA DESK with a tithe variance on it, half worked. An empty requisition TRAY.\n\nSavant FENN, standing, delighted, waiting to be asked something.\n\nThe corridor runs west to the gallery ARCH, which is the edge of the\nMechanicus shielding, though nobody in this room has ever had cause to say\nthat out loud.",
+ "objects": [
+  {
+   "id": "ledgers",
+   "names": [
+    "ledger",
+    "books",
+    "shelves",
+    "records",
+    "stacks"
+   ],
+   "careless": "Two decades of sector record in paper, cross-indexed by a man who does not need any of it, because he has all of it already.",
+   "careful": "He keeps them because the Administratum requires an adjutant to keep them, and he has never once consulted one.\n\nEvery ledger in this room is a copy. The original is four feet away behind a savant's eyes, un-networked, unrequisitionable, and not on any instrument in this sector.\n\nYou have been thinking of Aleth Fenn all morning as a clerk with a good memory. He is the only complete copy of two decades of Thessaline that nothing in this hive can reach."
+  },
+  {
+   "id": "desk",
+   "names": [
+    "variance",
+    "tithe",
+    "work",
+    "his desk",
+    "paper"
+   ],
+   "careless": "A tithe variance, half worked, in a very neat hand. He has been at it since the fourth hour.",
+   "careful": "It is a discrepancy of eleven crowns in a sump-district assessment and he has been working it for four hours because he enjoys it.\n\nUpstairs a man he worked for is on a slab. Fenn has not stopped. This is not coldness — you will spend some time deciding that and you will be right — it is that nobody has filed anything, and until somebody files something there is a tithe variance to do."
+  },
+  {
+   "id": "tray",
+   "names": [
+    "requisition tray",
+    "in-tray",
+    "requisitions",
+    "pending"
+   ],
+   "careless": "The requisition tray. Empty.",
+   "careful": "Empty, and dusted, and squared to the edge of the desk.\n\nHadrian Vosk filed no requisitions through his adjutant in the last fourteen months. Not one. Fenn will tell you, if you ask, that this is entirely normal for a senior Inquisitor with a light caseload, and he will be reporting what he has observed, and what he has observed is a man who stopped putting anything on paper a year and two months ago."
+  },
+  {
+   "id": "arch",
+   "names": [
+    "gallery",
+    "corridor",
+    "threshold",
+    "west",
+    "shielding",
+    "boundary"
+   ],
+   "careless": "The corridor runs west to a gallery arch. Beyond it, the open galleries and the noise of the Crown.",
+   "careful": "There is a brass strip let into the floor under the arch, thumb-wide, with a Mechanicus stamp on it every nine inches.\n\nThe upper chambers of the Adamant Crown are relay-shielded. It is a courtesy the Mechanicus extended to the Inquisition four hundred years ago for the privacy of its conversations, it is maintained without comment, and everybody who works up here has forgotten about it in the way you forget a floor.\n\nInside the strip: no vox, no relay, no signal of any kind.\n\nOutside it: the hive."
+  },
+  {
+   "id": "fenn",
+   "names": [
+    "aleth",
+    "savant",
+    "him",
+    "implant"
+   ],
+   "careless": "Savant Aleth Fenn, forty-ish, cheerful, mnemonic implant behind the left ear under a neat dressing he changes himself.",
+   "careful": "He is watching you with total, uncomplicated attention, waiting to be useful.\n\nThere is no guile in him anywhere. He has never once in his life managed a conversation, and it has not occurred to him that anybody would.\n\nHe is going to answer every question you ask him, completely, in front of anybody, in any room, at any volume, for the rest of his life, and he is the only person in this hive who endangers you purely by being helpful."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "fenn",
+   "names": [
+    "aleth",
+    "savant",
+    "him"
+   ],
+   "title": "Savant Aleth Fenn",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask me anything,\" Fenn says. \"I mean that literally. I'm not being modest, I'm describing the arrangement.\"",
+   "portrait": "Savant Aleth Fenn. Mnemonic implant, eidetic, two decades of sector record in his head and none of it on any cogitator.\n\nForty-ish, cheerful, entirely without guile, and delighted that somebody has finally come to ask him something.",
+   "greeting": "\"They haven't filed it yet,\" Fenn says, as though continuing a conversation you were both already having. \"I heard it on tier six about an hour ago, from one of the recording adepts, who was very excited.\"\n\n\"You said congratulations.\"\n\n\"Yes. He'd have been pleased, I think, although I couldn't tell you on what basis I think that, so please don't write it down.\"\n\nHe sits down, then stands up again, having remembered that he should not be sitting.",
+   "reprise": "He waits, entirely happy to wait, with a tithe variance he is not going to go back to while you are in the room.",
+   "unknown": "\"I don't have that,\" Fenn says, and looks briefly stricken, as though he has failed an examination.",
+   "deflect": [
+    "\"I couldn't say. Not won't — couldn't. There's nothing to say it from.\"",
+    "\"That's an opinion, Inquisitor. I don't do those.\""
+   ],
+   "disposition": {
+    "flags": [
+     "FENN_SHIELDED",
+     "FENN_FIELDED"
+    ],
+    "default": ""
+   },
+   "topics": [
+    {
+     "id": "death",
+     "names": [
+      "vosk",
+      "hadrian",
+      "what happened",
+      "upstairs",
+      "the death",
+      "him"
+     ],
+     "text": "\"There's no file,\" Fenn says, delighted to help. \"So there's nothing to requisition against. When the file exists I'll be able to tell you a great deal.\"\n\n\"He's dead, Fenn.\"\n\n\"Yes,\" he agrees, \"but not *filed*,\" and goes back to his ledger.\n\nYou wait for the rest of the sentence. There isn't one. It takes you a moment to understand that this is not a joke he is making, and another moment to understand what he is actually saying, which is that the Adamant Crown has not yet decided that Hadrian Vosk is dead, and that until it does, Aleth Fenn has nothing to work with.\n\nIt is funny for about ninety seconds.\n\nThen you think about it from the other end, and it is not."
+    },
+    {
+     "id": "dates_again",
+     "names": [
+      "calendar",
+      "the dates",
+      "84 days",
+      "eighty-four days",
+      "cycle",
+      "recurrence",
+      "appointments",
+      "the circles"
+     ],
+     "requires": [
+      "FENN_TESTED"
+     ],
+     "blocks": [
+      "OUTSIDE_SHIELDING"
+     ],
+     "has": [
+      "A15"
+     ],
+     "text": "You ask him a third time, back inside, four metres from where he could not remember.\n\n\"Every eighty-four days,\" Fenn says at once, exactly as before, in the same order, with the same dates. \"Going back to 745. Eighty-one years. No content, no location, no attendees, no travel writ, no reference number of any kind.\"\n\nHe is perfectly certain. He has no idea he has ever said anything else.\n\nFour metres. A brass strip in a floor.\n\nThere is a thing you know now that you cannot show to anybody, because the only instrument that demonstrates it is a man, and the demonstration only works in the one place where nothing can record it.",
+     "repeat": "\"Every eighty-four days,\" he says again, obligingly. \"I can go through them.\""
+    },
+    {
+     "id": "dates_told",
+     "names": [
+      "calendar",
+      "the dates",
+      "84 days",
+      "eighty-four days",
+      "cycle",
+      "recurrence",
+      "appointments",
+      "the circles"
+     ],
+     "requires": [
+      "FENN_GAVE_DATES"
+     ],
+     "blocks": [
+      "OUTSIDE_SHIELDING",
+      "FENN_TESTED"
+     ],
+     "text": "\"Every eighty-four days,\" Fenn says, before you have finished. \"Going back to 745. I haven't stopped doing it since you asked me — I've been through the audience schedule, the travel writs, the Crown's own ledger and my own book, and there is nothing against a single one of them.\"\n\nHe has done four hours of work in eleven minutes and is not pleased about any of it.\n\n\"I should like to be wrong about this, Inquisitor. I am not usually keen either way.\""
+    },
+    {
+     "id": "dates_outside",
+     "names": [
+      "calendar",
+      "the dates",
+      "84 days",
+      "eighty-four days",
+      "cycle",
+      "recurrence",
+      "appointments",
+      "the circles"
+     ],
+     "requires": [
+      "OUTSIDE_SHIELDING"
+     ],
+     "has": [
+      "A15"
+     ],
+     "grants": [
+      "A16"
+     ],
+     "sets": [
+      "FENN_TESTED"
+     ],
+     "text": "He is perfectly happy to go through it again, out here, with the gallery noise coming up from below.\n\n\"Certainly. The recurrence you asked about — every eighty-four days, going back to —\"\n\nHe stops.\n\nNot a pause. A needle lifting.\n\n\"— sorry.\" He blinks twice. \"There aren't any dates like that. I don't know why I said that. There's no eighty-four-day anything in the Inquisitor's record; his diary is very light and always has been, and I'd have flagged a recurrence.\"\n\nHe is not lying. There is nothing in his face at all except mild professional embarrassment, and something underneath it that is not embarrassment and that he has no word for.\n\n\"I'm sorry, Inquisitor. That was careless of me. Shall I go and check the ledger?\"\n\nHe means it. He always means it."
+    },
+    {
+     "id": "dates",
+     "names": [
+      "calendar",
+      "the dates",
+      "84 days",
+      "eighty-four days",
+      "cycle",
+      "recurrence",
+      "appointments",
+      "the circles"
+     ],
+     "has": [
+      "A5"
+     ],
+     "grants": [
+      "A15"
+     ],
+     "text": "You describe the pad: a date circled six days out, and under it the ghosts of erased circles, same weekday, going back as far as the leaves go.\n\nFenn's face does the thing it does, which is nothing at all, for about four seconds.\n\n\"Every eighty-four days,\" he says. \"Going back to 745. Eighty-one years, three months. I can give you the dates if you have somewhere to put them.\"\n\n\"How many are in the record?\"\n\n\"None.\" He says it without any weight on it, because it is a number and numbers do not have weight. \"There's no content, no location, no attendees, no travel writ and no reference number. There isn't a single entry against any of them. It's a recurrence with nothing recurring.\"\n\nThen he stops, and you watch a man who has never in his life been troubled by a fact become troubled by one.\n\n\"That isn't possible,\" Fenn says slowly. \"A thing that happens leaves a form. Eighty-one years of a thing happening leaves three hundred and fifty-two forms and I am telling you there are none, and I have known that for eleven years and I have never once—\"\n\nHe stops again.\n\n\"Could we talk about something else, Inquisitor. Please.\"\n\n[ A15 HELD — an eighty-four-day recurrence, eighty-one years deep, with nothing recorded against it ]",
+     "closed": "\"Which dates?\" Fenn says, helpfully.\n\nYou have nothing to give him. A recurrence is a pattern and a pattern needs at least three points, and you have not stood in front of that desk pad long enough to have three points.\n\n\"If you bring me dates I'll tell you everything there is against them,\" he says, \"which may of course be nothing, but I'll tell you *that* very precisely.\"",
+     "blocks": [
+      "FENN_GAVE_DATES"
+     ],
+     "sets": [
+      "FENN_GAVE_DATES"
+     ]
+    },
+    {
+     "id": "recite",
+     "names": [
+      "recite",
+      "what do you know",
+      "sector",
+      "memory",
+      "tell me about",
+      "anything"
+     ],
+     "text": "\"Anything I've read,\" Fenn says. \"I should be clear that it's anything I've *read*, not anything that's true. People conflate those and then are disappointed in me.\"\n\nHe proves it, unasked, for rather longer than you wanted: the tithe grades of the Vardan subsector, four worlds, assessed populations to the thousand; the alms disbursement of the Cathedral of the Patient Verdict for the last nine years; the name of every Choir-vessel on the Spire and their cell numbers; the lifter-fuel bill, four hundred and twelve crowns, and the eleven annual re-billings of it.\n\nNone of it is organised. He does not know what matters. That is the entire point of him and it will be the whole problem in about a fortnight."
+    },
+    {
+     "id": "requisition",
+     "names": [
+      "file",
+      "the tray",
+      "paperwork",
+      "what he filed",
+      "his requisitions",
+      "fourteen months"
+     ],
+     "text": "\"None,\" Fenn says. \"Not through me.\"\n\n\"In how long?\"\n\n\"Fourteen months and nine days.\" No hesitation; it is a number. \"Before that, four to eleven a month for eleven years, which is ordinary for a senior Inquisitor, and then nothing at all from the ninth of 825.\"\n\n\"Did you think that was strange?\"\n\n\"I thought his caseload had eased.\" He considers it, properly, the way he considers everything. \"The Lord-Inquisitor said his caseload had eased. It's in the record that his caseload had eased.\"\n\nHe looks at the empty tray.\n\n\"It is very strange, isn't it,\" he says, in a completely different voice. \"A man who files nothing for fourteen months is a man doing nothing or a man doing something else, and I have had that tray on my desk the whole time.\""
+    },
+    {
+     "id": "opinion",
+     "names": [
+      "what do you think",
+      "your theory",
+      "speculate",
+      "guess",
+      "suspect",
+      "who"
+     ],
+     "text": "\"No,\" Fenn says, cheerfully. \"I don't do those.\"\n\n\"You must have some—\"\n\n\"I really don't, and I'd like to be clear that this isn't modesty or discretion or anything else you might reasonably suspect.\" He is entirely comfortable. \"I hold what I've read. If I start putting things next to each other and calling the result a conclusion, then in six months I won't be able to tell you which of the things in my head I read and which I made, and then I'm no use to anybody, including me.\n\n\"So: ask me what's in the record. I'll be extremely good at that. Ask me what it means and I'll tell you I don't know, at any length you like.\""
+    },
+    {
+     "id": "himself",
+     "names": [
+      "your implant",
+      "how does it work",
+      "your memory",
+      "savant",
+      "the dressing",
+      "you"
+     ],
+     "text": "\"Mnemonic augmetic, Hexta-pattern, fitted when I was nineteen.\" He touches the dressing behind his ear without looking at it. \"It doesn't store anything. It's a retrieval lattice — the memory's mine, it's just properly indexed for once.\n\n\"Which means I can't be edited, before you ask, because there's nothing to edit. There's no cell you could go and change. It's not a cogitator.\"\n\nHe says this to reassure you, and it does, for about eleven days."
+    },
+    {
+     "id": "shielding",
+     "names": [
+      "the strip",
+      "brass",
+      "mechanicus",
+      "vox",
+      "relay",
+      "signal",
+      "the arch"
+     ],
+     "text": "\"The brass strip? Relay shielding.\" Fenn says it the way you would say *that's a floor*. \"Mechanicus work, four hundred years old, a courtesy to the Inquisition for the privacy of its conversations. Everything above tier seven is inside it. No vox, no relay, no signal.\n\n\"It's why nobody up here carries a bead. You'd have noticed if you'd ever tried to use one, and nobody has, because there's a speaking-tube.\"\n\n\"And past the arch?\"\n\n\"Past the arch is the hive, Inquisitor. Coverage all the way down to the sump.\" He is entirely untroubled. \"Why?\"\n\nYou do not answer him. It is the first time all morning you have declined to answer Aleth Fenn, and he takes it with perfect good grace, and goes back to the tithe variance."
+    }
+   ],
+   "beats": [
+    {
+     "id": "inventory",
+     "after_topics": 2,
+     "text": "\"Oh — while you're here,\" Fenn says, \"there are four discrepancies in the chambers inventory and I couldn't work out who to tell.\"\n\nYou had not asked.\n\n\"The regicide set is out of its drawer, which it never is, he was particular about it. The third drawer is empty and it holds the regicide set. There's a pict-recorder listed to the room that isn't in the room, but that's been out for a year on a signed chit so it doesn't count and I'm mentioning it for completeness.\n\n\"And the censer's been used. It's a display piece. In eleven years nobody has ever lit it.\"\n\nHe looks up, pleased to have been thorough.\n\n\"They're only discrepancies. I'm not suggesting anything by them, I wouldn't know how.\""
+    }
+   ],
+   "shows": [
+    {
+     "clue": "A5",
+     "grants": [
+      "A15"
+     ],
+     "text": "You show him the pad, and he does not touch it, and reads it upside down at a glance.\n\n\"Every eighty-four days,\" Fenn says. \"Going back to 745. Eighty-one years and three months.\"\n\n\"And in the record?\"\n\n\"Nothing. No content, no location, no attendees, no travel writ, no reference number.\" Then, more slowly: \"Three hundred and fifty-two occurrences of a thing that has never generated a single form. That isn't possible, Inquisitor. Things that happen leave forms. It is the one rule.\n\n\"Could we talk about something else. Please.\"\n\n[ A15 HELD ]",
+     "blocks": [
+      "FENN_GAVE_DATES"
+     ],
+     "sets": [
+      "FENN_GAVE_DATES"
+     ],
+     "refused": "\"You've shown me,\" Fenn says. \"Every eighty-four days, going back to 745. I have it.\"\n\nHe has not stopped thinking about it since, and it shows, which on Aleth Fenn means he has stopped enjoying the tithe variance."
+    },
+    {
+     "clue": "A4",
+     "text": "You tell him about the auto-quill: nine hundred glyphs on the platen, not Gothic, and a drum log that survived the fire.\n\nFenn is briefly, visibly delighted, and then remembers the circumstances and puts the delight away.\n\n\"He hated that machine. He wrote longhand out of vanity — his word, not mine, he said it about himself. In eleven years I saw him use the auto-quill four times and every one of them was a document that had to go to the Administratum in a specified hand.\n\n\"Nine hundred glyphs is about four minutes on a Cael-pattern drum, if you're asking, which you will be.\"\n\nHe is right. You had not got there yet."
+    }
+   ],
+   "acts": [
+    {
+     "id": "shield",
+     "names": [
+      "confine",
+      "keep him here",
+      "shield him",
+      "keep him inside",
+      "restrict"
+     ],
+     "blocks": [
+      "FENN_FIELDED"
+     ],
+     "sets": [
+      "FENN_SHIELDED"
+     ],
+     "text": "You give the order. Savant Fenn is not to leave the shielded tiers, on the Inquisition's authority, until further notice.\n\nFenn is bewildered and entirely compliant.\n\n\"Of course, Inquisitor. May I ask what for? Only I do the sump assessments in person twice a year, and there's a gallery inventory I'd normally walk.\"\n\n\"They can come to you.\"\n\n\"They can,\" he agrees, doubtfully, and writes it down, and will keep to it exactly.\n\nYou have just made the most useful instrument in your possession unusable outside eleven floors of one building, on the strength of a thing you watched happen once at a brass strip, which you cannot prove, and which you are not going to try to explain to the Lord-Inquisitor.\n\n[ FENN_SHIELDED ]"
+    },
+    {
+     "id": "field",
+     "names": [
+      "take him",
+      "bring him",
+      "field him",
+      "with me",
+      "come along"
+     ],
+     "blocks": [
+      "FENN_SHIELDED"
+     ],
+     "sets": [
+      "FENN_FIELDED"
+     ],
+     "text": "You tell him he's with you. Wherever you go, he goes.\n\nFenn is *thrilled*. It is the best thing that has happened to him in nine years and he says so, at some length, while collecting a satchel he will not need.\n\n\"I should say I'm very good at this,\" he says. \"Not the walking. The other part.\"\n\nHe is. He will be. For eleven days you are going to have the finest retrieval instrument in the Thessaline sector standing at your shoulder, answering everything, instantly, correctly, out in the open, under coverage, all the way down.\n\n[ FENN_FIELDED ]"
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "chambers",
+   "names": [
+    "up",
+    "back",
+    "tier nine",
+    "vosk's chambers",
+    "the room",
+    "return"
+   ],
+   "to": "vosk_chambers",
+   "cost": 1,
+   "text": "One floor up, and back into it."
+  },
+  {
+   "id": "arch",
+   "names": [
+    "gallery",
+    "west",
+    "threshold",
+    "corridor",
+    "outside",
+    "the arch"
+   ],
+   "to": "gallery_arch",
+   "cost": 1,
+   "requires": [
+    "FENN_MET"
+   ],
+   "blocked": "The corridor runs west to the gallery arch. There is nothing out there but the noise of the hive, and no reason at all to walk to it.",
+   "text": "\"Certainly,\" Fenn says, and comes, because you asked him to, and does not ask why.\n\nHe talks the whole way — twenty metres of corridor, the sump assessment, a thing about lifter-fuel — and steps over the brass strip in the floor without looking down at it, the way you step over a threshold you have crossed nine thousand times."
+  }
+ ],
+ "clues": {
+  "A15": {
+   "id": "A15",
+   "names": [
+    "recurrence",
+    "84 days",
+    "eighty-four days",
+    "81 years"
+   ],
+   "label": "An eighty-four-day recurrence, eighty-one years deep, with not one record against it",
+   "store": "either",
+   "file_text": "FILED. CLASS: RECORD ANOMALY / ABSENCE. INDEXED. ATTRIBUTED: FENN, A., SAVANT.\n\nThe cogitator accepts a report of three hundred and fifty-two things that are not in it, cross-references the absence against nothing, and returns NIL MATCHES, which it presents as a successful query.\n\nIt is not wrong. That is the difficulty.",
+   "note_text": "You write the interval and the span and the number of records, which is none.\n\nEighty-one years of a thing that happens on a schedule and leaves no trace, in a hive built entirely for the making of traces.\n\nYou do not know what it is. You will not know for eleven days. You have the shape of it in ink."
+  },
+  "A16": {
+   "id": "A16",
+   "names": [
+    "the correction",
+    "threshold",
+    "fenn",
+    "the arch",
+    "he changed"
+   ],
+   "label": "Fenn's recall changes at the shielding threshold — perfect inside it, corrected outside it",
+   "store": "either",
+   "file_text": "FILED. CLASS: RETINUE / PERSONNEL WELFARE.\n\nENTRY READS: SAVANT FENN, A. — MNEMONIC INCONSISTENCY OBSERVED IN FIELD CONDITIONS.\n              ASSESSMENT: SAVANT FATIGUE. RECOMMEND REST CYCLE.\n              NO FURTHER ACTION REQUIRED.\n\nIndexed. Countersignature not required.",
+   "note_text": "You write down what he said, in his words, in both places, with the four metres between them.\n\n*Every eighty-four days, going back to —*\n\n*There aren't any dates like that. I don't know why I said that.*\n\nAnd then, inside again, the whole thing back, perfect, in order, with no memory of ever having lost it.\n\nThree entries in your own hand. It is the only evidence in this investigation that behaves like evidence, and it exists nowhere except in your coat."
+  }
+ },
+ "strings": {
+  "no_such_thing": "Nothing here by that name, and Fenn would know, because he has read all of it.",
+  "already_read": "You have looked twice. Fenn is waiting to be asked something.",
+  "no_terminal": "There is a cogitator terminal in the corner under four ledgers and it has not been switched on in fourteen months.\n\nHis is upstairs, and yours."
+ },
+ "revisit": "Fenn looks up from the tithe variance, pleased to see you again, and stands.\n\nLedgers to the ceiling. An empty requisition tray. Twenty metres of corridor west to a brass strip in a floor."
+}

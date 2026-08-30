@@ -29,6 +29,11 @@ type Model struct {
 	lines []string
 	ready bool
 	w, h  int
+	// finished is set when the player has gone through a door. The game is
+	// over and the last thing on the screen is a thousand words they have
+	// not read yet, so nothing closes until they say so.
+	finished bool
+	endedAt  int
 }
 
 func New(st *game.State) Model {
@@ -42,13 +47,19 @@ func New(st *game.State) Model {
 	// terminal never reports its size.
 	m := Model{st: st, in: ti, w: 80, h: 24, ready: true}
 	m.vp = viewport.New(80, 20)
-	m.push(head.Render(st.Room.Title))
+	m.push(st.Room.Title)
 	m.push(st.Room.Intro)
 	m.render()
 	return m
 }
 
 func (m *Model) push(s string) {
+	// The engine emits a scene title as ordinary text when the player travels,
+	// so that anything driving the engine gets it. Styling it is this layer's
+	// job, and it has to happen wherever the title arrives from.
+	if s == m.st.Room.Title {
+		s = head.Render(s)
+	}
 	for _, l := range strings.Split(s, "\n") {
 		m.lines = append(m.lines, l)
 	}
@@ -79,34 +90,53 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		switch msg.Type {
 		case tea.KeyCtrlC:
 			return m, tea.Quit
-		case tea.KeyEnter:
+		case tea.KeyEnter, tea.KeyEsc:
+			if m.finished {
+				return m, tea.Quit
+			}
+			if msg.Type == tea.KeyEsc {
+				break
+			}
 			raw := strings.TrimSpace(m.in.Value())
 			if raw == "" {
 				break
 			}
 			m.in.Reset()
 			m.push(prompt.Render("> " + raw))
+			m.endedAt = len(m.lines)
 
-			out, timed := m.st.Do(raw)
+			out, ticks := m.st.Do(raw)
 			for _, o := range out {
 				m.push(o)
 			}
-			if timed {
+			// Some things cost more than one action. The lift is one of them.
+			for i := 0; i < ticks; i++ {
 				for _, ev := range m.st.Tick() {
 					m.push(ev)
 				}
 			}
 			m.render()
-			m.vp.GotoBottom()
-			if m.st.Done {
+			if end := m.st.Ending(); end != "" {
+				// Put the top of the ending at the top of the screen rather
+				// than the bottom of it. It runs to about a page and a half
+				// and the player is going to want to scroll.
+				m.finished = true
+				m.in.Blur()
+				m.vp.SetYOffset(m.endedAt)
+			} else {
+				m.vp.GotoBottom()
+			}
+			if m.st.Done && !m.finished {
 				return m, tea.Quit
 			}
 		}
 	}
 
 	var cmd tea.Cmd
-	m.in, cmd = m.in.Update(msg)
-	cmds = append(cmds, cmd)
+	if !m.finished {
+		m.in, cmd = m.in.Update(msg)
+		cmds = append(cmds, cmd)
+	}
 	m.vp, cmd = m.vp.Update(msg)
 	cmds = append(cmds, cmd)
 	return m, tea.Batch(cmds...)
@@ -130,24 +160,29 @@ func (m Model) View() string {
 	if !m.ready {
 		return "…"
 	}
-	status := faint.Render(strings.Join([]string{
-		m.st.TimeString(),
-		bodyLine(m.st),
-		"HELP for verbs",
-	}, "   ·   "))
+	parts := []string{m.st.TimeString()}
+	if b := bodyLine(m.st); b != "" {
+		parts = append(parts, b)
+	}
+	if m.finished {
+		// No clock, no body, no verbs. There is nothing left to do and the
+		// only thing the footer has to say is how to stop.
+		foot := faint.Render("↑ ↓ to read   ·   ENTER to close the file")
+		return m.vp.View() + "\n" + foot + "\n"
+	}
+	parts = append(parts, "HELP for verbs")
+	status := faint.Render(strings.Join(parts, "   ·   "))
 	return m.vp.View() + "\n" + status + "\n" + m.in.View()
 }
 
+// bodyLine reports the eight minutes while they are the thing that matters,
+// and stops once the act that owned them is over.
 func bodyLine(s *game.State) string {
+	if s.Has("ACT1_COMPLETE") {
+		return ""
+	}
 	if s.BodyPresent {
 		return "body present"
 	}
 	return "body removed"
-}
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
 }

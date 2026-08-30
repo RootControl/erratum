@@ -1,0 +1,455 @@
+{
+ "id": "ferrum",
+ "title": "SHIFT NINE CHAPEL — FERRUM GALLERY",
+ "date": "0997.4.242",
+ "clock_at": "04h20",
+ "revisit": "The chapel. Four degrees, wet, no vox, and a shift foreman who has wanted to tell somebody this for twenty years.",
+ "intro": "Fourteen days of legwork: three interrogations, a coolant map, and a shift\nroster read four different ways until it stopped agreeing with itself.\n\nThe Ferrum Gallery runs on eleven thousand people across four shifts, and\nShift Nine has been fourth-generation for eighty years, and the evidence Crase\nput on the desk was correct in every particular.\n\nThe chapel is four degrees, wet, and has no vox in it, which is not caution —\nthe sub-galleries have never had coverage and nobody has ever bothered.\n\nPrimus Odalie Sarn is forty-one years on the line and has been shift-foreman\nfor nineteen of them. She is sitting down because you asked her to. She is\nnot restrained, because there are two enforcers behind her who are not going\nto survive the next hour and everybody in this room including her has already\nworked that out.\n\nShe would like it noted that her shift has never missed quota.",
+ "look": "Four degrees, wet, no vox, and a chapel that is a machine bay with a rail\nacross one end of it.\n\nPrimus SARN, forty-one years on the line, sitting because you asked her to.\nThe coolant SLUICE below, which is the way down and the way in.\nThe ROSTER, read four ways.\n\nSergeant Oduya on the rail. Whoever else you brought.",
+ "objects": [
+  {
+   "id": "roster",
+   "names": [
+    "the roster",
+    "shift roster",
+    "records",
+    "returns",
+    "personnel"
+   ],
+   "careless": "Shift Nine's roster, nineteen years of it, read four different ways over fourteen days until it stopped agreeing with itself.",
+   "careful": "Birth-defect returns bent four ways. Medicae records that stop being medicae records in 'ninety-two. A foreman's personnel file amended eleven times by four offices, two of which no longer exist.\n\nAll of that is cult. It is what a fourth-generation infestation does to paperwork and it is why Crase's dossier is correct.\n\nUnderneath it there is a second pattern, which is not cult, and which you will not see until Sarn says it out loud in about nine minutes: the people who go missing from these records first are not the ones running anything."
+  },
+  {
+   "id": "sluice",
+   "names": [
+    "coolant",
+    "the sluice",
+    "galleries",
+    "down",
+    "sub-galleries",
+    "the door"
+   ],
+   "careless": "The coolant sluice: two hundred metres of sub-gallery, four degrees, running wet, and the only way into the brood chambers.",
+   "careful": "It floods on a cycle. Not a fast cycle and not an unpredictable one — the coolant plant has run the same programme since 781 and the Gallery has never once amended it, because amending it would require somebody to countersign a change to a working instrument.\n\nEight minutes of dry, four of flood, forever.\n\nWhoever goes down there is going down there with a schedule, and the schedule is the oldest reliable thing in this building, and it is going to be the schedule that kills somebody."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "sarn",
+   "names": [
+    "primus",
+    "odalie",
+    "foreman",
+    "shift-foreman",
+    "her"
+   ],
+   "title": "Primus Odalie Sarn",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask what you like,\" Sarn says. \"There's two things I won't answer and you'll find them.\"",
+   "portrait": "Primus Odalie Sarn. Forty-one years on the line, nineteen as shift-foreman of Shift Nine. Not remotely a monster in her own account, and her shift has never missed quota.",
+   "greeting": "\"Sit down or don't,\" Sarn says. \"You'll be forty minutes either way.\"\n\nShe is not frightened and she is not defiant. She is a foreman with a visitor, and forty-one years of visitors, and a great deal of practice at knowing which of them is going to cost her a shift.\n\n\"I'll tell you now: I won't talk about the brood and I won't talk about the Patriarch and I won't talk about what I am, and you can do what you like about that.\n\n\"There's a third thing I *will* talk about, and I've wanted to tell somebody for twenty years, and I've never once had anybody in this Gallery I could tell it to.\"",
+   "reprise": "She waits. Forty-one years of waiting for shifts to end.",
+   "unknown": "\"Don't know. Forty-one years and I still don't know most things.\"",
+   "deflect": [
+    "Sarn waits. She has forty minutes and no interest at all in filling them.",
+    "\"Ask me something I can answer,\" she says, not unkindly."
+   ],
+   "topics": [
+    {
+     "id": "brood",
+     "names": [
+      "the brood",
+      "patriarch",
+      "what you are",
+      "the cult",
+      "your physiology",
+      "genestealer"
+     ],
+     "never": true,
+     "closed": "\"That's one of the two,\" Sarn says.\n\nShe does not elaborate and she does not get angry and she does not look away. She simply stops, entirely, in the middle of being co-operative, and waits for you to ask something else.\n\nYou could work on her. You have the standing and the time and the two enforcers behind her are not going to survive the hour, and she knows all three of those things and has known them since you came in.\n\nShe is not going to answer. It is the only thing about her that is not negotiable and it is going to stay that way for the eleven minutes she has left."
+    },
+    {
+     "id": "historians",
+     "names": [
+      "historian",
+      "writing",
+      "the records",
+      "erasure",
+      "who goes missing",
+      "history"
+     ],
+     "grants": [
+      "B12"
+     ],
+     "sets": [
+      "PATTERN_LITERACY",
+      "SARN_INTERVIEWED"
+     ],
+     "text": "\"We had a historian. Twice.\"\n\nShe says it the way a foreman reports a machine failure.\n\n\"The first in 763; I was here for the second. Good hand. Wrote everything down and hid it well.\n\n\"Both times, the man stopped existing before he stopped breathing. Ration card first. Then the shift roster. Then the wife's marriage record, which is how we noticed, because the wife was still standing there.\n\n\"After the second one we stopped writing. We say it now. That's all. We say it, and we make the children say it back.\"\n\n\"How many, over forty years?\"\n\n\"Nineteen.\" No hesitation. \"And not one of them was leadership. Not one. It's the ones who write — clerks, tally-keeps, the two historians, a woman who kept a birthday book.\n\n\"Whatever comes for us doesn't come for the head, Inquisitor. It comes for the *record*, and it takes the people who make one.\"\n\nYou think about a savant in a box on sub-level four, and a man with no name in a condemned pipe, and a dead Inquisitor who kept eleven years of casework in longhand.\n\nAnd then, because you are the kind of person you are, you think about your own notebook.\n\n[ B12 HELD ]"
+    },
+    {
+     "id": "cycle",
+     "names": [
+      "purges",
+      "the cycle",
+      "eleven years",
+      "the dates",
+      "arbites",
+      "when"
+     ],
+     "requires": [
+      "SARN_INTERVIEWED"
+     ],
+     "grants": [
+      "B13"
+     ],
+     "text": "\"Purges come every eleven years,\" Sarn says. \"I've got the dates. I've had the dates since 'ninety and I've never been able to do anything with them.\"\n\nShe gives them. Seven of them, over eighty years, to the month.\n\n\"They don't follow discovery. We've had years where half the shift was obvious and nothing happened, and years where we were quiet as a church and they came through anyway. They don't follow Arbites activity — I've checked, I've had forty-one years to check.\"\n\n\"Then what do they follow?\"\n\n\"That's what I wanted to tell somebody.\" She leans forward for the first time. \"They follow the *tithe*. Sector reconciliation. Every eleven years the Administratum reconciles the sector aggregate and about four months later somebody comes through here and closes a lot of files.\n\n\"A purge in this Gallery isn't a response to us. It's *bookkeeping*. We're a variance.\"\n\n[ B13 HELD ]"
+    },
+    {
+     "id": "inspector",
+     "names": [
+      "inspector",
+      "the unwritten",
+      "who comes",
+      "what comes",
+      "unwritten inspector"
+     ],
+     "requires": [
+      "SARN_INTERVIEWED"
+     ],
+     "grants": [
+      "B14"
+     ],
+     "text": "\"There's a thing the old ones say and I've never repeated it to anybody outside.\"\n\nShe is uncomfortable, which she has not been for the whole of this conversation, including the parts about the enforcers.\n\n\"They call it the unwritten inspector. It's not a — it isn't a devil, Inquisitor, we're not that sort. It's a *joke*. It's the joke you make when a man's card stops working.\n\n\"*The unwritten inspector's been round.*\"\n\nShe turns her hands over.\n\n\"You say it because the alternative is saying that something looked at us and decided which of us was worth keeping, and you can't say that on a shift and expect people to come in the next morning.\n\n\"It's been round nineteen times in forty years. It never takes the head. It takes the ones with the pens.\"\n\n[ B14 HELD ]"
+    },
+    {
+     "id": "quota",
+     "names": [
+      "quota",
+      "your shift",
+      "the work",
+      "production",
+      "forty-one years"
+     ],
+     "text": "\"Never missed quota. Nineteen years as foreman, never once.\"\n\nShe says it with real pride and it takes you a moment to understand that she is not deflecting; she means it, and it is the fact about herself she would put first if anybody asked.\n\n\"Eleven thousand people in this Gallery and Shift Nine has the lowest fault rate and the lowest injury rate and the best coolant discipline on the line, and I did that, and it took nineteen years.\n\n\"I'd like it in whatever you write.\"\n\nShe is a fourth-generation genestealer hybrid who has been killing people in this Gallery for two decades, and she is a shift foreman who is good at her job, and both of those are true at once, and the game is not going to help you with it."
+    }
+   ],
+   "beats": [],
+   "shows": [],
+   "acts": [
+    {
+     "id": "assault_fenn",
+     "names": [
+      "assault",
+      "clear it",
+      "go in",
+      "attack",
+      "clear the brood",
+      "the assault"
+     ],
+     "requires": [
+      "FENN_BROUGHT",
+      "DECOY_PURSUED"
+     ],
+     "blocks": [
+      "GALLERY_CLEARED",
+      "GALLERY_ABORTED"
+     ],
+     "sets": [
+      "GALLERY_CLEARED",
+      "DECOY_RESOLVED",
+      "FENN_DEAD"
+     ],
+     "counters": {
+      "CRASE_STANDING": 3
+     },
+     "cost": 6,
+     "text": "It works.\n\nThree decision points, ninety seconds of actual violence, and a brood chamber that has been under Shift Nine for eighty years is not under it any more. It is a real victory and it is yours and people who would have died this month will not.\n\nThe sluice floods at the eighth minute, on the schedule it has run since 781.\n\nAleth Fenn is in it. He is in it because you brought him for the map, which every officer would have done and which was correct, and because a savant with the coolant programme in his head walks confidently in a place where confidence is the wrong instinct.\n\nIt takes about forty seconds. He is not frightened at any point, which you know because he is talking, and what he is saying is the flood interval, correctly, twice.\n\nThe implant is not recoverable. Two decades of Thessaline that existed nowhere else in the sector, and the only complete copy of it, and the last physical evidence the conspiracy had not reached.\n\nThe Ordo sends a commendation. It is going to be shown to you again in Act III at the worst possible moment.\n\n[ GALLERY_CLEARED — CRASE_STANDING +3 ]",
+     "clears": [
+      "FENN_INTACT",
+      "FENN_ALIVE",
+      "FENN_BROUGHT"
+     ]
+    },
+    {
+     "id": "assault_bez_knowing",
+     "names": [
+      "assault",
+      "clear it",
+      "go in",
+      "attack",
+      "clear the brood",
+      "the assault"
+     ],
+     "requires": [
+      "BEZ_ALIVE",
+      "BEZ_KNOWS_DIAGNOSIS",
+      "DECOY_PURSUED"
+     ],
+     "blocks": [
+      "GALLERY_CLEARED",
+      "GALLERY_ABORTED"
+     ],
+     "sets": [
+      "GALLERY_CLEARED",
+      "DECOY_RESOLVED",
+      "BEZ_DEAD"
+     ],
+     "counters": {
+      "CRASE_STANDING": 3
+     },
+     "cost": 6,
+     "text": "It works.\n\nThree decision points, ninety seconds of actual violence, and a brood chamber that has been under Shift Nine for eighty years is not under it any more. It is a real victory and it is yours and people who would have died this month will not.\n\nThe sluice floods at the eighth minute, on the schedule it has run since 781, and the door has to be held from the wet side for eleven seconds while four people get through it.\n\nSergeant Beskra Oduya volunteers before anybody has finished describing the problem.\n\n\"Fourteen months, sir,\" she says, entirely calmly, as though settling an accounting question. \"And the shoulder's no good for the climb anyway.\"\n\nThat is the worst of it: that she is calm, and that she is right, and that you told her the number yourself in a mortuary on tier one.\n\nShe holds it for eleven seconds and four people get through.\n\nThe Ordo sends a commendation. It is going to be shown to you again in Act III at the worst possible moment.\n\n[ GALLERY_CLEARED — CRASE_STANDING +3 ]",
+     "clears": [
+      "BEZ_ALIVE"
+     ]
+    },
+    {
+     "id": "assault_bez",
+     "names": [
+      "assault",
+      "clear it",
+      "go in",
+      "attack",
+      "clear the brood",
+      "the assault"
+     ],
+     "requires": [
+      "BEZ_ALIVE",
+      "DECOY_PURSUED"
+     ],
+     "blocks": [
+      "GALLERY_CLEARED",
+      "GALLERY_ABORTED"
+     ],
+     "sets": [
+      "GALLERY_CLEARED",
+      "DECOY_RESOLVED",
+      "BEZ_DEAD"
+     ],
+     "counters": {
+      "CRASE_STANDING": 3
+     },
+     "cost": 6,
+     "text": "It works.\n\nThree decision points, ninety seconds of actual violence, and a brood chamber that has been under Shift Nine for eighty years is not under it any more. It is a real victory and it is yours and people who would have died this month will not.\n\nThe sluice floods at the eighth minute, on the schedule it has run since 781, and the door has to be held from the wet side for eleven seconds while four people get through it.\n\nSergeant Beskra Oduya holds it.\n\nShe has been coughing since the medicae deck. She does not say anything memorable and does not make a speech and is not, at any point, anything other than a twenty-six-year sergeant executing the obvious solution to a door.\n\nAfterwards Ostro says the lung would have had fourteen months.\n\nThe Ordo sends a commendation. It is going to be shown to you again in Act III at the worst possible moment.\n\n[ GALLERY_CLEARED — CRASE_STANDING +3 ]",
+     "clears": [
+      "BEZ_ALIVE"
+     ]
+    },
+    {
+     "id": "assault_vaux",
+     "names": [
+      "assault",
+      "clear it",
+      "go in",
+      "attack",
+      "clear the brood",
+      "the assault"
+     ],
+     "requires": [
+      "VAUX_ALLIED",
+      "DECOY_PURSUED"
+     ],
+     "blocks": [
+      "GALLERY_CLEARED",
+      "GALLERY_ABORTED"
+     ],
+     "sets": [
+      "GALLERY_CLEARED",
+      "DECOY_RESOLVED",
+      "VAUX_DEAD"
+     ],
+     "counters": {
+      "CRASE_STANDING": 3
+     },
+     "cost": 6,
+     "text": "It works, and Interrogator Dmetri Vaux does not come back up the sluice.\n\nHe is sixty-one and had no business being on the wet side of a coolant door, and he went anyway, because he had spent nineteen years watching Hadrian Vosk do exactly that and had never once been allowed to.\n\nHe is entirely correct about the flood interval and about eleven seconds and about which of the two of you is worth more to the investigation, and he is wrong about nothing at all, and it does not help.\n\nHalf of Vosk's cipher was in his head.\n\nThe Ordo sends a commendation.\n\n[ GALLERY_CLEARED — CRASE_STANDING +3 ]",
+     "clears": [
+      "VAUX_ALIVE",
+      "VAUX_ALLIED"
+     ]
+    },
+    {
+     "id": "assault_ilaria",
+     "names": [
+      "assault",
+      "clear it",
+      "go in",
+      "attack",
+      "clear the brood",
+      "the assault"
+     ],
+     "blocks": [
+      "GALLERY_CLEARED",
+      "GALLERY_ABORTED"
+     ],
+     "sets": [
+      "GALLERY_CLEARED",
+      "DECOY_RESOLVED",
+      "ILARIA_BURNED"
+     ],
+     "counters": {
+      "CRASE_STANDING": 3
+     },
+     "cost": 6,
+     "text": "It works, and it costs you the astropath.\n\nVesse Ilaria Talm is not in the sub-gallery — she is four kilometres away in a cell on the Spire, carrying for you, which is what a transit vessel does.\n\nWhat comes up the coolant channel at the eighth minute is not water.\n\nShe is blind already. There is a second way to be blinded and she finds it, and she is conscious for the whole of it, and afterwards she asks whether the shift was saved and is told that it was and says that is good.\n\nThe Ordo sends a commendation.\n\n[ GALLERY_CLEARED — CRASE_STANDING +3 ]",
+     "clears": [
+      "ILARIA_ALIVE"
+     ],
+     "requires": [
+      "DECOY_PURSUED"
+     ]
+    },
+    {
+     "id": "erratum",
+     "names": [
+      "erratum",
+      "use the erratum",
+      "the plate",
+      "the sentence",
+      "read it to her"
+     ],
+     "requires": [
+      "ERRATUM_OBTAINED",
+      "ERRATUM_UNUSED",
+      "DECOY_PURSUED"
+     ],
+     "blocks": [
+      "GALLERY_CLEARED",
+      "GALLERY_ABORTED"
+     ],
+     "refused": "You have nothing on you that would do that.",
+     "sets": [
+      "GALLERY_CLEARED",
+      "DECOY_RESOLVED",
+      "ERRATUM_SPENT"
+     ],
+     "counters": {
+      "CRASE_STANDING": 3
+     },
+     "cost": 2,
+     "text": "You leave the plate where Primus Odalie Sarn will read it.\n\nShe reads it. She reads everything; forty-one years of a foreman's habits.\n\nIt takes about four seconds and there is no violence in it at all.\n\nWithout a Primus the brood chambers are taken in an hour by people who do not go onto the wet side of a coolant door. Nobody drowns. Nobody holds anything for eleven seconds. Sergeant Oduya walks back up the sluice complaining about the cold.\n\nIt is the humane choice by every measure available to you, and you made it in about nine seconds, and nothing anywhere warned you.\n\n[ GALLERY_CLEARED ]",
+     "clears": [
+      "ERRATUM_UNUSED"
+     ]
+    },
+    {
+     "id": "withdraw",
+     "names": [
+      "withdraw",
+      "pull out",
+      "abort",
+      "leave",
+      "call it off",
+      "stand down"
+     ],
+     "blocks": [
+      "GALLERY_CLEARED",
+      "GALLERY_ABORTED"
+     ],
+     "sets": [
+      "GALLERY_ABORTED",
+      "DECOY_RESOLVED"
+     ],
+     "counters": {
+      "CRASE_STANDING": -2
+     },
+     "cost": 2,
+     "text": "You pull out.\n\nNobody drowns, nobody holds a door, nobody is blinded a second way. Everybody you brought down here walks back up the sluice, cold and confused, and Sergeant Oduya asks you twice whether you are sure and accepts it both times.\n\nShift Nine keeps its brood. It is fourth-generation and competent and embedded and it is killing people this month, and it will go on doing that, and by Act III it will be into a fourth shift-council.\n\nCrase does not say anything about it. Her regard does not survive it either.\n\n[ GALLERY_ABORTED — CRASE_STANDING -2 ]",
+     "requires": [
+      "DECOY_PURSUED"
+     ]
+    },
+    {
+     "id": "no_force",
+     "names": [
+      "assault",
+      "clear it",
+      "go in",
+      "attack",
+      "clear the brood",
+      "the assault",
+      "withdraw",
+      "pull out",
+      "abort"
+     ],
+     "requires": [
+      "SARN_MEETING_BOUGHT"
+     ],
+     "refused": "You came down here on somebody else's forged card, through four people who do not exist, with a sergeant and no warrant.",
+     "text": "There is no assault.\n\nYou are in the Ferrum Gallery on a favour, through four people who do not exist, and there is not an Arbites cordon or a writ or a single Crown officer within two kilometres who knows you are here.\n\nWhat you have is forty minutes in a chapel with a shift foreman, which is what you paid for, and which is more than anybody else in this investigation is going to get.\n\nShift Nine keeps its brood. That was decided in an office two tiers above yours, by you, when you said no."
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "up",
+   "names": [
+    "out",
+    "back",
+    "crown",
+    "board",
+    "chambers",
+    "return"
+   ],
+   "to": "standing_board",
+   "cost": 4,
+   "text": "Up out of the Gallery.\n\nThe Arbites come through eleven days later: forty thousand relocated, four shift-councils dissolved, records closed.\n\nYou earned a purge. You watch it become a records purge, and there is nobody to complain to, because every part of it is correct."
+  }
+ ],
+ "clues": {
+  "B12": {
+   "id": "B12",
+   "names": [
+    "the pattern",
+    "erasure",
+    "record-keepers",
+    "historians",
+    "who it takes",
+    "literacy"
+   ],
+   "label": "Nineteen erasures in forty years, and not one of them leadership — it takes the ones who write",
+   "store": "either",
+   "reconciliation": 2,
+   "file_text": "FILED. CLASS: XENOS CULT / MEMBERSHIP ATTRITION. INDEXED. ATTRIBUTED: SARN, O., PRIMUS.\n\nThe cogitator files nineteen names against a cult roll and cross-references each to the personnel record.\n\nSeventeen return NO SUCH PERSON, which it files as a data-quality note.",
+   "note_text": "Nineteen, over forty years, and not one of them leadership.\n\nClerks, tally-keeps, two historians, and a woman who kept a birthday book.\n\nWhatever comes for them does not come for the head. It comes for the record, and it takes the people who make one, and you are sitting in four degrees of wet writing that down by hand."
+  },
+  "B13": {
+   "id": "B13",
+   "names": [
+    "the cycle",
+    "eleven years",
+    "purge cycle",
+    "tithe",
+    "reconciliation cycle",
+    "the dates"
+   ],
+   "label": "Purges arrive on an eleven-year cycle that follows sector tithe reconciliation, not discovery",
+   "store": "either",
+   "reconciliation": 2,
+   "file_text": "FILED. CLASS: ARBITES / OPERATIONAL HISTORY. INDEXED.\n\nThe cogitator confirms seven purge operations over eighty years, correctly dated, and notes that operational scheduling is not within its assessment scope.",
+   "note_text": "Seven dates over eighty years, to the month, and about four months after each sector reconciliation.\n\nA purge in the Ferrum Gallery is not a response to anything. It is bookkeeping.\n\nWhich means the flush order for the Rows, day forty, is not a response to anything either."
+  },
+  "B14": {
+   "id": "B14",
+   "names": [
+    "inspector",
+    "unwritten inspector",
+    "the joke",
+    "what they call it"
+   ],
+   "label": "The unwritten inspector — what eleven thousand people call it, as a joke, because the alternative is unsayable on a shift",
+   "store": "either",
+   "reconciliation": 1,
+   "file_text": "FILED. CLASS: CULT PRACTICE / FOLKLORE. INDEXED.\n\nFiled under folklore, which is the correct classification, and which is where it will stay.",
+   "note_text": "*The unwritten inspector's been round.*\n\nIt is a joke. They make it when a man's card stops working, because the alternative is saying out loud that something looked at the shift and decided which of them was worth keeping.\n\nNineteen times in forty years. It never takes the head."
+  }
+ },
+ "strings": {
+  "no_such_thing": "Four degrees, wet, and a machine bay with a rail across one end.",
+  "already_read": "You have looked twice. Sarn is waiting and has forty minutes.",
+  "no_terminal": "There has never been coverage in the sub-galleries and nobody has ever bothered to put any in.",
+  "read_room_locked": "Nothing here was arranged. It is a machine bay."
+ }
+}

@@ -1,0 +1,116 @@
+{
+ "id": "reading_room",
+ "title": "KADMON VEIL — THE READING ROOM",
+ "clock_at": "17h00",
+ "intro": "Nine hundred and twenty-two spines.\n\nThe early ones are proper vellum. Somewhere in the two hundreds the colour\nchanges and keeps changing, and by the eight hundreds the pages are grain-husk\nfibre, grey, and you can see the ghosts of older reports underneath where the\nscraping did not take.\n\nShe has been writing on top of herself for sixty years.\n\nNobody has ever read one. The Attending carries a two-hundred-word summary at\nTerce and the reports wait for a courier, bound, indexed, cross-referenced, in\norder, on a shelf, for the day somebody comes.\n\nThe index is immaculate.",
+ "revisit": "Nine hundred and twenty-two spines, and an immaculate index.",
+ "look": "A room with shelves on four walls and a reading desk in the middle of it.\n\nThe REPORTS: nine hundred and twenty-two, bound, numbered, indexed.\nThe INDEX, on the desk, in a fair hand.\nRHOD at the door, who has read all of them twice.",
+ "objects": [
+  {
+   "id": "reports",
+   "names": [
+    "the reports",
+    "reports",
+    "the three",
+    "47",
+    "415",
+    "833",
+    "the spines"
+   ],
+   "clue": "C12",
+   "careless": "Nine hundred and twenty-two bound reports, numbered, in order, on shelves that were built for them.",
+   "careful": "You read three.\n\n**Report 47, cycle 6.** Formal. Faintly irritated.\n\n  *…the tithe for cycles four, five and six has been assembled to grade and\n  awaits collection at the Yard. We note that no collection fleet has attended\n  and that no acknowledgment of receipt stands against cycles four or five. We\n  assume an administrative delay at sector level and have taken no independent\n  action. We would be grateful for a corrected collection schedule at the\n  Assessor's convenience.*\n\n**Report 415, cycle 44.** Over-documented. Anxiety expressed as completeness.\n\n  *…appended: muster rolls I–XI; shrine attendance; heresy dispositions in\n  full, including the Tolliver matter of cycle 34, resolved locally within nine\n  days without recourse to sanction; maintenance certificates for all eleven\n  reactor housings including the eight that are cold.*\n\n  *I list also what we have not done. We have not reduced the tithe. We have\n  not opened the Faithful Armoury. We have not levied against the Owed, though\n  the Owed would feed this world for one year and four months. We have not\n  despatched an unauthorised vessel. We have not stopped. I record these not as\n  complaint but as evidence, in the event that evidence is what is wanted.*\n\n**Report 833, cycle 83.** Flat. Restored to pure form.\n\n  *Report 833. Cycle 83 complete. Tithe assembled to grade and stored.\n  Population within tolerance. Heresy nil. Reactors as previously. Nothing\n  further to report. O. Vurr, Marchioness, for the Emperor's attention or\n  another's.*\n\nThe third one is the worst and it takes you a while to work out why, and then\nyou have it: she has stopped writing to anybody.\n\n[ C12 HELD ]"
+  },
+  {
+   "id": "index",
+   "names": [
+    "the index",
+    "index",
+    "the catalogue",
+    "the desk",
+    "cross-references"
+   ],
+   "careless": "The index: nine hundred and twenty-two entries, by number, by cycle and by subject, in a fair hand.",
+   "careful": "Three ways in. Number, cycle, subject.\n\nThe subject index runs to eleven pages and has entries for *Armoury, Faithful, condition of*; *Owed, the, assessed value of*; *Reactor housings, cold, maintenance of*; and *Delay, the, doctrine concerning*, which is cross-referenced to forty-one reports and to the Sub-Deacon's Reading.\n\nIt is a working index. It is built to be *used* — to be picked up by somebody who has arrived and needs to find one thing quickly — and it has been maintained and extended for sixty years by a woman who knew perfectly well that the first person to use it would be the first person to read any of it.\n\nShe built the finding aid anyway. She built it well."
+  },
+  {
+   "id": "spine",
+   "names": [
+    "728",
+    "the spine",
+    "report 728",
+    "cycle 67",
+    "sixty-seven"
+   ],
+   "requires": [
+    "VURR_WIDOWED"
+   ],
+   "clue": "C728",
+   "careless": "Report 728, cycle 67. It is one of nine hundred and twenty-two spines and there is nothing to distinguish it.",
+   "careful": "One paragraph. It is not addressed to Terra, or to the Assessor, or to the Emperor's attention or another's.\n\n  *To the Adept who opens this.*\n\n  *I do not ask for the fleet. I ask for an acknowledgment in any form. A\n  receipt, a number, a mark in the margin of this page in a hand that is not\n  mine. My husband died on the ninth of this cycle and I have this morning\n  completed his record and vaulted it against the audit, and I find that I\n  would like there to be an audit. If there is an Adept, and if this is opened,\n  I ask him to make a mark.*\n\n  *O. Vurr.*\n\nThe rest of cycle 67 is in perfect form. Report 729 is in perfect form. Every\nreport after it, for twenty-four years, is in perfect form.\n\nYou cannot un-read it.\n\n[ C15 HELD ]"
+  }
+ ],
+ "npcs": [],
+ "npc_refs": [
+  "kadmon/rhod"
+ ],
+ "exits": [
+  {
+   "id": "out",
+   "names": [
+    "out",
+    "back",
+    "the hall",
+    "muster",
+    "return",
+    "down"
+   ],
+   "to": "muster",
+   "cost": 2,
+   "text": "Out, with the key to give back."
+  }
+ ],
+ "clues": {
+  "C12": {
+   "id": "C12",
+   "names": [
+    "the unsent reports",
+    "922",
+    "nine hundred and twenty-two",
+    "report 415",
+    "report 833",
+    "the evidence"
+   ],
+   "label": "Reports 47, 415 and 833 — sixty years of a loyal world reporting correctly into a wall, and the decay and recovery of the voice doing it",
+   "store": "either",
+   "reconciliation": 5,
+   "sets": [
+    "KADMON_PROOF"
+   ],
+   "file_text": "FILED. CLASS: COLONIAL / RETURNS, UNTRANSMITTED. INDEXED. WORLD: KADMON VEIL.\n\nThe cogitator files all three and cross-references them cleanly against the\nworld record, which does not resolve, which it notes.\n\nWhen you open them at Cantica-Null two of the three will be shorter than what\nyou read in that room, and every cross-reference will still close, and the\nseams will not show, because the parts that go are the parts that disagreed\nwith the record.",
+   "note_text": "Three reports, copied by hand over most of a night: 47 at cycle 6, 415 at\ncycle 44, 833 at cycle 83.\n\nIrritated, then over-documented, then flat.\n\n*I record these not as complaint but as evidence, in the event that evidence is\nwhat is wanted.*\n\nIt is wanted. It took sixty years and it is on grain-husk fibre in my own hand\nin my coat, and it is the only documentary proof in the sector that a loyal\nworld was erased while doing everything correctly."
+  },
+  "C728": {
+   "id": "C728",
+   "names": [
+    "the mark",
+    "report 728",
+    "the adept who opens this",
+    "her husband",
+    "the request"
+   ],
+   "label": "Report 728 — one paragraph, addressed to the Adept who opens this, asking for a mark in the margin",
+   "store": "notebook",
+   "reconciliation": 0,
+   "refusal": "FILING TEMPLATE :: CLASS — COLONIAL / RETURNS, UNTRANSMITTED\n\nThe template opens and it is the correct template and the fields are the right\nfields, and one of them is *disposition*, and the options are acknowledged,\nnoted, referred and closed.\n\nAll four are lies and one of them is the specific lie she asked you not to\ntell.\n\nYou close the template. There is a stylus in your coat and the report is on a\ndesk four metres away, and you go back and you make the mark, and you date it,\nand it is not evidence of anything and it is not going in a case-file.",
+   "note_text": "*I ask for an acknowledgment in any form. A receipt, a number, a mark in the\nmargin of this page in a hand that is not mine.*\n\nCycle 67. Her husband died on the ninth.\n\nEvery report after it, for twenty-four years, is in perfect form.\n\nI have made the mark. It is a tick and a date and a rosette number in the\nmargin of Report 728 of Kadmon Veil, and it is the only thing I have done on\nthis world that was the right size."
+  }
+ },
+ "strings": {
+  "no_such_thing": "Shelves, a desk, and nine hundred and twenty-two spines.",
+  "already_read": "You have read it. Reading it again will not improve it.",
+  "no_terminal": "There is no cogitator in the Reading Room. There is an index.",
+  "read_room_locked": "It is arranged, by number and by cycle and by subject. She arranged it to be used.",
+  "no_one_here": "Only Rhod, at the door, who has read all of them twice."
+ }
+}

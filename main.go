@@ -1,7 +1,11 @@
-// Command erratum is a vertical slice of THE ERRATUM: Act I, scene 1.3-1.4
-// and the Act I turn. It exists to prove four things are buildable —
-// free-form examination, the two evidence stores, the flag engine, and an
-// archive that edits the player's own case-notes without ever saying so.
+// Command erratum is THE ERRATUM: all three acts, thirty-one scenes, and five
+// endings. Free-form examination, two evidence stores the game never explains,
+// free-form dialogue, a flat flag engine, and an archive that edits the
+// player's own case-notes without ever saying so.
+//
+// ERRATUM_NOALT=1 disables the alternate screen. ERRATUM_PLAIN=1 skips the TUI
+// entirely and plays over stdin/stdout, which is what anything scripted should
+// use.
 package main
 
 import (
@@ -15,12 +19,20 @@ import (
 )
 
 func main() {
-	room, err := content.Load()
+	g, err := content.Load()
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
-	st := game.New(room)
+	st := game.New(g)
+	if os.Getenv("ERRATUM_PLAIN") != "" {
+		// Scripted play: no TUI, no repaints, one block of text per command.
+		if err := ui.Plain(st, os.Stdin, os.Stdout); err != nil {
+			fmt.Fprintln(os.Stderr, err)
+			os.Exit(1)
+		}
+		return
+	}
 	opts := []tea.ProgramOption{tea.WithMouseCellMotion()}
 	if os.Getenv("ERRATUM_NOALT") == "" {
 		opts = append(opts, tea.WithAltScreen())

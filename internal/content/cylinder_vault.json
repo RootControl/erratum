@@ -1,0 +1,674 @@
+{
+ "id": "cylinder_vault",
+ "title": "CHOIR SPIRE — WAX-CYLINDER REDUNDANCY VAULT",
+ "date": "0997.4.231",
+ "clock_at": "21h10",
+ "intro": "Eleven flights under the astropath cells, at an hour with no shift on the\nSpire, in a room the Choir has not had a reason to enter since 793.\n\nForty thousand wax cylinders in racked wooden drawers. A century of\nastropathic traffic cut into a medium that cannot be queried, indexed,\nsearched or amended, kept because a rescript from 604 says it must be, and\nnot played back in thirty years.\n\nThere is no vox-plate in this room. There is no socket for one. There is no\ncogitator on this floor or the two above it.\n\nInterrogator Dmetri Vaux is sitting on a drawer-step with his coat still on\nand a leather case at his feet that he has made no attempt to hide.\n\n\"I picked the room,\" he says. \"I would like you to notice that I picked the\nroom.\"",
+ "revisit": "The vault. Forty thousand cylinders, no vox, and a man on a drawer-step with a leather case.",
+ "look": "Racked wooden drawers, floor to ceiling, four ranks deep: forty thousand\nCYLINDERS, and a REPRODUCER nobody has turned over in thirty years.\n\nVAUX on the drawer-step, coat on, the CASE at his feet.\n\nNo vox-plate. No socket. Four floors of wax between this conversation and\nanything in this hive that keeps a record.",
+ "objects": [
+  {
+   "id": "cylinders",
+   "names": [
+    "cylinders",
+    "the drawers",
+    "wax",
+    "racks",
+    "the cylinders",
+    "recordings",
+    "drawers"
+   ],
+   "careless": "Forty thousand wax cylinders in racked wooden drawers, catalogued by year and by nothing else. A century of astropathic traffic that no living person has any intention of listening to.",
+   "careful": "You pull a drawer at random. 0793, second quarter, ninety-one cylinders, each one a message that came out of the warp into a screaming woman's mouth and was cut into wax within the minute.\n\nThere is no index below the year. To find one message you would have to play four thousand and know what you were listening for.\n\nWhich is the whole of it, standing in a drawer in front of you: this is a complete and permanent record of a century, and it is completely useless, and it is *therefore* completely safe. Nobody has ever edited a wax cylinder. Nobody ever will, because to do it you would need a man with a blade and eleven hours and a reason to care about one message out of forty thousand.\n\nA record that cannot be searched cannot be corrected.\n\nYou think about that for longer than you meant to."
+  },
+  {
+   "id": "reproducer",
+   "names": [
+    "reproducer",
+    "the machine",
+    "player",
+    "the horn",
+    "turntable"
+   ],
+   "careless": "A brass reproducer on a stand, with a horn and a governor and a maintenance tag dated 793.",
+   "careful": "The tag is a Choir Spire maintenance docket, signed off in 793 by a Deacon-Technical who certified the machine serviceable and, in the remarks column, wrote: *not used this cycle; recommend continue*.\n\nThirty years of *recommend continue*, one line a year, in eleven different hands, ending in 823 when somebody stopped bothering to write it.\n\nThe machine works. Nothing in the Imperium has decided it should not; nothing in the Imperium has decided it should. It sits in the one condition this hive is genuinely good at producing, which is *unexamined*."
+  },
+  {
+   "id": "case",
+   "names": [
+    "the case",
+    "leather case",
+    "his case",
+    "briefcase",
+    "papers"
+   ],
+   "careless": "A plain leather case at Vaux's feet, closed, of the sort an Interrogator has carried since before you were born.",
+   "careful": "It is not locked and he has not put his foot in front of it.\n\nThe leather is worn through at one corner in the way that only happens to a thing carried under the same arm for a very long time, and the strap has been re-stitched twice by hand, badly, by somebody who did not want to explain to a leatherworker what the case was for.\n\nHe watches you look at it and does not say anything, and does not move it, and waits."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "vaux2",
+   "names": [
+    "vaux",
+    "dmetri",
+    "interrogator",
+    "him",
+    "he"
+   ],
+   "title": "Interrogator Dmetri Vaux",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask,\" Vaux says. \"I have stopped deciding in advance which things I'll answer. That is the change in me and it is the only one.\"",
+   "portrait": "Interrogator Dmetri Vaux. Sixty-one, coat still on, eleven weeks into being the man who was not chosen and no longer performing it.\n\nThe immaculate part is unchanged. What has gone is the very small amount of work he used to put into getting your rank right.",
+   "greeting": "\"Inquisitor.\" He gets the rank right, the way he did in the study, and this time there is nothing at all underneath it.\n\n\"Sit on a drawer. They take the weight — they were built for a man to stand on while he reaches the top rack.\"\n\nHe does not offer his hand and does not get up.\n\n\"I have about forty minutes of things to say to you and four of them are going to be pleasant. I would rather do them in order.\"",
+   "reprise": "He waits on the drawer-step. Eleven weeks of practice at waiting.",
+   "unknown": "\"Nothing on that,\" Vaux says. \"I have been careful about what I know and what I don't. It's a discipline. I'd recommend it to you and you won't take it.\"",
+   "deflect": [
+    "He waits. Below the floor, forty thousand cylinders go on not being searchable by anybody.",
+    "\"Ask me the next one,\" he says."
+   ],
+   "topics": [
+    {
+     "id": "room",
+     "names": [
+      "the room",
+      "why here",
+      "the vault",
+      "cylinders",
+      "wax",
+      "why the spire",
+      "this place"
+     ],
+     "text": "\"Forty thousand cylinders,\" Vaux says. \"A century of astropathic traffic, cut in wax, in drawers, four floors under the cells.\n\n\"You cannot query it. You cannot index it. You cannot search it, you cannot amend it, and you cannot delete a line out of the middle of it without a man standing here with a blade and eleven hours to spare.\n\n\"The Spire keeps them because a rescript from 604 says they must. Nobody has turned that reproducer over in thirty years and nobody ever will.\"\n\nHe puts his palm flat on the drawer beside him.\n\n\"I picked the room. I would like you to notice that I picked the room, because in about ten minutes you are going to have to decide whether I am a bitter old man or a careful one, and this is the only evidence I am going to be able to offer you.\""
+    },
+    {
+     "id": "vosk",
+     "names": [
+      "vosk",
+      "hadrian",
+      "his master",
+      "master",
+      "forty years",
+      "apprentice",
+      "the apprenticeship"
+     ],
+     "text": "\"I was his apprentice for forty years and I know precisely what I am. I am the one he did not choose.\n\n\"I have had eleven weeks to be bitter about that. I have used them. I am finished, and here is what's left.\"\n\nHe says it without any drama at all, which is worse.\n\n\"He was not a kind man and he was not a warm one and he never once in forty years told me I had done a thing well. And I would have gone into a reactor for him, and he knew that, and he used it, and he was right to.\n\n\"I am not confused about him. That is the difference between us so far. You have had a month of him and you have already started making him better than he was.\""
+    },
+    {
+     "id": "me",
+     "names": [
+      "me",
+      "why me",
+      "his choice",
+      "the drawer",
+      "why not you",
+      "selection",
+      "why he picked me"
+     ],
+     "text": "\"He chose you because you cannot leave a discrepancy alone.\"\n\nHe lets that be a compliment for exactly as long as it takes you to hear it as one.\n\n\"That is not praise. That is a *specification*. He went to a records office and he read eleven months of your marginalia and he picked you out of a drawer, the way a man picks a tool off a rack because the handle is the right length.\n\n\"I have spent forty years wanting to be picked out of that drawer. I am telling you, as a professional courtesy, that being the tool is not the honour you currently think it is.\""
+    },
+    {
+     "id": "crase",
+     "names": [
+      "crase",
+      "the author",
+      "your conclusion",
+      "who did it",
+      "yolanda",
+      "lord-inquisitor",
+      "her"
+     ],
+     "sets": [
+      "VAUX_WRONG_SEEN"
+     ],
+     "text": "\"She did it.\"\n\nHe says it the way a man reads out a total he has checked four times.\n\n\"Twenty-six months. She has signed every elevation, every transfer and every quiet retirement in this Ordo since 820. She was in the antechamber before the wardens were. She put the rosette in your hand at the fourth hour with two recording adepts present and a Provost-Adjunct she had chosen. Every road out of that morning runs through her office and I have walked all of them.\"\n\nIt is correct. Every particular of it is correct, and you have seen enough of the paper this month to know that it is.\n\nAnd he has drawn a line from it to a woman, because a woman is the largest thing he can imagine at the end of a line, and you have spent this month reading the alms returns of a Cathedral that does not know it is doing anything, and a shift foreman who has been counted for eighty years by something that never once came for the head.\n\nHe is wrong. He is wrong in the same shape Vhail was wrong, four grades up, and with better paper.\n\nYou do not tell him."
+    },
+    {
+     "id": "answer_ledger",
+     "names": [
+      "what i didn't file",
+      "my answer",
+      "the ledger",
+      "my notebook",
+      "answer him",
+      "what i kept",
+      "the coat",
+      "answer"
+     ],
+     "requires": [
+      "VAUX_QUESTION_ASKED",
+      "STORE_HABIT_LEDGER"
+     ],
+     "blocks": [
+      "VAUX_FINISHED"
+     ],
+     "counters": {
+      "VAUX_SUSPICION": -1
+     },
+     "sets": [
+      "VAUX_PERSUADED",
+      "VAUX_ANSWERED"
+     ],
+     "text": "You take the notebook out of your coat and you tell him.\n\nNot all of it. Enough of it: the things that went into the coat and not into the terminal, and why each one went there, and the fact that you have been doing it since a mortuary on tier one without being able to say out loud what you thought you were protecting them from.\n\nVaux does not interrupt.\n\nWhen you finish he does not say anything for six seconds, which does not sound like a long time until you have spent it sitting on a drawer in a wax vault opposite a man who has not stopped talking since you came in.\n\n\"Right,\" he says.\n\nThen: \"That is the whole of it, then. That's the only answer to the question and I did not expect to get it tonight.\"\n\nHe looks at the case at his feet for a moment as though re-pricing it."
+    },
+    {
+     "id": "answer_filed",
+     "names": [
+      "what i didn't file",
+      "my answer",
+      "the ledger",
+      "my notebook",
+      "answer him",
+      "what i kept",
+      "the coat",
+      "answer"
+     ],
+     "requires": [
+      "VAUX_QUESTION_ASKED"
+     ],
+     "text": "You go to answer him and find that you cannot.\n\nNot because you are hiding anything. Because there is nothing to hide: it is all in the case-file, correctly classed and correctly indexed, every clue you have picked up this month, entered by you, on the terminal, in a building that Cael Yttrix maintains and the Lexicanum tiers and somebody has been reading for eleven weeks.\n\nYou have been thorough. It is the thing you are best at.\n\n\"Ah,\" Vaux says, and does not press it, and does not stop talking, and goes on to the next thing in a voice that has changed very slightly and is not going to change back."
+    },
+    {
+     "id": "character",
+     "names": [
+      "character",
+      "his record",
+      "his service",
+      "sixty-one years",
+      "what he is",
+      "his career"
+     ],
+     "requires": [
+      "VAUX_INDICTMENT_HEARD"
+     ],
+     "blocks": [
+      "VAUX_FINISHED"
+     ],
+     "below": {
+      "CRASE_STANDING": 4
+     },
+     "counters": {
+      "VAUX_SUSPICION": -1
+     },
+     "text": "You put it to him that a man who has spent two years building a case he could never file, on his own time, against the one person in the sector who could end him for it, is not a man who is owed the word *bitter*.\n\n\"That's a kindness,\" Vaux says, and is uncomfortable with it, and does not deflect it.\n\n\"Nobody has said anything of that shape to me since 788. I don't know what to do with it and I am not going to pretend that I do.\"\n\nHe straightens the case with his foot, an inch, for no reason."
+    },
+    {
+     "id": "honest",
+     "names": [
+      "you are right",
+      "concede",
+      "he's right",
+      "admit it",
+      "the indictment",
+      "agree with him"
+     ],
+     "requires": [
+      "VAUX_INDICTMENT_HEARD"
+     ],
+     "blocks": [
+      "VAUX_FINISHED"
+     ],
+     "below": {
+      "CRASE_STANDING": 3
+     },
+     "counters": {
+      "VAUX_SUSPICION": -1
+     },
+     "text": "You tell him that he is right.\n\nNot about Crase. About the rest of it: that everything you have found this month was handed to you, that you have gone where you were pointed every single time, and that you noticed the rosette and did not notice the witnesses.\n\n\"Yes,\" Vaux says.\n\nHe waits for the sentence that usually comes after that one, the one where a person explains why it was all right anyway, and it does not come, and he adjusts.\n\n\"Well,\" he says. \"That's something.\""
+    },
+    {
+     "id": "cipher_closed",
+     "names": [
+      "cipher",
+      "the half",
+      "the key",
+      "his half",
+      "vosk's cipher",
+      "the code"
+     ],
+     "blocks": [
+      "VAUX_DOORS_OPEN"
+     ],
+     "closed": "\"There is a thing I have,\" Vaux says, \"and we are not there yet.\"\n\nHe does not elaborate and he does not look at the case."
+    },
+    {
+     "id": "cipher",
+     "names": [
+      "cipher",
+      "the half",
+      "the key",
+      "his half",
+      "vosk's cipher",
+      "the code"
+     ],
+     "requires": [
+      "VAUX_DOORS_OPEN"
+     ],
+     "text": "\"He dictated in it,\" Vaux says. \"For nineteen years. He never wrote the key down anywhere, because writing a key down is how you lose it, and he made me take dictation in it for the first four years of my apprenticeship without ever once telling me it was a cipher.\n\n\"I worked it out in 790 and I never told him, and I have carried it since, and I have never used it for anything.\n\n\"It is half. He kept the other half in the way he arranged a room, which I could never do and you apparently can.\"\n\nHe does not offer it. He is not going to offer it for asking."
+    },
+    {
+     "id": "case",
+     "names": [
+      "the case",
+      "the leather case",
+      "his case",
+      "two years",
+      "twenty-six months",
+      "the dossier",
+      "off-book"
+     ],
+     "requires": [
+      "VAUX_FILE_SEEN"
+     ],
+     "text": "\"Twenty-six months,\" Vaux says. \"Off the books, on my own time, on a serving Lord-Inquisitor of the Ordo Hereticus.\n\n\"Every hour of it is a charge. Unauthorised surveillance of a superior. Retention of Ordo material outside the archive. Four separate counts of requisitioning under a warrant that had lapsed, which is forgery, and which I did knowingly, and which I would do again on Tuesday.\n\n\"It is all true and it is all documented and the documentation is mine and it is at your feet.\"\n\nHe is not being brave about it. He is being accurate about it, which in this room is the same thing."
+    }
+   ],
+   "shows": [
+    {
+     "clue": "B4",
+     "blocks": [
+      "VAUX_FINISHED"
+     ],
+     "counters": {
+      "VAUX_SUSPICION": -1
+     },
+     "sets": [
+      "VAUX_PERSUADED",
+      "VAUX_EVIDENCE_SHOWN"
+     ],
+     "text": "You put the purge order on the drawer between you. Vellum, 0807, a seat that authorised the removal of record for a district of forty thousand people, signed by an Ordinate who has been dead for nine years.\n\nVaux does not pick it up for a long moment.\n\n\"Where did this come from?\"\n\n\"A sump.\"\n\n\"It did not come from a requisition.\" He is not asking. \"It has no docket number on the reverse and there is no reader's mark on it and it has not been through the Lexicanum, because if it had been through the Lexicanum it would not exist any more.\"\n\nHe picks it up then, carefully, by the edges, the way you handle something that is going to have to survive.\n\n\"You went and got a thing with your hands,\" he says. \"Nobody gave you this.\"\n\nIt is the first sentence he has spoken tonight that was not prepared."
+    },
+    {
+     "clue": "B12",
+     "blocks": [
+      "VAUX_FINISHED"
+     ],
+     "counters": {
+      "VAUX_SUSPICION": -1
+     },
+     "sets": [
+      "VAUX_PERSUADED",
+      "VAUX_EVIDENCE_SHOWN"
+     ],
+     "text": "You give him the count. Nineteen erasures in forty years in a manufactorum gallery, and not one of them leadership: clerks, tally-keeps, two historians, and a woman who kept a birthday book.\n\n\"Say the last part again.\"\n\nYou say it again.\n\nVaux sits with it. He is a man who has spent forty years learning to hear the shape of a thing before he has the name of it, and this is the first time tonight that the shape is not one he brought in with him.\n\n\"That is not how a person removes an enemy,\" he says at last. \"That is how an office closes a variance.\"\n\nThen, sharper: \"Who told you this?\"\n\n\"A shift foreman. In a chapel with no vox in it.\"\n\n\"Who was not asked for by name through a message office,\" Vaux says, mostly to himself, \"and who was therefore not briefed before you got there.\"\n\nHe looks at you differently for the rest of the conversation and does not comment on it."
+    },
+    {
+     "clue": "A10",
+     "text": "You put his own theory in front of him — the one he gave you in the study on the first morning, in his own words, written down and carried a month.\n\n\"Yes,\" Vaux says. \"I said that. I said it to you in my own house on the day he died and you wrote it down and did not file it, which I noticed, and which is four fifths of why we are sitting in a wax vault.\"\n\nHe hands it back.\n\n\"I have not changed my mind since. I have only got better paper.\""
+    }
+   ],
+   "beats": [
+    {
+     "id": "approach_runner",
+     "requires": [
+      "VAUX_RUNNER_SENT"
+     ],
+     "text": "\"A child came up eleven flights of Spire stairs with a spoken message and no card,\" Vaux says. \"It took her most of a day and she would not tell me who paid her, which at that age is either training or character.\"\n\nHe seems to find this restful.\n\n\"Nobody wrote it down. Nobody minuted it, nobody docketed it, and there is no line anywhere in this hive that says you asked to see me.\n\n\"Which means there is no line anywhere that says what I am about to tell you. Which means that for the first time since the twenty-third of last month I am going to say what I actually think.\""
+    },
+    {
+     "id": "approach_archive",
+     "requires": [
+      "TWO_THREADS"
+     ],
+     "blocks": [
+      "VAUX_RUNNER_SENT"
+     ],
+     "counters": {
+      "VAUX_SUSPICION": 2
+     },
+     "text": "\"Your request came through the Crown's message office,\" Vaux says. \"Docket, timestamp, routing, four desks and nine hours, and it was read out to me by a clerk who wanted to know whether he ought to minute it.\"\n\nHe lets that sit on the drawer between you.\n\n\"So somebody knows we are talking. Somebody knows the hour. Somebody will know how long it ran and whether you left before or after me.\n\n\"I don't hold it against you. I hold it against the building. But you should understand that I am going to be careful with you tonight, and that being careful with you is not the same thing as trusting you, and I am too old to pretend otherwise for your comfort.\""
+    },
+    {
+     "id": "file_shown",
+     "after_topics": 1,
+     "sets": [
+      "VAUX_FILE_SEEN"
+     ],
+     "text": "At some point while you are talking he opens the leather case, without ceremony, and turns it round on the floor so that you can see into it.\n\nTwo years of paper. Tabbed, cross-referenced, indexed by hand, in a script you last saw on a witness statement in a dead man's antechamber.\n\n\"Crase,\" he says. \"Twenty-six months. Off the books, on my own time, on a serving Lord-Inquisitor.\n\n\"You understand what that is. That is the end of me, on the floor, in a room with no lock on the door, and I have put it where you can reach it before you have told me one single thing about yourself.\"\n\nHe sits back down on the drawer-step.\n\n\"That is not trust. That is arithmetic. I have nothing left that is worth more than what I want, and I have worked out that you are the only person in this hive who might spend it correctly.\""
+    },
+    {
+     "id": "indictment",
+     "after_topics": 2,
+     "requires": [
+      "VAUX_FILE_SEEN"
+     ],
+     "sets": [
+      "VAUX_INDICTMENT_HEARD"
+     ],
+     "text": "\"Now the unpleasant part,\" Vaux says, \"and I am going to do it in one go, because doing it in pieces would be a cruelty and I am not cruel, whatever else I am.\"\n\nHe does not raise his voice at any point in what follows.\n\n\"He found you in a records office. A man who needed a key went and got one, and the key is very proud of how well it turns.\n\n\"Then he died, and within six hours *she* put the rosette in your hand. In front of witnesses. Witnesses she chose. Did you notice that she chose them? No. You noticed the rosette.\n\n\"Everything you have found this month, somebody gave you. The Gallery — she gave you. The Cathedral is on every open filing in this hive and you needed six weeks to look at it. The savant is being calibrated by a Magos who built your terminal.\n\n\"I am not saying you are corrupt. I am saying corruption would be *slower* than what is being done to you. She does not need you turned. She needs you pointed. You have been pointed for a month, you have gone off exactly where she aimed every single time, and you have filed the results where she can read them.\"\n\nHe stops.\n\nThe worst of it is not the content. The worst of it is that you can check it, item by item, against your own case-notes, and every item holds."
+    },
+    {
+     "id": "indictment_promoted",
+     "after_topics": 2,
+     "requires": [
+      "VAUX_FILE_SEEN"
+     ],
+     "at_least": {
+      "CRASE_STANDING": 3
+     },
+     "text": "He is not quite finished.\n\n\"She promoted you again last week,\" Vaux says.\n\n\"You didn't ask why.\""
+    },
+    {
+     "id": "question",
+     "after_topics": 3,
+     "requires": [
+      "VAUX_INDICTMENT_HEARD"
+     ],
+     "sets": [
+      "VAUX_QUESTION_ASKED"
+     ],
+     "text": "\"One question,\" he says. \"Then I stop and you talk.\n\n\"What have you learned this month that you did not file?\"\n\nHe is not being clever. He has asked it the way a man asks the only question he has left, and he is prepared to sit on a drawer-step for a considerable time waiting for it, and under the floor forty thousand cylinders go on being unsearchable by anybody at all."
+    },
+    {
+     "id": "doors",
+     "after_topics": 4,
+     "requires": [
+      "VAUX_QUESTION_ASKED"
+     ],
+     "sets": [
+      "VAUX_DOORS_OPEN"
+     ],
+     "text": "Vaux stands up and brushes wax dust off a coat that did not have any on it.\n\n\"Three doors,\" he says, \"and I will say them plainly, because I have watched two Inquisitors be delicate about this and it wasted everybody's afternoon.\n\n\"You can take my hand. That costs you nothing tonight and a great deal later, and you will not know the price until Act's end.\n\n\"You can have me shot. Every charge is true, it is all in the case, and Crase will sign it inside the hour and thank you for your discretion — and she will mean the thanks, which is the part you will think about afterwards.\n\n\"Or you can hold the case over me. It will work. It would end me and we both know it, and I would comply, and I would go on complying for as long as you needed me to.\n\n\"There is no fourth thing. I have had eleven weeks to look for a fourth thing.\""
+    },
+    {
+     "id": "returned",
+     "requires": [
+      "VAUX_LEFT",
+      "VAUX_DOORS_OPEN"
+     ],
+     "blocks": [
+      "VAUX_RESOLVED"
+     ],
+     "counters": {
+      "VAUX_SUSPICION": 3
+     },
+     "sets": [
+      "VAUX_FINISHED"
+     ],
+     "text": "He is three weeks older and has been off-world for all of them.\n\n\"Cantor,\" he says. \"I sat in a transit hostel and waited to find out whether you had filed what I told you. You hadn't, or they would have taken me at the gate, so: thank you for that. I mean it and it is the last warm thing I am going to say.\"\n\nHe has the case with him. He does not open it.\n\n\"You didn't decide. I carried this for eleven weeks and then for three more, and somewhere in the second week I stopped believing you were ever going to take my hand.\n\n\"So there is one door now, and it is the ugly one, and I would rather be coerced by somebody competent than spend another month being patient at you.\n\n\"Use the case.\""
+    }
+   ],
+   "acts": [
+    {
+     "id": "ally_runner",
+     "names": [
+      "ally",
+      "alliance",
+      "take his hand",
+      "take my hand",
+      "his hand",
+      "side with him",
+      "work with him",
+      "trust him",
+      "shake"
+     ],
+     "requires": [
+      "VAUX_DOORS_OPEN",
+      "VAUX_PERSUADED",
+      "VAUX_RUNNER_SENT"
+     ],
+     "blocks": [
+      "VAUX_RESOLVED",
+      "VAUX_FINISHED"
+     ],
+     "below": {
+      "VAUX_SUSPICION": 2,
+      "CRASE_STANDING": 3
+     },
+     "sets": [
+      "VAUX_ALLIED",
+      "VAUX_RESOLVED"
+     ],
+     "grants": [
+      "B15",
+      "B16"
+     ],
+     "counters": {
+      "ILARIA_TRUST": 1
+     },
+     "cost": 2,
+     "text": "You take his hand.\n\nVaux looks at it for slightly too long before he takes it back, which tells you how long it has been.\n\nThen he does something you have not prepared for: he picks the case up off the floor and puts it in your arms, all twenty-six months of it, without being asked and without any conditions attached to it at all.\n\n\"That is yours. If you file it I go to a wall and I have decided I don't mind.\"\n\nAnd then, still standing, in the flat voice of a man reading back a dictation from forty years ago, he gives you the cipher.\n\nIt takes eleven minutes. He does not hesitate once. He has carried it since 790, has never used it for anything, and has spent eleven weeks waiting for somebody worth giving it to, and he does not make a speech about that and does not need to.\n\nWhen he has finished he sits down on the drawer-step again and looks tired in a way he has not permitted himself all night.\n\n\"Right,\" he says. \"Now we find out what he wrote.\"\n\n[ B15 HELD ]\n[ B16 HELD — ILARIA_TRUST +1 ]"
+    },
+    {
+     "id": "ally",
+     "names": [
+      "ally",
+      "alliance",
+      "take his hand",
+      "take my hand",
+      "his hand",
+      "side with him",
+      "work with him",
+      "trust him",
+      "shake"
+     ],
+     "requires": [
+      "VAUX_DOORS_OPEN",
+      "VAUX_PERSUADED"
+     ],
+     "blocks": [
+      "VAUX_RESOLVED",
+      "VAUX_FINISHED"
+     ],
+     "below": {
+      "VAUX_SUSPICION": 2,
+      "CRASE_STANDING": 1
+     },
+     "sets": [
+      "VAUX_ALLIED",
+      "VAUX_RESOLVED"
+     ],
+     "grants": [
+      "B15",
+      "B16"
+     ],
+     "counters": {
+      "ILARIA_TRUST": 1
+     },
+     "cost": 2,
+     "text": "You take his hand.\n\nVaux looks at it for slightly too long before he takes it back, which tells you how long it has been.\n\nThen he does something you have not prepared for: he picks the case up off the floor and puts it in your arms, all twenty-six months of it, without being asked and without any conditions attached to it at all.\n\n\"That is yours. If you file it I go to a wall and I have decided I don't mind.\"\n\nAnd then, still standing, in the flat voice of a man reading back a dictation from forty years ago, he gives you the cipher.\n\nIt takes eleven minutes. He does not hesitate once. He has carried it since 790, has never used it for anything, and has spent eleven weeks waiting for somebody worth giving it to, and he does not make a speech about that and does not need to.\n\nWhen he has finished he sits down on the drawer-step again and looks tired in a way he has not permitted himself all night.\n\n\"Right,\" he says. \"Now we find out what he wrote.\"\n\n[ B15 HELD ]\n[ B16 HELD — ILARIA_TRUST +1 ]"
+    },
+    {
+     "id": "ally_refused",
+     "names": [
+      "ally",
+      "alliance",
+      "take his hand",
+      "take my hand",
+      "his hand",
+      "side with him",
+      "work with him",
+      "trust him",
+      "shake"
+     ],
+     "requires": [
+      "VAUX_DOORS_OPEN"
+     ],
+     "blocks": [
+      "VAUX_RESOLVED"
+     ],
+     "cost": 1,
+     "text": "You put your hand out.\n\nVaux looks at it, and does not take it, and the refusal is so entirely without malice that it takes you a moment to understand that it has happened.\n\n\"No,\" he says. \"Not tonight, and I am not going to explain it, because explaining it would be a way of asking you to argue me out of it and I have had enough of my own voice.\"\n\nHe sits back down.\n\n\"The other two doors are still open. They will be open in an hour and they will be open in a week. I am not going anywhere clever.\"\n\nHe means it kindly. It is the least kind thing that has happened to you this month."
+    },
+    {
+     "id": "execute",
+     "names": [
+      "execute",
+      "condemn",
+      "denounce",
+      "arrest him",
+      "charge him",
+      "have him shot",
+      "sign it",
+      "execution"
+     ],
+     "requires": [
+      "VAUX_DOORS_OPEN",
+      "VAUX_FILE_SEEN"
+     ],
+     "blocks": [
+      "VAUX_RESOLVED",
+      "VAUX_FINISHED"
+     ],
+     "below": {
+      "VAUX_SUSPICION": 3
+     },
+     "sets": [
+      "VAUX_RESOLVED",
+      "VAUX_EXECUTED",
+      "CIPHER_HALF_LOST"
+     ],
+     "clears": [
+      "VAUX_ALIVE"
+     ],
+     "counters": {
+      "CRASE_STANDING": 2,
+      "RECONCILIATION": 10
+     },
+     "cost": 4,
+     "text": "You take the case.\n\nEvery charge in it is true. Unauthorised surveillance of a superior officer, retention of Ordo material outside the archive, four counts of requisition under a lapsed warrant. He assembled the documentation himself, indexed it himself, and handed it to you himself, and none of that is a defence in any court this Ordo keeps.\n\nVaux does not argue and does not stand up.\n\n\"Yes,\" he says. \"All right.\"\n\nCrase signs inside the hour. She reads the whole case first — you watch her do it, forty minutes, every tab — and when she has finished she puts her hand flat on it for a moment and says that he was a good officer for a very long time and that this was always going to be how it ended for him.\n\nThen she thanks you for your discretion, and means it.\n\nIt is done in the yard at the fourteenth hour. He is entirely composed. He asks the Provost whether the cylinders are still down there and is told that they are, and he says *good*, and that is the last thing Interrogator Dmetri Vaux says to anybody.\n\nHalf of Hadrian Vosk's cipher was in his head. It was in his head when he went into the yard.\n\n[ CRASE_STANDING +2 ]"
+    },
+    {
+     "id": "blackmail",
+     "names": [
+      "blackmail",
+      "coerce",
+      "threaten",
+      "leverage",
+      "hold it over him",
+      "compel him",
+      "use the case",
+      "own him"
+     ],
+     "requires": [
+      "VAUX_DOORS_OPEN",
+      "VAUX_FILE_SEEN"
+     ],
+     "blocks": [
+      "VAUX_RESOLVED"
+     ],
+     "sets": [
+      "VAUX_RESOLVED",
+      "VAUX_COERCED",
+      "CIPHER_HALF_VAUX_CORRUPT"
+     ],
+     "grants": [
+      "B16"
+     ],
+     "cost": 2,
+     "text": "You pick the case up and you do not put it down again, and you say the sentence, and it is a very short sentence and you have heard four other people say a version of it this month.\n\n\"Yes,\" Vaux says. \"I did wonder.\"\n\nHe complies. He complies completely and immediately and without any sulking about it, which is somehow the worst available outcome, and he gives you the cipher there and then, standing, from memory, eleven minutes of it.\n\nHe does not hesitate at any point.\n\nAfterwards he asks whether he may have the case back and you tell him no, and he nods as though he had merely been confirming a procedural detail, and puts his hands in his coat pockets, and waits to be dismissed by a records-adept with eleven years in.\n\n\"You'll want to test it,\" he says at the door. \"Against something you already know the answer to.\"\n\nIt is good advice, offered freely, and you are not going to take it.\n\n[ B16 HELD ]"
+    },
+    {
+     "id": "refuse",
+     "names": [
+      "refuse",
+      "none",
+      "decline",
+      "no",
+      "walk away",
+      "nothing",
+      "refuse all",
+      "neither"
+     ],
+     "requires": [
+      "VAUX_DOORS_OPEN"
+     ],
+     "blocks": [
+      "VAUX_RESOLVED",
+      "VAUX_FINISHED"
+     ],
+     "sets": [
+      "VAUX_REFUSED"
+     ],
+     "cost": 1,
+     "text": "You tell him you are not going to choose tonight.\n\nVaux takes this better than the other three would have gone.\n\n\"That is a decision,\" he says. \"You should know that it is one. People your age think the third option is waiting and it is not, it is just the one you take without noticing.\"\n\nHe picks the case up off the floor and closes it and puts it under his arm, and it is astonishing how quickly he becomes an ordinary sixty-one-year-old man with a briefcase.\n\n\"I'll be somewhere,\" he says. \"Send a child.\""
+    },
+    {
+     "id": "spent",
+     "names": [
+      "ally",
+      "alliance",
+      "take his hand",
+      "his hand",
+      "execute",
+      "condemn",
+      "denounce",
+      "blackmail",
+      "coerce",
+      "threaten",
+      "refuse",
+      "decline"
+     ],
+     "requires": [
+      "VAUX_RESOLVED"
+     ],
+     "text": "That is settled, and it is not the sort of thing this Ordo lets you settle twice."
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "down",
+   "names": [
+    "out",
+    "back",
+    "board",
+    "chambers",
+    "crown",
+    "return",
+    "the lift"
+   ],
+   "to": "standing_board",
+   "cost": 3,
+   "sets": [
+    "VAUX_LEFT"
+   ],
+   "text": "Eleven flights, and the transit across the hive, and no part of the journey improves it.\n\nSomewhere behind you a sixty-one-year-old man is sitting in a room he chose because it cannot keep a record, having said the only true things anybody has said to you this month."
+  }
+ ],
+ "clues": {
+  "B15": {
+   "id": "B15",
+   "names": [
+    "two-year file",
+    "off-book file",
+    "his casework",
+    "dossier on crase",
+    "vaux dossier",
+    "twenty-six months"
+   ],
+   "label": "Vaux's twenty-six-month off-book file on Yolanda Crase — correct in every particular, wrong in its conclusion",
+   "store": "either",
+   "reconciliation": 3,
+   "file_text": "FILED. CLASS: DISCIPLINARY / UNAUTHORISED SURVEILLANCE OF A SUPERIOR OFFICER. INDEXED. ATTRIBUTED: VAUX, D., INTERROGATOR.\n\nThe cogitator takes it without comment and cross-indexes the attribution against the Ordo's standing personnel roll, which is the correct handling and takes about nine seconds.\n\nSomewhere two tiers up, a summary of it is in a queue.",
+   "note_text": "Twenty-six months of another man's work, copied into your coat by hand, badly, over four hours.\n\nEvery date in it checks. Every requisition number in it checks. The conclusion at the end of it is wrong, and it is wrong in exactly the way Vhail was wrong, and it is the best piece of investigative work anybody in this hive has done in a decade.\n\nHe gave it to you before he had any reason to."
+  },
+  "B16": {
+   "id": "B16",
+   "names": [
+    "cipher half",
+    "second half",
+    "his half",
+    "vaux's half",
+    "the dictation key",
+    "the dictation"
+   ],
+   "label": "The second half of Vosk's cipher — nineteen years of dictation, carried in one man's head since 790",
+   "store": "either",
+   "reconciliation": 2,
+   "sets": [
+    "CIPHER_HALF_VAUX"
+   ],
+   "file_text": "FILED. CLASS: CRYPTOGRAPHIC MATERIAL / PARTIAL KEY. INDEXED. CLASSIFICATION: ORDO INTERNAL.\n\nIt is a good, clean, correct filing. The template has a field for exactly this and the field has existed since 811.\n\nEleven minutes of a dead man's dictation, transcribed to a terminal that Cael Yttrix maintains, in a building where four of your requisitions have already come back to somebody.",
+   "note_text": "Eleven minutes of phoneme groups, longhand, in your own script, in a wax vault with no vox in it.\n\nIt is half a key. It is worth nothing on its own and everything beside the other half, and there is now exactly one copy of it in the Imperium that is not inside a sixty-one-year-old man's skull."
+  }
+ },
+ "strings": {
+  "no_such_thing": "Drawers, wax, and a man on a step. There is very little else down here.",
+  "already_read": "You have looked twice. Vaux is waiting and has made a point of having the time.",
+  "no_terminal": "There is no cogitator on this floor or the two above it. That is why you are standing on this one.",
+  "read_room_locked": "Nobody arranged this room. The Choir stopped thinking about it in 793, which is the entire reason it is safe.",
+  "no_one_here": "Only Vaux, and the drawers."
+ }
+}

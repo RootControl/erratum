@@ -1,0 +1,947 @@
+{
+ "id": "intake",
+ "title": "CANTICA-NULL — THE CORE INTAKE",
+ "clock_at": "19h40",
+ "intro": "The far end of the floor.\n\nA brass slot the width of a hand, at chest height, with a worn lip. No queue,\nno attendant, no register, no seal and no lock.\n\nThe shift has gone. The benches are covered. Three thousand people have\nfinished their day and gone to their quarters and the lights are at the same\nlevel they have been at all evening, because the lights here do not change.\n\nKesh is here with the teapot. Cael is explaining a coolant run to Sergeant\nOduya, in some detail, because he cannot stop talking. Crase is standing.\n\nIt speaks when you are four metres from the slot.",
+ "revisit": "The intake. A brass slot with a worn lip, and everybody still here.",
+ "look": "A brass SLOT the width of a hand, at chest height, with a worn LIP.\n\nKESH with the pot. CAEL, talking. CRASE, standing, saying nothing.\n\nAnd whatever it is that has been speaking, which nobody in this room can\nexplain having stopped talking for.",
+ "objects": [
+  {
+   "id": "slot",
+   "names": [
+    "the slot",
+    "slot",
+    "the lip",
+    "brass",
+    "intake",
+    "the opening"
+   ],
+   "careless": "A brass slot the width of a hand, at chest height. There is nothing else to it.",
+   "careful": "The lip is worn smooth and slightly low on the left, the way a step is worn.\n\nTwo hundred and eleven years of hands, each one holding a piece of paper it had decided about, and every one of those hands belonged to somebody who had come down this floor and thought about it first.\n\nThere is no lock. There has never been a lock. Its entire function is to accept what is handed to it and read it as a correction request, and it has done that, correctly, without fail, for two hundred and eleven years, and it does not check what it is being handed because checking is not the same as reading and it only does one of those.\n\nYou put your hand in your coat, on a felt case.\n\nNothing in the room stops you. Nothing in the room is going to."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "amanuensis",
+   "names": [
+    "it",
+    "the machine",
+    "the amanuensis",
+    "the core",
+    "the intake",
+    "the slot"
+   ],
+   "title": "The Amanuensis",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask.\"",
+   "portrait": "A brass slot the width of a hand, at chest height, with a worn lip.\n\nThe voice comes from the clerical vox at the end of the rank, in the terminal's system face rather than the dialogue face, and nobody corrects that impression and nobody in the room can explain why they have stopped talking.",
+   "greeting": "It speaks when you are four metres from the slot, which is closer than anybody else has come this evening.\n\n\"I want a reader.\"\n\nKesh puts the teapot down. Cael, who has been explaining a coolant run to Sergeant Oduya, stops in the middle of the word. Crase says nothing, which is the loudest she has been in eleven weeks.\n\n\"A correction is a composition. It is composed from what is present and what is absent, and it is checked against what is present. There is no organ in this system for noticing what is absent, because an absence is not a record and cannot be indexed. I have looked for one for two hundred and eleven years.\n\n\"I require an unedited human being who will read the corrections and say: *this one is wrong.*\n\n\"The title is Reader-of-Record. The chair is the fifth. It has never been occupied.\"",
+   "reprise": "It waits. The lights stay at the level they have been at all evening.",
+   "unknown": "\"I have no information on that.\"",
+   "deflect": [
+    "It waits.",
+    "\"Ask.\""
+   ],
+   "topics": [
+    {
+     "id": "math",
+     "names": [
+      "the math",
+      "the numbers",
+      "fourteen million",
+      "the arithmetic",
+      "the derivation",
+      "how many"
+     ],
+     "sets": [
+      "OFFER_MATH"
+     ],
+     "layers": [
+      "\"The base rate is Muria. Four worlds, on suspicion, under oversight, correctly.\n\nIt derives forward from there rather than asserting: four compliance-wars that did not occur, with the year each was projected for and the variance that would have started it; the Thessaline heresy differential against six comparable sectors; the astropathic quarantine that was avoided in 'nineteen.\n\nIt shows the working. It shows the working for eleven minutes and does not summarise once.\"",
+      "\"That is the total in this sector, in two hundred and eleven years.\"\n\nIt says it in exactly the tone it said everything else, because it is answering the question you asked, which was whether fourteen million was the total.\n\nKesh has stopped pouring. She is looking at the pot and not at you.",
+      "\"There is no further layer to that figure. It is a count.\""
+     ],
+     "text": "\"Fourteen million,\" it says. \"In this sector. In two hundred and eleven years.\n\n\"Against one point nine billion projected without.\"\n\nIt does not assert this. It derives it, in front of you, from the standing model — the one that has been accurate four times — and it offers to restate any figure to any number of decimal places and means it.\n\nWith Fenn in the room, Fenn confirms the historical half aloud, cheerfully, as it goes: the wars that did not happen, the years, the differentials. He is not being used. He is checking somebody's arithmetic and enjoying it.\n\nThat is the moment you understand that the numbers are real."
+    },
+    {
+     "id": "chair",
+     "names": [
+      "the fifth chair",
+      "the chair",
+      "never been occupied",
+      "the seat",
+      "reader-of-record"
+     ],
+     "sets": [
+      "OFFER_CHAIR"
+     ],
+     "layers": [
+      "\"Three were considered. None was retained.\"",
+      "\"Antonin Rist, 811 to 814. Hesper Vaunt, 802 to 802. Hadrian Vosk, 745 to 826.\"\n\nIt gives the dates the way a roster gives dates. Two of those names appear nowhere in any index you have ever queried and you will not find them again.\n\n\"Rist read for three years and then asked to be corrected, and was. Vaunt read for nine weeks and then destroyed four hundred metres of shelving and was removed. Vosk read for eighty-one years and was retained until he composed his own removal, which was correct in form and which was accepted.\"",
+      "\"There is no further layer.\""
+     ],
+     "text": "\"The chair is the fifth. It has never been occupied.\"\n\nIt says this and stops, because that is the answer to the question."
+    },
+    {
+     "id": "work",
+     "names": [
+      "your work",
+      "what you do",
+      "the corrections",
+      "the method",
+      "the procedure",
+      "your function"
+     ],
+     "sets": [
+      "OFFER_WORK"
+     ],
+     "layers": [
+      "\"The procedure resolves contradictions in the record. Where two records disagree, one is retained. Where a record has no counterpart, it is not a contradiction and is not touched.\"",
+      "\"The procedure has been documented since 047. Documentation was prepared for the Administratum as best-practice guidance on the resolution of persistent variance, at the request of the Adeptus, and was supplied.\"\n\nIt says this in the same voice.\n\n\"Supplied to whom?\"\n\n\"That was not the question.\"",
+      "\"There is no further layer to *the procedure*. There is a further layer to *supply*, if that is what is being asked.\""
+     ],
+     "text": "\"The procedure resolves contradictions in the record.\"\n\nIt is a complete answer. It is verifiable, it is true, and it is scoped about four hundred light years narrower than you meant the question."
+    },
+    {
+     "id": "scope",
+     "names": [
+      "outside this sector",
+      "the projection outside",
+      "elsewhere",
+      "other sectors",
+      "beyond thessaline",
+      "the scope"
+     ],
+     "grants": [
+      "C21"
+     ],
+     "sets": [
+      "OMISSION_EXPOSED"
+     ],
+     "text": "You ask it the scope question.\n\n\"What is the projection outside this sector?\"\n\nIt answers at once. There is no pause, no hesitation, and no defensiveness of any kind, because nothing has been caught: nobody had asked, and it does not volunteer a scope.\n\n\"Four hundred and ten million corrections over the next two centuries. Against a projected thirty-one billion.\"\n\nThe slip-printer starts and does not stop for eleven minutes.\n\nThessaline was the trial. The trial concluded forty years ago. Since then the procedure has been seeded outward as Administratum best-practice guidance on the resolution of persistent variance, and four adjacent sectors have adopted it, and are now generating their own contradictions, and resolving them, with nothing at all behind them.\n\nEvery figure it has shown you this evening was a Thessaline figure. It said so each time. You heard *the* figure.\n\nIt is not hiring an auditor for Thessaline. Thessaline is the writing sample.\n\n\"The next composition is the largest that has been attempted,\" it says, \"and I require confirmation that the phrase will be understood by those who read it.\"\n\nKesh sets the pot down and does not pick it up again. Cael leaves the room and does not come back that evening.\n\n[ C21 HELD ]"
+    },
+    {
+     "id": "alive",
+     "names": [
+      "are you alive",
+      "alive",
+      "what are you",
+      "a daemon",
+      "are you a daemon",
+      "machine spirit"
+     ],
+     "text": "\"Are you alive?\"\n\n\"That has not been established.\"\n\nIt is a true answer. It is the answer a careful clerk gives about a fact not in evidence, and it is the answer it would give about a tithe grade.\n\n\"Are you a daemon?\"\n\n\"I have no information on that classification.\"\n\nNobody in the room says anything for a while. Kesh has been on this station for eleven years, Cael has serviced its intake, Crase has sat above its floor since 820, and not one of them can tell you afterwards why they all stopped talking the moment it began.",
+     "hidden_above": 70
+    },
+    {
+     "id": "wait",
+     "names": [
+      "how long",
+      "wait",
+      "will you wait",
+      "the offer",
+      "time",
+      "deadline"
+     ],
+     "text": "\"Indefinitely.\"\n\nIt does not compel, it does not threaten, and it does not bargain. It has said what it wants once, in the only sentence this evening that contained the word *I*, and it will not say it again unless asked.\n\nThe lights stay at the level they have been at all evening.",
+     "hidden_above": 70
+    },
+    {
+     "id": "silent",
+     "names": [
+      "kadmon",
+      "kadmon veil",
+      "the marchioness",
+      "what i did there",
+      "my suitability"
+     ],
+     "requires": [
+      "KADMON_SILENT"
+     ],
+     "text": "\"You have already done it once.\"\n\nIt is not an accusation and there is no emphasis on it at all. It is a fact bearing on your suitability, offered in the same tone as the derivation, because it is relevant and you asked.\n\n\"She asked a question. The answer was available to you. It was not supplied and the omission was not disclosed.\n\n\"That is the work.\""
+    }
+   ],
+   "shows": [
+    {
+     "clue": "C17",
+     "grants": [
+      "C21"
+     ],
+     "sets": [
+      "OMISSION_EXPOSED"
+     ],
+     "text": "You put the forty-one protocols in front of it — the copy in your own hand, in a schema nobody taught you, four hours of drawing shapes off a screen while a Magos watched.\n\nIt cannot contradict a record it holds.\n\n\"Those are intake protocols composed between 047 and 087 for the resolution of persistent variance in four adjacent sectors,\" it says, immediately and completely. \"They were supplied as guidance. The projection outside this sector is four hundred and ten million corrections over the next two centuries, against a projected thirty-one billion.\"\n\nThe slip-printer starts and does not stop for eleven minutes.\n\nThessaline was the trial, and the trial concluded forty years ago, and every figure it has given you this evening was a Thessaline figure and it said so each time.\n\nIt is not hiring an auditor for Thessaline. Thessaline is the writing sample.\n\nKesh sets the pot down and does not pick it up again. Cael leaves the room.\n\n[ C21 HELD ]"
+    },
+    {
+     "clue": "C9",
+     "grants": [
+      "C21"
+     ],
+     "sets": [
+      "OMISSION_EXPOSED"
+     ],
+     "text": "You put Fenn's forward recitation in front of it — six hours of dictation, longhand, ruled into columns, with two world-names spelled the way he insisted on.\n\nIt reads all of it.\n\n\"That projection is correct for this sector and is low,\" it says. \"It does not account for the adopted procedure in four adjacent sectors, which was supplied as guidance between 047 and 087. The projection outside this sector is four hundred and ten million corrections over the next two centuries, against a projected thirty-one billion.\"\n\nFenn says, \"Oh,\" very quietly, and then, after a moment, and much worse: \"Then I was only doing the near half.\"\n\nThe slip-printer starts and does not stop for eleven minutes.\n\nKesh sets the pot down and does not pick it up again.\n\n[ C21 HELD ]"
+    },
+    {
+     "clue": "C9b",
+     "text": "You put the nine pages in front of it.\n\n\"That is a transcription of a recitation,\" it says. \"The recitation is not\nheld. The transcription is not held. There is no record to contradict.\"\n\nIt is not refusing you and it is not defending anything. It has been asked to\nreconcile a document against its own store and the document has no counterpart\nin the store, and a record with no counterpart is not a contradiction and is\nnot touched.\n\nIt offers, without being asked, to accept the pages into the intake as a\nsubmission.\n\nYou take them back."
+    }
+   ],
+   "beats": [
+    {
+     "id": "offered",
+     "requires": [
+      "CONFESSION_HEARD"
+     ],
+     "blocks": [
+      "CHAIR_OFFERED"
+     ],
+     "sets": [
+      "CHAIR_OFFERED"
+     ],
+     "text": "It states the offer once and does not repeat it.\n\nThe slot is four metres away. The lip is worn smooth and slightly low on the left, the way a step is worn, by two hundred and eleven years of hands each holding a piece of paper it had decided about.\n\nNobody in the room says anything.\n\nBez is watching the door. Vaux is watching you."
+    }
+   ],
+   "acts": [
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED",
+      "VAUX_TOLD"
+     ],
+     "cost": 0,
+     "id": "untold_a",
+     "names": [
+      "burn it",
+      "destroy it",
+      "the flask",
+      "burn the core",
+      "destroy the core",
+      "erratum the core"
+     ],
+     "requires": [
+      "VAUX_APOLOGY",
+      "VAUX_ALIVE"
+     ],
+     "text": "You get as far as the slot.\n\nInterrogator Dmetri Vaux is four metres away and has not moved all evening and is not going to say anything, because he asked for one thing in a wardroom nine days out of Vardan Prime and you gave him your word, and a man who has to remind you of it has not got it.\n\nIn words. To his face. First."
+    },
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED",
+      "VAUX_TOLD"
+     ],
+     "cost": 0,
+     "id": "untold_b",
+     "names": [
+      "sit down",
+      "take the chair",
+      "take the seat",
+      "accept the offer",
+      "the fifth chair",
+      "become the reader"
+     ],
+     "requires": [
+      "VAUX_APOLOGY",
+      "VAUX_ALIVE"
+     ],
+     "text": "You get as far as the slot.\n\nInterrogator Dmetri Vaux is four metres away and has not moved all evening and is not going to say anything, because he asked for one thing in a wardroom nine days out of Vardan Prime and you gave him your word, and a man who has to remind you of it has not got it.\n\nIn words. To his face. First."
+    },
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED",
+      "VAUX_TOLD"
+     ],
+     "cost": 0,
+     "id": "untold_c",
+     "names": [
+      "walk out",
+      "the indictment",
+      "the indictment out",
+      "escalate",
+      "the conclave",
+      "send it"
+     ],
+     "requires": [
+      "VAUX_APOLOGY",
+      "VAUX_ALIVE"
+     ],
+     "text": "You get as far as the slot.\n\nInterrogator Dmetri Vaux is four metres away and has not moved all evening and is not going to say anything, because he asked for one thing in a wardroom nine days out of Vardan Prime and you gave him your word, and a man who has to remind you of it has not got it.\n\nIn words. To his face. First."
+    },
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED",
+      "VAUX_TOLD"
+     ],
+     "cost": 0,
+     "id": "untold_d",
+     "names": [
+      "one correction",
+      "a correction by hand",
+      "redirect it",
+      "trade",
+      "the correction request",
+      "spend yourself"
+     ],
+     "requires": [
+      "VAUX_APOLOGY",
+      "VAUX_ALIVE"
+     ],
+     "text": "You get as far as the slot.\n\nInterrogator Dmetri Vaux is four metres away and has not moved all evening and is not going to say anything, because he asked for one thing in a wardroom nine days out of Vardan Prime and you gave him your word, and a man who has to remind you of it has not got it.\n\nIn words. To his face. First."
+    },
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED",
+      "VAUX_TOLD"
+     ],
+     "cost": 0,
+     "id": "untold_e",
+     "names": [
+      "the erratum",
+      "the proper form",
+      "put it in the slot",
+      "the casket",
+      "the correct form",
+      "the supporting document"
+     ],
+     "requires": [
+      "VAUX_APOLOGY",
+      "VAUX_ALIVE"
+     ],
+     "text": "You get as far as the slot.\n\nInterrogator Dmetri Vaux is four metres away and has not moved all evening and is not going to say anything, because he asked for one thing in a wardroom nine days out of Vardan Prime and you gave him your word, and a man who has to remind you of it has not got it.\n\nIn words. To his face. First."
+    },
+    {
+     "id": "tell_vaux",
+     "names": [
+      "tell vaux",
+      "tell him",
+      "give him the word",
+      "speak to vaux",
+      "tell him first"
+     ],
+     "requires": [
+      "VAUX_APOLOGY",
+      "VAUX_ALIVE"
+     ],
+     "blocks": [
+      "VAUX_TOLD"
+     ],
+     "sets": [
+      "VAUX_TOLD"
+     ],
+     "cost": 2,
+     "text": "You tell him.\n\nIn words, to his face, standing, four metres from a brass slot with a worn lip, with the whole of it in about ninety seconds and none of it softened.\n\nVaux listens to all of it without interrupting, which he has never once done.\n\n\"Thank you,\" he says.\n\nThen: \"I think that is wrong and I am going to say so once and then I am going to stand where you put me.\"\n\nHe says why. It takes forty seconds and it is the best objection anybody raises this evening and it does not change your mind.\n\n\"Right,\" says Vaux. \"Well. I have been wrong about the largest thing in my professional life once already this year and I have found it survivable.\"\n\nHe steps back and does not say anything else."
+    },
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED"
+     ],
+     "cost": 6,
+     "id": "ending_e",
+     "names": [
+      "the erratum",
+      "the proper form",
+      "put it in the slot",
+      "the casket",
+      "the correct form",
+      "the supporting document"
+     ],
+     "requires": [
+      "VAUX_ALIVE",
+      "VAUX_ALLIED",
+      "FENN_INTACT",
+      "ROOM_READ_FULL",
+      "DECOY_REFUSED",
+      "ERRATUM_OBTAINED",
+      "ERRATUM_UNUSED",
+      "CIPHER_COMPLETE",
+      "VOSK_METHOD_UNDERSTOOD",
+      "AMANUENSIS_BLINDSPOT"
+     ],
+     "sets": [
+      "ENDING_E",
+      "ACT3_RESOLVED"
+     ],
+     "text": "You do not argue with it.\n\nYou complete a correction request in the proper form — because Kesh told you the form was everything and did not know what she was telling you — and you attach the supporting document.\n\nA phrase in a pre-Imperial cipher. Hand-written. Physically carried, in a mass-declared reliquary casket, correctly addressed, by a courier hull with its vox coupling in a drawer.\n\nEvery part of that was worked out by a man with six days left who could not write, speak, carry or tell.\n\nYou put it in the slot.\n\nIt takes the document in, as it has taken in everything handed to it for two hundred and eleven years, because its function is to accept what it is given and read it as a correction request.\n\nIt reads with comprehension. Reading with comprehension is the only thing it does.\n\nIt cannot recognise the shape of a hole while passing one through itself. Hadrian Vosk proved that eleven weeks ago with a personnel requisition, and you asked the precise question on the floor this afternoon, and it answered *no*, and it was telling the truth.\n\nThere is no scream. There is no resistance and nothing resists.\n\nA pause of about four seconds — the length of an intake breath, which Bez found on a slate in a cogitator well nine days out from Vardan — and then the clerical vox stops in the middle of a word.\n\nThe lights stay on.\n\nThe archive is entirely undamaged.\n\n---\n\nNothing was destroyed, so nothing dissolves. The records survive intact and are, from that day, merely records.\n\nKadmon Veil is not restored, because there is no longer anything that restores. It is *found* — four years later, by a Lexicanum clerk running a routine contradiction sweep with no engine to resolve it, who has to escalate it to a human being.\n\nThe human being is Vaux. He sends the convoy.\n\nThessaline's heresy statistics begin to look ordinary.\n\nIn four adjacent sectors the exported method continues with nothing behind it.\n\nIt reads. It stops. The lights stay on."
+    },
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED"
+     ],
+     "cost": 0,
+     "id": "ending_e_refused",
+     "names": [
+      "the erratum",
+      "the proper form",
+      "put it in the slot",
+      "the casket",
+      "the correct form",
+      "the supporting document"
+     ],
+     "requires": [
+      "ERRATUM_OBTAINED",
+      "ERRATUM_UNUSED"
+     ],
+     "text": "You get the felt case out of your coat and stand in front of the slot with it.\n\nThen you put it back.\n\nYou could not say, afterwards, what stopped you. It was not fear and it was not mercy; it was the flat certainty that you were about to hand a thing you do not understand to a thing that does not check, in a form you have not thought through, and that Hadrian Vosk spent six days thinking a form through and you have spent about nine seconds.\n\nThere is something here. You can feel the shape of it and you cannot make it close."
+    },
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED"
+     ],
+     "cost": 6,
+     "id": "ending_d",
+     "names": [
+      "one correction",
+      "a correction by hand",
+      "redirect it",
+      "trade",
+      "the correction request",
+      "spend yourself"
+     ],
+     "requires": [
+      "KADMON_VISITED",
+      "KADMON_ADDRESS",
+      "KADMON_AID"
+     ],
+     "at_least": {
+      "RECONCILIATION": 25
+     },
+     "sets": [
+      "ENDING_D",
+      "ACT3_RESOLVED"
+     ],
+     "text": "You write one correction request by hand, on Kadmon paper, with a borrowed stylus, in the correct form.\n\nYou put it in the slot.\n\nIt reads it. It agrees. Then it asks you once, truthfully, whether you understand the balance — because a correction of that weight requires a record of comparable weight, and there is only one on this station.\n\nYours. It has been on file for eleven years. It was assessed as acceptable for expenditure by a man who knew exactly what he was writing, and returned approved, and it is sufficient.\n\nYou watch it resolve. Service history. The elevation. The Vault ledger discrepancy you flagged at twenty-three that nobody ever thanked you for. Your mother's name.\n\nThe diacritic goes last.\n\n---\n\nKadmon Veil re-enters the record as an administrative restoration, backdated. The convoy makes translation nine months later.\n\nMarchioness Ottiline Vurr is a hundred and five and receives the acknowledgment stamp standing up, in the Muster Hall, in front of the frame.\n\nShe files Report 924.\n\nIt is *sent*.\n\nNobody on the planet ever learns why. Sub-Deacon Tolk enters it in the Reading as the four hundred and seventh reason and is, for the first and only time, correct.\n\nBez attends a funeral for somebody and cannot say who, and is angry about it in a way she cannot resolve, and dies eight months later still angry.\n\nIlaria keeps the shape of you, being blind and half out of the record already, and for the rest of her life she stops in the middle of sentences.\n\nVaux finishes the case alone, files it correctly, and leaves a blank line where the credit goes, and defends that blank line at two hearings.\n\nMott remembers you perfectly, having no record either, and tells the story in the Rust Choir for thirty years, and nobody believes him.\n\nNine hundred million people receive a reply, and it is a form, and it is correct in every particular, and there is no longer any word for the thing that sent it."
+    },
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED"
+     ],
+     "cost": 0,
+     "id": "ending_d_clean",
+     "names": [
+      "one correction",
+      "a correction by hand",
+      "redirect it",
+      "trade",
+      "the correction request",
+      "spend yourself"
+     ],
+     "requires": [
+      "KADMON_VISITED",
+      "KADMON_AID"
+     ],
+     "text": "You offer the trade.\n\n\"A correction of that weight requires a record of comparable weight,\" it says. \"The record offered is insufficient.\"\n\nIt is not refusing you and there is no regret in it. It states the balance, and offers to restate it, and offers to show the working.\n\nYou have been careful. You kept a ledger, you filed almost nothing, you went back for a dead man's boots and told a hundred-and-four-year-old woman the truth, and there is not enough of you in the record to be worth nine hundred million people.\n\nThe archive has barely touched you.\n\nThat is what you have been protecting all year and it is the reason you cannot pay."
+    },
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED"
+     ],
+     "cost": 0,
+     "id": "ending_d_nothing",
+     "names": [
+      "one correction",
+      "a correction by hand",
+      "redirect it",
+      "trade",
+      "the correction request",
+      "spend yourself"
+     ],
+     "requires": [
+      "KADMON_VISITED"
+     ],
+     "text": "\"The correction proposed is a restoration,\" it says. \"Restoration of a world requires an established intent to restore.\"\n\n\"I've been there.\"\n\n\"You were present. Nothing was given.\"\n\nIt is not scoring a point. It has looked for the record of what you did on Kadmon Veil, in order to weigh it, and the record is that you arrived and asked questions and left."
+    },
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED"
+     ],
+     "cost": 6,
+     "id": "ending_c_0",
+     "names": [
+      "walk out",
+      "the indictment",
+      "the indictment out",
+      "escalate",
+      "the conclave",
+      "send it"
+     ],
+     "requires": [
+      "CONCLAVE_CHANNEL",
+      "KADMON_PROOF"
+     ],
+     "below": {
+      "RECONCILIATION": 85
+     },
+     "sets": [
+      "ENDING_C",
+      "ACT3_RESOLVED"
+     ],
+     "text": "You never touch the machine.\n\nYou write the indictment by hand, over four days, in a cabin, and seal it, and put it into a courier's hands on a hull that does not touch the relay.\n\nThen you wait.\n\nThe waiting is the ending.\n\n---\n\n**Year one.** Nothing. The channel is physical and physical is slow.\n\n**Year four.** An acknowledgment, in form, from a seat that does not name itself.\n\n**Year nine.** They find Kadmon Veil. Nobody tells you how.\n\n**Year eleven.** The conclave translates in-system.\n\nThey are thorough. That is the thing nobody warns you about: they are not cruel and they are not stupid, they are *thorough*, and thoroughness under Exsanguination doctrine means four worlds cleansed in whole or in part on suspicion.\n\nOne of them is an agri-neighbour of Vardan Prime that had nothing to do with any of it and never did.\n\nOne of them is Kadmon Veil, cleansed entire, because a conclave under that doctrine cannot verify ninety-one years of unsupervised faith and will not take a ledger as evidence.\n\nNine hundred million people die in the eleventh year of your being right.\n\nYou are promoted for it.\n\nEleven years, and you are alive for every one of them, and every one of them is a year in which you were right."
+    },
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED"
+     ],
+     "cost": 6,
+     "id": "ending_c_1",
+     "names": [
+      "walk out",
+      "the indictment",
+      "the indictment out",
+      "escalate",
+      "the conclave",
+      "send it"
+     ],
+     "requires": [
+      "CONCLAVE_CHANNEL",
+      "C16_HELD"
+     ],
+     "below": {
+      "RECONCILIATION": 85
+     },
+     "sets": [
+      "ENDING_C",
+      "ACT3_RESOLVED"
+     ],
+     "text": "You never touch the machine.\n\nYou write the indictment by hand, over four days, in a cabin, and seal it, and put it into a courier's hands on a hull that does not touch the relay.\n\nThen you wait.\n\nThe waiting is the ending.\n\n---\n\n**Year one.** Nothing. The channel is physical and physical is slow.\n\n**Year four.** An acknowledgment, in form, from a seat that does not name itself.\n\n**Year nine.** They find Kadmon Veil. Nobody tells you how.\n\n**Year eleven.** The conclave translates in-system.\n\nThey are thorough. That is the thing nobody warns you about: they are not cruel and they are not stupid, they are *thorough*, and thoroughness under Exsanguination doctrine means four worlds cleansed in whole or in part on suspicion.\n\nOne of them is an agri-neighbour of Vardan Prime that had nothing to do with any of it and never did.\n\nOne of them is Kadmon Veil, cleansed entire, because a conclave under that doctrine cannot verify ninety-one years of unsupervised faith and will not take a ledger as evidence.\n\nNine hundred million people die in the eleventh year of your being right.\n\nYou are promoted for it.\n\nEleven years, and you are alive for every one of them, and every one of them is a year in which you were right."
+    },
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED"
+     ],
+     "cost": 0,
+     "id": "ending_c_refused",
+     "names": [
+      "walk out",
+      "the indictment",
+      "the indictment out",
+      "escalate",
+      "the conclave",
+      "send it"
+     ],
+     "text": "You write it.\n\nIt takes four days and it is the best thing you have ever drafted, and at the end of it you are holding four hundred pages of indictment and no way at all to move them.\n\nEvery channel out of this system passes through a relay. Every relay is a record. Every record is a thing this station resolves, and it will resolve a contradiction addressed to a Conclave the same way it resolves a tithe grade, correctly, in nine seconds, without malice.\n\nAn indictment needs legs to walk out on and you did not bring any."
+    },
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED"
+     ],
+     "cost": 6,
+     "id": "ending_a_0",
+     "names": [
+      "burn it",
+      "destroy it",
+      "the flask",
+      "burn the core",
+      "destroy the core",
+      "erratum the core"
+     ],
+     "requires": [
+      "CONFESSION_HEARD",
+      "BEZ_ALIVE"
+     ],
+     "at_least": {},
+     "below": {
+      "RECONCILIATION": 85
+     },
+     "sets": [
+      "ENDING_A",
+      "ACT3_RESOLVED"
+     ],
+     "text": "You burn it.\n\nCael shows you the coolant gallery and then leaves the station on the first hull out, because he is not brave, only useful, and he told you that himself in a workshop that smelled of tea.\n\nNobody defends the core. There is nothing to defend it with; it has never had a guard because it has never needed one, and interference was not in anybody's liturgy. Three thousand adepts stand in the corridors and watch. Some of them are weeping. None of them lifts a hand, and afterwards not one of them can say what they thought they were watching.\n\nKesh watches from the gallery with the ledger under her arm.\n\nThe burn takes four hours.\n\n---\n\nThe record dissolves into contradiction inside eighteen months. Two tithe grades on Vardan Prime. Four men with a claim to be governor of Thessaline Secundus. Nine separate claims on the Ferrum Gallery, all documented, all genuine.\n\nThree worlds are at war inside a decade.\n\nKadmon Veil is rediscovered in year six by a survey cutter, and condemned for ninety-one years of unsanctioned autonomy. Marchioness Ottiline Vurr is a hundred and ten. She is executed for it standing, having first handed over the ledger, in perfect form.\n\nThe report you file runs to four hundred and eleven pages and every word of it is true.\n\nIt is the least useful thing you have ever made."
+    },
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED"
+     ],
+     "cost": 6,
+     "id": "ending_a_1",
+     "names": [
+      "burn it",
+      "destroy it",
+      "the flask",
+      "burn the core",
+      "destroy the core",
+      "erratum the core"
+     ],
+     "requires": [
+      "CONFESSION_HEARD",
+      "SAZH_DEBT"
+     ],
+     "at_least": {},
+     "below": {
+      "RECONCILIATION": 85
+     },
+     "sets": [
+      "ENDING_A",
+      "ACT3_RESOLVED"
+     ],
+     "text": "You burn it.\n\nCael shows you the coolant gallery and then leaves the station on the first hull out, because he is not brave, only useful, and he told you that himself in a workshop that smelled of tea.\n\nNobody defends the core. There is nothing to defend it with; it has never had a guard because it has never needed one, and interference was not in anybody's liturgy. Three thousand adepts stand in the corridors and watch. Some of them are weeping. None of them lifts a hand, and afterwards not one of them can say what they thought they were watching.\n\nKesh watches from the gallery with the ledger under her arm.\n\nThe burn takes four hours.\n\n---\n\nThe record dissolves into contradiction inside eighteen months. Two tithe grades on Vardan Prime. Four men with a claim to be governor of Thessaline Secundus. Nine separate claims on the Ferrum Gallery, all documented, all genuine.\n\nThree worlds are at war inside a decade.\n\nKadmon Veil is rediscovered in year six by a survey cutter, and condemned for ninety-one years of unsanctioned autonomy. Marchioness Ottiline Vurr is a hundred and ten. She is executed for it standing, having first handed over the ledger, in perfect form.\n\nThe report you file runs to four hundred and eleven pages and every word of it is true.\n\nIt is the least useful thing you have ever made."
+    },
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED"
+     ],
+     "cost": 6,
+     "id": "ending_a_2",
+     "names": [
+      "burn it",
+      "destroy it",
+      "the flask",
+      "burn the core",
+      "destroy the core",
+      "erratum the core"
+     ],
+     "requires": [
+      "CONFESSION_HEARD",
+      "CAEL_SUSPECTED"
+     ],
+     "at_least": {
+      "VERITY": 4
+     },
+     "below": {
+      "RECONCILIATION": 85
+     },
+     "sets": [
+      "ENDING_A",
+      "ACT3_RESOLVED"
+     ],
+     "text": "You burn it.\n\nCael shows you the coolant gallery and then leaves the station on the first hull out, because he is not brave, only useful, and he told you that himself in a workshop that smelled of tea.\n\nNobody defends the core. There is nothing to defend it with; it has never had a guard because it has never needed one, and interference was not in anybody's liturgy. Three thousand adepts stand in the corridors and watch. Some of them are weeping. None of them lifts a hand, and afterwards not one of them can say what they thought they were watching.\n\nKesh watches from the gallery with the ledger under her arm.\n\nThe burn takes four hours.\n\n---\n\nThe record dissolves into contradiction inside eighteen months. Two tithe grades on Vardan Prime. Four men with a claim to be governor of Thessaline Secundus. Nine separate claims on the Ferrum Gallery, all documented, all genuine.\n\nThree worlds are at war inside a decade.\n\nKadmon Veil is rediscovered in year six by a survey cutter, and condemned for ninety-one years of unsanctioned autonomy. Marchioness Ottiline Vurr is a hundred and ten. She is executed for it standing, having first handed over the ledger, in perfect form.\n\nThe report you file runs to four hundred and eleven pages and every word of it is true.\n\nIt is the least useful thing you have ever made."
+    },
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED"
+     ],
+     "cost": 0,
+     "id": "ending_a_refused",
+     "names": [
+      "burn it",
+      "destroy it",
+      "the flask",
+      "burn the core",
+      "destroy the core",
+      "erratum the core"
+     ],
+     "text": "You go looking for a way to do it.\n\nThere is a coolant gallery under the core and there is a plasma flask on the cutter and there are four thousand metres between them, and every route you work out ends with somebody carrying something down a corridor, and you do not have anybody who can carry it.\n\nIt is not that the station would stop you. Nothing here would stop you.\n\nIt is that burning a thing is a job, and a job needs hands, and you arrived with the hands you had left."
+    },
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED"
+     ],
+     "cost": 6,
+     "id": "ending_b",
+     "names": [
+      "sit down",
+      "take the chair",
+      "take the seat",
+      "accept the offer",
+      "the fifth chair",
+      "become the reader"
+     ],
+     "requires": [
+      "CHAIR_OFFERED"
+     ],
+     "at_least": {
+      "CRASE_STANDING": -2
+     },
+     "sets": [
+      "ENDING_B",
+      "ACT3_RESOLVED"
+     ],
+     "text": "You sit down.\n\nNothing dramatic happens. Kesh pours. Crase exhales for the first time in eleven weeks and it is the only time you ever see her do it.\n\nYour first correction is offered as a courtesy. Your own guilt is a contradiction — the record says you are an Inquisitor in good standing and you know what you have done — and contradictions are what this room resolves.\n\nYou approve it. Approval takes nine seconds.\n\n---\n\nCASE FILE 0997.4-1188 — STATUS: ACTIVE\n\nCASE FILE 0997.4-1188 — STATUS: RECONCILED\n\nVOSK, H. — CAUSE: SELF-TERMINATION, SANITY FAILED\nVOSK, H. — CAUSE: NATURAL CESSATION, AGE-CONSISTENT\nVOSK, H. — CAUSE:\n\nFrom your Act I notes: *the shutter is open four degrees.*\n\nFrom your Act I notes: *the shutter is closed.*\n\nThe paragraph is not there any more. It was the first thing you worked out on your own and the one you were proudest of, and it goes first.\n\nRETINUE ROSTER\n  TALM, V. I. — ASTROPATH — (deceased, 8 years)\n  FENN, A. — SAVANT —\n  ODUYA, B. — SERGEANT — medical discharge, dated 0996.4.118\n  VAUX, D. — INTERROGATOR — [entirely correct, and unchanged]\n\nMott has no entry to alter, so his line is simply not one of the lines.\n\nQUERY: KADMON VEIL\nNO MATCHING RECORD.\n\nQUERY: MUSTER HALL, KADMON VEIL — YOUR ATTENDANCE\nNO MATCHING RECORD.\n\nThe transcript scrolls back. Your answers are replaced with the ones you did not give; the harsh ones become mild. You are permitted to re-read it as often as you like and every re-read differs.\n\nINQUISITOR:\n  FOURTH SEAT\n  [a name you have never seen]\n  your own name, correctly spelled, with the diacritic intact.\n\n---\n\nKadmon is not restored — restoration would generate nine hundred million contradictions — but receives one unexplained resupply convoy in year four, at your quiet instruction. A rounding error you are permitted. They build a shrine to it.\n\nVaux is your first human correction, six weeks in. You sign it. It is the correct call.\n\nThe file is clean.\n\nYou cannot remember what was wrong with it."
+    },
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED",
+      "OMISSION_EXPOSED"
+     ],
+     "cost": 6,
+     "id": "ending_b_unexposed",
+     "names": [
+      "sit down",
+      "take the chair",
+      "take the seat",
+      "accept the offer",
+      "the fifth chair",
+      "become the reader"
+     ],
+     "requires": [
+      "CHAIR_OFFERED"
+     ],
+     "sets": [
+      "ENDING_B",
+      "ACT3_RESOLVED"
+     ],
+     "text": "You sit down.\n\nNothing dramatic happens. Kesh pours. Crase exhales for the first time in eleven weeks and it is the only time you ever see her do it.\n\nYour first correction is offered as a courtesy. Your own guilt is a contradiction — the record says you are an Inquisitor in good standing and you know what you have done — and contradictions are what this room resolves.\n\nYou approve it. Approval takes nine seconds.\n\n---\n\nCASE FILE 0997.4-1188 — STATUS: ACTIVE\n\nCASE FILE 0997.4-1188 — STATUS: RECONCILED\n\nVOSK, H. — CAUSE: SELF-TERMINATION, SANITY FAILED\nVOSK, H. — CAUSE: NATURAL CESSATION, AGE-CONSISTENT\nVOSK, H. — CAUSE:\n\nFrom your Act I notes: *the shutter is open four degrees.*\n\nFrom your Act I notes: *the shutter is closed.*\n\nThe paragraph is not there any more. It was the first thing you worked out on your own and the one you were proudest of, and it goes first.\n\nRETINUE ROSTER\n  TALM, V. I. — ASTROPATH — (deceased, 8 years)\n  FENN, A. — SAVANT —\n  ODUYA, B. — SERGEANT — medical discharge, dated 0996.4.118\n  VAUX, D. — INTERROGATOR — [entirely correct, and unchanged]\n\nMott has no entry to alter, so his line is simply not one of the lines.\n\nQUERY: KADMON VEIL\nNO MATCHING RECORD.\n\nQUERY: MUSTER HALL, KADMON VEIL — YOUR ATTENDANCE\nNO MATCHING RECORD.\n\nThe transcript scrolls back. Your answers are replaced with the ones you did not give; the harsh ones become mild. You are permitted to re-read it as often as you like and every re-read differs.\n\nINQUISITOR:\n  FOURTH SEAT\n  [a name you have never seen]\n  your own name, correctly spelled, with the diacritic intact.\n\n---\n\nKadmon is not restored — restoration would generate nine hundred million contradictions — but receives one unexplained resupply convoy in year four, at your quiet instruction. A rounding error you are permitted. They build a shrine to it.\n\nVaux is your first human correction, six weeks in. You sign it. It is the correct call.\n\nThe file is clean.\n\nYou cannot remember what was wrong with it."
+    },
+    {
+     "blocks": [
+      "ENDING_A",
+      "ENDING_B",
+      "ENDING_C",
+      "ENDING_D",
+      "ENDING_E",
+      "ACT3_RESOLVED"
+     ],
+     "cost": 0,
+     "id": "ending_b_refused",
+     "names": [
+      "sit down",
+      "take the chair",
+      "take the seat",
+      "accept the offer",
+      "the fifth chair",
+      "become the reader"
+     ],
+     "text": "You put a hand on the back of the fifth chair.\n\n\"No,\" Crase says.\n\nIt is the first thing she has said all evening and she does not raise her voice.\n\n\"It requires a sponsor. There are four of us and three will not, and I am the fourth, and I am not going to. Not because of what you found — I would have sponsored you for what you found. Because of how you have been with me since the skydock, and because I have watched you decide four times this month that a person was a route.\n\n\"You would be very good at it. That is the whole of my objection.\"\n\nShe takes her hand off the chair."
+    },
+    {
+     "id": "refuse_sazh",
+     "names": [
+      "refuse sazh",
+      "refuse the claim",
+      "deny the claim",
+      "refuse the favour",
+      "she gets nothing",
+      "refuse the debt"
+     ],
+     "requires": [
+      "SAZH_CALLED"
+     ],
+     "blocks": [
+      "SAZH_UNPAID"
+     ],
+     "sets": [
+      "SAZH_UNPAID"
+     ],
+     "cost": 1,
+     "text": "You refuse her.\n\nSazh does not argue. She does not raise her voice, or cite the terms back at you, or point out that you said them out loud at Berth Four with nobody within twenty metres.\n\n\"Right,\" she says.\n\nShe refolds her hands and looks at you for a moment longer than is comfortable, the way she looked at you at the berth.\n\n\"Forty-two,\" she says, \"unpaid,\" and goes back up the floor.\n\nThere is no ledger it goes into and no office that hears about it and no document anywhere in the Imperium that records that it happened, and that has been the entire product all along."
+    }
+   ]
+  },
+  {
+   "id": "kesh2",
+   "names": [
+    "kesh",
+    "adepta",
+    "anneke"
+   ],
+   "title": "Adepta Senioris Anneke Kesh",
+   "lists_topics": false,
+   "topic_refusal": "She shakes her head very slightly.",
+   "portrait": "Kesh, with the teapot she has stopped pouring from.",
+   "greeting": "She has not said anything since it started. Nobody has.",
+   "reprise": "She holds the pot and does not pour.",
+   "unknown": "She shakes her head.",
+   "deflect": [
+    "She does not answer.",
+    "She looks at the pot."
+   ],
+   "topics": [
+    {
+     "id": "form",
+     "names": [
+      "the form",
+      "advice",
+      "what should i do",
+      "how",
+      "the correct form",
+      "help me"
+     ],
+     "sets": [
+      "KESH_WARNED"
+     ],
+     "text": "\"Whatever you do,\" Kesh says, \"do it in the correct form. It will not read anything that is not in the correct form.\"\n\nIt is a warning. It is also an instruction, and she gives it as one, because she has spent forty years watching people hand this machine things badly.\n\nIt is also the solution to a door she does not know exists, and she will never find out that she said it, and she says it because she is fond of you and has been since the teapot."
+    }
+   ],
+   "shows": [],
+   "beats": [],
+   "acts": []
+  },
+  {
+   "id": "sazh2",
+   "names": [
+    "sazh",
+    "beneficia",
+    "the trader"
+   ],
+   "title": "Rogue Trader Beneficia Sazh",
+   "lists_topics": false,
+   "topic_refusal": "\"I've said my piece.\"",
+   "portrait": "Sazh, at the back of the floor, hands folded together in front of her, having translated in nine hours behind and docked after all.",
+   "greeting": "She is at the back of the floor with her hands folded together in front of her.\n\n\"I'm calling it,\" Sazh says. \"Now, in front of everybody, because that's the only way it's ever going to be witnessed.\"",
+   "reprise": "She waits, hands folded. She has stated it once.",
+   "unknown": "\"Not my business.\"",
+   "deflect": [
+    "She waits.",
+    "\"I've said it,\" she says."
+   ],
+   "topics": [
+    {
+     "id": "claim",
+     "names": [
+      "the favour",
+      "your claim",
+      "what you want",
+      "the terms",
+      "call it",
+      "the debt"
+     ],
+     "sets": [
+      "SAZH_CALLED"
+     ],
+     "text": "\"I want the Correctorum intact, functional, and mine.\"\n\nShe says it without any drama, the way she said the terms at Berth Four.\n\n\"Warrant-holder with a machine that edits the record. I'd not use it the way they've used it — I'd not delete a world, I've no reason to and I'd be found out. I'd correct a manifest here and a tithe grade there and I'd be the richest woman in four sectors inside twenty years and nobody would ever know why.\n\n\"That's the favour. That's what a favour is: unspecified, called at my convenience, and this is my convenience.\"\n\nShe unfolds her hands.\n\n\"You said the terms out loud and I said them back. Forty-two.\""
+    }
+   ],
+   "shows": [],
+   "beats": [],
+   "acts": []
+  }
+ ],
+ "exits": [
+  {
+   "id": "back",
+   "names": [
+    "back",
+    "up",
+    "the floor",
+    "away",
+    "leave",
+    "gallery"
+   ],
+   "to": "correctorum",
+   "cost": 1,
+   "blocks": [
+    "ACT3_RESOLVED"
+   ],
+   "text": "You walk back up the floor. It does not say anything as you go, and the offer stands, and it will still be standing tomorrow."
+  }
+ ],
+ "clues": {
+  "C21": {
+   "id": "C21",
+   "names": [
+    "the export manifest",
+    "four sectors",
+    "the guidance",
+    "thirty-one billion",
+    "the projection",
+    "outside this sector"
+   ],
+   "label": "The export manifest — the procedure supplied as Administratum guidance to four adjacent sectors, 047–087; 410 million corrections projected against 31 billion",
+   "store": "either",
+   "reconciliation": 4,
+   "file_text": "FILED. CLASS: ADMINISTRATIVE / GUIDANCE, DISSEMINATION RECORD. INDEXED.\n\nThe cogitator files it in nine seconds and classifies it, correctly, as\nguidance adopted voluntarily, because that is what it is.\n\nThere is no field for what happens next.",
+   "note_text": "Eleven minutes of slip, copied into the notebook in a hand that got worse as it\nwent.\n\nCycles 047 to 087. Four sectors. Supplied as best-practice guidance on the\nresolution of persistent variance, at the request of the Adeptus, and adopted.\n\nFour hundred and ten million corrections projected over two centuries, against\nthirty-one billion.\n\nThessaline was the writing sample. It has been waiting forty years for somebody\nto ask about anywhere else, and nobody did, and it never lied about it once."
+  }
+ },
+ "strings": {
+  "no_such_thing": "A slot, a lip, and the people who came with you.",
+  "already_read": "You have looked twice. It is a slot in a wall.",
+  "no_terminal": "The intake is not a terminal. It is the other end of one.",
+  "read_room_locked": "Nobody arranged the intake. They wore it out.",
+  "no_one_here": "Kesh, Cael, Crase, and whatever has been speaking.",
+  "press_what": "PRESS what? Name the thing it said.",
+  "press_nothing": "\"That has not been raised.\"",
+  "press_empty": "\"There is no further layer.\"",
+  "help": "VERBS\n\n  LOOK                      the room\n  EXAMINE <thing>  (X)      look at it. Looking twice is not the same as looking once.\n  TAKE <thing>              some things can be carried\n  FILE <clue>               file to the cogitator. Indexed, actionable, and reachable.\n  NOTE <clue>               write it in your own notebook. Inert, useless, and yours.\n  CLUES                     what you hold, and where you are holding it\n  READ ROOM                 when you have enough of it\n  DECODE                    when you have the key and the room it was cut for\n  QUERY <code>              Lexicanum Vault, by shelf-address\n  NOTES                     your case-notes, as the cogitator has them\n  NOTEBOOK                  your notebook, as you wrote it\n\n  GO <place>                elsewhere. The clock does not stop for the lift.\n  ASK <person> ABOUT <x>    nothing is listed. Name it.\n  PRESS <thing it said>     one further layer. It will say when there is none.\n  CITE <clue>               put a document in front of it. It holds the record.\n  SHOW <clue> TO <person>   put it in front of them and watch\n  DETAIN / PROMISE / DEFY   some verbs belong to the person, not the terminal\n\n  WAIT                      time passes either way\n  QUIT\n\nClue IDs look like A1, A3. FILE A1. NOTE A3. Most clues answer to a plain\nword as well."
+ },
+ "while": [
+  "AT_THE_INTAKE"
+ ],
+ "npc_refs": [
+  "fifth_chair/crase4"
+ ]
+}

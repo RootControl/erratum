@@ -1,0 +1,252 @@
+{
+ "id": "gunbay",
+ "title": "THE PATIENT VERDICT — GUN BAY",
+ "clock_at": "09h40",
+ "intro": "Four metres of nothing, a rack with one weapon out of it, and Sergeant Beskra\nOduya sitting on an ammunition case with the whole of it in pieces on a cloth.\n\nIt was clean when she started. She has been at it since the second watch.",
+ "revisit": "The gun bay. Nineteen pieces on a cloth and a rag folded inward.",
+ "look": "Four metres of nothing and a weapon rack with one gap in it.\n\nSergeant ODUYA on an ammunition case, with the WEAPON in nineteen pieces.\nHer KIT, open, beside her.",
+ "objects": [
+  {
+   "id": "weapon",
+   "names": [
+    "the weapon",
+    "pieces",
+    "the rifle",
+    "gun",
+    "the cloth",
+    "rag"
+   ],
+   "careless": "A service weapon in nineteen pieces, laid out in the order it comes apart in, on a cloth.",
+   "careful": "It was clean when she started. It is cleaner now and it was not dirty then, and she has been at it since the second watch, and there is nothing on this hull to shoot.\n\nThe rag in her other hand is folded inward.\n\nShe folds it inward when the shoulder is bad. She has folded it inward since a mortuary on tier one, eleven weeks ago, and you have watched her do it perhaps forty times and are only now counting.\n\nStripping a weapon is a task. Twenty-six years of the Astra Militarum and the Ordo Hereticus have taught Sergeant Beskra Oduya that when there is a thing you cannot do anything about, you find a task, and you do it correctly, and you do it again."
+  },
+  {
+   "id": "kit",
+   "names": [
+    "the kit",
+    "her kit",
+    "pack",
+    "her things",
+    "the packet"
+   ],
+   "careless": "A sergeant's kit, open on the deck. Spares, oil, a folded shirt, and something with a seal on it.",
+   "careful": "Twenty-six years fits into a bag you can carry up a gantry in one hand.\n\nSpares. Oil. One folded shirt. A pict of four people in Guard uniform in front of a lifter, none of whom is her, all of whom she can name. Ostro's medicae docket, folded twice, which she cannot read and has kept anyway.\n\nAnd a sealed packet under all of it, at the bottom, where you put a thing you have decided not to think about."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "bez3",
+   "names": [
+    "bez",
+    "oduya",
+    "sergeant",
+    "beskra",
+    "her"
+   ],
+   "title": "Sergeant Beskra Oduya",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask,\" Bez says. \"I'll not answer some of it.\"",
+   "portrait": "Sergeant Beskra Oduya, twenty-six years, eleven of them Vosk's. Stripping a weapon that does not need it.\n\nThe rag in her other hand is folded inward. It has been all week.",
+   "greeting": "\"Sir.\"\n\nShe does not stop stripping the weapon and she does not look up, which is how she has started every conversation you have had with her, and which you have finally worked out is not rudeness but a way of giving you the option of leaving.\n\nThe gun bay is four metres of nothing. There is one weapon in it and it is in nineteen pieces on a cloth and it was clean when she started.\n\n\"There's a thing,\" she says, \"and I've been eight days deciding whether to bother you with it, and I've decided badly.\"",
+   "reprise": "She waits, with the pieces laid out in order.",
+   "unknown": "\"Don't know, sir.\"",
+   "deflect": [
+    "She fits two pieces together and takes them apart again.",
+    "\"That's not one of mine,\" she says."
+   ],
+   "topics": [
+    {
+     "id": "seal",
+     "names": [
+      "the seal",
+      "the thing",
+      "what is it",
+      "the envelope",
+      "bequest",
+      "the document"
+     ],
+     "sets": [
+      "BEZ_ASKED"
+     ],
+     "grants": [
+      "C7"
+     ],
+     "text": "She puts the weapon down and takes a sealed packet out of her kit and holds it out at arm's length, like it might go off.\n\nOrdo seal. Vosk's mark. Dated 0997.4.205, which is the fourth of the second, which is six days before the door came off its seal at the twenty-third hour and fifty-five.\n\n\"Came to me through the Provost's office a fortnight after. Nobody's opened it. I've had it in the kit since.\"\n\n\"You haven't read it.\"\n\nA long pause, in which she picks up the weapon and puts it down again.\n\n\"Eleven years,\" Bez says. \"He knew. Never said a word, never had a clerk do it for me, never once made me ask.\"\n\nShe pushes it another inch towards you.\n\n\"So I'm asking you instead, and I'd take it kindly if you didn't make a thing of it.\"\n\nTwenty-six years in the Astra Militarum and the Ordo Hereticus and there is nobody alive she has told, and she has just told you in a gun bay because there was no third option that let her know what was in it.\n\n[ C7 HELD ]"
+    },
+    {
+     "id": "lung",
+     "names": [
+      "the lung",
+      "the cough",
+      "fourteen months",
+      "your health",
+      "the diagnosis",
+      "ostro"
+     ],
+     "requires": [
+      "BEZ_ASKED"
+     ],
+     "sets": [
+      "BEZ_KNOWS_DIAGNOSIS"
+     ],
+     "text": "You say the number.\n\nBez takes it the way she takes everything: as a fact that has arrived and now has to be worked with.\n\n\"Fourteen. Right.\" She turns a piece of the weapon over. \"I had it at about a year, so that's a bonus, isn't it.\"\n\nShe is not being brave. She is a sergeant doing arithmetic.\n\n\"Ostro tell you or did you go and look?\"\n\n\"I ordered the exam.\"\n\n\"Then you paid for it and you've been carrying it about eleven weeks.\" She fits two pieces together. \"That's a stupid thing to do to yourself, sir, and I'd have done it, so I'll not say anything else about it.\"\n\nThen, after a while, in exactly the same voice:\n\n\"Don't spend me on something small.\""
+    },
+    {
+     "id": "coming",
+     "names": [
+      "cantica-null",
+      "coming with me",
+      "the station",
+      "come along",
+      "the discharge",
+      "stay behind"
+     ],
+     "requires": [
+      "BEZ_BEQUEST_READ"
+     ],
+     "text": "\"He's written I'm to be discharged.\"\n\n\"He has.\"\n\n\"With a pension on an account in a hive that stopped filing returns in 'eighty-nine.\" She almost laughs. \"That's the bit that's got me. Eleven years, and the one thing he got wrong in the whole of it was the *address*.\"\n\nShe starts reassembling the weapon, in order, without looking.\n\n\"I'm coming to the station, sir.\"\n\n\"You're discharged.\"\n\n\"I'm discharged by a man who's been dead eleven weeks and whose last instrument nobody's countersigned, and I'd like to see the clerk who takes that off me on a hull in the Cerement.\" The weapon closes with one sound. \"Fourteen months. I'd rather not spend them being right about paperwork.\""
+    }
+   ],
+   "shows": [],
+   "beats": [
+    {
+     "id": "slate",
+     "requires": [
+      "IN_TRANSIT"
+     ],
+     "blocks": [
+      "SPIRIT_ORDERS_READ",
+      "C4_HELD"
+     ],
+     "grants": [
+      "C4"
+     ],
+     "text": "\"There's the other thing,\" Bez says, \"and I'd have mentioned it sooner if you'd been down the well.\"\n\nShe takes a voice slate out of the kit. Not from the bottom, where the packet is. From the top, where you put a thing you have been meaning to hand over.\n\n\"Off the hull. It was in with the orders and nobody's played it since he cut it, and I'd not play it on my own because it didn't feel like mine to.\"\n\nNineteen seconds. A throat cleared at the second.\n\n*\"If you are hearing this you have done the first difficult thing. Do not do the obvious second one.\"*\n\nCut.\n\nShe listens to it twice with her head on one side.\n\n\"Fourth second,\" she says. \"There. That's an intake. He's about to say something else and he stops himself, and then he cuts it there so you'd not hear him stop.\"\n\nShe hands it over.\n\n\"That's him about to say something else, sir. Whatever it was, he decided you were better off without it, and he was probably wrong, and there it is.\"\n\n[ C4 HELD ]"
+    }
+   ],
+   "acts": [
+    {
+     "id": "read_true",
+     "names": [
+      "read it",
+      "read it aloud",
+      "read the bequest",
+      "read it to her",
+      "open it"
+     ],
+     "requires": [
+      "BEZ_ASKED"
+     ],
+     "blocks": [
+      "BEZ_BEQUEST_READ",
+      "BEZ_BEQUEST_REFUSED"
+     ],
+     "sets": [
+      "BEZ_BEQUEST_READ",
+      "WATCH_BEZ"
+     ],
+     "counters": {
+      "VERITY": 1,
+      "BEZ_TRUST": 1
+     },
+     "cost": 2,
+     "text": "You break the seal and read it aloud, standing up, in a gun bay, to a sergeant with nineteen pieces of a weapon in front of her.\n\nFour lines.\n\nA pension, at a rate he has calculated himself and shown his working for, on an account at a hive that has not filed a return since 'eighty-nine.\n\nAn instruction that Sergeant Beskra Oduya be discharged from Ordo service at the earliest date compatible with her dignity, which is a phrase you have never seen on an instrument and which he has clearly gone and put there on purpose.\n\nA line asking that she not be asked to give evidence about him.\n\nAnd:\n\n*You were the only person in my service I never had to check.*\n\nBez does not say anything for about eleven seconds.\n\n\"Right,\" she says. \"Well.\"\n\nShe picks up the first piece of the weapon.\n\n\"He'd have hated saying that out loud. He's written it down so he'd not have to, and then he's arranged for somebody else to say it, and he's picked somebody who'd do it properly.\"\n\nShe fits the piece.\n\n\"Thank you, sir. That's the whole of what I wanted and I'd be obliged if we left it there.\"\n\n[ BEZ_BEQUEST_READ — VERITY +1 ]"
+    },
+    {
+     "id": "soften",
+     "names": [
+      "soften it",
+      "edit it",
+      "leave that bit out",
+      "spare her",
+      "read it kindly",
+      "improve it"
+     ],
+     "requires": [
+      "BEZ_ASKED"
+     ],
+     "blocks": [
+      "BEZ_BEQUEST_READ",
+      "BEZ_BEQUEST_REFUSED"
+     ],
+     "sets": [
+      "BEZ_BEQUEST_READ",
+      "BEQUEST_EDITED",
+      "WATCH_BEZ"
+     ],
+     "counters": {
+      "RECONCILIATION": 5
+     },
+     "cost": 2,
+     "text": "You read it, and while you are reading it you make two small improvements.\n\nThe pension rate becomes *a pension*, without the hive that stopped filing returns in 'eighty-nine, because there is no version of that sentence that is not a man getting her address wrong.\n\nAnd *at the earliest date compatible with her dignity* becomes *at her own convenience*, because the first one is going to sit in her for a week.\n\nBoth changes are kind. Both are small. Neither of them alters what the document is for.\n\n\"Right,\" Bez says. \"Well. Thank you, sir.\"\n\nShe picks up the first piece of the weapon and fits it, and you stand in a gun bay four metres wide holding a dead man's instrument that you have just read out in an amended form to the only person it was written for, and there is no copy, and she cannot read, and nobody in the Imperium will ever know.\n\nYou have been chasing this for eleven weeks.\n\nIt took about nine seconds and both of the reasons were good ones."
+    },
+    {
+     "id": "refuse_read",
+     "names": [
+      "refuse",
+      "give it back",
+      "not my place",
+      "decline",
+      "hand it back",
+      "let her find someone"
+     ],
+     "requires": [
+      "BEZ_ASKED"
+     ],
+     "blocks": [
+      "BEZ_BEQUEST_READ",
+      "BEZ_BEQUEST_REFUSED"
+     ],
+     "sets": [
+      "BEZ_BEQUEST_REFUSED",
+      "WATCH_BEZ"
+     ],
+     "counters": {
+      "BEZ_TRUST": -1
+     },
+     "cost": 1,
+     "text": "You hand it back.\n\nThere are four reasons and three of them are good: it is a legal instrument, you are the officer of record in a matter he is a party to, and there will be a clerk at Cantica-Null who can do it without any of that being a question.\n\nBez takes it back and puts it in the kit.\n\n\"Course, sir. Should've thought.\"\n\nShe picks up the weapon.\n\nShe does not ask again. Not on the passage, not at Kadmon, not at the station, and the packet stays in the kit with the seal on it, and whatever is in it is going to be read out by somebody who has never met her.\n\n[ she does not ask again ]"
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "out",
+   "names": [
+    "out",
+    "back",
+    "deck",
+    "the cerement",
+    "return",
+    "up"
+   ],
+   "to": "cerement",
+   "cost": 1,
+   "text": "Out of the gun bay. Behind you the weapon comes apart again."
+  }
+ ],
+ "clues": {
+  "C7": {
+   "id": "C7",
+   "names": [
+    "the bequest",
+    "vosk's bequest",
+    "four lines",
+    "his last instrument",
+    "her pension"
+   ],
+   "label": "Vosk's four-line bequest for Bez, sealed six days before he died — he was arranging survivors",
+   "store": "either",
+   "reconciliation": 1,
+   "file_text": "FILED. CLASS: TESTAMENTARY / INSTRUMENT, DECEASED OFFICER. INDEXED. BENEFICIARY: ODUYA, B., SERGEANT.\n\nThe template takes it in nine seconds and flags one exception, correctly: the\ndisbursing account is at a hive that has not filed a return since 809 and the\ninstrument is therefore unexecutable as drafted.\n\nIt suggests an amendment. It is right. It is the only thing in this case that\nhas ever been trying to help.",
+   "note_text": "Four lines, copied out, dated the fourth of the second — six days before.\n\nA pension with the working shown. A discharge at the earliest date compatible\nwith her dignity. A request that she not be asked to give evidence about him.\n\nAnd the fourth line, which is the reason he wrote the other three."
+  }
+ },
+ "strings": {
+  "no_such_thing": "Four metres of nothing, a weapon and a kit.",
+  "already_read": "You have looked twice. She is still going.",
+  "no_terminal": "There is no relay within nine days of this hull.",
+  "read_room_locked": "Nobody arranged a gun bay.",
+  "no_one_here": "Only Bez, and nineteen pieces of a weapon."
+ }
+}

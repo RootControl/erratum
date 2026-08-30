@@ -1,0 +1,257 @@
+{
+ "id": "kadmon",
+ "title": "KADMON VEIL — HIVE ERASMUS",
+ "date": "0997.4.261",
+ "clock_at": "11h00",
+ "sets": [
+  "KADMON_VISITED"
+ ],
+ "intro": "The challenge comes on the correct frequency in the correct form.\n\nIt is current protocol, letter-perfect, with the response window observed to\nthe second, and the voice is a boy's, and he does not fumble a syllable.\n\nNothing has come into this system in ninety-one years.\n\nHive Erasmus takes you down through eleven kilometres of it: three plasma\nreactors lit and eight cold and oiled, a PDF drilling on the muster ground\nwith rifles turned out of wood, and four hundred thousand people who step\naside in the street and do not ask you for anything.\n\nSeveral of them kneel.\n\nA woman asks Sergeant Oduya whether the war is over. She does not say which\nwar, and Bez, who has been in four, does not ask.",
+ "revisit": "Hive Erasmus. Three reactors lit, eight cold, and a street that steps aside.",
+ "look": "Eleven kilometres of hive on a world that has not seen a ship in ninety-one\nyears.\n\nThe MUSTER GROUND, where the PDF drills with wooden rifles.\nThe STREET, which steps aside.\nPort-Adept RHOD at your elbow, nineteen, watching Fenn's implant.\n\nEast: the TITHE YARD, forty square kilometres of it.\nAbove: the MUSTER HALL, where the Marchioness has had three hours' notice.",
+ "objects": [
+  {
+   "id": "rifles",
+   "names": [
+    "rifles",
+    "the pdf",
+    "muster ground",
+    "wooden rifles",
+    "the drill",
+    "militia"
+   ],
+   "careless": "Four companies of the Kadmoni PDF drilling on a parade square, in step, with rifles turned out of wood.",
+   "careful": "Lasgun cells ran out in year thirty-one.\n\nThe wooden rifles are correct. Not approximate — *correct*: the mass is right, the balance is right, the sling swivels are in the right place, and the armourers who turn them work from a pattern book and are inspected.\n\nThe real weapons are in the Faithful Armoury and are counted quarterly. Rhod gives you the figure without being asked, because he assumes an Inquisitor will want it: four thousand one hundred and six rounds.\n\nSixty years of drill for a landing that would spend that in ninety seconds, run by people who know the number, because knowing the number is the discipline."
+  },
+  {
+   "id": "street",
+   "names": [
+    "the street",
+    "the people",
+    "crowd",
+    "them",
+    "the hive",
+    "the city"
+   ],
+   "careless": "A street in a working hive: barrows, a shrine queue, a man arguing about a barrow. It steps aside for you without being asked.",
+   "careful": "Nobody asks you for anything.\n\nYou have walked eleven kilometres of a hive that has been alone for ninety-one years, wearing a rosette, with a retinue, and not one person has approached you with a petition, a grievance or a request.\n\nThey step aside. Several kneel. One woman puts a hand on Fenn's sleeve and takes it off again and apologises to him for eleven seconds.\n\nRhod, when you ask, is baffled: \"It would not be in order, sir. There is a form for petitions and the Marchioness hears them on the fourth day.\"\n\nFour hundred thousand people have been dying of a respiratory complaint at a million and a half a year for nine decades and are waiting for the fourth day."
+  },
+  {
+   "id": "terce",
+   "names": [
+    "the attending",
+    "terce",
+    "the listening",
+    "the minute",
+    "astropaths",
+    "the choir"
+   ],
+   "careless": "At Terce a bell goes and the whole hive stops for sixty seconds. Nobody explains it; it does not occur to anybody that it needs explaining.",
+   "careful": "The Attending.\n\nSix surviving astropaths of an original forty broadcast at Terce — a two-hundred-word summary, the same shape every day, tithe and population and heresy nil. Then the entire hive holds a listening minute.\n\nSixty seconds a day. Ninety-one years. Every soul on the planet, standing still, listening for a reply.\n\nIlaria does not stand still. She goes down on the deck of the shuttle with her hands over her ears in the fourth second and stays there for the whole minute, and afterwards will not say what she heard, and it is not nothing.\n\n\"Six left,\" she says eventually. \"There were forty. They've been carrying at forty's rate with six for thirty years and they know exactly what that costs and they do it anyway.\""
+  }
+ ],
+ "npcs": [
+  {
+   "id": "rhod",
+   "names": [
+    "rhod",
+    "alcuin",
+    "port-adept",
+    "the boy",
+    "scribe",
+    "him"
+   ],
+   "title": "Port-Adept Alcuin Rhod",
+   "lists_topics": false,
+   "topic_refusal": "\"You may ask anything, Inquisitor,\" Rhod says. \"I have been told to answer.\"",
+   "portrait": "Port-Adept Alcuin Rhod, nineteen, palimpsest-scribe of the fourth grade, nine years apprenticed.\n\nHis stylus and scraper hang at his belt where another world would hang a sidearm. He cannot stop looking at Fenn's implant, which is the newest technology on this planet by about ninety years.",
+   "greeting": "\"Inquisitor. Port-Adept Alcuin Rhod, fourth grade, appointed to attend you.\"\n\nHe is nineteen. The form of address is letter-perfect and about forty years out of date, and he has clearly been rehearsing it since the hail.\n\n\"The Marchioness asks me to say that she is at your disposal at any hour and that she has had three hours' notice, which she says is ample.\"\n\nHe glances, once, at Fenn's implant, and looks away, and does it again about nine seconds later.",
+   "reprise": "Rhod waits at your elbow with his hands folded, entirely composed, nineteen years old.",
+   "unknown": "\"I do not have that, Inquisitor. I can find someone who does.\"",
+   "deflect": [
+    "Rhod waits. He has been taught to wait.",
+    "\"Shall I take you on, Inquisitor?\" he asks."
+   ],
+   "topics": [
+    {
+     "id": "hail",
+     "names": [
+      "the hail",
+      "the challenge",
+      "the protocol",
+      "the drill",
+      "how you hailed us",
+      "the voice"
+     ],
+     "text": "\"Challenge-and-response, sir, current protocol.\" He is puzzled by the question. \"We run it every watch.\"\n\n\"Against what?\"\n\n\"Against a ship, sir.\" Still puzzled. \"There has not been one, but the drill is run every watch, and the Port-Master examines on it, and the boy who has the watch when a ship comes will have run it four thousand times. That was Corvin this morning. He is eleven and he did not fumble a syllable and he has been given a commendation and his mother has had to be sat down.\"\n\nSomebody wrote that drill down ninety-one years ago. Somebody has run it every watch since, into a system where nothing arrives, and taught it to their replacement, and their replacement's replacement.\n\nBez says, \"Throne.\" Not loudly. It is the only thing anybody says for a while."
+    },
+    {
+     "id": "population",
+     "names": [
+      "population",
+      "how many",
+      "the census",
+      "the figure",
+      "souls",
+      "the true figure"
+     ],
+     "counters": {
+      "VURR_RESPECT": 1
+     },
+     "sets": [
+      "RHOD_TRUSTED"
+     ],
+     "text": "\"Nine hundred million, four hundred and twelve thousand,\" Rhod says, without blinking.\n\nIt is the number on the Erratum. It is the number a dead man cut into wax in a room four hundred light years away, and this boy has it by heart because it is the population of the world he was born on.\n\n\"That is the acknowledged figure.\"\n\nA pause. He looks at his hands.\n\n\"The true figure at the last muster was eight hundred and twelve million and some,\" he says, much more quietly. \"It falls by about a million and a half a year, mostly chest. The Marchioness reports the acknowledged figure because she is not authorised to correct it, and I would be obliged, Inquisitor, if you did not tell her I gave you the other one, because she would not be angry and I would rather she was.\""
+    },
+    {
+     "id": "reply",
+     "names": [
+      "the reply",
+      "when the reply comes",
+      "if",
+      "the delay",
+      "the vigil",
+      "waiting"
+     ],
+     "text": "\"When the reply comes,\" Rhod says.\n\nNot *if*. He has said it three times since the shuttle and it is not a figure of speech; it is a tense, and the whole planet uses it.\n\n\"There are six hundred and eleven canonically permitted reasons for a reply to be late,\" he explains, happy to be useful. \"Sub-Deacon Tolk recites them on rotation. Fourteen of them are astropathic, four hundred are administrative, and the rest are — \" he hesitates for the first time \" — providential.\"\n\n\"Which do you think it is?\"\n\n\"That is not my business, sir,\" Rhod says, with real relief, as though you had offered to carry something heavy."
+    },
+    {
+     "id": "paper",
+     "names": [
+      "paper",
+      "palimpsest",
+      "the scraping",
+      "vellum",
+      "your guild",
+      "ink",
+      "the stylus"
+     ],
+     "text": "\"Paper ran out in year nineteen,\" Rhod says, and brightens, because this is his subject.\n\n\"Everything since is scraped. There is a nine-year apprenticeship and I am fourth grade, which means I may scrape a document of the second class and rewrite it without a witness. Ink is lamp-black; we make it in the Yard.\"\n\nHe shows you his hands. The fingers are stained to the second joint and will be for life.\n\n\"It is a good trade. There are two hundred and eleven of us and we are licensed, and the guild has a hall.\"\n\nA world that ran out of paper in year nineteen has spent seventy-two years building a profession out of writing on top of itself, and it has a hall, and a nine-year apprenticeship, and a fourth grade."
+    },
+    {
+     "id": "reactors",
+     "names": [
+      "reactors",
+      "the wakers",
+      "plasma",
+      "the grid",
+      "power",
+      "eight cold"
+     ],
+     "text": "\"Three of eleven, sir. Erasmus runs on three.\"\n\n\"And the other eight?\"\n\n\"Maintained.\" He says it as though the question had an obvious answer, which for him it does. \"The Guild of Wakers oils, turns and blesses each housing daily. There are four hundred Wakers and none of them has seen one lit.\"\n\n\"None of them.\"\n\n\"Not one, sir. The last lighting was year fourteen. They are examined on the rite, and the rite is exact, and if a ship came with a Magos tomorrow the Wakers could bring a housing to readiness in four hours and they know it.\"\n\nHe says this with enormous pride, and he is right to."
+    },
+    {
+     "id": "husband",
+     "names": [
+      "her husband",
+      "the marchioness's husband",
+      "cycle 67",
+      "when did he die",
+      "widowed",
+      "her family"
+     ],
+     "sets": [
+      "VURR_WIDOWED"
+     ],
+     "counters": {
+      "VURR_RESPECT": 1,
+      "VERITY": 1
+     },
+     "text": "Rhod stops walking.\n\n\"Cycle sixty-seven, sir. The ninth. He was the Assessor — that is how they met, he assessed the Yard for eleven cycles before she was Marchioness and eleven after.\"\n\n\"She didn't mention it.\"\n\n\"No, sir. She would not.\" He starts walking again. \"She completed his record herself and vaulted it the same morning, which is the form, and she filed the cycle on time, which is also the form, and there was no observance because there is a form for a governor's consort and it requires a Confessor of the second grade and we have not had one since year fifty-two.\"\n\nHe says the next part carefully, as though it might be a disloyalty.\n\n\"If you are in the Reading Room, sir, you might look at that cycle. She writes a great deal of reports and I have read all of them twice and there is one that is not like the others.\"\n\n[ VERITY +1 ]"
+    }
+   ],
+   "shows": [],
+   "beats": [],
+   "acts": []
+  }
+ ],
+ "npc_refs": [
+  "cell/ilaria3"
+ ],
+ "exits": [
+  {
+   "id": "yard",
+   "names": [
+    "the yard",
+    "tithe yard",
+    "yard",
+    "east",
+    "the owed",
+    "the silos"
+   ],
+   "to": "tithe_yard",
+   "cost": 3,
+   "text": "East, out of the hive, to forty square kilometres of it."
+  },
+  {
+   "id": "hall",
+   "names": [
+    "hall",
+    "muster hall",
+    "the marchioness",
+    "vurr",
+    "up",
+    "the audience"
+   ],
+   "to": "muster",
+   "cost": 2,
+   "text": "Up to the Muster Hall, where the tithe ledger is kept and where a hundred-and-four-year-old woman has spent three hours on the numbers."
+  },
+  {
+   "id": "ship",
+   "names": [
+    "ship",
+    "shuttle",
+    "back",
+    "the verdict",
+    "orbit",
+    "aboard"
+   ],
+   "to": "cerement",
+   "cost": 3,
+   "text": "Up to orbit. Kadmon Veil turns underneath, three lit reactors on the night side out of eleven."
+  },
+  {
+   "id": "onward",
+   "names": [
+    "onward",
+    "cantica",
+    "cantica-null",
+    "the address",
+    "the station",
+    "lift"
+   ],
+   "to": "cantica",
+   "cost": 6,
+   "requires": [
+    "KADMON_ADDRESS"
+   ],
+   "text": "Nine more days on the routing address, and no symptom fires in any of them,\nbecause you are back inside relay range and the record has better things to do\nwith you than shorten your notes.\n\nCANTICA-NULL. Priority black. In orbit of a world the index says was never\nsettled.\n\nThere is a world under it with three lit cities on the night side."
+  }
+ ],
+ "clues": {
+  "C13": {
+   "id": "C13",
+   "names": [
+    "the last signal",
+    "year zero",
+    "the receipt",
+    "the framed signal",
+    "tithe-receipt",
+    "the stamp"
+   ],
+   "label": "The last signal Kadmon Veil received — a routine tithe-receipt acknowledgment, framed, stamped with a reconciliation office sigil",
+   "store": "either",
+   "reconciliation": 2,
+   "file_text": "FILED. CLASS: SIGNALS / ACKNOWLEDGMENT, ARCHIVAL. INDEXED.\n\nThe cogitator files a ninety-one-year-old tithe receipt without comment,\nbecause a tithe receipt is the least interesting document the Imperium\nproduces, and cross-references the issuing office.\n\nThe issuing office does not resolve. It files that as a data-quality note.",
+   "note_text": "Copied by hand off a frame on a wall: routing, date, cycle, assessed value,\nreceipt acknowledged, thank you.\n\nIt is the most ordinary document in the sector and it is the last thing anybody\nsaid to eight hundred and twelve million people.\n\nThe stamp in the corner is a reconciliation office sigil. I have seen it four\ntimes this year — on a standing countersign in a Vault effects cage, on two\nvariance circulars, and now here, dated ninety-one years ago."
+  }
+ },
+ "strings": {
+  "no_such_thing": "Eleven kilometres of hive, and everything in it is theirs.",
+  "already_read": "You have looked twice. Rhod is waiting and will wait all day.",
+  "no_terminal": "There is a cogitator in the Muster Hall. It has been maintained for ninety-one years and has nothing to talk to.",
+  "read_room_locked": "Nobody arranged Hive Erasmus. They inherited it.",
+  "no_one_here": "Only Rhod, and four hundred thousand people who will not ask you for anything."
+ }
+}

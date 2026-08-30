@@ -1,0 +1,427 @@
+{
+ "id": "workshop",
+ "title": "THE WORKSHOP OF MAGOS YTTRIX CAEL",
+ "date": "0997.4.220",
+ "clock_at": "09h10",
+ "revisit": "Oil and tea. A bench, a kettle, a Magos who is pleased to see you, and an Enginseer-Adjunct who is pleased about telemetry.",
+ "intro": "Warm. Tidy. It smells of oil and tea, in that order, and the tea is real.\n\nMagos Yttrix Cael has served the Adamant Crown for sixty years and maintains\nevery cogitator in it, including the one that was Vosk's and is now yours. He\nis not frightening. That is the first thing you notice about him and it goes\non being the thing you notice.\n\nEnginseer-Adjunct Orven Tass is at the bench behind him, twenty-six, delighted\nby everything, entirely without discretion.\n\nOn the bench, half-built, under a cloth that Cael does not trouble to move, is\na harness.\n\n\"Ah,\" says Cael. \"Yes. I thought you might come about the savant.\"\n\nYou have not said anything about the savant.\n\nThe work-docket pinned beside it is dated three weeks ago.",
+ "look": "A workshop that is warm and smells of tea, which no workshop in this hive is.\n\nThe BENCH, and on it a half-built mnemonic SHROUD under a cloth.\nThe DOCKET pinned beside it, dated three weeks ago.\nA KETTLE, and two cups, and a third that has been got out.\n\nMAGOS CAEL. Enginseer-Adjunct TASS behind him, radiating helpfulness.",
+ "objects": [
+  {
+   "id": "shroud",
+   "names": [
+    "harness",
+    "the shroud",
+    "cloth",
+    "device",
+    "mnemonic shroud",
+    "bench"
+   ],
+   "careless": "A harness, half-built, on a bench under a cloth Cael does not trouble to move. Sixty years of work in this room and it is the only thing on the bench.",
+   "careful": "A mnemonic shroud: a field-former sized for a human skull, a seating harness, and a governor calibrated in units you do not recognise.\n\nIt is beautiful work and it is two-thirds finished and it has been two-thirds finished for three weeks.\n\nThere is exactly one man in the Thessaline sector with a mnemonic augmetic worth shrouding, and until eight days ago nobody in this hive had any reason at all to think he needed it."
+  },
+  {
+   "id": "docket",
+   "names": [
+    "work-docket",
+    "the docket",
+    "date",
+    "requisition",
+    "pinned"
+   ],
+   "careless": "The work-docket, pinned to the bench beside the harness. Dated three weeks ago. Signed by Cael, unrequested, unbilled.",
+   "careful": "Three weeks, four days.\n\nEleven weeks ago Hadrian Vosk opened four case-files and left them open. Three weeks ago Magos Yttrix Cael began building a shroud for a savant nobody had asked him to protect. Eight days ago you started this investigation.\n\nThe docket has a field for the originating request. It is empty. He has written, in the margin, in a very neat hand: *anticipated*.",
+   "clue": "B3"
+  },
+  {
+   "id": "kettle",
+   "names": [
+    "tea",
+    "cups",
+    "third cup",
+    "the kettle"
+   ],
+   "careless": "A kettle, and two cups, and a third cup that has been got out and not yet filled.",
+   "careful": "The third cup is for you and it was got out before you knocked.\n\nYou have not eaten in a day and a half and you are going to drink the tea, and it is going to be good, and you are going to notice about four hours later that you agreed to something while you were drinking it."
+  },
+  {
+   "id": "tass",
+   "names": [
+    "enginseer",
+    "orven",
+    "adjunct",
+    "the boy"
+   ],
+   "careless": "Enginseer-Adjunct Orven Tass, twenty-six, at the bench behind Cael, visibly hoping to be asked something.",
+   "careful": "He will tell you anything. Not indiscreetly — he has no concept of discretion, because nothing he does has ever needed any, and he has been given a genuinely interesting problem by a man he admires.\n\nIf you want to know what the shroud does, ask Cael. If you want to know what it *sends*, ask Tass, and he will tell you at length, fondly, and be pleased you were interested."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "cael",
+   "names": [
+    "magos",
+    "yttrix",
+    "him"
+   ],
+   "title": "Magos Yttrix Cael",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask,\" says Cael. \"I have never once been asked enough questions in this room.\"",
+   "portrait": "Magos Yttrix Cael. Sixty years maintaining every cogitator in the Adamant Crown, including the one that was Vosk's. Warm, unhurried, entirely unfrightening, which is the thing you keep noticing.",
+   "greeting": "He pours the tea before you have asked for it, which is how he does most things.\n\n\"The savant,\" Cael says. \"Aleth Fenn. Mnemonic augmetic, Hexta-pattern, fitted at nineteen — I did the last two services myself, he is very easy to work on because he is interested.\n\n\"You will have noticed something. I would rather you told me than that I guessed, so that I know which of us is wrong.\"",
+   "reprise": "He waits, with the kettle, entirely unhurried.",
+   "unknown": "\"I don't know,\" Cael says, comfortably. \"I could find out.\"",
+   "deflect": [
+    "He considers it for slightly too long, and then pours more tea."
+   ],
+   "disposition": {
+    "flags": [
+     "FENN_SHIELDED",
+     "CAEL_REFUSED"
+    ],
+    "default": ""
+   },
+   "topics": [
+    {
+     "id": "ash_own",
+     "names": [
+      "the ash",
+      "the censer",
+      "burned page",
+      "the burning",
+      "spectral imaging",
+      "the imager",
+      "carbon"
+     ],
+     "requires": [
+      "A4_HELD"
+     ],
+     "blocks": [
+      "ERRATUM_OBTAINED"
+     ],
+     "sets": [
+      "IMAGING_AGREED"
+     ],
+     "text": "\"Burned parchment.\" Cael puts the kettle down, which he does not do. \"How burned?\"\n\n\"Completely. It went into a censer and I have the censer.\"\n\n\"Then it's carbon on carbon and it is *absolutely* recoverable, and I would like you to know that I have wanted somebody to bring me this problem for about nine years.\"\n\nHe is already moving. The imager is a Mechanicus spectral bench that reads differential across the burn — ink carbon and parchment carbon do not oxidise at the same rate, and the ink remembers being ink for a surprisingly long time.\n\n\"Four passes. Tuesday, if the tier-four cogitators behave, which they will because I am the reason they behave.\"\n\nHe does not ask what it is. It does not occur to him to ask what it is; you have brought him a *technical problem*, on a Tuesday, and he is delighted, and this is a favour freely given and there is no ledger anywhere that it goes on."
+    },
+    {
+     "id": "ash_bez",
+     "names": [
+      "the ash",
+      "the censer",
+      "burned page",
+      "the burning",
+      "spectral imaging",
+      "the imager",
+      "carbon"
+     ],
+     "blocks": [
+      "ERRATUM_OBTAINED"
+     ],
+     "sets": [
+      "IMAGING_AGREED"
+     ],
+     "text": "\"There's a censer,\" you say, and stop, because you are not certain there is.\n\nThere is. Sergeant Oduya took it off the Provost's inventory on the first\nmorning, before the wardens had finished with the corridor, and has had it in\na crate under a bench on tier one for eleven weeks.\n\n\"Course I did, sir,\" she says later, mildly offended by the question. \"He\ntaught me that. Anything burned in a room, you take the ash and you don't ask\nwhy till after. Twenty-six years, and it's come up twice, and the first time\nwas him teaching me.\"\n\nCael puts the kettle down, which he does not do.\n\n\"Carbon on carbon,\" he says. \"Absolutely recoverable. Four passes. I would\nlike you to know I have wanted somebody to bring me this problem for about\nnine years.\"\n\nHe does not ask what it is. You have brought him a *technical problem*, on a\nTuesday, and he is delighted, and this is a favour freely given and there is\nno ledger anywhere that it goes on."
+    },
+    {
+     "id": "glyphs",
+     "names": [
+      "the glyphs",
+      "the script",
+      "pre-imperial",
+      "what is it",
+      "the hand",
+      "twenty-one"
+     ],
+     "requires": [
+      "ERRATUM_OBTAINED"
+     ],
+     "text": "\"Older than the ink,\" Cael says. \"Older than the *idea* of the ink. I put it\nagainst four reference corpora and got nothing to three decimal places, which\nis rare enough that I enjoyed it.\"\n\nHe pours.\n\n\"Vosk collected things like that. A mind for dead scripts — he'd bring me a\nrubbing off a lintel once a year and we'd not get anywhere with it and he'd be\nperfectly happy. I always thought it was a waste in a man who could have done\nreal work.\"\n\nHe is being fond about the thing that stopped his friend's heart, in the room\nwhere he developed it, holding a cup of tea.\n\n\"Do you know what it says?\"\n\n\"No,\" you say."
+    },
+    {
+     "id": "shroud",
+     "names": [
+      "the harness",
+      "device",
+      "what is it",
+      "how does it work",
+      "mechanism",
+      "field"
+     ],
+     "text": "\"A mnemonic shroud. It formers a null field around the augmetic — not around the man, the augmetic; he'll feel nothing and it doesn't touch him.\" He turns it so you can see the seating. \"The Hexta lattice is a retrieval index. It doesn't store, it *finds*, and finding is an operation, and an operation can be interfered with by a sufficiently loud environment.\n\n\"Cantor is a very loud environment. Eleven hundred relays, four hundred years of repeaters, coverage from the Spire to the sump.\"\n\nHe says all of it honestly and exhaustively and without one word of evasion.\n\n\"It will not undo anything. I want to be exact about that, because you are going to want me to have said something else. It reduces the rate. About a third, on the bench; I would want to measure it on him.\"",
+     "sets": [
+      "CAEL_EXPLAINED_SHROUD"
+     ]
+    },
+    {
+     "id": "why",
+     "names": [
+      "three weeks",
+      "why did you build it",
+      "anticipated",
+      "the docket",
+      "before",
+      "who asked"
+     ],
+     "text": "\"Because a savant is expensive and Cantor is loud.\"\n\nIt is true. You can hear that it is true. It is also, for a man who has just explained a null-field former in four hundred words without being asked twice, remarkably short.\n\n\"Three weeks, Magos.\"\n\n\"Yes.\"\n\n\"Nobody asked you.\"\n\n\"No.\" He pours. \"It seemed to me that it would be wanted.\"\n\nYou press him a third time and he does not become evasive, which is the part you will think about later. He becomes *puzzled* — a man patting his pockets for a reason he is entirely certain he had when he came out.\n\n\"I'm sorry, Inquisitor. I built it because it wanted building. I have been doing this for sixty years and that is not usually a sentence I have to defend.\"\n\n[ CAEL_SUSPECTED ]",
+     "sets": [
+      "CAEL_SUSPECTED"
+     ],
+     "pressure": 1
+    },
+    {
+     "id": "telemetry",
+     "names": [
+      "calibration",
+      "the line",
+      "what does it send",
+      "position",
+      "burst",
+      "data"
+     ],
+     "requires": [
+      "CAEL_EXPLAINED_SHROUD"
+     ],
+     "grants": [
+      "B3"
+     ],
+     "text": "\"It wants recalibrating every eleven hours or the field wanders.\" He turns the harness so you can see the seating. \"Tass will handle it. He'll want a telemetry line — nothing exotic. Position and field-strength, twenty bytes a burst.\"\n\nPosition.\n\nBehind him Tass, delighted to be relevant, supplies the rest before anybody asks him for it: burst interval, packet shape, the repeater chain it rides, and — fondly, at length, as a point of professional pride — the fact that it terminates at the workshop bench, because where else would calibration data go.\n\n\"It's very small,\" Cael says.\n\nHe is right. He pours the tea before you can answer, and it is good tea, and you have not eaten in a day and a half.\n\n[ B3 HELD ]"
+    },
+    {
+     "id": "vosk",
+     "names": [
+      "hadrian",
+      "the inquisitor",
+      "his cogitator",
+      "did you know him",
+      "three years"
+     ],
+     "text": "\"I maintained his machine for three years and I never once had to.\" Cael is briefly, genuinely warm. \"Cael-pattern, three years old, and in three years he brought it in twice, both times to have the auto-quill drum cleaned, which he could have done himself and which I think he liked an excuse for.\n\n\"He asked me a question in the spring that I have thought about since.\" He sets the cup down. \"He asked me whether a cogitator can be made to forget that it has forgotten something. I said no, of course, because a machine keeps a write-log and a write-log is not the thing it writes about.\n\n\"He said: *and if the log is the thing that was written?*\n\n\"I told him that was theology and not engineering, and he laughed, and he took his drum and went.\"",
+     "sets": [
+      "CAEL_QUOTED_VOSK"
+     ]
+    },
+    {
+     "id": "query",
+     "names": [
+      "tier",
+      "vault access",
+      "requisition tier",
+      "upgrade",
+      "my access",
+      "clearance"
+     ],
+     "text": "\"Your query tier is wrong,\" Cael says, as though mentioning a loose button. \"You were elevated into a rosette but the Vault is still indexing you at your predecessor's clerk grade, because the Crown updates authority and the Lexicanum updates *tier* and the two offices do not speak.\n\n\"You have been running third-tier queries for eight days and wondering why the Vault is slow with you.\"\n\nHe fixes it while he is talking, on his own terminal, in about forty seconds, unasked.\n\n\"There. Second tier. You'll get aisle-level returns and the clerks will stop making you wait.\"\n\nIt is genuinely useful, it is freely given, and there is now one more thing in this hive that knows what you are looking for before you look for it.\n\n[ QUERY_TIER +1 ]",
+     "counters": {
+      "QUERY_TIER": 1
+     },
+     "sets": [
+      "QUERY_TIER_RAISED"
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "id": "price",
+     "requires": [
+      "CAEL_DECEIVED",
+      "IMAGING_AGREED"
+     ],
+     "blocks": [
+      "ERRATUM_OBTAINED",
+      "CAEL_SQUARED"
+     ],
+     "sets": [
+      "CAEL_SQUARED"
+     ],
+     "text": "\"Before we do,\" Cael says, without any change of tone at all, \"the shroud.\"\n\nYou wait.\n\n\"It has not sent me a burst since the day you took it. Eleven weeks of nothing\nfrom an instrument that reports every eleven hours, and I have not raised it,\nand I would like you to say it out loud rather than let me go on pretending I\nhaven't noticed, because the pretending is undignified for both of us.\"\n\nSo you say it. You cut the telemetry line before you let him fit it.\n\n\"Thank you.\" He is not angry, which is worse. \"I built that line because I did\nnot know what was happening to him and I wanted to be able to see it, and you\ncut it because you did not know what was happening in this building and you\nwanted nobody to be able to see *you*, and we were both right, and it has cost\nus a fortnight of not trusting each other.\n\n\"That's the price. Say it and it's said. Now bring me the ash.\""
+    }
+   ],
+   "shows": [
+    {
+     "clue": "B2",
+     "text": "You tell him: twice, in the same words at the same syllable, in a room with two metres of rockcrete and no plate in it.\n\nCael puts the cup down and does not pick it up again for some time.\n\n\"Then it is not proximity,\" he says.\n\n\"No.\"\n\n\"Then my shroud is a bandage.\" He says it without any self-pity at all, as a finding. \"It will slow the rate of a process I have just been told does not require the thing I designed it to exclude. I will give it to you anyway, because a third is a third and I have nothing better, and because I would like you to come back and tell me what it turns out to be.\n\n\"Inquisitor — I would be grateful if you did not tell the Adjunct that.\""
+    }
+   ],
+   "acts": [
+    {
+     "id": "accept",
+     "names": [
+      "accept",
+      "take the shroud",
+      "fit it",
+      "yes",
+      "take it"
+     ],
+     "requires": [
+      "CAEL_EXPLAINED_SHROUD"
+     ],
+     "blocks": [
+      "FENN_SHIELDED",
+      "CAEL_REFUSED"
+     ],
+     "refused": "There is nothing on the bench you have been offered yet.",
+     "sets": [
+      "FENN_SHIELDED"
+     ],
+     "cost": 2,
+     "text": "You accept it.\n\nTass fits it in forty minutes, talking the whole time, and Fenn is fascinated and asks better questions than you do. The seating sits under the dressing behind his ear and is not visible under a collar.\n\nIt works. It will go on working. Drift at a third the rate is the difference between a savant you can take into the hive and a savant you can visit.\n\nThe telemetry line goes live at the same moment, because it is part of the calibration and nobody in this room has suggested otherwise, and it sends position and field-strength every eleven hours to a bench in a warm room that smells of tea.\n\nMagos Yttrix Cael has given you, freely and at his own cost, the most useful object anybody will hand you in this act.\n\n[ FENN_SHIELDED ]"
+    },
+    {
+     "id": "cut",
+     "names": [
+      "cut telemetry",
+      "no telemetry",
+      "cut the line",
+      "without the line",
+      "refuse telemetry"
+     ],
+     "requires": [
+      "FENN_SHIELDED"
+     ],
+     "blocks": [
+      "CAEL_DECEIVED"
+     ],
+     "refused": "There is no line to cut.",
+     "sets": [
+      "CAEL_DECEIVED"
+     ],
+     "text": "You have the line cut.\n\nNot refused — cut, afterwards, quietly, by an Arbites tech on tier two who does not ask why and bills you eleven crowns. The harness recalibrates off an internal governor and drifts about four per cent worse and Fenn does not notice.\n\nCael never mentions it.\n\nHe must know within the day; a line that stops is a line that stops. He never raises it, never asks, never adjusts his manner by so much as a degree, and goes on pouring the tea.\n\nYou are going to think about that silence for the rest of this investigation, and in Act III you will still not know whether it was courtesy, or complicity, or a man who could not remember why the line had mattered.\n\n[ CAEL_DECEIVED ]"
+    },
+    {
+     "id": "refuse",
+     "names": [
+      "refuse",
+      "decline",
+      "no shroud",
+      "leave it",
+      "without it"
+     ],
+     "blocks": [
+      "FENN_SHIELDED"
+     ],
+     "sets": [
+      "CAEL_REFUSED"
+     ],
+     "text": "You decline it.\n\nCael is not offended and does not press. He puts the cloth back over the harness and pours you more tea and asks after the Sergeant's shoulder.\n\nAleth Fenn stays in a box on sub-level four, or he comes out into eleven hundred metres of coverage without a bandage on.\n\nNothing in this hive now knows where he is except you.\n\n[ CAEL_REFUSED ]"
+    },
+    {
+     "id": "image",
+     "names": [
+      "image it",
+      "develop it",
+      "run it",
+      "the four passes",
+      "image the ash",
+      "put it through"
+     ],
+     "requires": [
+      "IMAGING_AGREED"
+     ],
+     "blocks": [
+      "ERRATUM_OBTAINED"
+     ],
+     "sets": [
+      "ERRATUM_OBTAINED",
+      "ERRATUM_UNUSED"
+     ],
+     "grants": [
+      "B21",
+      "B22"
+     ],
+     "cost": 4,
+     "text": "It resolves in four passes.\n\nHe watches three of them with you. The first is nothing, the second is a\nsmear, and the third comes up far enough to show that there is a hand on it at\nall, and he spends most of that pass talking about the ink — an iron-gall with\na binder he does not recognise, decanted from something older, which pleases\nhim enormously and which he mentions twice.\n\nDuring the fourth he goes out to put the kettle on, because the fourth takes\nnineteen minutes and he has been up since the fifth hour with the tier-four\ncogitators.\n\nThe fourth pass is the Erratum.\n\nTwenty-one glyphs, in a hand that predates every alphabet you have a name for,\nlying on a plate on a bench in a workshop that smells of tea. You look at it\nfor slightly under a second before you understand that you should not be\nlooking at it, and by then you have looked at it.\n\nCael comes back in with two cups and glances at the plate on his way past the\nbench.\n\nTass glances at it while he is racking the others.\n\nNeither of them reads pre-Imperial. Neither of them looks at it for more than\na second and neither of them ever will, and both of them are going to be alive\nnext week because of that and neither of them is ever going to know it.\n\nHe puts it in a felt case and hands it to you.\n\n\"Mind the edges,\" he says. \"They'll take a finger off and you won't feel it\ntill after.\"\n\nHe has been reconciled. There is a hole in him eleven weeks wide and it is\nexactly the shape of the object he has just put into your hands, and he is\nsmiling at you over a cup of tea.\n\nThere is no cogitator representation of the thing you are now carrying. It is\na plate. The archive does not know it exists.\n\n[ B21 HELD ]\n[ B22 HELD ]"
+    },
+    {
+     "id": "warn_cael",
+     "names": [
+      "warn him",
+      "tell him",
+      "warn cael",
+      "tell him what it is",
+      "the truth"
+     ],
+     "requires": [
+      "ERRATUM_OBTAINED"
+     ],
+     "blocks": [
+      "CAEL_WARNED"
+     ],
+     "sets": [
+      "CAEL_WARNED"
+     ],
+     "cost": 2,
+     "text": "You tell him what he has been holding.\n\nNot all of it. Enough: that the man who brought him rubbings off lintels for\nthree years died four minutes after writing twenty-one glyphs and burning\nthem, that the glyphs are the reason, and that Cael and his apprentice have\nboth had it on a bench in front of them and are both alive because neither of\nthem can read.\n\nMagos Yttrix Cael goes grey. It is a specific and physical thing and you watch\nit happen over about four seconds.\n\n\"Tass is nineteen,\" he says.\n\n\"I know.\"\n\n\"Tass is *nineteen*, and he racks the plates, and he has been racking that\nplate for eleven days, and if he had a talent for old scripts instead of a\ntalent for bearings I would have had to write to his mother.\"\n\nHe puts the cup down without drinking any of it.\n\n\"I would like you to go, please. I am not angry with you and I would like you\nto go, and I would like the plate to go with you, and I would like you to not\nbring me the next one.\"\n\nYou go.\n\nIt is the first time in this investigation that somebody has been afraid of\nyou and been right to be."
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "chambers",
+   "names": [
+    "back",
+    "board",
+    "chambers",
+    "return",
+    "standing board",
+    "up"
+   ],
+   "to": "standing_board",
+   "cost": 2,
+   "text": "Out into the corridor, where it is cold and smells of nothing."
+  }
+ ],
+ "clues": {
+  "B3": {
+   "id": "B3",
+   "names": [
+    "telemetry",
+    "the line",
+    "the addendum",
+    "position",
+    "the docket",
+    "three weeks"
+   ],
+   "label": "The shroud sends position and field-strength every eleven hours, to Cael's bench — and he built it three weeks before anybody asked",
+   "store": "either",
+   "reconciliation": 1,
+   "file_text": "FILED. CLASS: EQUIPMENT / MECHANICUS LIAISON. INDEXED.\n\nENTRY READS: MNEMONIC SHROUD, CAEL-PATTERN, ISSUED TO RETINUE SAVANT.\n             CALIBRATION TELEMETRY ACTIVE. NO ACTION REQUIRED.\n\nIt is a correct and complete description of a piece of equipment, filed in an archive, where the Magos who issued it maintains the cogitator that holds the archive.",
+   "note_text": "You write down two things and put a line between them.\n\nOne: the telemetry sends position, every eleven hours, to a bench.\n\nTwo: the docket is dated three weeks ago and the originating-request field is empty and he has written *anticipated* in the margin.\n\nYou do not know what the line between them means. You write the line anyway."
+  },
+  "B21": {
+   "id": "B21",
+   "names": [
+    "the erratum",
+    "the plate",
+    "the imaging plate",
+    "twenty-one glyphs",
+    "the ninth object",
+    "the weapon"
+   ],
+   "label": "THE ERRATUM — an imaging plate, twenty-one glyphs, in a hand older than the idea of the ink",
+   "store": "neither",
+   "refusal": "You have the plate in one hand and your own pen in the other, and there is a\nfield on the form for RECOVERED MATERIAL, and it is the correct field.\n\nYou put the pen down.\n\nYou do not write down why."
+  },
+  "B22": {
+   "id": "B22",
+   "names": [
+    "imaging log",
+    "cael's log",
+    "the bench log",
+    "the recovery",
+    "his signature"
+   ],
+   "label": "Cael's imaging log — four passes, nineteen minutes, his own signature on the recovery, and no idea what he recovered",
+   "store": "either",
+   "reconciliation": 1,
+   "file_text": "FILED. CLASS: TECHNICAL / MATERIAL RECOVERY. INDEXED. ATTRIBUTED: YTTRIX CAEL, MAGOS.\n\nA clean filing. Four passes, nineteen minutes on the fourth, an iron-gall ink\nwith an unidentified binder, and a Magos's signature under it.\n\nIt establishes beyond argument that Yttrix Cael handled the object, and it\nsays nothing whatever about what the object is, because he did not know and\nthe form has no field for what a man did not know.\n\nSomebody two tiers up is going to find that useful.",
+   "note_text": "His bench log, copied out: four passes, the third a smear, the fourth\nnineteen minutes, an iron-gall with a binder he could not place.\n\nHis signature at the bottom, because he signs everything, because he is a\nMagos of the Adeptus Mechanicus and a tidy man.\n\nIt proves he had it. It proves he did not know. Those are two different\nsentences and by Act III somebody is going to want only the first one."
+  }
+ },
+ "strings": {
+  "no_such_thing": "Nothing here by that name, and everything in this room is where Cael put it.",
+  "already_read": "You have looked twice. The tea is going cold.",
+  "no_terminal": "There is a terminal here and it is the Magos's, and requisitioning the Lexicanum Vault from the machine of the man who maintains the Lexicanum Vault is a thing you could do."
+ }
+}

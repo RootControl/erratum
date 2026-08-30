@@ -1,6 +1,9 @@
 package game
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 // Archive is the Lexicanum Vault and the player's case-notes: everything the
 // enemy can reach. It is a real mutable store, not a scripted cutscene. When
@@ -14,13 +17,16 @@ type Archive struct {
 }
 
 const (
-	CodeLive    = "C9-F4-D2" // Choir of Cantor hardcopy dispatch manifests
-	CodeForward = "D2-F4-C9" // Munitorum drainage requisition ledgers
+	CodeLive     = "C9-F4-D2"    // Choir of Cantor hardcopy dispatch manifests
+	CodeForward  = "D2-F4-C9"    // Munitorum drainage requisition ledgers
+	CodeDispatch = "0997.4-1188" // the dispatch itself, if you came back from the Choir with its number
+	CodeLyle     = "CASMIR LYLE" // the ordinate whose signature is on a purge order
 )
 
 func NewArchive() *Archive {
 	a := &Archive{records: map[string]string{}}
 	a.records[CodeLive] = dispatchRecord
+	a.records[CodeDispatch] = dispatchRecord
 	a.records[CodeForward] = drainageRecord
 	return a
 }
@@ -38,6 +44,21 @@ func (a *Archive) File(line string) {
 
 func (a *Archive) CaseNotes() []string { return a.caseNotes }
 
+// Delete removes a case-note line entirely, which the archive does exactly
+// once in the game and only to something it did not want filed in the first
+// place. It leaves no gap: the line is not struck, or amended, or marked. It
+// is simply not one of the lines any more.
+func (a *Archive) Delete(id string) {
+	kept := a.caseNotes[:0]
+	for _, line := range a.caseNotes {
+		if strings.HasPrefix(line, id+" ") || strings.HasPrefix(line, id+" —") {
+			continue
+		}
+		kept = append(kept, line)
+	}
+	a.caseNotes = kept
+}
+
 func (a *Archive) Corrected() bool { return a.corrected }
 
 // Correct performs the reconciliation.
@@ -53,7 +74,9 @@ func (a *Archive) Correct() {
 	}
 	a.corrected = true
 
+	// Both ways in. The record is gone, not merely unindexed by one address.
 	delete(a.records, CodeLive)
+	delete(a.records, CodeDispatch)
 
 	for i, line := range a.caseNotes {
 		if len(line) > 7 && line[:7] == "REQ 001" {
