@@ -433,7 +433,8 @@
    "store": "either",
    "reconciliation": 2,
    "file_text": "DICTATED. CLASS: SAVANT RECITATION / SECTOR RECORD. INDEXED. ATTRIBUTED: FENN, A., SAVANT.\n\nENTRY READS: SAVANT CONFIRMS VARDAN SUBSECTOR COMPRISES FOUR WORLDS.\n             SUPPLEMENTARY: SAVANT NOTED AN UNATTACHED POPULATION FIGURE\n             AND WITHDREW IT.\n\nThe entry is accurate and complete and you dictated every word of it.",
-   "note_text": "You write it in the coat, by hand, in a room with no plate in it: the name, the subsector, the tithe grade, and nine hundred million four hundred and twelve thousand.\n\nThe last of those is the one that matters and you do not know why yet.\n\nYour hand is not steady. It does not matter. Handwriting is the only script in this hive that nothing else can read."
+   "note_text": "You write it in the coat, by hand, in a room with no plate in it: the name, the subsector, the tithe grade, and nine hundred million four hundred and twelve thousand.\n\nThe last of those is the one that matters and you do not know why yet.\n\nYour hand is not steady. It does not matter. Handwriting is the only script in this hive that nothing else can read.",
+   "verity": true
   },
   "B2": {
    "id": "B2",
