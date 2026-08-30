@@ -541,7 +541,8 @@
    "note_text": "You copy it out by hand, all of it, including the marks on the back, including the three letters third from the bottom.\n\nVellum does not amend. That is the entire reason it was used for anything above grade four in 'seven, and it is the reason this exists, and it is the reason a man with no name has kept it inside his coat for nineteen years.",
    "sets": [
     "PURGE_ORDER_SEEN"
-   ]
+   ],
+   "verity": true
   },
   "B4b": {
    "id": "B4b",

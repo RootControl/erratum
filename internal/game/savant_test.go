@@ -79,8 +79,11 @@ func TestFilingTheCorrectionLosesIt(t *testing.T) {
 	if noted.Held["A16"] != StoreBook || !noted.Has("A16_PHYSICAL") {
 		t.Fatal("the coat keeps what he actually said")
 	}
-	if noted.Ints["VERITY"] <= filed.Ints["VERITY"] {
-		t.Fatal("only the written version is worth anything")
+	// The difference between the two stores here is what they say, not what
+	// they score: the case-file keeps a true entry that quietly reclassifies
+	// what he did as fatigue, and the coat keeps what he actually said.
+	if !strings.Contains(strings.Join(noted.Notebook, "\n"), "threshold") {
+		t.Fatal("the coat keeps what he actually said")
 	}
 }
 
