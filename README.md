@@ -109,7 +109,7 @@ drives it headlessly.
 go test ./internal/game/
 ```
 
-Two hundred and two tests. Five of them play the whole game from a cold start
+Two hundred and eight tests. Five of them play the whole game from a cold start
 to five different endings on typed commands alone — the rest are one per design
 guarantee:
 
@@ -290,6 +290,11 @@ guarantee:
 | `TestKadmonEndingNeedsAWeightToSpend` | exposure is the currency; a player who stayed clean cannot pay |
 | `TestKeshsSentenceIsTheSolution` | a warning, an instruction, and the answer to a door she does not know exists |
 | `TestPlaythroughEndingA` … `E` | five walks from `New(g)` to five doors, on typed commands and nothing else |
+| `TestDelayedTextResolvesEverywhere` | anything `Tick` prints has to resolve in every scene, not just its own |
+| `TestNoActIsNamedForAParserVerb` | an act named `write it down` is eaten by the parser and never reaches a person |
+| `TestNoTwoExitsShareAName` | `FindExit` is gate-blind, so a shared name makes the second door unreachable |
+| `TestTheChannelHasThreeSources` | Ending C's channel is a writ, a favour or a man, and spending the writ revokes it |
+| `TestCaelsFilingReachesTheCaseNotes` | he says he filed it, so it is in the case-notes, so the archive can take it back |
 
 `TestTrustingPlaythrough` also asserts the archive never prints the words
 `DELETED` or `ERROR`. That assertion is the thesis of the whole game and it

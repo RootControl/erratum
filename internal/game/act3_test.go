@@ -463,3 +463,14 @@ func TestVoyageFullCountsWhatWasPossible(t *testing.T) {
 // flat collapses the hard wrapping in authored prose so an assertion can quote
 // a whole sentence without knowing where the line breaks fell.
 func flat(s string) string { return strings.Join(strings.Fields(s), " ") }
+
+// PRESS HIM was Rill's act before PRESS was a verb in 3.12. A person's act
+// wins when there is no layer to open, the same way READ ROSTER does.
+func TestPressStillReachesRillsAct(t *testing.T) {
+	for _, cmd := range []string{"press him", "push him", "lean on him"} {
+		s, log := playDock(t, nil, "talk to rill", "ask rill about the booking", cmd)
+		if !s.Has("RILL_DELAYED") {
+			t.Errorf("%q did not reach the act:\n%s", cmd, log)
+		}
+	}
+}

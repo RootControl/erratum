@@ -284,10 +284,28 @@ func (s *State) Set(f string) {
 	// C9_PHYS / C9_COG is which medium the forward recitation went into, and
 	// the act document names them, so the engine translates rather than
 	// asking the content to write a second flag beside FILE and NOTE.
+	// The Conclave channel has three sources in the act document and only one
+	// of them is a person: Vaux's dead-man writ, an unspent transit writ, or
+	// the second favour owed to Sazh. Spending the writ at Kadmon takes it
+	// back, unless one of the other two is standing.
+	if f == "VAUX_APOLOGY" || f == "SAZH_DEBT_2" || f == "TRANSPORT_WRIT" {
+		if f != "TRANSPORT_WRIT" || !s.Flags["KADMON_WRIT"] {
+			s.Flags["CONCLAVE_CHANNEL"] = true
+		}
+	}
+	if f == "KADMON_WRIT" && !s.Flags["VAUX_APOLOGY"] && !s.Flags["SAZH_DEBT_2"] {
+		delete(s.Flags, "CONCLAVE_CHANNEL")
+	}
 	// A door closes the game. There is no scene after the intake and no
 	// prompt saying so; the act simply is the last thing that happens.
 	if strings.HasPrefix(f, "ENDING_") {
 		s.Done = true
+	}
+	if id, ok := strings.CutSuffix(f, "_FILED"); ok {
+		s.storeFromFlag(id, StoreCog)
+	}
+	if id, ok := strings.CutSuffix(f, "_PHYSICAL"); ok {
+		s.storeFromFlag(id, StoreBook)
 	}
 	if f == "C9_PHYSICAL" {
 		s.Flags["C9_PHYS"] = true
@@ -335,6 +353,27 @@ var cipherHalves = map[string]bool{
 }
 
 func (s *State) Has(f string) bool { return s.Flags[f] }
+
+// storeFromFlag makes <ID>_FILED and <ID>_PHYSICAL mean the same thing however
+// they were written. FILE and NOTE store the clue before they set the flag, so
+// this only fires for content that declares the filing itself — Cael putting
+// the intake protocols into your case-notes without being asked.
+func (s *State) storeFromFlag(id string, st Store) {
+	c := s.Clue(id)
+	if c == nil {
+		return
+	}
+	if cur, ok := s.Held[id]; ok && (cur == st || cur == StoreBoth) {
+		return
+	}
+	s.Grant(id)
+	s.storeClue(id, st)
+	if st == StoreCog {
+		s.Archive.File(fmt.Sprintf("%s — %s", id, c.Label))
+	} else {
+		s.Notebook = append(s.Notebook, c.Label)
+	}
+}
 
 // key scopes a per-object counter to the scene it was seen in.
 func (s *State) key(id string) string { return s.Room.ID + "/" + id }

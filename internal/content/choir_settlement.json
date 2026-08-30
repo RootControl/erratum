@@ -229,7 +229,7 @@
       "force",
       "push past",
       "rosette",
-      "show the rosette",
+      "the rosette",
       "compel",
       "order her"
      ],
@@ -268,7 +268,7 @@
       "delay",
       "stop the flush",
       "postpone",
-      "ask crase"
+      "through crase"
      ],
      "requires": [
       "IN_THE_ROWS",

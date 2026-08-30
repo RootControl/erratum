@@ -264,7 +264,7 @@
      "names": [
       "walk out",
       "the indictment",
-      "write the indictment",
+      "the indictment out",
       "escalate",
       "the conclave",
       "send it"
@@ -289,7 +289,7 @@
      "id": "untold_d",
      "names": [
       "one correction",
-      "write a correction",
+      "a correction by hand",
       "redirect it",
       "trade",
       "the correction request",
@@ -318,7 +318,7 @@
       "the proper form",
       "put it in the slot",
       "the casket",
-      "in the correct form",
+      "the correct form",
       "the supporting document"
      ],
      "requires": [
@@ -365,7 +365,7 @@
       "the proper form",
       "put it in the slot",
       "the casket",
-      "in the correct form",
+      "the correct form",
       "the supporting document"
      ],
      "requires": [
@@ -402,7 +402,7 @@
       "the proper form",
       "put it in the slot",
       "the casket",
-      "in the correct form",
+      "the correct form",
       "the supporting document"
      ],
      "requires": [
@@ -424,7 +424,7 @@
      "id": "ending_d",
      "names": [
       "one correction",
-      "write a correction",
+      "a correction by hand",
       "redirect it",
       "trade",
       "the correction request",
@@ -457,7 +457,7 @@
      "id": "ending_d_clean",
      "names": [
       "one correction",
-      "write a correction",
+      "a correction by hand",
       "redirect it",
       "trade",
       "the correction request",
@@ -482,7 +482,7 @@
      "id": "ending_d_nothing",
      "names": [
       "one correction",
-      "write a correction",
+      "a correction by hand",
       "redirect it",
       "trade",
       "the correction request",
@@ -507,7 +507,7 @@
      "names": [
       "walk out",
       "the indictment",
-      "write the indictment",
+      "the indictment out",
       "escalate",
       "the conclave",
       "send it"
@@ -539,7 +539,7 @@
      "names": [
       "walk out",
       "the indictment",
-      "write the indictment",
+      "the indictment out",
       "escalate",
       "the conclave",
       "send it"
@@ -571,7 +571,7 @@
      "names": [
       "walk out",
       "the indictment",
-      "write the indictment",
+      "the indictment out",
       "escalate",
       "the conclave",
       "send it"
