@@ -77,6 +77,51 @@ var ferrumJSON []byte
 //go:embed cylinder_vault.json
 var cylinderVaultJSON []byte
 
+//go:embed skydock.json
+var skydockJSON []byte
+
+//go:embed cerement.json
+var cerementJSON []byte
+
+//go:embed spirit.json
+var spiritJSON []byte
+
+//go:embed gunbay.json
+var gunbayJSON []byte
+
+//go:embed cell.json
+var cellJSON []byte
+
+//go:embed hold.json
+var holdJSON []byte
+
+//go:embed wardroom.json
+var wardroomJSON []byte
+
+//go:embed kadmon.json
+var kadmonJSON []byte
+
+//go:embed tithe_yard.json
+var titheYardJSON []byte
+
+//go:embed muster.json
+var musterJSON []byte
+
+//go:embed reading_room.json
+var readingRoomJSON []byte
+
+//go:embed cantica.json
+var canticaJSON []byte
+
+//go:embed fifth_chair.json
+var fifthChairJSON []byte
+
+//go:embed correctorum.json
+var correctorumJSON []byte
+
+//go:embed intake.json
+var intakeJSON []byte
+
 // Store says which evidence store a clue may live in.
 //
 // This is the game's central mechanic, so it is a first-class field on every
@@ -314,6 +359,21 @@ func Load() (*Game, error) {
 		{"crase_office", craseOfficeJSON},
 		{"ferrum", ferrumJSON},
 		{"cylinder_vault", cylinderVaultJSON},
+		{"skydock", skydockJSON},
+		{"cerement", cerementJSON},
+		{"spirit", spiritJSON},
+		{"gunbay", gunbayJSON},
+		{"cell", cellJSON},
+		{"hold", holdJSON},
+		{"wardroom", wardroomJSON},
+		{"kadmon", kadmonJSON},
+		{"tithe_yard", titheYardJSON},
+		{"muster", musterJSON},
+		{"reading_room", readingRoomJSON},
+		{"cantica", canticaJSON},
+		{"fifth_chair", fifthChairJSON},
+		{"correctorum", correctorumJSON},
+		{"intake", intakeJSON},
 	}
 	g := &Game{Scenes: map[string]*Room{}, Clues: map[string]*Clue{},
 		byUpper: map[string]*Clue{}, npcs: map[string][]*NPC{}, byKey: map[string]*NPC{}}
@@ -438,6 +498,9 @@ func (g *Game) validate() error {
 		}
 		for _, e := range r.Exits {
 			if err := checkGate(id, "", "exit "+e.ID, e.Gate, fail); err != nil {
+				return err
+			}
+			if err := checkCounters(id, "", "exit "+e.ID, e.Counters, fail); err != nil {
 				return err
 			}
 		}
@@ -573,6 +636,11 @@ func (r *Room) Find(word string) *Object {
 	}
 	return best
 }
+
+// Score is how well a typed word names this object, zero for not at all. It
+// is exported because the engine has to pick the best match among the objects
+// whose gates are open, and a closed object is not in the room.
+func (o *Object) Score(word string) int { return match(word, o.ID, o.Names) }
 
 // S returns an authored string by key, loudly if it is missing.
 func (r *Room) S(key string) string {

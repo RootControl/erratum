@@ -1,0 +1,199 @@
+{
+ "id": "hold",
+ "title": "THE PATIENT VERDICT — CARGO HOLD",
+ "clock_at": "18h30",
+ "intro": "The hold is mostly empty, because a courier hull carries messages, and the\nonly cargo aboard is one lead-lined reliquary casket that a dead man addressed\nto himself.\n\nSavant Aleth Fenn has found a crate to sit on and a list to be inside.\n\nHe has not contradicted himself in four days.",
+ "revisit": "The hold. A casket, a crate, and a savant who has been right about everything for four days.",
+ "look": "An empty hold, a lead-lined CASKET lashed to the deck, and a stack of empty CRATES.\n\nFENN on one of them, entirely well.",
+ "objects": [
+  {
+   "id": "casket2",
+   "names": [
+    "the casket",
+    "reliquary",
+    "the crate he addressed",
+    "lead-lined",
+    "the box"
+   ],
+   "careless": "The reliquary casket, lashed to the deck, empty, addressed by Hadrian Vosk to Hadrian Vosk.",
+   "careful": "You open it, which takes one hand, because there is no lock on it.\n\nLead, felt, and a recess.\n\nThe recess is two hundred and ten millimetres by one hundred and forty, and about four deep, and it is lined and it is shaped, and there is exactly one object in this sector that fits it, and it is in a felt case under your coat and has been since a workshop that smelled of tea.\n\nHe did not know what the plate would be. He had not seen it; he burned the page before anybody imaged anything.\n\nHe knew what size it would be, because he wrote it."
+  },
+  {
+   "id": "crates",
+   "names": [
+    "the crates",
+    "empty crates",
+    "the stack",
+    "packing"
+   ],
+   "careless": "A stack of empty crates, courier pattern, stencilled with a hull number and nothing else.",
+   "careful": "Empty, and stacked in the way an empty crate is stacked by somebody who expects to need it, which is nested, and these are not nested.\n\nThey are stacked upright with the lids on.\n\nSomebody put them here full and took the contents out and did not think it was worth ten minutes to nest them, and that somebody was working to a timetable, on the fourth of the second, in the eighty-one minutes between plotting a course home and striking it out."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "fenn3",
+   "names": [
+    "fenn",
+    "aleth",
+    "savant",
+    "him"
+   ],
+   "title": "Savant Aleth Fenn",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask me anything. I'm describing the arrangement, not being modest.\"",
+   "portrait": "Savant Aleth Fenn, in a cargo hold, four days out of relay range and entirely well.\n\nFor four days he has not contradicted himself once. He is, at this moment, the most reliable object in the sector.",
+   "greeting": "He has found a crate to sit on and a list to be inside.\n\n\"Inquisitor. I've been having a very good week.\"\n\nHe means it. Nine days with no relay and Savant Aleth Fenn has stopped drifting the way a compass stops swinging when you put it on a table.\n\n\"I've gone back over everything I got wrong. Vardan, the tonnage, the eighty-four days — all of it, and it's all correct now, and I've been through it four times to be sure.\n\n\"There is one thing I'd like to show you and I don't entirely know what to call it.\"",
+   "reprise": "He waits on his crate, delighted, inside a list.",
+   "unknown": "\"I don't have that,\" Fenn says, and looks briefly stricken.",
+   "deflect": [
+    "He counts something silently and arrives, and beams.",
+    "\"Ask me a harder one,\" he says."
+   ],
+   "topics": [
+    {
+     "id": "recitation",
+     "names": [
+      "the thing",
+      "show me",
+      "what you found",
+      "compliant worlds",
+      "the recitation",
+      "thessaline"
+     ],
+     "sets": [
+      "FENN_RECITING"
+     ],
+     "grants": [
+      "C9"
+     ],
+     "text": "\"Thessaline compliant worlds, cycle 087,\" Fenn says, in the voice he uses for laundry. \"Thirty-three.\"\n\n\"Forty-one, Fenn.\"\n\n\"Forty-one at present, yes.\" He beams. \"Thirty-three at cycle 087. Shall I do the tithe grades?\"\n\nCycle 087 is eleven years from now.\n\nHe does the tithe grades. Then, unprompted, the district returns for a subsector two hundred years hence, and the names — there are fewer names, and the ones that remain are shorter, and four of the worlds have been folded into their neighbours and given the neighbour's name with a numeral after it.\n\nIt is internally consistent. You check three of the figures against each other and they close.\n\n\"Are you guessing?\"\n\n\"No.\" He is surprised by the question. \"I'm *finishing*.\"\n\nHe is not prophesying. He is a filing system with a mouth, running the reconciliation logic his implant was tuned to against every record he holds, and arriving where it arrives, and reading you the sector's ending in the tone of a man listing socks.\n\n[ C9 HELD ]"
+    },
+    {
+     "id": "finishing",
+     "names": [
+      "finishing",
+      "what do you mean",
+      "not guessing",
+      "how do you know",
+      "the logic",
+      "arriving"
+     ],
+     "requires": [
+      "FENN_RECITING"
+     ],
+     "text": "\"It's not a prediction, it's an *arithmetic*,\" Fenn says, patiently, the way he explains everything. \"You've a rule that resolves variances. You've a set of records with variances in them. You apply the rule until there aren't any.\n\n\"Forty-one worlds is forty-one sets of returns that disagree with each other at the edges — a district here that's in two subsector rolls, a tithe grade there that's been two things since 'seventy. Every one of those is a variance and every variance resolves the same way, which is that the smaller record goes.\n\n\"Do it to completion and you get thirty-three. Do it again and you get twenty-six. It's not a *forecast*, Inquisitor, it's just the end of the sum.\"\n\n\"Who's doing the sum?\"\n\nFenn opens his mouth, and stops, and for the first time in four days something in him hesitates.\n\n\"That's an interesting question,\" he says. \"I assumed I was.\""
+    },
+    {
+     "id": "himself",
+     "names": [
+      "yourself",
+      "your memory",
+      "are you well",
+      "the implant",
+      "how are you",
+      "the drift"
+     ],
+     "requires": [
+      "FENN_RECITING"
+     ],
+     "text": "\"Better than I've been since Vardan,\" Fenn says, and it is true and you can hear that it is true.\n\n\"I'd worked out something was happening, obviously. One doesn't argue with an Inquisitor about a tonnage twice and not notice. I'd got as far as *it's the relay* and no further, and I'd got there about six weeks after you did, which I'd like recorded as the single most humiliating fact of my professional life.\"\n\nHe squares a crate that is already square.\n\n\"The interesting part is that I don't get corrected out here. I get *ahead*. Same faculty, same implant, no relay — and instead of losing the Vardan subsector I start reciting a subsector that hasn't happened.\n\n\"Which suggests the thing that has been happening to me is not damage,\" he says, cheerfully, \"but *use*.\""
+    }
+   ],
+   "shows": [],
+   "beats": [],
+   "acts": [
+    {
+     "id": "hand_copy",
+     "names": [
+      "copy it",
+      "write it down",
+      "by hand",
+      "take it down",
+      "longhand",
+      "transcribe it"
+     ],
+     "requires": [
+      "FENN_RECITING"
+     ],
+     "blocks": [
+      "C9_TAKEN"
+     ],
+     "sets": [
+      "C9_TAKEN",
+      "WATCH_FENN"
+     ],
+     "cost": 3,
+     "text": "You take it down by hand.\n\nIt takes six hours. He recites at dictation speed without being asked to, and corrects your spelling of two world-names, and at one point waits eleven minutes without complaint while you rule a column.\n\nForty-one worlds, then thirty-three, then twenty-six, with the tithe grades and the district counts and the four foldings-in, in your own script, in the notebook in your coat.\n\nIt is slow, it is not searchable, nobody can amend it and nobody can find it, and when you get to Cantica-Null it is going to be the only object in the room that has not been through a cogitator.\n\nAt the end of the sixth hour Fenn says, \"That was very restful, thank you,\" and goes to find something else to be inside.\n\n[ NOTE C9 — the copy is the thing ]"
+    },
+    {
+     "id": "shield",
+     "names": [
+      "shield him",
+      "stop him",
+      "the shroud",
+      "put it on him",
+      "cut it short",
+      "interrupt"
+     ],
+     "requires": [
+      "FENN_RECITING"
+     ],
+     "blocks": [
+      "C9_TAKEN",
+      "FENN_SHIELDED"
+     ],
+     "sets": [
+      "C9_TAKEN",
+      "FENN_SHIELDED",
+      "C9_TRUNCATED",
+      "WATCH_FENN"
+     ],
+     "cost": 2,
+     "text": "You put Cael's shroud on him in the middle of the fourth sentence.\n\nIt is the kind thing. He has been reciting the end of the sector in the voice he uses for laundry for two hours and there is a version of you that has been standing in a cargo hold letting a man be used because the output was useful.\n\nFenn stops mid-word.\n\n\"Oh,\" he says. \"That's — yes. Thank you. That's much quieter.\"\n\nThen, after a moment, mildly puzzled: \"What were we doing?\"\n\nYou have thirty-three and you do not have twenty-six, and you do not have the tithe grades or the district counts or the four foldings-in, and there is no way to ask for them again because the faculty that produced them is under eleven millimetres of Cael's field and is going to stay there.\n\nHe is much better company for the rest of the passage.\n\n[ FENN_SHIELDED — the recitation is truncated ]"
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "out",
+   "names": [
+    "out",
+    "back",
+    "deck",
+    "the cerement",
+    "return",
+    "up"
+   ],
+   "to": "cerement",
+   "cost": 1,
+   "text": "Out of the hold. Behind you he starts on the tithe grades again, for nobody."
+  }
+ ],
+ "clues": {
+  "C9": {
+   "id": "C9",
+   "names": [
+    "the forward recitation",
+    "forward records",
+    "thirty-three",
+    "compliant worlds",
+    "cycle 087",
+    "the arithmetic"
+   ],
+   "label": "Fenn's forward recitation — 41 compliant worlds to 33 by cycle 087, internally consistent, arrived at rather than predicted",
+   "store": "either",
+   "reconciliation": 3,
+   "file_text": "FILED. CLASS: SAVANT OUTPUT / PROJECTION, UNSOLICITED. INDEXED. ATTRIBUTED: FENN, A., SAVANT.\n\nThe cogitator takes the recitation, cross-references every world-name against\nthe sector roll, and files it clean.\n\nIt is a good filing. When you open it at Cantica-Null the list will be three\nworlds shorter than the one he gave you and every cross-reference in it will\nstill close, because the three that are gone were the three that disagreed\nwith their neighbours, and nothing anywhere will be marked.",
+   "note_text": "Six hours of dictation, longhand, ruled into columns, with two world-names\nspelled the way he insisted on.\n\nForty-one, then thirty-three, then twenty-six. Tithe grades. District counts.\nFour worlds folded into their neighbours and given the neighbour's name with a\nnumeral after it.\n\nHe is not predicting it. He is running the rule to completion, which is what\nthe rule is for, and the answer is what the rule arrives at."
+  }
+ },
+ "strings": {
+  "no_such_thing": "An empty hold, a casket and some crates.",
+  "already_read": "You have looked twice.",
+  "no_terminal": "There is no relay within nine days of this hull. That is why he is well.",
+  "read_room_locked": "Nobody arranged the hold. He emptied it.",
+  "no_one_here": "Only Fenn, and the casket."
+ }
+}

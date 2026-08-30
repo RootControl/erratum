@@ -1,0 +1,329 @@
+{
+ "id": "correctorum",
+ "title": "CANTICA-NULL — THE CORRECTORUM FLOOR",
+ "clock_at": "14h00",
+ "intro": "Three thousand benches, in ranks, by category.\n\nNobody looks up when you come down the stair. Not one of them. An Inquisitor\nof the Ordo Hereticus walks onto the floor of the Correctorum with a rosette\nand a retinue and the shift does not break step, because you are not a\nvariance.\n\nAt the end of the nearest rank there is a clerical vox on a stand and a\nslip-printer beside it.\n\nThe adept turns it towards you the way you would turn a lamp.\n\nCONCORDANCE OF RECORDS. MINUTES. SPECIFY SESSION.",
+ "revisit": "The floor. Three thousand benches and a clerical vox on a stand.",
+ "look": "Three thousand benches in ranks by category, and one rank four times the size\nof the others.\n\nThe VOX on its stand, and the SLIPS coming off the printer.\nThe INTAKE, at the far end: a brass slot the width of a hand, at chest height.\n\nNobody looking up.",
+ "objects": [
+  {
+   "id": "slips",
+   "names": [
+    "slips",
+    "the printer",
+    "the slip-printer",
+    "paper",
+    "the print"
+   ],
+   "careless": "A slip-printer beside the vox, advancing one line at a time, in a good clear hand-face on grey stock.",
+   "careful": "It prints everything the vox reads, in order, on numbered slips, and the numbering is continuous and has been since the station was commissioned.\n\nThe slip in front of you is number 4,119,806.\n\nSomebody has been printing every word this store has ever read out, for a hundred and forty years, onto paper, on a station whose entire function is that paper is unnecessary.\n\nYou ask the adept why. She looks up for the first time.\n\n\"Practice, sir,\" she says, puzzled that it is a question. \"The store is authoritative. The slip is what you take away.\""
+  },
+  {
+   "id": "intake",
+   "names": [
+    "the intake",
+    "intake",
+    "the slot",
+    "brass slot",
+    "the lip"
+   ],
+   "careless": "At the far end of the floor: a brass slot the width of a hand, at chest height, with a worn lip.",
+   "careful": "The lip is worn.\n\nNot machined — *worn*, in the middle, over a span of about ten centimetres, the way a step is worn, by a hundred and forty years of hands putting documents into a slot at chest height.\n\nThere is no queue at it. There is no attendant, no register, no seal and no lock. It is a slot in a wall in a room where three thousand people are working, and anybody who walks up to it may put a thing into it.\n\nThat is not an oversight. It is an intake. Its entire purpose is to accept what is handed to it and read it as a correction request, and it has been doing exactly that, correctly, without fail, for a hundred and forty years.\n\nYou do not go over to it. Not yet."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "vox",
+   "names": [
+    "the vox",
+    "the machine",
+    "the store",
+    "clerical vox",
+    "it",
+    "the reading"
+   ],
+   "title": "The clerical vox",
+   "lists_topics": false,
+   "topic_refusal": "RECORDS AVAILABLE ON REQUEST. SPECIFY.",
+   "portrait": "A clerical vox on a stand at the end of a rank of benches, and a slip-printer beside it.\n\nWhat comes out of it is not the machine speaking. It is the machine reading.",
+   "greeting": "The adept at the bench does not look up. She sets the request, indexes it, and turns the vox towards you the way you would turn a lamp.\n\nCONCORDANCE OF RECORDS. MINUTES. SPECIFY SESSION.\n\nIt is not a voice. It is the flat clerical vox every Administratum office in the Imperium has, reading out of a store, in the same tone it would use for a grain return.\n\nSomewhere behind it, in the store, are eighty-one years of Hadrian Vosk.",
+   "reprise": "SPECIFY SESSION.",
+   "unknown": "NO RECORD UNDER THAT HEADING.",
+   "deflect": [
+    "The slip-printer advances one line and stops.",
+    "SPECIFY."
+   ],
+   "topics": [
+    {
+     "id": "routine",
+     "names": [
+      "minutes",
+      "routine",
+      "any session",
+      "procedure",
+      "the sessions",
+      "read something"
+     ],
+     "sets": [
+      "HEARD_ROUTINE"
+     ],
+     "text": "It reads a session from 'seventy-four. Procedural: a schedule amendment, two categories reclassified, a dispute about whether a shrine-world's name change constitutes a variance.\n\nVosk speaks eleven times.\n\nHe is bored. You can hear that he is bored — the machine has his cadence exactly, because the machine is not doing an impression, it is reading his filed words in the order he said them.\n\n*\"I'd take it as read.\"*\n\nHe used that on you. Weekly, for eleven years, across a desk, when a thing was obvious and he did not want to spend the meeting on it, and it is the single most familiar sound in your life and it is coming out of a clerical vox on a station four hundred light years from anywhere.\n\nBez says, from behind you: \"That's his voice doing his thinking. I've heard him do that at me.\""
+    },
+    {
+     "id": "kadmon",
+     "names": [
+      "kadmon",
+      "kadmon veil",
+      "cycle zero",
+      "the deliberation",
+      "the vote",
+      "the debate"
+     ],
+     "requires": [
+      "HEARD_ROUTINE"
+     ],
+     "grants": [
+      "C18"
+     ],
+     "sets": [
+      "CONFESSION_HEARD"
+     ],
+     "text": "Kadmon Veil. Cycle zero.\n\nThere are four speakers and the third is him, and he is arguing for it.\n\n*\"Concede the strongest objection first. Nine hundred million loyal subjects is not a number one may set aside. I do not set it aside. I price it. Against three worlds in open compliance-war, a sector-wide astropathic quarantine, and an Ordo conclave with a free hand, I price nine hundred million at less, and I ask the table to price it with me.\"*\n\nYou know the shape of that.\n\nYou have used the shape of that. He taught it to you on a Tuesday, in an office, with a cup going cold, and you have used it in four depositions this year and once on Vaux in a wax vault and it worked.\n\nHe argues well. That is the thing. He argues *well*, for eleven minutes, and every objection anybody raises he concedes first and then prices, and at the end of it the table prices nine hundred million people with him.\n\nFour seals. His is third.\n\nBeside it, in his own hand, the machine reads out a marginal note in the same flat clerical voice: a calculation of how long the standing grain reserve would last the population without resupply.\n\nHe worked out that they would be fine for a while.\n\nVaux, very quietly, from somewhere behind your left shoulder: \"He taught me that structure too.\"\n\n[ C18 HELD ]"
+    },
+    {
+     "id": "personnel",
+     "names": [
+      "personnel",
+      "my file",
+      "the requisition",
+      "eleven years ago",
+      "his submission",
+      "my transfer"
+     ],
+     "requires": [
+      "CONFESSION_HEARD"
+     ],
+     "grants": [
+      "C19"
+     ],
+     "sets": [
+      "FILE_HEARD"
+     ],
+     "text": "Eleven years ago, an Inquisitor of the Ordo Hereticus submitted a request that a records-adept be transferred to his personal service, with his assessment of the candidate appended.\n\nThe vox reads the assessment.\n\n*Unreconciled.*\n\n*No living family.*\n\n*No confidants.*\n\n*Will not stop.*\n\n*Reads well.*\n\nAnd the last line.\n\n*Acceptable for expenditure.*\n\nThe slip-printer advances and stops.\n\nIt takes you a moment, and then it takes you the rest of your life: that assessment was submitted *to the Correctorum*. It is in this store because it was sent to this store. Eleven years ago a man wrote down what you were for and sent it here to be checked, and the machine held your file for eleven years and returned it approved.\n\nYou were vetted by the thing you came to kill.\n\nOn your master's recommendation.\n\n[ C19 HELD ]",
+     "blocks": [
+      "READING_STOPPED"
+     ]
+    },
+    {
+     "id": "composed",
+     "names": [
+      "did you compose it",
+      "compose",
+      "who composed it",
+      "did you write it",
+      "the phrasing",
+      "whose words"
+     ],
+     "requires": [
+      "FILE_HEARD"
+     ],
+     "grants": [
+      "C20"
+     ],
+     "sets": [
+      "AMANUENSIS_BLINDSPOT"
+     ],
+     "text": "You ask it the precise question.\n\n\"The phrase *acceptable for expenditure*. Did you compose it?\"\n\nA pause of about a second, which is the store indexing.\n\nNO.\n\nThat is the whole answer. One word, in the same flat clerical voice it used for the grain return and the schedule amendment.\n\nYou ask it again, differently, four times, and it answers four times, and the answer does not move: it did not compose the phrase. It received a submission through the correct channel and processed it.\n\nWhich means the phrase came *in*.\n\nWhich means a document written by a human being, in a human hand, carrying a human sentence, went into this machine's intake eleven years ago and the machine did not recognise what it was carrying and processed it and returned it approved.\n\nIt has an intake and no reader.\n\nYou put your hand in your coat, on a felt case, in a room with three thousand people in it who are not looking up.\n\n[ C20 HELD ]"
+    }
+   ],
+   "shows": [],
+   "beats": [
+    {
+     "id": "ilaria_stops",
+     "after_topics": 3,
+     "requires": [
+      "ILARIA_KNOWS",
+      "FILE_HEARD"
+     ],
+     "blocks": [
+      "ILARIA_STOPPED"
+     ],
+     "sets": [
+      "ILARIA_STOPPED"
+     ],
+     "text": "Ilaria has been the mouth of it since the dock, because she asked to be, and because a clerical vox is a machine and she is a transit vessel and she can carry a store faster and cleaner than a slip-printer.\n\nShe stops at *expenditure*.\n\nNot a flinch. She simply stops, mid-line, and stands there with her hands at her sides in a room with three thousand people in it.\n\n\"Sir,\" she says. \"I'd like to be asked before I read the next part.\""
+    }
+   ],
+   "acts": [
+    {
+     "id": "order_her",
+     "names": [
+      "order her",
+      "tell her to continue",
+      "make her read",
+      "continue",
+      "keep reading",
+      "carry on"
+     ],
+     "requires": [
+      "ILARIA_STOPPED"
+     ],
+     "blocks": [
+      "ILARIA_ORDERED",
+      "ILARIA_ASKED_KINDLY"
+     ],
+     "sets": [
+      "ILARIA_ORDERED"
+     ],
+     "counters": {
+      "ILARIA_TRUST": -2
+     },
+     "cost": 1,
+     "text": "You order her to continue.\n\nShe does. She reads the rest of it in the same level voice she reads everything in, without a pause, correctly, to the end of the file, and then stands and waits for the next request.\n\nYou asked her, in a cell four days out of Vardan, to be an instrument rather than a suspect, and she said she would rather be an instrument, and she meant it, and here is the invoice.\n\n[ ILARIA_TRUST -2 ]"
+    },
+    {
+     "id": "ask_kindly",
+     "names": [
+      "ask her",
+      "ask her to",
+      "please",
+      "ask her nicely",
+      "her choice",
+      "let her decide"
+     ],
+     "requires": [
+      "ILARIA_STOPPED"
+     ],
+     "blocks": [
+      "ILARIA_ORDERED",
+      "ILARIA_ASKED_KINDLY"
+     ],
+     "sets": [
+      "ILARIA_ASKED_KINDLY"
+     ],
+     "counters": {
+      "ILARIA_TRUST": 1
+     },
+     "cost": 1,
+     "text": "You ask her.\n\nIlaria thinks about it for four seconds, which is a long time in a silent room.\n\n\"No, sir,\" she says. \"Not this bit. You read this bit.\"\n\nAnd she hands you the slip, and stands back, and lets you read out loud in a room full of clerks what a dead man wrote down about you eleven years ago.\n\nIt is worse. It is very much worse. She knew it would be and she let you choose it and she was right to.\n\n[ ILARIA_TRUST +1 ]"
+    },
+    {
+     "id": "stop_reading",
+     "names": [
+      "stop it",
+      "stop the reading",
+      "enough",
+      "shut it off",
+      "no more",
+      "end it"
+     ],
+     "requires": [
+      "CONFESSION_HEARD"
+     ],
+     "blocks": [
+      "READING_STOPPED",
+      "FILE_HEARD"
+     ],
+     "sets": [
+      "READING_STOPPED"
+     ],
+     "counters": {
+      "RECONCILIATION": 4
+     },
+     "cost": 1,
+     "text": "You stop it.\n\nThe adept at the bench closes the request without comment, indexes it, and takes the next one, because closing a request is an ordinary thing that happens forty times a shift.\n\nThe relief is enormous and it lasts about nine seconds.\n\nThere was one more record in that session and you do not know what it was, and you are going to be charged for it later without being told what you are being charged for.\n\n[ the reading is closed ]"
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "up",
+   "names": [
+    "up",
+    "back",
+    "gallery",
+    "the chairs",
+    "return",
+    "crase"
+   ],
+   "to": "fifth_chair",
+   "cost": 2,
+   "text": "Up off the floor. Nobody looks up as you go, either."
+  },
+  {
+   "id": "intake",
+   "names": [
+    "the intake",
+    "intake",
+    "the slot",
+    "far end",
+    "the offer",
+    "forward"
+   ],
+   "to": "intake",
+   "cost": 2,
+   "requires": [
+    "CONFESSION_HEARD"
+   ],
+   "blocked": "There is a brass slot at the far end of the floor and nothing at all has happened at it, and you have no reason to walk over there.",
+   "text": "The shift ends. The benches are covered and three thousand people go to their quarters, and the lights stay at the level they have been at all evening.\n\nYou walk down to the far end of the floor."
+  }
+ ],
+ "clues": {
+  "C18": {
+   "id": "C18",
+   "names": [
+    "the minutes",
+    "kadmon minutes",
+    "his argument",
+    "the third seal",
+    "the grain marginalia",
+    "cycle zero"
+   ],
+   "label": "The Kadmon Veil minutes — Vosk arguing for it, well, in the structure he taught you; third seal; and a marginal note about the grain reserve",
+   "store": "cogitator",
+   "reconciliation": 3,
+   "refusal": "You are standing in the store.\n\nThere is nowhere to copy this to that is further inside the record than where it\nalready is, and nothing you write in a notebook will be more authoritative than\nthe thing it is a copy of, and for the first time in eleven weeks that is not a\nproblem you can solve by using your own hand.",
+   "file_text": "FILED. CLASS: CONCORDANCE / MINUTES, SESSION RECORD. INDEXED.\n\nIt is already filed. It has been filed for ninety-one years, in this store, on\nthis station, and your case-notes now carry a reference to it.\n\nThe reference will resolve for exactly as long as this store exists."
+  },
+  "C19": {
+   "id": "C19",
+   "names": [
+    "my personnel file",
+    "acceptable for expenditure",
+    "the assessment",
+    "his submission about me",
+    "expenditure"
+   ],
+   "label": "Your own personnel requisition, submitted by Vosk to the Correctorum eleven years ago — *acceptable for expenditure*, and returned approved",
+   "store": "cogitator",
+   "reconciliation": 3,
+   "refusal": "You would be copying out, in your own hand, a dead man's written assessment of\nwhat you were for.\n\nYou get as far as *unreconciled*.",
+   "file_text": "FILED. CLASS: PERSONNEL / REQUISITION, HISTORICAL. INDEXED. SUBJECT: YOURSELF.\n\nThe template takes it in nine seconds. The subject field autocompletes from\nyour rosette number, which is correct, because it is your file.\n\nThe status field reads APPROVED and has read APPROVED for eleven years."
+  },
+  "C20": {
+   "id": "C20",
+   "names": [
+    "did you compose it",
+    "the answer no",
+    "the blindspot",
+    "no",
+    "the one word",
+    "the exploit"
+   ],
+   "label": "*Did you compose it?* — *No.* The core has an intake and no reader, and it processed a human sentence eleven years ago without recognising one",
+   "store": "notebook",
+   "reconciliation": 0,
+   "refusal": "FILING TEMPLATE :: CLASS — TECHNICAL / SYSTEM CHARACTERISTIC\n\nYou stop with the template open.\n\nThis is the one thing you have found in eleven weeks that the machine does not\nknow about itself, and you are four metres from its intake, and every filing\nyou have made on this station has gone into the store you are standing in.\n\nYou close it and take out the notebook instead, and you are aware, writing it,\nthat you have finally learned the lesson a blind woman with a wax slate had\nbefore you were elevated.",
+   "note_text": "*Did you compose it?*\n\n*No.*\n\nAsked four ways over eleven minutes. The answer does not move.\n\nIt did not compose the phrase. It received a submission through the correct\nchannel and processed it, and it did not recognise what the submission was\ncarrying, because it has an intake and no reader.\n\nIt will do it again."
+  }
+ },
+ "strings": {
+  "no_such_thing": "Benches, a vox, a printer, and a slot in a wall.",
+  "already_read": "You have looked twice. Nobody has looked up.",
+  "no_terminal": "Every bench on this floor is a terminal. None of them is yours.",
+  "read_room_locked": "It is arranged by category. Everything here is arranged by category.",
+  "no_one_here": "Three thousand people, and a vox on a stand."
+ }
+}

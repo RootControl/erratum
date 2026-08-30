@@ -3,8 +3,8 @@
 **All of Act I is playable**, 1.1 through 1.10 — six hours, the rosette, the
 locked room, the synthesis, the Vaux interview, the door and the body, nothing
 to requisition, forty-one seconds, the Vault requisition and the Act I turn —
-and it closes on the Case Précis and runs **Act II 2.0 through 2.11** to the
-act turn.
+and it closes on the Case Précis, runs **Act II 2.0 through 2.11** to the act
+turn, and runs the whole of **Act III** to all five endings.
 Go + Bubble Tea.
 
 It exists to prove eleven things are buildable before Act II is written:
@@ -109,7 +109,7 @@ drives it headlessly.
 go test ./internal/game/
 ```
 
-A hundred and forty-three tests, one per design guarantee:
+A hundred and ninety-seven tests, one per design guarantee:
 
 | Test | Asserts |
 |---|---|
@@ -242,6 +242,51 @@ A hundred and forty-three tests, one per design guarantee:
 | `TestNoFreeWayToCompleteTheCipher` | every route to the second half spends somebody, named route by named route |
 | `TestThetaRecoversAPlayerWithNothing` | a player who read nothing in Act I can still reach the act turn |
 | `TestTheCratesAreNotMentionedToEverybody` | the one signpost 2.0b has is aimed at the one player who needs it |
+| `TestThePassageIsPendedNotRefused` | six is more than five, and there is no hand on it to push against |
+| `TestTheThreeHullsAreExclusive` | a writ, a theft or a debt; taking one closes the other two |
+| `TestCraseHasNeverLiedToYou` | she says it without a hedge and does not defend it |
+| `TestReadingTheClauseAloudCosts` | she agrees, and a layer of warmth goes and does not come back |
+| `TestSazhsTallyCannotBeFiled` | forty-one favours, no names, and no template that will take it |
+| `TestTheCerementLiesAboutThePlayer` | out of relay range the record edits the player instead of the world |
+| `TestReadingYourOwnFileCostsInTransit` | reassurance costs exposure out there, and the cost is never shown |
+| `TestTheMethodIsAssembledNotAnnounced` | plot, casket and uncoupled vox are the method; nothing says so |
+| `TestTheWritRouteGetsACuratedHull` | his effects were forwarded, and the slate came back nineteen clean seconds |
+| `TestTheWatchesMustBeVisited` | nobody raises their own subject; looking at somebody is not standing a watch |
+| `TestBezAsksTheOnlyWaySheCan` | she cannot read, the game never says the word, and the ask costs her more than the lung |
+| `TestSofteningTheBequestIsWhatTheyDo` | two small kindnesses, both good reasons, and it is the thing you have been chasing |
+| `TestIlariaAsksToBeToldSheIsMad` | the honest answer is worse than insanity and she does not break |
+| `TestHandlingIlariaIsTheSameInstrument` | the kind answer, applied by hand, to one person, for the same reason |
+| `TestFennIsFinishingNotGuessing` | he is not prophesying; he is running the rule to the end of the sum |
+| `TestFilingTheRecitationIsTheTrap` | the filing says what it will do, in the filing, and nothing warns |
+| `TestVauxsApologyBuysTheChannel` | the price of one promise is the only sealed channel out of the sector |
+| `TestVoyageFullCountsWhatWasPossible` | a lost retinue is not a skipped scene |
+| `TestTheyHailYouCorrectly` | ninety-one years of drilling a challenge into a system where nothing arrives |
+| `TestTheOwedIsNeverOpened` | one year and four months of food, sealed, on a world hungry since year forty |
+| `TestVurrWillNotCorrectTerra` | she reports a false figure for sixty years rather than falsify, and the cogitator resolves it in nine seconds |
+| `TestPityClosesHerAndCitationOpensHer` | sympathy is cut off cold; accurate citation is what earns the Reading Room |
+| `TestTheThreeAnswers` | truth, lie or silence, and each one costs a different thing |
+| `TestTheAidIsInsufficientAndExclusive` | every option says its own ratio out loud, and there is a shrine to it in a week |
+| `TestSheThanksYouForComingAnyway` | do nothing at all and she still comes down to see you off |
+| `TestTheUnsentReportsAreTheProof` | nine hundred and twenty-two reports, an immaculate index, and nobody has read one |
+| `TestReport728MustBeLookedFor` | the one that is not like the others is a spine until you ask what year he died |
+| `TestNobodyLooksUp` | no challenge, no search, and a berth placard with the polish worn round the letters |
+| `TestKeshIndexesRatherThanDefends` | she keeps her count on paper because a screen is a rumour |
+| `TestC17DeletesItself` | the one clue the archive takes back, with no gap where it was |
+| `TestHandCopyingC17IsTheOnlyWayToKeepIt` | four hours of copying shapes while a Magos watches a person write |
+| `TestCraseHasBeenRunningTheRuleAllAlong` | she has never lied, and that is worse, and she taught you how |
+| `TestTheFiledWords` | he argues for it, well, in the structure he taught you on a Tuesday |
+| `TestTheBlindspotMustBeAskedFor` | it never claimed authorship; the exploit is one precise question |
+| `TestIlariaStopsAtExpenditure` | she asked to be an instrument rather than a suspect, and here is the invoice |
+| `TestStoppingTheReadingHidesThePrice` | relief that lasts nine seconds and is charged for later, unexplained |
+| `TestItAnswersNarrowerThanYouMeant` | every line is true, scoped narrower than the question, and PRESS gets one layer |
+| `TestPressingTheChairToTheBottom` | three were considered, none retained, and the names are nowhere else |
+| `TestTheOmissionHasThreeDoors` | CITE works from the notebook only; the case-file copy has already been amended |
+| `TestItsWorstAnswersAreTrue` | "that has not been established" and "I have no information on that classification" |
+| `TestTheWordToVauxHoldsTheDoor` | a promise made nine days out holds every ending until it is kept |
+| `TestTheFiveDoors` | five endings, five keys, and the game ends on a physical action |
+| `TestEndingEHasNoPartialCredit` | ten flags, no partial credit, and the refusal never names what is missing |
+| `TestKadmonEndingNeedsAWeightToSpend` | exposure is the currency; a player who stayed clean cannot pay |
+| `TestKeshsSentenceIsTheSolution` | a warning, an instruction, and the answer to a door she does not know exists |
 
 `TestTrustingPlaythrough` also asserts the archive never prints the words
 `DELETED` or `ERROR`. That assertion is the thesis of the whole game and it
@@ -254,7 +299,10 @@ internal/content/   arrival, antechamber, room, vaux_study, medicae,
                     adjutant, arch, choir (Act I); board, safehouse, workshop,
                     delta, choir_settlement, annexe, rows, cathedral,
                     theta, confessional, crase_office, ferrum,
-                    cylinder_vault (Act II); plus
+                    cylinder_vault (Act II); skydock, cerement, spirit,
+                    gunbay, cell, hold, wardroom, kadmon, tithe_yard,
+                    muster, reading_room, cantica, fifth_chair,
+                    correctorum, intake (Act III); plus
                     strings.json for shared defaults, and the loader — all
                     authored prose is data, dialogue included
 internal/game/      state, flags, scenes, command engine, dialogue, archive
@@ -264,7 +312,13 @@ internal/ui/        the cogitator. Deliberately has no vocabulary for
 
 ## What is not built yet
 
-**Act III**, and nothing else. Every scene of Acts I and II is playable. Most of the systems those scenes need are in — scene dates,
+Nothing in the three act documents. The slice is content-complete: 1.1 through
+the fifth door, thirty-one scenes, all five endings reachable and gated as
+written.
+
+Still absent, and never in the documents: save/load, and the player backgrounds
+(Lexmechanic / Provost / Penitent). The clock is 40 seconds per timed action;
+the body leaves eight minutes after you first reach it and does not negotiate. Most of the systems those scenes need are in — scene dates,
 counter gates, drift as equipment condition with its own accrual rules,
 Reconciliation removing options rather than closing them, per-scene
 conversations for a person who appears in both acts, and the store habit the

@@ -1,0 +1,485 @@
+{
+ "id": "skydock",
+ "title": "SKYDOCK CANTOR NINE — OUTBOUND HALL",
+ "date": "0997.4.251",
+ "clock_at": "06h00",
+ "intro": "Eight hours to get six people and one felt case off a world with four\nhundred million people on it and one address that is not on any chart.\n\nSkydock Cantor Nine at the sixth hour: the outbound hall, four hundred metres\nof it, tenders lifting every eleven minutes and a queue at every counter that\nhas been the same length since 781.\n\nSub-Officio Tomas Rill has your booking on his slate and is standing up to\ntell you about it, which is not something a Sub-Officio has to do.\n\nAt Berth Nine, under your own seal, the cutter *The Patient Verdict* has been\nsitting since the twenty-fourth with nobody's hand on it.\n\nAt Berth Four the warrant-ship *Argument From Silence* is loading crates with\nthe stencils scraped off them.\n\nAnd at the recaff stand, at the sixth hour, eleven tiers below her own office,\nInquisitor Yolanda Crase is buying two cups.",
+ "revisit": "The outbound hall. Rill at his counter, Berth Nine under seal, Berth Four loading, and Crase at the recaff stand with two cups.",
+ "look": "Four hundred metres of outbound hall, a tender lifting every eleven minutes,\nand a queue at every counter.\n\nSub-Officio RILL at the passages counter, standing, with your booking.\nThe recaff STAND, and CRASE at it with two cups.\nBERTH NINE: *The Patient Verdict*, under your seal, unmanned.\nBERTH FOUR: SAZH, and the *Argument From Silence*, loading scraped crates.",
+ "objects": [
+  {
+   "id": "verdict",
+   "names": [
+    "berth nine",
+    "the cutter",
+    "patient verdict",
+    "the verdict",
+    "his ship",
+    "the hull"
+   ],
+   "careless": "A dead man's cutter at a cold berth, clamps engaged, no crew aboard and no crew assigned. The seal on the hatch is yours.",
+   "careful": "It is a courier hull, thirty years old, and it has been maintained past the point where maintenance is economical by somebody who did not care that it was uneconomical.\n\nThe clamps are engaged and the dock's own log is the only thing watching them. Break the seal and the clamp-release writes a line, at the dock end, automatically, and the line will say what you did and when.\n\nNot *whether you were allowed to*. There is no field for that. A clamp-release log is a record of a clamp releasing.\n\nYou stand under a ship you have the keys to and no permission for, and think about how much of the last eleven weeks has been exactly this shape."
+  },
+  {
+   "id": "stand",
+   "names": [
+    "the stand",
+    "recaff",
+    "the counter",
+    "two cups",
+    "the cups"
+   ],
+   "careless": "A recaff stand in an outbound hall, four stools, a woman working it who has worked it for a long time.",
+   "careful": "Crase puts her cup down upside down when she is finished, which is a thing the regulars at this stand do — the woman working it counts them that way at the end of a shift — and you have never seen her do it anywhere else because there is nowhere else that does it.\n\nShe has been coming here for years.\n\nShe came here for years before you existed as anything but a name in a records office, and she came down eleven tiers this morning to a stand she knows, to be in a place she is comfortable, to give you something.\n\nYou do not know what to do with that and you are going to be doing nothing with it for four months."
+  },
+  {
+   "id": "argument",
+   "names": [
+    "berth four",
+    "argument from silence",
+    "the warrant-ship",
+    "the crates",
+    "loaders",
+    "her ship"
+   ],
+   "careless": "A warrant-ship at Berth Four, loading. The crates going up the ramp have no stencils on them.",
+   "careful": "Not blank. *Scraped*.\n\nA blank crate is a crate nobody labelled and it gets opened at the first customs post it meets, because an unlabelled crate is an anomaly and an anomaly is work. A scraped crate has been labelled and unlabelled, which is not an anomaly — it is a crate that has changed hands.\n\nThere are about forty of them and they are going up the ramp in a steady line and nobody in this dock is looking at them, including you, until now.\n\nThe hull's name is painted at the bow in letters a metre high: *ARGUMENT FROM SILENCE*. Somebody thought that was funny once and it has been carried through four hundred ports since."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "rill",
+   "names": [
+    "rill",
+    "sub-officio",
+    "tomas",
+    "the clerk",
+    "him"
+   ],
+   "title": "Sub-Officio Tomas Rill",
+   "lists_topics": false,
+   "topic_refusal": "\"You can ask,\" Rill says, \"but I'll only be able to tell you what the form says.\"",
+   "portrait": "Sub-Officio Tomas Rill, twenty-eight, Skydock passages and manifests, in a coat two grades better than his posting. He is not obstructing you and he is extremely sorry.",
+   "greeting": "\"Inquisitor.\" Rill stands up and stays standing. \"Passage for six, outbound, priority Vermilion. It's — I've got it here.\"\n\nHe has it there. He turns the slate round so you can see it, which is not something a Sub-Officio has to do.\n\n\"It isn't denied, sir. I want to be clear about that, because people hear the next word and stop listening. It's *pended*.\"",
+   "reprise": "Rill is still standing. He has been standing since you came in.",
+   "unknown": "\"Not on the form,\" Rill says, unhappily.",
+   "deflect": [
+    "Rill waits, with the slate turned towards you.",
+    "\"I'd help if there was a field for it,\" he says."
+   ],
+   "topics": [
+    {
+     "id": "pended",
+     "names": [
+      "pended",
+      "the delay",
+      "why",
+      "the booking",
+      "passage",
+      "the form",
+      "six"
+     ],
+     "sets": [
+      "PASSAGE_PENDED"
+     ],
+     "text": "\"Parties of five and under go through on the shift they're filed,\" Rill says. \"Six and over go to review. That's not a security thing, sir, it's a *berthing* thing — it's been the rule since 'eighty-one because of the mass allowance on the tender.\"\n\n\"How long is review.\"\n\n\"Eleven days, at present. It's a queue.\" He looks at the slate as though it might have improved. \"I've had a look at whether we can split you into a four and a two on consecutive shifts and the answer is that we can, and it would take fourteen.\"\n\nSix is more than five. That is the whole of it. There is no signature anywhere on this, no hand, nothing to push against, and eleven days from now Yolanda Crase will have had eleven days.\n\n\"I am very sorry, sir. I'd have said something if there were something to say.\"\n\nHe means it. He is the fourth person this month to be entirely sincere at you while a rule does the work."
+    },
+    {
+     "id": "berth_nine",
+     "names": [
+      "berth nine",
+      "the cutter",
+      "patient verdict",
+      "his ship",
+      "berth",
+      "the seal"
+     ],
+     "text": "\"Berth Nine's under seal. It's been under seal since the twenty-fourth.\"\n\nHe checks, because he is the kind of man who checks.\n\n\"*Your* seal, sir. Inquisitor Vosk's hull, held pending disposal of effects, sealed by the investigating officer of the open matter — that's you, that's your mark on it. I remember it coming through because I've never seen one where the sealing officer and the claiming officer were the same name.\"\n\n\"So I can take it.\"\n\n\"You can *break* it,\" Rill says carefully. \"Nobody would stop you. The seal-break logs on clamp-release, automatically, at the dock end, and I couldn't hold that back if you asked me to and I'd rather you didn't ask me to.\"\n\nHe has just told you exactly how to steal a ship, in the tone of a man reading out a berthing regulation, and he does not appear to have noticed."
+    },
+    {
+     "id": "sazh",
+     "names": [
+      "sazh",
+      "the rogue trader",
+      "argument from silence",
+      "the warrant-ship",
+      "her"
+     ],
+     "text": "\"Beneficia Sazh. Warrant-ship *Argument From Silence*, in at Berth Four, outbound when she says so.\"\n\nRill's face does something complicated.\n\n\"She's not a problem, sir. She files everything, she pays her dues, and her manifests are the cleanest in the dock, which — \" He stops.\n\n\"Which?\"\n\n\"Which is the thing about them. Eleven years I've been reading manifests and hers are the only ones that have never once had a correction on them. Not one. Everybody has corrections.\""
+    }
+   ],
+   "shows": [],
+   "beats": [],
+   "acts": [
+    {
+     "id": "frighten",
+     "names": [
+      "lean on him",
+      "frighten him",
+      "press him",
+      "the rosette",
+      "threaten him",
+      "push him"
+     ],
+     "requires": [
+      "PASSAGE_PENDED"
+     ],
+     "blocks": [
+      "RILL_DELAYED"
+     ],
+     "sets": [
+      "RILL_DELAYED"
+     ],
+     "counters": {
+      "RECONCILIATION": 1
+     },
+     "cost": 1,
+     "text": "You put the rosette on the counter.\n\nYou do not say anything with it, because there is nothing to say with it and everybody in the Imperium knows what it means, and Sub-Officio Tomas Rill has never had one on his counter before.\n\nHe goes the colour of the slate.\n\n\"I can't move you up the queue, sir, I *can't*, it isn't a queue I hold —\"\n\n\"I know.\"\n\n\"— but I can put the shift-return in late.\" It comes out fast, because he has thought about it, because he thought about it while he was telling you about Berth Nine. \"Four hours. Nobody would query four hours. It happens when the tender's slow and I'd write *tender delay* and it would be true, near enough, and nobody reads it.\"\n\nHe is offering you a crime because you frightened him, and he is going to be pleased with himself about it for about a day.\n\n\"Four hours,\" you say.\n\n\"Four hours, sir. From the seventh.\"\n\n[ RILL_DELAYED ]"
+    },
+    {
+     "id": "steal",
+     "names": [
+      "break the seal",
+      "take the cutter",
+      "steal it",
+      "board her",
+      "berth nine",
+      "walk them aboard"
+     ],
+     "requires": [
+      "RILL_DELAYED"
+     ],
+     "blocks": [
+      "TRANSPORT_WRIT",
+      "TRANSPORT_STOLEN",
+      "TRANSPORT_DEBT"
+     ],
+     "sets": [
+      "TRANSPORT_STOLEN",
+      "ACT3_BOOKED",
+      "SEAL_BROKEN"
+     ],
+     "counters": {
+      "CRASE_STANDING": -2
+     },
+     "cost": 3,
+     "text": "Nine minutes.\n\nSergeant Oduya walks six people and a felt case down a service gantry and onto a sealed hull in nine minutes, without hurrying, in front of about forty dockers, because she has spent twenty-six years learning that the way to go somewhere you should not be is to walk there like you are late for it.\n\nThe seal is yours. You put it on. Breaking your own seal is not theft of a hull; it is an investigating officer resuming custody of an exhibit, and there is a form for it, and you have not filed the form.\n\nThe clamps release at the eleventh hour.\n\nCLAMP RELEASE — BERTH 9 — SEAL BROKEN — OFFICER OF RECORD: [your name] — logs at the dock end, automatically, the way Rill said it would, and there is nothing anywhere on it about permission because a clamp-release log is a record of a clamp releasing.\n\nFour hours later a shift-return goes in from the passages counter, late, marked *tender delay*, which is true near enough and which nobody reads.\n\nCrase finds out on the second day. She does not send anything.\n\n[ TRANSPORT_STOLEN — CRASE_STANDING -2 ]"
+    }
+   ]
+  },
+  {
+   "id": "crase3",
+   "names": [
+    "crase",
+    "yolanda",
+    "lord-inquisitor",
+    "her"
+   ],
+   "title": "Inquisitor Yolanda Crase",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask me things,\" Crase says. \"I've never minded being asked things.\"",
+   "portrait": "Inquisitor Yolanda Crase, at a skydock recaff stand at the sixth hour, with a signed writ in her coat pocket and two cups.\n\nShe has come down eleven tiers to sign a form she could have sent a clerk with.",
+   "greeting": "She is at the recaff stand before you get there, with two cups, one of which is yours and has the right amount of sugar in it.\n\n\"I heard you'd been pended,\" Crase says. \"Six is more than five. It's a stupid rule and it's a real one; I've had it happen to me twice.\"\n\nShe takes an envelope out of her coat and puts it on the counter between the cups, and does not slide it across.\n\n\"That's a writ of free passage under my seal. It doesn't ask where you're going and I'm not going to.\"",
+   "reprise": "She drinks her recaff. She is in no hurry at all.",
+   "unknown": "\"I don't know,\" Crase says. \"I'd tell you if I did; I usually do.\"",
+   "deflect": [
+    "She waits, with both hands round the cup.",
+    "\"Ask me the real one,\" she says, not unkindly."
+   ],
+   "topics": [
+    {
+     "id": "session",
+     "names": [
+      "session",
+      "the session",
+      "concordance",
+      "where you heard it",
+      "his ghost",
+      "who else knows"
+     ],
+     "sets": [
+      "CRASE_SESSION_MENTIONED"
+     ],
+     "text": "\"Cantica-Null.\" She says it the way you would say the name of a street. \"Hadrian's little ghost. He raised it at a session once and I told him to let it go.\"\n\n\"What session.\"\n\n\"A session.\"\n\nShe drinks her recaff.\n\n\"That's not me being clever with you. That is genuinely the whole of the answer I'm going to give, and you're going to have to decide what to do about that, and I'd rather you decided it here than four months from now on somebody else's deck.\"\n\nThere is a kind of person who says *a session* and means a committee. There is another kind who says it and means a seat that has been sat in for eighty-one years by an Inquisitor of the Ordo Hereticus, and whose successor is standing at a recaff stand at the sixth hour buying you a drink."
+    },
+    {
+     "id": "never_lied",
+     "names": [
+      "lie",
+      "lied",
+      "the truth",
+      "have you lied",
+      "honesty",
+      "straight with me"
+     ],
+     "requires": [
+      "CRASE_SESSION_MENTIONED"
+     ],
+     "sets": [
+      "CRASE_NEVER_LIED"
+     ],
+     "counters": {
+      "VERITY": 1
+     },
+     "text": "You ask her, straight out, in a skydock at the sixth hour, whether she has lied to you.\n\nCrase puts the cup down and gives you her whole attention, which she does not do often and which is worth something.\n\n\"I have never lied to you,\" she says.\n\nThere is no hedge in it. There is no *knowingly*, no *to the best of my recollection*, none of the four constructions an officer of eleven years would reach for without thinking. She has said the sentence and she has not defended it.\n\nBank it. Write it down in your own hand, with the date and the hour and the fact that she was buying you recaff, because it is going to be the most important sentence anybody says to you this year and you are not going to understand it until Cantica-Null.\n\n[ VERITY +1 ]"
+    },
+    {
+     "id": "bez",
+     "names": [
+      "bez",
+      "oduya",
+      "the sergeant",
+      "her cough",
+      "the lung"
+     ],
+     "text": "\"How's the cough?\"\n\nYou tell her. She listens to the whole of it without interrupting and asks two questions, and both of them are the questions somebody asks who has read a medicae return and understood it.\n\n\"Fourteen months.\" Crase turns her cup round. \"She'll want to be useful for all fourteen and she'll be furious if you manage it for her. Don't manage it for her.\"\n\nIt is good advice, given warmly, by somebody who is fond of Sergeant Beskra Oduya and has been for nine years.\n\nShe has also just told you that she knows exactly how long your sergeant has, which she has no operational reason to know."
+    },
+    {
+     "id": "writ",
+     "names": [
+      "the writ",
+      "the passage",
+      "free passage",
+      "the envelope",
+      "papers",
+      "terms"
+     ],
+     "grants": [
+      "C1"
+     ],
+     "text": "You read it before you touch it, standing up, at a recaff counter.\n\nIt is four clauses of boilerplate and one that is not.\n\n*11(d). The bearer's position and manifest shall be reported to the countersigning authority at each waypoint, by the master of the carrying vessel, without requirement of further instruction.*\n\nIt is standard. It is genuinely standard; it is on every writ of free passage the Ordo has issued in this sector for sixty years, and it is there because a Lord-Inquisitor who signs for an officer is answerable for that officer, and there is no version of this document without it.\n\nIt is also a leash, and she is holding the other end of it, and she has put it on the counter between two cups of recaff and has not slid it across.\n\n[ C1 HELD ]"
+    }
+   ],
+   "shows": [
+    {
+     "clue": "C1",
+     "sets": [
+      "CLAUSE_READ_ALOUD"
+     ],
+     "counters": {
+      "CRASE_STANDING": -1,
+      "VERITY": 1
+     },
+     "text": "You read 11(d) out loud to her, at the counter, in the voice you would use for a deposition.\n\nCrase listens to all of it.\n\n\"Yes,\" she says.\n\nThat is the entire answer. No explanation, no defence, no *it's standard* — which it is, and which she could have said, and which would have been true.\n\nShe picks her cup back up.\n\nSomething goes out of the room and does not come back into it. She is exactly as warm as she was four minutes ago and it is not the same warmth, and you have paid for a piece of information you already had.\n\n[ VERITY +1 ]"
+    }
+   ],
+   "beats": [],
+   "acts": [
+    {
+     "id": "take_writ",
+     "names": [
+      "take the writ",
+      "sign",
+      "accept the writ",
+      "take her writ",
+      "the envelope",
+      "accept passage"
+     ],
+     "blocks": [
+      "TRANSPORT_WRIT",
+      "TRANSPORT_STOLEN",
+      "TRANSPORT_DEBT"
+     ],
+     "sets": [
+      "TRANSPORT_WRIT",
+      "ACT3_BOOKED"
+     ],
+     "grants": [
+      "C1"
+     ],
+     "counters": {
+      "CRASE_STANDING": 1
+     },
+     "cost": 2,
+     "text": "You take it.\n\nCrase signs it in front of you, on the counter, with a pen out of her own coat, and does not ask where you are going and does not look at the address you have not told her.\n\n\"Eight hours,\" she says. \"They'll clear you on the tender at the fourteenth. I've had your effects — Hadrian's effects, sorry, I still do that — forwarded to the hull, they'd have gone to store otherwise and store is where things stop.\"\n\nShe finishes her recaff and puts the cup on the counter upside down, which is a thing people do at that stand and which you have never noticed her do before, and which means she has been coming here for years.\n\n\"Come back,\" she says. \"That's not an order. I've no authority to give you one about that and I've thought about whether I'd use it if I had.\"\n\n[ TRANSPORT_WRIT — CRASE_STANDING +1 ]\n[ C1 HELD ]",
+     "at_least": {
+      "CRASE_STANDING": -3
+     },
+     "refused": "\"I'd sign it,\" Crase says, \"and it would be refused at the tender, and then we'd both know exactly where we are.\"\n\nShe puts the envelope back in her coat.\n\n\"I'm not going to pretend that isn't partly my doing. Find another way and tell me about it afterwards, or don't.\""
+    }
+   ]
+  },
+  {
+   "id": "sazh",
+   "names": [
+    "sazh",
+    "beneficia",
+    "the rogue trader",
+    "trader",
+    "her"
+   ],
+   "title": "Rogue Trader Beneficia Sazh",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask,\" Sazh says. \"Asking's free. It's the only thing that is.\"",
+   "portrait": "Rogue Trader Beneficia Sazh, master of the *Argument From Silence*, at Berth Four. Sixty or a very hard forty-five.\n\nShe does not shake hands. She holds her own together in front of her, like a woman checking she still has ten.",
+   "greeting": "\"You're the records one,\" Sazh says. \"Vosk's. I'm sorry about him; he was rude to me twice and correct both times, which is the best you get.\"\n\nBehind her the loaders are stacking crates with no stencils on them. Not blank. *Scraped*.\n\n\"You want a hull and you've been pended. I've a hull and I'm not pended. Let's find out what that's worth.\"",
+   "reprise": "She waits, hands folded together in front of her, watching the loaders.",
+   "unknown": "\"Don't know,\" Sazh says. \"Don't pretend to.\"",
+   "deflect": [
+    "Sazh watches the loaders and does not fill the silence.",
+    "\"Ask me a better one,\" she says."
+   ],
+   "topics": [
+    {
+     "id": "price",
+     "names": [
+      "price",
+      "the cost",
+      "what do you want",
+      "coin",
+      "payment",
+      "terms",
+      "what it costs"
+     ],
+     "grants": [
+      "C6"
+     ],
+     "sets": [
+      "SAZH_TERMS"
+     ],
+     "text": "\"Not coin.\" She says it before you have finished. \"Coin is a record. Coin has a hand it came out of and a hand it went into and a number in the middle, and there are four offices on this world that can read all three.\"\n\n\"Then what.\"\n\n\"A favour. Unspecified. Called when I want it.\"\n\nShe unfolds her hands for the first time.\n\n\"I'll write nothing down. You'll write nothing down. In four months or forty years I'll come and say a thing, and you'll do it. People find that romantic. It's just the only contract in this sector nobody can edit.\"\n\n\"How many of these do you have out?\"\n\n\"Forty-one.\" No pause at all. \"Thirty-nine living. I could give you the names and I'm not going to, and the reason I'm not going to is the same reason you'd want them.\"\n\n[ C6 HELD ]"
+    },
+    {
+     "id": "erratum",
+     "names": [
+      "the erratum",
+      "the plate",
+      "cargo",
+      "what i'm carrying",
+      "the manifest",
+      "stow it"
+     ],
+     "requires": [
+      "SAZH_TERMS"
+     ],
+     "text": "\"No,\" Sazh says.\n\nYou have not finished the sentence.\n\n\"You've got something in a felt case that you've had your hand on twice since you came down that ramp, and you're about to offer it to me as security, and the answer is no.\"\n\n\"You don't know what it is.\"\n\n\"I know it's got a label on it in a language nobody reads and you're still carrying it yourself in a dock with forty porters in it.\" She refolds her hands. \"I'm not stowing a thing that kills whoever reads the label. That's not superstition, that's *stock control*.\"\n\nShe has worked out more of it in nine seconds than the Adamant Crown has in eleven weeks, and she has done it off how you hold your coat."
+    },
+    {
+     "id": "manifests",
+     "names": [
+      "manifests",
+      "corrections",
+      "your paperwork",
+      "the crates",
+      "scraped",
+      "the stencils"
+     ],
+     "text": "\"Clean,\" Sazh agrees. \"Eleven years and not a correction on one of them. Your Sub-Officio's noticed, has he? He's brighter than the coat.\"\n\n\"How.\"\n\n\"Because I file what's in the hold.\" She shrugs. \"That's the whole trick and nobody believes it. Everybody else files what they *meant* to load and then amends it, and an amendment is a door. I don't amend. If it's wrong it stays wrong and I take the fine.\"\n\nBehind her, the loaders stack another crate with the stencil scraped off it.\n\n\"There's things in that hold I'd rather nobody asked about,\" she says, following your eyes, entirely unembarrassed. \"They're on the manifest. They're just on it as what they are, and nobody reads a manifest that's never been corrected.\""
+    }
+   ],
+   "shows": [],
+   "beats": [],
+   "acts": [
+    {
+     "id": "take_favour",
+     "names": [
+      "take the favour",
+      "owe her",
+      "accept the favour",
+      "shake on it",
+      "her terms",
+      "say it aloud"
+     ],
+     "requires": [
+      "SAZH_TERMS"
+     ],
+     "blocks": [
+      "TRANSPORT_WRIT",
+      "TRANSPORT_STOLEN",
+      "TRANSPORT_DEBT"
+     ],
+     "sets": [
+      "TRANSPORT_DEBT",
+      "SAZH_DEBT",
+      "ACT3_BOOKED"
+     ],
+     "cost": 2,
+     "text": "You say the terms out loud. She says them back. Neither of you writes anything down and there is nobody else within twenty metres, which she arranged without appearing to.\n\n\"Done,\" Sazh says.\n\nShe does not shake your hand. She refolds her own and looks at you for a moment longer than is comfortable, the way a woman looks at a crate she has just taken responsibility for.\n\n\"Six of you, out on the evening tide, no manifest entry for passengers because passengers aren't cargo and I don't file what isn't in the hold. You'll be at the Cerement's edge in nine days.\"\n\n\"And the favour.\"\n\n\"And the favour,\" she agrees. \"You'll have forgotten about it. They all do. That's not a complaint, it's the product — you get four months or forty years of not thinking about it, and I get one thing, once, from an Inquisitor, at a moment of my choosing.\n\n\"Forty-two,\" she says, to nobody, and turns back to the loaders.\n\n[ TRANSPORT_DEBT — SAZH_DEBT ]"
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "depart",
+   "names": [
+    "up",
+    "out",
+    "depart",
+    "the tender",
+    "leave",
+    "lift",
+    "outbound",
+    "the cerement"
+   ],
+   "to": "cerement",
+   "cost": 4,
+   "requires_any": [
+    "TRANSPORT_WRIT",
+    "TRANSPORT_STOLEN",
+    "TRANSPORT_DEBT"
+   ],
+   "blocked": "Six is more than five, and there is no version of this where you walk onto a tender because you would like to.",
+   "text": "The tender lifts at the fourteenth hour with six of you on it and one felt case that nobody has asked about.\n\nVardan Prime goes small in a viewport, which is a thing you have read about in other people's depositions and have never once done, and it is not what any of them said it was."
+  },
+  {
+   "id": "back",
+   "names": [
+    "back",
+    "chambers",
+    "board",
+    "the crown",
+    "return",
+    "down"
+   ],
+   "to": "standing_board",
+   "cost": 3,
+   "blocks": [
+    "ACT3_BOOKED"
+   ],
+   "blocked": "You have a hull. There is nothing in the Adamant Crown you want more than eight hours.",
+   "text": "Back down into the Crown, which takes most of an hour and buys you nothing."
+  }
+ ],
+ "clues": {
+  "C1": {
+   "id": "C1",
+   "names": [
+    "clause 11d",
+    "11(d)",
+    "the clause",
+    "the leash",
+    "waypoint reports",
+    "routing clause"
+   ],
+   "label": "Writ clause 11(d) — position and manifest reported to the countersigning authority at each waypoint",
+   "store": "either",
+   "reconciliation": 1,
+   "file_text": "FILED. CLASS: PASSAGE / INSTRUMENT, TERMS OF. INDEXED. COUNTERSIGNING AUTHORITY: CRASE, Y., LORD-INQUISITOR.\n\nThe cogitator files the writ against the standing form and finds it conformant in every clause, which it is, and notes no exception, of which there are none.\n\nIt is a correct filing of a correct document and it tells the countersigning authority that you read it.",
+   "note_text": "Clause 11(d), copied out longhand, with the date and the hour.\n\nPosition and manifest, at each waypoint, to the countersigning authority, without requirement of further instruction.\n\nIt is on every writ the Ordo has issued in sixty years and there is no version of the document without it and she is answerable for you and all of that is true.\n\nIt is also the case that she will know where you are, every nine days, for as long as you carry it."
+  },
+  "C6": {
+   "id": "C6",
+   "names": [
+    "the tally",
+    "forty-one favours",
+    "sazh's tally",
+    "her count",
+    "the favours",
+    "open favours"
+   ],
+   "label": "Sazh's tally — forty-one open favours, thirty-nine living, no names written anywhere",
+   "store": "notebook",
+   "reconciliation": 0,
+   "refusal": "FILING TEMPLATE :: CLASS — OBLIGATION, UNINSTRUMENTED\n\nThere is no such class. You try three others and they all want a counterparty,\na consideration and a date, and you have a number a woman said out loud at a\nberth and nothing else at all.\n\nThe form is not being obstructive. It is asking you what the thing is, and the\nanswer is that it is the only contract in this sector nobody can edit, and\nthat is not a field.",
+   "note_text": "Forty-one open. Thirty-nine living. No names written anywhere, on either side, ever.\n\nShe answered without pausing, which means she has the number in her head and keeps it there, and she offered the names and then declined to give them for the same reason you wanted them.\n\nYou are the forty-second. She said so, to nobody, and turned back to the loaders."
+  }
+ },
+ "strings": {
+  "no_such_thing": "Four hundred metres of outbound hall, and nothing in it is yours.",
+  "already_read": "You have looked twice. The tender goes at the fourteenth.",
+  "no_terminal": "There is a public cogitator in the outbound hall and there are four hundred people in the queue for it.",
+  "read_room_locked": "A skydock. Nobody arranged this and nobody could.",
+  "no_cipher": "Not here. The room is eleven tiers down and its furniture is in a cage."
+ }
+}

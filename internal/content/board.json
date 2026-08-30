@@ -417,6 +417,25 @@
     "ROOM_READ_FULL"
    ],
    "text": "Down past Delta, four tiers, to the coldest posting in the Lexicanum."
+  },
+  {
+   "id": "skydock",
+   "names": [
+    "skydock",
+    "the dock",
+    "cantor nine",
+    "outbound",
+    "off-world",
+    "the tender",
+    "leave"
+   ],
+   "to": "skydock",
+   "cost": 4,
+   "requires": [
+    "ACT2_COMPLETE"
+   ],
+   "blocked": "There is nowhere to go. There is a hive, and a Crown, and four hundred million people, and no address.",
+   "text": "You put in for passage the same morning: six of you, outbound, priority Vermilion, destination left as a routing address that four separate clerks copy out without reading.\n\nSkydock Cantor Nine is an hour's transit and eleven tiers of lift, and you spend all of it not looking at the felt case under your arm."
   }
  ],
  "clues": {

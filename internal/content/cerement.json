@@ -1,0 +1,202 @@
+{
+ "id": "cerement",
+ "title": "THE CEREMENT — NINE DAYS ALONG THE EDGE",
+ "date": "0997.4.252",
+ "clock_at": "00h00",
+ "sets": [
+  "IN_TRANSIT",
+  "ACT3_VOYAGE"
+ ],
+ "while": [
+  "OUT_OF_RELAY"
+ ],
+ "intro": "Translation.\n\nYou have read eleven depositions about translation and every one of them\ndescribes a noise. There is no noise. The Cerement is a warp-scar nine days\nwide along its edge and the hull goes into it the way a hand goes into water\nthat is exactly blood temperature.\n\nThe Geller readout holds steady. Not steady the way a good field holds steady,\nwith the small constant drift you were taught to watch for and stopped\nnoticing years ago. Steady the way a drawn line is steady.\n\nNine days of that.\n\nAnd the other thing, which takes you until the second day to name: there is no\nrelay. No vox trunk, no Lexicanum, no cogitator anywhere within nine days of\nthis hull that is talking to anything.\n\nFor the first time since a door came off its seal at the twenty-third hour and\nfifty-five, nothing is reading over your shoulder.",
+ "revisit": "The Cerement. A perfect line on the field readout, and no relay within nine days.",
+ "look": "A hull, a passage, and nine days of nothing to do in it.\n\nThe READOUT, holding a line that has not moved.\nSergeant ODUYA in the gun bay, cleaning a weapon she will not need.\nSavant FENN in the corridor, reciting a shipping schedule to nobody.\nILARIA with her back against the hull, because the Cerement is quiet.\n\nBelow, the cogitator WELL, and whatever the hull is still running.",
+ "objects": [
+  {
+   "id": "readout",
+   "names": [
+    "readout",
+    "the field",
+    "geller",
+    "the line",
+    "instruments",
+    "the gauge"
+   ],
+   "careless": "The Geller field readout, holding at nominal. It has been at nominal since translation.",
+   "careful": "Nine days and it has not moved. Not a flicker, not the drift you learned to expect from a field working against something that is trying to get in.\n\nA perfect line.\n\nBez says it is a good omen. Bez was eleven years in the Guard and does not believe in omens; she says it the way you say a thing to fill a room.\n\nYou go and find the second engineer, who is forty years at this and does not want the conversation, and he tells you that a flat trace means the field is holding, and that he has seen it flat for a whole watch before, and that he has not seen it flat for nine days, and that he would rather you did not ask him again."
+  },
+  {
+   "id": "bez",
+   "names": [
+    "bez",
+    "oduya",
+    "the sergeant",
+    "gun bay",
+    "the weapon"
+   ],
+   "careless": "Sergeant Oduya in the gun bay, stripping a weapon that does not need stripping.",
+   "careful": "The rag is folded inward.\n\nIt has been folded inward all week, which is what she does with a rag when the shoulder is bad and she does not want it discussed, and she has been doing it since a mortuary on tier one.\n\nShe strips the weapon, cleans it, reassembles it, and puts it down. Then after a while she picks it up and strips it again.\n\nThere is nothing on this hull to shoot and she knows that better than you do."
+  },
+  {
+   "id": "fenn",
+   "names": [
+    "fenn",
+    "aleth",
+    "savant",
+    "the corridor",
+    "the schedule"
+   ],
+   "careless": "Savant Aleth Fenn in the corridor, reciting a shipping schedule to nobody in particular.",
+   "careful": "Vardan Prime bulk-lifter departures, cycle 993, in order, with tonnages.\n\nHe has been at it for two hours and he is not talking to you and does not appear to want an audience. There is no relay within nine days of this hull and for the first time since you met him he is not contradicting himself.\n\nHe is, at this moment, the most reliable object in the sector.\n\nHe stops, checks something against nothing, and starts again from the top."
+  },
+  {
+   "id": "ilaria",
+   "names": [
+    "ilaria",
+    "vesse",
+    "talm",
+    "astropath",
+    "the hull"
+   ],
+   "careless": "Ilaria, sitting on the deck with her back flat against the hull plating, doing nothing at all.",
+   "careful": "\"There's no floor,\" she says, without opening her eyes. \"I told you about the floor. Every room's got one and you stand on it and you don't hear it.\"\n\n\"And here?\"\n\n\"Here there's nothing. Not absent like his chambers — that was a hole in a floor. This is no floor at all, all the way out, nine days of it.\"\n\nShe has her hands flat on the deck either side of her.\n\n\"I've been an instrument for thirty years, sir, and I've never once been in a place where nothing was listening. I don't know what to do with the quiet and I'd be obliged if nobody found me a task.\""
+  }
+ ],
+ "npcs": [],
+ "exits": [
+  {
+   "id": "well",
+   "names": [
+    "well",
+    "the well",
+    "cogitator well",
+    "down",
+    "the spirit",
+    "below",
+    "cabin",
+    "locker"
+   ],
+   "to": "spirit",
+   "cost": 2,
+   "text": "Down into the well, where the hull keeps what it is still running."
+  },
+  {
+   "id": "gunbay",
+   "names": [
+    "gun bay",
+    "gunbay",
+    "bez",
+    "oduya",
+    "the sergeant",
+    "aft"
+   ],
+   "to": "gunbay",
+   "cost": 2,
+   "requires": [
+    "BEZ_ALIVE"
+   ],
+   "blocked": "There is nobody in the gun bay.",
+   "text": "Aft, to four metres of nothing with a weapon in pieces in it."
+  },
+  {
+   "id": "cell",
+   "names": [
+    "cell",
+    "the cell",
+    "ilaria",
+    "astropath",
+    "talm",
+    "her cell"
+   ],
+   "to": "cell",
+   "cost": 2,
+   "at_least": {
+    "ILARIA_TRUST": 2
+   },
+   "blocked": "Ilaria's cell is shut and she has not asked for you, and you have not earned the right to knock.",
+   "text": "Forward, to a cell two metres by three with an astropath sitting up in it."
+  },
+  {
+   "id": "hold",
+   "names": [
+    "hold",
+    "cargo",
+    "the hold",
+    "fenn",
+    "savant",
+    "cargo hold"
+   ],
+   "to": "hold",
+   "cost": 2,
+   "requires": [
+    "FENN_INTACT",
+    "FENN_ALIVE"
+   ],
+   "blocked": "There is a man in the hold reciting a shipping schedule and there is nothing left in him to ask.",
+   "text": "Down into the hold, where the only cargo is a casket a dead man addressed to himself."
+  },
+  {
+   "id": "wardroom",
+   "names": [
+    "wardroom",
+    "the wardroom",
+    "vaux",
+    "dmetri",
+    "interrogator",
+    "the table"
+   ],
+   "to": "wardroom",
+   "cost": 2,
+   "requires": [
+    "VAUX_ALLIED"
+   ],
+   "blocked": "There is nobody aboard who would lay two years of paper out on that table.",
+   "text": "Up to the wardroom, where somebody has been setting something out for an hour."
+  },
+  {
+   "id": "translate",
+   "names": [
+    "translate",
+    "kadmon",
+    "kadmon veil",
+    "make fast",
+    "arrive",
+    "onward",
+    "forward"
+   ],
+   "to": "kadmon",
+   "cost": 6,
+   "text": "Nine days, stood through.\n\nKadmon Veil lies nine days short of the routing address and there is no way round it: the address runs through the system and a hull that does not make fast at Kadmon does not make Cantica-Null.\n\nThe challenge comes on the correct frequency in the correct form."
+  },
+  {
+   "id": "sleep",
+   "names": [
+    "sleep",
+    "sleep through it",
+    "sleep through",
+    "bunk",
+    "turn in",
+    "rest"
+   ],
+   "to": "kadmon",
+   "cost": 2,
+   "counters": {
+    "RECONCILIATION": 8
+   },
+   "text": "You sleep through the rest of it.\n\nIt is allowed, it is sensible, and a passage is nine days of nothing whether or not anybody is awake for it. You wake at the translation alarm with the taste of the recycler in your mouth and four days you cannot account for, which is what sleep is.\n\nThe challenge comes on the correct frequency in the correct form."
+  }
+ ],
+ "clues": {},
+ "strings": {
+  "no_such_thing": "A hull, a passage, and nine days. There is very little aboard.",
+  "already_read": "You have looked twice. There are nine days of this.",
+  "no_terminal": "There is no relay within nine days of this hull. That is the entire point of where you are.",
+  "read_room_locked": "Nobody arranged a warp passage.",
+  "no_one_here": "Your own people, and none of them want a task.",
+  "symptom_note": "You open your notes to check something you wrote on the fourth day of all\nthis.\n\nThe sentence is there. It is one clause shorter than you remember, and you\ncannot swear to that, and there is nobody within nine days to ask.",
+  "symptom_option": "There was a thing you said to Crase once and have been meaning to say again.\n\nYou go looking for the words and they are not the words. Not forgotten — you\nhave the shape of them, the length of them, the moment. What you do not have\nis the sentence, and you have never in your life mislaid a sentence.",
+  "symptom_memory": "You look up something you requisitioned yourself, out of your own case-notes,\nbecause you want to check a date against the manifest.\n\nNO SUCH ENTRY.\n\nIt is the same three words the Vault uses for a shelf that was never filled,\nin the same spacing, and there is no relay within nine days of this hull and\nnothing aboard it has been edited by anybody."
+ }
+}

@@ -218,6 +218,78 @@ func (s *State) topicOpen(t *content.Topic) bool {
 
 // show puts a held clue in front of someone. What they do with it is authored
 // per clue; most people, for most evidence, do nothing at all.
+// press asks for one more layer of the thing it just said. A machine that
+// answers the question as asked and never volunteers a scope can only be
+// opened one layer at a time, and it says plainly when a layer is empty.
+func (s *State) press(arg string) ([]string, int) {
+	if len(s.Room.People()) == 0 {
+		return []string{s.S("no_one_here")}, 0
+	}
+	who, subject := splitAsk(arg)
+	if who == "" {
+		subject = arg
+	}
+	var n *content.NPC
+	if who != "" {
+		n = s.npcIn(who)
+	}
+	if n == nil {
+		n = s.Room.People()[0]
+	}
+	subject = strings.TrimSpace(subject)
+	if subject == "" {
+		return []string{s.S("press_what")}, 0
+	}
+	for _, t := range n.MatchTopics(subject) {
+		if !s.Topics[n.Key()+"/"+t.ID] || len(t.Layers) == 0 {
+			continue
+		}
+		k := n.Key() + "/layer/" + t.ID
+		if s.Layers[k] >= len(t.Layers) {
+			return []string{s.S("press_empty")}, 1
+		}
+		out := []string{t.Layers[s.Layers[k]]}
+		s.Layers[k]++
+		return append(out, s.beats(n)...), 1
+	}
+	return []string{s.S("press_nothing")}, 0
+}
+
+// cite puts a document in front of it. It cannot contradict a record it holds,
+// so a citation forces full disclosure on that point — but only from the store
+// it cannot reach. Anything in the case-file has already been amended, and the
+// refusal never says so.
+func (s *State) cite(arg string) ([]string, int) {
+	if len(s.Room.People()) == 0 {
+		return []string{s.S("no_one_here")}, 0
+	}
+	what, who := arg, ""
+	if i := strings.LastIndex(strings.ToLower(arg), " to "); i >= 0 {
+		what, who = arg[:i], arg[i+4:]
+	}
+	n := s.npcIn(strings.TrimSpace(who))
+	if n == nil {
+		if len(s.Room.People()) == 0 {
+			return []string{s.S("no_one_here")}, 0
+		}
+		n = s.Room.People()[0]
+	}
+	var c *content.Clue
+	for _, m := range s.Game.MatchClues(strings.TrimSpace(what)) {
+		if _, held := s.Held[m.ID]; held {
+			c = m
+			break
+		}
+	}
+	if c == nil {
+		return []string{"You hold no such clue."}, 0
+	}
+	if st := s.Held[c.ID]; st != StoreBook && st != StoreBoth {
+		return []string{s.S("cite_amended")}, 1
+	}
+	return s.showTo(n, c)
+}
+
 func (s *State) show(arg string) ([]string, int) {
 	if len(s.Room.People()) == 0 {
 		return []string{s.S("no_one_here")}, 0
@@ -241,6 +313,10 @@ func (s *State) show(arg string) ([]string, int) {
 		return []string{"You hold no such clue."}, 0
 	}
 
+	return s.showTo(n, c)
+}
+
+func (s *State) showTo(n *content.NPC, c *content.Clue) ([]string, int) {
 	out := s.meet(n)
 	sh := n.ShowFor(c.ID)
 	if sh == nil {
