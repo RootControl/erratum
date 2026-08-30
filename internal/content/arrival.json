@@ -1,0 +1,339 @@
+{
+ "id": "antechamber_arrival",
+ "clock_at": "04h08",
+ "title": "THE ANTECHAMBER — ADAMANT CROWN, TIER NINE",
+ "intro": "A runner came for you. Not a vox, not a summons-rune, not the relay — a\nsixteen-year-old Crown page who ran up nine tiers with a folded slip and was\ntoo winded to say it out loud.\n\nNobody in this building is putting Hadrian Vosk on the relay.\n\nThree wardens on the antechamber door who cannot decide whether to salute an\nInterrogator whose Inquisitor is dead, and settle on doing it badly. Sergeant\nOduya against the doorframe with her shoulder wrong. Inquisitor Crase in the\ndoorway itself, filling it, kindly.\n\nBehind her, through four inches of forced door, at eleven metres: the floor of\nHadrian Vosk's chambers, and a shape on it.\n\nYou are not going in there. She has been standing in that doorway for five\nhours to make sure of it, and she is going to read you something first.",
+ "look": "The antechamber, at the eighth minute of the fourth hour, four hours in.\n\nThree WARDENS by the outer door, doing very little, correctly.\nSergeant ODUYA on the inner doorframe, at parade rest, which is not a thing\nparade rest permits.\nInquisitor CRASE in the doorway, with a WRIT in her hand.\n\nThe inner DOOR is four inches open and splintered where somebody put a\nshoulder through it. Beyond it, at eleven metres, the BODY.\n\nNothing in this room will highlight itself for you.",
+ "objects": [
+  {
+   "id": "writ",
+   "names": [
+    "verdict",
+    "the writ",
+    "form",
+    "paper",
+    "finding",
+    "document"
+   ],
+   "careless": "The Crown's finding on the death of Hadrian Vosk, Inquisitor. Self-destruction. Countersigned. She reads it to you in full and does not editorialise, which is its own kind of editorial.",
+   "careful": "You make her hold it still and you read the header rather than listening to the body of it.\n\nThe finding is struck at the twenty-first hour and fifty-five minutes.\n\nThe door was forced at the twenty-third hour and fifty-five.\n\nTwo hours. The Crown of this world determined how Hadrian Vosk died two hours before anybody knew that he had.",
+   "clue": "A0"
+  },
+  {
+   "id": "body",
+   "names": [
+    "vosk",
+    "hadrian",
+    "him",
+    "shape",
+    "the floor",
+    "pistol",
+    "autopistol"
+   ],
+   "careless": "Eleven metres, through four inches of doorway, past Crase's shoulder. A shape on the floor between a desk and a side table. You have been in that room a hundred times.",
+   "careful": "You look properly, from where you are allowed to look from, which is here.\n\nThe autopistol is in the right hand. The fingers are loose the way fingers go loose. There is very little blood, which means very little, and you know that, and you find that you are grateful for it anyway.\n\nFrom eleven metres you can see one hand, part of a sleeve, and the near foot.\n\nYou cannot see the other one."
+  },
+  {
+   "id": "door",
+   "names": [
+    "inner door",
+    "doorway",
+    "frame",
+    "splinters",
+    "lock",
+    "seal"
+   ],
+   "careless": "Four inches open. The frame is split at the strike-plate. Somebody took it off its seal with a shoulder and the shoulder is still in this room.",
+   "careful": "The splinters point inward.\n\nThat is what splinters do when a door was fastened on the far side and opened from this one, and it is the single most important physical fact in this building, and it is going to be true no matter what anybody writes down about it.\n\nYou will be back in front of this door in two hours with an entirely different set of problems."
+  },
+  {
+   "id": "bez",
+   "names": [
+    "oduya",
+    "sergeant",
+    "beskra",
+    "doorframe",
+    "shoulder",
+    "sergeant oduya"
+   ],
+   "careless": "Sergeant Beskra Oduya, twenty-six years Militarum, eleven of them outside doors for Hadrian Vosk. She is at parade rest against the doorframe, holding her weight off her left side.",
+   "careful": "She forced that door at the twenty-third hour and fifty-five and she has not moved more than two metres from it since.\n\nThe shoulder wants a medicae and is not going to get one tonight, and when Crase told her earlier to go and have it looked at, gently, twice, she said *sir* both times and did not go.\n\nShe is not standing there because there is anything left to guard. She is standing there because standing there is the last order she was ever going to be given by him, and nobody has been unkind enough to point that out."
+  },
+  {
+   "id": "wardens",
+   "names": [
+    "warden",
+    "three wardens",
+    "guards",
+    "crown wardens"
+   ],
+   "careless": "Three Crown wardens on the outer door. They do not know whether to salute you. Two of them did. One of them did not, and is now certain he made the wrong choice.",
+   "careful": "They have been here since the twenty-third hour and they have been given no instruction beyond *stand there*, which means the Crown has spent four hours deciding what this is without telling the three people it left holding the room.\n\nOne of them keeps looking at the writ in Crase's hand. He was on the outer door when the finding arrived, and he is trying to work out, without any of the training required to work it out, why the finding arrived before the body did."
+  },
+  {
+   "id": "crase",
+   "names": [
+    "yolanda",
+    "lord-inquisitor",
+    "inquisitor crase",
+    "her"
+   ],
+   "careless": "Inquisitor Yolanda Crase, Lord-Inquisitor of Vardan Prime, filling a doorway she does not intend to move out of. She has been here four hours.",
+   "careful": "She has been crying and has not done anything about it. She has also been working: there is a paper notebook in her off hand with about two pages used, and she has been taking statements in it herself, personally, for four hours, in a hive with a cogitator in every wall.\n\nYou do not think anything of that. You will not think anything of it for a long time.\n\nShe blocks the doorway with her body and apologises for it with her face, and she is going to keep blocking it, because the one thing she can still do for Hadrian Vosk is decide who is allowed to look at him."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "crase",
+   "names": [
+    "yolanda",
+    "lord-inquisitor",
+    "her",
+    "she"
+   ],
+   "title": "Inquisitor Yolanda Crase, Lord-Inquisitor of Vardan Prime",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask,\" Crase says. \"I would rather you asked me now than found it out at the eleventh hour from a clerk.\"",
+   "portrait": "Yolanda Crase, seventy-one, six years Lord-Inquisitor. Five hours in that doorway.\n\nShe has been crying and has done nothing to hide it, and she is taking statements in a paper notebook, by hand, in a hive with a cogitator in every wall.",
+   "greeting": "\"Don't,\" Crase says, not unkindly, before you have taken a second step. \"Not yet. In a while, and properly, and I'll clear the room for you. Not now.\"\n\nShe has the Crown's writ in one hand and a paper notebook in the other, and she reads you the writ first, in full, standing in the doorway, before she lets you see anything at all.\n\nSelf-destruction. Countersigned. A finding of the Crown, on the death of Hadrian Vosk, Inquisitor, two hundred and eighty-seven years in the service of the Throne.\n\n\"That's what it says,\" she says, when she has finished. \"I'm not going to pretend I like it. I countersigned it at the first hour because if I hadn't, the Provost would have found somebody who would, and then I wouldn't be standing here.\"\n\nBehind her, at eleven metres, the shape on the floor has not moved and is not going to.",
+   "reprise": "She stays in the doorway. She is not going to get tired of standing there before you get tired of asking.",
+   "unknown": "\"I don't know,\" Crase says. \"Five hours and there is a great deal I don't know.\"",
+   "deflect": [
+    "She shakes her head. \"Not with three wardens listening.\"",
+    "\"Later,\" she says. \"There's going to be a later. I'll answer it then.\"",
+    "She looks past you at the wardens on the outer door, and does not answer."
+   ],
+   "topics": [
+    {
+     "id": "sealed",
+     "names": [
+      "how",
+      "locked",
+      "the seal",
+      "sealed room",
+      "inside",
+      "from inside",
+      "how did he die"
+     ],
+     "text": "\"Sealed from the inside,\" Crase says. \"Not locked. Sealed — the warden's seal was set from within the room, which requires a hand on the plate, which requires the hand to be in there.\"\n\n\"And the vents?\"\n\n\"Ninety millimetres. I put a warden's arm in one to be certain, and then I put my own in, and I am the smaller of us.\" She is entirely matter-of-fact about having done that. \"Nobody came through the walls, nobody came through the vents and nobody came through that door, because Sergeant Oduya came through that door and the frame is behind me if you would like to look at it.\"\n\nShe has done all of this in four hours, alone, in a doorway, while crying."
+    },
+    {
+     "id": "aperture",
+     "names": [
+      "log",
+      "aperture log",
+      "entries",
+      "who came in",
+      "traffic",
+      "record"
+     ],
+     "text": "\"One entry in eleven hours,\" Crase says. \"The Sergeant, forcing it, at the twenty-third hour and fifty-five. That is the entire aperture log for the door of an Inquisitor's private chambers for the eleven hours before she forced it.\"\n\n\"Nobody went in.\"\n\n\"Nobody went in and nobody came out and the log has been running the whole time, and the log is a Crown instrument that I have not had my hands on.\" She says the last part deliberately, so that you have heard her say it. \"You will want to pull it yourself. Pull it yourself.\"\n\nShe does not mention the seal-integrity register, which is a different instrument, and which nobody has looked at, and which will be four inches from your right hand in two hours."
+    },
+    {
+     "id": "timestamp",
+     "names": [
+      "the form",
+      "two hours",
+      "before",
+      "struck",
+      "discovery",
+      "the finding",
+      "verdict",
+      "a0"
+     ],
+     "text": "You put it to her: the finding is struck at the twenty-first hour and fifty-five, and the door came off its seal at the twenty-third hour and fifty-five. The Crown decided how he died two hours before anybody knew that he had.\n\nCrase does not flinch and does not hesitate.\n\n\"It's a pre-generated form,\" she says. \"The Crown runs them off in blocks at the start of each watch with the watch-time already struck on them, so that when there is a body the Provost's office can fill in the rest and file it inside the hour. It is a disgraceful piece of clerical practice, it has embarrassed them twice this year, and I have written to them about it.\"\n\nShe lets that sit for a moment, and then adds the part she did not have to add.\n\n\"It is also the first thing you have said to me tonight that was not a question about procedure, and you were right to say it, and you will be wrong about the next four hundred things you notice. Keep noticing them.\"\n\nSomewhere behind you a Crown warden has gone very still.\n\n[ TIMESTAMP_NOTICED — CRASE_STANDING +1 ]",
+     "sets": [
+      "TIMESTAMP_NOTICED"
+     ],
+     "repeat": "\"The form,\" she says. \"Yes. I've written to them about it.\"",
+     "has": [
+      "A0"
+     ],
+     "closed": "\"The finding,\" Crase repeats, and waits.\n\nYou have nothing specific to put to her. She has read you the writ once, in full, standing in a doorway, and she is not going to read it to you again because you were not listening.\n\n\"It's in my hand,\" she says. \"Look at it.\"",
+     "counters": {
+      "CRASE_STANDING": 1
+     }
+    },
+    {
+     "id": "countersignature",
+     "names": [
+      "who signed",
+      "countersigned",
+      "the other signature",
+      "provost",
+      "provost-adjunct",
+      "signatures"
+     ],
+     "text": "She does not volunteer it. You have to ask, and when you ask she answers instantly and without any of the reluctance you had braced for.\n\n\"Me, and the Crown Provost-Adjunct. Vestrin. He struck it and I countersigned.\"\n\n\"At the twenty-first hour.\"\n\n\"He struck it at the twenty-first hour on a form he had already run off, and I countersigned it at the first, an hour after I got here and it was put in front of me.\" She meets your eye. \"I am aware of how that sounds. It is what happened, and I would rather you heard it from me at the fourth hour than found it in an index at the fourteenth.\"\n\nShe has thought about the order in which to tell you things. She has been standing here for four hours thinking about the order in which to tell you things."
+    },
+    {
+     "id": "grief",
+     "names": [
+      "friend",
+      "you liked him",
+      "sorry",
+      "thirty years",
+      "how are you",
+      "her"
+     ],
+     "text": "You say the thing that is true, which is that she knew him thirty years and you have not once, in four hours of Crown procedure, heard anybody ask her how she is.\n\nCrase looks at you for a moment with an expression you will not be able to name for some months.\n\n\"Thirty-one,\" she says. \"He was at my elevation. He was late to it.\"\n\nThen she stops being an office for about four seconds, which is the longest she is going to manage tonight, and when she starts again she is somewhere different.\n\n\"I'm going to tell you something useful, because you asked me a kind question at the fourth hour in front of three wardens and nobody else is going to.\n\n\"The Choir of Cantor cuts wax-cylinder redundancy recordings of every transcription their vessels make. Physical, un-networked, on the Spire, six hundred years of them. They aren't in the Vault. They aren't in *anything*.\" She shrugs, and the shrug is the most useless gesture anybody makes tonight. \"It's the only part of this hive I know of that isn't. I doubt it helps. I'd rather you had it.\"\n\n[ CRASE_LEAD_CHOIR ]",
+     "sets": [
+      "CRASE_LEAD_CHOIR"
+     ],
+     "grants": [
+      "A1-lead"
+     ],
+     "repeat": "\"I've said more than I meant to,\" she says. \"Let me stand in this doorway.\""
+    },
+    {
+     "id": "runner",
+     "names": [
+      "summons",
+      "the page",
+      "how did you tell me",
+      "vox",
+      "relay",
+      "message"
+     ],
+     "text": "\"I sent a child up nine tiers,\" Crase says. \"Yes.\"\n\n\"There's a relay.\"\n\n\"There's a relay.\" She does not elaborate and does not look away either, and after a moment it becomes clear that she is not going to, and that this is deliberate, and that she has decided you are the kind of person who will do something with a silence.\n\n\"Somebody may say to you in the next week that I am superstitious about the vox,\" she says at last. \"You may write that down. It's true.\"\n\nYou will remember this in eleven days, in a different room, with a piece of wax in your coat."
+    },
+    {
+     "id": "in",
+     "names": [
+      "let me in",
+      "the room",
+      "chambers",
+      "why not",
+      "access",
+      "go in"
+     ],
+     "text": "\"In a while,\" Crase says.\n\n\"He was my Inquisitor for eleven years.\"\n\n\"He was my friend for thirty-one and I have been standing in this doorway since the twenty-third hour keeping people out of there, and one of the people I have been keeping out is me.\" She does not move. \"You will get that room. You'll get it alone, and you'll get it for as long as I can hold the medicae off, which is not as long as either of us would like.\n\n\"You will not get it in the next twenty minutes, because in the next twenty minutes there are going to be witnesses in here, and I would like the first thing on the record to be the right thing.\""
+    },
+    {
+     "id": "medicae",
+     "names": [
+      "gurney",
+      "removal",
+      "how long",
+      "time",
+      "the body",
+      "when"
+     ],
+     "text": "\"They're on the tier,\" Crase says. \"They've been on the tier for three hours being extremely patient at me.\"\n\n\"How long can you hold them?\"\n\n\"Not long, and not by authority — the Crown has a schedule and the schedule is not a thing I outrank.\" She says it without any drama at all, which is what makes it land. \"Whatever is on him is on him for a matter of minutes, not hours. When you get in there, look at *him* first and the furniture afterwards.\n\n\"Everybody looks at the furniture first,\" she adds. \"It's easier."
+    }
+   ],
+   "beats": [
+    {
+     "id": "bez_says_it",
+     "after_topics": 2,
+     "text": "From the doorframe, without being asked, and to nobody in particular:\n\n\"Door was sealed,\" Sergeant Oduya says. \"I broke it.\"\n\nCrase does not turn round. The wardens do not look up. It is not new information to anybody in this antechamber and Oduya knows that, and she says it anyway.\n\nThen, about ten seconds later, in exactly the same voice:\n\n\"Door was sealed. I broke it.\"\n\nShe is not confused and she is not in shock. She is a twenty-six-year veteran who has worked out that there is going to be a record, and that she is not going to be the one who writes it, and she is putting the sentence into the room twice so that it has been heard."
+    },
+    {
+     "id": "the_question",
+     "after_topics": 3,
+     "sets": [
+      "CRASE_ASKED_TIRED"
+     ],
+     "text": "Crase opens the paper notebook.\n\nShe does not ask you what you think. She does not ask you whether you believe it. She has been taking statements for four hours and she asks you the question she has asked everybody:\n\n\"Did he seem tired to you.\"\n\nThe pencil is already moving. Behind her at eleven metres a man you have known for eleven years is lying on a floor with his own pistol in his hand, and the Lord-Inquisitor of this world is writing your answer down in ink, on paper, by hand, in a building with a cogitator in every wall.\n\n[ say TIRED, or say NOTHING ]"
+    },
+    {
+     "id": "witnesses",
+     "requires": [
+      "CRASE_ANSWERED_TIRED"
+     ],
+     "text": "She closes the notebook and puts it away, and something in the room changes register.\n\n\"Right,\" Crase says. \"The Crown wants witnesses, and for once the Crown and I want the same thing. Stand there. Don't say anything clever.\"\n\nOne of the wardens goes out at a run. Somebody is sending for the Provost-Adjunct, and for two recording adepts, and — you notice this and file it nowhere — for Interrogator Dmetri Vaux.\n\n[ GO ON when you are finished here ]"
+    }
+   ],
+   "shows": [],
+   "acts": [
+    {
+     "id": "tired",
+     "names": [
+      "say tired",
+      "yes",
+      "he was tired",
+      "agree",
+      "confirm"
+     ],
+     "requires": [
+      "CRASE_ASKED_TIRED"
+     ],
+     "blocks": [
+      "CRASE_ANSWERED_TIRED"
+     ],
+     "refused": "She has not asked you anything yet.",
+     "sets": [
+      "SAID_TIRED",
+      "CRASE_ANSWERED_TIRED"
+     ],
+     "text": "You say that he did. Because he did — he was two hundred and eighty-seven years old and he had been tired since before you were born, and it is true, and it is the easiest true thing available.\n\nCrase writes it down.\n\nShe writes it down in her own hand, in her paper notebook, and then — because she is the Lord-Inquisitor and this is a statement in a death investigation — it goes into the file, and the file says that the deceased's Interrogator of eleven years characterised him as tired.\n\nYou have said a true thing. It is going to be quoted back to you by somebody who does not like you, and the quotation is going to be accurate.\n\n[ SAID_TIRED ]"
+    },
+    {
+     "id": "nothing",
+     "names": [
+      "say nothing",
+      "silence",
+      "decline",
+      "no",
+      "refuse",
+      "don't answer"
+     ],
+     "requires": [
+      "CRASE_ASKED_TIRED"
+     ],
+     "blocks": [
+      "CRASE_ANSWERED_TIRED"
+     ],
+     "refused": "There is nothing yet to decline.",
+     "sets": [
+      "CRASE_ANSWERED_TIRED"
+     ],
+     "text": "You don't answer.\n\nCrase waits a reasonable amount of time, and then writes four words, and shows you them without being asked, which is not something she has to do.\n\n*Declined to characterise.*\n\n\"That's not a criticism,\" she says. \"It's what you said. I write down what people say.\"\n\nShe has been doing that for four hours. You have not yet worked out that it is the most important thing anybody in this hive is doing tonight."
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "elevation",
+   "names": [
+    "on",
+    "ahead",
+    "form",
+    "ceremony",
+    "witnesses",
+    "continue",
+    "stay"
+   ],
+   "to": "antechamber",
+   "cost": 1,
+   "text": "You stand where you are told and do not say anything clever.\n\nIt takes half an hour to assemble four witnesses in a building this size, and you spend the half hour eleven metres from him, not looking, which is a thing you will have to decide later whether to forgive yourself for."
+  }
+ ],
+ "clues": {
+  "A0": {
+   "id": "A0",
+   "names": [
+    "timestamp",
+    "the verdict",
+    "the finding",
+    "two hours",
+    "form",
+    "writ"
+   ],
+   "label": "The Crown's finding is struck at the twenty-first hour and fifty-five — two hours before the door was forced",
+   "store": "either",
+   "file_text": "FILED. CLASS: SCENE DETAIL / DOCUMENTARY IRREGULARITY. INDEXED. REQUISITION-ELIGIBLE.\n\nThe cogitator takes it without comment and cross-references it, in four seconds, to a standing Crown advisory on pre-generated watch forms that has been open since 'nineteen.\n\nIt is a known clerical fault. It is now a known clerical fault with your name against it.",
+   "note_text": "You write the two times down, one under the other, in your own hand, in a notebook nobody has ever asked to see.\n\nIt will turn out to be nothing. It is the first thing in Act I that you notice and record without being told to, and you will do it perhaps four more times in the next eleven days, and the four will be the whole of what you have left at the end."
+  }
+ },
+ "strings": {
+  "no_such_thing": "There is nothing here by that name, and there is not much here at all: a doorway, a writ, a Lord-Inquisitor, a sergeant, three wardens and a shape on a floor.",
+  "already_read": "You have looked twice. Looking a third time is what the wardens are doing.",
+  "no_such_exit": "There is one way out of this antechamber and it is through a doorway that Inquisitor Crase is standing in.\n\nThe other way is forward, when she is ready. GO ON.",
+  "no_terminal": "You have no authority to requisition anything, no terminal to do it from, and three Crown wardens watching you not do it."
+ },
+ "sets": [
+  "ACT1_OPEN"
+ ]
+}

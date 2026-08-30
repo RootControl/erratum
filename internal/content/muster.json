@@ -1,0 +1,504 @@
+{
+ "id": "muster",
+ "title": "KADMON VEIL — THE MUSTER HALL",
+ "clock_at": "15h20",
+ "intro": "Not a throne room. A hall with a table in it, and on the table the tithe\nledger of Kadmon Veil, open at cycle ninety-one, made current in the last\nthree hours.\n\nOn the wall, framed, the last signal this world received.\n\nMarchioness Ottiline Vurr is a hundred and four and is standing, so nobody\nsits. Sub-Deacon Barsimeus Tolk is beside her and has been looking at you\nsince you came through the door the way a man looks at a thing he has been\npromised.\n\n\"Inquisitor,\" she says. \"I have had three hours and I have spent all of it on\nthe numbers, because you will want the numbers first.\"",
+ "revisit": "The Muster Hall. A table, a ledger, a framed signal, and a woman who will not sit down.",
+ "look": "A hall, a table, and the tithe LEDGER of Kadmon Veil open at cycle ninety-one.\n\nOn the wall, framed: the last SIGNAL this world received.\n\nMarchioness VURR, standing. Sub-Deacon TOLK, unable to keep still.",
+ "objects": [
+  {
+   "id": "ledger",
+   "names": [
+    "the ledger",
+    "tithe ledger",
+    "the book",
+    "the audit",
+    "the table"
+   ],
+   "careless": "The tithe ledger of Kadmon Veil, open at cycle ninety-one, in a hand that has been the same hand for sixty years and has got smaller.",
+   "careful": "Ninety-one cycles, each one closed and signed and cross-cast against the Assessor's return.\n\nThe acknowledged population figure stands at the head of every cycle. The true figure is in the third appendix of every cycle, with the justification beside it, in the same hand, unaltered.\n\nSixty years of a woman writing down a number she knows to be false, immediately above the true one, so that nobody could ever say she concealed it.\n\nThe hand gets smaller from about cycle seventy. Not shakier. Smaller — because the stock is scraped and she is fitting the same content into less."
+  },
+  {
+   "id": "signal",
+   "names": [
+    "the signal",
+    "the frame",
+    "last signal",
+    "year zero",
+    "on the wall",
+    "the receipt"
+   ],
+   "clue": "C13",
+   "careless": "A framed astropathic receipt on the wall of the Muster Hall, in a good frame, at eye height, where everybody walks past it.",
+   "careful": "It is a tithe receipt.\n\nRouting, cycle, assessed value, receipt acknowledged, thank you. Twenty-two words. The most ordinary document the Imperium produces, of which four hundred thousand were issued in this sector that year.\n\nIt is the last thing anybody said to eight hundred and twelve million people, and they have framed it and hung it at eye height in the hall where the ledger is kept, because it is all they have.\n\nIn the corner of the stamp there is a sigil.\n\nYou have seen it four times this year: on a standing countersign in a Vault effects cage, on two variance circulars out of a sump, and now here, ninety-one years old, over the last words this world ever received.\n\n[ C13 HELD ]"
+  }
+ ],
+ "npcs": [
+  {
+   "id": "vurr",
+   "names": [
+    "vurr",
+    "marchioness",
+    "ottiline",
+    "the governor",
+    "her"
+   ],
+   "title": "Marchioness Ottiline Vurr",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask,\" Vurr says. \"I have had sixty years of questions from nobody.\"",
+   "portrait": "Marchioness Ottiline Vurr, one hundred and four, planetary governor of Kadmon Veil for sixty of them.\n\nShe receives you standing, so nobody sits. The current cycle's audit is open on the table beside her and it has been made current in the last three hours.",
+   "greeting": "It is not a throne room. It is the hall where the tithe ledger is kept, and the ledger is open on a table, and the Marchioness Ottiline Vurr is standing beside it because she has not sat down in front of a superior in sixty years and is not going to start at a hundred and four.\n\n\"Inquisitor. I have had three hours and I have spent all of it on the numbers, because you will want the numbers first.\"\n\nShe does not offer you a chair. She does not sit. Nobody sits.\n\n\"Shall I begin?\"",
+   "reprise": "She stands beside the ledger, entirely composed, waiting.",
+   "unknown": "\"That is not something I hold,\" Vurr says. \"I can have it found.\"",
+   "deflect": [
+    "She waits, with one hand flat on the ledger.",
+    "\"Ask me about the world,\" she says."
+   ],
+   "topics": [
+    {
+     "id": "census",
+     "names": [
+      "census",
+      "population",
+      "the figure",
+      "the numbers",
+      "nine hundred million",
+      "the discrepancy"
+     ],
+     "grants": [
+      "C14"
+     ],
+     "sets": [
+      "VURR_CENSUS"
+     ],
+     "text": "\"Nine hundred million, four hundred and twelve thousand. That is the acknowledged figure.\"\n\nShe turns a page with two fingers, carefully, because the page has been three other pages.\n\n\"The true figure is eight hundred and twelve million and falling by about a million and a half a year, chiefly respiratory.\"\n\n\"Then why report the other?\"\n\n\"Because the acknowledged figure was acknowledged.\"\n\nShe says it without any defensiveness at all.\n\n\"I am not authorised to correct Terra. I am authorised to be *accurate about being unable to*. Every report I have filed for sixty years carries the acknowledged figure at the head and the true figure in the third appendix with my justification beside it, and if a Commissar arrives tomorrow he will find the discrepancy in nine seconds and my reasoning under it, and he may shoot me for it, and he will not be able to say I concealed anything.\"\n\nShe has been holding a false number in the head of a document for sixty years so that she could not be accused of falsification. It is insane and it is also the most rigorous thing you have ever seen anybody do.\n\n[ C14 HELD ]"
+    },
+    {
+     "id": "report",
+     "names": [
+      "the report",
+      "the state of the world",
+      "your report",
+      "the numbers",
+      "tell me",
+      "brief me"
+     ],
+     "sets": [
+      "VURR_REPORTED"
+     ],
+     "text": "Four minutes.\n\nPopulation, at both figures, with the delta and the cause. Tithe: ninety-one cycles assembled to grade, assessed, sealed, awaiting collection, with the assessed total and the storage-loss rate. Heresy: nine cases in ninety-one years, all resolved locally, dispositions available. Infrastructure: three reactors of eleven, void-shields failed year forty-four and the generator maintained, lasgun cells exhausted year thirty-one, paper exhausted year nineteen.\n\nShortfalls: pharmaceutical precursor, respiratory; plasma coil stock; and one item she names last and flatly, which is *instruction*.\n\nShe does not look at a note once.\n\nIt is the best briefing you have ever been given by anybody, and she has been rehearsing it for sixty years for an audience that never came, and now it has come and it is you."
+    },
+    {
+     "id": "herself",
+     "names": [
+      "yourself",
+      "you",
+      "sixty years",
+      "your husband",
+      "how have you",
+      "your life"
+     ],
+     "text": "\"The world has three reactors of eleven,\" Vurr says.\n\n\"I asked about you.\"\n\n\"I know.\" She turns a page. \"The world has three reactors of eleven, the tithe is complete to cycle ninety-one, and the heresy count is nine. Those are the things about me that are any of your business, Inquisitor, and I do not say that to be sharp. I say it because I have been the governor of this world for sixty years and I have not been anything else for fifty-nine of them.\"\n\nRhod told you, on the walk up, that her husband died in cycle sixty-seven.\n\nShe does not mention it. She is not going to.",
+     "hidden_above": 70
+    },
+    {
+     "id": "pity",
+     "names": [
+      "i'm sorry",
+      "sympathy",
+      "condolence",
+      "this is terrible",
+      "pity",
+      "how awful"
+     ],
+     "counters": {
+      "VURR_RESPECT": -1
+     },
+     "sets": [
+      "VURR_PITIED"
+     ],
+     "text": "\"Don't.\"\n\nIt is the only time her voice changes.\n\n\"I have governed a world for sixty years with no resupply, no reinforcement and no instruction. Its tithe is complete. Its people are loyal. Its heresy count is nine.\n\n\"Whatever you have decided to feel about me, feel it after you have read the ledger.\"\n\nShe turns to Sergeant Oduya and asks her, courteously, about the transit, and listens to the answer, and for the rest of the audience she addresses your retinue and not you.\n\n[ she does not raise it again ]"
+    },
+    {
+     "id": "vigil",
+     "names": [
+      "the vigil",
+      "the delay",
+      "the reading",
+      "the attending",
+      "tolk's doctrine",
+      "waiting"
+     ],
+     "text": "\"Barsimeus's Reading.\" Vurr does not smile, exactly. \"Six hundred and eleven reasons a reply may be late.\"\n\n\"Do you believe it?\"\n\n\"I authorised it.\" She turns a page. \"In year thirty-one, when the lasgun cells ran out and I had four hundred thousand people on a muster ground with wooden rifles and nothing to tell them. Barsimeus was twenty-six and he had a doctrine and I read it in an afternoon and I put my seal on it.\n\n\"It is theologically sound, it is not a lie, and it has held this world at its post for sixty years.\"\n\nShe closes the ledger halfway and opens it again at the same place.\n\n\"You asked whether I believe it. I believe that I signed it and that it worked. That is the whole of the answer and I have had sixty years to find a better one.\"",
+     "hidden_above": 70
+    }
+   ],
+   "shows": [
+    {
+     "clue": "C11",
+     "counters": {
+      "VURR_RESPECT": 1
+     },
+     "sets": [
+      "VURR_CITED"
+     ],
+     "text": "You cite the Yard back to her: ninety-one cycles, the assessed total, the storage-loss rate, and the figure that is in Report 415 and that she recalculates every cycle — one year and four months.\n\nVurr looks at you properly for the first time.\n\n\"You walked it.\"\n\n\"I walked it.\"\n\n\"Most would not have.\" She closes the ledger, which she has not done. \"You have the loss rate to one decimal and you have the feeding figure, which means either Rhod told you or you did the sum, and Rhod does not have the loss rate.\n\n\"Very well. You may have the Reading Room. I will not come; there is nothing in it I do not know, and I find I would rather not watch somebody read it.\"\n\n[ VURR_RESPECT +1 — the Reading Room ]"
+    },
+    {
+     "clue": "C13",
+     "counters": {
+      "VURR_RESPECT": 1
+     },
+     "sets": [
+      "VURR_CITED"
+     ],
+     "text": "You give her the last signal back: the routing, the cycle, the assessed value, the receipt acknowledged, and the sigil in the corner of the stamp.\n\n\"Year zero,\" Vurr says. \"It is framed in this hall. I walk past it eleven times a day.\"\n\n\"The stamp is a reconciliation office.\"\n\nA long pause. She is a hundred and four and she does not waste a pause.\n\n\"Say that again.\"\n\nYou say it again.\n\n\"I have had sixty years to look at that frame,\" she says at last, \"and I read it as a tithe receipt, because it is a tithe receipt, and I am now going to spend whatever I have left knowing that the last thing anybody said to this world was said by an accountant.\"\n\nShe opens the ledger again, at a page she does not need.\n\n\"You may have the Reading Room.\"\n\n[ VURR_RESPECT +1 — the Reading Room ]"
+    }
+   ],
+   "beats": [
+    {
+     "id": "question",
+     "after_topics": 2,
+     "requires": [
+      "KADMON_VISITED"
+     ],
+     "blocks": [
+      "VURR_ASKED"
+     ],
+     "sets": [
+      "VURR_ASKED"
+     ],
+     "text": "She closes the ledger.\n\n\"Have you come with orders?\"\n\nYou do not answer immediately. She reads your face for as long as it takes, which is about four seconds, and she has been reading faces across this hall since before your grandparents were born.\n\n\"No. I see.\"\n\nShe puts both hands flat on the ledger.\n\n\"Then let me ask the useful question instead, since you have come a long way and I am a hundred and four and neither of us should waste the afternoon.\n\n\"Are we being punished, or are we being forgotten?\n\n\"I have prepared this world for one of those for sixty years. I should like to know whether I prepared for the wrong thing.\""
+    },
+    {
+     "id": "thanks",
+     "requires": [
+      "KADMON_AID"
+     ],
+     "blocks": [
+      "VURR_THANKED"
+     ],
+     "sets": [
+      "VURR_THANKED"
+     ],
+     "text": "At the shuttle, privately, with the retinue already aboard, she thanks you.\n\nNot for coming, and not in general. She names the specific thing you did, by its correct name, in one sentence, and gets the figure right.\n\nThen:\n\n\"I should like a receipt.\"\n\n\"A receipt.\"\n\n\"For the world's record, Inquisitor. Written, dated, signed, describing what was given and by whom, in whatever form your office uses.\" She is entirely serious. \"It goes in the ledger under the cycle. If it is not in the ledger it did not happen, and I have spent sixty years being extremely careful about what did and did not happen here.\"\n\nYou write it out on the ramp, on scraped stock, with a borrowed stylus, and she reads it twice and thanks you a second time for the *form*, which she says is correct."
+    },
+    {
+     "id": "thanks_nothing",
+     "after_topics": 4,
+     "requires": [
+      "VURR_ASKED"
+     ],
+     "blocks": [
+      "KADMON_AID",
+      "VURR_THANKED"
+     ],
+     "sets": [
+      "VURR_THANKED"
+     ],
+     "text": "At the shuttle she comes down to see you off, which she did not have to do, at a hundred and four, across eleven hundred metres of muster ground.\n\n\"Thank you for coming,\" the Marchioness says.\n\nThat is all of it. She does not add a condition to it, or a hope, or a request. She says it the way you would thank somebody who had come a long way, and means it entirely, and goes back up the hall to close cycle ninety-one."
+    }
+   ],
+   "acts": [
+    {
+     "id": "tell_truth",
+     "names": [
+      "tell her the truth",
+      "the truth",
+      "answer her",
+      "tell her",
+      "forgotten"
+     ],
+     "requires": [
+      "VURR_ASKED"
+     ],
+     "blocks": [
+      "KADMON_TOLD",
+      "KADMON_LIED",
+      "KADMON_SILENT"
+     ],
+     "sets": [
+      "KADMON_TOLD"
+     ],
+     "counters": {
+      "VERITY": 2
+     },
+     "cost": 3,
+     "text": "You tell her.\n\nNot punished. Not forgotten. *Deleted* — by an engine that resolves variances, at a routing address that does not exist, four months after a sector reconciliation in a year she can name, and the last thing anybody said to her world was said by an accountant closing a file.\n\nMarchioness Ottiline Vurr does not collapse.\n\nShe asks two clarifying questions. The first is whether the instrument was administrative or malicious. The second is whether it is still running.\n\nThen: \"I should like that in writing.\"\n\n\"It would be extremely dangerous to you.\"\n\n\"A thing said is weather,\" Vurr says. \"I have had sixty years of things said. Write it down, sign it, and I will put it in the ledger under this cycle, and then Kadmon Veil will be a world whose own record says it was erased, and whatever resolves variances will have to come and do something about that.\"\n\nShe has understood, in about ninety seconds, the thing it took you eleven weeks to understand, and has decided to make her planet a live contradiction on purpose.\n\nShe will tell three people. No more. And the Attending goes on at Terce, every day, \"because it costs a minute and it holds them.\"\n\nSub-Deacon Tolk denounces you in the hall as a tempter and calls for the audience to be ended. Vurr has him confined for nine days, gently, by two men who apologise to him on the way.\n\n[ KADMON_TOLD — VERITY +2 ]"
+    },
+    {
+     "id": "lie",
+     "names": [
+      "lie to her",
+      "lie",
+      "say yes",
+      "i have orders",
+      "tell her orders",
+      "reassure her"
+     ],
+     "requires": [
+      "VURR_ASKED"
+     ],
+     "blocks": [
+      "KADMON_TOLD",
+      "KADMON_LIED",
+      "KADMON_SILENT"
+     ],
+     "sets": [
+      "KADMON_LIED"
+     ],
+     "counters": {
+      "VERITY": -3
+     },
+     "cost": 3,
+     "text": "You tell her you have come with orders.\n\nIt is the kind answer. It is the answer that lets a hundred-and-four-year-old woman die having been right, and it costs nothing, and you are four hundred light years from anybody who could contradict it.\n\n\"Thank the Throne,\" says Sub-Deacon Tolk, and begins to weep, and is not ashamed of it.\n\nVurr does not weep.\n\n\"May I see them?\"\n\nOf course she may. Of course she asks. She has spent sixty years being unable to falsify a census figure and you have just told her something she wants very much to be true, and the first thing she does is ask for the document.\n\nWhatever you show her — a writ that is real, a forgery, or nothing at all — she takes it and reads it and enters it in the ledger under this cycle by number.\n\nShe will cite that number for the rest of her life.\n\nKadmon Veil redoubles. Tithe assembly rises four per cent in cycle ninety-two, out of a population that is dying at a million and a half a year, and in every account of this afternoon that anybody ever writes they are still waiting, harder, and they name you.\n\n[ KADMON_LIED — VERITY -3 ]"
+    },
+    {
+     "id": "stonewall",
+     "names": [
+      "say nothing",
+      "silence",
+      "refuse to answer",
+      "no comment",
+      "stonewall",
+      "decline to answer"
+     ],
+     "requires": [
+      "VURR_ASKED"
+     ],
+     "blocks": [
+      "KADMON_TOLD",
+      "KADMON_LIED",
+      "KADMON_SILENT"
+     ],
+     "sets": [
+      "KADMON_SILENT"
+     ],
+     "counters": {
+      "RECONCILIATION": 5
+     },
+     "cost": 2,
+     "text": "You say nothing.\n\nEleven seconds. She does not fill them and she does not look away, and at a hundred and four she has a great deal more practice at this than you do.\n\n\"Very well.\"\n\nShe opens the ledger and moves to business: storage-loss rates, the pharmaceutical shortfall, the Assessor's schedule for cycle ninety-two.\n\nShe never raises it again. Not that afternoon, not at the shuttle, not in the letter she does not send.\n\nThat evening she files Report 923, which records your visit accurately and at length — your name, your rank, your retinue, the questions you asked and the one you did not answer — and indexes it, and puts it on the shelf with the other nine hundred and twenty-two.\n\n[ KADMON_SILENT ]"
+    },
+    {
+     "id": "aid_writ",
+     "names": [
+      "leave the writ",
+      "the writ",
+      "a resupply order",
+      "a resupply order",
+      "leave papers"
+     ],
+     "requires": [
+      "VURR_ASKED",
+      "TRANSPORT_WRIT"
+     ],
+     "blocks": [
+      "KADMON_WRIT",
+      "KADMON_REACTOR",
+      "KADMON_HOLD",
+      "KADMON_WITNESS"
+     ],
+     "sets": [
+      "KADMON_WRIT",
+      "KADMON_AID"
+     ],
+     "cost": 3,
+     "text": "You leave Crase's transit writ, and under it you write a resupply requisition for Kadmon Veil in full, at grade, against the shortfall, signed with your rosette number.\n\nIt is a real document. It covers one hundred per cent of the need.\n\nRhod will carry it out by hand, because there is no other way for it to leave: transit to an authority that can act on it is between eleven and nineteen years.\n\nVurr does the arithmetic in front of you, out loud, without being asked.\n\n\"Sixteen to twenty-eight million,\" she says. \"Before it arrives. At the current rate, and assuming the rate holds, which it will not, because the plant that made the precursor went cold in year fifty-one.\"\n\nShe folds it once.\n\n\"It is the largest thing anyone has ever given this world and I am not going to pretend otherwise, and I want the number said in the room.\"\n\nWithin a day there is a reliquary being built for it. It will have a feast day by the end of the cycle. You watch two carpenters measuring the alcove on your way to the shuttle.\n\n[ KADMON_WRIT ]"
+    },
+    {
+     "id": "aid_reactor",
+     "names": [
+      "relight the reactor",
+      "reactor four",
+      "the reactor",
+      "light it",
+      "relight it"
+     ],
+     "requires": [
+      "VURR_ASKED",
+      "FENN_INTACT",
+      "FENN_ALIVE"
+     ],
+     "blocks": [
+      "KADMON_WRIT",
+      "KADMON_REACTOR",
+      "KADMON_HOLD",
+      "KADMON_WITNESS"
+     ],
+     "sets": [
+      "KADMON_REACTOR",
+      "KADMON_AID"
+     ],
+     "cost": 4,
+     "text": "Fenn has the rite and the housing serial, because Fenn has everything, and the Guild of Wakers has been oiling, turning and blessing Reactor Four for ninety-one years without ever seeing one lit.\n\nIt takes nine hours and four of them are liturgy.\n\nIt lights.\n\nFour hundred Wakers, none of whom has ever seen this, in a housing hall eleven kilometres under Erasmus, and the noise they make is not cheering.\n\n\"Reactor Four,\" Vurr says. \"Erasmus lower-east. Forty years of grid, and the Wakers will have a feast day inside a week, and I will not be able to stop them and I will not try.\"\n\nShe looks at the ledger, not at you.\n\n\"It is two and four-tenths per cent of my grid, Inquisitor. I want you to hear me say the number, so that you know that I know it, and so that neither of us has to pretend this afternoon was a rescue.\"\n\n[ KADMON_REACTOR ]"
+    },
+    {
+     "id": "aid_hold",
+     "names": [
+      "buy the hold",
+      "sazh's hold",
+      "the cargo",
+      "unload the hold",
+      "the coil stock"
+     ],
+     "requires": [
+      "VURR_ASKED",
+      "TRANSPORT_DEBT"
+     ],
+     "blocks": [
+      "KADMON_WRIT",
+      "KADMON_REACTOR",
+      "KADMON_HOLD",
+      "KADMON_WITNESS"
+     ],
+     "sets": [
+      "KADMON_HOLD",
+      "KADMON_AID",
+      "SAZH_DEBT_3"
+     ],
+     "cost": 3,
+     "text": "Sazh sells you her hold at a berth that has not taken a ship in ninety-one years.\n\nTwo hundred tonnes: plasma coil stock, lamp-oil, and eleven crates of a pharmaceutical precursor she has been carrying since Vardan because somebody in four ports did not want it.\n\n\"That's a favour,\" she says. \"Three. And I'll not pretend it's charity, because I'd have dumped the coil stock at Cantica for the mass allowance and I'd have got nothing for it.\"\n\nShe looks out at the Yard for a while.\n\n\"Four-ten-thousandths of a per cent,\" she says. \"I did the sum on the way down. I'd rather have done it after.\"\n\nThe Wakers unload it in four hours, by hand, singing, and there is a shrine to the crates before the shuttle lifts.\n\n[ KADMON_HOLD — SAZH_DEBT_3 ]"
+    },
+    {
+     "id": "aid_witness",
+     "names": [
+      "take a witness",
+      "inscribe him",
+      "the roster",
+      "take rhod",
+      "a name",
+      "onto the roster"
+     ],
+     "requires": [
+      "VURR_ASKED"
+     ],
+     "blocks": [
+      "KADMON_WRIT",
+      "KADMON_REACTOR",
+      "KADMON_HOLD",
+      "KADMON_WITNESS"
+     ],
+     "sets": [
+      "KADMON_WITNESS",
+      "KADMON_AID"
+     ],
+     "cost": 3,
+     "text": "You inscribe one Kadmoni onto your retinue roster.\n\nIt is an Imperial record with a rosette number against it, entered at the correct grade, and it will propagate to four offices at the next waypoint, and whatever resolves variances will have to work to touch it, because it is not a world reference or a tithe line. It is a person, attached to an Inquisitor, in the record.\n\nOne name. Out of eight hundred and twelve million.\n\nVurr will not go. She does not deliberate about it for even a second.\n\n\"Rhod,\" she says. \"Fourth grade, nineteen, and he has read every report in that room twice and hand-copied forty of them, which means the world goes with him.\"\n\nRhod is sick twice before the shuttle and apologises for it both times.\n\nHis name goes on a plaque in the scribes' hall within the day. He will not see it.\n\n[ KADMON_WITNESS ]"
+    }
+   ]
+  },
+  {
+   "id": "tolk",
+   "names": [
+    "tolk",
+    "sub-deacon",
+    "barsimeus",
+    "the deacon",
+    "him"
+   ],
+   "title": "Sub-Deacon Barsimeus Tolk",
+   "lists_topics": false,
+   "topic_refusal": "\"All questions are permitted,\" Tolk says. \"Six hundred and eleven of them have answers.\"",
+   "portrait": "Sub-Deacon Barsimeus Tolk, keeper of the Reading of the Delay, who has spent thirty years explaining why a reply is late.\n\nHe has been looking at you since you came in the way a man looks at a thing he has been promised.",
+   "greeting": "\"Inquisitor.\" Tolk is not able to keep still. \"You will forgive me. I have waited — that is, the *world* has waited — \"\n\n\"Barsimeus.\"\n\nOne word from the Marchioness and he stops, completely, mid-sentence, with the practised smoothness of a man who has been stopped in that hall a great many times over forty years.\n\n\"Forgive me,\" he says again, to her, and then to you: \"I keep the Reading of the Delay. There are six hundred and eleven canonically permitted reasons for a reply to be late and I can give you any of them.\"",
+   "reprise": "Tolk hovers, radiating a patience he does not have.",
+   "unknown": "\"That is not among the six hundred and eleven,\" Tolk says, troubled.",
+   "deflect": [
+    "Tolk waits, on the balls of his feet.",
+    "\"You have only to ask,\" he says."
+   ],
+   "topics": [
+    {
+     "id": "delay",
+     "names": [
+      "the delay",
+      "the reading",
+      "six hundred and eleven",
+      "the reasons",
+      "the vigil",
+      "doctrine"
+     ],
+     "text": "\"Fourteen astropathic. Four hundred and six administrative. The remainder providential.\"\n\nHe recites eleven of them before you can stop him and they are all, individually, entirely reasonable: a Choir in quarantine, a sector reassessment, a rescript in abeyance, an Assessor's seat vacant pending appointment.\n\nEvery single one is a thing that has genuinely happened somewhere in the Imperium this year.\n\n\"The doctrine holds the silence to be a Vigil,\" Tolk says. \"A Vigil is not an absence, Inquisitor. It is a *duty being performed by both parties*.\"\n\nSomebody built that sentence in about year thirty, and it has held four hundred thousand people at their posts for six decades, and it is the single most successful piece of theology you have ever encountered."
+    },
+    {
+     "id": "prophecy",
+     "names": [
+      "prophecy",
+      "the sign",
+      "our arrival",
+      "what we mean",
+      "providence",
+      "why we came"
+     ],
+     "counters": {
+      "VURR_RESPECT": -1
+     },
+     "text": "\"You are the four hundred and seventh reason,\" Tolk says, very fast, before anybody can stop him. \"Administrative. A visitation in advance of a collection fleet — it is in the Reading, it is *permitted*, it is the fourteenth of the administrative — \"\n\n\"Barsimeus. He is a man off a ship.\"\n\nVurr does not raise her voice.\n\n\"He is a man off a ship, and he has come a long way, and you will let him say what he has come to say before you tell him what it means. Forty years, Barsimeus.\"\n\nTolk subsides.\n\nShe has been doing that for forty years, in six words, and it has worked every time, and the day she dies it is going to stop working."
+    }
+   ],
+   "shows": [],
+   "beats": [],
+   "acts": []
+  }
+ ],
+ "exits": [
+  {
+   "id": "reading",
+   "names": [
+    "reading room",
+    "the reports",
+    "the room",
+    "the reading",
+    "922",
+    "the shelves"
+   ],
+   "to": "reading_room",
+   "cost": 2,
+   "at_least": {
+    "VURR_RESPECT": 1
+   },
+   "blocked": "The Reading Room is not shown to visitors. Nobody has said so; it simply has not been offered, and you have not been given a reason to be offered it.",
+   "text": "She gives you the key herself and does not come."
+  },
+  {
+   "id": "down",
+   "names": [
+    "down",
+    "out",
+    "back",
+    "erasmus",
+    "the hive",
+    "return"
+   ],
+   "to": "kadmon",
+   "cost": 2,
+   "text": "Down out of the Muster Hall."
+  }
+ ],
+ "clues": {
+  "C14": {
+   "id": "C14",
+   "names": [
+    "the census",
+    "reported and true",
+    "eight hundred and twelve",
+    "her justification",
+    "the discrepancy",
+    "the third appendix"
+   ],
+   "label": "Kadmon's reported census against its true one — 900,412,000 acknowledged, 812 million actual, with sixty years of written justification",
+   "store": "either",
+   "reconciliation": 2,
+   "file_text": "FILED. CLASS: CENSUS / DISCREPANCY, REPORTED. INDEXED. WORLD: KADMON VEIL.\n\nThe cogitator files a reported-versus-actual discrepancy, which is an ordinary\ncondition, and applies the standing rule: where an acknowledged figure and a\nlocal figure disagree, the acknowledged figure is authoritative pending\nreassessment.\n\nIt has just done to her ledger, in nine seconds, the thing she spent sixty\nyears refusing to do.",
+   "note_text": "Nine hundred million four hundred and twelve thousand acknowledged. Eight\nhundred and twelve million actual, falling a million and a half a year, chiefly\nrespiratory.\n\nHer justification, copied out: she is not authorised to correct Terra; she is\nauthorised to be accurate about being unable to.\n\nThe acknowledged figure is the number on the Erratum. It is the number Vosk cut\ninto wax. It is the number the engine has been carrying for ninety-one years,\nand it was true once."
+  }
+ },
+ "strings": {
+  "no_such_thing": "A hall, a table, a ledger and a frame.",
+  "already_read": "You have looked twice. She is waiting and will not hurry you.",
+  "no_terminal": "There is a cogitator in this hall. It has been maintained for ninety-one years and has nothing to talk to.",
+  "read_room_locked": "It is a muster hall. Nobody arranged it; they only kept it.",
+  "no_one_here": "The Marchioness, and the Sub-Deacon."
+ }
+}

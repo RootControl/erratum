@@ -1,0 +1,336 @@
+{
+ "id": "spirit",
+ "title": "THE PATIENT VERDICT — COGITATOR WELL",
+ "clock_at": "03h20",
+ "intro": "The well is two metres of deck plate and a bench, and the hull's spirit lives\nin it the way a clerk lives in an office: badly lit, entirely competent, and\nstill working on something nobody has asked about for eleven weeks.\n\nOn the bench: a NAV PLOT with a leg struck out of it by hand. A MANIFEST with\none line on it. A voice SLATE, nineteen seconds long. And under the plot\ntable, a DRAWER.\n\nMASTER ABOARD, the well says. RESUMING.",
+ "revisit": "The well. Bench, plot table, drawer, and a spirit that is still resuming.",
+ "look": "Two metres of deck plate, a bench, and a plot table with a DRAWER under it.\n\nThe NAV PLOT, with a leg entered and struck.\nThe MANIFEST, one line.\nThe voice SLATE, nineteen seconds.\n\nThe SPIRIT, answering in fields.",
+ "objects": [
+  {
+   "id": "nav",
+   "names": [
+    "nav plot",
+    "the plot",
+    "course",
+    "navigation",
+    "the chart",
+    "waypoints"
+   ],
+   "clue": "C2",
+   "careless": "A nav plot to Cantica-Null, laid in and current, with the waypoints in a hand that got tidier as it went.",
+   "careful": "Out and no return.\n\nThe return leg is in the log and then it is not in the log. Not blank — struck.\nSomebody entered a course home and took it out again by hand, field by field,\nthe way you cancel a thing you want to be able to prove you cancelled.\n\nHe plotted his way back. He sat with it for eighty-one minutes. Then he deleted\nit, and left the deletion where you would find it, because a blank field says\nnothing and a struck one says *I considered it*.\n\nThe out-leg is nineteen waypoints and the last one is not a station. It is an\norbit."
+  },
+  {
+   "id": "manifest",
+   "names": [
+    "the manifest",
+    "cargo",
+    "one line",
+    "the casket",
+    "reliquary",
+    "hold"
+   ],
+   "clue": "C3",
+   "careless": "A cargo manifest with one line on it, mass-declared, loaded and never unloaded.",
+   "careful": "ONE (1) RELIQUARY CASKET, EMPTY. MASS DECLARED. CONSIGNEE: VOSK, H., INQUISITOR.\n\nHe addressed a crate to himself and put nothing in it.\n\nIt is in the hold. You go and look at it: lead-lined, hinged, no lock, with the\nOrdo's seal-plate on the lid and the consignee panel filled out in his own\nhand. A reliquary casket is a thing you carry a relic in, physically, because\nthe Ecclesiarchy will not send a saint's finger down a vox-trunk.\n\nIt is sized for one written thing, lying flat.\n\nHe declared the mass, which means it was on a manifest, which means the\nadmission that he was going to carry something to Cantica-Null by hand has been\nsitting on a stock return for eleven weeks with nobody reading it."
+  },
+  {
+   "id": "slate",
+   "names": [
+    "slate",
+    "voice slate",
+    "the recording",
+    "his voice",
+    "nineteen seconds"
+   ],
+   "requires": [
+    "SPIRIT_OPEN"
+   ],
+   "clue": "C4",
+   "careless": "A voice slate, nineteen seconds, filed with the orders. His voice.",
+   "careful": "Nineteen seconds. A throat cleared at the second.\n\n\"If you are hearing this you have done the first difficult thing. Do not do the obvious second one.\"\n\nCut.\n\nThat is the whole of it. No name, no address, no instruction, and nothing at all\nfor whoever is listening — you have played it four times looking for the part\nwhere he says something to *you*, and there is no such part, and you keep\nplaying it.\n\nBez comes down on the third day and listens to it twice with her head on one\nside.\n\n\"Fourth second,\" she says. \"There. That's an intake. He's about to say\nsomething else and he stops himself, and then he cuts it there so you'd not\nhear him stop.\"\n\nShe hands the slate back.\n\n\"That's him about to say something else, sir. Whatever it was, he decided you\nwere better off without it, and he was probably wrong, and there it is.\""
+  },
+  {
+   "id": "slate_damaged",
+   "names": [
+    "slate",
+    "voice slate",
+    "the recording",
+    "his voice",
+    "nineteen seconds"
+   ],
+   "blocks": [
+    "SPIRIT_OPEN"
+   ],
+   "careless": "A voice slate, filed with the orders, logged as damaged in transit.",
+   "careful": "DAMAGED IN TRANSIT, says the forwarding docket, in the Provost's stamp, over Crase's countersignature.\n\nIt plays. It is nineteen seconds of a throat being cleared and then nothing, and\nthe nothing is clean — no hiss, no dropout, no partial word at the edge of it.\n\nYou have taken enough depositions to know what a damaged slate sounds like. It\nsounds like a damaged slate.\n\nThis sounds like a slate.\n\nThere is no way to prove that from where you are standing, and you are aware\nthat you have spent eleven weeks becoming the sort of person who thinks this\nabout a stock docket, and that being right four times does not make you right\nnow."
+  },
+  {
+   "id": "drawer",
+   "names": [
+    "drawer",
+    "the drawer",
+    "under the table",
+    "plot table",
+    "the vox",
+    "the part"
+   ],
+   "requires": [
+    "SPIRIT_OPEN"
+   ],
+   "clue": "C5",
+   "careless": "The drawer under the plot table. There is dust in it, on a hull sealed eleven weeks ago.",
+   "careful": "A vox coupling, in a cloth, with a written order folded round it.\n\nNOTHING THIS HULL CARRIES IS TO BE TRANSMITTED. — H.V.\n\nThe hull's vox is not disabled. Disabled is a setting; a setting is a field and a\nfield can be amended by anybody who reaches the panel. He went into the run and\ntook the coupling out with his hands, and put it in a drawer, and wrote an order\nand folded it round the part so that whoever found one found the other.\n\nA courier hull that cannot transmit is a courier hull that can only deliver by\narriving.\n\nYou stand in a well two metres wide holding a piece of a machine, and the last\nsix days of Hadrian Vosk's life stop being a series of decisions and become a\nsingle one, made early, and executed without a word to anybody."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "spirit",
+   "names": [
+    "spirit",
+    "the spirit",
+    "machine spirit",
+    "the hull",
+    "cogitator",
+    "it"
+   ],
+   "title": "The spirit of *The Patient Verdict*",
+   "lists_topics": false,
+   "topic_refusal": "QUERY NOT A FIELD.",
+   "portrait": "A courier hull's machine spirit, thirty years in service, running standing orders filed six days before its master died.\n\nIt answers in manifest fields. It is a filing clerk with a wound.",
+   "greeting": "The well wakes when you put your hand on the plate, which it should not do,\nbecause a hull under seal wakes for its master and its master has been dead\neleven weeks.\n\nMASTER ABOARD. RESUMING.\n\nA pause of about four seconds, which is very long.\n\nORDERS CURRENT. FILED 0997.4.205. NOT AMENDED.\n\nThe fourth of the second, of this year, is six days before a door came off its\nseal at the twenty-third hour and fifty-five. He filed these and then he went\nand sat down at a regicide board.",
+   "reprise": "ORDERS CURRENT. NOT AMENDED.",
+   "unknown": "NOT A FIELD ON THIS FORM.",
+   "deflect": [
+    "The well hums. It is waiting for a field name.",
+    "NO ENTRY UNDER THAT HEADING."
+   ],
+   "topics": [
+    {
+     "id": "orders",
+     "names": [
+      "orders",
+      "standing orders",
+      "the orders",
+      "current orders",
+      "what are you running",
+      "instructions"
+     ],
+     "sets": [
+      "SPIRIT_ORDERS_READ"
+     ],
+     "text": "ORDERS CURRENT. FILED 0997.4.205, 04h10. AUTHORITY: VOSK, H. NOT AMENDED. NOT COUNTERMANDED.\n\nIt reads them out the way a clerk reads a return: heading, field, value, next.\n\nProvisioning for six for one hundred and ten days. Fuel to full and hold. Crew\ncomplement zero. Berth fees paid forward eleven months from a discretionary\naccount.\n\nOne hundred and ten days is Cantica-Null and back with fourteen days of margin,\nand he paid the berth eleven months forward, which is what a man does when he\ndoes not know who will be collecting the hull or when.\n\nHE DID NOT SPECIFY A MASTER, the spirit adds, unprompted, which is not a field.\n\nIt is the only unsolicited thing it says in the whole of the passage."
+    },
+    {
+     "id": "return",
+     "names": [
+      "return",
+      "the return leg",
+      "coming back",
+      "course home",
+      "the strike",
+      "why struck"
+     ],
+     "requires": [
+      "SPIRIT_ORDERS_READ"
+     ],
+     "text": "ENTERED 0997.4.205, 04h41. STRUCK 0997.4.205, 06h02. STRUCK BY HAND, FIELD BY FIELD.\n\nEighty-one minutes.\n\nHe plotted his way back — the whole leg, waypoint by waypoint, the way you\nplot a course you intend to fly. Then he sat with it for eighty-one minutes.\nThen he took it out again by hand, one field at a time, which takes about\nninety seconds a field on a hull this old and which he did nineteen times.\n\nHe could have blanked it in one action. A blank field says nothing.\n\nA struck one says *I considered it*."
+    },
+    {
+     "id": "master",
+     "names": [
+      "vosk",
+      "your master",
+      "him",
+      "hadrian",
+      "the master",
+      "who filed these"
+     ],
+     "text": "MASTER: VOSK, H. INQUISITOR. LAST ABOARD 0997.4.205, 06h11.\n\nSTATUS: ABOARD.\n\n\"He is dead.\"\n\nNOT A FIELD ON THIS FORM.\n\nIt is not being poignant. There is no field on a courier hull's roster for a\nmaster who has died, because a hull's roster is amended by its master, and\nthere is nobody to file the amendment, and so *The Patient Verdict* has been\nlying at a cold berth for eleven weeks with Hadrian Vosk aboard."
+    }
+   ],
+   "shows": [],
+   "beats": [
+    {
+     "id": "stolen_full",
+     "requires": [
+      "TRANSPORT_STOLEN"
+     ],
+     "blocks": [
+      "SPIRIT_OPEN"
+     ],
+     "sets": [
+      "SPIRIT_OPEN"
+     ],
+     "text": "Nobody has been through this hull.\n\nThat is the thing about having stolen it: there was no disposal of effects, no\nProvost inventory, no forwarding, no curation. Nine minutes from the seal to\nthe clamps and everything aboard is where he left it on the fourth of the\nsecond at the eleventh minute past the sixth hour.\n\nThe drawer under the plot table has not been opened. You can tell because the\ndust in it is undisturbed and because there is dust in it, on a hull that has\nbeen sealed for eleven weeks."
+    }
+   ],
+   "acts": [
+    {
+     "id": "buy_core",
+     "names": [
+      "buy the core",
+      "the core",
+      "buy it back",
+      "another favour",
+      "second favour",
+      "sazh"
+     ],
+     "requires": [
+      "TRANSPORT_DEBT"
+     ],
+     "blocks": [
+      "SPIRIT_OPEN"
+     ],
+     "sets": [
+      "SPIRIT_OPEN",
+      "SAZH_DEBT_2"
+     ],
+     "cost": 3,
+     "text": "The core is in Sazh's salvage locker, which you find out by asking where the\ncore is.\n\n\"Berth Nine's been sitting eleven weeks with a dead man's name on it,\" she\nsays, entirely unembarrassed. \"Somebody was going to pull the spirit-core out\nof it and it was going to be me, and I'd have sold it back to the Ordo in a\nyear at four times what it's worth, and instead I'm selling it to you now at\none.\"\n\n\"One favour.\"\n\n\"One favour,\" Sazh agrees. \"Which makes two, and I want you to hear me say the\nnumber, because people who owe one forget and people who owe two do not.\"\n\nShe says the terms. You say them back. Nobody writes anything down.\n\nThe core goes into the well in about twenty minutes and wakes up mid-sentence,\neleven weeks into a report nobody heard the beginning of.\n\n[ SAZH_DEBT_2 ]"
+    },
+    {
+     "id": "recover",
+     "names": [
+      "recover it",
+      "the slate",
+      "restore it",
+      "have fenn do it",
+      "reconstruct the slate",
+      "salvage it"
+     ],
+     "requires": [
+      "TRANSPORT_WRIT",
+      "FENN_INTACT",
+      "FENN_ALIVE"
+     ],
+     "blocks": [
+      "SPIRIT_OPEN"
+     ],
+     "sets": [
+      "SPIRIT_OPEN"
+     ],
+     "counters": {
+      "FENN_DRIFT": 1
+     },
+     "cost": 3,
+     "text": "\"Oh, that's not damage,\" Fenn says. \"That's a *curation*.\"\n\nHe is delighted. He has been delighted since translation.\n\n\"Damaged in transit would be a bad block and a checksum that doesn't close.\nThis closes. Somebody read it, decided which nineteen seconds the Ordo needed,\nre-cut the file to the same length, and closed the checksum properly, which is\nreally quite good work and I'd like to know who did it.\"\n\nHe gets it back in about four hours, out of the parity blocks, because a\ncourier hull writes its slates twice and the second copy is in the fuelling\nledger where nobody curates anything.\n\nAfterwards he sits down and says he has a headache, which he has never once\nsaid, and then says it was probably the light."
+    },
+    {
+     "id": "wipe",
+     "names": [
+      "wipe it",
+      "wipe the spirit",
+      "clear the log",
+      "scrub it",
+      "burn the log"
+     ],
+     "requires": [
+      "SPIRIT_ORDERS_READ"
+     ],
+     "blocks": [
+      "SPIRIT_WIPED"
+     ],
+     "sets": [
+      "SPIRIT_WIPED"
+     ],
+     "counters": {
+      "VERITY": 1
+     },
+     "cost": 3,
+     "text": "You take the whole of it: orders, plot, manifest, roster, the struck return\nleg, the nineteen seconds, all of it, out of the well and into your own hand\non paper, and then you take it out of the well.\n\nORDERS PURGED ON MASTER'S AUTHORITY.\n\nMASTER: — \n\nThe roster field goes empty and stays empty, and the hull runs on without a\nname in it, which is what a hull is supposed to do.\n\nWhat you have done is make the only copy of Hadrian Vosk's last six days a\nsheaf of paper in a coat on a ship in a warp-scar. Nobody at Cantica-Null will\nread it off the hull, because there is nothing on the hull to read.\n\nNobody will ever be able to check it either.\n\n[ VERITY +1 ]"
+    }
+   ]
+  }
+ ],
+ "npc_refs": [
+  "safehouse/fenn2"
+ ],
+ "exits": [
+  {
+   "id": "up",
+   "names": [
+    "up",
+    "out",
+    "back",
+    "the cerement",
+    "deck",
+    "return"
+   ],
+   "to": "cerement",
+   "cost": 1,
+   "text": "Up out of the well."
+  }
+ ],
+ "clues": {
+  "C2": {
+   "id": "C2",
+   "names": [
+    "nav plot",
+    "the struck leg",
+    "return leg",
+    "the course",
+    "eighty-one minutes"
+   ],
+   "label": "Vosk's nav plot to Cantica-Null — the return leg entered, sat with for eighty-one minutes, then struck by hand",
+   "store": "either",
+   "reconciliation": 1,
+   "file_text": "FILED. CLASS: NAVIGATIONAL / COURSE, FILED AND AMENDED. INDEXED.\n\nThe cogitator files the plot and records the amendment history, which is what\nan amendment history is for, and notes nineteen field-level strikes by the\nmaster's own authority.\n\nIt has no opinion about eighty-one minutes.",
+   "note_text": "Nineteen waypoints out. A return leg entered at 04h41 and struck at 06h02,\nfield by field, by hand.\n\nEighty-one minutes.\n\nHe could have blanked it in one action and he took ninety seconds a field,\nnineteen times, so that the strike would still be there."
+  },
+  "C3": {
+   "id": "C3",
+   "names": [
+    "the casket",
+    "reliquary",
+    "reliquary casket",
+    "the crate",
+    "one line",
+    "mass-declared"
+   ],
+   "label": "One empty reliquary casket, mass-declared, addressed by Vosk to himself — sized for one written thing lying flat",
+   "store": "either",
+   "reconciliation": 1,
+   "file_text": "FILED. CLASS: CARGO / DECLARATION. INDEXED. CONSIGNEE: VOSK, H.\n\nA one-line manifest for an empty casket is an unremarkable filing and the\ntemplate handles it in nine seconds.\n\nSomebody at the far end of the queue now has a note that you are interested in\na box.",
+   "note_text": "Lead-lined, hinged, no lock, seal-plate on the lid, consignee panel in his own\nhand, addressed to himself.\n\nEmpty, and declared empty, and carried eleven weeks.\n\nIt is sized for one written thing lying flat, and there is one written thing in\nthis sector that is worth a casket, and it is in a felt case in your coat."
+  },
+  "C4": {
+   "id": "C4",
+   "names": [
+    "the slate",
+    "nineteen seconds",
+    "his voice",
+    "the recording",
+    "the intake"
+   ],
+   "label": "Vosk's nineteen-second slate — and the intake breath at the fourth second, before he cut it",
+   "store": "either",
+   "reconciliation": 1,
+   "file_text": "FILED. CLASS: STATEMENT / RECORDED, DECEASED. INDEXED. DURATION 19s.\n\nTranscribed in full, which takes it eleven seconds, and appended verbatim.\n\nThe transcript does not contain the fourth second, because the fourth second is\nnot a word, and there is no field on a transcript for a man deciding not to say\nsomething.",
+   "note_text": "*If you are hearing this you have done the first difficult thing. Do not do the obvious second one.*\n\nNineteen seconds, no name, no address, nothing for whoever is listening.\n\nAt the fourth second there is an intake of breath. Bez found it in two plays.\nHe was about to say something else and stopped himself, and then cut it there so\nyou would not hear him stop."
+  },
+  "C5": {
+   "id": "C5",
+   "names": [
+    "the coupling",
+    "vox coupling",
+    "uncoupled vox",
+    "the standing order",
+    "the part",
+    "nothing transmitted"
+   ],
+   "label": "The hull's vox coupling in a drawer, with a written order folded round it: NOTHING THIS HULL CARRIES IS TO BE TRANSMITTED",
+   "store": "either",
+   "reconciliation": 1,
+   "file_text": "FILED. CLASS: VESSEL / EQUIPMENT, STANDING ORDER. INDEXED.\n\nThe cogitator files a maintenance state and a written instruction, correctly,\nand cross-references the vessel.\n\nThe filing is transmitted to the Lexicanum at the next waypoint, which is the\none thing on this hull he arranged for it not to be able to do.",
+   "note_text": "A part, in a cloth, in a drawer, with an order folded round it in his hand.\n\nNot disabled — *uncoupled*. A setting is a field and a field can be amended.\nA coupling in a drawer is a coupling in a drawer.\n\nA hull that cannot transmit is a hull that can only deliver by arriving, and he\nworked that out six days before he died and then did it with his hands."
+  }
+ },
+ "strings": {
+  "no_such_thing": "Two metres of deck plate. There is not much down here and all of it is his.",
+  "already_read": "You have looked twice. It says the same thing, in fields.",
+  "no_terminal": "The well is not a terminal. It is a hull's own spirit and it does not take requisitions.",
+  "read_room_locked": "Nobody arranged a cogitator well. He filed it.",
+  "no_one_here": "The spirit, and whoever came down with you."
+ }
+}

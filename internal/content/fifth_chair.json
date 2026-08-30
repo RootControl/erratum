@@ -1,0 +1,251 @@
+{
+ "id": "fifth_chair",
+ "title": "CANTICA-NULL — THE GALLERY OF THE FIVE CHAIRS",
+ "clock_at": "11h30",
+ "intro": "Five chairs at a table in a gallery over the Correctorum floor.\n\nFour of them are worn. Arms, seats, the front edge where a person shifts\nforward to make a point — four chairs with eighty-one years of use in them.\n\nThe fifth is not worn anywhere.\n\nInquisitor Yolanda Crase is standing beside it and has been since before your\nclamps engaged.",
+ "revisit": "The gallery. Four worn chairs, one that is not, and a woman standing beside it.",
+ "look": "Five CHAIRS at a table, over a viewport onto the Correctorum FLOOR.\n\nFour of them worn. The fifth is not.\n\nCRASE, standing beside it, who has cleared the day.",
+ "objects": [
+  {
+   "id": "chairs",
+   "names": [
+    "the chairs",
+    "five chairs",
+    "the fifth",
+    "the table",
+    "the fifth chair"
+   ],
+   "careless": "Five chairs at a table. Four are worn to the shape of the people who used them. One is not.",
+   "careful": "The third chair is worn at the arms and at the front edge and nowhere else, which is a man who leaned forward to argue and never once sat back.\n\nYou have been in his chambers. You have been in his study. You have read eleven years of his longhand and stood in a wax vault listening to a man read out his dictation and gone through his effects in a cage in Stack Theta at four degrees.\n\nThis is the first thing of his you have found that was worn out by *use*.\n\nEighty-one years. Third seal. The front edge of the arms.\n\nThe fifth chair has never been sat in by anybody. Crase has been standing beside it since 820 and Vosk stood at the third, and Vaux stands, and it takes you until the shuttle to work out that standing is the whole of what the Concordance considers a scruple."
+  },
+  {
+   "id": "floor2",
+   "names": [
+    "the floor",
+    "below",
+    "the correctorum",
+    "the adepts",
+    "through the glass"
+   ],
+   "careless": "Through the gallery glass, the Correctorum floor: three thousand benches, and nobody looking up.",
+   "careful": "From up here you can see the shape of it, which you could not from the dock.\n\nThe benches are in ranks by category, and the categories are the ones in Kesh's ledger, and one rank is four times the size of the others.\n\nIt is the population rank.\n\nThere is a woman at the near end of it who has been at the same bench for the whole time you have been on this station, and every eleven minutes or so she stands up, stretches her back, and sits down again."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "crase4",
+   "names": [
+    "crase",
+    "yolanda",
+    "lord-inquisitor",
+    "her"
+   ],
+   "title": "Inquisitor Yolanda Crase",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask me anything,\" Crase says. \"I mean that as an instrument, not a courtesy.\"",
+   "portrait": "Inquisitor Yolanda Crase, seventy-one, beside a chair that has never been sat in.\n\nShe is not surprised to see you and she is genuinely unhappy, and the unhappiness is not about having been caught.",
+   "greeting": "There are five chairs in the gallery and four of them are worn.\n\nCrase is standing beside the fifth. She has been here since before your clamps engaged and she has not sat down in it, and you will find out in about forty minutes that she has never sat down in it.\n\n\"You got here in eleven weeks,\" she says. \"He allowed six. I told him six was insulting and he said it was a specification.\"\n\nShe is not pleased and she is not frightened. She looks tired in a way she has never let you see.\n\n\"Ask me anything. I have never lied to you and I am not going to start on the last day.\"",
+   "reprise": "She waits beside the fifth chair.",
+   "unknown": "\"I don't know that,\" Crase says. \"Ask me one I do.\"",
+   "deflect": [
+    "She waits. She has cleared the day.",
+    "\"Ask me a harder one,\" she says."
+   ],
+   "topics": [
+    {
+     "id": "muria",
+     "names": [
+      "muria",
+      "the compliance",
+      "oversight",
+      "the alternative",
+      "what you've seen",
+      "four worlds"
+     ],
+     "sets": [
+      "CRASE_MURIA"
+     ],
+     "text": "\"I am not going to defend the Concordance to you on principle,\" Crase says. \"I have never defended it on principle and I would not know how.\n\n\"I am going to defend it against the alternative, which I have stood inside.\"\n\nShe does not raise her voice at any point in what follows.\n\n\"Muria. I was twenty-four and a junior interrogator and an Ordo conclave found heresy in the sector and was given a free hand, and it cleansed four worlds on suspicion. Not on evidence. On *suspicion*, correctly arrived at, by good officers, under oversight, with every form filed.\n\n\"I spent six hours in a transit hold on the second of them holding a child's hand because there was nothing else in the hold to do and she would not let go of it.\n\n\"That is what oversight looks like from outside the Cerement. That is the thing you are proposing to summon.\n\n\"I have carried it. You have read about it.\""
+    },
+    {
+     "id": "reframe",
+     "names": [
+      "the case",
+      "who killed him",
+      "what i came for",
+      "the investigation",
+      "the answer"
+     ],
+     "requires": [
+      "CRASE_MURIA"
+     ],
+     "text": "\"You came to find out who killed Hadrian,\" Crase says. \"You found out.\n\n\"It was Hadrian.\"\n\nShe lets that stand.\n\n\"Everything after this is you choosing what to do with a machine. Not between good and evil — I would find that easier and so would you. Between fourteen million and one point nine billion, on the standing model, which has been accurate four times.\n\n\"And you are choosing it with a stomach ache and calling the stomach ache a conscience.\"\n\nIt is the cruellest thing anybody has said to you in eleven weeks and she says it without any pleasure at all, and then waits, because she has said it in order to be argued with and she would like to be.",
+     "hidden_above": 70
+    },
+    {
+     "id": "elevation",
+     "names": [
+      "my elevation",
+      "the rosette",
+      "why me",
+      "why you signed",
+      "the six days"
+     ],
+     "requires": [
+      "CRASE_AUDITED"
+     ],
+     "counters": {
+      "VERITY": 1
+     },
+     "text": "\"He asked me to. Six days before he died.\"\n\nShe says it flatly, and then, for the first time all afternoon, she stops.\n\n\"He came to my office on the fourth of the second and asked me to sign an elevation for a records-adept with eleven years in, and I read the file and it was a good file and I signed it, and I have never worked out why he asked *me*.\n\n\"He did not need me. An Inquisitor of his standing signs his own. He had signed four. I have gone over that afternoon perhaps two hundred times.\"\n\nYou know why.\n\nHe asked her because a thing she signs is a thing she is bound to defend, and because he wanted the person who would come after him to be under the protection of the one member of the Concordance who could still be horrified, and because he had six days and could not write, speak, carry or tell.\n\nShe does not know she was used.\n\nIt is the only thing you have that she does not, and you are going to be carrying it for the rest of your life.\n\n[ VERITY +1 ]",
+     "hidden_above": 70
+    },
+    {
+     "id": "ask",
+     "names": [
+      "what you want",
+      "your ask",
+      "the chair",
+      "the fifth chair",
+      "why me here",
+      "take it"
+     ],
+     "requires": [
+      "CRASE_MURIA"
+     ],
+     "sets": [
+      "CRASE_ASKED"
+     ],
+     "text": "\"I want you to take the fifth chair.\"\n\nShe puts a hand on the back of it. Eighty-one years and it has never been sat in; Vosk stood, the way she stands, the way Vaux stands.\n\n\"Not as a reward and not as a trap. I am seventy-one. I have been reconciled eleven times that I know of, and I cannot remember my sister's face — I know her name, I know the year, I have the pict, and there is nothing behind it.\n\n\"There has to be somebody at that table who can still be *horrified*. Hadrian was that for sixty years and then he stopped being able to do it and made himself into a document instead.\n\n\"Take it because I can't be trusted with it any more, and I am the best of us.\"\n\nShe means every word. It is the most honest offer anybody makes you in the whole of this, and it is also exactly what the machine would want, and both of those are true at once and she knows it and says so before you can."
+    }
+   ],
+   "shows": [
+    {
+     "clue": "C12",
+     "counters": {
+      "CRASE_STANDING": -1
+     },
+     "sets": [
+      "CRASE_SAW_KADMON"
+     ],
+     "text": "You give her the three reports.\n\nCrase reads all three, standing, and does not put them down between them, and takes about eleven minutes over 415.\n\n\"*I record these not as complaint but as evidence, in the event that evidence is what is wanted.*\"\n\nShe reads that sentence out loud, once, and then reads the rest of it silently.\n\nWhen she has finished she hands them back squared.\n\n\"Four point one million was the projection,\" she says. \"I have known the real figure since 'ninety-one and I have not been to Kadmon Veil, and I was invited, and I declined, and the reason I declined is in the fourth line of my own diary and it is *I do not think I would be any use*.\"\n\nShe looks at the fifth chair.\n\n\"That is the whole of my defence and I am aware of what it is worth.\""
+    },
+    {
+     "clue": "C16",
+     "text": "\"Anneke gave you the ledger.\" Crase is not surprised. \"Of course she did. She has been waiting eleven years for somebody to give it to.\"\n\n\"You've seen it.\"\n\n\"I have read it four times and I have never been able to make myself copy it, which is a cowardice, and she has, and she ruled the columns herself.\"\n\nShe hands it back.\n\n\"Anneke Kesh is the only one of us who is going to be able to give an account of herself. Not a defence — an *account*. She has the numbers and the categories and the year she was wrong by a factor of six, and she will read them out to anybody who asks, and she has never once asked for them to be taken out of her.\""
+    }
+   ],
+   "beats": [
+    {
+     "id": "ledger",
+     "requires": [
+      "EXPECTED"
+     ],
+     "blocks": [
+      "C16_HELD"
+     ],
+     "text": "\"Has Anneke given you the ledger?\"\n\nIt is the first thing she says, before any of it, and she asks it the way you would ask whether somebody had been offered a chair.\n\n\"No.\"\n\n\"Then go and get it before we do this.\" Crase does not move from the fifth chair. \"Four hundred and eleven million, by year and by category, hand-ruled on paper, and she has been waiting eleven years for somebody to give it to.\n\n\"I am not going to argue with you about a number you have not seen. I would win, and it would be worthless, and you would work that out on the way home.\""
+    },
+    {
+     "id": "vaux_first",
+     "requires": [
+      "VAUX_APOLOGY",
+      "VAUX_ALIVE"
+     ],
+     "blocks": [
+      "VAUX_SPOKE_FIRST"
+     ],
+     "sets": [
+      "VAUX_SPOKE_FIRST"
+     ],
+     "text": "Vaux speaks before she does.\n\nHe has the dossier under his arm and he does not open it. He says, in about ninety seconds, what it took him twenty-six months to assemble: the elevations, the transfers, the eleven where the countersigning seat is the same seat, and the conclusion, and the fact that the conclusion is wrong by one word.\n\nHe lands it cleanly. He has been rehearsing it for four days in a wardroom.\n\nCrase listens to the whole of it without interrupting.\n\n\"Yes,\" she says at the end. \"That is accurate. Thank you for saying it in front of me; I would have found it harder to hear afterwards.\"\n\nIt has cost her the opening and nothing else, and Vaux knows it, and takes it anyway."
+    }
+   ],
+   "acts": [
+    {
+     "id": "audit",
+     "names": [
+      "audit her",
+      "the audit",
+      "audit",
+      "everything",
+      "put her under audit",
+      "take her account"
+     ],
+     "blocks": [
+      "CRASE_AUDITED",
+      "CRASE_REFUSED"
+     ],
+     "sets": [
+      "CRASE_AUDITED"
+     ],
+     "counters": {
+      "VERITY": 2
+     },
+     "cost": 4,
+     "text": "You put her under audit, formally, with your rosette on the rail and Vaux taking it down.\n\nShe answers everything.\n\nShe knew about Kadmon Veil from 'ninety-one and declined an invitation to go. She did not order Hadrian Vosk's death, did not know he was dying, and would have gone to Vardan herself to stop it. She has personally approved eleven Errata and she names every target without being pressed for any of them, in order, with the years.\n\nAnd she signed your elevation because Vosk asked her to, six days before he died, and has never worked out why he asked her.\n\nIt takes two hours and there is not one evasion in it and not one refusal and, when you check it afterwards against everything you have, not one falsehood.\n\nShe has never lied to you.\n\nYou go back through eleven weeks of it — the leads that were real, the night she pulled you out of the Gallery, the one thing she warned you off — and she has not. Not once. Not a word.\n\nThat is when it lands. Not that she is theirs. That she talks the way *it* talks — omission, never falsehood — and that she taught you, and that you have been doing it yourself since Kadmon.\n\n[ CRASE_AUDITED — VERITY +2 ]"
+    },
+    {
+     "id": "refuse_her",
+     "names": [
+      "refuse",
+      "won't speak to her",
+      "walk away",
+      "nothing to say",
+      "leave her"
+     ],
+     "blocks": [
+      "CRASE_AUDITED",
+      "CRASE_REFUSED"
+     ],
+     "sets": [
+      "CRASE_REFUSED"
+     ],
+     "counters": {
+      "CRASE_STANDING": -3
+     },
+     "cost": 2,
+     "text": "You do not speak to her.\n\nCrase accepts it without argument, which you were not expecting, and does not follow you, which you were.\n\n\"All right,\" she says.\n\nShe is still standing beside the fifth chair when you leave the gallery and she is still standing beside it four hours later when you come back through on your way to the floor, and she does not say anything then either.\n\nYou have not heard her account. You will not hear it. Whatever she was going to say — and she had cleared the day for it — she is going to say to somebody else now, or to nobody, and you will find out what was in it at a time and in a manner of her choosing.\n\n[ CRASE_STANDING -3 ]"
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "floor",
+   "names": [
+    "the floor",
+    "down",
+    "correctorum",
+    "the reading",
+    "below",
+    "the store"
+   ],
+   "to": "correctorum",
+   "cost": 2,
+   "text": "Down onto the Correctorum floor, where the store is."
+  },
+  {
+   "id": "dock",
+   "names": [
+    "dock",
+    "back",
+    "the dock",
+    "return",
+    "up",
+    "kesh"
+   ],
+   "to": "cantica",
+   "cost": 2,
+   "text": "Forward to the dock."
+  }
+ ],
+ "clues": {},
+ "strings": {
+  "no_such_thing": "Five chairs, a table, and a floor under the glass.",
+  "already_read": "You have looked twice.",
+  "no_terminal": "There is no terminal in the gallery. The gallery is for the people who decide.",
+  "read_room_locked": "Nobody arranged the gallery. They wore it out.",
+  "no_one_here": "Only Crase, beside the fifth chair."
+ }
+}

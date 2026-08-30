@@ -1,0 +1,366 @@
+{
+ "id": "cathedral",
+ "title": "THE CATHEDRAL OF THE UNBLINKING EYE — NAVE AND JUNCTION CRYPT",
+ "date": "0997.4.226",
+ "clock_at": "10h00",
+ "revisit": "The nave, the fifty-one confessionals, and the stair down to a crypt that is mostly one pipe.",
+ "intro": "Built in 641, and the fourth-largest structure on Vardan Prime, and on any\ngiven day about nine thousand people come through it to say what they have\ndone.\n\nFifty-one confessionals down both aisles. Not booths — chambers, stone, each\none the size of a small room, because the Cathedral of the Unblinking Eye has\nheld for four hundred years that a man confesses better when he is not\ncomfortable.\n\nSister Oath-Warden Bettine Ruse meets you at the transept. She is sixty-four,\nthirty-one years in the wardenship, and she is pleased an Inquisitor has come,\nbecause Inquisitors are rare and this is interesting.\n\nDeacon Pol Ivrit is somewhere behind a pillar, being visible enough to be\nnoticed and not so visible as to be spoken to first.\n\nSomewhere under all of this there is a junction crypt that is on no floorplan\nyou have been given.",
+ "look": "Four hundred years of stone, and nine thousand people a day.\n\nFifty-one CONFESSIONALS, chambers rather than booths, down both aisles.\nThe filed FLOORPLAN, 641, on the warden's slate.\nThe stair down to the junction CRYPT.\n\nSister Oath-Warden RUSE at the transept, pleased to be asked things.\nDeacon IVRIT behind a pillar.",
+ "objects": [
+  {
+   "id": "confessionals",
+   "names": [
+    "booths",
+    "chambers",
+    "the fifty-one",
+    "aisles",
+    "walls"
+   ],
+   "careless": "Fifty-one confessional chambers, stone, down both aisles. Nine thousand people a day and a queue at most hours.",
+   "careful": "You measure a wall, which takes a warden's slate and eleven minutes and an explanation nobody asks for.\n\nFour hundred millimetres.\n\nThe filed floorplan — 641, original, held by the Cathedral and lodged with the Crown — gives the chamber walls as two hundred and ten.\n\nA hundred and ninety millimetres of something that has been in these walls since somebody put it there, in fifty-one chambers, in a building where nine thousand people a day say the thing they would not say anywhere else."
+  },
+  {
+   "id": "floorplan",
+   "names": [
+    "plan",
+    "the plan",
+    "641",
+    "slate",
+    "drawing"
+   ],
+   "careless": "The filed floorplan of 641, on the warden's slate. Original, lodged with the Crown, unamended.",
+   "careful": "It is unamended. That is the interesting part.\n\nAn amendment would be a variance. A variance is a thing somebody has to reduce, and a reduction leaves a countersignature, and a countersignature has a name on it.\n\nSo the plan says two hundred and ten and has said two hundred and ten for four hundred years, and the wall is four hundred, and the two facts have never met, because nobody measures a wall."
+  },
+  {
+   "id": "crypt",
+   "names": [
+    "junction",
+    "the crypt",
+    "trunk",
+    "pipe",
+    "below",
+    "under"
+   ],
+   "careless": "A junction crypt below the nave, reached by a stair nobody uses. Warm, and it hums.",
+   "careful": "Fifty-one lines come into this room.\n\nOne from each chamber, through a hundred and ninety millimetres of wall each, down into a crypt that is on no floorplan you have been given, and they all go into one trunk.\n\nThe trunk is Ferrum Gallery vox-manufactorum stock. You know it because it is stamped, on the flange, the way the Gallery stamps everything.\n\nThe Cathedral was built in 641. The Ferrum Gallery vox-manufactorum opened in 781.\n\nWhatever this is, it is a hundred and forty years newer than the building it is in, and somebody put it in fifty-one stone walls afterwards, one chamber at a time, without amending the plan.",
+   "clue": "B8"
+  },
+  {
+   "id": "ivrit",
+   "names": [
+    "deacon",
+    "pol",
+    "the deacon",
+    "pillar"
+   ],
+   "careless": "Deacon Pol Ivrit, forty, behind a pillar, arranged so as to be noticed and not spoken to first.",
+   "careful": "He has been watching you since the transept and he has been costing you the whole time.\n\nHe is not frightened. He is *pricing*. Somewhere in the last four minutes he has worked out that you are here about the crypt, and that the crypt is a thing he knows about, and that a thing he knows about which an Inquisitor wants is the best morning he has had in two years.\n\nHe will sell you what he has for very little and he will not feel bad about it afterwards, and both of those are going to be useful and neither of them is going to be pleasant."
+  }
+ ],
+ "exits": [
+  {
+   "id": "confessional",
+   "names": [
+    "vhail",
+    "cardinal",
+    "his confessional",
+    "private confessional",
+    "eminence"
+   ],
+   "to": "confessional",
+   "cost": 2,
+   "has": [
+    "B8"
+   ],
+   "blocked": "The Cardinal's private confessional is on the upper transept and you have no reason to be in it.\n\nYou have a wall that is the wrong thickness and a warden who says it is the fire main.",
+   "text": "Up to the upper transept, and a door that is not locked, because nothing in the Cathedral of the Unblinking Eye is locked."
+  },
+  {
+   "id": "crown",
+   "names": [
+    "back",
+    "out",
+    "crown",
+    "chambers",
+    "board",
+    "return"
+   ],
+   "to": "standing_board",
+   "cost": 3,
+   "text": "Out through the nave, past a queue of about forty people waiting to say what they have done."
+  }
+ ],
+ "strings": {
+  "no_such_thing": "Nothing here by that name, and there are four hundred years of here.",
+  "already_read": "You have looked twice. There is a queue of forty people behind you.",
+  "no_terminal": "There is a terminal in the Cathedral's accounts office and it is the Ecclesiarchy's.\n\nYours is at the Crown."
+ },
+ "npcs": [
+  {
+   "id": "ruse",
+   "names": [
+    "sister",
+    "bettine",
+    "warden",
+    "oath-warden",
+    "the sister"
+   ],
+   "title": "Sister Oath-Warden Bettine Ruse",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask,\" says Ruse. \"Nobody asks me anything and I have been here thirty-one years.\"",
+   "portrait": "Sister Oath-Warden Bettine Ruse. Sixty-four, thirty-one years in the wardenship, pleased that somebody has come, and not corrupt in any way at all.",
+   "greeting": "\"An Inquisitor,\" Ruse says, with genuine pleasure. \"We had one in 'eighty-one. He was looking for a man who turned out to be in Threnody the whole time.\"\n\nShe has the warden's slate and the keys to fifty-one chambers and thirty-one years of knowing where everything is, and she is going to answer every question you ask her completely, because she has no reason on earth not to.",
+   "reprise": "She waits with the slate, still pleased, still entirely willing.",
+   "unknown": "\"I don't know that one. I could find out — most things are somewhere.\"",
+   "deflect": [
+    "She looks at you, puzzled. It is not a refusal; she genuinely does not follow."
+   ],
+   "topics": [
+    {
+     "id": "crypt_shown",
+     "names": [
+      "the crypt",
+      "the trunk",
+      "the pipe",
+      "junction",
+      "what is it",
+      "below",
+      "the schematic"
+     ],
+     "requires": [
+      "RUSE_FIRE_MAIN"
+     ],
+     "has": [
+      "B8"
+     ],
+     "sets": [
+      "RUSE_ASKED"
+     ],
+     "text": "You show her the schematic. Fifty-one lines, one trunk, Ferrum Gallery vox-manufactorum stock, a hundred and forty years newer than the building.\n\nYou put the flange stamp in front of her. You show her the 641 plan and the four hundred millimetres. You do not push and you do not raise your voice, because she is sixty-four and has done nothing wrong and you can see exactly what is happening to her.\n\n\"It's the fire main,\" she says.\n\nThen there is a pause of about eleven seconds.\n\n\"What do I do,\" Sister Oath-Warden Bettine Ruse says.\n\nThere is no good answer to that. You do not have one. She has countersigned thirty-one annual tests on an instrument she was told about by people who lied to her, and every one of those signatures is in the Crown's file with her name on it, and she is going to be asked about them."
+    },
+    {
+     "id": "crypt",
+     "names": [
+      "the crypt",
+      "the trunk",
+      "the pipe",
+      "junction",
+      "what is it",
+      "below"
+     ],
+     "sets": [
+      "RUSE_FIRE_MAIN"
+     ],
+     "text": "\"It's the fire main,\" Ruse says.\n\nShe says it immediately and without any inflection at all, the way you would answer a question about the colour of a floor.\n\n\"Fire suppression. It went in before my time — 'sixty-something, there's a docket. Fifty-one runs and a trunk, and it's tested annually, and I sign the test.\"\n\n\"You sign the test.\"\n\n\"I sign the test.\" She is entirely comfortable. \"The engineer comes, the engineer says it holds pressure, I countersign and it goes to the Crown. Thirty-one years, thirty-one signatures.\"\n\nShe has never had a reason to think about it, and nobody in four hundred years has measured a wall."
+    },
+    {
+     "id": "vhail",
+     "names": [
+      "cardinal",
+      "ostrem",
+      "the cardinal",
+      "your superior",
+      "him"
+     ],
+     "text": "\"His Eminence has been here since 'eighty-four,\" Ruse says. \"He took the tithe relief through in his first year and he has never once let it lapse — nought point four under assessed, every year, forty years, which is a great deal of grain in a hive this size.\n\n\"He is not popular with the other three Cathedrals for it and he does not care.\"\n\nShe is fond of him. That is the difficulty with all of this.\n\n\"I'll tell you the thing I always tell people,\" she says. \"In 'eighty-six the Ferrum yards were burning two hundred a month. Two hundred, every month, for heresy, in one manufactorum district. Last year it was nine, in the whole hive.\n\n\"You may say what you like about His Eminence. He was here for that.\""
+    },
+    {
+     "id": "relief",
+     "names": [
+      "tithe relief",
+      "the relief",
+      "0.4",
+      "under assessed",
+      "786",
+      "grain"
+     ],
+     "requires": [
+      "RUSE_FIRE_MAIN"
+     ],
+     "grants": [
+      "B11"
+     ],
+     "text": "\"The relief? It's an Ecclesiarchy instrument, Inquisitor, they're not unusual.\" She pulls it up on the slate without being asked twice. \"Nought point four per cent under assessed tithe, applied continuously from 786.\n\n\"It's a standing instrument, so it doesn't need re-countersigning. It just runs.\"\n\n\"Since 786.\"\n\n\"Forty years.\" She is quite proud of it. \"That's four months of alms surplus a year that stays in this hive instead of going up the chain. It feeds the sump, most of it. We write it off as condemned and it goes down the pipe.\"\n\nForty years, from 786, which is the year the Cardinal took it through, which is the year the clerks came, and it has never once needed anybody's signature since.\n\nSomebody has been paying the Cathedral of the Unblinking Eye four months of grain a year for forty years, and calling it a tithe relief, and it has never been countersigned by anybody because a standing instrument does not require it.\n\n[ B11 HELD ]"
+    },
+    {
+     "id": "herself",
+     "names": [
+      "thirty-one years",
+      "your work",
+      "the wardenship",
+      "you",
+      "signatures"
+     ],
+     "sets": [
+      "RUSE_KNOWS_STONES"
+     ],
+     "text": "\"Oath-Warden. It's a real office and it sounds grander than it is.\" She is amused. \"I hold the keys, I keep the roll, I countersign the tests and the fabric returns, and I make sure a chamber that's out of use is *marked* out of use, because a man who confesses into an empty chamber is a man who has confessed to nothing and does not know it.\n\n\"Thirty-one years. Before that I was a fabric-adept in Threnody and before that I was nothing much.\"\n\nShe taps the slate.\n\n\"I know every stone in this building, Inquisitor. If somebody had moved one I'd have known.\""
+    }
+   ],
+   "beats": [],
+   "shows": [],
+   "acts": [
+    {
+     "id": "warn",
+     "names": [
+      "warn",
+      "warn ruse",
+      "warn her",
+      "tell her to resign",
+      "protect her"
+     ],
+     "requires": [
+      "RUSE_ASKED"
+     ],
+     "blocks": [
+      "RUSE_WARNED"
+     ],
+     "refused": "There is nothing to warn her about that she has been told.",
+     "sets": [
+      "RUSE_WARNED"
+     ],
+     "text": "You tell her what her signatures are going to look like, in an Ordo hearing, in eleven months, read out by somebody who has never met her.\n\nYou tell her to resign the wardenship today, in writing, citing her age, and to make no statement about the crypt to anybody.\n\nRuse listens without interrupting.\n\n\"That is a kindness,\" she says at the end, \"and it is also you making sure I'm not in the way.\"\n\n\"Both.\"\n\n\"Yes.\" She is not bitter about it. \"Well. I've been in the way of nine thousand people a day for thirty-one years, so.\"\n\nShe resigns that afternoon. It costs you the keys to fifty-one chambers and the only person in this building who knows every stone in it.\n\n[ RUSE_WARNED ]"
+    }
+   ]
+  },
+  {
+   "id": "ivrit",
+   "names": [
+    "deacon",
+    "pol",
+    "the deacon"
+   ],
+   "title": "Deacon Pol Ivrit",
+   "lists_topics": false,
+   "topic_refusal": "\"You could ask,\" Ivrit says. \"Asking's the cheap part.\"",
+   "portrait": "Deacon Pol Ivrit, forty. Corrupt, cheaply, and without any of the anguish that makes corruption interesting.",
+   "greeting": "He comes out from behind the pillar at exactly the moment you were going to walk past it.\n\n\"Inquisitor. Deacon Pol Ivrit. You'll be here about the crypt.\"\n\nHe says it as an opening bid.\n\n\"I want to be clear that I'm not going to be difficult about this. I've watched two men be difficult with the Ordo and neither of them enjoyed it. I'm going to be *useful*, and then I'm going to ask you for something, and you'll find the something very small.\"",
+   "reprise": "He waits, pricing you, entirely without anguish.",
+   "unknown": "\"Don't know. Not worth lying about.\"",
+   "deflect": [
+    "\"That one costs more than you've offered.\""
+   ],
+   "topics": [
+    {
+     "id": "crypt",
+     "names": [
+      "the crypt",
+      "the trunk",
+      "what is it",
+      "the pipe",
+      "junction",
+      "schematic"
+     ],
+     "grants": [
+      "B8"
+     ],
+     "sets": [
+      "VHAIL_EXPOSED",
+      "CATHEDRAL_MAPPED"
+     ],
+     "text": "\"It isn't a fire main,\" Ivrit says, pleasantly. \"There's a fire main. It's on the west side and it's ninety mil and it's been dry since 'ninety-one.\n\n\"What's in the walls is fifty-one feed lines into a trunk, and the trunk is Gallery stock, and the Gallery didn't exist when this place was built. I've got the schematic. Not the filed one — the *works* one, from the fitters, because the fitters bill the Cathedral and the Cathedral's accounts come past me.\"\n\nHe produces it without being asked to.\n\n\"Now. You'll want to know why I have it and why I'm giving it to you, and the answers are: because I read the bills, and because I've had it for two years and haven't been able to think of a single person to sell it to who wouldn't have me killed for having it.\n\n\"You can't. That's the whole of your appeal, Inquisitor. You're the first person to come through here that I can safely be useful to.\"\n\n[ B8 HELD — VHAIL_EXPOSED ]"
+    },
+    {
+     "id": "price",
+     "names": [
+      "what do you want",
+      "your price",
+      "the something",
+      "payment",
+      "cost"
+     ],
+     "requires": [
+      "VHAIL_EXPOSED"
+     ],
+     "sets": [
+      "IVRIT_PRICE"
+     ],
+     "text": "\"A transfer,\" Ivrit says. \"Out. Anywhere — Threnody, the Reach, a fabric house on a moon. I don't care.\n\n\"I'm not asking you to arrange it. I'm asking you, when this ends and there's a hearing, to say that Deacon Pol Ivrit was cooperative and material, in writing, once.\"\n\n\"That's it.\"\n\n\"That's it.\" He shrugs. \"I've no ideology, Inquisitor. I've a mother in Threnody and forty more years of this building. I read the bills because reading the bills is how a man in my position stays employed, and then one day I read a bill that was going to get me killed and I've been carrying it around ever since.\n\n\"I'd like to stop carrying it around.\""
+    },
+    {
+     "id": "vhail",
+     "names": [
+      "cardinal",
+      "ostrem",
+      "his eminence",
+      "does he know",
+      "him"
+     ],
+     "requires": [
+      "VHAIL_EXPOSED"
+     ],
+     "sets": [
+      "IVRIT_ON_VHAIL"
+     ],
+     "text": "\"Of course he knows. He *signs* for it.\" Ivrit is briefly, genuinely contemptuous, which is the only real emotion you get out of him. \"There's a maintenance line in the Cathedral accounts, annual, Ferrum Gallery vox-manufactorum, four thousand crowns. It's been there since 'eighty-six.\n\n\"He doesn't hide it. That's what people don't understand about him. He doesn't hide anything — he'd tell you all of it if you asked him properly, and he'd tell you why, and the why is the part that'll keep you up.\n\n\"I've heard him say it to a Sister who was leaving. He wasn't ashamed. He was *impatient*.\""
+    }
+   ],
+   "beats": [],
+   "shows": [],
+   "acts": []
+  }
+ ],
+ "clues": {
+  "B8": {
+   "id": "B8",
+   "names": [
+    "schematic",
+    "junction",
+    "the trunk",
+    "fifty-one lines",
+    "works drawing",
+    "the crypt"
+   ],
+   "label": "Fifty-one confessional feed lines into one trunk of Ferrum Gallery stock, a hundred and forty years newer than the Cathedral",
+   "store": "either",
+   "reconciliation": 2,
+   "file_text": "FILED. CLASS: ECCLESIARCHY FABRIC / UNFILED WORKS. INDEXED. REQUISITION-ELIGIBLE.\n\nThe cogitator cross-references the works drawing against the filed 641 floorplan, reports a fabric variance, opens a variance record, and routes it — correctly, promptly, and to the office that reduces variances.",
+   "note_text": "You copy the run of it by hand: fifty-one chambers, fifty-one lines, one trunk, and the flange stamp of a manufactorum that did not exist when this building went up.\n\nNine thousand people a day say the thing they would not say anywhere else, into a stone room with a hundred and ninety millimetres of somebody else's pipe in the wall."
+  },
+  "B11": {
+   "id": "B11",
+   "names": [
+    "relief",
+    "tithe relief",
+    "0.4",
+    "under assessed",
+    "the instrument",
+    "786"
+   ],
+   "label": "A tithe relief of 0.4% under assessed, continuous from 786, standing — never once countersigned since",
+   "store": "either",
+   "reconciliation": 1,
+   "file_text": "FILED. CLASS: ECCLESIARCHY / TITHE INSTRUMENT. INDEXED.\n\nThe cogitator confirms the instrument is standing, correctly lodged, unexpired and unremarkable, and notes that no countersignature is required.\n\nIt is right about all four.",
+   "note_text": "Nought point four per cent, forty years, from 786.\n\nFour months of grain a year, into a hive, from an instrument that has never needed a signature since the year it was made — which is the year the clerks came to the Cardinal with a warrant and a discount.\n\nSomebody has been paying for this. In grain. For forty years."
+  },
+  "B10": {
+   "id": "B10",
+   "names": [
+    "prefix",
+    "feed prefix",
+    "cn",
+    "priority-black",
+    "routing",
+    "the routing"
+   ],
+   "label": "Feed prefix CN-∅ / PRIORITY-BLACK on the Cathedral alms account",
+   "store": "either",
+   "reconciliation": 1,
+   "file_text": "FILED. CLASS: ROUTING PREFIX / UNRESOLVED. INDEXED.\n\nThe cogitator attempts to resolve CN-∅, returns NO SUCH ROUTE, files that as a completed lookup, and marks the matter consistent.",
+   "note_text": "CN-∅. Priority-Black.\n\nTwo strings off a requisition slip, which anybody with your standing could have run on the first morning, and which nothing in this hive has ever pointed at.\n\nYou do not know what either of them means. You are going to."
+  },
+  "B9": {
+   "id": "B9",
+   "names": [
+    "the confession",
+    "vhail's confession",
+    "admission"
+   ],
+   "label": "Vhail's confession — forty years of names, given to clerks with a warrant and a discount",
+   "store": "either",
+   "reconciliation": 1,
+   "file_text": "FILED. CLASS: CONFESSION / ECCLESIARCHY PRINCIPAL. INDEXED. ATTRIBUTED: VHAIL, O., CARDINAL.\n\nIndexed inside four seconds, complete, verbatim, requisition-eligible.\n\nIt was already recorded. You took it in his own live confessional, in front of a feed line, and the people it went to had it before the cogitator did.",
+   "note_text": "You write down what he said and how he said it, which is the part that will not go in a file.\n\nHe did not weep because he was caught. He wept when you told him the nine was a real number.\n\nYou have broken a genuinely wicked man wide open and learned a shipping prefix you could have read off a requisition slip in twenty minutes."
+  }
+ }
+}

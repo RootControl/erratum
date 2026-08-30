@@ -1,0 +1,312 @@
+{
+ "id": "confessional",
+ "title": "THE CARDINAL'S PRIVATE CONFESSIONAL — UPPER TRANSEPT",
+ "date": "0997.4.226",
+ "revisit": "The upper transept. A chamber the size of a small room, and a feed line in the wall of it.",
+ "intro": "Not locked. Nothing in this building is locked; that is a point of doctrine\nand has been for four hundred years.\n\nA chamber the size of a small room, stone, cold, with two chairs in it and a\ngrille between them that has not been used as a grille in a decade because\nHis Eminence prefers to see who he is talking to.\n\nCardinal Ostrem Vhail is seventy-one and has been in this Cathedral since\n'eighty-four. He stands when you come in.\n\nThe walls of this chamber are four hundred millimetres.\n\nIt is a confessional. It is on the roll. It is not marked out of use.",
+ "look": "Two chairs, a grille nobody uses, and four hundred millimetres of wall on\nevery side.\n\nCardinal VHAIL, seventy-one, standing.\nThe WALL, which is a confessional wall, which means it has a line in it.",
+ "objects": [
+  {
+   "id": "wall",
+   "names": [
+    "walls",
+    "the grille",
+    "stone",
+    "the chamber",
+    "line"
+   ],
+   "careless": "Stone, four hundred millimetres, like the other fifty. Cold. A grille between the chairs that has not been used in a decade.",
+   "careful": "You check the roll on the way in, because Ruse told you that a chamber out of use is marked out of use, and this one is not marked.\n\nWhich means it is in service. Which means it has a line in it. Which means it is fed into the trunk, in the crypt, exactly like the other fifty.\n\nWhatever is said in this room is going wherever the rest of it goes, in real time, while it is being said.\n\nYou are about to conduct the most important interrogation of your career inside the instrument."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "vhail",
+   "names": [
+    "cardinal",
+    "ostrem",
+    "his eminence",
+    "him"
+   ],
+   "title": "Cardinal Ostrem Vhail",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask me anything,\" Vhail says. \"I have been waiting eleven weeks for somebody to.\"",
+   "portrait": "Cardinal Ostrem Vhail. Seventy-one, forty-two years in this Cathedral, and he stood up when you came in.",
+   "greeting": "He stands when you come in, which nobody of his rank has to do.\n\n\"Inquisitor. Yes.\" He gestures at the second chair. \"Sit down, please, this will take a while and I am too old to do it standing.\n\n\"I assume this is about the Vosk business. I read the précis. Very sad, and very tidy, which is not a combination I have ever liked.\"\n\nHe is warm, unhurried, and entirely at ease, and he is going to deny everything for the next ten minutes and he is extremely good at it.",
+   "reprise": "He waits, comfortable, in a chair, in a room with a line in the wall.",
+   "unknown": "\"I have no idea,\" Vhail says. \"Genuinely. Ask me something I do know.\"",
+   "deflect": [
+    "He smiles, and does not answer, and lets the silence do the work. He is better at silence than you are."
+   ],
+   "disposition": {
+    "flags": [
+     "VHAIL_DENOUNCED",
+     "VHAIL_LEVERAGED",
+     "VHAIL_DEAD"
+    ],
+    "default": ""
+   },
+   "topics": [
+    {
+     "id": "accuse",
+     "names": [
+      "accuse",
+      "you wired them",
+      "fifty-one confessionals",
+      "the vox trunk",
+      "say it to his face",
+      "wired"
+     ],
+     "hidden_above": 25,
+     "has": [
+      "B8"
+     ],
+     "text": "You say it to his face, in the room, in the plainest words available.\n\nYou wired fifty-one confessional chambers into a vox trunk and sold four decades of this hive's confession to people who came to you with a warrant and a discount.\n\nVhail does not flinch and does not deny it and does not, for a moment, look away.\n\n\"Yes,\" he says.\n\nIt is the shortest answer anybody gives you in the whole of this investigation, and it costs him nothing, and you will remember for a long time that the man said it out loud in one syllable to somebody who had walked in with a wall measurement and a bill.\n\n\"Now sit down,\" Vhail says, \"and let me tell you what it was for.\"",
+     "sets": [
+      "VHAIL_ACCUSED"
+     ]
+    },
+    {
+     "id": "deny",
+     "names": [
+      "the crypt",
+      "the trunk",
+      "the pipe",
+      "confessionals",
+      "what is in the walls",
+      "junction"
+     ],
+     "blocks": [
+      "VHAIL_BROKEN"
+     ],
+     "sets": [
+      "VHAIL_DENIED"
+     ],
+     "text": "He denies it for ten minutes.\n\nHe does it beautifully. Not indignation — *helpfulness*: the fire main went in before his time, he has the docket somewhere, the fabric returns are countersigned annually by the Oath-Warden, the Cathedral's works are open to the Crown and always have been, would you like the accounts, he can have Ivrit bring the accounts.\n\nHe offers you the accounts twice.\n\nAt no point does he say anything untrue. He simply arranges eleven true things in an order that has no room in it for a question.\n\nYou have met four people this month who were managing you. This is what it looks like when somebody is good at it."
+    },
+    {
+     "id": "break_a",
+     "names": [
+      "break",
+      "the alms",
+      "811",
+      "nine thousand tonnes",
+      "the dates",
+      "lever",
+      "press him",
+      "accuse"
+     ],
+     "has": [
+      "B8",
+      "B7"
+     ],
+     "blocks": [
+      "VHAIL_BROKEN",
+      "ALMS_SPENT"
+     ],
+     "sets": [
+      "VHAIL_BROKEN"
+     ],
+     "grants": [
+      "B9"
+     ],
+     "counters": {
+      "RECONCILIATION": 4
+     },
+     "cost": 3,
+     "text": "You put the alms dates in front of him. Nine thousand tonnes unaccounted in 811, and the seven years either side, off a savant, in your own hand.\n\nVhail stops.\n\nHe does not move to admission. That is the thing you will describe to people afterwards and nobody will quite believe: he goes from denial to *justification* without passing through admitting anything, as though the intervening step were a formality that only applies to men who are ashamed.\n\n\"Sins are not secrets. That is the thing your kind never grasp. A secret is a possession. A sin is a *symptom*. You do not protect a symptom, you report it, and the physician does what physicians do.\n\n\"They came to me in 786 — clerks, not lords, clerks with a warrant and a discount — and they said the Ordo needs the shape of this hive's guilt. Not names. The shape. Heresy is a disease, disease has a curve, and they wanted the curve.\n\n\"And then it was names, because a curve is made of names, and I gave those too. Forty years of them.\n\n\"Now ask me what it bought. A heresy-incidence rate of zero point zero zero one. Across a *sector*. In 786 we burned two hundred a month in the Ferrum yards. Last year, nine. Nine, in a hive of two hundred million.\n\n\"I have not lost one soul I could have saved. I gave up the ones I could not, so the physician could find them faster, and if that is a crime then the Emperor keep me — but do not stand in my own confessional and tell me I did not know what I was doing. I knew exactly. I was the only man in this hive who was *counting*.\""
+    },
+    {
+     "id": "break_b",
+     "names": [
+      "break",
+      "the relief",
+      "786",
+      "tithe relief",
+      "lever",
+      "press him",
+      "accuse",
+      "the grain"
+     ],
+     "has": [
+      "B8",
+      "B11"
+     ],
+     "blocks": [
+      "VHAIL_BROKEN"
+     ],
+     "sets": [
+      "VHAIL_BROKEN"
+     ],
+     "grants": [
+      "B9"
+     ],
+     "counters": {
+      "RECONCILIATION": 4
+     },
+     "cost": 3,
+     "text": "You put the relief in front of him. Nought point four per cent, from 786, standing, never countersigned since, in the year the clerks came.\n\n\"You were paid,\" you say. \"In grain. For forty years.\"\n\nVhail looks at it for a long moment.\n\nHe does not move to admission. That is the thing you will describe to people afterwards and nobody will quite believe: he goes from denial to *justification* without passing through admitting anything, as though the intervening step were a formality that only applies to men who are ashamed.\n\n\"Sins are not secrets. That is the thing your kind never grasp. A secret is a possession. A sin is a *symptom*. You do not protect a symptom, you report it, and the physician does what physicians do.\n\n\"They came to me in 786 — clerks, not lords, clerks with a warrant and a discount — and they said the Ordo needs the shape of this hive's guilt. Not names. The shape. Heresy is a disease, disease has a curve, and they wanted the curve.\n\n\"And then it was names, because a curve is made of names, and I gave those too. Forty years of them.\n\n\"Now ask me what it bought. A heresy-incidence rate of zero point zero zero one. Across a *sector*. In 786 we burned two hundred a month in the Ferrum yards. Last year, nine. Nine, in a hive of two hundred million.\n\n\"I have not lost one soul I could have saved. I gave up the ones I could not, so the physician could find them faster, and if that is a crime then the Emperor keep me — but do not stand in my own confessional and tell me I did not know what I was doing. I knew exactly. I was the only man in this hive who was *counting*.\""
+    },
+    {
+     "id": "break_none",
+     "names": [
+      "break",
+      "lever",
+      "press him",
+      "accuse",
+      "the alms",
+      "the relief"
+     ],
+     "closed": "You press him.\n\nHe is entirely willing to be pressed. He answers everything, at length, warmly, and offers you the accounts a third time, and at the end of eleven minutes you have exactly what you walked in with.\n\nYou need something with a number on it. He is seventy-one and has been doing this since before you were born and he is not going to be talked out of anything.",
+     "never": true
+    },
+    {
+     "id": "where",
+     "names": [
+      "where does it go",
+      "who gets it",
+      "your handlers",
+      "the ordo",
+      "who are they"
+     ],
+     "requires": [
+      "VHAIL_BROKEN"
+     ],
+     "text": "\"To the Ordo,\" Vhail says. \"To your people.\"\n\nYou tell him it does not.\n\nAnd this is the first true thing he does in front of you, which is to be honestly, completely bewildered.\n\n\"They had a warrant,\" he says. \"I read it. It was correct — I am not a fool, Inquisitor, I have had forty years of people bringing me correct-looking paper and I know the difference.\" A pause. \"Where else would it go?\"\n\n\"Who do you contact?\"\n\n\"I don't. They contact me. Twice a year, less now.\" He is working something out and not enjoying it. \"I have never had authority to stop the feed. I asked, in 'ninety-one, when the Sisters wanted the chambers relined. I was told it was not mine to stop.\n\n\"I assumed that meant it was yours.\""
+    },
+    {
+     "id": "trap",
+     "names": [
+      "this room",
+      "the line",
+      "recorded",
+      "in here",
+      "the wall",
+      "now"
+     ],
+     "requires": [
+      "VHAIL_BROKEN"
+     ],
+     "sets": [
+      "VHAIL_TRAP_SEEN"
+     ],
+     "text": "You tell him where you are sitting.\n\nVhail looks at the wall — at the wall of his own private confessional, which is on the roll, which is not marked out of use, which has been in service for forty-two years.\n\n\"Ah,\" he says.\n\nThat is all. One syllable, and then he sits back.\n\nEverything he has said in the last quarter of an hour went down the line while he was saying it. The confession that destroys him reached whoever receives it in real time, before it reached your cogitator, before it reached your notebook.\n\nAnd nothing happens.\n\nNo alarm, no interruption, nobody at the door. You sit in a stone room for four minutes with a broken Cardinal, waiting for a consequence, and there is not one, because he is not the author and never was and the people at the other end of that pipe do not care what he says about them."
+    },
+    {
+     "id": "nine",
+     "names": [
+      "the nine",
+      "nine",
+      "is it real",
+      "the number",
+      "incidence"
+     ],
+     "requires": [
+      "VHAIL_BROKEN"
+     ],
+     "text": "He weeps for eleven minutes.\n\nIt is not performance. You have seen performance and this is not it, and that is the worst of it, because a performance you could file.\n\nWhen he is done he asks whether the nine is a real number.\n\nYou tell him it is. You have it off a savant, from an un-networked memory, in a room with no vox in it: nine, sector-wide, last year.\n\nHe says *nine*, twice, like a man setting down something heavy.\n\nAnd you understand that you have broken a genuinely wicked man wide open, in his own confessional, into a live feed, and learned a shipping prefix you could have read off a requisition slip in twenty minutes."
+    }
+   ],
+   "beats": [],
+   "shows": [],
+   "acts": [
+    {
+     "id": "denounce",
+     "names": [
+      "denounce",
+      "expose him",
+      "report him",
+      "charge him"
+     ],
+     "requires": [
+      "VHAIL_BROKEN"
+     ],
+     "blocks": [
+      "VHAIL_DENOUNCED",
+      "VHAIL_LEVERAGED",
+      "VHAIL_DEAD"
+     ],
+     "refused": "There is nothing to denounce him for that you can prove.",
+     "sets": [
+      "VHAIL_DENOUNCED"
+     ],
+     "cost": 2,
+     "text": "You denounce him.\n\nIt is correct, it is well-evidenced and it is enormously popular. The Ecclesiarchy is grateful in the way institutions are grateful, which is loudly and in writing, and your standing with three offices improves inside the week.\n\nCardinal Ostrem Vhail is removed and held pending a conclave he will not live to see the end of.\n\nA month later the Cathedral of the Unblinking Eye has a new Cardinal, who is forty-eight, and quiet, and has already been contacted twice by clerks with a warrant and a discount, and who supplies exactly the same data without any of the counting.\n\nThe trunk was never turned off. Nobody has ever had authority to turn it off.\n\n[ VHAIL_DENOUNCED ]"
+    },
+    {
+     "id": "hold",
+     "names": [
+      "hold",
+      "leverage",
+      "keep him",
+      "use him",
+      "lever him",
+      "own him"
+     ],
+     "requires": [
+      "VHAIL_BROKEN"
+     ],
+     "blocks": [
+      "VHAIL_DENOUNCED",
+      "VHAIL_LEVERAGED",
+      "VHAIL_DEAD"
+     ],
+     "refused": "You have nothing on him yet worth holding.",
+     "sets": [
+      "VHAIL_LEVERAGED"
+     ],
+     "text": "You keep him.\n\nHe understands the arrangement before you have finished describing it and agrees to it without any negotiation at all, which is itself a small horror — he has been on the other side of this transaction for forty years and knows the shape of it perfectly.\n\nYou have the Cathedral: its accounts, its fabric, its keys, its alms.\n\nHe will try to have you killed in Act III. He will do it badly, through an intermediary, with the same competence he has shown at everything except counting, and you will survive it and be surprised at how sad it makes you.\n\n[ VHAIL_LEVERAGED ]"
+    },
+    {
+     "id": "kill",
+     "names": [
+      "kill",
+      "execute",
+      "kill him",
+      "shoot him",
+      "end it"
+     ],
+     "requires": [
+      "VHAIL_BROKEN"
+     ],
+     "blocks": [
+      "VHAIL_DENOUNCED",
+      "VHAIL_LEVERAGED",
+      "VHAIL_DEAD"
+     ],
+     "refused": "Not for something you cannot prove.",
+     "sets": [
+      "VHAIL_DEAD"
+     ],
+     "counters": {
+      "RECONCILIATION": 12
+     },
+     "cost": 2,
+     "text": "You execute him.\n\nYou are entitled to. He is a proven Ecclesiarchy principal who has fed four decades of confession to an unaccountable recipient, and there is not a conclave in the sector that would ask you a second question about it.\n\nIt is satisfying. It is worth saying plainly that it is satisfying.\n\nHe does not resist and does not argue and asks only that it be done in the nave, which you refuse, because the nave has nine thousand people a day in it.\n\nThe trunk keeps running. It runs that evening, and the next morning, and every morning after, because it was never his and stopping it was never in his gift.\n\n[ VHAIL_DEAD ]"
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "nave",
+   "names": [
+    "down",
+    "out",
+    "back",
+    "nave",
+    "cathedral",
+    "transept"
+   ],
+   "to": "cathedral",
+   "cost": 2,
+   "text": "Back down to the nave, and the queue."
+  }
+ ],
+ "strings": {
+  "no_such_thing": "Two chairs and a grille.",
+  "already_read": "You have looked twice. He is waiting, and he has all afternoon.",
+  "no_terminal": "There is no terminal in a confessional. There is a line in the wall, which is not the same thing, and which does not answer.",
+  "read_room_locked": "This room was arranged, four hundred and twenty years ago, and then somebody put a pipe in it."
+ }
+}

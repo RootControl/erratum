@@ -9,7 +9,7 @@
 | # | Scene | Location | Type | Gated by | Est. min |
 |---|---|---|---|---|---|
 | 2.0 | THE STANDING BOARD | Vosk's chambers, Adamant Crown | Hub | Act I complete | 10 |
-| 2.0b | THE HOLDING CAGE *(optional, hidden)* | Lexicanum Vault, Stack Theta | Ending E recovery | ROOM_READ_PARTIAL | 20 |
+| 2.0b | THE HOLDING CAGE *(optional, hidden)* | Lexicanum Vault, Stack Theta | Ending E recovery | !ROOM_READ_FULL | 20 |
 | 2.1 | THE INVENTORY OF ALETH FENN | Safehouse, Crown sub-level 4 | Systems / dread | — | 20 |
 | 2.2 | THE SHIELDED ROOM | Cael's workshop | Negotiation | B1 | 15 |
 | 2.3 | THE DELTA RUN | Lexicanum Vault, Stack Delta | Dilemma | B1 + Act I shelf-code | 30 |
@@ -28,7 +28,9 @@
 **Location** — Lexicanum Vault, Stack Theta, effects holding.
 **Present** — Under-Clerk Habrach; a wire cage; nine crates.
 **Player goal** — Read the signs you did not read while the body was still warm.
-**Entry gate** — `ROOM_READ_PARTIAL` only. Invisible to a player who already has `ROOM_READ_FULL`; never signposted to anyone.
+**Entry gate** — Anyone without `ROOM_READ_FULL`. Invisible to a player who already has it; never signposted to anyone.
+
+> **Amended.** This gate read `ROOM_READ_PARTIAL` only, which assumed every player reads the room in 1.4. They do not: `READ ROOM` needs three signs *recorded*, so a player who examines everything and files nothing reaches Act II with no cipher half, and the Case Précis ends Act I on a timer regardless. That player could not complete the cipher, could not reach the act turn, and could not see the one scene that gives a missed room back. The gate is now the absence of `ROOM_READ_FULL`, and 2.0b is the recovery for both cases: the partial reader who wants Ending E, and the player who has nothing. It is still hidden and still unsignposted — with the single exception below.
 **Beats** —
 1. The Crown reclaimed Vosk's chambers at Act I close. His effects were crated, manifested and shelved. The player can requisition the crates — an ordinary, boring, entirely legitimate act that nobody obstructs.
 2. **The manifest has been amended.** It lists seven crates of nine. The regicide board is on it as *"gaming set, incomplete."* The boots are not on it at all.
@@ -48,7 +50,7 @@
 > You count them again, because the number is not interesting enough to be wrong. Nine crates, seven listed, and the two that don't exist are sitting in the cage in front of you with his name stencilled on them in somebody's careful hand.
 >
 > Whatever has been editing this hive can reach the paper. It cannot reach the boots. You stand in the cold of Stack Theta for a while, holding that, turning it over, finding it a great deal more frightening than the alternative.
-**Failure handling** — Purely optional. No hint, no marker, no dialogue prompt. A player who never returns to the chambers' effects loses Ending E permanently and is never told.
+**Failure handling** — Purely optional, and unsignposted, for any player who holds a cipher half: no hint, no marker, no dialogue prompt, and losing Ending E is never mentioned. The one exception is a player holding *no* half at all, for whom the scene is not optional but the only route: Ilaria mentions once, as small talk on the landing, that the Provost's men crated the effects and the Vault has them. She does not say to go, and nothing marks it. She does not raise it with anybody who read the room.
 **Flags set** — `ROOM_READ_FULL` (conditional), `VOSK_BOOTS`, `RECONCILIATION` +8.
 
 ---

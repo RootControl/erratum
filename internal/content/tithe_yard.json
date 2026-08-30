@@ -1,0 +1,85 @@
+{
+ "id": "tithe_yard",
+ "title": "KADMON VEIL — THE TITHE YARD",
+ "clock_at": "13h40",
+ "intro": "Forty square kilometres.\n\nThe Owed is ninety-one cycles of tithe, assembled to grade, sealed in vacuum\nsilos in ranks, each stack labelled with its cycle and its assessed value in\nthe hand of whichever Assessor was alive that year.\n\nNone of it has been opened. None of it has been eaten.\n\nRhod walks you along the first rank and recites the assessed value of each\nstack from memory, in order, because he was examined on it at fourteen.",
+ "revisit": "The Yard. Forty square kilometres of it, in ranks, by cycle.",
+ "look": "Ranks of vacuum silos to the horizon, labelled by cycle, in ninety-one\ndifferent hands.\n\nThe STACKS, sealed.\nThe SEALS, unbroken.\nRHOD, reciting assessed values from memory.",
+ "objects": [
+  {
+   "id": "stacks",
+   "names": [
+    "the stacks",
+    "the owed",
+    "silos",
+    "the tithe",
+    "grain",
+    "the ranks"
+   ],
+   "clue": "C11",
+   "careless": "Ninety-one cycles of assembled tithe in vacuum silos, in ranks, by year. It goes past the point where you can see the end of it.",
+   "careful": "Cycle one is nearest the road, because the road was built to it, and cycle ninety-one is four kilometres out, because they kept going.\n\nProcessed protein, grain-husk, refined ore, and eleven silos of pharmaceutical precursor from the years when Erasmus still had the plant for it.\n\nRhod, at your elbow: \"The Owed would feed this world for one year and four months, sir. That figure is in Report 415 and the Marchioness recalculates it every cycle.\"\n\n\"And nobody has opened it.\"\n\n\"It is assembled, sir.\" He is genuinely confused. \"It is not ours. It has been assessed and it is awaiting collection.\"\n\nA million and a half people a year, chiefly respiratory, for ninety-one years, walking past one year and four months of food that belongs to somebody who is not coming.\n\n[ observed ]"
+  },
+  {
+   "id": "seals",
+   "names": [
+    "seals",
+    "the seals",
+    "wax",
+    "labels",
+    "the hands",
+    "the writing"
+   ],
+   "careless": "Each stack carries a seal and a label: cycle, grade, assessed value, Assessor's mark.",
+   "careful": "Ninety-one hands.\n\nThe early ones are on proper vellum in a formal chancery script. Around cycle nineteen the vellum stops and the labels go onto scraped stock, and the script changes with each Assessor and then changes again as each Assessor gets old.\n\nCycle sixty-seven is in a shaky hand that steadies over the next three cycles, which means somebody learned to write it while somebody else was dying.\n\nThe seals are unbroken. All of them. Forty square kilometres of unbroken seals, checked quarterly, in a hive that has been short of protein since year forty."
+  }
+ ],
+ "npc_refs": [
+  "kadmon/rhod"
+ ],
+ "npcs": [],
+ "exits": [
+  {
+   "id": "back",
+   "names": [
+    "back",
+    "hive",
+    "erasmus",
+    "return",
+    "west",
+    "the hall"
+   ],
+   "to": "kadmon",
+   "cost": 3,
+   "text": "West, back into the hive. Neither of you says anything for the first kilometre."
+  }
+ ],
+ "clues": {
+  "C11": {
+   "id": "C11",
+   "names": [
+    "the owed",
+    "ninety-one cycles",
+    "the tithe yard",
+    "sealed tithe",
+    "the silos",
+    "one year and four months"
+   ],
+   "label": "The Owed — ninety-one cycles of tithe, assembled to grade, sealed, unopened, on a world that has been hungry since year forty",
+   "store": "either",
+   "reconciliation": 2,
+   "file_text": "FILED. CLASS: TITHE / ASSEMBLY, AWAITING COLLECTION. INDEXED. WORLD: KADMON VEIL.\n\nThe template handles it in nine seconds. Assembled tithe awaiting collection is\nthe most ordinary condition in the Imperium and there are four hundred thousand\nsuch filings open in this sector.\n\nThe world reference does not resolve. It files that as a data-quality note and\nasks whether you wish to raise a new world record.",
+   "note_text": "Forty square kilometres. Ninety-one cycles, in ranks, by year, each stack\nassessed and labelled and sealed and unopened.\n\nIt would feed this world for one year and four months. That figure is in Report\n415 and she recalculates it every cycle, which means she has done the sum\nninety-one times and left the seals on.\n\nRhod recites the assessed values from memory. He was examined on them at\nfourteen."
+  }
+ },
+ "strings": {
+  "no_such_thing": "Silos, seals, and forty square kilometres of somebody else's property.",
+  "already_read": "You have looked twice. It goes on for four kilometres.",
+  "no_terminal": "There is nothing out here but the Owed.",
+  "read_room_locked": "It is arranged, by cycle, in ranks. Nobody hid anything in it.",
+  "no_one_here": "Only Rhod, reciting."
+ },
+ "sets": [
+  "KADMON_SAW_OWED"
+ ]
+}
