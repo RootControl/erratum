@@ -117,16 +117,40 @@ func TestSalvagedCluesAreWorthLess(t *testing.T) {
 		t.Fatal("expected the salvage mark")
 	}
 	if s.Ints["VERITY"] != 0 {
-		t.Fatalf("one VERITY less than its Act I value, got %d", s.Ints["VERITY"])
+		t.Fatalf("a clue read four days late proves nothing, got %d", s.Ints["VERITY"])
 	}
 	if strings.Contains(log, "SALVAGED") || strings.Contains(log, "VERITY") {
 		t.Fatalf("nothing says it was worth less:\n%s", log)
 	}
+}
 
-	// Read in the chambers with the body still there, the same clue pays.
-	fresh, _ := play(t, "x calendar", "x calendar", "note A5")
-	if fresh.Ints["VERITY"] != 1 {
-		t.Fatalf("the Act I value is one, got %d", fresh.Ints["VERITY"])
+// VERITY is contradictions recorded outside the cogitator, not a tally of
+// everything written down. ACT_II names the six clues whose case-file version
+// the archive goes on to alter; nothing else moves it on NOTE.
+func TestOnlyTheAlteredCluesAreProof(t *testing.T) {
+	g, err := loadGame(t)
+	if err != nil {
+		t.Fatal(err)
+	}
+	want := map[string]bool{"B1": true, "B4": true, "B9": true,
+		"B12": true, "B19": true, "B23": true}
+	for id, c := range g.Clues {
+		if c.Verity != want[id] {
+			t.Errorf("%s: verity=%v, expected %v", id, c.Verity, want[id])
+		}
+	}
+
+	// One of them pays; an ordinary clue in the same coat does not.
+	proof, _ := playFrom(t, "ferrum", []string{"ACT2_OPEN", "SARN_INTERVIEWED"},
+		"ask sarn about historians", "note B12")
+	if proof.Ints["VERITY"] != 1 {
+		t.Fatalf("B12 is one of the six, got %d", proof.Ints["VERITY"])
+	}
+	plain, _ := playFrom(t, "ferrum", []string{"ACT2_OPEN", "SARN_INTERVIEWED"},
+		"ask sarn about historians", "ask sarn about the cycle", "note B13")
+	if plain.Ints["VERITY"] != 0 {
+		t.Fatalf("a note of something nobody edited is a note, got %d",
+			plain.Ints["VERITY"])
 	}
 }
 

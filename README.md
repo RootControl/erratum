@@ -119,7 +119,7 @@ go test ./...
 `go test ./internal/game/` runs without `go mod tidy`. `internal/ui` needs the
 dependencies, which building needs anyway.
 
-Two hundred and thirty-one tests — 228 in `internal/game`, three in `internal/ui`.
+Two hundred and thirty-three tests — 230 in `internal/game`, three in `internal/ui`.
 Five of them play the whole game from a cold start to five different endings on
 typed commands alone; the rest are one per design guarantee:
 
@@ -321,6 +321,8 @@ typed commands alone; the rest are one per design guarantee:
 | `TestNoDateAfterThePresent` | the present is 826.M41 and an impossible date reads as a clue, not a typo |
 | `TestSnapshotCarriesEveryField` | a save that quietly loses a timer is the archive's trick, done by the engine |
 | `TestASuspendedSessionFinishesTheSameWay` | put it down mid-Act-II, take it up, and still reach the hidden door |
+| `TestActOneLandsWhereTheDocumentsSayItDoes` | +2 or +3 with Crase, nought to four of proof, and the archive barely moved |
+| `TestOnlyTheAlteredCluesAreProof` | VERITY is the six clues the archive alters, not a tally of everything noted |
 | `TestTheArchiveTravelsAsItStands` | a session that came back with clean case-notes would be a lie |
 
 `TestTrustingPlaythrough` also asserts the archive never prints the words

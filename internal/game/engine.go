@@ -256,6 +256,10 @@ func (s *State) precis(verb string) ([]string, int, bool) {
 }
 
 func (s *State) closePrecis(flag, key string, counters content.Counters) []string {
+	// ACT_I §VERITY: HAS_CYLINDER_6 surviving to act close, +1.
+	if s.Has("HAS_CYLINDER_6") {
+		s.Add("VERITY", 1)
+	}
 	s.PrecisPending = false
 	s.precisDone = true
 	s.Set(flag)
@@ -487,7 +491,9 @@ func (s *State) note(arg string) ([]string, int) {
 	s.storeClue(id, StoreBook)
 	s.Set(id + "_PHYSICAL")
 	s.Set(id + "_HELD")
-	if !s.Has(id + "_SALVAGED") {
+	// Only the clues the archive goes on to alter are proof of anything. A
+	// note of something nobody ever edited is a note.
+	if c.Verity && !s.Has(id+"_SALVAGED") {
 		s.Add("VERITY", 1)
 	}
 	s.storeHabit("STORE_HABIT_LEDGER")

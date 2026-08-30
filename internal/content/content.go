@@ -183,6 +183,12 @@ type Clue struct {
 	Reconciliation int    `json:"reconciliation"`
 	NoteText       string `json:"note_text"`
 	Refusal        string `json:"refusal"`
+	// Verity marks a clue whose case-file version the archive alters, so that
+	// holding it in the ledger is independent proof rather than a note. It is
+	// the only thing that moves VERITY on NOTE: the act documents give Act I
+	// four sources and Act II exactly six clues, and a blanket award per clue
+	// put a careful player at twenty-one against a documented ceiling of six.
+	Verity bool `json:"verity"`
 	// Sets are flags that become true the moment this clue is in hand,
 	// whichever way the player came by it. The dispatch number opens the Vault
 	// whether it was read off a jacket or off an archivist's index.
