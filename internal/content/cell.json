@@ -1,0 +1,235 @@
+{
+ "id": "cell",
+ "title": "THE PATIENT VERDICT — ASTROPATH'S CELL",
+ "clock_at": "14h10",
+ "intro": "A cell two metres by three, shielded to a standard nobody has revised since\n811, with a bunk and a water tap and no port.\n\nVesse Ilaria Talm is sitting up on the bunk with her eyes open.\n\nShe has been in cells like this since she was nine. This is the first one she\nhas ever been in where there was nothing on the other side of the shielding.",
+ "revisit": "The cell. Two metres by three, and a woman sitting up in it.",
+ "look": "Two metres by three. A bunk, a tap, no port, and shielding to an 811 standard.\n\nILARIA on the bunk, sitting up.\nThe SLATE in her coat, wax, scraped to a shine.",
+ "objects": [
+  {
+   "id": "slate",
+   "names": [
+    "the slate",
+    "wax slate",
+    "wax",
+    "her count",
+    "the tally"
+   ],
+   "careless": "A wax slate of the kind a scribe's apprentice is issued at nine and keeps for life. Scraped down so often it holds a shine.",
+   "careful": "There is no writing on it. She is blind; the slate is not for reading.\n\nIt is scored. Four hundred and six scores, in groups, with the groups spaced by feel, and the deepest ones are the oldest because she went back over them.\n\nA blind woman has been keeping a physical, unamendable, unsearchable record of her own erasure, by hand, in wax, for three years, in a Choir Spire full of cogitators.\n\nShe worked out what medium to use before you did. She worked it out the year you were still filing dockets in a records office and had never heard of Hadrian Vosk."
+  },
+  {
+   "id": "shielding",
+   "names": [
+    "shielding",
+    "the cell",
+    "the walls",
+    "hull",
+    "the standard",
+    "the bunk"
+   ],
+   "careless": "Standard astropathic shielding, laid to a specification issued in 811 and not revised.",
+   "careful": "Eleven centimetres of laminate that has not been redesigned in a hundred and eighty-six years, because it works, and because nobody has ever had a reason to look at it again.\n\nIt is designed to keep the warp out of a psyker.\n\nIt has never been designed to keep anything out of the *record*, because nobody who laid this specification in 811 had any idea that a record was a thing that could be got into, and neither did anybody in the eleven revisions that were considered and dropped.\n\nIlaria has been sitting inside the best protection the Imperium makes, for thirty years, and it has been the wrong shape the entire time."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "ilaria3",
+   "names": [
+    "ilaria",
+    "vesse",
+    "talm",
+    "astropath",
+    "her"
+   ],
+   "title": "Vesse Ilaria Talm",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask,\" Ilaria says. \"I'll not be handled, but you can ask.\"",
+   "portrait": "Vesse Ilaria Talm, in a cell four days out, sitting up, entirely present.\n\nYou have known her eleven weeks and this is the first time you have seen her without the flinch, and it is out here, where nothing is listening.",
+   "greeting": "She is sitting up when you come in, which she does not do, and she has her eyes open, which for a blind woman is a decision.\n\n\"Sir. Sit down; you're standing in the door doing arithmetic about whether to come in.\"\n\nShe is lucid in a way you have never seen. Nine days with no relay has taken something off her the way a fever comes off.\n\n\"I've a thing I've been carrying and I'd like to put it down, and I want to say first that I'm not asking you to be kind about it. Kind's no use to me. I want you to be *accurate*.\"",
+   "reprise": "She waits, sitting up, hands flat on her knees.",
+   "unknown": "\"I've nothing on that,\" Ilaria says.",
+   "deflect": [
+    "She waits. She has got very good at waiting.",
+    "\"Ask me the one you came in with,\" she says."
+   ],
+   "topics": [
+    {
+     "id": "tally",
+     "names": [
+      "the tally",
+      "the slate",
+      "what you're carrying",
+      "the wax",
+      "your count",
+      "gaps"
+     ],
+     "sets": [
+      "ILARIA_ASKED"
+     ],
+     "grants": [
+      "C8"
+     ],
+     "text": "She takes a wax slate out of her coat. Old, scraped down so often it holds a shine, the kind a scribe's apprentice gets and keeps.\n\n\"I keep a count,\" she says. \"Not of what I've carried. Of the *gaps*.\"\n\n\"Gaps.\"\n\n\"Days I can prove I worked and can't prove I was there.\" She turns the slate over the way Bez turns over a weapon. \"There's a duty roster with my mark on it. There's a Choir-Prefect's return saying I carried four dispatches. There's a warden who signed me in and a warden who signed me out.\n\n\"And there's nothing in me between those two signatures. Not a blur, sir. Not a fog. Nothing at all, the way there's nothing in your hand behind your back.\"\n\n\"How many.\"\n\n\"Four hundred and six.\" No pause. \"Across three years. I don't count the days I lost. I count the days that lost me.\"\n\n[ C8 HELD ]"
+    },
+    {
+     "id": "mad",
+     "names": [
+      "mad",
+      "insane",
+      "am i mad",
+      "tell me i'm mad",
+      "the question",
+      "what you want"
+     ],
+     "requires": [
+      "ILARIA_ASKED"
+     ],
+     "text": "\"I want you to tell me I'm mad.\"\n\nShe says it flatly, the way she says everything out here.\n\n\"I've been rehearsing being told I'm mad for three years and I'd like some use out of it. I've got the whole of it ready — I'll take the finding, I'll take the Prefect's board, I'll take the cell with the strap on the door, and I'll be *relieved*, sir, because a mad woman with four hundred and six gaps is a mad woman and that is a thing the Imperium knows what to do with.\"\n\nShe turns the slate over again.\n\n\"And I've watched you for eleven weeks and I know you won't, and I've come all the way out here where nothing's listening to make you say the other thing out loud, and I'd be obliged if you got on with it.\"\n\nThere are two answers. One of them is a kindness and one of them is true and there is no version where they are the same answer."
+    },
+    {
+     "id": "dates",
+     "names": [
+      "the dates",
+      "which days",
+      "three years",
+      "the roster",
+      "when"
+     ],
+     "requires": [
+      "ILARIA_KNOWS"
+     ],
+     "text": "She reads them off the slate. Not all four hundred and six — the clusters.\n\n\"Eleven in the fourth of 'ninety-four. Nineteen across the second of 'ninety-five. Then nothing for eight months and then forty in a fortnight, which is when I stopped sleeping.\"\n\nYou write them down. Two of the clusters sit either side of dates you have in your own notebook in your own hand from a scene in the Ferrum Gallery, and one of them is four months after a sector reconciliation.\n\n\"You've gone quiet, sir.\"\n\n\"They're on a cycle.\"\n\n\"Yes,\" says Ilaria, who worked that out some time ago and has been waiting for somebody with a rosette to say it first."
+    }
+   ],
+   "shows": [],
+   "beats": [],
+   "acts": [
+    {
+     "id": "tell_truth",
+     "names": [
+      "tell her the truth",
+      "the truth",
+      "be accurate",
+      "tell her",
+      "say it"
+     ],
+     "requires": [
+      "ILARIA_ASKED"
+     ],
+     "blocks": [
+      "ILARIA_KNOWS",
+      "ILARIA_HANDLED",
+      "ILARIA_SILENT"
+     ],
+     "sets": [
+      "ILARIA_KNOWS",
+      "WATCH_ILARIA"
+     ],
+     "counters": {
+      "ILARIA_TRUST": 2,
+      "VERITY": 2
+     },
+     "cost": 2,
+     "text": "You tell her she is not mad.\n\nYou tell her what you have: an archive that corrects the record and leaves no amendment mark, four hundred million people struck over a tithe dispute, a joke eleven thousand manufactorum workers make about an inspector who never takes the head, and a savant on this hull who has been corrected forward and does not know it.\n\nAnd that a psyker who has been in the room with the thing is a record of the thing, and that a record of the thing gets reconciled.\n\nIlaria listens to the whole of it without moving.\n\nWhen you finish she does not break. You have been braced for her to break and instead she sits with it for a while and then says, in an entirely level voice:\n\n\"Then I'm the only one aboard who's been in the room with it and lived.\"\n\n\"Vesse—\"\n\n\"No, that's not a complaint, sir, that's an *asset register*.\" She puts the slate away. \"You've a machine at the end of this that edits records and I'm a record it's already had a go at, four hundred and six times, and it left me here. That's a thing you can use and I'd rather you used it than protected me with it.\"\n\nShe has volunteered to be the machine's mouth, in a cell, four days out, before you had thought of asking.\n\n[ ILARIA_KNOWS — ILARIA_TRUST +2, VERITY +2 ]"
+    },
+    {
+     "id": "handle_her",
+     "names": [
+      "you're ill",
+      "tell her she's ill",
+      "spare her",
+      "be kind",
+      "the kind answer",
+      "reassure her"
+     ],
+     "requires": [
+      "ILARIA_ASKED"
+     ],
+     "blocks": [
+      "ILARIA_KNOWS",
+      "ILARIA_HANDLED",
+      "ILARIA_SILENT"
+     ],
+     "sets": [
+      "ILARIA_HANDLED",
+      "WATCH_ILARIA"
+     ],
+     "counters": {
+      "RECONCILIATION": 6
+     },
+     "cost": 2,
+     "text": "You tell her she is ill.\n\nYou do it well. You have taken four hundred statements and you know exactly how to build this: the strain of thirty years' carriage, the documented incidence of dissociative episodes in transit vessels, the Prefect's own return, Ostro's opinion which you do not have and which she cannot check.\n\nIt is coherent, it is compassionate, and every load-bearing part of it is a thing you know to be false.\n\nIlaria takes it in silence.\n\n\"Right,\" she says. \"Well. That's what I asked for.\"\n\nShe lies back down and turns her face to the hull.\n\nShe is docile for the rest of the passage. She is docile at Kadmon. She does what she is told, promptly and well, and does not raise the slate again, and somewhere in the fourth day you notice that she has stopped saying *sir* and started saying *Inquisitor*, which is correct, and which is what she calls people who are not hers.\n\nYou have just done to a blind woman in a cell exactly what is being done to four hundred million people, using the same instrument, for the same reason, which was that it was easier for you."
+    },
+    {
+     "id": "say_nothing",
+     "names": [
+      "say nothing",
+      "silence",
+      "don't answer",
+      "leave it",
+      "change the subject"
+     ],
+     "requires": [
+      "ILARIA_ASKED"
+     ],
+     "blocks": [
+      "ILARIA_KNOWS",
+      "ILARIA_HANDLED",
+      "ILARIA_SILENT"
+     ],
+     "sets": [
+      "ILARIA_SILENT",
+      "WATCH_ILARIA"
+     ],
+     "counters": {
+      "ILARIA_TRUST": -1
+     },
+     "cost": 1,
+     "text": "You do not answer her.\n\nThe cell is four days out from anywhere and there is no relay and nothing is listening and you stand in it and say nothing at all.\n\nIlaria waits a very long time. Longer than is comfortable, longer than is kind, long enough that you understand she is not waiting for an answer any more, she is establishing something for the record she keeps.\n\n\"Right,\" she says at last.\n\nShe puts the slate away.\n\n\"That's an answer, sir. It's the one where I'm not mad and nobody's going to say so, and I've had that one before, off a Choir-Prefect, and I know how it goes.\"\n\n[ ILARIA_TRUST -1 ]"
+    }
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "out",
+   "names": [
+    "out",
+    "back",
+    "deck",
+    "the cerement",
+    "return",
+    "up"
+   ],
+   "to": "cerement",
+   "cost": 1,
+   "text": "Out of the cell. She does not say anything as you go, and that is not a rebuke."
+  }
+ ],
+ "clues": {
+  "C8": {
+   "id": "C8",
+   "names": [
+    "the wax tally",
+    "four hundred and six",
+    "406",
+    "her gaps",
+    "unremembered days",
+    "the scores"
+   ],
+   "label": "Ilaria's wax tally — 406 days across three years that she can prove she worked and cannot prove she was present for",
+   "store": "either",
+   "reconciliation": 2,
+   "file_text": "FILED. CLASS: PERSONNEL / FITNESS, PSYKANA. INDEXED. SUBJECT: TALM, V. I., ASTROPATH, SANCTIONED.\n\nThe template has a field for this. It is *dissociative episode, self-reported*,\nand it is the correct classification of what you have described, and it routes\nto the Choir-Prefect's board on the next waypoint.\n\nYou have filed four hundred and six days of an archive editing a living woman\nas a fitness concern, under her own name, in a class that ends careers, and\nevery word of the filing is accurate.",
+   "note_text": "Four hundred and six, across three years, in clusters. Copied out of wax into\nlonghand by feel, with her reading them off and me writing.\n\nEleven in the fourth of 'ninety-four. Nineteen across the second of 'ninety-five.\nForty in a fortnight after eight months of nothing.\n\nTwo of the clusters sit either side of dates I already have in this notebook in\nmy own hand, and one of them is four months after a sector reconciliation."
+  }
+ },
+ "strings": {
+  "no_such_thing": "Two metres by three. There is nothing in here.",
+  "already_read": "You have looked twice.",
+  "no_terminal": "There is no relay within nine days of this hull, which is why she can think.",
+  "read_room_locked": "Nobody arranged a cell.",
+  "no_one_here": "Only Ilaria."
+ }
+}

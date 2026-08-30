@@ -1,6 +1,9 @@
 package game
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 // Archive is the Lexicanum Vault and the player's case-notes: everything the
 // enemy can reach. It is a real mutable store, not a scripted cutscene. When
@@ -40,6 +43,21 @@ func (a *Archive) File(line string) {
 }
 
 func (a *Archive) CaseNotes() []string { return a.caseNotes }
+
+// Delete removes a case-note line entirely, which the archive does exactly
+// once in the game and only to something it did not want filed in the first
+// place. It leaves no gap: the line is not struck, or amended, or marked. It
+// is simply not one of the lines any more.
+func (a *Archive) Delete(id string) {
+	kept := a.caseNotes[:0]
+	for _, line := range a.caseNotes {
+		if strings.HasPrefix(line, id+" ") || strings.HasPrefix(line, id+" —") {
+			continue
+		}
+		kept = append(kept, line)
+	}
+	a.caseNotes = kept
+}
 
 func (a *Archive) Corrected() bool { return a.corrected }
 

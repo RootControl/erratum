@@ -67,6 +67,12 @@ func (s *State) Do(raw string) (out []string, ticks int) {
 	case "show", "present":
 		return s.show(arg)
 
+	case "press", "push":
+		return s.press(arg)
+
+	case "cite", "produce":
+		return s.cite(arg)
+
 	case "talk", "greet", "approach", "see":
 		return s.talk(strings.TrimPrefix(arg, "to "))
 
@@ -109,6 +115,12 @@ func (s *State) Do(raw string) (out []string, ticks int) {
 		return []string{s.cluesDump()}, 0
 
 	case "notes", "casenotes", "case-notes":
+		// Out of relay range, reading the case-file is not free. Every time
+		// the player goes back to it for reassurance it agrees with them
+		// slightly more, and the cost is never shown.
+		if s.Has("OUT_OF_RELAY") {
+			s.Add("RECONCILIATION", 2)
+		}
 		return []string{s.caseNotesDump()}, 0
 
 	case "notebook", "coat":
@@ -179,6 +191,9 @@ func (s *State) travel(arg string) ([]string, int) {
 	}
 	for _, f := range e.Sets {
 		s.Set(f)
+	}
+	for k, v := range e.Counters {
+		s.Add(k, v)
 	}
 	first := !s.Visited[e.To]
 	if !s.Move(e.To) {
@@ -323,10 +338,7 @@ func (s *State) examine(arg string) ([]string, int) {
 	if arg == "" {
 		return []string{"Examine what?"}, 0
 	}
-	o := s.Room.Find(arg)
-	if o != nil && !s.gatesMet(o.Gate) {
-		o = nil
-	}
+	o := s.findObject(arg)
 	if o == nil {
 		// People are things you can look at, and looking at one costs what
 		// looking at anything else costs — once.
@@ -366,11 +378,27 @@ func (s *State) examine(arg string) ([]string, int) {
 	}
 }
 
-func (s *State) take(arg string) ([]string, int) {
-	o := s.Room.Find(arg)
-	if o != nil && !s.gatesMet(o.Gate) {
-		o = nil
+// findObject resolves a name to the first object in the room whose gates the
+// player has met, which is the same rule topics and acts use. A crate that has
+// not been unsealed is not in the room, and a slate that arrived damaged is a
+// different object from the one that did not.
+func (s *State) findObject(arg string) *content.Object {
+	var best *content.Object
+	bestScore := 0
+	for i := range s.Room.Objects {
+		o := &s.Room.Objects[i]
+		if !s.gatesMet(o.Gate) {
+			continue
+		}
+		if sc := o.Score(arg); sc > bestScore {
+			best, bestScore = o, sc
+		}
 	}
+	return best
+}
+
+func (s *State) take(arg string) ([]string, int) {
+	o := s.findObject(arg)
 	if o == nil {
 		return []string{s.S("no_such_thing")}, 0
 	}

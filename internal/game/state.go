@@ -39,6 +39,8 @@ const (
 	lyleConfirmDelay    = 6      // and then the Vault confirms a null result you never asked it to
 	canticaConfirmDelay = 1      // forty seconds, and the second one is not yours
 	tassDelay           = 12     // and if you never went to the Magos, his apprentice comes to you
+	symptomInterval     = 6      // thirty-six hours on the Cerement's edge
+	c17Delay            = 5      // an hour, and the intake protocols are not there any more
 )
 
 // State is everything the game knows. Flags are strings by design: the act
@@ -78,6 +80,7 @@ type State struct {
 	Met      map[string]bool
 	Asked    map[string]int
 	Topics   map[string]bool
+	Layers   map[string]int // how far PRESS has got into each topic
 	Pressure map[string]int
 	Fired    map[string]bool
 	deflects map[string]int
@@ -98,6 +101,16 @@ type State struct {
 	canticaConfirmed bool
 
 	tassWaited int
+
+	// Out of relay range the cogitator stops lying about the world and starts
+	// lying about the player. One symptom every thirty-six hours, in order.
+	transitTicks int
+	symptomsSeen int
+
+	// C17 goes from the cogitator within the hour, silently, unless the
+	// player copied it out by hand while Cael watched.
+	c17Waited int
+	c17Gone   bool
 
 	requisitioned  bool
 	sinceReq       int
@@ -123,6 +136,7 @@ func New(g *content.Game) *State {
 		Met:      map[string]bool{},
 		Asked:    map[string]int{},
 		Topics:   map[string]bool{},
+		Layers:   map[string]int{},
 		Pressure: map[string]int{},
 		Fired:    map[string]bool{},
 		deflects: map[string]int{},
@@ -267,6 +281,41 @@ func (s *State) Set(f string) {
 	// three acts in 2.10 remembered to write, which meant the two doors in 2.9
 	// that hand the second half over — alliance and coercion — left the player
 	// holding all of it and unable to read a word.
+	// C9_PHYS / C9_COG is which medium the forward recitation went into, and
+	// the act document names them, so the engine translates rather than
+	// asking the content to write a second flag beside FILE and NOTE.
+	// A door closes the game. There is no scene after the intake and no
+	// prompt saying so; the act simply is the last thing that happens.
+	if strings.HasPrefix(f, "ENDING_") {
+		s.Done = true
+	}
+	if f == "C9_PHYSICAL" {
+		s.Flags["C9_PHYS"] = true
+	}
+	if f == "C9_FILED" {
+		s.Flags["C9_COG"] = true
+	}
+	// VOYAGE_FULL is every watch the player could have stood, stood. A member
+	// who is dead, burned or blank is not a watch they failed to keep.
+	if strings.HasPrefix(f, "WATCH_") && !s.Flags["VOYAGE_FULL"] {
+		done := (!s.Flags["BEZ_ALIVE"] || s.Flags["WATCH_BEZ"]) &&
+			(s.Ints["ILARIA_TRUST"] < 2 || s.Flags["WATCH_ILARIA"]) &&
+			(!s.Flags["FENN_INTACT"] || s.Flags["WATCH_FENN"]) &&
+			(!s.Flags["VAUX_ALLIED"] || s.Flags["WATCH_VAUX"])
+		if done {
+			s.Flags["VOYAGE_FULL"] = true
+		}
+	}
+	// The method is what the nav plot, the casket and the uncoupled vox say
+	// together: delivery is physical, in a reliquary, correctly addressed.
+	if voskMethod[f] {
+		if s.Flags["C2_HELD"] && s.Flags["C3_HELD"] {
+			s.Flags["VOSK_METHOD_PARTIAL"] = true
+			if s.Flags["C5_HELD"] {
+				s.Flags["VOSK_METHOD_UNDERSTOOD"] = true
+			}
+		}
+	}
 	if cipherHalves[f] && !s.Flags["CIPHER_COMPLETE"] &&
 		s.Flags["CIPHER_HALF_ROOM"] &&
 		(s.Flags["CIPHER_HALF_VAUX"] || s.Flags["CIPHER_HALF_REBUILT"]) {
@@ -277,6 +326,8 @@ func (s *State) Set(f string) {
 // cipherHalves are the flags that can complete the cipher by arriving. The
 // room half comes off Vosk's furniture, in Act I or four days late in Theta;
 // the other half is Vaux's, or is rebuilt in 2.10 at the cost of a person.
+var voskMethod = map[string]bool{"C2_HELD": true, "C3_HELD": true, "C5_HELD": true}
+
 var cipherHalves = map[string]bool{
 	"CIPHER_HALF_ROOM":    true,
 	"CIPHER_HALF_VAUX":    true,
@@ -305,6 +356,7 @@ var bounds = map[string][2]int{
 	// back from three weeks off-world at 3 whatever he left at, which is why
 	// the ceiling does the arithmetic instead of the content.
 	"VAUX_SUSPICION": {0, 3},
+	"VURR_RESPECT":   {0, 3},
 }
 
 // Add moves a counter, held inside its range.
@@ -396,6 +448,27 @@ func (s *State) Tick() []string {
 	// Forty seconds after the Vault says there is no such routing address, the
 	// Vault says it again without being asked. Nothing in the game explains
 	// which of the two answers was the query.
+	// The one clue in the game the archive takes back. No klaxon, no notice:
+	// it is simply not in the case-file any more, and re-querying returns the
+	// same NO SUCH ENTRY a shelf that was never filled returns.
+	if s.Has("C17_FILED") && !s.c17Gone && !s.Has("C17_PHYS") {
+		s.c17Waited++
+		if s.c17Waited >= c17Delay {
+			s.c17Gone = true
+			delete(s.Held, "C17")
+			delete(s.Flags, "C17_FILED")
+			delete(s.Flags, "C17_HELD")
+			s.Archive.Delete("C17")
+		}
+	}
+	if s.Has("IN_TRANSIT") {
+		s.transitTicks++
+		if s.transitTicks%symptomInterval == 0 {
+			if line := s.symptom(); line != "" {
+				out = append(out, line)
+			}
+		}
+	}
 	// The plate is unmissable. A player who never took the ash to the workshop
 	// gets it anyway, brought by an apprentice who was told to, and loses only
 	// the Magos's signature on the recovery.
@@ -448,6 +521,22 @@ Vaux is behind her in the corridor. He does not look up. He writes something dow
 You know you did not pull two hundred years of drainage ledgers. You know it the way
 you know your own name, which is to say: you know it, and there is no longer a single
 object in this hive that agrees with you.`
+
+// symptom fires the next thing the record does to the player, in order. The
+// third one needs the exposure to have got somewhere; below that the passage
+// is simply quiet, and the player has no way to know they were spared it.
+func (s *State) symptom() string {
+	keys := []string{"symptom_note", "symptom_option", "symptom_memory"}
+	if s.symptomsSeen >= len(keys) {
+		return ""
+	}
+	if keys[s.symptomsSeen] == "symptom_memory" && s.Reconciliation() < 60 {
+		return ""
+	}
+	k := keys[s.symptomsSeen]
+	s.symptomsSeen++
+	return s.S(k)
+}
 
 // threadsTouched counts how many of Vosk's four open files the player has put
 // a hand on. Crase asks for them at two, which is the point at which an

@@ -7,7 +7,8 @@ THE ERRATUM — a playable vertical slice of a terminal investigation game
 The repo is half design document, half prototype. `STORY_BIBLE.md` and
 `ACT_I.md` / `ACT_II.md` / `ACT_III.md` are the source of truth for content and
 vocabulary; `main.go` + `internal/` implement all of Act I (scenes 1.1–1.10)
-and every scene of Act II. Act III is not started. When the code and the act documents disagree about a name, a
+every scene of Act II, and the whole of Act III including the five endings.
+The slice is content-complete. When the code and the act documents disagree about a name, a
 flag or a fact, the documents win — and `STORY_BIBLE.md` §12 CANON LOCKS wins
 over the rest of the bible.
 
@@ -49,6 +50,10 @@ first command is eaten was a misreading of the same artefact.
   - Act II: `board`, `safehouse`, `workshop`, `delta`, `theta`,
     `choir_settlement`, `annexe`, `rows`, `cathedral`, `confessional`,
     `crase_office`, `ferrum`, `cylinder_vault`
+  - Act III: `skydock`, `cerement`, `spirit`, the four watches — `gunbay`,
+    `cell`, `hold`, `wardroom` — Kadmon Veil: `kadmon`, `tithe_yard`,
+    `muster`, `reading_room` — and Cantica-Null: `cantica`, `fifth_chair`,
+    `correctorum`, `intake`
 
   Plus `strings.json` for the defaults every scene inherits, `content.go` (the
   loader and its validator) and `npc.go` (the dialogue types). All authored
@@ -478,5 +483,138 @@ them, one test per guarantee, and those assertions are meant to be permanent.
   only, so every Act II query for a code the Vault does not know rendered
   `[missing string: vault_none]` at the standing board. Shared refusals belong
   in the shared table; a scene overrides only when the refusal is a beat.
+- **Act III inverts the UI lie: out of relay range the cogitator stops lying
+  about the world and starts lying about the player.** `IN_TRANSIT` runs a
+  symptom every `symptomInterval` actions, in order, out of `State.symptom()`:
+  a note one clause shorter, a sentence the player cannot find again, and — only
+  at `RECONCILIATION` 60 — `NO SUCH ENTRY` for something they requisitioned
+  themselves. Below 60 the third simply does not fire and the passage is quiet,
+  and nothing tells the player they were spared it. The strings live in
+  `cerement.json` as `symptom_note` / `_option` / `_memory`.
+- **`OUT_OF_RELAY` makes reading your own case-file cost exposure.** Two
+  `RECONCILIATION` per look, in `engine.go`, silently. It is still free in
+  ticks — the invariant that checking what you already hold costs no time is
+  intact — but out there the file agrees with the player slightly more every
+  time they go back to it for reassurance.
+- **`VOSK_METHOD_PARTIAL` / `_UNDERSTOOD` are derived, like `CIPHER_COMPLETE`.**
+  `State.Set` reads `C2_HELD`, `C3_HELD` and `C5_HELD`: the nav plot and the
+  casket are the shape of it, and the uncoupled vox is what makes it a method.
+  No content writes either flag. This is the same rule as the cipher and for
+  the same reason — the last flag three scenes had to remember to write made
+  the act unfinishable.
+- **Objects resolve like topics and acts.** `findObject` in `engine.go` takes
+  the best-scoring object *whose gates are open*, so two objects may share a
+  name and only one of them is in the room. That is how the voice slate is one
+  object on a stolen hull and a different object on a curated one, with no
+  branch anywhere saying which.
+- **The three hulls in 3.1 are exclusive by `blocks`, not by a disposition.**
+  `TRANSPORT_WRIT` / `_STOLEN` / `_DEBT` each block the other two on the act
+  that sets them, which is the 2.9 idiom. Route B is authored on Rill because
+  Rill is the man who explains the seal and then puts the shift-return in late;
+  Bez walks the party aboard in the prose.
+- **The four watches are four scenes, because the player has to go to them.**
+  3.4's rule is that no member of the retinue raises their own subject
+  unprompted, so each of `gunbay` / `cell` / `hold` / `wardroom` is its own
+  room off the Cerement, reached by an exit that costs ship-time, and the
+  ambient objects in `cerement.json` are the same four people seen from a
+  distance and saying nothing. Looking at somebody is not standing a watch
+  with them.
+- **`VOYAGE_FULL` counts what was possible, not what was offered.** Derived in
+  `State.Set` when a `WATCH_*` lands: a member who is dead, below trust, blank
+  or never allied is not a watch the player failed to keep, so a lone survivor
+  can still finish the voyage complete. Do not make it a count of four.
+- **`C9_PHYS` / `C9_COG` are the act document's names for `NOTE` and `FILE`.**
+  `State.Set` translates `C9_PHYSICAL` and `C9_FILED` into them rather than
+  asking the content to write a second flag beside the store it already chose.
+  Filing the forward recitation is the trap: the `file_text` says, in the
+  filing, that the list will be three worlds shorter at Cantica-Null, and
+  nothing warns.
+- **Three of the four watches have a wrong answer that is the kind one.**
+  Softening Bez's bequest costs `RECONCILIATION` and the prose says both
+  reasons were good ones; telling Ilaria she is ill costs six and says plainly,
+  once, that it is the same instrument for the same reason; shielding Fenn
+  mid-recitation is the humane choice and truncates the evidence. None of them
+  is punished by a refusal — each one works, and takes something.
+- **3.6 and 3.8 are one scene, because they are one conversation.** The
+  Marchioness's audience and the answer to her question happen in the Muster
+  Hall with the same woman, so `muster.json` holds both: her report and the
+  census are topics, the question is a beat at `after_topics` 2, the three
+  answers and the four aid options are acts that block each other. Splitting
+  them into two scenes would have meant leaving the hall and coming back to
+  say one sentence.
+- **`VURR_RESPECT` is opened by competence and closed by sympathy.** Showing
+  her C11 or C13 accurately is +1 and grants the Reading Room; the `pity` topic
+  is −1 and she addresses the retinue rather than the player for the rest of
+  the visit. The Reading Room's exit gates on `at_least VURR_RESPECT 1`, so
+  3.7 is earned in 3.6 or reached at all.
+- **The aid in 3.8 says its own ratio out loud.** Each of the four acts states
+  the fraction of the shortfall it covers, in her voice or the trader's, and
+  each ends with the shrine that gets built to it inside a week. That is the
+  scene's knife and it is authored into the act text rather than left to the
+  player to work out. `KADMON_AID` blocks the other three: one is a gift, two
+  is a policy.
+- **Doing nothing still fires the departure.** The `thanks_nothing` beat is
+  gated `blocks: ["KADMON_AID"]` and fires at `after_topics` 4: she comes down
+  eleven hundred metres at a hundred and four and thanks the player for
+  coming, with no condition attached. The act document says testers found it
+  the most upsetting line in the build and to leave it in.
+- **Report 728 is authored as a gated object with no signpost.** It is one of
+  nine hundred and twenty-two spines until the player asks Rhod what year the
+  Marchioness's husband died; `VURR_WIDOWED` is what puts it in the room. The
+  filing template for it opens, offers four dispositions, and all four are
+  lies — the refusal is the player walking back to the desk and making the
+  mark she asked for.
+- **C17 is the one clue the archive takes back.** Cael files it himself,
+  helpfully, without being asked, so the topic sets `C17_FILED` rather than the
+  player choosing a store. `Tick` then removes it after `c17Delay` actions
+  unless `C17_PHYS` — and `Archive.Delete` takes the case-note line out
+  entirely rather than striking or amending it, so there is no gap. Re-querying
+  returns `NO SUCH ENTRY`, which is the same three words a shelf that was never
+  filled returns. It is the only place in the game where the archive removes
+  rather than substitutes, and it is Cael's own evidence of his own
+  reconciliation.
+- **The Correctorum never claims authorship, and the player has to notice.**
+  The `personnel` topic reads out the assessment and stops; nothing in it says
+  the machine composed *acceptable for expenditure*, and every player hears
+  that it did. The `composed` topic is the precise question and the answer is
+  one word. `AMANUENSIS_BLINDSPOT` is the hard gate for Ending E and it is
+  reachable only by asking — `TestTheBlindspotMustBeAskedFor` asserts that
+  hearing the file is not asking, and that nothing in the reading claimed it.
+- **Stopping the reading in 3.11 is relief that hides a price.** `stop_reading`
+  blocks the `personnel` topic, so C19 is never heard, and the act document is
+  explicit that Ending D then charges for it without the player knowing what
+  they are being charged for. Do not add an explanation.
+- **Crase's audit is the scene's whole mechanism and she passes it.** Every
+  answer under audit is true, including the elevation, and the reveal is not
+  that she is theirs — it is that she runs the Amanuensis's rule, omission
+  never falsehood, and taught it to the player, who has been doing it since
+  Kadmon. The one thing the player ends up holding that she does not is why
+  Vosk asked *her* to sign.
+- **3.12 has its own three verbs and they exist for one scene.** `ASK` is the
+  parser's; `PRESS` walks `Topic.Layers` one at a time and says *"There is no
+  further layer"* when the layer is empty; `CITE` is `SHOW` with the two-store
+  rule attached — it works only from the notebook, because the machine cannot
+  contradict a record it holds and has already amended everything in the
+  case-file. `intake.json` overrides the shared `help` string to teach `PRESS`
+  and `CITE`, which is why they are not advertised for thirty hours before they
+  exist. That override is the intended way to scope a verb to a place.
+- **Every line the Amanuensis speaks is literally true.** It answers the
+  question asked, scoped narrower than the player meant, and never volunteers a
+  scope. It says *I* twice. The omission — that Thessaline was the writing
+  sample and the real projection is 410 million against 31 billion — has three
+  doors: the literal scope question, `CITE C17` and `CITE C9`, and all three
+  require the physical copy. On exposure it answers in full immediately with no
+  defensiveness, because nothing has been caught.
+- **An ending is an act with a long gate and a physical gesture.** The five
+  doors live on the Amanuensis in `intake.json`, each with refusal variants
+  ordered after the real one, so a closed door answers in fiction and never
+  names the flag it wanted — `TestEndingEHasNoPartialCredit` drops each of
+  Ending E's ten requirements in turn and asserts both that E stays shut and
+  that the refusal does not say which one is missing. `State.Set` marks the
+  game `Done` on any `ENDING_*`.
+- **`VAUX_APOLOGY` holds every door until the word is kept.** Five `untold_*`
+  acts sit ahead of the five endings and refuse, in fiction, until `tell_vaux`
+  has fired. That is how an implication — *if you promised, you must tell him
+  first* — is expressed with gates that have no implication operator.
 - Prose style: second person, short sentences under pressure, Imperial
   vocabulary used casually and never explained. See `STORY_BIBLE.md` §9.

@@ -145,6 +145,11 @@ func TestEveryGatedFlagHasAWriter(t *testing.T) {
 		// The effects manifest, requisitioned from the Vault by a player who
 		// thought to ask where a dead man's crates went.
 		"THETA_KNOWN": true,
+		// Derived in Set from the clues that make up the method, the way
+		// CIPHER_COMPLETE is derived from the two halves.
+		"VOSK_METHOD_PARTIAL": true, "VOSK_METHOD_UNDERSTOOD": true,
+		// Out of relay range, and the endings.
+		"IN_TRANSIT": true, "VOYAGE_FULL": true, "C9_PHYS": true, "C9_COG": true,
 	}
 	written := map[string]bool{}
 	note := func(fs []string) {

@@ -1,0 +1,431 @@
+{
+ "id": "cantica",
+ "title": "CANTICA-NULL — THE CORRECTORUM",
+ "date": "0997.4.278",
+ "clock_at": "08h00",
+ "terminal": true,
+ "sets": [
+  "EXPECTED"
+ ],
+ "intro": "There is no challenge.\n\nThe clamps engage before you request them. Nobody hails, nobody asks for a\nwrit, nobody comes down the ramp with a weapon, and there is no search at any\npoint, which means the Erratum walks aboard under your coat.\n\nThe station is warm. It is clean, it is quiet, it is extremely well lit, and it\nsmells of paper and hot brass.\n\nAbout three thousand tech-adepts work the Correctorum floor below and not one\nof them looks up.\n\nBelow that, through the viewport, a world: Anser's Reach, settled M39, two\nmillion souls, which the archive says was never colonised and which has three\nlit cities on the night side.\n\nYour berth placard is on the stanchion at the head of the ramp.",
+ "revisit": "Cantica-Null. Warm, clean, quiet, and nobody looks up.",
+ "look": "A dock that is warmer than the Adamant Crown, and a floor below it with three\nthousand adepts on it who do not look up.\n\nYour PLACARD on the stanchion at the head of the ramp.\nThe VIEWPORT, and Anser's Reach under it.\n\nAdepta KESH, with a teapot. Magos CAEL, out of sync. The fourth CHAIR,\noccupied. And somewhere aft, CRASE, who has not said anything.",
+ "objects": [
+  {
+   "id": "placard",
+   "names": [
+    "the placard",
+    "placard",
+    "my berth",
+    "the stanchion",
+    "my name",
+    "berth card"
+   ],
+   "clue": "C15",
+   "careless": "A brass berth placard on the stanchion, engraved with your name, your rank and your cabin.",
+   "careful": "Your name is spelled correctly.\n\nIncluding the diacritic. The Lexicanum Vault has had it wrong since you were nineteen and you have stopped correcting it, and four offices on Vardan Prime have it wrong, and the elevation instrument Crase signed has it wrong.\n\nUnder it, in smaller engraving: cabin preferences. Temperature. Light. Which side of the corridor. That you do not take the morning meal.\n\nThe brass has been polished around the letters and not in the grooves, which is what happens to a plate that has been cleaned regularly for a long time.\n\nIt is not new.\n\n[ C15 HELD ]"
+  },
+  {
+   "id": "viewport",
+   "names": [
+    "viewport",
+    "the world",
+    "anser's reach",
+    "the planet",
+    "below",
+    "the window"
+   ],
+   "careless": "A world under the station: cloud, two oceans, three lit cities on the night side.",
+   "careful": "Anser's Reach. Settled M39. Two million souls, agricultural, unremarkable, and in continuous contact with nobody for a hundred and forty years.\n\nThe archive says the system was never colonised.\n\nIt was the first one. It was the proof of concept — a small world, a clean case, a variance that could be resolved without anybody in the sector noticing, and it worked so well that they did it again nineteen times and then once at a scale of nine hundred million.\n\nThere are three lit cities down there. They have lights on. Somebody is running a grid.\n\nNobody on this station looks out of this viewport. There is a chair beside it and it is turned away."
+  },
+  {
+   "id": "floor",
+   "names": [
+    "the floor",
+    "adepts",
+    "the correctorum",
+    "three thousand",
+    "the work",
+    "clerks"
+   ],
+   "careless": "Three thousand tech-adepts at benches on a floor below the gallery. None of them looks up.",
+   "careful": "They are doing variance resolution.\n\nYou watch one of them for eleven minutes. She has two returns that disagree about a district population, she applies the schedule, she resolves in favour of the acknowledged figure, she closes the variance, she takes the next one.\n\nShe is quick and careful and she checks her work.\n\nThere is no cabal on this floor. There is no oath, no sign, no chamber and no hierarchy beyond grades. Three thousand people are doing a clerical job correctly, at pace, to a schedule that was written before any of them were born, and it is the most frightening room you have ever stood in."
+  }
+ ],
+ "npcs": [
+  {
+   "id": "kesh",
+   "names": [
+    "kesh",
+    "adepta",
+    "the adept",
+    "her",
+    "a. kesh"
+   ],
+   "title": "Adepta Senioris Anneke Kesh",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask,\" Kesh says. \"I have never had anybody to answer to and I find I have been looking forward to it.\"",
+   "portrait": "Adepta Senioris Anneke Kesh, of the Vardan reconciliation office. Sixty-odd, in a good coat, in an office with a window onto the Correctorum floor.\n\nThere is a teapot. There has been a teapot the whole time.",
+   "greeting": "\"Inquisitor. Sit down; you have come a very long way and I have tea.\"\n\nIt is real tea. Zhosa Minoris, which is not a world any index holds, because it was the fourth one.\n\n\"I have the last of it. There won't be more. I keep it for occasions.\"\n\nShe pours for your retinue first, and for Sergeant Oduya she pours weak and puts it near her without comment, and asks after the cough, and listens to the answer.\n\nShe is the most courteous person you have met in eleven weeks and she has deleted four hundred and eleven million people.",
+   "reprise": "She waits, with the pot. She has all afternoon; she cleared it.",
+   "unknown": "\"I don't have that,\" Kesh says. \"I could get it, but not quickly, and you would have to wait about a fortnight.\"",
+   "deflect": [
+    "She refills something that does not need refilling.",
+    "\"Ask me the next one,\" she says."
+   ],
+   "topics": [
+    {
+     "id": "numbers",
+     "names": [
+      "the numbers",
+      "how many",
+      "the ledger",
+      "deletions",
+      "four hundred and eleven million",
+      "the count"
+     ],
+     "grants": [
+      "C16"
+     ],
+     "sets": [
+      "KESH_COUNT"
+     ],
+     "text": "\"Four hundred and eleven million,\" Kesh says, and turns the ledger so you can read it right way up.\n\nPaper. Hand-ruled. A book.\n\n\"By year, and by category. The categories are mine. I ruled the columns myself, which took a fortnight, because I was not going to have a servitor draw the lines.\"\n\n\"Why paper?\"\n\n\"Because a screen is a rumour.\" She says it as though it were obvious, and to her it is. \"Anything on this station's store can be corrected by this station. That is what the station is *for*. If I am going to keep a count of what I have done then it has to be in a medium the thing cannot reach, and the only one I have is this.\"\n\nA woman four hundred light years from anywhere has arrived, independently, at the same conclusion as a blind astropath with a wax slate, a shift foreman in a chapel with no vox, and four hundred people in a sump saying names out loud.\n\nShe does not defend the numbers. She indexes them.\n\n\"I want you to hear that from me and not from her,\" she says.\n\n[ C16 HELD ]"
+    },
+    {
+     "id": "kadmon",
+     "names": [
+      "kadmon",
+      "kadmon veil",
+      "the arithmetic",
+      "why",
+      "the tithe dispute",
+      "the sum"
+     ],
+     "requires": [
+      "KESH_COUNT"
+     ],
+     "sets": [
+      "KESH_ARITHMETIC"
+     ],
+     "text": "\"You will want the arithmetic actually used,\" Kesh says, \"rather than the arithmetic people assume.\"\n\nShe finds the year without looking it up.\n\n\"A tithe dispute in the Vardan chain, cycle zero. Conventional suppression was costed by the Ordo at three worlds in open compliance-war, a sector-wide astropathic quarantine, and forty million dead over eleven years. That was not a guess; that was the standing model and it has been accurate four times.\n\n\"The alternative was costed at nine hundred million *records* and a projected four point one million attrition deaths, over ninety years, from infrastructure decay. Nobody dies of being deleted, Inquisitor. They die of the reactor that does not get its part.\"\n\n\"Four point one million.\"\n\n\"We were wrong by a factor of about six.\" She puts the cup down. \"That is on the four of us, and I have not asked to have it taken out of me.\"\n\nIt is the first sentence anybody in this investigation has said that is an admission of error rather than a defence, and she has said it about twenty-four million people, at a table, over tea."
+    },
+    {
+     "id": "vosk",
+     "names": [
+      "vosk",
+      "hadrian",
+      "the third seal",
+      "his death",
+      "what happened to him"
+     ],
+     "requires": [
+      "KESH_COUNT"
+     ],
+     "text": "\"He sat in the fifth chair for eighty-one years and he was the best of us for about sixty of them.\"\n\nKesh turns her cup round.\n\n\"He was not killed, Inquisitor. Nobody here ordered it and nobody here wanted it; he was the only member of the Concordance who could still argue and we needed him to keep doing it. I would have gone to Vardan myself to stop it if there had been anything to stop.\n\n\"He worked out that he could not write it, speak it, carry it or tell anybody, and that the only medium left was himself, and he was right, and he did it, and it worked. That is not a murder. That is the last correct filing of a very good clerk.\"\n\nShe is fond of him. It is not performed.\n\n\"He would have been appalled at how long it took you,\" she adds. \"He allowed six weeks.\""
+    },
+    {
+     "id": "seat",
+     "names": [
+      "the seat",
+      "vhail",
+      "pyne",
+      "the cardinal",
+      "the deacon",
+      "the fourth chair"
+     ],
+     "requires": [
+      "VHAIL_BROKEN"
+     ],
+     "text": "\"Pyne was seated in about forty minutes.\"\n\nKesh says it without emphasis and lets you get there yourself.\n\n\"He is competent, he is dull, he does not negotiate and he will not embarrass anybody. He is better at it than Augustin was and he will be here in twenty years, and Augustin will be a name in a disposition somewhere.\n\n\"You did us a service. I want you to sit with that for a moment, because you did not do it for us, and it was still a service, and the seat filled faster than any of us expected.\""
+    },
+    {
+     "id": "herself",
+     "names": [
+      "yourself",
+      "you",
+      "your office",
+      "reconciliation office",
+      "how you started",
+      "the work"
+     ],
+     "text": "\"I have signed the standing countersign on Ordo effects in this sector since 963,\" Kesh says. \"You have seen it. Everybody has seen it; it is on everything, which is the point of a standing instrument.\"\n\n\"That is not what I asked.\"\n\n\"No.\" She refills the pot. \"I came in at twenty-six as a variance clerk. A variance is two records that disagree, and there is a rule for resolving one, and I was very good at applying the rule, and by forty I was writing the rules and by fifty I was the only person alive who understood the whole of the schedule.\n\n\"Nobody recruited me, Inquisitor. Nobody swore me to anything. I was promoted.\""
+    }
+   ],
+   "shows": [],
+   "beats": [],
+   "acts": [
+    {
+     "id": "tea",
+     "names": [
+      "accept the tea",
+      "the tea",
+      "take the tea",
+      "drink it",
+      "sit down",
+      "accept"
+     ],
+     "blocks": [
+      "KESH_IDENTIFIED"
+     ],
+     "sets": [
+      "KESH_IDENTIFIED"
+     ],
+     "counters": {
+      "VERITY": 1
+     },
+     "cost": 1,
+     "text": "You take the tea.\n\nIt is very good. It is the last of a world that four people voted out of the index, and you are drinking it in a warm room with your sergeant, who has both hands round a cup because her fingers have been cold since the Cerement.\n\nKesh relaxes. It is visible and it is not a performance: she has been braced since the clamps and she stops being braced, and after that she answers everything you ask her, promptly and completely, for two hours.\n\nThere is no version of this afternoon where taking the tea was the wrong decision and no version where it was not also exactly what she wanted.\n\n[ VERITY +1 ]"
+    }
+   ]
+  },
+  {
+   "id": "cael2",
+   "names": [
+    "cael",
+    "yttrix",
+    "magos",
+    "him"
+   ],
+   "title": "Magos Yttrix Cael",
+   "lists_topics": false,
+   "topic_refusal": "\"Ask me the technical ones,\" Cael says. \"I am no use on the others and I would rather not pretend.\"",
+   "portrait": "Magos Yttrix Cael, four hundred light years from a workshop that smelled of tea.\n\nHis manipulators are out of sync. Two of them are running about a fifth of a second behind the others and he has not noticed, and he would have noticed in Vardan.",
+   "greeting": "\"You came,\" Cael says.\n\nHis manipulators are out of sync. Two of them run about a fifth of a second behind and he does not appear to know it.\n\n\"I want to say a thing before you ask me anything, because I have been composing it for eleven days and if I do not say it now I will say it badly later.\n\n\"I built four windows into your cogitator. I am going to itemise them. I did not do it for this station and I did not do it for her and I did it because a Magos who maintains an instrument keeps a way into it, and that is *correct practice*, and I have never once thought about what correct practice is for.\"",
+   "reprise": "He waits, two manipulators a fifth of a second behind the others.",
+   "unknown": "\"I don't know,\" Cael says, and it costs him.",
+   "deflect": [
+    "A manipulator finishes a gesture the others finished already.",
+    "\"Ask me a technical one,\" he says."
+   ],
+   "topics": [
+    {
+     "id": "windows",
+     "names": [
+      "the windows",
+      "my cogitator",
+      "the four",
+      "itemise",
+      "what you built",
+      "access"
+     ],
+     "sets": [
+      "CAEL_SUSPECTED"
+     ],
+     "text": "He itemises them. It takes eleven minutes and he does not omit anything, including two you would never have found and one that is in the shroud he gave you free on a Tuesday.\n\n\"That last one does not report content,\" he says. \"Position and field strength only. I want that on the record and I am aware that it is the sort of thing a man says.\"\n\n\"Who reads them?\"\n\n\"The bench log reads them. I read the bench log.\" A pause. \"I have not read the bench log since the fourth of the second, because on the fourth of the second I read it and there was an entry I had not made, in my own hand, correctly formatted, and I have not been able to open it since.\"\n\nHe says the next part very fast.\n\n\"I have been reconciled nine times this year. I know the number because my tools are laid out differently each morning and I have been counting since 'ninety-four and I have never told anybody, including him, including the last time he asked me directly.\""
+    },
+    {
+     "id": "protocols",
+     "names": [
+      "intake protocols",
+      "the schema",
+      "the core",
+      "protocols",
+      "what frightened you",
+      "the intake"
+     ],
+     "requires": [
+      "CAEL_SUSPECTED"
+     ],
+     "grants": [
+      "C17"
+     ],
+     "sets": [
+      "C17_SEEN",
+      "C17_FILED",
+      "C17_HELD"
+     ],
+     "text": "\"I was asked to service the intake,\" Cael says. \"Routine. Four days ago.\"\n\nHe brings it up on your own cogitator, because it is the machine he trusts, because he built the windows in it himself.\n\n\"These are the intake protocols. They govern what the core accepts as a correction request and in what form. Here is the Mechanicus schema, which I know, because I was examined on it at thirty-one.\n\n\"And here are forty-one protocols in the live set that are not in it.\"\n\nHe magnifies one.\n\n\"They are not corrupt. They are not damaged. They are *well made*, they are internally consistent, they are dated — that one is post-047.M41, which is inside my own service — and they are in a schema the Adeptus Mechanicus has never supplied to anybody, and I have gone looking, and it is not a variant and it is not a dialect.\n\n\"Somebody has been writing this machine's intake, in a language nobody taught it, for about forty years.\"\n\nHe files it to your case-notes without being asked, helpfully, because he is Cael.\n\n[ C17 FILED — to the cogitator ]"
+    },
+    {
+     "id": "afraid",
+     "names": [
+      "afraid",
+      "you're frightened",
+      "switched off",
+      "what you want",
+      "the machine",
+      "ask me"
+     ],
+     "requires": [
+      "C17_SEEN"
+     ],
+     "text": "\"Do not let them switch it off while I am aboard.\"\n\nIt comes out whole, the way a thing does when it has been rehearsed.\n\n\"That is not — I am not asking you to spare it. I do not know what you are going to do and I have decided that it is not my business and I am aware that is a coward's position and I am taking it anyway.\n\n\"I am asking you not to do it while I am *aboard*. I have been reconciled nine times this year by something whose intake I cannot read, and I have a bench and a kettle and four hundred and eleven years of Mechanicus practice in me, and I would like to go home first.\"\n\nThe manipulators finish a gesture, twice, a fifth of a second apart.\n\n\"I am ashamed of that,\" he says. \"Please note that I said it anyway.\""
+    }
+   ],
+   "shows": [],
+   "beats": [],
+   "acts": [
+    {
+     "id": "copy_c17",
+     "names": [
+      "copy it",
+      "by hand",
+      "write it down",
+      "copy the protocols",
+      "longhand",
+      "transcribe it"
+     ],
+     "requires": [
+      "C17_SEEN"
+     ],
+     "blocks": [
+      "C17_PHYS"
+     ],
+     "sets": [
+      "C17_PHYS"
+     ],
+     "cost": 3,
+     "text": "You copy it out by hand.\n\nForty-one protocols in a schema nobody has ever taught, glyph by glyph, off a screen, in a notebook, while a Magos of the Adeptus Mechanicus watches you do it and does not ask why.\n\nIt takes four hours and your hand cramps at the second and you keep going, and Cael brings you a cup of something halfway through and puts it down without a word, and at some point in the third hour you realise he has stopped working and is simply standing there watching a person write.\n\n\"That is very slow,\" he says at the end.\n\n\"Yes.\"\n\n\"It is also the only copy that will still exist tomorrow,\" says Magos Yttrix Cael, who has been reconciled nine times this year, \"and I would like to be clear that I have worked that out and am not going to write it down.\"\n\n[ C17_PHYS ]"
+    }
+   ]
+  },
+  {
+   "id": "seat",
+   "names": [
+    "vhail",
+    "pyne",
+    "cardinal",
+    "deacon",
+    "the seat",
+    "augustin",
+    "sural"
+   ],
+   "title": "The Ecclesiarchy seat",
+   "lists_topics": false,
+   "topic_refusal": "\"Anything at all, brother,\" says whoever is in the chair.",
+   "portrait": "The Ecclesiarchy's seat on the Concordance, occupied.",
+   "greeting": "The fourth chair is occupied.",
+   "reprise": "The fourth chair, occupied.",
+   "unknown": "A blank, courteous look.",
+   "deflect": [
+    "The chair waits.",
+    "\"Was there something else?\""
+   ],
+   "topics": [
+    {
+     "id": "testimony",
+     "names": [
+      "testify",
+      "your testimony",
+      "what you have",
+      "evidence",
+      "turn",
+      "give them up"
+     ],
+     "blocks": [
+      "VHAIL_BROKEN"
+     ],
+     "text": "\"I will testify,\" Vhail says. \"Against all of them. Against her, against the Magos, against the seat before mine — I have been taking notes for nineteen years, brother, and I have them, and I will give you every one.\"\n\nHe has nothing.\n\nYou take him through it for forty minutes and there is no document, no date, no name he did not read off a disposition sheet, and nineteen years of notes turn out to be a devotional journal with four entries about a dispute over an alms rate.\n\nHe has been sitting on the Concordance of Records for nineteen years and has understood approximately none of it, and he has been *useful* the entire time, and that is why the seat is his."
+    },
+    {
+     "id": "office",
+     "names": [
+      "your office",
+      "the seat",
+      "the ecclesiarchy",
+      "your work",
+      "what you do here"
+     ],
+     "requires": [
+      "VHAIL_BROKEN"
+     ],
+     "text": "\"The Ecclesiarchy's interest is doctrinal,\" Deacon Sural Pyne says. \"Where a correction touches a shrine-world or a canonised name, I am consulted. Where it does not, I am not.\"\n\n\"How often does it touch one?\"\n\n\"Eleven times since I was seated.\"\n\n\"You were seated forty minutes ago.\"\n\n\"Eleven times in the backlog I have been given to review, Inquisitor.\" He does not blink. \"I have concurred in nine and reserved on two, and the two are on your table if you would like to see my reasoning.\"\n\nHe is competent, he is dull, and he is going to be here in twenty years."
+    }
+   ],
+   "shows": [],
+   "beats": [
+    {
+     "id": "unbroken",
+     "requires": [
+      "EXPECTED"
+     ],
+     "blocks": [
+      "VHAIL_BROKEN"
+     ],
+     "text": "Cardinal Augustin Vhail is over-dressed for a station and has been waiting by the door.\n\n\"Brother,\" he says, and takes your hand in both of his. \"Brother. I have prayed — you cannot know how I have prayed. There is so much here that has been done in ignorance and I have said so, I have said so *repeatedly*, and I want you to know that whatever you find I was the one who said so.\"\n\nHe offers you advance absolution for whatever you are about to do. He offers it twice.\n\nHe is grotesque, and he is frightened, and he is the least important person on this station."
+    },
+    {
+     "id": "broken",
+     "requires": [
+      "VHAIL_BROKEN"
+     ],
+     "text": "The Ecclesiarchy seat is filled by Deacon Sural Pyne, who was seated about forty minutes after Augustin Vhail was taken into custody on Vardan Prime.\n\nHe rises when you come in, at exactly the correct moment, and gives you exactly the correct address for your rank.\n\nHe has a folder. He is going to be extremely helpful and there is nothing in him at all."
+    }
+   ],
+   "acts": []
+  }
+ ],
+ "exits": [
+  {
+   "id": "chair",
+   "names": [
+    "the fifth chair",
+    "fifth chair",
+    "crase",
+    "aft",
+    "the gallery",
+    "her"
+   ],
+   "to": "fifth_chair",
+   "cost": 2,
+   "text": "Aft, to the gallery where the five chairs are, and to the one that has never been occupied."
+  }
+ ],
+ "clues": {
+  "C15": {
+   "id": "C15",
+   "names": [
+    "the placard",
+    "my berth placard",
+    "the diacritic",
+    "cabin preferences",
+    "polished brass"
+   ],
+   "label": "A berth placard with your name spelled correctly, your cabin preferences engraved, and the polish worn round the letters",
+   "store": "either",
+   "reconciliation": 1,
+   "file_text": "FILED. CLASS: STATION / BERTHING, ASSIGNMENT. INDEXED.\n\nA berthing assignment is the least interesting document a station produces and\nthe template takes it in four seconds.\n\nIt cross-references your name against the personnel roll and returns a match,\nwhich is the first time in your career that a Vault query on your own name has\nreturned the version with the diacritic in it.",
+   "note_text": "Brass, engraved, with the diacritic in it, and the polish worn round the\nletters and not in the grooves.\n\nCabin preferences: temperature, light, which side of the corridor, no morning\nmeal. Three of those four are things I have never written on any form.\n\nIt is not new."
+  },
+  "C16": {
+   "id": "C16",
+   "names": [
+    "kesh's ledger",
+    "the deletion ledger",
+    "four hundred and eleven million",
+    "the ruled columns",
+    "by category",
+    "hand-ruled"
+   ],
+   "label": "Kesh's hand-ruled ledger — 411,000,000 deletions by year and by category, her own columns, kept on paper because a screen is a rumour",
+   "store": "either",
+   "reconciliation": 4,
+   "file_text": "FILED. CLASS: ADMINISTRATIVE / RECONCILIATION, HISTORICAL RETURNS. INDEXED. ATTRIBUTED: KESH, A., ADEPTA SENIORIS.\n\nThe cogitator takes four hundred and eleven million deletions as a returns\nsummary, correctly, in eleven seconds, and cross-references each category\nagainst the schedule that authorised it.\n\nEvery category resolves. Every one of them was authorised. That is what the\nledger is a ledger of.",
+   "note_text": "Copied out of a hand-ruled book over most of a night, by year and by category,\nwith her own column headings.\n\nFour hundred and eleven million.\n\nShe ruled the lines herself because she was not going to have a servitor draw\nthem. She keeps it on paper because a screen is a rumour. She has arrived, on\nher own, at the same conclusion as a blind astropath, a shift foreman and four\nhundred people in a sump."
+  },
+  "C17": {
+   "id": "C17",
+   "names": [
+    "intake protocols",
+    "the schema",
+    "forty-one protocols",
+    "non-human intake",
+    "the unsupplied schema"
+   ],
+   "label": "Forty-one intake protocols in the live set that the Mechanicus never supplied, dated inside Cael's own service",
+   "store": "cogitator",
+   "reconciliation": 2,
+   "refusal": "There is nowhere to write forty-one protocols in a schema nobody has taught\nyou. You would be copying shapes.\n\nYou could do it. It would take four hours.",
+   "file_text": "FILED. CLASS: TECHNICAL / SCHEMA, UNRECOGNISED. INDEXED. SOURCE: YTTRIX CAEL, MAGOS.\n\nIt files clean, in nine seconds, on a station whose entire function is\nresolving records against a schedule.\n\nMagos Yttrix Cael, who has been reconciled nine times this year, has just put\nthe only evidence of that into the one store on this station that the station\ncan reach, helpfully, without being asked, because he is Cael."
+  }
+ },
+ "strings": {
+  "no_such_thing": "A warm dock, a viewport and a floor below it.",
+  "already_read": "You have looked twice. Nobody has looked up.",
+  "no_terminal": "There is a cogitator here. There are four thousand.",
+  "read_room_locked": "Nobody arranged Cantica-Null. They built it and then they staffed it.",
+  "no_one_here": "Kesh, Cael, the fourth chair, and three thousand people who do not look up.",
+  "vault_none": "NO SUCH ENTRY."
+ }
+}

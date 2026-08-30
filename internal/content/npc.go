@@ -87,12 +87,17 @@ type Topic struct {
 	// because a topic usually rewards being answered and charges for being
 	// pushed on, and those are not the same number.
 	ClosedCounters Counters `json:"closed_counters"`
-	Repeat         string   `json:"repeat"`
-	Sets           []string `json:"sets"`
-	Clears         []string `json:"clears"`
-	Grants         []string `json:"grants"`
-	Pressure       int      `json:"pressure"`
-	Counters       Counters `json:"counters"`
+	// Layers are what PRESS gets, one at a time, in order. A machine that
+	// answers exactly the question asked and never volunteers a scope has to
+	// be pressed for each further layer, and when the layer is empty it says
+	// so rather than repeating itself.
+	Layers   []string `json:"layers"`
+	Repeat   string   `json:"repeat"`
+	Sets     []string `json:"sets"`
+	Clears   []string `json:"clears"`
+	Grants   []string `json:"grants"`
+	Pressure int      `json:"pressure"`
+	Counters Counters `json:"counters"`
 }
 
 // Show is what an NPC does when the player puts a held clue in front of him.
@@ -118,7 +123,7 @@ type Counters map[string]int
 var KnownCounters = map[string]bool{
 	"VERITY": true, "CRASE_STANDING": true, "RECONCILIATION": true,
 	"BEZ_TRUST": true, "ILARIA_TRUST": true, "FENN_DRIFT": true, "MOTT_FAVOURS": true, "QUERY_TIER": true,
-	"VAUX_SUSPICION": true,
+	"VAUX_SUSPICION": true, "VURR_RESPECT": true,
 }
 
 // Act is a verb the player uses on a person rather than a thing: detain,
@@ -185,6 +190,10 @@ type Exit struct {
 	Text        string   `json:"text"`
 	Blocked     string   `json:"blocked"`
 	Cost        int      `json:"cost"`
+	// Counters is what taking the door costs beyond time. Sleeping through a
+	// warp passage gets you there sooner and the archive gets eight days of
+	// you not looking at it.
+	Counters Counters `json:"counters"`
 	// Hidden keeps a door out of the list a bare GO prints. It is still there
 	// and it still opens to its own name; it is simply not offered. Exactly
 	// one door in the game is like this and it is the one nothing anywhere
