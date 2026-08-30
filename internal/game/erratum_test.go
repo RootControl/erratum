@@ -142,7 +142,7 @@ func TestTheCorruptHalfNamesTheWrongMan(t *testing.T) {
 
 	first, _ := s.Do("decode")
 	log := strings.Join(first, "\n")
-	if !strings.Contains(log, "CARDINAL AUGUSTIN VHAIL") {
+	if !strings.Contains(log, "CARDINAL OSTREM VHAIL") {
 		t.Fatalf("the false sentence names the man the player already wanted:\n%s", log)
 	}
 	if s.Has("ACT2_COMPLETE") {

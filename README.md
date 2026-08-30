@@ -107,7 +107,10 @@ written to it — a session is only ever the player, and it carries the archive
 exactly as it stands, corrections included.
 
 `ERRATUM_NOALT=1` disables the alternate screen, which is how `smoke.py`
-drives it headlessly.
+drives it headlessly. That script clears the input before its first command,
+because Bubble Tea requires an answer to its startup background-colour query
+and then does not consume it — the reply lands in the text input. Any other
+pty driver needs the same Ctrl-U.
 
 ## Test
 
