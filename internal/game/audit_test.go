@@ -1,6 +1,10 @@
 package game
 
 import (
+	"os"
+	"path/filepath"
+	"regexp"
+	"strconv"
 	"strings"
 	"testing"
 
@@ -318,6 +322,47 @@ func TestDelayedTextResolvesEverywhere(t *testing.T) {
 					j := strings.Index(line, "[missing string:")
 					t.Errorf("%s: %s", sid, line[j:min(j+40, len(line))])
 				}
+			}
+		}
+	}
+}
+
+// TestNoDateAfterThePresent is the guard for a class that got away from me for
+// the whole of Act III. STORY_BIBLE.md §12 fixes the present at 826.M41 and
+// says any new date must be derived from Kadmon's 735, the Ferrum cult's 763,
+// Vhail's 786 and Mott's district at 807. Three dozen authored years had
+// drifted into the 900s, which in a game that trains the player to read every
+// number as evidence is worse than a typo — it reads as a clue.
+//
+// The lint reads the scene files directly, because it is a lint on the prose
+// rather than on anything the loader exposes.
+func TestNoDateAfterThePresent(t *testing.T) {
+	// Numbers above 826 that are not years. Kadmon's reports are numbered,
+	// the acknowledged census is 900,412,000, and the game's own date stamps
+	// are cycles — 0997.4.211 — not Imperial years.
+	notYears := map[string]bool{
+		"997": true, "996": true, "993": true, // cycle stamps
+		"833": true, "922": true, "923": true, "924": true, // Kadmon's reports
+		"900": true, // nine hundred million four hundred and twelve thousand
+		"087": true, // cycle 087.M42, the far end of the sum
+	}
+	files, err := filepath.Glob("../content/*.json")
+	if err != nil || len(files) == 0 {
+		t.Fatalf("no scene files to lint: %v", err)
+	}
+	year := regexp.MustCompile(`\b0?(\d{3})\b`)
+	for _, f := range files {
+		raw, err := os.ReadFile(f)
+		if err != nil {
+			t.Fatal(err)
+		}
+		for _, m := range year.FindAllStringSubmatch(string(raw), -1) {
+			if notYears[m[1]] {
+				continue
+			}
+			if n, _ := strconv.Atoi(m[1]); n > 826 {
+				t.Errorf("%s: %s is after the present day (826.M41)",
+					filepath.Base(f), m[1])
 			}
 		}
 	}

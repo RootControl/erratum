@@ -199,6 +199,18 @@ them, one test per guarantee, and those assertions are meant to be permanent.
   means eight minutes of being able to reach him, not eight minutes of Act I.
 - `CRASE_STANDING` opens at +1, per the bible's systems notes. Act I is built to
   push an attentive player to +2 or +3 from there.
+- **`STORY_BIBLE.md` §12 fixes the present at 826.M41 and every authored year
+  derives from it.** Kadmon terminates 735, the Ferrum cult begins 763, Vhail
+  is recruited 786, Mott's district is struck 807. Three dozen years drifted
+  into the 900s across Act III before anybody checked, which in a game that
+  trains the player to read every number as evidence is worse than a typo — it
+  reads as a clue. `TestNoDateAfterThePresent` lints the scene files directly
+  and fails any three-digit number above 826 that is not on its allowlist.
+- **Cycles are not years.** The stamp the game prints — `0997.4.211` — is a
+  cycle, quarter and day, and has nothing to do with the Imperial year. A bare
+  three-digit number in prose is an Imperial year and must precede 826. Act I
+  already does both: a rescript from 604 in a scene dated 0997.4.211. Anything
+  with a day component is a cycle stamp; anything bare is a year.
 - **The act runs on one clock and every authored hour has to agree with it.**
   The door came off its seal at the twenty-third hour and fifty-five; the
   Crown's finding is struck two hours earlier, at the twenty-first and
@@ -735,5 +747,11 @@ them, one test per guarantee, and those assertions are meant to be permanent.
   nothing is forced. The medium was the Act II lesson; where the thing came
   from is the Act III one, and the Amanuensis offers to take the pages into the
   intake instead, which is the joke.
+- **Two canon facts I had wrong and the documents settle.** The Cardinal is
+  **Ostrem** Vhail, per the bible §3.3 and ACT_II 2.6, not Augustin. Crase is
+  **seventy-one**, per ACT_III 3.10 — forty-four also made her Hadrian Vosk's
+  friend of thirty years from the age of fourteen, so the older reading fixes
+  an inconsistency that was already there. Check a name and an age against the
+  bible before writing a new scene around them.
 - Prose style: second person, short sentences under pressure, Imperial
   vocabulary used casually and never explained. See `STORY_BIBLE.md` §9.
