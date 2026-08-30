@@ -109,7 +109,7 @@ drives it headlessly.
 go test ./internal/game/
 ```
 
-Two hundred and twenty-one tests — 218 in `internal/game`, three in `internal/ui`.
+Two hundred and twenty-five tests — 222 in `internal/game`, three in `internal/ui`.
 Five of them play the whole game from a cold start to five different endings on
 typed commands alone; the rest are one per design guarantee:
 
@@ -306,6 +306,8 @@ typed commands alone; the rest are one per design guarantee:
 | `TestTheRetinueFilesThin` | your own people's files come back shorter, with nothing struck |
 | `TestAtSeventyYouGo` | an initial where the given name was, and a fifth of all records carry one |
 | `TestAtSeventyOptionsAreAbsent` | removed, not closed: she answers as though she had never heard of it |
+| `TestIlariaFiresOneSidedAtKadmon` | skip her cell and she asks on a street, and does not accept the answer |
+| `TestVauxReconstructsItUncitably` | nine pages taken standing up in a corridor cannot force anything |
 
 `TestTrustingPlaythrough` also asserts the archive never prints the words
 `DELETED` or `ERROR`. That assertion is the thesis of the whole game and it

@@ -103,7 +103,26 @@
     }
    ],
    "shows": [],
-   "beats": [],
+   "beats": [
+    {
+     "id": "one_sided",
+     "requires": [
+      "KADMON_VISITED"
+     ],
+     "blocks": [
+      "WATCH_ILARIA",
+      "ILARIA_ONE_SIDED"
+     ],
+     "sets": [
+      "ILARIA_ASKED",
+      "ILARIA_ONE_SIDED"
+     ],
+     "grants": [
+      "C8"
+     ],
+     "text": "She says it on a street in Hive Erasmus with four hundred thousand people\nstepping aside around you, which is the worst place and the worst hour and\nnot a thing she has chosen.\n\n\"Four hundred and six.\"\n\n\"Vesse—\"\n\n\"Days I can prove I worked and can't prove I was there. Three years of it.\nI've a slate.\" She has it out. She is not looking at you and she has her free\nhand flat against a wall. \"I'd have said it on the ship. There were nine days\nand I'd have said it on any of them and you were busy, and I'm saying it here\nbecause we've just walked through a hive that's been waiting ninety-one years\nfor somebody to come and I find I'm not prepared to be that patient.\"\n\nThere is a shrine queue eleven metres away and a woman who asked Sergeant\nOduya whether the war is over, and this is where you are going to have this.\n\n[ C8 HELD ]"
+    }
+   ],
    "acts": [
     {
      "id": "tell_truth",
@@ -120,7 +139,8 @@
      "blocks": [
       "ILARIA_KNOWS",
       "ILARIA_HANDLED",
-      "ILARIA_SILENT"
+      "ILARIA_SILENT",
+      "ILARIA_ONE_SIDED"
      ],
      "sets": [
       "ILARIA_KNOWS",
@@ -149,7 +169,8 @@
      "blocks": [
       "ILARIA_KNOWS",
       "ILARIA_HANDLED",
-      "ILARIA_SILENT"
+      "ILARIA_SILENT",
+      "ILARIA_ONE_SIDED"
      ],
      "sets": [
       "ILARIA_HANDLED",
@@ -176,7 +197,8 @@
      "blocks": [
       "ILARIA_KNOWS",
       "ILARIA_HANDLED",
-      "ILARIA_SILENT"
+      "ILARIA_SILENT",
+      "ILARIA_ONE_SIDED"
      ],
      "sets": [
       "ILARIA_SILENT",
@@ -187,6 +209,33 @@
      },
      "cost": 1,
      "text": "You do not answer her.\n\nThe cell is four days out from anywhere and there is no relay and nothing is listening and you stand in it and say nothing at all.\n\nIlaria waits a very long time. Longer than is comfortable, longer than is kind, long enough that you understand she is not waiting for an answer any more, she is establishing something for the record she keeps.\n\n\"Right,\" she says at last.\n\nShe puts the slate away.\n\n\"That's an answer, sir. It's the one where I'm not mad and nobody's going to say so, and I've had that one before, off a Choir-Prefect, and I know how it goes.\"\n\n[ ILARIA_TRUST -1 ]"
+    },
+    {
+     "id": "tell_truth_late",
+     "names": [
+      "tell her the truth",
+      "the truth",
+      "be accurate",
+      "tell her",
+      "say it"
+     ],
+     "requires": [
+      "ILARIA_ONE_SIDED"
+     ],
+     "blocks": [
+      "ILARIA_KNOWS",
+      "ILARIA_HANDLED",
+      "ILARIA_SILENT",
+      "ILARIA_TOLD_LATE"
+     ],
+     "sets": [
+      "ILARIA_TOLD_LATE"
+     ],
+     "counters": {
+      "VERITY": 1
+     },
+     "cost": 2,
+     "text": "You tell her the truth, standing in a street.\n\nYou tell it correctly and completely and you do not soften any of it, and it is\nthe same answer you would have given her in the cell, and it does not land the\nsame way at all.\n\nIlaria listens to the whole of it with her hand flat on the wall.\n\n\"Right,\" she says.\n\nThen: \"No, I don't think I'll take that today, sir.\"\n\n\"It's the truth.\"\n\n\"I know it is. I've known it since the second of 'ninety-five and I've been\nwaiting three years for somebody with a rosette to say it out loud, and I asked\nyou for it on a hull nine days out and you had four days of nothing to do.\"\n\nShe puts the slate away.\n\n\"I'll do the work. I'll carry what you need carried and I'll do it well, and if\nyou want me at the end of this I'll be there. But I'm not going to be *used*\nfor it, and there is a difference, and I'd worked out which one I was going to\nbe on the ship and you've just told me the other thing in a street.\"\n\nAt Cantica-Null she stands at the back and does not offer, and nobody thinks to\nask her, and the vox reads the file instead.\n\n[ VERITY +1 ]"
     }
    ]
   }

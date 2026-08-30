@@ -681,7 +681,8 @@ them, one test per guarantee, and those assertions are meant to be permanent.
   drives `Update` and `View` directly and fails if the model quits on top of
   its own ending.
 - **A skipped scene has to cost something, not just not happen.** Act III's
-  **Failure handling** lines are punishing defaults, and six of them are built:
+  **Failure handling** lines are punishing defaults, and every one that applies
+  is built:
   Rhod smuggling Report 415 in `Tick` because `KADMON_PROOF` is documented
   always obtainable and was gated on `VURR_RESPECT ≥ 1`; the reading following
   the player off the floor on printed slips; inaction at `RECONCILIATION ≥ 90`
@@ -689,7 +690,15 @@ them, one test per guarantee, and those assertions are meant to be permanent.
   slate and Kesh citing the nav plot if the cogitator well was never entered;
   Crase following to the intake; and the ledger re-offered in 3.10. The
   guaranteed ones are in `Tick` rather than on a beat, because a beat needs
-  the player to walk back up to somebody and a guarantee cannot.
+  the player to walk back up to somebody and a guarantee cannot. The last two
+  are 3.4's: skip Ilaria's cell and she raises it herself on a street in Hive
+  Erasmus with a shrine queue eleven metres away, and *does not accept the
+  answer* — the truth still costs nothing and still does not land, and she is
+  not the machine's mouth at Cantica-Null. Skip Fenn's hold and Vaux hands over
+  nine pages taken standing up in a corridor, which is C9b and not C9: the
+  Amanuensis cannot be forced by it, because a transcription of a recitation it
+  does not hold is not a contradiction. Neither sets `WATCH_*`, so neither
+  route can complete the voyage.
 - **`ON_THE_FLOOR` and `AT_THE_INTAKE` are `while` flags that scope `Tick`.**
   The slips only follow a player who has left the Correctorum, and the
   inaction ending only fires where the slot is. `Tick` runs everywhere, so
@@ -719,5 +728,12 @@ them, one test per guarantee, and those assertions are meant to be permanent.
   given name is an initial, and the prose says a fifth of all personnel
   records carry one for perfectly ordinary reasons. Do not have anybody
   comment on it.
+- **Provenance is a second axis on top of the two stores.** `CITE` already
+  refuses anything in the case-file. C9b refuses for a different reason: it is
+  in the notebook, in the player's own hand, and it is a transcription of a
+  recitation the machine does not hold, so there is no record to contradict and
+  nothing is forced. The medium was the Act II lesson; where the thing came
+  from is the Act III one, and the Amanuensis offers to take the pages into the
+  intake instead, which is the joke.
 - Prose style: second person, short sentences under pressure, Imperial
   vocabulary used casually and never explained. See `STORY_BIBLE.md` §9.

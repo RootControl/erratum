@@ -302,3 +302,98 @@ func TestAtSeventyOptionsAreAbsent(t *testing.T) {
 		}
 	}
 }
+
+// 3.4b's punishing default. Skip the cell and she raises it herself, on a
+// street, at the worst possible hour, and does not accept the answer.
+func TestIlariaFiresOneSidedAtKadmon(t *testing.T) {
+	s, log := playFrom(t, "kadmon", landed, "talk to ilaria")
+	if !s.Has("ILARIA_ONE_SIDED") {
+		t.Fatalf("she is not prepared to be that patient:\n%s", log)
+	}
+	if _, held := s.Held["C8"]; !held {
+		t.Fatal("expected the tally")
+	}
+	if !strings.Contains(flat(log), "there's a shrine queue eleven metres away") &&
+		!strings.Contains(flat(log), "this is where you are going to have this") {
+		t.Fatalf("the place is the punishment:\n%s", log)
+	}
+
+	// The clean outcome is not available. Telling her the truth is still
+	// right, still costs nothing, and does not land.
+	out, _ := s.Do("tell her the truth")
+	answer := flat(strings.Join(out, "\n"))
+	if s.Has("ILARIA_KNOWS") {
+		t.Fatal("she does not accept it")
+	}
+	if !s.Has("ILARIA_TOLD_LATE") {
+		t.Fatalf("the scene still happens:\n%s", answer)
+	}
+	// But it is not a watch stood. The voyage cannot be completed after it.
+	if s.Has("WATCH_ILARIA") {
+		t.Fatal("a street on Kadmon is not the cell")
+	}
+	if !strings.Contains(answer, "No, I don't think I'll take that today, sir.") {
+		t.Fatalf("expected her refusal:\n%s", answer)
+	}
+	if s.Ints["ILARIA_TRUST"] != 0 {
+		t.Fatalf("and it buys nothing: trust %d", s.Ints["ILARIA_TRUST"])
+	}
+
+	// So she is not the machine's mouth at Cantica-Null.
+	if !s.Move("correctorum") {
+		t.Fatal("cannot reach the floor")
+	}
+	run(s, "ask vox about minutes", "ask vox about kadmon", "ask vox about my file")
+	if s.Has("ILARIA_STOPPED") {
+		t.Fatal("she stands at the back and nobody thinks to ask her")
+	}
+}
+
+// A player who stood the watch in the cell never meets the fallback.
+func TestTheCellClosesTheFallback(t *testing.T) {
+	s, log := playFrom(t, "kadmon", append(landed, "WATCH_ILARIA"), "talk to ilaria")
+	if s.Has("ILARIA_ONE_SIDED") {
+		t.Fatalf("she asked you once and you answered:\n%s", log)
+	}
+}
+
+// 3.4c's default: Vaux has been writing it down in a corridor, and nine pages
+// of a sixty-one-year-old with a pen cannot force anything.
+func TestVauxReconstructsItUncitably(t *testing.T) {
+	s, log := playFrom(t, "wardroom", aboard, "ask vaux about the projection")
+	if _, held := s.Held["C9b"]; !held {
+		t.Fatalf("he has been writing it down:\n%s", log)
+	}
+	if !strings.Contains(flat(log), "there is not one word of it I could swear to") {
+		t.Fatalf("he says what it is worth before you take it:\n%s", log)
+	}
+	if s.Has("C9_TAKEN") || s.Has("C9_PHYS") {
+		t.Fatal("a transcription is not the recitation")
+	}
+
+	// And it cannot be cited, because there is no record to contradict.
+	if !s.Move("intake") {
+		t.Fatal("cannot reach the slot")
+	}
+	s.storeClue("C9b", StoreBook)
+	out, _ := s.Do("cite the reconstruction")
+	answer := flat(strings.Join(out, "\n"))
+	if s.Has("OMISSION_EXPOSED") {
+		t.Fatal("secondhand does not force it")
+	}
+	if !strings.Contains(answer, "There is no record to contradict.") {
+		t.Fatalf("expected the refusal:\n%s", answer)
+	}
+	if !strings.Contains(answer, "You take them back.") {
+		t.Fatalf("it offers the intake instead:\n%s", answer)
+	}
+}
+
+// A player who took it down themselves never gets the reconstruction.
+func TestTheHoldClosesTheReconstruction(t *testing.T) {
+	s, log := playFrom(t, "wardroom", append(aboard, "C9_TAKEN"),
+		"ask vaux about the projection")
+	if _, held := s.Held["C9b"]; held {
+		t.Fatalf("you have the real one:\n%s", log)
+	}
+}
