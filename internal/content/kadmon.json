@@ -165,7 +165,9 @@
    "acts": []
   }
  ],
- "npc_refs": [],
+ "npc_refs": [
+  "cell/ilaria3"
+ ],
  "exits": [
   {
    "id": "yard",

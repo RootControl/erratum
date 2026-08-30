@@ -125,6 +125,30 @@
       "VAUX_DOSSIER_READ"
      ],
      "text": "\"Because you would have got yourself killed in the Vault in the first week,\" Vaux says, \"and then who would I have argued with.\"\n\nHe means it as a deflection and it comes out as the other thing, and he hears it, and does not correct it, which for him is an enormous concession.\n\nThen, in a different voice:\n\n\"Also because I am sixty-one and I have one piece of physical paper left that matters and there is nowhere in the Vardan sector I could have left it. Not a bank, not a seat, not a Conclave office. I have spent forty years learning exactly how many places there are in this sector where a document is safe, and the answer, as it turns out, is that there is one, and it is a coat.\""
+    },
+    {
+     "id": "projection",
+     "names": [
+      "the projection",
+      "what fenn said",
+      "the recitation",
+      "the worlds",
+      "fenn's arithmetic",
+      "thirty-three"
+     ],
+     "blocks": [
+      "C9_TAKEN"
+     ],
+     "requires": [
+      "FENN_ALIVE"
+     ],
+     "grants": [
+      "C9b"
+     ],
+     "sets": [
+      "VAUX_RECONSTRUCTED"
+     ],
+     "text": "\"You have not been down to the hold,\" Vaux says. It is not a reproach; it is\nthe first item on a list.\n\n\"He recites in the corridor. He has been reciting in the corridor since the\nsecond day and nobody has asked him to and he is not doing it at anybody. I\nhave been writing it down.\"\n\nHe produces about nine pages. The hand is worse than his usual hand, because\nmost of it was taken standing up.\n\n\"Compliant worlds, cycle 087: thirty-three. He has said it eleven times and it\nis thirty-three every time. The tithe grades are in here and the district\ncounts are not, because he does those faster than I write.\"\n\n\"You should have told me.\"\n\n\"You should have gone down to the hold.\" He squares the pages. \"I am not a\nsavant, Inquisitor. This is nine pages of a man in a corridor as heard by a\nsixty-one-year-old with a pen, and there is not one word of it I could swear to\nin front of anybody, and I want that understood before you put it in your\ncoat.\"\n\n[ C9b HELD ]"
     }
    ],
    "shows": [],
@@ -212,6 +236,21 @@
    "reconciliation": 3,
    "file_text": "FILED. CLASS: DISCIPLINARY / UNAUTHORISED SURVEILLANCE OF A SUPERIOR OFFICER. INDEXED. ATTRIBUTED: VAUX, D., INTERROGATOR.\n\nThe cogitator files it against the standing personnel roll, correctly, in nine\nseconds.\n\nIt is out of relay range and will transmit at the next waypoint, where the\ncountersigning authority is the subject of the document.",
    "note_text": "Copied out over four days, by hand, from a hull's wardroom table.\n\nEvery elevation, transfer and quiet retirement she has signed since 991,\ncross-indexed to four offices, with the eleven where the countersigning seat is\nthe same seat.\n\nThe last third is in a different ink because he ran out.\n\nThe conclusion is wrong by one word and the word is *author*."
+  },
+  "C9b": {
+   "id": "C9b",
+   "names": [
+    "vaux's transcription",
+    "nine pages",
+    "the corridor notes",
+    "the reconstruction",
+    "secondhand"
+   ],
+   "label": "Vaux's transcription of Fenn's recitation — nine pages, taken standing up in a corridor, and not a word of it he could swear to",
+   "store": "either",
+   "reconciliation": 2,
+   "file_text": "FILED. CLASS: SAVANT OUTPUT / PROJECTION, TRANSCRIBED. INDEXED. ATTRIBUTED: VAUX, D., INTERROGATOR.\n\nThe cogitator files it against the savant's personnel record and appends,\ncorrectly, that the transcription is secondhand and unattested.\n\nIt is a good filing of a document that is worth exactly what it says it is\nworth.",
+   "note_text": "Nine pages in a hand that gets worse down the page, copied out again in mine.\n\nThirty-three at cycle 087, said eleven times, always thirty-three. The tithe\ngrades. No district counts.\n\nHe wrote at the top, before he gave it to me: *heard, not held.*"
   }
  },
  "strings": {
