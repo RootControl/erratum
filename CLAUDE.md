@@ -699,5 +699,25 @@ them, one test per guarantee, and those assertions are meant to be permanent.
   `refuse her` started firing Crase's refusal instead. Renamed to
   `refuse sazh`. Check the pronouns in an existing scene's act names before
   putting somebody new in it.
+- **All five Reconciliation symptoms are built and none of them announces
+  itself.** ≥25 removes the ACCUSE option in 2.6 (`hidden_above`); ≥40 has Bez
+  raise sub-level nine unprompted, from `Tick`, so there is no topic the player
+  failed to ask, and `QUERY SUBLEVEL NINE` answers `NO SUCH OPERATION` in the
+  spacing the Vault uses for a shelf that was never filled; ≥55 shortens the
+  Act I file in 2.0b and thins the retinue's own personnel files; ≥70 puts an
+  initial where the player's given name was and removes eight topics across
+  four late scenes. Every one of them is the record being ordinary about
+  something the player knows is not.
+- **`QUERY` is where the retinue files and your own record live.** There was
+  nowhere for the ≥55 and ≥70 symptoms to land, so `query()` gained branches
+  for `TALM` / `FENN` / `ODUYA` and for `ROSETTE`. The player has no reason to
+  pull their own people's files until something makes them want to check, and
+  that is the point. `retinueFile()` maps the names.
+- **The player is never named, so the ≥70 symptom is about a field, not a
+  word.** The rosette record carries the family name and, below 70, a note
+  that the diacritic has been wrong since they were nineteen. Past it, the
+  given name is an initial, and the prose says a fifth of all personnel
+  records carry one for perfectly ordinary reasons. Do not have anybody
+  comment on it.
 - Prose style: second person, short sentences under pressure, Imperial
   vocabulary used casually and never explained. See `STORY_BIBLE.md` §9.
