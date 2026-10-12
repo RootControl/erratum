@@ -1,5 +1,7 @@
 # THE ERRATUM
 
+[![CI](https://github.com/RootControl/erratum/actions/workflows/ci.yml/badge.svg)](https://github.com/RootControl/erratum/actions/workflows/ci.yml)
+
 *A terminal investigation game in the grim darkness of the far future.*
 
 An Inquisitor is dead in a room sealed from the inside, and the Imperium's
