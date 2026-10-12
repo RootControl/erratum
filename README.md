@@ -1,13 +1,98 @@
-# THE ERRATUM — vertical slice
+# THE ERRATUM
 
-**All of Act I is playable**, 1.1 through 1.10 — six hours, the rosette, the
-locked room, the synthesis, the Vaux interview, the door and the body, nothing
-to requisition, forty-one seconds, the Vault requisition and the Act I turn —
-and it closes on the Case Précis, runs **Act II 2.0 through 2.11** to the act
-turn, and runs the whole of **Act III** to all five endings.
-Go + Bubble Tea.
+*A terminal investigation game in the grim darkness of the far future.*
 
-It exists to prove eleven things are buildable before Act II is written:
+An Inquisitor is dead in a room sealed from the inside, and the Imperium's
+archive has already closed the case. You have a cogitator that files your
+evidence, a notebook in your coat that it cannot reach, and three acts in
+which to work out which of the two is telling you the truth.
+
+Text only, played in your terminal. Three acts, thirty-one scenes, five
+endings. Written in Go with [Bubble Tea](https://github.com/charmbracelet/bubbletea).
+
+> **Unofficial fan work.** THE ERRATUM is a free, non-commercial fan project
+> set in the Warhammer 40,000 universe. It is not endorsed by, sponsored by or
+> affiliated with Games Workshop Limited. Warhammer 40,000 and all associated
+> names and marks are the property of Games Workshop Limited. See
+> [NOTICE](NOTICE).
+
+## Requirements
+
+- Go 1.24 or newer
+
+## Install and play
+
+```sh
+go install github.com/RootControl/erratum@latest
+erratum
+```
+
+Or from a clone:
+
+```sh
+git clone https://github.com/RootControl/erratum.git
+cd erratum
+go run .
+```
+
+Type `help` in the game for the list of verbs. Nothing on screen highlights
+itself: you find things by naming them, and looking at something twice is not
+the same as looking at it once.
+
+### Options
+
+All optional, set as environment variables:
+
+| Variable | Effect |
+|---|---|
+| `ERRATUM_NAME` | Your Inquisitor's name. Default: Ammon Reyl. |
+| `ERRATUM_BACKGROUND` | `lexmechanic`, `provost` or `penitent`. Unset is the default background, not a lesser one. |
+| `ERRATUM_SAVE` | Where the session file lives. Default: `./erratum.session`. |
+| `ERRATUM_NOALT=1` | Do not use the terminal's alternate screen. |
+| `ERRATUM_PLAIN=1` | Plain text over stdin/stdout, without the full-screen interface. |
+
+`SAVE` and `LOAD` suspend a session and take it back up. They cost no time in
+the game.
+
+<details>
+<summary><strong>The opening, step by step (spoilers for Act I)</strong></summary>
+
+The game opens in a doorway you are not allowed through: `x writ`, `x writ`,
+`note timestamp`, `ask about the form`, `ask about grief`, `ask about sealed`,
+`tired` or `nothing`, `go on`.
+
+Then the witnesses assemble: `x crase`, `x vaux`, `ask about his last cycle`,
+`ask why not vaux`, `take rosette`, `promise` or `defy`, `go in`.
+
+Then, in the chambers: `x board`, `x board`, `file A1`, `x boots`, `x boots`, `note A3`,
+`read room backward`, `query C9-F4-D2`, `note A20`, wait five turns,
+`query C9-F4-D2` again.
+
+The shutter names a cell across the Crown gap: `go spire`,
+`ask dross about access`, `play cylinder`, `x log`, `x log`, `decline`,
+`take cylinder` — then `go back` and `query 0997.4-1188`.
+
+One floor down there is a savant who does not think it has happened yet:
+`go fenn`, `ask about vosk`, `ask about the dates`, `go arch`,
+`ask about the dates`, `go back`, `ask about the dates`, `note the correction`.
+
+When they take him, follow him down: `go medicae`, `ask bez about the door`,
+`read roster`, `x kit`, `x kit`, `show the boots to bez`.
+
+Or go and see Vaux, which costs you the boots if you have not read them yet:
+`x register`, `x register`, `go vaux`, `ask vaux about the seal`,
+`ask about the caseload`, `ask about being passed over`, `note phrase`,
+`show the boots to vaux`.
+
+</details>
+
+## Design
+
+The repository is half design document and half game. `STORY_BIBLE.md` and
+`ACT_I.md` / `ACT_II.md` / `ACT_III.md` are the source of truth for the story;
+the code implements all of it. **The design documents spoil everything.**
+
+The slice was built to prove eleven ideas could work in a game:
 
 1. **Free-form examination.** No highlights, no glints, no prompts. Objects are
    found by naming them, and looking twice is not the same as looking once.
@@ -59,11 +144,37 @@ It exists to prove eleven things are buildable before Act II is written:
    true. Nothing marks the answer. It is the archive's other invariant, worn by
    somebody the player likes.
 
-## Run
+### Status
+
+Content-complete: all thirty-one scenes in the three act documents, all five
+endings, every Reconciliation symptom and every punishing default, with the
+suite playing the game from a cold start to five different endings.
+
+The three **player backgrounds** are in — `ERRATUM_BACKGROUND=lexmechanic`,
+`provost` or `penitent`, unset being the default and not a lesser run. Each
+buys something in Act I and charges for it somewhere else, and the game never
+says which is which.
+
+The Inquisitor's **name** is `ERRATUM_NAME`, defaulting to the bible's Ammon
+Reyl. The prose is second person and never says it. The record does — and the
+Lexicanum has had one vowel of the family name wrong since the player was
+nineteen, on every requisition they have ever filed. Cantica-Null is the only
+place in the game that spells it correctly, and past `RECONCILIATION` 70 the
+record keeps its own spelling and loses the given name.
+
+Nothing is stubbed. Every flag the content gates on is written by something —
+`TestEveryGatedFlagHasAWriter` enforces it — and the two engine-derived flags
+that used to be forgotten by content, `CIPHER_COMPLETE` and
+`VOSK_METHOD_UNDERSTOOD`, are computed rather than declared.
+
+The clock is 40 seconds per timed action; the body leaves eight minutes after
+you first reach it and does not negotiate.
+
+## Development
 
 ```sh
-go mod tidy
-go run .
+go test ./...
+gofmt -l .     # should print nothing
 ```
 
 For anything scripted, skip the TUI entirely:
@@ -73,58 +184,24 @@ go build -o erratum .
 printf 'x board\nx board\nfile A1\n' | ERRATUM_PLAIN=1 ./erratum
 ```
 
-The game opens in a doorway you are not allowed through: `x writ`, `x writ`,
-`note timestamp`, `ask about the form`, `ask about grief`, `ask about sealed`,
-`tired` or `nothing`, `go on`.
-
-Then the witnesses assemble: `x crase`, `x vaux`, `ask about his last cycle`,
-`ask why not vaux`, `take rosette`, `promise` or `defy`, `go in`.
-
-Then, in the chambers: `x board`, `x board`, `file A1`, `x boots`, `x boots`, `note A3`,
-`read room backward`, `query C9-F4-D2`, `note A20`, wait five turns,
-`query C9-F4-D2` again.
-
-The shutter names a cell across the Crown gap: `go spire`,
-`ask dross about access`, `play cylinder`, `x log`, `x log`, `decline`,
-`take cylinder` — then `go back` and `query 0997.4-1188`.
-
-One floor down there is a savant who does not think it has happened yet:
-`go fenn`, `ask about vosk`, `ask about the dates`, `go arch`,
-`ask about the dates`, `go back`, `ask about the dates`, `note the correction`.
-
-When they take him, follow him down: `go medicae`, `ask bez about the door`,
-`read roster`, `x kit`, `x kit`, `show the boots to bez`.
-
-Or go and see Vaux, which costs you the boots if you have not read them yet:
-`x register`, `x register`, `go vaux`, `ask vaux about the seal`,
-`ask about the caseload`, `ask about being passed over`, `note phrase`,
-`show the boots to vaux`.
-
-`SAVE` and `LOAD` suspend a session and take it back up. They cost no actions,
-for the same reason reading your own coat costs none, and the file lives at
-`./erratum.session` unless `ERRATUM_SAVE` says otherwise. The content is never
-written to it — a session is only ever the player, and it carries the archive
-exactly as it stands, corrections included.
-
-`ERRATUM_NOALT=1` disables the alternate screen, which is how `smoke.py`
-drives it headlessly. That script clears the input before its first command,
-because Bubble Tea requires an answer to its startup background-colour query
-and then does not consume it — the reply lands in the text input. Any other
-pty driver needs the same Ctrl-U.
-
-## Test
-
-```sh
-go test ./...
-```
+`smoke.py` drives the real TUI through a pty with `ERRATUM_NOALT=1`. It clears
+the input before its first command, because Bubble Tea asks the terminal for
+its background colour at startup and then does not consume the reply, which
+lands in the text input. Any other pty driver needs the same Ctrl-U.
 
 `internal/game` and `internal/content` have no third-party imports, so
-`go test ./internal/game/` runs without `go mod tidy`. `internal/ui` needs the
+`go test ./internal/game/` runs on its own. `internal/ui` needs the
 dependencies, which building needs anyway.
 
-Two hundred and forty-two tests — 239 in `internal/game`, three in `internal/ui`.
-Five of them play the whole game from a cold start to five different endings on
-typed commands alone; the rest are one per design guarantee:
+`CLAUDE.md` holds the design invariants and conventions the code must keep.
+Read it before changing anything.
+
+### Tests
+
+Two hundred and forty-three tests: 240 in `internal/game` and three in
+`internal/ui`. Five of them play the whole game from a cold start to five
+different endings on typed commands alone; the rest are one per design
+guarantee. **Spoilers throughout.**
 
 | Test | Asserts |
 |---|---|
@@ -358,36 +435,12 @@ internal/ui/        the cogitator. Deliberately has no vocabulary for
                     "something is wrong": no glitch effects, no colour shifts.
 ```
 
-## What is not built yet
+## License
 
-Nothing in the three act documents, and nothing in `STORY_BIBLE.md` §12. All
-thirty-one scenes, all five endings, every Reconciliation symptom and every
-applicable punishing default are in, and the suite plays the game from a cold
-start to five different doors.
+- **Code** (Go sources, module files, `smoke.py`, tests): [MIT](LICENSE).
+- **Story content** (`STORY_BIBLE.md`, `ACT_*.md`, `internal/content/*.json`):
+  [CC BY-NC 4.0](LICENSE-CONTENT). Share and adapt it with credit, not for
+  commercial use.
 
-The three **player backgrounds** are in — `ERRATUM_BACKGROUND=lexmechanic`,
-`provost` or `penitent`, unset being the default and not a lesser run. Each
-buys something in Act I and charges for it somewhere else, and the game never
-says which is which.
-
-The Inquisitor's **name** is `ERRATUM_NAME`, defaulting to the bible's Ammon
-Reyl. The prose is second person and never says it. The record does — and the
-Lexicanum has had one vowel of the family name wrong since the player was
-nineteen, on every requisition they have ever filed. Cantica-Null is the only
-place in the game that spells it correctly, and past `RECONCILIATION` 70 the
-record keeps its own spelling and loses the given name.
-
-Nothing is stubbed. Every flag the content gates on is written by something —
-`TestEveryGatedFlagHasAWriter` enforces it — and the two engine-derived flags
-that used to be forgotten by content, `CIPHER_COMPLETE` and
-`VOSK_METHOD_UNDERSTOOD`, are computed rather than declared.
-
-The clock is 40 seconds per timed action; the body leaves eight minutes after
-you first reach it and does not negotiate.
-
-## Note on `go.mod`
-
-Built in a sandbox that could reach github.com but not `proxy.golang.org` or
-`golang.org`, which needed `replace golang.org/x/... => github.com/golang/...`
-directives. Those are stripped from the shipped `go.mod`; `go mod tidy` on a
-normal machine will resolve everything directly.
+Neither license covers Games Workshop's intellectual property, which is not
+the author's to license. See [NOTICE](NOTICE).

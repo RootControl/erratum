@@ -1,0 +1,38 @@
+THE ERRATUM — licensing and disclaimer
+======================================
+
+Unofficial fan work
+-------------------
+
+THE ERRATUM is an unofficial, non-commercial fan work. It is not endorsed by,
+sponsored by, or affiliated with Games Workshop Limited in any way.
+
+Warhammer, Warhammer 40,000, 40K, the Inquisition, the Adeptus Mechanicus,
+the Imperium and all associated names, races, insignia, characters, places,
+vehicles and illustrations are either ® or TM, and/or © Games Workshop
+Limited, variably registered around the world. They are used here without
+permission and no challenge to their status is intended.
+
+This project is free and will never be sold, monetised, or used to promote
+anything commercial.
+
+Licensing
+---------
+
+This repository is dual-licensed by type of material:
+
+  * Source code — every .go file, go.mod, go.sum, smoke.py and the test
+    suite — is licensed under the MIT License. See LICENSE.
+
+  * Narrative content — STORY_BIBLE.md, ACT_I.md, ACT_II.md, ACT_III.md and
+    the scene files internal/content/*.json — is licensed under Creative
+    Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).
+    See LICENSE-CONTENT.
+
+Both licenses cover only the original material written for this project:
+its characters, plot, prose and code. Neither grants any rights in Games
+Workshop's intellectual property, which the author does not own and cannot
+license. Anyone reusing this work is responsible for respecting Games
+Workshop's IP policy.
+
+Copyright (c) 2026 RootControl
